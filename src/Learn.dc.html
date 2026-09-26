@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مسیر یادگیری ماشین — با ارجاع به مقالات مرجع</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#2F5233;text-decoration:none}
+  a:hover{color:#1F3A22}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:78px}
+  ::selection{background:#E7ECE4;color:#1F3A22}
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F5F3EE; direction: rtl;">
+
+  <!-- ============ سربرگ ============ -->
+  <header style="position: sticky; top: 0; z-index: 30; border-bottom: 1px solid #E4E1D6; background: rgba(245,243,238,0.93); backdrop-filter: blur(10px);">
+    <div style="max-width: 1060px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+      <a href="Main.dc.html#writing" style="font-size: 13.5px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <nav style="display: flex; gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
+        <a href="#s1" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۱</a>
+        <a href="#s2" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۲</a>
+        <a href="#s3" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۳</a>
+        <a href="#s4" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۴</a>
+        <a href="#s5" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۵</a>
+        <a href="#s6" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۶</a>
+        <a href="#s7" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۷</a>
+        <a href="#s8" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۸</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1060px; margin: 0 auto; padding: 52px 24px 80px;">
+
+    <!-- ============ معرفی ============ -->
+    <span style="display: inline-block; font-size: 11.5px; font-weight: 700; color: #2F5233; background: #E7ECE4; padding: 4px 12px; border-radius: 999px; margin-bottom: 18px;">مسیر یادگیری · هر ادعا با ارجاع</span>
+    <h1 style="font-size: clamp(27px, 3.8vw, 40px); font-weight: 800; line-height: 1.45; margin: 0 0 16px;">مسیر یادگیری ماشین، ایستگاه به ایستگاه</h1>
+    <p style="font-size: 17px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">این یک فهرست مقاله نیست؛ یک <b>ترتیب</b> است. هشت ایستگاه که هر کدام فقط به چیزی تکیه می‌کند که در ایستگاه‌های قبلی آمده، و در هر ایستگاه اول ایده به زبان ساده توضیح داده می‌شود و بعد مقاله‌هایی که آن ایده از آن‌ها آمده.</p>
+    <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 30px;">قاعده‌ای که در کل این صفحه رعایت شده: <b>هر مفهومی که توضیح داده می‌شود، به مقالهٔ اصلی‌اش ارجاع دارد</b> — نه به وبلاگ و خلاصه، به خود مقاله. لینک‌ها به arXiv یا DOI ناشر می‌روند.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px; margin-bottom: 52px;">
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۸</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">ایستگاه اصلی</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۴۶</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">مقالهٔ مرجع</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۲</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">شاخهٔ جانبی</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۱۹۸۶</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">قدیمی‌ترین مقاله</div>
+      </div>
+    </div>
+
+    <!-- ============ راهنما ============ -->
+    <section style="margin-bottom: 52px;">
+      <h2 style="font-size: 21px; font-weight: 800; margin: 0 0 8px;">قبل از شروع</h2>
+      <p style="font-size: 15px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">چهار چیزی که تجربه نشان می‌دهد تفاوت بین «مقاله خواندم» و «فهمیدم» را می‌سازد.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">مقاله را سه‌باره بخوان</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">بار اول فقط چکیده، مقدمه و نتیجه — برای اینکه بفهمی اصلاً به دردت می‌خورد یا نه. بار دوم شکل‌ها و جدول‌ها. فقط بار سوم، ریاضیات. اگر بار اول گیر کردی، احتمالاً پیش‌نیازش را نخوانده‌ای، نه اینکه کم‌هوشی.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">دنبال «مسئله» بگرد، نه «روش»</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">هر مقالهٔ خوب، جواب یک مشکل مشخص در مقالهٔ قبلی است. اگر بفهمی چه چیزی خراب بود، روش خودبه‌خود منطقی می‌شود. برای همین ترتیب این صفحه تاریخی است، نه موضوعی.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">ریاضی لازم، کمتر از چیزی است که فکر می‌کنی</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">ضرب ماتریس، مشتق زنجیره‌ای، و مفهوم احتمال شرطی. همین سه، هشتاد درصد این مسیر را باز می‌کند. سه فصل اول کتاب <a href="https://www.deeplearningbook.org" target="_blank" rel="noopener">Deep Learning</a> دقیقاً همین‌هاست و رایگان آنلاین است.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">هر ایستگاه یک تمرین دارد — ردش نکن</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">پیاده‌سازی نصفه‌ونیمهٔ یک ایده، از ده مقالهٔ خوانده‌شده بیشتر یاد می‌دهد. تمرین‌ها عمداً کوچک‌اند تا در یک بعدازظهر جا شوند.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ فهرست ============ -->
+    <section style="margin-bottom: 56px;">
+      <h2 style="font-size: 21px; font-weight: 800; margin: 0 0 8px;">نقشهٔ مسیر</h2>
+      <p style="font-size: 15px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 20px;">ترتیب تاریخی است، چون هر ایستگاه مشکلی را حل می‌کند که ایستگاه قبلی ساخته بود.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+        <a href="#s1" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۱</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">پایه‌ها — یادگیری یعنی چه</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۱۹۸۶ تا ۱۹۹۸ · 4 مقاله</span></span></a>
+        <a href="#s2" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۲</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">عمق — چطور شبکه‌های عمیق رام شدند</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۲۰۱۲ تا ۲۰۱۷ · 7 مقاله</span></span></a>
+        <a href="#s3" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۳</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">دنباله و زبان — وقتی ترتیب معنا دارد</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۱۹۹۷ تا ۲۰۱۵ · 5 مقاله</span></span></a>
+        <a href="#s4" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۴</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">ترنسفورمر — معماری‌ای که همه‌چیز را بلعید</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۲۰۱۷ تا ۲۰۲۲ · 6 مقاله</span></span></a>
+        <a href="#s5" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۵</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">مقیاس — وقتی بزرگ‌کردن به علم تبدیل شد</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۲۰۱۷ تا ۲۰۲۲ · 5 مقاله</span></span></a>
+        <a href="#s6" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۶</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">همسویی و استدلال — از پیش‌بینی توکن تا دستیار</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۲۰۱۷ تا ۲۰۲۲ · 4 مقاله</span></span></a>
+        <a href="#s7" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۷</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">تولید — مدل‌هایی که می‌سازند</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۲۰۱۳ تا ۲۰۲۱ · 5 مقاله</span></span></a>
+        <a href="#s8" style="display: flex; gap: 12px; align-items: baseline; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 10px; padding: 12px 14px; text-decoration: none;"><span style="font-size: 12px; font-weight: 800; color: #2F5233; background: #E7ECE4; border-radius: 6px; padding: 2px 8px; flex-shrink: 0;">۰۸</span><span style="flex: 1;"><span style="display: block; font-size: 13.8px; font-weight: 700; color: #16181C; line-height: 1.6;">فهمیدن — داخل مدل چه می‌گذرد</span><span style="display: block; font-size: 11.5px; color: #666158; margin-top: 2px;">۲۰۱۶ تا امروز · 4 مقاله</span></span></a>
+      </div>
+    </section>
+
+
+    <section style="margin-bottom: 52px;">
+      <h2 style="font-size: 21px; font-weight: 800; margin: 0 0 8px;">ایستگاه‌ها روی محور زمان</h2>
+      <p style="font-size: 15px; line-height: 2; color: #45494F; max-width: 70ch; margin: 0 0 20px;">این نمودار یک چیز را نشان می‌دهد که در فهرست خطی گم می‌شود: <b>ایستگاه‌ها پشت سر هم اتفاق نیفتادند، هم‌زمان جلو رفتند</b>. وقتی ترنسفورمر داشت متولد می‌شد، شاخهٔ تولید و شاخهٔ تفسیرپذیری هم فعال بودند. ترتیب این مسیر، ترتیب <b>یادگیری</b> است نه ترتیب تاریخ.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 20px; overflow-x: auto;">
+        <div style="min-width: 700px;">
+      <svg viewBox="0 0 960 390" style="width: 100%; height: auto; display: block;" role="img" aria-label="بازهٔ زمانی هشت ایستگاه مسیر یادگیری ماشین">
+      <line x1="251" y1="46" x2="251" y2="378" stroke="#E4E1D6" stroke-width="1" stroke-dasharray="3 5"></line>
+      <text x="251" y="36" font-size="10.5" fill="#666158" text-anchor="middle">۱۹۹۰</text>
+      <line x1="454" y1="46" x2="454" y2="378" stroke="#E4E1D6" stroke-width="1" stroke-dasharray="3 5"></line>
+      <text x="454" y="36" font-size="10.5" fill="#666158" text-anchor="middle">۲۰۰۰</text>
+      <line x1="656" y1="46" x2="656" y2="378" stroke="#E4E1D6" stroke-width="1" stroke-dasharray="3 5"></line>
+      <text x="656" y="36" font-size="10.5" fill="#666158" text-anchor="middle">۲۰۱۰</text>
+      <line x1="859" y1="46" x2="859" y2="378" stroke="#E4E1D6" stroke-width="1" stroke-dasharray="3 5"></line>
+      <text x="859" y="36" font-size="10.5" fill="#666158" text-anchor="middle">۲۰۲۰</text>
+      <text x="158" y="75" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۱ · پایه‌ها</text>
+      <rect x="170" y="62" width="243" height="20" rx="10" fill="#8A6A1E" opacity="0.82"></rect>
+      <text x="422" y="76" font-size="10" fill="#666158">۱۹۸۶–۱۹۹۸</text>
+      <text x="158" y="115" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۲ · عمق</text>
+      <rect x="697" y="102" width="101" height="20" rx="10" fill="#B4530E" opacity="0.82"></rect>
+      <text x="807" y="116" font-size="10" fill="#666158">۲۰۱۲–۲۰۱۷</text>
+      <text x="158" y="155" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۳ · دنباله و زبان</text>
+      <rect x="393" y="142" width="365" height="20" rx="10" fill="#166534" opacity="0.82"></rect>
+      <text x="767" y="156" font-size="10" fill="#666158">۱۹۹۷–۲۰۱۵</text>
+      <text x="158" y="195" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۴ · ترنسفورمر</text>
+      <rect x="778" y="182" width="122" height="20" rx="10" fill="#0E6FB4" opacity="0.82"></rect>
+      <text x="908" y="196" font-size="10" fill="#666158">۲۰۱۶–۲۰۲۲</text>
+      <text x="158" y="235" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۵ · مقیاس</text>
+      <rect x="798" y="222" width="101" height="20" rx="10" fill="#5B3F92" opacity="0.82"></rect>
+      <text x="908" y="236" font-size="10" fill="#666158">۲۰۱۷–۲۰۲۲</text>
+      <text x="158" y="275" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۶ · همسویی و استدلال</text>
+      <rect x="798" y="262" width="101" height="20" rx="10" fill="#A32222" opacity="0.82"></rect>
+      <text x="908" y="276" font-size="10" fill="#666158">۲۰۱۷–۲۰۲۲</text>
+      <text x="158" y="315" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۷ · تولید</text>
+      <rect x="717" y="302" width="162" height="20" rx="10" fill="#2A6F51" opacity="0.82"></rect>
+      <text x="888" y="316" font-size="10" fill="#666158">۲۰۱۳–۲۰۲۱</text>
+      <text x="158" y="355" font-size="12" font-weight="700" fill="#16181C" text-anchor="end">۰۸ · فهمیدن</text>
+      <rect x="778" y="342" width="162" height="20" rx="10" fill="#7A3E6B" opacity="0.82"></rect>
+      <text x="949" y="356" font-size="10" fill="#666158">۲۰۱۶–۲۰۲۴</text>
+    </svg>
+        </div>
+      </div>
+      <p style="font-size: 12.5px; color: #666158; margin: 12px 0 0; max-width: 70ch;">بازه‌ها تقریبی‌اند و بر اساس سال مقالات هر ایستگاه رسم شده‌اند، نه بر اساس شروع و پایان قطعی یک حوزه.</p>
+    </section>
+
+    <!-- ============ ایستگاه‌ها ============ -->
+    
+    <section id="s1" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۱</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">پایه‌ها — یادگیری یعنی چه</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۱۹۸۶ تا ۱۹۹۸</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> بفهمی «یاد گرفتن» یک ماشین دقیقاً چه عملیاتی است و چرا با برنامه‌نویسی معمولی فرق دارد.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">یادگیری ماشین یعنی به‌جای نوشتن قانون، دستگاهی بسازی با هزاران عدد قابل‌تنظیم (وزن)، و آن عددها را آن‌قدر تغییر بدهی تا خروجی دستگاه به جواب درست نزدیک شود. الگوریتمی که می‌گوید هر وزن را چقدر و در چه جهت تغییر بدهیم، <b>پس‌انتشار خطا</b> است؛ همان چیزی که در ۱۹۸۶ عملی و مشهور شد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">دومین ایدهٔ بنیادی این ایستگاه ظریف‌تر است: <b>یاد گرفتن، همان فشرده‌سازی است</b>. مدلی بهتر است که بتواند داده را با توصیف کوتاه‌تری بازسازی کند — این دقیقاً همان چیزی است که جلوی حفظ‌کردن طوطی‌وار را می‌گیرد و «تعمیم» را می‌سازد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">سومین قطعه، ایدهٔ <b>کانولوشن</b> است: به‌جای اینکه هر پیکسل وزن مستقل داشته باشد، یک فیلتر کوچک روی کل تصویر بلغزد. این یعنی مدل از قبل می‌داند «لبه، لبه است، هر جای تصویر که باشد» — و همین دانش از پیش تعبیه‌شده، تعداد پارامترها را هزاران برابر کم می‌کند.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">اگر فقط یک جمله از این ایستگاه بماند: آموزش شبکه یعنی کم‌کردن یک عدد خطا با قدم‌های کوچک در خلاف جهت گرادیان — و هر چیزی که جلوی حفظ‌کردن را بگیرد، به تعمیم کمک می‌کند.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://doi.org/10.1038/323533a0" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Learning representations by back-propagating errors</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Rumelhart, Hinton, Williams · ۱۹۸۶ · Nature 323</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">الگوریتمی که آموزش لایه‌های میانی را ممکن کرد؛ موتور هر شبکهٔ عصبی تا امروز.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px;"><div style="font-size: 13.5px; font-weight: 700; color: #16181C; direction: ltr; text-align: right; line-height: 1.7;">Keeping Neural Networks Simple by Minimizing the Description Length of the Weights</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Hinton, van Camp · ۱۹۹۳ · COLT 1993</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">ریشهٔ ایدهٔ «یادگیری = فشرده‌سازی»؛ مدل خوب، مدلی است که کوتاه‌تر توصیف می‌کند.</div><div style="font-size: 11.5px; color: #666158; margin-top: 8px;">بدون نسخهٔ آزاد آنلاین — از طریق کتابخانهٔ دانشگاهی قابل دسترسی است</div></div>
+          <a href="https://doi.org/10.1109/5.726791" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Gradient-Based Learning Applied to Document Recognition</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">LeCun, Bottou, Bengio, Haffner · ۱۹۹۸ · Proceedings of the IEEE 86(11)</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">معرفی LeNet و منطق کانولوشن؛ اولین کاربرد صنعتی بزرگ شبکهٔ عصبی.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://www.deeplearningbook.org" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Deep Learning</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Goodfellow, Bengio, Courville · ۲۰۱۶ · MIT Press — کتاب مرجع</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">اگر ریاضیِ پایه (جبر خطی، مشتق، احتمال) را می‌خواهی، سه فصل اولش دقیقاً همین است.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک شبکهٔ دو لایه را روی کاغذ با اعداد کوچک دستی پس‌انتشار کن. تا وقتی این را یک‌بار با دست انجام ندهی، بقیهٔ مسیر حس جعبهٔ سیاه دارد.</p>
+      </div>
+    </section>
+
+    <section id="s2" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۲</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">عمق — چطور شبکه‌های عمیق رام شدند</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۲۰۱۲ تا ۲۰۱۷</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> بدانی چرا تا ۲۰۱۲ شبکه‌های عمیق کار نمی‌کردند و چه چیزهایی آموزششان را ممکن کرد.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">در ۲۰۱۲ سه چیز هم‌زمان رسید: دادهٔ برچسب‌خوردهٔ بزرگ، کارت گرافیک، و چند ترفند آموزشی. نتیجه‌اش <b>AlexNet</b> بود که خطای ImageNet را چنان کاهش داد که کل حوزه تغییر مسیر داد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">اما عمیق‌ترکردن شبکه به‌تنهایی جواب نمی‌داد؛ سه مانع سر راه بود. اول <b>حفظ‌کردن</b> داده‌های آموزش، که Dropout با خاموش‌کردن تصادفی نورون‌ها مهارش کرد. دوم <b>ناپایداری آماری</b> لایه‌ها در طول آموزش، که با نرمال‌سازی دسته‌ای حل شد. سوم و مهم‌ترین: با زیادشدن لایه‌ها، دقت نه‌تنها بهتر نمی‌شد که <b>بدتر</b> می‌شد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">پاسخ آن مانع سوم یکی از زیباترین ایده‌های این حوزه است: <b>اتصال باقی‌مانده</b>. به‌جای اینکه هر لایه کل تابع را یاد بگیرد، فقط «تفاوت با ورودی» را یاد می‌گیرد و ورودی از یک میان‌بر عبور می‌کند. با همین، عمق از چند ده لایه به بیش از هزار لایه رسید.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">در کنار معماری، <b>بهینه‌ساز</b> هم بالغ شد: Adam نرخ یادگیری را برای هر پارامتر جداگانه تنظیم می‌کند، و AdamW نشان داد جداکردن تنظیم وزن از گرادیان، تعمیم را بهتر می‌کند.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">عمق بدون میان‌بر آموزش‌پذیر نیست. هر معماری بزرگ امروز — از ترنسفورمر تا مدل‌های تصویر — یک نسخه از همان اتصال باقی‌مانده را در خودش دارد.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://doi.org/10.1145/3065386" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">ImageNet Classification with Deep Convolutional Neural Networks</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Krizhevsky, Sutskever, Hinton · ۲۰۱۲ · NeurIPS 2012 · CACM 60(6)</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">نقطهٔ شروع عصر یادگیری عمیق؛ عمق + داده + GPU.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://jmlr.org/papers/v15/srivastava14a.html" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Dropout: A Simple Way to Prevent Neural Networks from Overfitting</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Srivastava, Hinton, Krizhevsky, Sutskever, Salakhutdinov · ۲۰۱۴ · JMLR 15</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">ساده‌ترین و مؤثرترین ترمز حفظ‌کردن: تصادفی خاموش‌کردن بخشی از شبکه.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1502.03167" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Ioffe, Szegedy · ۲۰۱۵ · ICML 2015</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">آموزش را پایدار و چند برابر سریع‌تر کرد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Deep Residual Learning for Image Recognition</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">He, Zhang, Ren, Sun · ۲۰۱۵ · CVPR 2016</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">اتصال باقی‌مانده؛ مهم‌ترین مقالهٔ معماری پیش از ترنسفورمر.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1603.05027" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Identity Mappings in Deep Residual Networks</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">He, Zhang, Ren, Sun · ۲۰۱۶ · ECCV 2016</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">چرایی کارکردن ResNet را توضیح داد و عمق را به بیش از هزار لایه رساند.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1412.6980" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Adam: A Method for Stochastic Optimization</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Kingma, Ba · ۲۰۱۴ · ICLR 2015</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">بهینه‌ساز پیش‌فرض عملی اکثر پروژه‌ها.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1711.05101" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Decoupled Weight Decay Regularization</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Loshchilov, Hutter · ۲۰۱۷ · ICLR 2019</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">AdamW؛ همان چیزی که امروز واقعاً در آموزش مدل‌های بزرگ استفاده می‌شود.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک ResNet کوچک را روی CIFAR-10 آموزش بده، بعد اتصال‌های باقی‌مانده را حذف کن و همان عمق را دوباره آموزش بده. تفاوت منحنی خطا، درس این ایستگاه است.</p>
+      </div>
+    </section>
+
+    <section id="s3" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۳</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">دنباله و زبان — وقتی ترتیب معنا دارد</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۱۹۹۷ تا ۲۰۱۵</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> بفهمی چرا متن و صوت با تصویر فرق دارند و مسیر از RNN تا مکانیزم توجه چطور طی شد.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">در تصویر، همه‌چیز یک‌جا حاضر است. در جمله، معنا در <b>ترتیب</b> است و طول ورودی ثابت نیست. جواب اولیه، شبکه‌های بازگشتی بودند: کلمه‌ها را یکی‌یکی بخوان و یک «حافظه» را به‌روز کن. مشکلشان این بود که در دنبالهٔ بلند، اثر کلمه‌های اول محو می‌شد؛ <b>LSTM</b> با افزودن دروازه‌هایی که تصمیم می‌گیرند چه چیزی نگه داشته و چه چیزی فراموش شود، این را تا حد زیادی حل کرد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">قطعهٔ دوم، <b>بازنمایی</b> است: کلمه باید به عدد تبدیل شود، اما طوری که کلمه‌های هم‌معنی، عددهای نزدیک بگیرند. مدل زبانی عصبی این ایده را معرفی کرد و word2vec آن را ارزان و فراگیر کرد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">قطعهٔ سوم، معماری <b>دنباله‌به‌دنباله</b> بود: یک شبکه جمله را به یک بردار فشرده می‌کند و شبکهٔ دوم از آن بردار، جملهٔ مقصد را می‌سازد. اما فشردن یک جملهٔ بلند در یک بردار ثابت، گلوگاه بود.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">راه‌حل آن گلوگاه، <b>توجه</b> بود: مدل در هر گام تولید، به همهٔ کلمه‌های ورودی نگاه می‌کند و تصمیم می‌گیرد به کدام‌ها چقدر وزن بدهد. این مقاله، پایهٔ مستقیم ترنسفورمر است.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">توجه پیش از ترنسفورمر متولد شد و برای حل یک مشکل مشخص آمد: اینکه یک بردار ثابت نمی‌تواند حامل کل معنای یک جملهٔ بلند باشد.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://doi.org/10.1162/neco.1997.9.8.1735" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Long Short-Term Memory</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Hochreiter, Schmidhuber · ۱۹۹۷ · Neural Computation 9(8)</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">حافظهٔ دروازه‌دار؛ استاندارد کار با دنباله برای حدود دو دهه.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://jmlr.org/papers/v3/bengio03a.html" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">A Neural Probabilistic Language Model</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Bengio, Ducharme, Vincent, Jauvin · ۲۰۰۳ · JMLR 3</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">اولین مدل زبانی عصبی؛ ایدهٔ بردار کلمه از اینجا آمد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1301.3781" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Efficient Estimation of Word Representations in Vector Space</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Mikolov, Chen, Corrado, Dean · ۲۰۱۳ · ICLR Workshop 2013</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">word2vec؛ بردار کلمه را ارزان و در دسترس همه کرد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1409.3215" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Sequence to Sequence Learning with Neural Networks</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Sutskever, Vinyals, Le · ۲۰۱۴ · NeurIPS 2014</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">معماری رمزگذار-رمزگشا؛ پایهٔ ترجمهٔ ماشینی عصبی.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Neural Machine Translation by Jointly Learning to Align and Translate</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Bahdanau, Cho, Bengio · ۲۰۱۴ · ICLR 2015</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">تولد مکانیزم توجه؛ مهم‌ترین پیش‌نیاز ترنسفورمر.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک مترجم کوچک با LSTM و توجه بنویس و وزن‌های توجه را برای چند جمله رسم کن. دیدن اینکه مدل هنگام تولید هر کلمه به کجای ورودی نگاه می‌کند، بهترین شهود ممکن است.</p>
+      </div>
+    </section>
+
+    <section id="s4" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۴</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">ترنسفورمر — معماری‌ای که همه‌چیز را بلعید</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۲۰۱۷ تا ۲۰۲۲</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> معماری‌ای را بفهمی که امروز زیر متن، تصویر، صوت و کد نشسته است.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">ایدهٔ مرکزی ساده است: بازگشت و کانولوشن را دور بریز و فقط <b>خودتوجهی</b> را نگه دار. هر توکن مستقیماً به همهٔ توکن‌های دیگر نگاه می‌کند، پس فاصلهٔ دو کلمه همیشه «یک قدم» است و چون هیچ توکنی منتظر توکن قبلی نمی‌ماند، کل دنباله هم‌زمان پردازش می‌شود. همین موازی‌پذیری بود که مقیاس‌پذیری بعدی را ممکن کرد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">دو شاخهٔ بزرگ از همین معماری درآمد: مدل‌های <b>رمزگذار</b> که کل متن را دوطرفه می‌بینند و برای فهم متن خوب‌اند، و مدل‌های <b>رمزگشا</b> که توکن بعدی را پیش‌بینی می‌کنند و مسیرشان به مدل‌های زبانی امروز رسید.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">بعد معلوم شد این معماری اصلاً به متن وابسته نیست: اگر تصویر را به تکه‌های ۱۶×۱۶ بشکنی و مثل توکن به آن بدهی، همان ترنسفورمر در بینایی هم رقابتی است.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">هزینهٔ این معماری، رشد مربعی محاسبه با طول متن است. بخشی از این هزینه نه با تغییر ریاضیات، که با <b>بازنویسی دقیق الگوریتم متناسب با حافظهٔ GPU</b> حل شد — درسی که نشان می‌دهد در این حوزه، مهندسی سیستم به‌اندازهٔ ایده اهمیت دارد.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">ترنسفورمر برنده شد نه چون هوشمندتر بود، بلکه چون بهتر موازی می‌شد. هر معماری‌ای که بخواهد جایش را بگیرد، اول باید این را داشته باشد.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Attention Is All You Need</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin · ۲۰۱۷ · NeurIPS 2017</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">مقالهٔ مرکزی این مسیر؛ اگر فقط یکی را می‌خوانی، این است.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1607.06450" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Layer Normalization</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Ba, Kiros, Hinton · ۲۰۱۶ · arXiv</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">نرمال‌سازی‌ای که ترنسفورمر به آن تکیه دارد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Devlin, Chang, Lee, Toutanova · ۲۰۱۸ · NAACL 2019</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">شاخهٔ رمزگذار؛ الگوی «پیش‌آموزش و بعد تنظیم» را همه‌گیر کرد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Language Models are Few-Shot Learners</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Brown و همکاران · ۲۰۲۰ · NeurIPS 2020</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">GPT-3؛ نشان داد در مقیاس کافی، مدل بدون آموزش مجدد کار تازه یاد می‌گیرد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2010.11929" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Dosovitskiy و همکاران · ۲۰۲۰ · ICLR 2021</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">ViT؛ همان معماری، این بار در بینایی.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Dao, Fu, Ermon, Rudra, Ré · ۲۰۲۲ · NeurIPS 2022</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">بدون تغییر ریاضیات، توجه را چند برابر سریع‌تر کرد؛ درس مهندسی سیستم.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک ترنسفورمر کوچک را از صفر بنویس — بدون کتابخانهٔ آماده برای بخش توجه. حدود ۲۰۰ خط کد است و بیش از هر مقاله‌ای یاد می‌دهد.</p>
+      </div>
+    </section>
+
+    <section id="s5" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۵</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">مقیاس — وقتی بزرگ‌کردن به علم تبدیل شد</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۲۰۱۷ تا ۲۰۲۲</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> بفهمی چرا «بزرگ‌تر کن» یک شعار نیست و چطور به یک رابطهٔ قابل پیش‌بینی تبدیل شد.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">کشف مرکزی این ایستگاه غافلگیرکننده است: رابطهٔ بین محاسبه، اندازهٔ مدل، حجم داده و کیفیت نتیجه، <b>یک قانون توانی صاف و قابل پیش‌بینی</b> است. یعنی می‌شود پیش از خرج‌کردن میلیون‌ها دلار، نتیجه را تخمین زد. این، آموزش مدل بزرگ را از قمار به مهندسی تبدیل کرد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">دو سال بعد اصلاح مهمی آمد: مدل‌های آن زمان <b>بیش‌ازحد بزرگ و کم‌داده</b> آموزش دیده بودند. برای بودجهٔ محاسباتی ثابت، مدل کوچک‌تر با دادهٔ بیشتر بهتر جواب می‌دهد — نتیجه‌ای که جهت کل صنعت را عوض کرد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">دو مسیر برای فرار از هزینه هم در همین ایستگاه‌اند: <b>مخلوط متخصص‌ها</b> که فقط بخشی از پارامترها را برای هر ورودی فعال می‌کند، و <b>تنظیم کم‌پارامتر</b> که به‌جای آموزش دوبارهٔ کل مدل، ماتریس‌های کوچکی را کنار وزن‌های ثابت اضافه می‌کند.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">در این حوزه، «چقدر داده به ازای هر پارامتر» یک سؤال سلیقه‌ای نیست؛ جوابش را می‌شود حساب کرد.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Scaling Laws for Neural Language Models</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Kaplan, McCandlish و همکاران · ۲۰۲۰ · arXiv</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">رابطهٔ توانی بین محاسبه، داده، اندازه و خطا.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Training Compute-Optimal Large Language Models</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Hoffmann و همکاران · ۲۰۲۲ · NeurIPS 2022</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">Chinchilla؛ نشان داد مدل‌های آن زمان کم‌داده آموزش دیده‌اند.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1701.06538" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Shazeer و همکاران · ۲۰۱۷ · ICLR 2017</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">ریشهٔ معماری‌های MoE که امروز در مدل‌های بزرگ رایج‌اند.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">LoRA: Low-Rank Adaptation of Large Language Models</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Hu و همکاران · ۲۰۲۱ · ICLR 2022</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">تنظیم مدل بزرگ با کسری از هزینه؛ عملی‌ترین مقالهٔ این ایستگاه.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1706.02677" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Goyal و همکاران · ۲۰۱۷ · arXiv</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">سمت سیستمی ماجرا: آموزش توزیع‌شده روی صدها کارت.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک مدل کوچک را در سه اندازهٔ مختلف روی همان داده آموزش بده و خطا را بر حسب محاسبه رسم کن. خط تقریباً صافی که در نمودار لگاریتمی می‌بینی، همان قانون مقیاس است.</p>
+      </div>
+    </section>
+
+    <section id="s6" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۶</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">همسویی و استدلال — از پیش‌بینی توکن تا دستیار</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۲۰۱۷ تا ۲۰۲۲</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> بفهمی فاصلهٔ بین «مدلی که توکن بعدی را حدس می‌زند» و «دستیاری که کار مفیدی می‌کند» چطور پر شد.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">یک مدل زبانی خام، توکن بعدی را پیش‌بینی می‌کند — نه بیشتر. اینکه جوابش مفید، بی‌ضرر و مطابق خواستهٔ کاربر باشد، هدف آموزشش نیست. راه‌حل، <b>یادگیری از ترجیح انسان</b> بود: به‌جای تعریف ریاضی «جواب خوب»، به انسان دو جواب نشان بده و بپرس کدام بهتر است، بعد مدلی از همان ترجیح‌ها بساز و با آن مدل را تنظیم کن.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">این ایده ابتدا در یادگیری تقویتی آزمایش شد و بعد روی مدل زبانی نشست؛ نتیجه‌اش این بود که یک مدل کوچک‌ترِ تنظیم‌شده، در نظر کاربران بر مدل بسیار بزرگ‌ترِ خام ترجیح داده شد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">شاخهٔ دوم، <b>استدلال</b> است. کشف ساده اما مهم این بود که اگر از مدل بخواهی مراحل فکرش را بنویسد، دقتش در مسائل چندمرحله‌ای جهش می‌کند — بدون هیچ تغییری در وزن‌ها.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">شاخهٔ سوم، وصل‌کردن مدل به دانش بیرونی است. <b>تولید افزوده با بازیابی</b> به‌جای اینکه همه‌چیز را در وزن‌ها حفظ کند، هنگام پاسخ، سند مرتبط را بازیابی می‌کند و بر اساس آن جواب می‌دهد.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">همسویی، یک لایهٔ نازک روی مدل خام نیست؛ تفاوت بین چیزی که آمار زبان را بلد است و چیزی که می‌شود ازش کار خواست.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://arxiv.org/abs/1706.03741" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Deep Reinforcement Learning from Human Preferences</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Christiano, Leike, Brown, Martic, Legg, Amodei · ۲۰۱۷ · NeurIPS 2017</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">پایهٔ RLHF؛ یادگیری هدف از مقایسهٔ انسانی به‌جای تابع پاداش دست‌ساز.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Training language models to follow instructions with human feedback</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Ouyang و همکاران · ۲۰۲۲ · NeurIPS 2022</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">InstructGPT؛ همان ایده روی مدل زبانی، و پایهٔ دستیارهای امروزی.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Wei و همکاران · ۲۰۲۲ · NeurIPS 2022</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">نوشتن مراحل استدلال، دقت را در مسائل چندمرحله‌ای جهش می‌دهد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Lewis و همکاران · ۲۰۲۰ · NeurIPS 2020</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">RAG؛ پایهٔ نظری اکثر سیستم‌های پرسش‌وپاسخ روی اسناد سازمانی.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک مسئلهٔ چندمرحله‌ای را یک‌بار مستقیم و یک‌بار با درخواست نوشتن مراحل از یک مدل بپرس و نرخ درستی را روی ۲۰ نمونه بشمار. تفاوت را خودت اندازه بگیر.</p>
+      </div>
+    </section>
+
+    <section id="s7" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۷</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">تولید — مدل‌هایی که می‌سازند</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۲۰۱۳ تا ۲۰۲۱</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> بفهمی تولید تصویر و صوت بر چه اصلی کار می‌کند و چرا مسیر از GAN به دیفیوژن رسید.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">تولید یعنی یاد گرفتن <b>توزیع</b> داده، نه فقط نگاشت ورودی به برچسب. اولین راه‌حل بالغ، <b>خودرمزگذار وردشی</b> بود: داده را به یک فضای پنهان پیوسته فشرده کن، طوری که بشود از آن فضا نمونه‌برداری کرد و داده‌های تازه ساخت.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">رویکرد دوم، <b>شبکه‌های مولد رقابتی</b> بود: دو شبکه، یکی جعل‌کننده و یکی تشخیص‌دهنده، همدیگر را بهتر می‌کنند. نتایج خیره‌کننده بودند اما آموزششان بدنام بود — ناپایدار و مستعد فروپاشی.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">رویکرد سوم که امروز غالب است، <b>دیفیوژن</b> است و منطقش عجیب ساده است: به تصویر قدم‌به‌قدم نویز اضافه کن تا کاملاً نویز شود، بعد شبکه‌ای آموزش بده که این مسیر را معکوس کند. تولید یعنی از نویز خالص شروع کنی و قدم‌به‌قدم نویززدایی کنی.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">دو پیشرفت این را عملی کرد: انجام همین فرایند در <b>فضای پنهان فشرده</b> به‌جای فضای پیکسل که هزینه را چند مرتبه کم کرد، و <b>هم‌ترازی متن و تصویر</b> در یک فضای مشترک که کنترل با زبان طبیعی را ممکن ساخت.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">دیفیوژن نه چون کیفیتش بهتر بود که چون <b>آموزشش پایدار بود</b> جای GAN را گرفت — الگویی که در این حوزه بارها تکرار شده است.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://arxiv.org/abs/1312.6114" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Auto-Encoding Variational Bayes</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Kingma, Welling · ۲۰۱۳ · ICLR 2014</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">VAE؛ پایهٔ ایدهٔ فضای پنهان قابل نمونه‌برداری.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Generative Adversarial Networks</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Goodfellow و همکاران · ۲۰۱۴ · NeurIPS 2014</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">GAN؛ ایدهٔ رقابت دو شبکه، و درس مهمی دربارهٔ ناپایداری آموزش.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2006.11239" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Denoising Diffusion Probabilistic Models</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Ho, Jain, Abbeel · ۲۰۲۰ · NeurIPS 2020</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">مقاله‌ای که دیفیوژن را به رویکرد غالب تولید تصویر تبدیل کرد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2112.10752" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">High-Resolution Image Synthesis with Latent Diffusion Models</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Rombach, Blattmann, Lorenz, Esser, Ommer · ۲۰۲۱ · CVPR 2022</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">انتقال دیفیوژن به فضای پنهان؛ همان چیزی که تولید تصویر را ارزان کرد.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/2103.00020" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Learning Transferable Visual Models From Natural Language Supervision</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Radford و همکاران · ۲۰۲۱ · ICML 2021</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">CLIP؛ هم‌تراز کردن متن و تصویر در یک فضا، پایهٔ کنترل متنی تولید.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک دیفیوژن خیلی کوچک روی MNIST پیاده کن و تصاویر میانی هر گام نویززدایی را ذخیره کن. دیدن شکل‌گرفتن رقم از نویز، کل ایده را جا می‌اندازد.</p>
+      </div>
+    </section>
+
+    <section id="s8" style="margin-bottom: 60px; scroll-margin-top: 80px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 13px; font-weight: 800; color: #FFFFFF; background: #2F5233; border-radius: 8px; padding: 4px 12px;">۰۸</span>
+        <h2 style="font-size: clamp(21px, 2.7vw, 29px); font-weight: 800; margin: 0;">فهمیدن — داخل مدل چه می‌گذرد</h2>
+        <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">۲۰۱۶ تا امروز</span>
+      </div>
+      <p style="font-size: 14px; color: #666158; margin: 0 0 22px; max-width: 70ch;"><b>هدف این ایستگاه:</b> با سؤالی آشنا شوی که هنوز باز است: چرا این چیزها اصلاً کار می‌کنند.</p>
+
+      <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">یک یافتهٔ تکان‌دهنده نقطهٔ شروع این ایستگاه است: شبکه‌های عمیق می‌توانند <b>برچسب‌های کاملاً تصادفی</b> را هم کامل حفظ کنند. یعنی ظرفیتشان برای حفظ‌کردن بی‌حد است و توضیح‌های کلاسیک آماری دربارهٔ اینکه چرا تعمیم می‌دهند، ناکافی‌اند.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">یافتهٔ دوم: در یک شبکهٔ بزرگ آموزش‌دیده، معمولاً <b>زیرشبکهٔ کوچکی</b> وجود دارد که اگر از همان مقداردهی اولیه جداگانه آموزش ببیند، به همان دقت می‌رسد. این یعنی بخش بزرگی از پارامترها در عمل زائدند.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">شاخهٔ تفسیرپذیری از این هم جلوتر می‌رود و ادعا می‌کند داخل شبکه <b>مدارهای</b> قابل‌شناسایی وجود دارند — گروه‌هایی از نورون‌ها که کار مشخصی مثل تشخیص لبه یا منحنی انجام می‌دهند و بین مدل‌های مختلف تکرار می‌شوند. همین رویکرد بعداً روی ترنسفورمرها هم پیاده شد.</p>
+        <p style="font-size: 15.5px; line-height: 2.05; color: #45494F; max-width: 70ch; margin: 0 0 14px;">این ایستگاه، برخلاف بقیه، پاسخ قطعی ندارد. اما مهم‌ترین ایستگاه برای کسی است که می‌خواهد فراتر از استفاده‌کردن، بفهمد.</p>
+
+      <div style="background: #E7ECE4; border-radius: 12px; padding: 16px 20px; margin: 20px 0 26px; max-width: 70ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #2F5233; margin-bottom: 6px;">نکتهٔ کلیدی</div>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0;">هیچ‌کس هنوز توضیح کاملی ندارد که چرا این مدل‌ها تعمیم می‌دهند. اگر جایی در این حوزه کار پژوهشی باز مانده، اینجاست.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 12px;">مقاله‌های این ایستگاه</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 18px;">
+          <a href="https://arxiv.org/abs/1611.03530" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Understanding deep learning requires rethinking generalization</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Zhang, Bengio, Hardt, Recht, Vinyals · ۲۰۱۶ · ICLR 2017</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">شبکه‌ها برچسب تصادفی را هم حفظ می‌کنند؛ پس چرا تعمیم می‌دهند؟</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1803.03635" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Frankle, Carbin · ۲۰۱۸ · ICLR 2019</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">زیرشبکه‌های کوچک با همان کارایی؛ بیشتر پارامترها زائدند.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://distill.pub/2020/circuits/zoom-in" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Zoom In: An Introduction to Circuits</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Olah, Cammarata, Schubert, Goh, Petrov, Carter · ۲۰۲۰ · Distill</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">شروع تفسیرپذیری مکانیکی؛ مدارهای قابل‌شناسایی داخل شبکه.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://transformer-circuits.pub/2021/framework/index.html" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">A Mathematical Framework for Transformer Circuits</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Elhage و همکاران · ۲۰۲۱ · Transformer Circuits Thread</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">همان رویکرد، این بار برای ترنسفورمرها.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+      </div>
+
+      <div style="border-inline-start: 3px solid #8A5410; padding: 4px 16px; max-width: 70ch;">
+        <div style="font-size: 12px; font-weight: 700; color: #8A5410; margin-bottom: 4px;">تمرین پیشنهادی</div>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک شبکهٔ کوچک را روی داده با برچسب تصادفی آموزش بده و ببین واقعاً به دقت کامل روی دادهٔ آموزش می‌رسد. این آزمایش ساده، شهود آماری‌ات را می‌شکند — و باید بشکند.</p>
+      </div>
+    </section>
+
+    <!-- ============ شاخه‌های جانبی ============ -->
+    <section style="margin-bottom: 56px; border-top: 1px solid #E4E1D6; padding-top: 44px;">
+      <h2 style="font-size: 23px; font-weight: 800; margin: 0 0 8px;">دو شاخهٔ جانبی</h2>
+      <p style="font-size: 15px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 26px;">این دو در مسیر اصلی نیستند، ولی اگر کارت به رباتیک، بازی، دارو یا علوم پایه بخورد، از همین‌جا شروع می‌شود.</p>
+      
+      <div style="margin-bottom: 26px;">
+        <h3 style="font-size: 17px; font-weight: 800; margin: 0 0 6px;">شاخهٔ جانبی: یادگیری تقویتی</h3>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; max-width: 70ch; margin: 0 0 14px;">وقتی داده برچسب ندارد و مدل باید با آزمون‌وخطا و پاداش یاد بگیرد. برای رباتیک، بازی و بخش همسویی مدل‌های زبانی لازم است.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px;">
+          <a href="https://arxiv.org/abs/1312.5602" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Playing Atari with Deep Reinforcement Learning</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Mnih و همکاران · ۲۰۱۳ · NeurIPS Workshop</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">DQN؛ یادگیری بازی مستقیماً از پیکسل.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://doi.org/10.1038/nature14236" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Human-level control through deep reinforcement learning</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Mnih و همکاران · ۲۰۱۵ · Nature 518</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">نسخهٔ کامل‌تر همان کار؛ نقطهٔ عطف رسانه‌ای این شاخه.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://doi.org/10.1038/nature16961" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Mastering the game of Go with deep neural networks and tree search</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Silver و همکاران · ۲۰۱۶ · Nature 529</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">AlphaGo؛ ترکیب شبکهٔ عصبی با جستجوی درختی.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Proximal Policy Optimization Algorithms</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Schulman, Wolski, Dhariwal, Radford, Klimov · ۲۰۱۷ · arXiv</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">PPO؛ الگوریتم عملی‌ای که در RLHF هم استفاده می‌شود.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 26px;">
+        <h3 style="font-size: 17px; font-weight: 800; margin: 0 0 6px;">شاخهٔ جانبی: علم و زیست‌شناسی</h3>
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; max-width: 70ch; margin: 0 0 14px;">جایی که یادگیری ماشین به‌جای ساخت محصول، سرعت خودِ کشف علمی را عوض کرده است.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px;">
+          <a href="https://arxiv.org/abs/1704.01212" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Neural Message Passing for Quantum Chemistry</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Gilmer, Schoenholz, Riley, Vinyals, Dahl · ۲۰۱۷ · ICML 2017</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">چارچوب شبکه‌های گرافی؛ پیش‌بینی خواص مولکول.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+          <a href="https://doi.org/10.1038/s41586-021-03819-2" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px; text-decoration: none;"><div style="font-size: 13.5px; font-weight: 700; color: #2F5233; direction: ltr; text-align: right; line-height: 1.7;">Highly accurate protein structure prediction with AlphaFold</div><div style="font-size: 12px; color: #666158; margin-top: 3px;">Jumper و همکاران · ۲۰۲۱ · Nature 596</div><div style="font-size: 13px; color: #45494F; line-height: 1.85; margin-top: 7px;">مسئله‌ای پنجاه‌ساله که در عمل حل شد؛ روشن‌ترین نمونهٔ اثر علمی این حوزه.</div><div style="font-size: 11.5px; color: #2F5233; margin-top: 8px;">مشاهدهٔ مقاله ←</div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ بعد از این مسیر ============ -->
+    <section style="margin-bottom: 40px;">
+      <h2 style="font-size: 21px; font-weight: 800; margin: 0 0 8px;">بعد از این مسیر، کجا؟</h2>
+      <p style="font-size: 15px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">وقتی این هشت ایستگاه را گذراندی، دیگر به نقشه احتیاج نداری — با خواندن مقالهٔ هر هفته می‌توانی خودت جای هر ایدهٔ تازه را در این نقشه پیدا کنی. دو پیشنهاد برای ادامه:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;">
+        <a href="https://claude.ai/artifact/WhcnXRGG2JwEJWwCCa5xjH" target="_blank" rel="noopener" style="display: block; background: #FFFFFF; border: 1.5px solid #2F5233; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 8px; color: #16181C;">فهرست نوزده مقالهٔ Ilya Sutskever</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 10px;">همان فهرستی که گفته شده برای John Carmack فرستاده شده، این بار با خلاصهٔ فارسی هر مقاله، جعبهٔ پیش‌زمینه و مثال روزمره. مکمل خوبی برای همین مسیر است.</p>
+          <span style="font-size: 12.5px; font-weight: 700; color: #2F5233;">مشاهدهٔ سند کامل ←</span>
+        </a>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 8px;">یک چیز کوچک بساز</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">هر مسیر یادگیری بدون پروژه، بعد از چند ماه بخار می‌شود. یک مسئلهٔ واقعی از کار خودت بردار — حتی یک جدول اکسل که هر هفته پر می‌شود — و کوچک‌ترین مدل ممکن را رویش امتحان کن. سیستم مزرعه‌ای که در کتابخانهٔ همین سایت هست، دقیقاً از یک جدول ساده شروع شد.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 24px;">
+      <h3 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">دربارهٔ ارجاع‌ها</h3>
+      <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0; max-width: 74ch;">هر لینک به نسخهٔ رسمی مقاله می‌رود: arXiv برای پیش‌چاپ‌ها و DOI ناشر برای مقالات ژورنالی (Nature، Neural Computation، Proceedings of the IEEE و JMLR). سال نوشته‌شده، سال <b>اولین انتشار عمومی</b> است که گاهی یک سال با سال چاپ رسمی در کنفرانس فرق دارد؛ محل چاپ رسمی کنار هر مقاله آمده. یک مقاله (Hinton و van Camp، ۱۹۹۳) نسخهٔ آزاد آنلاین ندارد و از کتابخانهٔ دانشگاهی قابل دسترسی است.</p>
+    </div>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
+    <div style="max-width: 1060px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · مسیر یادگیری ماشین</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1060,"height":1400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
