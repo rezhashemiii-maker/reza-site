@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مطالعه موردی — سیستم مدیریت مزرعه دُرّین</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#B4530E;text-decoration:none}
+  a:hover{color:#8A3E0A}
+  input,select,textarea{font-family:inherit;font-size:13.5px;color:#16181C;background:#FFFFFF;border:1px solid #D9D5C9;border-radius:9px;padding:9px 11px;width:100%;box-sizing:border-box}
+  input:focus,select:focus,textarea:focus{outline:2px solid #B4530E;outline-offset:1px}
+  button{font-family:inherit;cursor:pointer;border:none}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:78px}
+  table{border-collapse:collapse}
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F5F3EE; direction: rtl;">
+
+  <!-- ============ سربرگ ============ -->
+  <header style="position: sticky; top: 0; z-index: 30; border-bottom: 1px solid #E4E1D6; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+      <a href="Main.dc.html#gallery" style="font-size: 13.5px; font-weight: 600; color: #45494F;">← بازگشت به کارها</a>
+      <nav style="display: flex; gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
+        <a href="#problem" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">مسئله</a>
+        <a href="#product" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">محصول</a>
+        <a href="#cycle" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">سیکل تولید</a>
+        <a href="#map" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">بخش‌ها</a>
+        <a href="#arch" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">معماری</a>
+        <a href="#forms" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">فرم‌ها</a>
+        <a href="#reports" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">گزارش‌ها</a>
+        <a href="#design" style="font-size: 13px; color: #45494F; padding: 10px 11px; border-radius: 999px;">طراحی</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1040px; margin: 0 auto; padding: 52px 24px 88px;">
+
+    <!-- ============ معرفی ============ -->
+    <span style="display: inline-block; font-size: 11.5px; font-weight: 700; color: #B4530E; background: #F4E3D3; padding: 4px 12px; border-radius: 999px; margin-bottom: 18px;">مطالعه موردی · داده واقعی کسب‌وکار نمایش داده نمی‌شود</span>
+    <h1 style="font-size: clamp(27px, 3.8vw, 40px); font-weight: 800; line-height: 1.45; margin: 0 0 6px;">سیستم مدیریت مزرعه دُرّین</h1>
+    <p style="font-size: 13px; color: #666158; direction: ltr; text-align: right; margin: 0 0 22px;">Farm Operations System — Button Mushroom Cultivation</p>
+    <p style="font-size: 16.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 16px;">دُرّین یک مزرعهٔ پرورش قارچ دکمه‌ای است. پرورش قارچ با بیشتر محصولات کشاورزی یک فرق بنیادی دارد: محصول در یک اتاق بستهٔ کنترل‌شده رشد می‌کند و <b>هر انحراف کوچک در دما، رطوبت یا CO₂ تا چند روز بعد خودش را به‌صورت افت برداشت نشان می‌دهد</b> — وقتی که دیگر برای اصلاح دیر است.</p>
+    <p style="font-size: 16.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 40px;">این سیستم را طراحی کردم تا هر اتفاق سالن، همان لحظه و از موبایل ثبت شود و بلافاصله به عدد قابل مقایسه تبدیل شود: از دمای کمپوست و قرائت کنتور برق تا وزن هر برداشت و باقی طلب هر مشتری.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px; margin-bottom: 64px;">
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 28px; font-weight: 800; color: #B4530E;">۱۰</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">بخش عملیاتی</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 28px; font-weight: 800; color: #B4530E;">۳۳</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">فرم ثبت روزانه</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 28px; font-weight: 800; color: #B4530E;">۵</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">گزارش تحلیلی</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 28px; font-weight: 800; color: #B4530E;">۴۲</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">روز، طول یک سیکل</div>
+      </div>
+    </div>
+
+    <!-- ============ مسئله ============ -->
+    <section id="problem" style="margin-bottom: 64px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۱ — مسئله</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">قبل از این سیستم، چه چیزی گم می‌شد</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 12px;">مزرعه بی‌نظم نبود — دفترچه داشت و هر روز پر می‌شد. مسئله این بود که آنچه نوشته می‌شد، <b>قابل جمع‌زدن نبود</b>. پرورش قارچ دکمه‌ای یک ویژگی آزاردهنده دارد: نتیجهٔ کاری که امروز می‌کنی، دو هفتهٔ بعد معلوم می‌شود. با دفترچهٔ کاغذی، آن دو لحظه هیچ‌وقت کنار هم دیده نمی‌شوند.</p>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 30px;">پنج چیزی که در عمل از دست می‌رفت:</p>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; overflow: hidden;">
+        <div style="padding: 14px 20px; background: #FAFAF7; border-bottom: 1px solid #D9D5C9; font-size: 12.5px; font-weight: 700; color: #8A5410;">با دفترچهٔ کاغذی</div>
+        <div style="padding: 14px 20px; background: #FAFAF7; border-bottom: 1px solid #D9D5C9; font-size: 12.5px; font-weight: 700; color: #166534;">با این سیستم</div>
+
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1; border-inline-end: 1px solid #EDEAE1;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 6px;">رابطهٔ علت و معلول</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">فلاش اول کم‌محصول درمی‌آمد و کسی نمی‌دانست تقصیر تنظیمات روز ونتیلیشن بوده یا کیفیت کمپوست.</p>
+        </div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1;">
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">تاریخچهٔ محیطی همان سالن در همان روزها، کنار عدد برداشت همان فلاش می‌نشیند.</p>
+        </div>
+
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1; border-inline-end: 1px solid #EDEAE1;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 6px;">مقایسهٔ سیکل‌ها</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">«سیکل قبل بهتر بود» یک حس بود، نه یک عدد — تا وقتی کسی حوصله کند دفترچه را ورق بزند.</p>
+        </div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1;">
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">هر سیکل یک رکورد بسته است؛ برداشت و بازده هر سالن با سیکل قبل خودش مقایسه می‌شود.</p>
+        </div>
+
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1; border-inline-end: 1px solid #EDEAE1;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 6px;">بهای تمام‌شدهٔ واقعی</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">کمپوست، دستمزد، برق و ضایعات هر کدام جای دیگری ثبت می‌شد. سود هر سیکل سرانگشتی بود.</p>
+        </div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1;">
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">همهٔ هزینه‌ها به همان سیکل و همان سالن می‌چسبند؛ بهای هر کیلو در لحظه قابل محاسبه است.</p>
+        </div>
+
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1; border-inline-end: 1px solid #EDEAE1;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 6px;">پیگیری تا نتیجه</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">اقدام درمانی نوشته می‌شد، اما اینکه جواب داد یا نه، هیچ‌جا ثبت نمی‌شد.</p>
+        </div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid #EDEAE1;">
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">هشدار تا ثبت «پایش پس از اقدام» باز می‌ماند؛ اقدام بی‌نتیجه گم نمی‌شود.</p>
+        </div>
+
+        <div style="padding: 18px 20px; border-inline-end: 1px solid #EDEAE1;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 6px;">حافظهٔ سازمانی</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">تجربهٔ اپراتور با رفتن خودش از مزرعه می‌رفت.</p>
+        </div>
+        <div style="padding: 18px 20px;">
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">آنچه ثبت شده می‌ماند؛ اپراتور تازه از روز اول به تاریخچهٔ همهٔ سالن‌ها دسترسی دارد.</p>
+        </div>
+      </div>
+
+      <div style="background: #F4E3D3; border-radius: 12px; padding: 18px 22px; margin-top: 18px;">
+        <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0; max-width: 72ch;">قید اصلی طراحی هم از همین‌جا آمد: هدف، اضافه‌کردن کار به اپراتور نبود. هدف این بود که <b>همان چیزی که قبلاً روی کاغذ می‌نوشت، قابل جمع‌زدن شود</b> — نه بیشتر، نه دقیق‌تر، فقط قابل استفاده.</p>
+      </div>
+    </section>
+
+    <!-- ============ محصول ============ -->
+    <section id="product" style="margin-bottom: 64px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۲ — محصول</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">قارچ دکمه‌ای چطور تولید می‌شود</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 30px;">قارچ گیاه نیست؛ نه برگ دارد، نه فتوسنتز می‌کند. غذایش را از کمپوست می‌گیرد و مثل ما اکسیژن مصرف می‌کند و CO₂ پس می‌دهد. برای همین «نور» در پرورش قارچ تقریباً بی‌اهمیت است، اما <b>هوادهی</b> حیاتی است. یک سیکل کامل در یک سالن حدود ۴۲ روز طول می‌کشد و از شش مرحله می‌گذرد:</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 14px;">
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #8A6A1E;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پیش از سالن</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">۱. کمپوست‌گیری و پاستوریزاسیون</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">کاه، کود و گچ در چند هفته به کمپوست تبدیل می‌شوند و بعد با بخار پاستوریزه می‌شوند تا آفت و بذر علف هرز بمیرد.</p>
+          <div style="font-size: 12px; color: #666158; border-top: 1px dashed #D9D5C9; padding-top: 10px;">ثبت می‌شود: تأمین‌کننده، شماره Batch، مقدار به کیلو</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #B4530E;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">روز ۰ تا ۱۴</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">۲. پرکردن و اسپان‌ران</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">کمپوست به سالن می‌آید و بذر (اسپان) با آن مخلوط می‌شود. میسلیوم سفید در تاریکی کل کمپوست را می‌گیرد. سالن بسته است و CO₂ عمداً بالا نگه داشته می‌شود.</p>
+          <div style="font-size: 12px; color: #666158; border-top: 1px dashed #D9D5C9; padding-top: 10px;">ثبت می‌شود: بازدید روزانهٔ سالن، دمای کمپوست</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #5B3F92;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">روز ۱۴ تا ۱۸</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">۳. کیسینگ</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">یک لایه خاک پوششی (پیت و آهک) روی کمپوست کشیده می‌شود. بدون این لایه و رطوبتش، قارچی تشکیل نمی‌شود. آبیاری در این مرحله سنگین است.</p>
+          <div style="font-size: 12px; color: #666158; border-top: 1px dashed #D9D5C9; padding-top: 10px;">ثبت می‌شود: کیسینگ (مقدار، Batch)، آبیاری به لیتر</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #0E6FB4;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">روز ۱۸ تا ۲۱ · حساس‌ترین مرحله</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">۴. ونتیلیشن و پین‌ست</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">با هوادهی شدید، CO₂ از حدود ۱۸٬۰۰۰ به زیر ۱٬۵۰۰ سقوط می‌کند و دمای سالن حدود ۷ درجه پایین می‌آید. این شوک، به میسلیوم فرمان می‌دهد که به‌جای رشد، قارچ بسازد.</p>
+          <div style="font-size: 12px; color: #666158; border-top: 1px dashed #D9D5C9; padding-top: 10px;">ثبت می‌شود: بازدید سالن (CO₂، جریان هوا)، مشاهدات</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #166534;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">روز ۲۱ تا ۳۹</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">۵. فلاش‌ها (سه موج برداشت)</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">قارچ‌ها موجی رشد می‌کنند، نه پیوسته. هر موج «فلاش» است و بین دو فلاش حدود ۷ روز فاصله می‌افتد. هر فلاش از فلاش قبلی کم‌محصول‌تر است.</p>
+          <div style="font-size: 12px; color: #666158; border-top: 1px dashed #D9D5C9; padding-top: 10px;">ثبت می‌شود: برداشت روزانه، گرید، ضایعات، فروش</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #A32222;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">روز ۳۹ تا ۴۲</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 8px;">۶. تخلیه و ضدعفونی</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">پیش از تخلیه، کل سالن با بخار داغ ضدعفونی می‌شود تا آفت و بیماری به سیکل بعد منتقل نشود؛ بعد سالن شسته و برای پرکردن دوباره آماده می‌شود.</p>
+          <div style="font-size: 12px; color: #666158; border-top: 1px dashed #D9D5C9; padding-top: 10px;">ثبت می‌شود: شست‌وشو و ضدعفونی، تعمیر و نگهداری</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ سیکل تولید ============ -->
+    <section id="cycle" style="margin-bottom: 64px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۳ — داده</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">یک سیکل تولید کامل در یک سالن</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 30px;">این همان نموداری است که سیستم از روی «بازدید سالن»های روزانه می‌سازد: چهار متغیر محیطی در طول ۴۲ روز، روی نوارهای رنگی مراحل تولید. سه متغیر واحدهای کاملاً متفاوتی دارند، پس هر کدام پنل خودش را دارد و محور زمان بین هر سه مشترک است.</p>
+
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 26px 20px; margin-bottom: 18px;">
+
+        <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0;">دمای کمپوست و دمای سالن</h3>
+          <span style="font-size: 12px; color: #666158;">درجهٔ سانتی‌گراد</span>
+          <div style="display: flex; gap: 14px; margin-inline-start: auto; flex-wrap: wrap;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F;"><span style="width: 14px; height: 3px; background: #B4530E; border-radius: 2px;"></span>دمای کمپوست</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F;"><span style="width: 14px; height: 3px; background: #0E6FB4; border-radius: 2px;"></span>دمای سالن</span>
+          </div>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <svg viewBox="0 0 920 196" style="width: 100%; height: auto; display: block;" role="img" aria-label="نمودار دمای کمپوست و دمای سالن در طول یک سیکل تولید">
+      <rect x="58.0" y="20" width="274.0" height="160" fill="#F4E3D3" opacity="0.6"></rect>
+      <text x="195.0" y="14" font-size="9.5" fill="#666158" text-anchor="middle">اسپان‌ران</text>
+      <rect x="332.0" y="20" width="78.3" height="160" fill="#EBE3F5" opacity="0.6"></rect>
+      <text x="371.1" y="14" font-size="9.5" fill="#666158" text-anchor="middle">کیسینگ</text>
+      <rect x="410.3" y="20" width="58.7" height="160" fill="#DCEBFA" opacity="0.6"></rect>
+      <text x="439.6" y="14" font-size="9.5" fill="#666158" text-anchor="middle">پین‌ست</text>
+      <rect x="469.0" y="20" width="78.3" height="160" fill="#E3EEE1" opacity="0.6"></rect>
+      <text x="508.1" y="14" font-size="9.5" fill="#666158" text-anchor="middle">فلاش ۱</text>
+      <rect x="547.3" y="20" width="58.7" height="160" fill="#F1EEE7" opacity="0.6"></rect>
+      <rect x="606.0" y="20" width="78.3" height="160" fill="#E3EEE1" opacity="0.6"></rect>
+      <text x="645.1" y="14" font-size="9.5" fill="#666158" text-anchor="middle">فلاش ۲</text>
+      <rect x="684.3" y="20" width="58.7" height="160" fill="#F1EEE7" opacity="0.6"></rect>
+      <rect x="743.0" y="20" width="78.3" height="160" fill="#E3EEE1" opacity="0.6"></rect>
+      <text x="782.1" y="14" font-size="9.5" fill="#666158" text-anchor="middle">فلاش ۳</text>
+      <rect x="821.3" y="20" width="58.7" height="160" fill="#F1EEE7" opacity="0.6"></rect>
+      <text x="850.6" y="14" font-size="9.5" fill="#666158" text-anchor="middle">تخلیه</text>
+      <line x1="58" y1="180.0" x2="880" y2="180.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="183.0" font-size="9" fill="#666158" text-anchor="end">۱۴</text>
+      <line x1="58" y1="140.0" x2="880" y2="140.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="143.0" font-size="9" fill="#666158" text-anchor="end">۱۸</text>
+      <line x1="58" y1="100.0" x2="880" y2="100.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="103.0" font-size="9" fill="#666158" text-anchor="end">۲۲</text>
+      <line x1="58" y1="60.0" x2="880" y2="60.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="63.0" font-size="9" fill="#666158" text-anchor="end">۲۶</text>
+      <line x1="58" y1="20.0" x2="880" y2="20.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="23.0" font-size="9" fill="#666158" text-anchor="end">۳۰</text>
+      <line x1="58" y1="180" x2="880" y2="180" stroke="#B9B4A6" stroke-width="1"></line>
+      <polyline points="58.0,50.0 77.6,55.0 97.1,60.0 136.3,64.0 175.4,67.0 214.6,69.0 253.7,70.0 292.9,72.0 332.0,75.0 371.1,75.0 390.7,77.0 410.3,80.0 429.9,90.0 449.4,106.0 469.0,116.0 488.6,120.0 508.1,122.0 527.7,124.0 547.3,125.0 566.9,126.0 586.4,125.0 606.0,123.0 645.1,121.0 684.3,124.0 723.4,126.0 743.0,125.0 782.1,123.0 821.3,126.0 860.4,128.0 880.0,130.0" fill="none" stroke="#B4530E" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></polyline>
+      <polyline points="58.0,70.0 97.1,70.0 136.3,70.0 175.4,70.0 214.6,70.0 253.7,72.0 292.9,74.0 332.0,75.0 371.1,75.0 390.7,80.0 410.3,100.0 429.9,120.0 449.4,135.0 469.0,142.0 488.6,145.0 508.1,145.0 527.7,145.0 547.3,144.0 566.9,141.0 586.4,139.0 606.0,142.0 645.1,145.0 684.3,144.0 723.4,140.0 743.0,142.0 782.1,144.0 821.3,142.0 860.4,140.0 880.0,140.0" fill="none" stroke="#0E6FB4" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></polyline>
+    </svg>
+        </div>
+
+        <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0;">رطوبت نسبی</h3>
+          <span style="font-size: 12px; color: #666158;">درصد RH</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F; margin-inline-start: auto;"><span style="width: 14px; height: 3px; background: #2A6F51; border-radius: 2px;"></span>رطوبت سالن</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <svg viewBox="0 0 920 124" style="width: 100%; height: auto; display: block;" role="img" aria-label="نمودار رطوبت نسبی سالن در طول یک سیکل تولید">
+      <rect x="58.0" y="10" width="274.0" height="100" fill="#F4E3D3" opacity="0.6"></rect>
+      <rect x="332.0" y="10" width="78.3" height="100" fill="#EBE3F5" opacity="0.6"></rect>
+      <rect x="410.3" y="10" width="58.7" height="100" fill="#DCEBFA" opacity="0.6"></rect>
+      <rect x="469.0" y="10" width="78.3" height="100" fill="#E3EEE1" opacity="0.6"></rect>
+      <rect x="547.3" y="10" width="58.7" height="100" fill="#F1EEE7" opacity="0.6"></rect>
+      <rect x="606.0" y="10" width="78.3" height="100" fill="#E3EEE1" opacity="0.6"></rect>
+      <rect x="684.3" y="10" width="58.7" height="100" fill="#F1EEE7" opacity="0.6"></rect>
+      <rect x="743.0" y="10" width="78.3" height="100" fill="#E3EEE1" opacity="0.6"></rect>
+      <rect x="821.3" y="10" width="58.7" height="100" fill="#F1EEE7" opacity="0.6"></rect>
+      <line x1="58" y1="110.0" x2="880" y2="110.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="113.0" font-size="9" fill="#666158" text-anchor="end">۸۰</text>
+      <line x1="58" y1="85.0" x2="880" y2="85.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="88.0" font-size="9" fill="#666158" text-anchor="end">۸۵</text>
+      <line x1="58" y1="60.0" x2="880" y2="60.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="63.0" font-size="9" fill="#666158" text-anchor="end">۹۰</text>
+      <line x1="58" y1="35.0" x2="880" y2="35.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="38.0" font-size="9" fill="#666158" text-anchor="end">۹۵</text>
+      <line x1="58" y1="10.0" x2="880" y2="10.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="13.0" font-size="9" fill="#666158" text-anchor="end">۱۰۰</text>
+      <line x1="58" y1="110" x2="880" y2="110" stroke="#B9B4A6" stroke-width="1"></line>
+      <polyline points="58.0,35.0 97.1,35.0 136.3,35.0 175.4,37.5 214.6,37.5 253.7,40.0 292.9,40.0 332.0,32.5 371.1,32.5 390.7,35.0 410.3,40.0 429.9,50.0 449.4,60.0 469.0,70.0 488.6,75.0 508.1,75.0 527.7,77.5 547.3,75.0 566.9,62.5 586.4,57.5 606.0,70.0 645.1,75.0 664.7,77.5 684.3,75.0 703.9,62.5 723.4,57.5 743.0,70.0 782.1,75.0 821.3,77.5 860.4,75.0 880.0,70.0" fill="none" stroke="#2A6F51" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></polyline>
+    </svg>
+        </div>
+
+        <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0;">دی‌اکسید کربن</h3>
+          <span style="font-size: 12px; color: #666158;">ppm</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F; margin-inline-start: auto;"><span style="width: 14px; height: 3px; background: #5B3F92; border-radius: 2px;"></span>غلظت CO₂ سالن</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 920 146" style="width: 100%; height: auto; display: block;" role="img" aria-label="نمودار غلظت دی‌اکسید کربن سالن در طول یک سیکل تولید">
+      <rect x="58.0" y="10" width="274.0" height="110" fill="#F4E3D3" opacity="0.6"></rect>
+      <rect x="332.0" y="10" width="78.3" height="110" fill="#EBE3F5" opacity="0.6"></rect>
+      <rect x="410.3" y="10" width="58.7" height="110" fill="#DCEBFA" opacity="0.6"></rect>
+      <rect x="469.0" y="10" width="78.3" height="110" fill="#E3EEE1" opacity="0.6"></rect>
+      <rect x="547.3" y="10" width="58.7" height="110" fill="#F1EEE7" opacity="0.6"></rect>
+      <rect x="606.0" y="10" width="78.3" height="110" fill="#E3EEE1" opacity="0.6"></rect>
+      <rect x="684.3" y="10" width="58.7" height="110" fill="#F1EEE7" opacity="0.6"></rect>
+      <rect x="743.0" y="10" width="78.3" height="110" fill="#E3EEE1" opacity="0.6"></rect>
+      <rect x="821.3" y="10" width="58.7" height="110" fill="#F1EEE7" opacity="0.6"></rect>
+      <line x1="58" y1="120.0" x2="880" y2="120.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="123.0" font-size="9" fill="#666158" text-anchor="end">۰</text>
+      <line x1="58" y1="92.5" x2="880" y2="92.5" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="95.5" font-size="9" fill="#666158" text-anchor="end">۵٬۰۰۰</text>
+      <line x1="58" y1="65.0" x2="880" y2="65.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="68.0" font-size="9" fill="#666158" text-anchor="end">۱۰٬۰۰۰</text>
+      <line x1="58" y1="37.5" x2="880" y2="37.5" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="40.5" font-size="9" fill="#666158" text-anchor="end">۱۵٬۰۰۰</text>
+      <line x1="58" y1="10.0" x2="880" y2="10.0" stroke="#D9D5C9" stroke-width="1"></line>
+      <text x="50" y="13.0" font-size="9" fill="#666158" text-anchor="end">۲۰٬۰۰۰</text>
+      <line x1="58" y1="120" x2="880" y2="120" stroke="#B9B4A6" stroke-width="1"></line>
+      <polyline points="58.0,103.5 77.6,87.0 97.1,70.5 136.3,48.5 175.4,32.0 214.6,23.8 253.7,21.0 292.9,26.5 332.0,37.5 351.6,51.2 371.1,59.5 390.7,65.0 410.3,81.5 429.9,98.0 449.4,109.0 469.0,113.4 488.6,114.0 508.1,112.8 527.7,110.9 547.3,111.8 566.9,113.4 586.4,114.5 606.0,114.0 625.6,112.3 645.1,111.2 664.7,111.8 684.3,113.4 703.9,114.5 723.4,114.5 743.0,114.0 762.6,112.8 782.1,112.0 801.7,113.4 821.3,114.0 840.9,114.5 860.4,114.8 880.0,115.0" fill="none" stroke="#5B3F92" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></polyline>
+      <text x="58.0" y="140" font-size="9.5" fill="#666158" text-anchor="middle">۰</text>
+      <text x="195.0" y="140" font-size="9.5" fill="#666158" text-anchor="middle">۷</text>
+      <text x="332.0" y="140" font-size="9.5" fill="#666158" text-anchor="middle">۱۴</text>
+      <text x="469.0" y="140" font-size="9.5" fill="#666158" text-anchor="middle">۲۱</text>
+      <text x="606.0" y="140" font-size="9.5" fill="#666158" text-anchor="middle">۲۸</text>
+      <text x="743.0" y="140" font-size="9.5" fill="#666158" text-anchor="middle">۳۵</text>
+      <text x="880.0" y="140" font-size="9.5" fill="#666158" text-anchor="middle">۴۲</text>
+      <text x="52" y="140" font-size="9.5" fill="#666158" text-anchor="start">روز</text>
+    </svg>
+        </div>
+
+        <div style="display: flex; gap: 8px 16px; flex-wrap: wrap; border-top: 1px solid #E4E1D6; margin-top: 14px; padding-top: 14px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: #666158;"><span style="width: 12px; height: 12px; background: #F4E3D3; border-radius: 3px;"></span>اسپان‌ران</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: #666158;"><span style="width: 12px; height: 12px; background: #EBE3F5; border-radius: 3px;"></span>کیسینگ‌ران</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: #666158;"><span style="width: 12px; height: 12px; background: #DCEBFA; border-radius: 3px;"></span>ونتیلیشن و پین‌ست</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: #666158;"><span style="width: 12px; height: 12px; background: #E3EEE1; border-radius: 3px;"></span>فلاش و برداشت</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: #666158;"><span style="width: 12px; height: 12px; background: #F1EEE7; border-radius: 3px;"></span>استراحت و تخلیه</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 14px; margin-bottom: 34px;">
+        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 6px;">چرا دمای کمپوست از دمای سالن بالاتر است</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">میسلیوم در حال رشد خودش گرما تولید می‌کند. فاصلهٔ این دو خط، در عمل نشانهٔ زنده‌بودن و شدت فعالیت کمپوست است.</p>
+        </div>
+        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 6px;">سقوط CO₂ در روز ۱۸</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">این تنها «تصمیم» بزرگ اپراتور در کل سیکل است. زود یا دیر انجام‌شدنش، مستقیم روی تعداد و یکنواختی قارچ‌های فلاش اول اثر می‌گذارد.</p>
+        </div>
+        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 6px;">دندانه‌های CO₂ در فلاش‌ها</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">هر برآمدگی کوچک، اوج تنفس قارچ‌های در حال رشد است. یعنی از روی منحنی CO₂ می‌شود فهمید فلاش بعدی کِی می‌رسد.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 14px;">بازه‌های مرجع هر مرحله</h3>
+      <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; margin-bottom: 14px;">
+        <table style="width: 100%; min-width: 640px; font-size: 13.5px;">
+          <thead>
+            <tr>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12.5px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">مرحله</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12.5px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">روز</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12.5px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">دمای کمپوست</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12.5px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">دمای سالن</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12.5px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">رطوبت</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12.5px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">CO₂</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">اسپان‌ران</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۰–۱۴</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۴–۲۶ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۳–۲۶ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۹۲–۹۶٪</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۵٬۰۰۰–۲۰٬۰۰۰</td>
+            </tr>
+            <tr>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">کیسینگ‌ران</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۴–۱۸</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۳–۲۶ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۲–۲۵ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۹۳–۹۷٪</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۴٬۰۰۰–۱۲٬۰۰۰</td>
+            </tr>
+            <tr>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">ونتیلیشن و پین‌ست</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۶–۱۹ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۸–۹۳٪</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۰۰–۱٬۵۰۰</td>
+            </tr>
+            <tr>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">فلاش و برداشت</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۱–۳۹</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۶–۱۹ °C</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۵–۹۰٪</td>
+              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۰۰–۱٬۵۰۰</td>
+            </tr>
+            <tr>
+              <td style="padding: 11px 16px; font-weight: 600;">تخلیه و ضدعفونی</td>
+              <td style="padding: 11px 16px; color: #45494F;">۳۹–۴۲</td>
+              <td style="padding: 11px 16px; color: #45494F;">—</td>
+              <td style="padding: 11px 16px; color: #45494F;">بخار تا ۷۰ °C</td>
+              <td style="padding: 11px 16px; color: #45494F;">—</td>
+              <td style="padding: 11px 16px; color: #45494F;">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 12.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 34px;">این بازه‌ها مرجع رایج پرورش قارچ دکمه‌ای‌اند و در سیستم به‌عنوان آستانهٔ هشدار تنظیم می‌شوند؛ عدد دقیق هر سالن با تجربهٔ همان مزرعه و نژاد بذر کالیبره می‌شود.</p>
+
+      <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px;">سهم هر فلاش از کل برداشت</h3>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 18px;">الگوی رایج یک سیکل سالم: هر موج حدود نصف موج قبلی محصول می‌دهد. وقتی این نسبت در یک سالن به‌هم می‌خورد، سیستم آن را در گزارش «تولید و برداشت» نشان می‌دهد.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; margin-bottom: 14px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+          <span style="font-size: 13.5px; font-weight: 700; min-width: 56px;">فلاش ۱</span>
+          <div style="flex: 1; height: 26px; background: #F1EEE7; border-radius: 6px; overflow: hidden;">
+            <div style="width: 58%; height: 100%; background: #166534; border-radius: 6px;"></div>
+          </div>
+          <span style="font-size: 13.5px; font-weight: 700; min-width: 44px; color: #166534;">۵۸٪</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+          <span style="font-size: 13.5px; font-weight: 700; min-width: 56px;">فلاش ۲</span>
+          <div style="flex: 1; height: 26px; background: #F1EEE7; border-radius: 6px; overflow: hidden;">
+            <div style="width: 28%; height: 100%; background: #2A6F51; border-radius: 6px;"></div>
+          </div>
+          <span style="font-size: 13.5px; font-weight: 700; min-width: 44px; color: #2A6F51;">۲۸٪</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="font-size: 13.5px; font-weight: 700; min-width: 56px;">فلاش ۳</span>
+          <div style="flex: 1; height: 26px; background: #F1EEE7; border-radius: 6px; overflow: hidden;">
+            <div style="width: 14%; height: 100%; background: #6FA98C; border-radius: 6px;"></div>
+          </div>
+          <span style="font-size: 13.5px; font-weight: 700; min-width: 44px; color: #45494F;">۱۴٪</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ نقشهٔ بخش‌ها ============ -->
+    <section id="map" style="margin-bottom: 64px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۴ — ساختار</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">نقشهٔ کامل بخش‌ها</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 30px;">ده بخش عملیاتی، و زیر هر بخش فرم‌های ثبت آن. هر فرم، فیلدهای خودش را دارد و خروجی همه‌شان به یک جدول زمانی مشترک می‌رود تا گزارش‌ها از روی آن ساخته شوند.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;">
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #0E6FB4;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">گزارش‌ها و تحلیل</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۵ گزارش</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">خلاصهٔ کلی</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">تولید و برداشت</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">مالی و فروش</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">سالن‌ها و بیماری</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">اقدامات و پیگیری</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #B4530E;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">تولید و محیط سالن</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۴ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">بازدید سالن</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">آبیاری</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">کمپوست (ورود/خروج)</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">کیسینگ</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #166534;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">برداشت</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">برداشت روزانه</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">شروع Flush جدید</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">کیفیت و گریدبندی</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #A32222;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">بیماری و مشاهدات</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">مشاهده و علائم</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">اقدام درمانی/کنترل</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">پایش پس از اقدام</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #5B3F92;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">اقدامات</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">اقدام انجام‌شده</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">پیگیری و یادآوری</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">تخصیص وظیفه</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #0E6FB4;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">عملیات فنی</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">تعمیر و نگهداری</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">شست‌وشو و ضدعفونی</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">کالیبراسیون سنسور</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #8A6A1E;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">انرژی</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">مصرف برق</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">سوخت و گاز</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">قرائت کنتور روزانه</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #8A5410;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">هزینه‌ها</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">خرید مواد اولیه</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">هزینهٔ نیروی انسانی</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">سایر هزینه‌ها</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #166534;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">مالی</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">پرداخت</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">وام و تسهیلات</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">موجودی صندوق</span>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #B4530E;"></span>
+            <h3 style="font-size: 15px; font-weight: 700; margin: 0;">فروش</h3>
+            <span style="font-size: 11px; color: #666158; margin-inline-start: auto;">۳ فرم</span>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">ثبت فروش</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">مرجوعی و تخفیف</span>
+            <span style="font-size: 12px; color: #45494F; background: #F1EEE7; border-radius: 6px; padding: 4px 9px;">سفارش و پیش‌فروش</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ معماری داده ============ -->
+    <section id="arch" style="margin-bottom: 64px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۵ — معماری</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">داده از فرم تا تصمیم</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 24px;">کل سیستم روی یک تصمیم معماری بنا شده: هر ۳۳ فرم، هرچقدر هم متفاوت، در <b>یک جدول رویداد مشترک</b> می‌نشینند. بین آن جدول و گزارش‌ها یک لایهٔ دیگر هست که ارزش واقعی سیستم آن‌جاست — موتوری که می‌داند هر سالن در کدام روز سیکل است و عدد را با بازهٔ همان مرحله می‌سنجد، نه با یک آستانهٔ ثابت.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 22px; overflow-x: auto; margin-bottom: 14px;">
+        <div style="min-width: 760px;">
+          <svg viewBox="0 0 1010 310" style="width: 100%; height: auto; display: block;" role="img" aria-label="معماری داده: فرم‌های ثبت به یک جدول رویداد مشترک می‌روند، موتور سنجش با مرحلهٔ سیکل آن را ارزیابی می‌کند و خروجی‌اش هشدار، گزارش و تقویم است"><text x="905" y="34" font-size="12" font-weight="700" fill="#666158" text-anchor="middle">ثبت در سالن</text><rect x="810" y="54" width="190" height="36" rx="9" fill="#FFFFFF" stroke="#D9D5C9" stroke-width="1"></rect><text x="905.0" y="77.0" font-size="12.5" font-weight="700" fill="#16181C" text-anchor="middle">بازدید سالن</text><rect x="810" y="100" width="190" height="36" rx="9" fill="#FFFFFF" stroke="#D9D5C9" stroke-width="1"></rect><text x="905.0" y="123.0" font-size="12.5" font-weight="700" fill="#16181C" text-anchor="middle">برداشت روزانه</text><rect x="810" y="146" width="190" height="36" rx="9" fill="#FFFFFF" stroke="#D9D5C9" stroke-width="1"></rect><text x="905.0" y="169.0" font-size="12.5" font-weight="700" fill="#16181C" text-anchor="middle">مشاهدهٔ بیماری</text><rect x="810" y="192" width="190" height="36" rx="9" fill="#FFFFFF" stroke="#D9D5C9" stroke-width="1"></rect><text x="905.0" y="215.0" font-size="12.5" font-weight="700" fill="#16181C" text-anchor="middle">خرید و هزینه</text><rect x="810" y="238" width="190" height="36" rx="9" fill="#FFFFFF" stroke="#D9D5C9" stroke-width="1"></rect><text x="905.0" y="261.0" font-size="12.5" font-weight="700" fill="#16181C" text-anchor="middle">ثبت فروش</text><text x="905" y="300" font-size="11.5" fill="#666158" text-anchor="middle">… ۳۳ فرم در ۱۰ بخش</text><line x1="800" y1="170" x2="734" y2="170" stroke="#B9B4A6" stroke-width="2"></line><path d="M 725 170 L 735 165 L 735 175 Z" fill="#B9B4A6"></path><rect x="505" y="92" width="220" height="156" rx="12" fill="#F4E3D3" stroke="#B4530E" stroke-width="1.5"></rect><text x="615.0" y="168.0" font-size="14.5" font-weight="700" fill="#16181C" text-anchor="middle">جدول رویداد مشترک</text><text x="615.0" y="187.0" font-size="11" fill="#666158" text-anchor="middle">هر ثبت: زمان · سالن · نوع · بار داده</text><text x="615" y="290" font-size="11.5" fill="#666158" text-anchor="middle">یک جدول برای هر ۳۳ فرم</text><line x1="495" y1="170" x2="429" y2="170" stroke="#B9B4A6" stroke-width="2"></line><path d="M 420 170 L 430 165 L 430 175 Z" fill="#B9B4A6"></path><rect x="200" y="92" width="220" height="156" rx="12" fill="#E7ECE4" stroke="#2F5233" stroke-width="1.5"></rect><text x="310.0" y="168.0" font-size="14.5" font-weight="700" fill="#16181C" text-anchor="middle">موتور سنجش با مرحله</text><text x="310.0" y="187.0" font-size="11" fill="#666158" text-anchor="middle">روز سیکل هر سالن → بازهٔ مرجع</text><text x="310" y="290" font-size="11.5" fill="#666158" text-anchor="middle">قلب سیستم</text><line x1="190" y1="170" x2="129" y2="170" stroke="#B9B4A6" stroke-width="2"></line><path d="M 120 170 L 130 165 L 130 175 Z" fill="#B9B4A6"></path><rect x="10" y="76" width="105" height="50" rx="10" fill="#F5E1DF" stroke="#A32222" stroke-width="1.5"></rect><text x="62.5" y="106.0" font-size="11.5" font-weight="700" fill="#16181C" text-anchor="middle">هشدار باز</text><rect x="10" y="142" width="105" height="50" rx="10" fill="#DCEBFA" stroke="#0E6FB4" stroke-width="1.5"></rect><text x="62.5" y="172.0" font-size="11.5" font-weight="700" fill="#16181C" text-anchor="middle">گزارش دوره‌ای</text><rect x="10" y="208" width="105" height="50" rx="10" fill="#EBE3F5" stroke="#5B3F92" stroke-width="1.5"></rect><text x="62.5" y="238.0" font-size="11.5" font-weight="700" fill="#16181C" text-anchor="middle">تقویم فعالیت</text></svg>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;">
+        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 6px;">چرا یک جدول و نه ۳۳ جدول</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">افزودن فرم سی‌وچهارم هیچ تغییری در گزارش‌ها لازم ندارد. هزینه‌اش این است که اعتبارسنجی دقیق هر فرم باید در لایهٔ خودش انجام شود.</p>
+        </div>
+        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 6px;">چرا موتور سنجش جداست</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">همین یک لایه، تفاوت بین «انبار داده» و «سیستم تصمیم» است. بدون آن، عدد ثبت می‌شود ولی کسی نمی‌فهمد غیرعادی است.</p>
+        </div>
+        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 12px; padding: 16px 18px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 6px;">چرا از راست به چپ</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">ورودی سمت راست و خروجی سمت چپ، هم‌جهت با خواندن فارسی. جزئیات کوچکی است که تفاوتش را وقتی می‌بینی که کاربر بدون توضیح، دیاگرام را درست بخواند.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ فرم‌ها ============ -->
+    <section id="forms" style="margin-bottom: 64px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۶ — ورود اطلاعات</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">نمونهٔ فرم‌های ثبت</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 12px;">چهار فرم از پرکاربردترین فرم‌های سیستم. این‌ها <b>واقعاً کار می‌کنند</b> — عددها را عوض کن تا ببینی سیستم همان لحظه چه چیزی حساب می‌کند و چه هشداری می‌دهد. چیزی ذخیره نمی‌شود.</p>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 30px;">طراحی فرم‌ها یک قید سخت داشت: اپراتور با دست خیس و در سالن ۱۷ درجه، با موبایل ثبت می‌کند. پس هر فرم کوتاه است، بیشتر فیلدها انتخابی‌اند نه تایپی، و هیچ فرمی بیش از یک صفحه نیست.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+
+        <!-- فرم ۱: بازدید سالن -->
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #B4530E;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0;">بازدید سالن</h3>
+            <span style="font-size: 11px; font-weight: 700; color: #B4530E; background: #F4E3D3; border-radius: 999px; padding: 3px 10px; margin-inline-start: auto;">تولید و محیط سالن</span>
+          </div>
+          <p style="font-size: 12.5px; color: #666158; margin: 0 0 18px;">هر مقدار با بازهٔ مرجع مرحلهٔ انتخاب‌شده مقایسه می‌شود.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;">
+            <div style="grid-column: 1 / -1;">
+              <label for="f-phase" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">مرحلهٔ سیکل</label>
+              <select id="f-phase" value="{{f.phase}}" onChange="{{h.phase}}">
+                <option value="spawn">اسپان‌ران (روز ۰–۱۴)</option>
+                <option value="casing">کیسینگ‌ران (روز ۱۴–۱۸)</option>
+                <option value="pinning">ونتیلیشن و پین‌ست (روز ۱۸–۲۱)</option>
+                <option value="flush">فلاش و برداشت (روز ۲۱–۳۹)</option>
+              </select>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label for="f-room" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">سالن</label>
+              <input id="f-room" type="text" value="{{f.vRoom}}" onChange="{{h.vRoom}}">
+            </div>
+
+            <div>
+              <label for="f-ct" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">دمای کمپوست (°C)</label>
+              <input id="f-ct" type="number" step="0.1" value="{{f.compostTemp}}" onChange="{{h.compostTemp}}">
+              <div style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 4px 8px; margin-top: 6px; background: {{chips.compost.bg}}; color: {{chips.compost.color}};">{{chips.compost.text}}</div>
+            </div>
+
+            <div>
+              <label for="f-rt" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">دمای سالن (°C)</label>
+              <input id="f-rt" type="number" step="0.1" value="{{f.roomTemp}}" onChange="{{h.roomTemp}}">
+              <div style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 4px 8px; margin-top: 6px; background: {{chips.room.bg}}; color: {{chips.room.color}};">{{chips.room.text}}</div>
+            </div>
+
+            <div>
+              <label for="f-rh" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">رطوبت RH (٪)</label>
+              <input id="f-rh" type="number" step="0.5" value="{{f.rh}}" onChange="{{h.rh}}">
+              <div style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 4px 8px; margin-top: 6px; background: {{chips.rh.bg}}; color: {{chips.rh.color}};">{{chips.rh.text}}</div>
+            </div>
+
+            <div>
+              <label for="f-co2" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">CO₂ (ppm)</label>
+              <input id="f-co2" type="number" step="50" value="{{f.co2}}" onChange="{{h.co2}}">
+              <div style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 4px 8px; margin-top: 6px; background: {{chips.co2.bg}}; color: {{chips.co2.color}};">{{chips.co2.text}}</div>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label for="f-air" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">جریان هوا</label>
+              <select id="f-air" value="{{f.airflow}}" onChange="{{h.airflow}}">
+                <option value="خوب">خوب</option>
+                <option value="متوسط">متوسط</option>
+                <option value="ضعیف">ضعیف</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: {{visit.bg}}; color: {{visit.color}}; font-size: 13px; font-weight: 600; line-height: 1.8;">{{visit.text}}</div>
+        </div>
+
+        <!-- فرم ۲: برداشت روزانه -->
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #166534;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0;">برداشت روزانه</h3>
+            <span style="font-size: 11px; font-weight: 700; color: #166534; background: #E3EEE1; border-radius: 999px; padding: 3px 10px; margin-inline-start: auto;">برداشت</span>
+          </div>
+          <p style="font-size: 12.5px; color: #666158; margin: 0 0 18px;">سهم ضایعات و برداشت خالص همان لحظه حساب می‌شود.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;">
+            <div>
+              <label for="h-room" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">سالن</label>
+              <input id="h-room" type="text" value="{{f.hRoom}}" onChange="{{h.hRoom}}">
+            </div>
+            <div>
+              <label for="h-flush" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">شمارهٔ Flush</label>
+              <select id="h-flush" value="{{f.hFlush}}" onChange="{{h.hFlush}}">
+                <option value="1">۱</option>
+                <option value="2">۲</option>
+                <option value="3">۳</option>
+              </select>
+            </div>
+            <div>
+              <label for="h-w" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">وزن برداشت (کیلو)</label>
+              <input id="h-w" type="number" step="0.1" value="{{f.hWeight}}" onChange="{{h.hWeight}}">
+            </div>
+            <div>
+              <label for="h-waste" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">ضایعات (کیلو)</label>
+              <input id="h-waste" type="number" step="0.1" value="{{f.hWaste}}" onChange="{{h.hWaste}}">
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <label for="h-grade" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">Grade</label>
+              <select id="h-grade" value="{{f.hGrade}}" onChange="{{h.hGrade}}">
+                <option value="درجه یک">درجه یک</option>
+                <option value="درجه دو">درجه دو</option>
+                <option value="ریز">ریز</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; padding: 14px; border-radius: 10px; background: #FAFAF7;">
+            <div style="flex: 1; min-width: 96px;">
+              <div style="font-size: 11.5px; color: #666158;">برداشت خالص</div>
+              <div style="font-size: 17px; font-weight: 800;">{{harvest.net}} کیلو</div>
+            </div>
+            <div style="flex: 1; min-width: 96px;">
+              <div style="font-size: 11.5px; color: #666158;">کل چیده‌شده</div>
+              <div style="font-size: 17px; font-weight: 800;">{{harvest.total}} کیلو</div>
+            </div>
+            <div style="flex: 1; min-width: 96px;">
+              <div style="font-size: 11.5px; color: #666158;">سهم ضایعات</div>
+              <div style="font-size: 17px; font-weight: 800; color: {{harvest.color}};">{{harvest.pct}}٪</div>
+            </div>
+          </div>
+          <div style="font-size: 12px; font-weight: 600; border-radius: 8px; padding: 8px 10px; margin-top: 10px; background: {{harvest.bg}}; color: {{harvest.color}};">{{harvest.note}}</div>
+        </div>
+
+        <!-- فرم ۳: مشاهدهٔ بیماری -->
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #A32222;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0;">مشاهده و علائم</h3>
+            <span style="font-size: 11px; font-weight: 700; color: #A32222; background: #F5E1DF; border-radius: 999px; padding: 3px 10px; margin-inline-start: auto;">بیماری و مشاهدات</span>
+          </div>
+          <p style="font-size: 12.5px; color: #666158; margin: 0 0 18px;">شدت، تعیین می‌کند سیستم چه اقدامی را پیشنهاد و پیگیری کند.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;">
+            <div>
+              <label for="d-room" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">سالن</label>
+              <input id="d-room" type="text" value="{{f.dRoom}}" onChange="{{h.dRoom}}">
+            </div>
+            <div>
+              <label for="d-loc" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">محل</label>
+              <input id="d-loc" type="text" value="{{f.dLocation}}" onChange="{{h.dLocation}}">
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <label for="d-sev" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">شدت</label>
+              <select id="d-sev" value="{{f.dSeverity}}" onChange="{{h.dSeverity}}">
+                <option value="کم">کم</option>
+                <option value="متوسط">متوسط</option>
+                <option value="شدید">شدید</option>
+              </select>
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <label for="d-sym" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">علائم</label>
+              <textarea id="d-sym" rows="2" value="{{f.dSymptoms}}" onChange="{{h.dSymptoms}}"></textarea>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; padding: 14px; border-radius: 10px; background: {{disease.bg}};">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{disease.pillBg}}; color: {{disease.color}};">شدت {{f.dSeverity}}</span>
+              <span style="font-size: 12px; color: {{disease.color}}; font-weight: 700;">{{disease.title}}</span>
+            </div>
+            <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 0;">{{disease.action}}</p>
+          </div>
+        </div>
+
+        <!-- فرم ۴: ثبت فروش -->
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #0E6FB4;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0;">ثبت فروش</h3>
+            <span style="font-size: 11px; font-weight: 700; color: #0E6FB4; background: #DCEBFA; border-radius: 999px; padding: 3px 10px; margin-inline-start: auto;">فروش</span>
+          </div>
+          <p style="font-size: 12.5px; color: #666158; margin: 0 0 18px;">جمع فروش و باقی طلب مشتری خودکار محاسبه می‌شود.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;">
+            <div style="grid-column: 1 / -1;">
+              <label for="s-cust" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">مشتری</label>
+              <input id="s-cust" type="text" value="{{f.sCustomer}}" onChange="{{h.sCustomer}}">
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <label for="s-prod" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">محصول</label>
+              <input id="s-prod" type="text" value="{{f.sProduct}}" onChange="{{h.sProduct}}">
+            </div>
+            <div>
+              <label for="s-w" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">وزن (کیلو)</label>
+              <input id="s-w" type="number" step="0.5" value="{{f.sWeight}}" onChange="{{h.sWeight}}">
+            </div>
+            <div>
+              <label for="s-p" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">قیمت واحد (تومان)</label>
+              <input id="s-p" type="number" step="1000" value="{{f.sUnitPrice}}" onChange="{{h.sUnitPrice}}">
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <label for="s-paid" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">مبلغ دریافتی (تومان)</label>
+              <input id="s-paid" type="number" step="100000" value="{{f.sPaid}}" onChange="{{h.sPaid}}">
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; padding: 14px; border-radius: 10px; background: #FAFAF7; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 12.5px; color: #666158;">جمع فروش</span>
+              <span style="font-size: 16px; font-weight: 800;">{{sale.gross}} تومان</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 12.5px; color: #666158;">دریافتی</span>
+              <span style="font-size: 14px; font-weight: 700; color: #166534;">{{sale.paid}} تومان</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px dashed #D9D5C9; padding-top: 10px;">
+              <span style="font-size: 12.5px; color: #666158;">باقی طلب</span>
+              <span style="font-size: 16px; font-weight: 800; color: {{sale.color}};">{{sale.receivable}} تومان</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ گزارش‌ها ============ -->
+    <section id="reports" style="margin-bottom: 56px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۷ — خروجی</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">داشبورد گزارش‌ها</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 12px;">هر ثبت، بی‌درنگ وارد پنج گزارش دوره‌ای می‌شود که روی بازهٔ روز، هفته یا ماه قابل مشاهده‌اند. هدف طراحی یک چیز بود: مدیر مزرعه در کمتر از یک دقیقه بفهمد امروز چه چیزی غیرعادی است.</p>
+      <p style="font-size: 12.5px; color: #8A5410; background: #F5E9D6; border-radius: 8px; padding: 8px 12px; display: inline-block; margin: 0 0 24px;">اعداد این داشبورد نمایشی‌اند و داده واقعی مزرعه نیستند.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 12px; margin-bottom: 16px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800;">۴٬۲۸۰</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">برداشت ماه (کیلو)</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800;">۲۸٪</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">بازده به کمپوست</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800;">۵٪</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">سهم ضایعات</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800; color: #A32222;">۲</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">هشدار باز</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800;">۳</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">سالن فعال</div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; margin-bottom: 16px;">
+        <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 4px;">وضعیت سه سالن در همین لحظه</h3>
+        <p style="font-size: 12.5px; color: #666158; margin: 0 0 16px;">هر سالن در مرحلهٔ متفاوتی از سیکل است — این همان نمایی است که مدیر صبح‌ها اول از همه می‌بیند.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px; border: 1px solid #E4E1D6; border-radius: 12px; padding: 14px 16px; border-inline-start: 4px solid #B4530E;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: 800;">سالن ۱</span>
+              <span style="font-size: 11px; font-weight: 700; color: #B4530E; background: #F4E3D3; border-radius: 999px; padding: 2px 9px;">اسپان‌ران · روز ۹</span>
+            </div>
+            <div style="font-size: 12.5px; color: #45494F; line-height: 1.9;">کمپوست ۲۵٫۱ °C · سالن ۲۴٫۸ °C<br>RH ۹۴٪ · CO₂ ۱۷٬۵۰۰</div>
+          </div>
+          <div style="flex: 1; min-width: 200px; border: 1px solid #E4E1D6; border-radius: 12px; padding: 14px 16px; border-inline-start: 4px solid #166534;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: 800;">سالن ۲</span>
+              <span style="font-size: 11px; font-weight: 700; color: #166534; background: #E3EEE1; border-radius: 999px; padding: 2px 9px;">فلاش ۲ · روز ۳۰</span>
+            </div>
+            <div style="font-size: 12.5px; color: #45494F; line-height: 1.9;">کمپوست ۱۹٫۹ °C · سالن ۱۷٫۵ °C<br>RH ۸۷٪ · CO₂ ۱٬۶۰۰</div>
+          </div>
+          <div style="flex: 1; min-width: 200px; border: 1px solid #E4E1D6; border-radius: 12px; padding: 14px 16px; border-inline-start: 4px solid #A32222;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: 800;">سالن ۳</span>
+              <span style="font-size: 11px; font-weight: 700; color: #A32222; background: #F5E1DF; border-radius: 999px; padding: 2px 9px;">۲ هشدار باز</span>
+            </div>
+            <div style="font-size: 12.5px; color: #45494F; line-height: 1.9;">RH ۸۲٪ — زیر بازهٔ فلاش<br>مشاهدهٔ بیماری با شدت متوسط</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 14px; margin-bottom: 34px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">خلاصهٔ کلی</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">وضعیت همهٔ سالن‌ها، هشدارهای باز به‌تفکیک شدت، و کارهای عقب‌افتادهٔ امروز.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">تولید و برداشت</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">روند برداشت روزانه، مقایسهٔ فلاش‌ها، بازده هر تن کمپوست و سهم ضایعات.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">مالی و فروش</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">فروش در برابر هزینه، باقی طلب هر مشتری، و موجودی صندوق.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">سالن‌ها و بیماری</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">تاریخچهٔ محیطی هر سالن و ارتباطش با مشاهدات بیماری در همان بازه.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">اقدامات و پیگیری</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">کارهای واگذارشده، موعدها، و اقدام‌هایی که نتیجه‌شان هنوز ثبت نشده.</p>
+        </div>
+        <div style="background: #FAFAF7; border: 1px dashed #D9D5C9; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">تقویم فعالیت‌ها</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">همهٔ رویدادها روی یک ماه، با رنگ هر نوع فعالیت — در ادامه.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px;">تقویم فعالیت‌ها</h3>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 18px;">کیسینگ، ورود کمپوست، روزهای برداشت و سفارش‌های تحویل‌نشده، همه روی یک ماه. رنگ‌ها همان رنگ بخش‌هایند.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px; margin-bottom: 18px;">
+        <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; text-align: center; padding-bottom: 4px;">ش</div>
+          <div style="font-size: 11px; font-weight: 700; color: #666158; text-align: center; padding-bottom: 4px;">ی</div>
+          <div style="font-size: 11px; font-weight: 700; color: #666158; text-align: center; padding-bottom: 4px;">د</div>
+          <div style="font-size: 11px; font-weight: 700; color: #666158; text-align: center; padding-bottom: 4px;">س</div>
+          <div style="font-size: 11px; font-weight: 700; color: #666158; text-align: center; padding-bottom: 4px;">چ</div>
+          <div style="font-size: 11px; font-weight: 700; color: #666158; text-align: center; padding-bottom: 4px;">پ</div>
+          <div style="font-size: 11px; font-weight: 700; color: #666158; text-align: center; padding-bottom: 4px;">ج</div>
+
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۲</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۳</div><div style="font-size: 9.5px; font-weight: 600; border-radius: 5px; padding: 1px 5px; margin-top: 3px; background: #DCEBFA; color: #0E6FB4;">ورود کمپوست</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۴</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۵</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۶</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۷</div></div>
+
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۸</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۹</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۰</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۱</div><div style="font-size: 9.5px; font-weight: 600; border-radius: 5px; padding: 1px 5px; margin-top: 3px; background: #EBE3F5; color: #5B3F92;">کیسینگ سالن ۱</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۲</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۳</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۴</div></div>
+
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۵</div><div style="font-size: 9.5px; font-weight: 600; border-radius: 5px; padding: 1px 5px; margin-top: 3px; background: #E3EEE1; color: #166534;">برداشت ۹۲ کیلو</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۶</div><div style="font-size: 9.5px; font-weight: 600; border-radius: 5px; padding: 1px 5px; margin-top: 3px; background: #E3EEE1; color: #166534;">برداشت ۱۳۸ کیلو</div></div>
+          <div style="min-height: 68px; border: 2px solid #B4530E; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #B4530E;">۱۷ · امروز</div><div style="font-size: 9.5px; font-weight: 600; border-radius: 5px; padding: 1px 5px; margin-top: 3px; background: #E3EEE1; color: #166534;">برداشت ۱۱۸ کیلو</div><div style="font-size: 9.5px; font-weight: 600; border-radius: 5px; padding: 1px 5px; margin-top: 3px; background: #F5E1DF; color: #A32222;">هشدار RH</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۸</div><div style="font-size: 9.5px; font-weight: 600; border-radius: 5px; padding: 1px 5px; margin-top: 3px; background: #F4E3D3; color: #8A5410;">سفارش ۲۰۰ کیلو</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۱۹</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۲۰</div></div>
+          <div style="min-height: 68px; border: 1px solid #E4E1D6; border-radius: 9px; padding: 6px; background: #FAFAF7;"><div style="font-size: 10.5px; font-weight: 700; color: #666158;">۲۱</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ تصمیم‌های طراحی ============ -->
+    <section id="design" style="margin-bottom: 56px; scroll-margin-top: 80px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 12px;">۰۸ — طراحی</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 30px); font-weight: 800; margin: 0 0 16px;">پنج تصمیم طراحی و هزینهٔ هرکدام</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 30px;">هر تصمیم طراحی یک چیزی را بهتر و یک چیز دیگر را بدتر می‌کند. این‌ها پنج انتخاب اصلی این سیستم‌اند، با چیزی که بابتش داده شده:</p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px;">۱. هشدار مرحله‌محور، نه آستانهٔ ثابت</h3>
+          <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">CO₂ برابر ۱۵٬۰۰۰ ppm در اسپان‌ران کاملاً طبیعی است و در فلاش یک فاجعه. سیستمی که یک عدد ثابت را آستانه بگیرد، یا دائم هشدار الکی می‌دهد یا وقتی باید، ساکت می‌ماند. این‌جا هر مقدار با بازهٔ <b>مرحلهٔ جاری همان سالن</b> سنجیده می‌شود.</p>
+          <div style="font-size: 12.5px; color: #8A5410; background: #F5E9D6; border-radius: 8px; padding: 10px 14px;">هزینه‌اش: سیستم باید همیشه بداند هر سالن در کدام روز سیکل است، پس تاریخ پرکردن هر سالن به یک دادهٔ اجباری تبدیل شد.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px;">۲. فرم کوتاه و انتخابی، نه جامع و متنی</h3>
+          <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">اپراتور با دست خیس، در سالن ۱۷ درجه و با یک دست، ثبت می‌کند. هر فیلد متنی آزاد در عمل یعنی یک فیلد خالی. بیشتر فیلدها انتخابی‌اند و هیچ فرمی بیش از یک صفحه نیست.</p>
+          <div style="font-size: 12.5px; color: #8A5410; background: #F5E9D6; border-radius: 8px; padding: 10px 14px;">هزینه‌اش: جزئیات ظریفی که فقط در متن آزاد جا می‌شد، ثبت نمی‌شود — در عوض چیزی که ثبت می‌شود واقعاً قابل تحلیل است.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px;">۳. محاسبه در لحظهٔ ثبت، نه در گزارش آخر ماه</h3>
+          <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">جمع فروش، باقی طلب و سهم ضایعات همان‌جا زیر فرم نشان داده می‌شوند. دلیلش تحلیل نیست، <b>تشخیص خطاست</b>: کسی که همین الان عدد را وارد کرده، تنها کسی است که می‌تواند بفهمد ۱۱۸ اشتباهاً ۱۱۸۰ تایپ شده.</p>
+          <div style="font-size: 12.5px; color: #8A5410; background: #F5E9D6; border-radius: 8px; padding: 10px 14px;">هزینه‌اش: منطق محاسبه در دو جا (فرم و گزارش) باید یکی بماند، وگرنه دو عدد متفاوت به کاربر نشان داده می‌شود.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px;">۴. یک جدول رویداد مشترک برای هر ۳۳ فرم</h3>
+          <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">همهٔ ثبت‌ها — از قرائت کنتور تا مرجوعی فروش — در یک جدول زمانی مشترک می‌نشینند و فقط نوع و بار داده‌شان فرق می‌کند. به همین خاطر افزودن فرم سی‌وچهارم، هیچ تغییری در گزارش‌ها لازم ندارد.</p>
+          <div style="font-size: 12.5px; color: #8A5410; background: #F5E9D6; border-radius: 8px; padding: 10px 14px;">هزینه‌اش: اعتبارسنجی دقیق هر فرم باید در لایهٔ خودش انجام شود، چون جدول مشترک شکل ثابتی را تحمیل نمی‌کند.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px;">۵. موبایل‌اول و مقاوم به اینترنت ضعیف</h3>
+          <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">سالن پرورش با دیوار بتنی و رطوبت بالا، بدترین جای ممکن برای آنتن‌دهی است. اگر ثبت به اینترنت پایدار وابسته باشد، اپراتور کار را به بعد موکول می‌کند و «بعد» یعنی هیچ‌وقت.</p>
+          <div style="font-size: 12.5px; color: #8A5410; background: #F5E9D6; border-radius: 8px; padding: 10px 14px;">هزینه‌اش: نمایش دسکتاپی و گزارش‌های سنگین در اولویت دوم قرار گرفتند.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ حریم خصوصی و دمو ============ -->
+    <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 30px; text-align: center;">
+      <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 12px;">دوست داری داده‌ها را در حرکت ببینی؟</h3>
+      <p style="font-size: 14.5px; line-height: 1.95; color: #45494F; max-width: 56ch; margin: 0 auto 22px;">داده‌های واقعی دُرّین این‌جا نمایش داده نمی‌شود. اما یک نسخهٔ تعاملی با داده‌های کاملاً تصادفی ساخته‌ام که همان رابط را با اعداد زنده نشان می‌دهد.</p>
+      <a href="Demo.dc.html" style="display: inline-block; font-size: 14.5px; font-weight: 700; color: #FFFFFF; background: #B4530E; padding: 14px 30px; border-radius: 10px;">اجرای دموی داده تصادفی ←</a>
+    </div>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <a href="Main.dc.html#gallery" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به کارها</a>
+      <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · مطالعه موردی دُرّین</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1040,"height":1400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      phase: 'flush', vRoom: '۲', compostTemp: '19.6', roomTemp: '17.5', rh: '87', co2: '1200', airflow: 'خوب',
+      hRoom: '۲', hFlush: '2', hWeight: '118', hWaste: '6', hGrade: 'درجه یک',
+      dRoom: '۳', dLocation: 'ردیف ۴ شمالی', dSeverity: 'متوسط', dSymptoms: 'لکه‌های قهوه‌ای روی کلاهک، پراکنده',
+      sCustomer: 'میدان مرکزی — غرفه ۱۲', sProduct: 'قارچ دکمه‌ای درجه یک',
+      sWeight: '120', sUnitPrice: '185000', sPaid: '15000000'
+    };
+  }
+
+  ranges() {
+    return {
+      spawn: { compost: [24, 26], room: [23, 26], rh: [92, 96], co2: [5000, 20000] },
+      casing: { compost: [23, 26], room: [22, 25], rh: [93, 97], co2: [4000, 12000] },
+      pinning: { compost: [18, 21], room: [16, 19], rh: [88, 93], co2: [800, 1500] },
+      flush: { compost: [18, 21], room: [16, 19], rh: [85, 90], co2: [800, 1500] }
+    };
+  }
+
+  num(n) {
+    return Number(n).toLocaleString('fa-IR');
+  }
+
+  chip(value, range) {
+    var n = parseFloat(value);
+    var txt = 'مرجع ' + this.num(range[0]) + ' تا ' + this.num(range[1]);
+    if (isNaN(n)) {
+      return { text: txt, bg: '#F1EEE7', color: '#666158', ok: true };
+    }
+    var ok = n >= range[0] && n <= range[1];
+    return {
+      text: (ok ? 'در بازه' : 'خارج از بازه') + ' · ' + txt,
+      bg: ok ? '#E3EEE1' : '#F5E9D6',
+      color: ok ? '#166534' : '#8A5410',
+      ok: ok
+    };
+  }
+
+  set(key) {
+    var self = this;
+    return function (e) {
+      var patch = {};
+      patch[key] = e.target.value;
+      self.setState(patch);
+    };
+  }
+
+  renderVals() {
+    var s = this.state;
+    var r = this.ranges()[s.phase];
+
+    var chips = {
+      compost: this.chip(s.compostTemp, r.compost),
+      room: this.chip(s.roomTemp, r.room),
+      rh: this.chip(s.rh, r.rh),
+      co2: this.chip(s.co2, r.co2)
+    };
+
+    var offList = [];
+    if (!chips.compost.ok) { offList.push('دمای کمپوست'); }
+    if (!chips.room.ok) { offList.push('دمای سالن'); }
+    if (!chips.rh.ok) { offList.push('رطوبت'); }
+    if (!chips.co2.ok) { offList.push('CO₂'); }
+
+    var visit = offList.length === 0
+      ? { text: 'همهٔ مقادیر در بازهٔ مرجع این مرحله‌اند — بازدید بدون هشدار ثبت می‌شود.', bg: '#E3EEE1', color: '#166534' }
+      : { text: offList.length + ' مقدار خارج از بازه: ' + offList.join('، ') + '. سیستم یک هشدار باز می‌سازد و در گزارش «سالن‌ها و بیماری» نشان می‌دهد.', bg: '#F5E9D6', color: '#8A5410' };
+
+    var w = parseFloat(s.hWeight) || 0;
+    var waste = parseFloat(s.hWaste) || 0;
+    var total = w + waste;
+    var pct = total > 0 ? (waste / total) * 100 : 0;
+    var hBg = '#E3EEE1', hColor = '#166534', hNote = 'سهم ضایعات در محدودهٔ عادی است.';
+    if (pct > 10) {
+      hBg = '#F5E1DF'; hColor = '#A32222';
+      hNote = 'سهم ضایعات بالاست — سیستم پیشنهاد می‌کند مشاهدهٔ بیماری همان سالن ثبت شود.';
+    } else if (pct > 5) {
+      hBg = '#F5E9D6'; hColor = '#8A5410';
+      hNote = 'سهم ضایعات کمی بالاتر از حد انتظار است؛ در گزارش تولید علامت می‌خورد.';
+    }
+    var harvest = {
+      net: this.num(Math.round(w * 10) / 10),
+      total: this.num(Math.round(total * 10) / 10),
+      pct: this.num(Math.round(pct * 10) / 10),
+      bg: hBg, color: hColor, note: hNote
+    };
+
+    var disease;
+    if (s.dSeverity === 'کم') {
+      disease = { bg: '#E3EEE1', pillBg: '#CFE3CC', color: '#166534', title: 'فقط ثبت و پایش',
+                  action: 'ثبت مشاهده کافی است. سیستم در بازدید بعدی همان سالن، یادآوری پیگیری می‌سازد.' };
+    } else if (s.dSeverity === 'شدید') {
+      disease = { bg: '#F5E1DF', pillBg: '#EDCECB', color: '#A32222', title: 'اقدام فوری',
+                  action: 'جداسازی ناحیه، ثبت فوری «اقدام درمانی/کنترل» و تخصیص وظیفه با اولویت فوری. تا ثبت نتیجه در «پایش پس از اقدام»، هشدار باز می‌ماند.' };
+    } else {
+      disease = { bg: '#F5E9D6', pillBg: '#EBDBC0', color: '#8A5410', title: 'اقدام در همان روز',
+                  action: 'اقدام کنترلی همان روز انجام و در بخش «اقدام درمانی/کنترل» ثبت شود؛ سه روز بعد، فرم «پایش پس از اقدام» خودکار یادآوری می‌شود.' };
+    }
+
+    var sw = parseFloat(s.sWeight) || 0;
+    var sp = parseFloat(s.sUnitPrice) || 0;
+    var paid = parseFloat(s.sPaid) || 0;
+    var gross = sw * sp;
+    var receivable = gross - paid;
+    var sale = {
+      gross: this.num(Math.round(gross)),
+      paid: this.num(Math.round(paid)),
+      receivable: this.num(Math.round(receivable)),
+      color: receivable > 0 ? '#A32222' : '#166534'
+    };
+
+    return {
+      f: s,
+      chips: chips,
+      visit: visit,
+      harvest: harvest,
+      disease: disease,
+      sale: sale,
+      h: {
+        phase: this.set('phase'), vRoom: this.set('vRoom'),
+        compostTemp: this.set('compostTemp'), roomTemp: this.set('roomTemp'),
+        rh: this.set('rh'), co2: this.set('co2'), airflow: this.set('airflow'),
+        hRoom: this.set('hRoom'), hFlush: this.set('hFlush'), hWeight: this.set('hWeight'),
+        hWaste: this.set('hWaste'), hGrade: this.set('hGrade'),
+        dRoom: this.set('dRoom'), dLocation: this.set('dLocation'),
+        dSeverity: this.set('dSeverity'), dSymptoms: this.set('dSymptoms'),
+        sCustomer: this.set('sCustomer'), sProduct: this.set('sProduct'),
+        sWeight: this.set('sWeight'), sUnitPrice: this.set('sUnitPrice'), sPaid: this.set('sPaid')
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

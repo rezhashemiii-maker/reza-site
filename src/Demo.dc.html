@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>پل فرماندهی — شبیه‌ساز کارخانه قارچ دکمه‌ای</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#B4530E;text-decoration:none}
+  a:hover{color:#8A3E0A}
+  button{font-family:inherit;cursor:pointer;border:none}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:78px}
+  input{font-family:inherit;font-size:13.5px;color:#16181C;background:#FFFFFF;border:1px solid #D9D5C9;border-radius:9px;padding:9px 11px;width:100%;box-sizing:border-box}
+  input:focus{outline:2px solid #B4530E;outline-offset:1px}
+  table{border-collapse:collapse}
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F5F3EE; direction: rtl;">
+
+  <!-- ============ سربرگ ============ -->
+  <header style="position: sticky; top: 0; z-index: 30; border-bottom: 1px solid #E4E1D6; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+      <a href="Dorrin.dc.html" style="font-size: 13.5px; font-weight: 600; color: #45494F;">← مطالعهٔ موردی دُرّین</a>
+      <nav style="display: flex; gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
+        <a href="#decisions" style="font-size: 12.5px; color: #45494F; padding: 10px 10px; border-radius: 999px;">تصمیم‌ها</a>
+        <a href="#economics" style="font-size: 12.5px; color: #45494F; padding: 10px 10px; border-radius: 999px;">اقتصاد</a>
+        <a href="#plan" style="font-size: 12.5px; color: #45494F; padding: 10px 10px; border-radius: 999px;">برنامه</a>
+        <a href="#ops" style="font-size: 12.5px; color: #45494F; padding: 10px 10px; border-radius: 999px;">عملیات</a>
+        <a href="#cash" style="font-size: 12.5px; color: #45494F; padding: 10px 10px; border-radius: 999px;">نقدینگی</a>
+        <a href="Main.dc.html#gallery" style="font-size: 12.5px; color: #45494F; padding: 10px 10px; border-radius: 999px;">کارها</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 46px 24px 80px;">
+
+    <!-- ============ معرفی ============ -->
+    <span style="display: inline-block; font-size: 11.5px; font-weight: 700; color: #B4530E; background: #F4E3D3; padding: 4px 12px; border-radius: 999px; margin-bottom: 18px;">Sandbox · همهٔ عددها شبیه‌سازی‌شده‌اند</span>
+    <h1 style="font-size: clamp(26px, 3.6vw, 38px); font-weight: 800; line-height: 1.45; margin: 0 0 14px;">پل فرماندهی کارخانهٔ قارچ دکمه‌ای</h1>
+    <p style="font-size: 16px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 12px;">این صفحه از نگاه کسی ساخته شده که باید <b>تصمیم بگیرد</b>، نه کسی که فقط گزارش می‌خواند: سه سالن تولید قارچ دکمه‌ای، هر کدام در نقطهٔ متفاوتی از سیکل ۴۲ روزه، با اقتصاد هر سیکل، تعهدهای فروش، برنامهٔ پرکردن سالن‌ها و وضعیت نقدینگی — همه روی یک صفحه.</p>
+    <p style="font-size: 15px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 26px;"><b>«روز بعد»</b> را بزن تا مزرعه جلو برود؛ در بخش «اقتصاد» هم می‌توانی قیمت فروش و بهای کمپوست را عوض کنی و همان لحظه ببینی حاشیهٔ سود و نقطهٔ سربه‌سر کجا می‌رود.</p>
+
+    <!-- ============ کنترل ============ -->
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 20px; margin-bottom: 34px;">
+      <button onClick="{{nextDay}}" style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #B4530E; padding: 12px 24px; border-radius: 10px;">روز بعد ←</button>
+      <button onClick="{{week}}" style="font-size: 14px; font-weight: 700; color: #16181C; background: #F1EEE7; padding: 12px 20px; border-radius: 10px;">یک هفته جلو</button>
+      <button onClick="{{reshuffle}}" style="font-size: 14px; font-weight: 700; color: #16181C; background: #F1EEE7; padding: 12px 20px; border-radius: 10px;">داده تصادفی جدید</button>
+      <button onClick="{{reset}}" style="font-size: 13.5px; font-weight: 600; color: #666158; background: transparent; padding: 12px 8px;">بازنشانی</button>
+      <div style="margin-inline-start: auto; font-size: 13px; color: #666158;">روز شبیه‌سازی: <b style="color: #16181C;">{{tick}}</b></div>
+    </div>
+
+    <!-- ============ تصمیم‌های امروز ============ -->
+    <section id="decisions" style="margin-bottom: 44px; scroll-margin-top: 76px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 10px;">۰۱ — تصمیم</p>
+      <h2 style="font-size: 23px; font-weight: 800; margin: 0 0 6px;">امروز باید دربارهٔ چه چیزی تصمیم بگیری</h2>
+      <p style="font-size: 14px; line-height: 1.95; color: #666158; max-width: 68ch; margin: 0 0 18px;">سیستم از داده‌های خام، فهرست کوتاهی از تصمیم‌های امروز می‌سازد. هر کارت، عددی که تصمیم را ایجاب کرده و اقدام پیشنهادی را کنار هم می‌گذارد.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <sc-for list="{{decisions}}" as="d" hint-placeholder-count="4">
+          <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E4E1D6; border-inline-start: 4px solid {{d.color}}; border-radius: 12px; padding: 16px 18px; flex-wrap: wrap;">
+            <span style="font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 4px 11px; background: {{d.pillBg}}; color: {{d.color}}; flex-shrink: 0;">{{d.severity}}</span>
+            <div style="flex: 1; min-width: 260px;">
+              <div style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">{{d.title}}</div>
+              <div style="font-size: 13.5px; line-height: 1.9; color: #45494F;">{{d.detail}}</div>
+            </div>
+            <div style="font-size: 12.5px; color: #666158; background: #FAFAF7; border-radius: 8px; padding: 8px 12px; max-width: 280px;">{{d.action}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ============ شاخص‌های کلیدی ============ -->
+    <section style="margin-bottom: 44px;">
+      <h2 style="font-size: 20px; font-weight: 800; margin: 0 0 6px;">شاخص‌های کلیدی در برابر هدف</h2>
+      <p style="font-size: 13.5px; color: #666158; margin: 0 0 16px; max-width: 68ch;">عدد خام به‌تنهایی تصمیم نمی‌سازد؛ فاصله‌اش با هدف می‌سازد. هر شاخص با هدف مزرعه و اختلافش نشان داده می‌شود.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 12px;">
+        <sc-for list="{{kpis}}" as="k" hint-placeholder-count="6">
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+              <span style="font-size: 12.5px; color: #666158;">{{k.label}}</span>
+              <span style="font-size: 11px; font-weight: 700; border-radius: 999px; padding: 3px 9px; background: {{k.bg}}; color: {{k.color}}; margin-inline-start: auto;">{{k.delta}}</span>
+            </div>
+            <div style="font-size: 25px; font-weight: 800; margin: 6px 0 2px; font-variant-numeric: tabular-nums;">{{k.value}}</div>
+            <div style="font-size: 12px; color: #666158;">هدف: {{k.target}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ============ اقتصاد ============ -->
+    <section id="economics" style="margin-bottom: 44px; scroll-margin-top: 76px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 10px;">۰۲ — اقتصاد</p>
+      <h2 style="font-size: 23px; font-weight: 800; margin: 0 0 6px;">اقتصاد هر سیکل تولید</h2>
+      <p style="font-size: 14px; line-height: 1.95; color: #666158; max-width: 68ch; margin: 0 0 20px;">مهم‌ترین عدد یک کارخانهٔ قارچ، برداشت نیست — <b>بهای تمام‌شدهٔ هر کیلو</b> است. این جدول، اقتصاد کامل سیکل جاری هر سالن را بر اساس فرض‌های قابل‌تغییر زیر حساب می‌کند.</p>
+
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px; margin-bottom: 16px;">
+        <h3 style="font-size: 14.5px; font-weight: 700; margin: 0 0 4px;">سناریو — این عددها را عوض کن</h3>
+        <p style="font-size: 12.5px; color: #666158; margin: 0 0 14px;">هر تغییری بزنی، کل جدول، حاشیهٔ سود، نقطهٔ سربه‌سر و تصمیم‌های بالای صفحه همان لحظه دوباره حساب می‌شوند.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px;">
+          <div>
+            <label for="p-price" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">قیمت فروش (تومان/کیلو)</label>
+            <input id="p-price" type="number" step="5000" value="{{f.price}}" onChange="{{h.price}}">
+          </div>
+          <div>
+            <label for="p-comp" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">کمپوست (تومان/کیلو)</label>
+            <input id="p-comp" type="number" step="500" value="{{f.compostCost}}" onChange="{{h.compostCost}}">
+          </div>
+          <div>
+            <label for="p-pick" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">دستمزد برداشت (تومان/کیلو)</label>
+            <input id="p-pick" type="number" step="1000" value="{{f.pickCost}}" onChange="{{h.pickCost}}">
+          </div>
+          <div>
+            <label for="p-fix" style="display: block; font-size: 12.5px; font-weight: 600; color: #666158; margin-bottom: 5px;">سربار ثابت هر سیکل (تومان)</label>
+            <input id="p-fix" type="number" step="1000000" value="{{f.fixedCost}}" onChange="{{h.fixedCost}}">
+          </div>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; margin-bottom: 14px;">
+        <table style="width: 100%; min-width: 860px; font-size: 13px;">
+          <thead>
+            <tr>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">سالن</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">مرحله</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">کمپوست (کیلو)</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">برداشت تاکنون</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">برآورد کل سیکل</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">بازده بیولوژیک</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">بهای تمام‌شده/کیلو</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">سود سیکل</th>
+              <th style="text-align: right; padding: 12px 14px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">حاشیه</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{econRows}}" as="e" hint-placeholder-count="3">
+              <tr>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; font-weight: 700;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: {{e.color}}; margin-left: 7px;"></span>{{e.name}}</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; color: #45494F;">{{e.phase}} · روز {{e.day}}</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{e.compost}}</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{e.soFar}}</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{e.expected}}</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; font-weight: 700; color: {{e.beColor}}; font-variant-numeric: tabular-nums;">{{e.be}}٪</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{e.costPerKg}}</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; font-weight: 700; color: {{e.profitColor}}; font-variant-numeric: tabular-nums;">{{e.profit}}</td>
+                <td style="padding: 12px 14px; border-bottom: 1px solid #EDEAE1; font-weight: 700; color: {{e.profitColor}}; font-variant-numeric: tabular-nums;">{{e.margin}}٪</td>
+              </tr>
+            </sc-for>
+            <tr>
+              <td style="padding: 12px 14px; font-weight: 800; background: #FAFAF7;">کل مزرعه</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; color: #666158;">۳ سالن فعال</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; font-weight: 700; font-variant-numeric: tabular-nums;">{{total.compost}}</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; font-weight: 700; font-variant-numeric: tabular-nums;">{{total.soFar}}</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; font-weight: 700; font-variant-numeric: tabular-nums;">{{total.expected}}</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; font-weight: 800; font-variant-numeric: tabular-nums;">{{total.be}}٪</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; font-weight: 700; font-variant-numeric: tabular-nums;">{{total.costPerKg}}</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; font-weight: 800; color: {{total.profitColor}}; font-variant-numeric: tabular-nums;">{{total.profit}}</td>
+              <td style="padding: 12px 14px; background: #FAFAF7; font-weight: 800; color: {{total.profitColor}}; font-variant-numeric: tabular-nums;">{{total.margin}}٪</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 12px; color: #666158; margin: 0 0 20px;">مبالغ سود بر حسب میلیون تومان. بازده بیولوژیک = کیلو قارچ برداشت‌شده به ازای هر ۱۰۰ کیلو کمپوست؛ استاندارد خوب برای قارچ دکمه‌ای حدود ۲۸ تا ۳۵ درصد است.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 14px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 8px;">نقطهٔ سربه‌سر هر سالن</h4>
+          <div style="font-size: 24px; font-weight: 800; margin-bottom: 4px;">{{breakEven.kg}} <span style="font-size: 13px; font-weight: 600; color: #666158;">کیلو</span></div>
+          <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 0;">زیر این عدد، سیکل ضرر می‌دهد. برآورد فعلی <b>{{breakEven.expected}} کیلو</b> است — یعنی {{breakEven.safety}}٪ حاشیهٔ اطمینان.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 8px;">ترکیب هزینهٔ هر سیکل</h4>
+          <div style="display: flex; height: 22px; border-radius: 6px; overflow: hidden; margin-bottom: 10px;">
+            <div style="width: {{costMix.compostPct}}%; background: #B4530E;"></div>
+            <div style="width: {{costMix.casingPct}}%; background: #5B3F92;"></div>
+            <div style="width: {{costMix.laborPct}}%; background: #166534;"></div>
+            <div style="width: {{costMix.fixedPct}}%; background: #0E6FB4;"></div>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 11.5px; color: #45494F;">
+            <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; background: #B4530E; border-radius: 2px;"></span>کمپوست {{costMix.compostPct}}٪</span>
+            <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; background: #5B3F92; border-radius: 2px;"></span>کیسینگ {{costMix.casingPct}}٪</span>
+            <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; background: #166534; border-radius: 2px;"></span>دستمزد {{costMix.laborPct}}٪</span>
+            <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; background: #0E6FB4; border-radius: 2px;"></span>سربار {{costMix.fixedPct}}٪</span>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+          <h4 style="font-size: 13.5px; font-weight: 700; margin: 0 0 8px;">حساسیت به قیمت</h4>
+          <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 0 0 10px;">اگر قیمت فروش ۱۰٪ افت کند:</p>
+          <div style="font-size: 20px; font-weight: 800; color: {{sensitivity.color}};">{{sensitivity.margin}}٪</div>
+          <p style="font-size: 12px; color: #666158; margin: 4px 0 0;">حاشیهٔ سود جدید (اکنون {{total.margin}}٪)</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 18px; font-weight: 800; margin: 34px 0 6px;">ترکیب گرید و قیمت مؤثر</h3>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 16px;">قیمت درجه یک، قیمت کل محصول نیست. قارچ دکمه‌ای که دیر چیده شود کلاهکش باز می‌شود و به درجه دو می‌افتد؛ درجه دو حدود ۷۲٪ و ریز حدود ۴۵٪ قیمت درجه یک به فروش می‌رود. <b>قیمت مؤثر</b> همان عددی است که واقعاً در محاسبهٔ سود بالا نشسته.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 14px; margin-bottom: 10px;">
+        <sc-for list="{{gradeRows}}" as="g" hint-placeholder-count="3">
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="width: 9px; height: 9px; border-radius: 50%; background: {{g.color}};"></span>
+              <span style="font-size: 14.5px; font-weight: 800;">{{g.name}}</span>
+              <span style="font-size: 10.5px; font-weight: 700; border-radius: 999px; padding: 3px 9px; background: {{g.chipBg}}; color: {{g.chipColor}}; margin-inline-start: auto;">{{g.chip}}</span>
+            </div>
+            <div style="direction: ltr; display: flex; height: 20px; border-radius: 6px; overflow: hidden; margin-bottom: 10px;">
+              <div style="width: {{g.a}}%; background: #166534;"></div>
+              <div style="width: {{g.b}}%; background: #8FBF9F;"></div>
+              <div style="width: {{g.c}}%; background: #D9D5C9;"></div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 11.5px; color: #45494F; margin-bottom: 12px;">
+              <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; background: #166534; border-radius: 2px;"></span>درجه یک {{g.aLabel}}</span>
+              <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; background: #8FBF9F; border-radius: 2px;"></span>درجه دو {{g.bLabel}}</span>
+              <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; background: #D9D5C9; border-radius: 2px;"></span>ریز {{g.cLabel}}</span>
+            </div>
+            <div style="border-top: 1px dashed #D9D5C9; padding-top: 10px;">
+              <div style="font-size: 12px; color: #666158;">قیمت مؤثر هر کیلو</div>
+              <div style="font-size: 19px; font-weight: 800; font-variant-numeric: tabular-nums;">{{g.effPrice}}</div>
+              <div style="font-size: 11.5px; color: #8A5410;">{{g.discount}}٪ کمتر از قیمت درجه یک</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <h3 style="font-size: 18px; font-weight: 800; margin: 34px 0 6px;">مقایسه با سیکل قبلِ همین سالن</h3>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 16px;">عدد امروز به‌تنهایی چیزی نمی‌گوید؛ افت تدریجی را فقط مقایسهٔ سیکل‌ها نشان می‌دهد. اگر یک سالن دو سیکل پشت‌سرهم افت کند، معمولاً مسئله از کیفیت کمپوست یا ضدعفونی ناقص سیکل قبل است، نه از تنظیمات امروز.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 14px;">
+        <sc-for list="{{cycleCompare}}" as="c" hint-placeholder-count="3">
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+              <span style="width: 9px; height: 9px; border-radius: 50%; background: {{c.color}};"></span>
+              <span style="font-size: 14.5px; font-weight: 800;">{{c.name}}</span>
+              <span style="font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{c.deltaBg}}; color: {{c.deltaColor}}; margin-inline-start: auto;">{{c.deltaLabel}}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span style="font-size: 11.5px; color: #666158; width: 60px; flex-shrink: 0;">سیکل قبل</span>
+              <div style="flex: 1; direction: ltr; height: 16px; background: #F1EEE7; border-radius: 4px; overflow: hidden;">
+                <div style="width: {{c.prevW}}%; height: 100%; background: #C9C6BB;"></div>
+              </div>
+              <span style="font-size: 12px; font-weight: 700; width: 54px; text-align: left; font-variant-numeric: tabular-nums;">{{c.prev}}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <span style="font-size: 11.5px; color: #666158; width: 60px; flex-shrink: 0;">این سیکل</span>
+              <div style="flex: 1; direction: ltr; height: 16px; background: #F1EEE7; border-radius: 4px; overflow: hidden;">
+                <div style="width: {{c.curW}}%; height: 100%; background: {{c.color}};"></div>
+              </div>
+              <span style="font-size: 12px; font-weight: 700; width: 54px; text-align: left; font-variant-numeric: tabular-nums;">{{c.cur}}</span>
+            </div>
+            <div style="font-size: 12px; color: #45494F; border-top: 1px dashed #D9D5C9; padding-top: 10px;">{{c.note}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ============ برنامه و پیش‌بینی ============ -->
+    <section id="plan" style="margin-bottom: 44px; scroll-margin-top: 76px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 10px;">۰۳ — برنامه</p>
+      <h2 style="font-size: 23px; font-weight: 800; margin: 0 0 6px;">پیش‌بینی برداشت در برابر تعهدهای فروش</h2>
+      <p style="font-size: 14px; line-height: 1.95; color: #666158; max-width: 68ch; margin: 0 0 18px;">فروش قارچ دکمه‌ای پیش‌فروش می‌شود، ولی موج برداشت را نمی‌شود جابه‌جا کرد. این نمودار، برداشت ۱۴ روز آیندهٔ هر سه سالن را کنار تعهدهای ثبت‌شده می‌گذارد تا کسری پیش از وقوع دیده شود.</p>
+
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; margin-bottom: 14px;">
+        <div style="display: flex; align-items: flex-end; gap: 8px; height: 180px; direction: ltr;">
+          <sc-for list="{{forecast}}" as="d" hint-placeholder-count="14">
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 5px;">
+              <span style="font-size: 10px; font-weight: 700; color: #45494F;">{{d.label}}</span>
+              <div style="width: 100%; max-width: 34px; height: {{d.h}}%; background: {{d.color}}; border-radius: 5px 5px 0 0;"></div>
+              <span style="font-size: 9.5px; color: #666158;">{{d.day}}</span>
+              <span style="font-size: 9px; font-weight: 700; color: #A32222; min-height: 12px;">{{d.mark}}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; border-top: 1px solid #E4E1D6; margin-top: 14px; padding-top: 12px; font-size: 11.5px; color: #45494F;">
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background: #166534; border-radius: 3px;"></span>روز برداشت</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background: #D9D5C9; border-radius: 3px;"></span>بدون برداشت</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="color: #A32222; font-weight: 700;">▾</span>روز تحویل سفارش</span>
+        </div>
+      </div>
+
+      <div style="padding: 16px 20px; border-radius: 12px; background: {{coverage.bg}}; margin-bottom: 16px;">
+        <div style="font-size: 14.5px; font-weight: 700; color: {{coverage.color}}; margin-bottom: 4px;">{{coverage.title}}</div>
+        <div style="font-size: 13.5px; line-height: 1.9; color: #45494F;">{{coverage.detail}}</div>
+      </div>
+
+      <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; margin-bottom: 30px;">
+        <table style="width: 100%; min-width: 620px; font-size: 13px;">
+          <thead>
+            <tr>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">تحویل</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">مشتری</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">مقدار</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">برداشت تجمعی تا آن روز</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">وضعیت</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{commitments}}" as="c" hint-placeholder-count="4">
+              <tr>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">{{c.when}}</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">{{c.customer}}</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{c.kg}} کیلو</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{c.cumForecast}} کیلو</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1;"><span style="font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{c.bg}}; color: {{c.color}};">{{c.status}}</span></td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px;">برنامهٔ نیروی کار برداشت</h3>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 16px;">برداشت قارچ دکمه‌ای موجی است، پس نیاز به کارگر هم موجی است — و کارگر روزمزد را باید از قبل هماهنگ کرد. فرض محاسبه: هر کارگر ماهر حدود ۲۰ کیلو در ساعت می‌چیند و پنجرهٔ چیدن هر روز حدود ۵ ساعت صبح است.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px; margin-bottom: 30px;">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid #E4E1D6;">
+          <div>
+            <div style="font-size: 11.5px; color: #666158;">کل هفته</div>
+            <div style="font-size: 19px; font-weight: 800;">{{labor.weekHours}} <span style="font-size: 12px; font-weight: 600; color: #666158;">نفر-ساعت</span></div>
+          </div>
+          <div>
+            <div style="font-size: 11.5px; color: #666158;">اوج برداشت</div>
+            <div style="font-size: 19px; font-weight: 800;">{{labor.peakKg}} <span style="font-size: 12px; font-weight: 600; color: #666158;">کیلو در روز {{labor.peakDay}}</span></div>
+          </div>
+          <div>
+            <div style="font-size: 11.5px; color: #666158;">کارگر لازم در روز اوج</div>
+            <div style="font-size: 19px; font-weight: 800;">{{labor.peakWorkers}} <span style="font-size: 12px; font-weight: 600; color: #666158;">نفر</span></div>
+          </div>
+        </div>
+        <table style="width: 100%; font-size: 13px;">
+          <thead>
+            <tr>
+              <th style="text-align: right; padding: 8px 12px; font-size: 12px; font-weight: 700; color: #45494F;">روز</th>
+              <th style="text-align: right; padding: 8px 12px; font-size: 12px; font-weight: 700; color: #45494F;">برداشت پیش‌بینی</th>
+              <th style="text-align: right; padding: 8px 12px; font-size: 12px; font-weight: 700; color: #45494F;">نفر-ساعت</th>
+              <th style="text-align: right; padding: 8px 12px; font-size: 12px; font-weight: 700; color: #45494F;">کارگر لازم</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{labor.days}}" as="d" hint-placeholder-count="7">
+              <tr>
+                <td style="padding: 9px 12px; border-top: 1px solid #EDEAE1; font-weight: 600; background: {{d.bg}};">{{d.day}}</td>
+                <td style="padding: 9px 12px; border-top: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums; background: {{d.bg}};">{{d.kg}} کیلو</td>
+                <td style="padding: 9px 12px; border-top: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums; background: {{d.bg}};">{{d.hours}}</td>
+                <td style="padding: 9px 12px; border-top: 1px solid #EDEAE1; font-weight: 700; font-variant-numeric: tabular-nums; background: {{d.bg}};">{{d.workers}}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px;">برنامهٔ سالن‌ها — ۴۵ روز آینده</h3>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 16px;">هر روزی که یک سالن خالی بماند، هزینهٔ ثابتش را می‌پردازی بدون اینکه چیزی تولید کند. این نوار نشان می‌دهد سالن‌ها کِی خالی می‌شوند و سفارش کمپوست بعدی باید کِی ثبت شود.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; margin-bottom: 14px;">
+        <div style="direction: ltr; display: flex; justify-content: space-between; font-size: 10.5px; color: #666158; margin-bottom: 8px; padding-inline-start: 78px;">
+          <span>امروز</span><span>+۱۵ روز</span><span>+۳۰ روز</span><span>+۴۵ روز</span>
+        </div>
+        <sc-for list="{{gantt}}" as="g" hint-placeholder-count="3">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+            <span style="font-size: 13px; font-weight: 700; width: 66px; flex-shrink: 0;">{{g.name}}</span>
+            <div style="flex: 1; direction: ltr; display: flex; height: 26px; border-radius: 6px; overflow: hidden;">
+              <sc-for list="{{g.segs}}" as="s" hint-placeholder-count="5">
+                <div style="width: {{s.w}}%; background: {{s.bg}};"></div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; border-top: 1px solid #E4E1D6; margin-top: 14px; padding-top: 12px; font-size: 11.5px; color: #45494F;">
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 11px; height: 11px; background: #F4E3D3; border-radius: 3px;"></span>اسپان‌ران</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 11px; height: 11px; background: #EBE3F5; border-radius: 3px;"></span>کیسینگ</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 11px; height: 11px; background: #DCEBFA; border-radius: 3px;"></span>پین‌ست</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 11px; height: 11px; background: #BFDCBA; border-radius: 3px;"></span>فلاش</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 11px; height: 11px; background: #F1EEE7; border-radius: 3px;"></span>استراحت</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 11px; height: 11px; background: #E0DACB; border-radius: 3px;"></span>تخلیه و ضدعفونی</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ برداشت گذشته ============ -->
+    <section style="margin-bottom: 44px;">
+      <h2 style="font-size: 20px; font-weight: 800; margin: 0 0 6px;">برداشت هفت روز گذشته</h2>
+      <p style="font-size: 13.5px; color: #666158; margin: 0 0 16px; max-width: 68ch;">تفکیک به سالن نشان می‌دهد کدام سالن الان بار مزرعه را می‌کشد — و اگر موج‌ها روی هم بیفتند، جای برنامه‌ریزی پرکردن ایراد دارد.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px;">
+        <div style="display: flex; align-items: flex-end; gap: 12px; height: 180px; direction: ltr;">
+          <sc-for list="{{bars}}" as="b" hint-placeholder-count="7">
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 6px;">
+              <span style="font-size: 11px; font-weight: 700; color: #45494F;">{{b.total}}</span>
+              <div style="width: 100%; max-width: 46px; display: flex; flex-direction: column; justify-content: flex-end; height: {{b.h}}%; border-radius: 6px 6px 0 0; overflow: hidden; background: #ECE9E0;">
+                <div style="height: {{b.s3}}%; background: #0E6FB4;"></div>
+                <div style="height: {{b.s2}}%; background: #166534;"></div>
+                <div style="height: {{b.s1}}%; background: #B4530E;"></div>
+              </div>
+              <span style="font-size: 10.5px; color: #666158;">{{b.label}}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; border-top: 1px solid #E4E1D6; margin-top: 14px; padding-top: 12px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F;"><span style="width: 10px; height: 10px; background: #B4530E; border-radius: 3px;"></span>سالن ۱</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F;"><span style="width: 10px; height: 10px; background: #166534; border-radius: 3px;"></span>سالن ۲</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F;"><span style="width: 10px; height: 10px; background: #0E6FB4; border-radius: 3px;"></span>سالن ۳</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ عملیات ============ -->
+    <section id="ops" style="margin-bottom: 44px; scroll-margin-top: 76px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 10px;">۰۴ — عملیات</p>
+      <h2 style="font-size: 23px; font-weight: 800; margin: 0 0 6px;">وضعیت محیطی سالن‌ها</h2>
+      <p style="font-size: 14px; line-height: 1.95; color: #666158; max-width: 68ch; margin: 0 0 18px;">لایهٔ زیرین تصمیم‌ها. اگر این چهار عدد در بازهٔ مرحله بمانند، برداشت سیکل بعد قابل پیش‌بینی می‌شود؛ اگر نمانند، دو هفته بعد در جدول اقتصاد بالا خودش را نشان می‌دهد.</p>
+
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px;">
+        <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+          <button onClick="{{t.pick}}" style="flex: 1; min-width: 210px; text-align: right; background: {{t.bg}}; border: 1.5px solid {{t.border}}; border-radius: 14px; padding: 14px 18px;">
+            <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px;">
+              <span style="font-size: 15px; font-weight: 800; color: #16181C;">{{t.name}}</span>
+              <span style="font-size: 11px; font-weight: 700; color: {{t.color}}; background: {{t.soft}}; border-radius: 999px; padding: 2px 9px; margin-inline-start: auto;">{{t.phase}}</span>
+            </div>
+            <div style="font-size: 12px; color: #666158;">روز {{t.day}} از ۴۲ · {{t.yieldLabel}}</div>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 26px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px;">
+          <h3 style="font-size: 17px; font-weight: 800; margin: 0;">{{room.name}}</h3>
+          <span style="font-size: 11.5px; font-weight: 700; color: {{room.color}}; background: {{room.soft}}; border-radius: 999px; padding: 3px 10px;">{{room.phase}}</span>
+          <span style="font-size: 12.5px; color: #666158; margin-inline-start: auto;">روز {{room.day}} از ۴۲ · {{room.remain}} روز تا پایان سیکل</span>
+        </div>
+
+        <div style="direction: ltr; position: relative; margin-bottom: 8px;">
+          <div style="display: flex; height: 14px; border-radius: 7px; overflow: hidden;">
+            <div style="width: 33.3%; background: #F4E3D3;"></div>
+            <div style="width: 9.5%; background: #EBE3F5;"></div>
+            <div style="width: 7.1%; background: #DCEBFA;"></div>
+            <div style="width: 9.5%; background: #BFDCBA;"></div>
+            <div style="width: 7.1%; background: #F1EEE7;"></div>
+            <div style="width: 9.5%; background: #BFDCBA;"></div>
+            <div style="width: 7.1%; background: #F1EEE7;"></div>
+            <div style="width: 9.5%; background: #BFDCBA;"></div>
+            <div style="width: 7.1%; background: #E0DACB;"></div>
+          </div>
+          <div style="position: absolute; top: -4px; width: 3px; height: 22px; background: #16181C; border-radius: 2px; left: {{room.dayPct}}%;"></div>
+        </div>
+        <div style="direction: ltr; display: flex; justify-content: space-between; font-size: 10.5px; color: #666158; margin-bottom: 22px;">
+          <span>اسپان‌ران</span><span>کیسینگ</span><span>پین‌ست</span><span>فلاش ۱</span><span>فلاش ۲</span><span>فلاش ۳</span><span>تخلیه</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 14px;">
+          <sc-for list="{{metrics}}" as="m" hint-placeholder-count="4">
+            <div style="border: 1px solid #E4E1D6; border-radius: 14px; padding: 14px 16px;">
+              <div style="font-size: 12px; color: #666158; margin-bottom: 4px;">{{m.label}}</div>
+              <div style="font-size: 21px; font-weight: 800; font-variant-numeric: tabular-nums;">{{m.value}}<span style="font-size: 12px; font-weight: 600; color: #666158;"> {{m.unit}}</span></div>
+              <svg viewBox="0 0 280 72" style="width: 100%; height: auto; display: block; margin: 8px 0 6px;" role="img" aria-label="روند ۱۴ روز اخیر">
+                <rect x="8" y="{{m.bandY}}" width="264" height="{{m.bandH}}" fill="{{m.soft}}"></rect>
+                <polyline points="{{m.pts}}" fill="none" stroke="{{m.color}}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"></polyline>
+              </svg>
+              <div style="font-size: 10.5px; font-weight: 600; border-radius: 6px; padding: 3px 7px; background: {{m.chipBg}}; color: {{m.chipColor}};">{{m.chip}}</div>
+            </div>
+          </sc-for>
+        </div>
+        <p style="font-size: 12px; color: #666158; margin: 12px 0 0;">خط، روند ۱۴ روز اخیر است و نوار رنگی، بازهٔ مرجع <b>مرحلهٔ فعلی</b>. وقتی سالن مرحله عوض می‌کند، نوار جابه‌جا می‌شود و بخشی از خط بیرون می‌افتد — این طبیعی است، نه خطا.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px;">
+        <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 4px;">هشدارهای {{room.name}}</h3>
+        <p style="font-size: 12.5px; color: #666158; margin: 0 0 14px;">هشدار نسبت به مرحله ساخته می‌شود، نه با یک عدد ثابت: CO₂ برابر ۱۵٬۰۰۰ در اسپان‌ران طبیعی است و در فلاش فاجعه.</p>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <sc-for list="{{room.alerts}}" as="a" hint-placeholder-count="2">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px; background: {{a.bg}}; flex-wrap: wrap;">
+              <span style="font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{a.pillBg}}; color: {{a.color}};">{{a.severity}}</span>
+              <span style="font-size: 13.5px; font-weight: 700; color: #16181C;">{{a.title}}</span>
+              <span style="font-size: 12.5px; color: #45494F;">{{a.detail}}</span>
+            </div>
+          </sc-for>
+          <sc-if value="{{room.noAlerts}}" hint-placeholder-val="{{true}}">
+            <div style="padding: 14px; border-radius: 10px; background: #E3EEE1; color: #166534; font-size: 13.5px; font-weight: 600;">همهٔ مقادیر این سالن در بازهٔ مرجع مرحله‌اند — هیچ هشدار بازی وجود ندارد.</div>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ نقدینگی ============ -->
+    <section id="cash" style="margin-bottom: 44px; scroll-margin-top: 76px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #B4530E; margin: 0 0 10px;">۰۵ — نقدینگی</p>
+      <h2 style="font-size: 23px; font-weight: 800; margin: 0 0 6px;">پول کجاست</h2>
+      <p style="font-size: 14px; line-height: 1.95; color: #666158; max-width: 68ch; margin: 0 0 18px;">کارخانهٔ سودده هم اگر طلبش وصول نشود، برای خرید کمپوست سیکل بعد پول کم می‌آورد. این بخش، سود روی کاغذ را از پول در دسترس جدا می‌کند.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px; margin-bottom: 16px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800;">{{cash.balance}}</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">موجودی صندوق (م.ت)</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800; color: #8A5410;">{{cash.receivable}}</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">مطالبات وصول‌نشده (م.ت)</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800; color: #A32222;">{{cash.upcoming}}</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">پرداختی ۱۴ روز آینده (م.ت)</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 16px 18px;">
+          <div style="font-size: 21px; font-weight: 800; color: {{cash.netColor}};">{{cash.net}}</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 3px;">مانده پس از تعهدها (م.ت)</div>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px;">
+        <table style="width: 100%; min-width: 560px; font-size: 13px;">
+          <thead>
+            <tr>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">مشتری</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">مبلغ (م.ت)</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">روز از تحویل</th>
+              <th style="text-align: right; padding: 12px 16px; font-size: 12px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">وضعیت</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{receivables}}" as="r" hint-placeholder-count="4">
+              <tr>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">{{r.name}}</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{r.amount}}</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F; font-variant-numeric: tabular-nums;">{{r.days}}</td>
+                <td style="padding: 12px 16px; border-bottom: 1px solid #EDEAE1;"><span style="font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{r.bg}}; color: {{r.color}};">{{r.status}}</span></td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ ثبت‌های امروز ============ -->
+    <section style="margin-bottom: 44px;">
+      <h2 style="font-size: 20px; font-weight: 800; margin: 0 0 6px;">ثبت‌های امروز</h2>
+      <p style="font-size: 13.5px; color: #666158; margin: 0 0 16px; max-width: 68ch;">همهٔ عددهای بالای این صفحه از همین سطرها ساخته شده‌اند. در سیستم واقعی، هر سطر را یک نفر از موبایل داخل سالن ثبت کرده است.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <sc-for list="{{logs}}" as="l" hint-placeholder-count="8">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 11px 14px; border: 1px solid #E4E1D6; border-radius: 10px; flex-wrap: wrap;">
+              <span style="font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{l.bg}}; color: {{l.color}}; flex-shrink: 0;">{{l.type}}</span>
+              <span style="font-size: 13.5px; color: #16181C; flex: 1; min-width: 200px;">{{l.text}}</span>
+              <span style="font-size: 12px; color: #666158;">{{l.room}}</span>
+              <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">{{l.time}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ مسیر داده ============ -->
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-size: 20px; font-weight: 800; margin: 0 0 6px;">داده از کجا به تصمیم می‌رسد</h2>
+      <p style="font-size: 13.5px; color: #666158; margin: 0 0 18px; max-width: 68ch;">ارزش سیستم در فرم‌ها نیست؛ در سه مرحلهٔ بعدی است.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 14px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px; border-top: 3px solid #B4530E;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 6px;">۱</div>
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">ثبت در سالن</h4>
+          <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">اپراتور با موبایل، در کمتر از ۳۰ ثانیه فرم کوتاه را پر می‌کند.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px; border-top: 3px solid #5B3F92;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 6px;">۲</div>
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">سنجش با مرحله</h4>
+          <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">سیستم می‌داند سالن در کدام روز سیکل است و عدد را با بازهٔ همان مرحله می‌سنجد.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px; border-top: 3px solid #166534;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 6px;">۳</div>
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">تبدیل به پول</h4>
+          <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">هر کیلو برداشت و هر کیلو کمپوست به بهای تمام‌شده و حاشیهٔ سود همان سیکل تبدیل می‌شود.</p>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px; border-top: 3px solid #A32222;">
+          <div style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 6px;">۴</div>
+          <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 8px;">تصمیم امروز</h4>
+          <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">آنچه از آستانه رد شده، بالای صفحه به‌صورت یک تصمیم با اقدام مشخص می‌نشیند.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="background: #FAFAF7; border: 1px dashed #D9D5C9; border-radius: 14px; padding: 20px 24px; text-align: center;">
+      <p style="font-size: 13px; line-height: 1.95; color: #45494F; max-width: 66ch; margin: 0 auto;">همهٔ عددهای این صفحه شبیه‌سازی‌شده‌اند و هیچ ارتباطی با داده واقعی مزرعهٔ دُرّین ندارند. محصول در همهٔ محاسبات <b>قارچ دکمه‌ای</b> است و منحنی‌ها، بازه‌های مرجع و نسبت‌های اقتصادی بر پایهٔ الگوی رایج همین محصول ساخته شده‌اند.</p>
+    </div>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <a href="Dorrin.dc.html" style="font-size: 13px; font-weight: 600; color: #45494F;">← مطالعهٔ موردی کامل</a>
+      <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · پل فرماندهی شبیه‌سازی‌شده</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1180,"height":1300}}'>
+var ROOMS = [
+  { name: 'سالن ۱', color: '#B4530E', soft: '#F4E3D3', scale: 0.92 },
+  { name: 'سالن ۲', color: '#166534', soft: '#E3EEE1', scale: 1.08 },
+  { name: 'سالن ۳', color: '#0E6FB4', soft: '#DCEBFA', scale: 1.0 }
+];
+
+var PHASES = {
+  spawn:    { label: 'اسپان‌ران',         bg: '#F4E3D3', compost: [24, 26], room: [23, 26], rh: [92, 96], co2: [5000, 20000] },
+  casing:   { label: 'کیسینگ‌ران',        bg: '#EBE3F5', compost: [23, 26], room: [22, 25], rh: [93, 97], co2: [4000, 12000] },
+  pinning:  { label: 'ونتیلیشن و پین‌ست', bg: '#DCEBFA', compost: [18, 21], room: [16, 19], rh: [88, 93], co2: [800, 1500] },
+  flush:    { label: 'فلاش و برداشت',     bg: '#BFDCBA', compost: [18, 21], room: [16, 19], rh: [85, 90], co2: [800, 1500] },
+  rest:     { label: 'استراحت بین فلاش',  bg: '#F1EEE7', compost: [18, 21], room: [16, 19], rh: [85, 90], co2: [800, 1500] },
+  cleanout: { label: 'تخلیه و ضدعفونی',   bg: '#E0DACB', compost: [18, 21], room: [16, 19], rh: [85, 90], co2: [800, 1500] }
+};
+
+var DEFAULTS = { price: '185000', compostCost: '12000', pickCost: '15000', fixedCost: '38000000' };
+var YIELD = { 21: 62, 22: 148, 23: 124, 24: 71, 28: 47, 29: 88, 30: 72, 31: 36, 35: 26, 36: 47, 37: 36, 38: 19 };
+var COMPOST_PER_ROOM = 2800;
+var CASING_COST = 12000;
+
+function phaseKey(d) {
+  if (d < 14) { return 'spawn'; }
+  if (d < 18) { return 'casing'; }
+  if (d < 21) { return 'pinning'; }
+  if (d < 25) { return 'flush'; }
+  if (d < 28) { return 'rest'; }
+  if (d < 32) { return 'flush'; }
+  if (d < 35) { return 'rest'; }
+  if (d < 39) { return 'flush'; }
+  return 'cleanout';
+}
+
+function centers(d) {
+  var compost, room, rh, co2;
+  if (d <= 2) { compost = 27 - d * 0.5; } else if (d <= 14) { compost = 26 - (d - 2) * 0.1; }
+  else if (d <= 18) { compost = 24.5; } else if (d <= 21) { compost = 24 - (d - 18) * 1.2; }
+  else { compost = 19.6; }
+
+  if (d <= 14) { room = 25 - d * 0.035; } else if (d <= 17) { room = 24.4; }
+  else if (d <= 21) { room = 24 - (d - 17) * 1.55; } else { room = 17.7; }
+
+  if (d <= 13) { rh = 94.8 - d * 0.07; } else if (d <= 17) { rh = 95.4; }
+  else if (d <= 21) { rh = 94 - (d - 17) * 1.5; }
+  else { rh = (phaseKey(d) === 'rest') ? 89.5 : 87.2; }
+
+  if (d <= 10) { co2 = 3000 + d * 1500; } else if (d <= 14) { co2 = 18000 - (d - 10) * 750; }
+  else if (d <= 18) { co2 = 15000 - (d - 14) * 2000; } else if (d <= 21) { co2 = 7000 - (d - 18) * 2000; }
+  else { co2 = (phaseKey(d) === 'flush') ? 1450 : 1050; }
+  if (co2 < 800) { co2 = 800; }
+
+  return { compost: compost, room: room, rh: rh, co2: co2 };
+}
+
+function yieldOf(d, scale) {
+  var b = YIELD[d] || 0;
+  return b ? Math.round(b * scale) : 0;
+}
+
+function cycleTotal(scale) {
+  var s = 0;
+  for (var k in YIELD) { s += YIELD[k]; }
+  return Math.round(s * scale);
+}
+
+function harvestedSoFar(day, scale) {
+  var s = 0;
+  for (var k in YIELD) { if (Number(k) <= day) { s += YIELD[k]; } }
+  return Math.round(s * scale);
+}
+
+function jitter(v, a) { return v + (Math.random() * 2 - 1) * a; }
+function r1(v) { return Math.round(v * 10) / 10; }
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var days = [9, 30, 20];
+    this.state = {
+      days: days, active: 1, tick: 0,
+      price: DEFAULTS.price, compostCost: DEFAULTS.compostCost,
+      pickCost: DEFAULTS.pickCost, fixedCost: DEFAULTS.fixedCost,
+      sim: this.build(days)
+    };
+  }
+
+  fa(str) {
+    var map = { '0': '۰', '1': '۱', '2': '۲', '3': '۳', '4': '۴', '5': '۵', '6': '۶', '7': '۷', '8': '۸', '9': '۹' };
+    return String(str).replace(/[0-9]/g, function (d) { return map[d]; });
+  }
+  num(n) { return Number(n).toLocaleString('fa-IR'); }
+  mt(n) { return this.num(Math.round(n / 100000) / 10); }
+
+  build(days) {
+    var self = this;
+    var rooms = days.map(function (day, i) {
+      var cfg = ROOMS[i];
+      var key = phaseKey(day);
+      var rng = PHASES[key];
+      var env = [];
+      for (var k = 13; k >= 0; k--) {
+        var d = day - k;
+        if (d < 0) { d = 0; }
+        var c = centers(d);
+        env.push({
+          compost: r1(jitter(c.compost, 0.3)), room: r1(jitter(c.room, 0.3)),
+          rh: r1(jitter(c.rh, 1)), co2: Math.round(jitter(c.co2, c.co2 * 0.07))
+        });
+      }
+      var today = env[13];
+      if (Math.random() < 0.3) {
+        var pick = ['compost', 'room', 'rh', 'co2'][Math.floor(Math.random() * 4)];
+        var band = rng[pick];
+        var span = band[1] - band[0];
+        var below = Math.random() < 0.5;
+        var v = below ? band[0] - span * (0.08 + Math.random() * 0.2) : band[1] + span * (0.08 + Math.random() * 0.2);
+        today[pick] = pick === 'co2' ? Math.round(v) : r1(v);
+        env[13] = today;
+      }
+      var gradeA = Math.round(60 + Math.random() * 24);
+      var restPct = 100 - gradeA;
+      var gradeC = Math.round(restPct * (0.12 + Math.random() * 0.2));
+      var gradeB = restPct - gradeC;
+
+      return {
+        name: cfg.name, color: cfg.color, soft: cfg.soft, scale: cfg.scale,
+        compostKg: Math.round(COMPOST_PER_ROOM * cfg.scale),
+        day: day, phaseKey: key, phase: rng.label, env: env, today: today,
+        produced: yieldOf(day, cfg.scale),
+        gradeA: gradeA, gradeB: gradeB, gradeC: gradeC,
+        prevTotal: Math.round(cycleTotal(cfg.scale) * (0.86 + Math.random() * 0.26))
+      };
+    });
+
+    var bars = [];
+    for (var k2 = 6; k2 >= 0; k2--) {
+      var segs = rooms.map(function (r) {
+        var d = r.day - k2;
+        if (d < 0) { d += 42; }
+        return yieldOf(d, r.scale);
+      });
+      bars.push({ offset: k2, segs: segs, total: segs[0] + segs[1] + segs[2] });
+    }
+
+    var forecast = [];
+    for (var k3 = 1; k3 <= 14; k3++) {
+      var t = 0;
+      rooms.forEach(function (r) { t += yieldOf((r.day + k3) % 42, r.scale); });
+      forecast.push(t);
+    }
+
+    var names = ['میدان مرکزی — غرفه ۱۲', 'هایپر شهر', 'صنایع غذایی آریان', 'رستوران‌های زنجیره‌ای پیوند'];
+    var offsets = [2, 5, 9, 13];
+    var commitments = offsets.map(function (o, i) {
+      return { inDays: o, customer: names[i], kg: Math.round((150 + Math.random() * 190) / 10) * 10 };
+    });
+
+    var receivables = names.map(function (n, i) {
+      return {
+        name: n,
+        amount: Math.round((8 + Math.random() * 34) * 10) / 10,
+        days: Math.round(2 + Math.random() * 36)
+      };
+    });
+
+    return {
+      rooms: rooms, bars: bars, forecast: forecast, commitments: commitments,
+      receivables: receivables, logs: this.buildLogs(rooms),
+      kwhPerKg: r1(2.0 + Math.random() * 1.2),
+      wastePct: r1(3 + Math.random() * 6),
+      cashBalance: Math.round((60 + Math.random() * 120) * 10) / 10
+    };
+  }
+
+  buildLogs(rooms) {
+    var self = this;
+    var T = {
+      visit: { type: 'بازدید سالن', bg: '#F4E3D3', color: '#8A5410' },
+      harvest: { type: 'برداشت', bg: '#E3EEE1', color: '#166534' },
+      water: { type: 'آبیاری', bg: '#DCEBFA', color: '#0E6FB4' },
+      disease: { type: 'مشاهده بیماری', bg: '#F5E1DF', color: '#A32222' },
+      sale: { type: 'فروش', bg: '#F5E9D6', color: '#8A5410' },
+      compost: { type: 'کمپوست', bg: '#EBE3F5', color: '#5B3F92' }
+    };
+    var out = [];
+    rooms.forEach(function (r) {
+      out.push({ t: T.visit, room: r.name, text: 'دمای کمپوست ' + self.num(r.today.compost) + ' °C · رطوبت ' + self.num(r.today.rh) + '٪ · CO₂ ' + self.num(r.today.co2) + ' ppm' });
+      if (r.produced > 0) {
+        out.push({ t: T.harvest, room: r.name, text: 'قارچ دکمه‌ای ' + self.num(r.produced) + ' کیلو · Flush ' + self.fa(r.day < 28 ? 1 : (r.day < 35 ? 2 : 3)) + ' · ' + (Math.random() < 0.7 ? 'درجه یک' : 'درجه دو') });
+      }
+      if (r.phaseKey === 'casing' || r.phaseKey === 'flush') {
+        out.push({ t: T.water, room: r.name, text: self.num(80 + Math.round(Math.random() * 90)) + ' لیتر آبیاری سطحی' });
+      }
+      if (r.phaseKey === 'spawn' && r.day < 2) {
+        out.push({ t: T.compost, room: r.name, text: 'ورود ' + self.num(r.compostKg) + ' کیلو کمپوست · Batch ' + self.fa('A-' + (100 + Math.floor(Math.random() * 90))) });
+      }
+    });
+    if (Math.random() < 0.5) {
+      var rr = rooms[Math.floor(Math.random() * 3)];
+      out.push({ t: T.disease, room: rr.name, text: 'لکه‌های قهوه‌ای پراکنده · شدت ' + (Math.random() < 0.6 ? 'کم' : 'متوسط') });
+    }
+    var sold = rooms.reduce(function (s, r) { return s + r.produced; }, 0);
+    if (sold > 0) {
+      out.push({ t: T.sale, room: '—', text: self.num(sold) + ' کیلو قارچ دکمه‌ای به میدان مرکزی' });
+    }
+    var hours = [];
+    for (var i = 0; i < out.length; i++) { hours.push(6 + Math.floor(Math.random() * 13)); }
+    hours.sort(function (a, b) { return b - a; });
+    return out.map(function (o, i) {
+      var mm = Math.floor(Math.random() * 6) * 10;
+      return {
+        type: o.t.type, bg: o.t.bg, color: o.t.color, room: o.room, text: o.text,
+        time: self.fa((hours[i] < 10 ? '0' : '') + hours[i] + ':' + (mm < 10 ? '0' : '') + mm)
+      };
+    });
+  }
+
+  params() {
+    return {
+      price: parseFloat(this.state.price) || 0,
+      compostCost: parseFloat(this.state.compostCost) || 0,
+      pickCost: parseFloat(this.state.pickCost) || 0,
+      fixedCost: parseFloat(this.state.fixedCost) || 0
+    };
+  }
+
+  econ(room, P) {
+    var expected = cycleTotal(room.scale);
+    var soFar = harvestedSoFar(room.day, room.scale);
+    var casingKg = Math.round(room.compostKg * 0.15);
+    var fixedPart = room.compostKg * P.compostCost + casingKg * CASING_COST + P.fixedCost;
+    var labor = expected * P.pickCost;
+    var cost = fixedPart + labor;
+    // قیمت مؤثر: درجه دو ۷۲٪ و ریز ۴۵٪ قیمت درجه یک به فروش می‌رود
+    var effPrice = P.price * (room.gradeA + 0.72 * room.gradeB + 0.45 * room.gradeC) / 100;
+    var revenue = expected * effPrice;
+    return {
+      expected: expected, soFar: soFar, compostKg: room.compostKg, casingKg: casingKg,
+      compostCost: room.compostKg * P.compostCost, casingCost: casingKg * CASING_COST,
+      labor: labor, fixedPart: fixedPart, cost: cost, revenue: revenue, effPrice: effPrice,
+      profit: revenue - cost,
+      costPerKg: expected > 0 ? cost / expected : 0,
+      margin: revenue > 0 ? ((revenue - cost) / revenue) * 100 : 0,
+      be: (expected / room.compostKg) * 100,
+      beKg: (effPrice - P.pickCost) > 0 ? fixedPart / (effPrice - P.pickCost) : 0
+    };
+  }
+
+  nextDay() {
+    var days = this.state.days.map(function (d) { return (d + 1) % 42; });
+    this.setState({ days: days, tick: this.state.tick + 1, sim: this.build(days) });
+  }
+  week() {
+    var days = this.state.days.map(function (d) { return (d + 7) % 42; });
+    this.setState({ days: days, tick: this.state.tick + 7, sim: this.build(days) });
+  }
+  reshuffle() { this.setState({ sim: this.build(this.state.days) }); }
+  reset() {
+    var days = [9, 30, 20];
+    this.setState({
+      days: days, active: 1, tick: 0,
+      price: DEFAULTS.price, compostCost: DEFAULTS.compostCost,
+      pickCost: DEFAULTS.pickCost, fixedCost: DEFAULTS.fixedCost,
+      sim: this.build(days)
+    });
+  }
+  set(key) {
+    var self = this;
+    return function (e) {
+      var p = {};
+      p[key] = e.target.value;
+      self.setState(p);
+    };
+  }
+
+  spark(values, min, max, band, color) {
+    var pts = [];
+    for (var i = 0; i < values.length; i++) {
+      var x = 8 + i * (264 / (values.length - 1));
+      var v = values[i];
+      if (v < min) { v = min; }
+      if (v > max) { v = max; }
+      pts.push(x.toFixed(1) + ',' + (64 - ((v - min) / (max - min)) * 54).toFixed(1));
+    }
+    var yTop = 64 - ((Math.min(band[1], max) - min) / (max - min)) * 54;
+    var yBot = 64 - ((Math.max(band[0], min) - min) / (max - min)) * 54;
+    return { pts: pts.join(' '), bandY: yTop.toFixed(1), bandH: Math.max(2, yBot - yTop).toFixed(1) };
+  }
+
+  metricOf(label, unit, values, current, min, max, band, color, soft) {
+    var s = this.spark(values, min, max, band, color);
+    var ok = current >= band[0] && current <= band[1];
+    return {
+      label: label, unit: unit, value: this.num(current), pts: s.pts, bandY: s.bandY, bandH: s.bandH,
+      color: color, soft: soft,
+      chip: (ok ? 'در بازه · ' : 'خارج از بازه · ') + this.num(band[0]) + ' تا ' + this.num(band[1]),
+      chipBg: ok ? '#E3EEE1' : '#F5E9D6', chipColor: ok ? '#166534' : '#8A5410'
+    };
+  }
+
+  signed(v, unit) {
+    var n = Math.round(v);
+    if (n === 0) { n = 0; }
+    return (n > 0 ? '+' : '') + this.num(n) + (unit ? ' ' + unit : '');
+  }
+
+  kpi(label, value, target, ok, delta) {
+    return {
+      label: label, value: value, target: target, delta: delta,
+      bg: ok ? '#E3EEE1' : '#F5E9D6', color: ok ? '#166534' : '#8A5410'
+    };
+  }
+
+  renderVals() {
+    var self = this;
+    var sim = this.state.sim;
+    var rooms = sim.rooms;
+    var P = this.params();
+    var active = rooms[this.state.active];
+    var rng = PHASES[active.phaseKey];
+
+    var metricDefs = [
+      { key: 'compost', label: 'دمای کمپوست', unit: '°C' },
+      { key: 'room', label: 'دمای سالن', unit: '°C' },
+      { key: 'rh', label: 'رطوبت RH', unit: '٪' },
+      { key: 'co2', label: 'CO₂', unit: 'ppm' }
+    ];
+
+    // ---- اقتصاد ----
+    var econs = rooms.map(function (r) { return self.econ(r, P); });
+    var econRows = rooms.map(function (r, i) {
+      var e = econs[i];
+      return {
+        name: r.name, color: r.color, phase: r.phase, day: self.num(r.day),
+        compost: self.num(e.compostKg), soFar: self.num(e.soFar), expected: self.num(e.expected),
+        be: self.num(Math.round(e.be)), beColor: e.be >= 28 ? '#166534' : '#8A5410',
+        costPerKg: self.num(Math.round(e.costPerKg / 1000) * 1000),
+        profit: self.mt(e.profit), margin: self.num(Math.round(e.margin)),
+        profitColor: e.profit > 0 ? '#166534' : '#A32222'
+      };
+    });
+
+    var sum = function (f) { return econs.reduce(function (s, e) { return s + f(e); }, 0); };
+    var tCost = sum(function (e) { return e.cost; });
+    var tRev = sum(function (e) { return e.revenue; });
+    var tExpected = sum(function (e) { return e.expected; });
+    var tCompost = sum(function (e) { return e.compostKg; });
+    var tProfit = tRev - tCost;
+    var tMargin = tRev > 0 ? (tProfit / tRev) * 100 : 0;
+    var tCostPerKg = tExpected > 0 ? tCost / tExpected : 0;
+    var tBe = tCompost > 0 ? (tExpected / tCompost) * 100 : 0;
+
+    var total = {
+      compost: this.num(tCompost), soFar: this.num(sum(function (e) { return e.soFar; })),
+      expected: this.num(tExpected), be: this.num(Math.round(tBe)),
+      costPerKg: this.num(Math.round(tCostPerKg / 1000) * 1000),
+      profit: this.mt(tProfit), margin: this.num(Math.round(tMargin)),
+      profitColor: tProfit > 0 ? '#166534' : '#A32222'
+    };
+
+    var e1 = econs[1];
+    var safety = e1.beKg > 0 ? Math.round(((e1.expected - e1.beKg) / e1.beKg) * 100) : 0;
+    var breakEven = {
+      kg: this.num(Math.round(e1.beKg)), expected: this.num(e1.expected),
+      safety: this.num(safety)
+    };
+
+    var mixTotal = sum(function (e) { return e.cost; }) || 1;
+    var costMix = {
+      compostPct: Math.round((sum(function (e) { return e.compostCost; }) / mixTotal) * 100),
+      casingPct: Math.round((sum(function (e) { return e.casingCost; }) / mixTotal) * 100),
+      laborPct: Math.round((sum(function (e) { return e.labor; }) / mixTotal) * 100),
+      fixedPct: Math.round((P.fixedCost * 3 / mixTotal) * 100)
+    };
+
+    var lowRev = tRev * 0.9;
+    var lowMargin = lowRev > 0 ? ((lowRev - tCost) / lowRev) * 100 : 0;
+    var sensitivity = {
+      margin: this.num(Math.round(lowMargin)),
+      color: lowMargin > 20 ? '#166534' : (lowMargin > 0 ? '#8A5410' : '#A32222')
+    };
+
+    // ---- ترکیب گرید و قیمت مؤثر ----
+    var gradeRows = rooms.map(function (r, i) {
+      var e = econs[i];
+      var disc = P.price > 0 ? (1 - e.effPrice / P.price) * 100 : 0;
+      var healthy = r.gradeA >= 70;
+      return {
+        name: r.name, color: r.color,
+        a: r.gradeA, b: r.gradeB, c: r.gradeC,
+        aLabel: self.num(r.gradeA) + '٪', bLabel: self.num(r.gradeB) + '٪', cLabel: self.num(r.gradeC) + '٪',
+        effPrice: self.num(Math.round(e.effPrice / 1000) * 1000),
+        discount: self.num(Math.round(disc)),
+        chip: healthy ? 'ترکیب سالم' : 'سهم درجه یک پایین',
+        chipBg: healthy ? '#E3EEE1' : '#F5E9D6',
+        chipColor: healthy ? '#166534' : '#8A5410'
+      };
+    });
+
+    // ---- مقایسه با سیکل قبل ----
+    var cycleCompare = rooms.map(function (r, i) {
+      var cur = econs[i].expected;
+      var prev = r.prevTotal;
+      var d = prev > 0 ? ((cur - prev) / prev) * 100 : 0;
+      var maxv = Math.max(cur, prev) || 1;
+      var up = d >= 0;
+      return {
+        name: r.name, color: r.color, delta: d,
+        prev: self.num(prev), cur: self.num(cur),
+        prevW: Math.round((prev / maxv) * 100), curW: Math.round((cur / maxv) * 100),
+        deltaLabel: self.signed(d, '') + '٪',
+        deltaColor: up ? '#166534' : '#A32222',
+        deltaBg: up ? '#E3EEE1' : '#F5E1DF',
+        note: up ? 'هم‌تراز یا بهتر از سیکل قبل' : 'افت نسبت به سیکل قبل همین سالن'
+      };
+    });
+
+    // ---- پیش‌بینی و تعهدها ----
+    var maxF = 1;
+    sim.forecast.forEach(function (v) { if (v > maxF) { maxF = v; } });
+    var commitDays = {};
+    sim.commitments.forEach(function (c) { commitDays[c.inDays] = true; });
+    var forecast = sim.forecast.map(function (v, i) {
+      var d = i + 1;
+      return {
+        day: '+' + self.fa(d), label: v > 0 ? self.num(v) : '—',
+        h: Math.max(2, Math.round((v / maxF) * 74)),
+        color: v > 0 ? '#166534' : '#D9D5C9',
+        mark: commitDays[d] ? '▾' : ''
+      };
+    });
+
+    var cum = [];
+    var run = 0;
+    for (var i2 = 0; i2 < sim.forecast.length; i2++) { run += sim.forecast[i2]; cum.push(run); }
+    var commitRun = 0;
+    var firstGap = null;
+    var commitments = sim.commitments.map(function (c) {
+      commitRun += c.kg;
+      var avail = cum[c.inDays - 1] || 0;
+      var covered = avail >= commitRun;
+      if (!covered && firstGap === null) { firstGap = { c: c, gap: Math.round(commitRun - avail) }; }
+      return {
+        when: 'تا ' + self.fa(c.inDays) + ' روز دیگر', customer: c.customer,
+        kg: self.num(c.kg), cumForecast: self.num(avail),
+        status: covered ? 'پوشش داده می‌شود' : 'کسری',
+        bg: covered ? '#E3EEE1' : '#F5E1DF', color: covered ? '#166534' : '#A32222'
+      };
+    });
+
+    // ---- برنامهٔ نیروی کار ----
+    var laborDays = [];
+    for (var li = 0; li < 7; li++) {
+      var lkg = sim.forecast[li];
+      laborDays.push({
+        day: '+' + self.fa(li + 1),
+        kg: lkg > 0 ? self.num(lkg) : '—',
+        hours: lkg > 0 ? self.num(Math.round((lkg / 20) * 10) / 10) : '—',
+        workers: lkg > 0 ? self.num(Math.ceil(lkg / 100)) : '—',
+        bg: lkg > 400 ? '#F5E9D6' : '#FFFFFF'
+      });
+    }
+    var next7 = sim.forecast.slice(0, 7);
+    var peakKg = Math.max.apply(null, next7);
+    var peakIdx = next7.indexOf(peakKg);
+    var peakWorkers = Math.ceil(peakKg / 100);
+    var weekHours = Math.round(next7.reduce(function (s, v) { return s + v; }, 0) / 20);
+
+    var week7 = cum[6] || 0;
+    var commit7 = sim.commitments.reduce(function (s, c) { return s + (c.inDays <= 7 ? c.kg : 0); }, 0);
+    var gap7 = commit7 - week7;
+    var coverage = gap7 > 0
+      ? { title: 'کسری ' + this.num(Math.round(gap7)) + ' کیلویی در هفت روز آینده',
+          detail: 'تعهد ثبت‌شده ' + this.num(commit7) + ' کیلو در برابر پیش‌بینی برداشت ' + this.num(week7) + ' کیلو. یا تحویل یکی از سفارش‌ها را جابه‌جا کن، یا فروش آزاد این هفته را متوقف کن.',
+          bg: '#F5E1DF', color: '#A32222' }
+      : { title: 'تعهدهای هفت روز آینده پوشش داده می‌شوند',
+          detail: 'پیش‌بینی برداشت ' + this.num(week7) + ' کیلو در برابر تعهد ' + this.num(commit7) + ' کیلو — مازاد ' + this.num(Math.round(-gap7)) + ' کیلو برای فروش آزاد.',
+          bg: '#E3EEE1', color: '#166534' };
+
+    // ---- برنامهٔ سالن‌ها ----
+    var gantt = rooms.map(function (r) {
+      var segs = [];
+      var last = null;
+      for (var k = 0; k < 45; k++) {
+        var key = phaseKey((r.day + k) % 42);
+        if (last && last.key === key) { last.len++; }
+        else { last = { key: key, len: 1 }; segs.push(last); }
+      }
+      return {
+        name: r.name,
+        segs: segs.map(function (s) {
+          return { w: Math.round((s.len / 45) * 1000) / 10, bg: PHASES[s.key].bg };
+        })
+      };
+    });
+
+    var idleDays = 0;
+    rooms.forEach(function (r) {
+      for (var k = 0; k < 30; k++) { if (phaseKey((r.day + k) % 42) === 'cleanout') { idleDays++; } }
+    });
+
+    // ---- هشدارها و تصمیم‌ها ----
+    var alerts = [];
+    metricDefs.forEach(function (d) {
+      var v = active.today[d.key];
+      var band = rng[d.key];
+      if (v < band[0] || v > band[1]) {
+        var span = band[1] - band[0];
+        var dist = v < band[0] ? band[0] - v : v - band[1];
+        var hard = dist > span * 0.15;
+        alerts.push({
+          severity: hard ? 'شدید' : 'متوسط',
+          bg: hard ? '#F5E1DF' : '#F5E9D6', pillBg: hard ? '#EDCECB' : '#EBDBC0',
+          color: hard ? '#A32222' : '#8A5410',
+          title: d.label + ' ' + (v < band[0] ? 'پایین‌تر از بازه' : 'بالاتر از بازه'),
+          detail: 'ثبت‌شده ' + self.num(v) + ' ' + d.unit + ' · بازهٔ مرجع ' + self.num(band[0]) + ' تا ' + self.num(band[1]) + ' در مرحلهٔ ' + rng.label
+        });
+      }
+    });
+
+    var decisions = [];
+    var SEV = {
+      crit: { severity: 'فوری', color: '#A32222', pillBg: '#EDCECB' },
+      warn: { severity: 'این هفته', color: '#8A5410', pillBg: '#EBDBC0' },
+      ok: { severity: 'پایش', color: '#166534', pillBg: '#CFE3CC' }
+    };
+
+    if (gap7 > 0) {
+      decisions.push({
+        severity: SEV.crit.severity, color: SEV.crit.color, pillBg: SEV.crit.pillBg,
+        title: 'کسری ' + this.num(Math.round(gap7)) + ' کیلو در برابر تعهد فروش',
+        detail: 'تعهد هفت روز آینده ' + this.num(commit7) + ' کیلو است و پیش‌بینی برداشت ' + this.num(week7) + ' کیلو.',
+        action: 'تحویل ' + (firstGap ? firstGap.c.customer : 'یکی از سفارش‌ها') + ' را جابه‌جا کن یا فروش آزاد را ببند.'
+      });
+    }
+
+    rooms.forEach(function (r) {
+      if (r.day >= 36) {
+        decisions.push({
+          severity: SEV.crit.severity, color: SEV.crit.color, pillBg: SEV.crit.pillBg,
+          title: 'سفارش کمپوست ' + r.name,
+          detail: r.name + ' در روز ' + self.num(r.day) + ' است و تا ' + self.num(42 - r.day) + ' روز دیگر تخلیه می‌شود.',
+          action: 'ثبت خرید ' + self.num(r.compostKg) + ' کیلو کمپوست برای پرکردن بعدی.'
+        });
+      }
+    });
+
+    rooms.forEach(function (r, i) {
+      var rr = PHASES[r.phaseKey];
+      metricDefs.forEach(function (d) {
+        var v = r.today[d.key];
+        var band = rr[d.key];
+        var span = band[1] - band[0];
+        var dist = v < band[0] ? band[0] - v : (v > band[1] ? v - band[1] : 0);
+        if (dist > span * 0.15) {
+          decisions.push({
+            severity: SEV.crit.severity, color: SEV.crit.color, pillBg: SEV.crit.pillBg,
+            title: 'انحراف شدید ' + d.label + ' در ' + r.name,
+            detail: self.num(v) + ' ' + d.unit + ' در برابر بازهٔ ' + self.num(band[0]) + ' تا ' + self.num(band[1]) + ' مرحلهٔ ' + rr.label + '.',
+            action: 'اصلاح امروز و ثبت اقدام؛ اثرش دو هفتهٔ دیگر روی برداشت دیده می‌شود.'
+          });
+        }
+      });
+      if (econs[i].margin < 25) {
+        decisions.push({
+          severity: SEV.warn.severity, color: SEV.warn.color, pillBg: SEV.warn.pillBg,
+          title: 'حاشیهٔ سود ' + r.name + ' باریک شده',
+          detail: 'حاشیهٔ این سیکل ' + self.num(Math.round(econs[i].margin)) + '٪ و بهای تمام‌شده ' + self.num(Math.round(econs[i].costPerKg / 1000) * 1000) + ' تومان بر کیلو است.',
+          action: 'قیمت کمپوست را مذاکره کن یا قیمت فروش را بازبینی کن.'
+        });
+      }
+    });
+
+    cycleCompare.forEach(function (cc) {
+      if (cc.delta < -5) {
+        decisions.push({
+          severity: SEV.warn.severity, color: SEV.warn.color, pillBg: SEV.warn.pillBg,
+          title: 'افت ' + cc.deltaLabel + ' در ' + cc.name + ' نسبت به سیکل قبل',
+          detail: 'برآورد این سیکل ' + cc.cur + ' کیلو در برابر ' + cc.prev + ' کیلو سیکل قبلِ همین سالن.',
+          action: 'کیفیت کمپوست این Batch و تاریخچهٔ محیطی روزهای اسپان‌ران را با سیکل قبل مقایسه کن.'
+        });
+      }
+    });
+
+    rooms.forEach(function (r, i) {
+      if (r.gradeA < 65) {
+        decisions.push({
+          severity: SEV.warn.severity, color: SEV.warn.color, pillBg: SEV.warn.pillBg,
+          title: 'سهم درجه یک ' + r.name + ' فقط ' + self.num(r.gradeA) + '٪ است',
+          detail: 'قیمت مؤثر این سالن ' + self.num(Math.round(econs[i].effPrice / 1000) * 1000) + ' تومان بر کیلو شده، نه قیمت درجه یک.',
+          action: 'فاصلهٔ چیدن را کوتاه‌تر کن؛ قارچ دیر چیده‌شده به درجه دو می‌افتد.'
+        });
+      }
+    });
+
+    if (peakWorkers > 4) {
+      decisions.push({
+        severity: SEV.warn.severity, color: SEV.warn.color, pillBg: SEV.warn.pillBg,
+        title: 'اوج برداشت ' + this.num(peakKg) + ' کیلو در روز +' + this.fa(peakIdx + 1),
+        detail: 'آن روز حدود ' + this.num(peakWorkers) + ' نفر کارگر برداشت لازم است؛ روزهای دیگر هفته کمتر.',
+        action: 'نیروی روزمزد را از الان برای همان روز هماهنگ کن.'
+      });
+    }
+
+    if (sim.wastePct > 7) {
+      decisions.push({
+        severity: SEV.warn.severity, color: SEV.warn.color, pillBg: SEV.warn.pillBg,
+        title: 'ضایعات ' + this.num(sim.wastePct) + '٪ — بالاتر از هدف ۵٪',
+        detail: 'هر یک درصد ضایعات روی کل مزرعه حدود ' + this.mt(tExpected * 0.01 * P.price) + ' میلیون تومان در سیکل است.',
+        action: 'زمان‌بندی چیدن و آموزش کارگر برداشت را بازبینی کن.'
+      });
+    }
+
+    var overdue = sim.receivables.filter(function (r) { return r.days > 21; });
+    if (overdue.length > 0) {
+      var od = overdue.reduce(function (s, r) { return s + r.amount; }, 0);
+      decisions.push({
+        severity: SEV.warn.severity, color: SEV.warn.color, pillBg: SEV.warn.pillBg,
+        title: 'وصول ' + this.num(Math.round(od * 10) / 10) + ' میلیون تومان مطالبات معوق',
+        detail: overdue.length + ' مشتری بیش از ۲۱ روز از تحویل گذشته‌اند و هنوز تسویه نکرده‌اند.',
+        action: 'پیش از سفارش کمپوست بعدی، تسویه را پیگیری کن.'
+      });
+    }
+
+    if (idleDays > 6) {
+      decisions.push({
+        severity: SEV.warn.severity, color: SEV.warn.color, pillBg: SEV.warn.pillBg,
+        title: this.num(idleDays) + ' روز سالن خالی در ۳۰ روز آینده',
+        detail: 'سربار ثابت در روزهای خالی هم پرداخت می‌شود.',
+        action: 'برنامهٔ پرکردن را جلو بینداز تا فاصلهٔ سیکل‌ها کوتاه‌تر شود.'
+      });
+    }
+
+    if (decisions.length === 0) {
+      decisions.push({
+        severity: SEV.ok.severity, color: SEV.ok.color, pillBg: SEV.ok.pillBg,
+        title: 'امروز تصمیم فوری‌ای لازم نیست',
+        detail: 'محیط هر سه سالن در بازهٔ مرحله است، تعهدها پوشش داده می‌شوند و مطالبات معوق نداری.',
+        action: 'ادامهٔ پایش روزانه.'
+      });
+    }
+
+    // ---- شاخص‌ها ----
+    var kpis = [
+      this.kpi('بازده بیولوژیک', this.num(Math.round(tBe)) + '٪', '۲۸٪ یا بالاتر', tBe >= 28,
+        this.signed(tBe - 28, 'واحد')),
+      this.kpi('بهای تمام‌شدهٔ هر کیلو', this.num(Math.round(tCostPerKg / 1000) * 1000), 'زیر ۱۱۰٬۰۰۰ تومان', tCostPerKg <= 110000,
+        tCostPerKg <= 110000 ? 'زیر هدف' : 'بالای هدف'),
+      this.kpi('حاشیهٔ سود', this.num(Math.round(tMargin)) + '٪', '۳۵٪ یا بالاتر', tMargin >= 35,
+        this.signed(tMargin - 35, 'واحد')),
+      this.kpi('سهم ضایعات', this.num(sim.wastePct) + '٪', 'زیر ۵٪', sim.wastePct <= 5,
+        sim.wastePct <= 5 ? 'زیر هدف' : 'بالای هدف'),
+      this.kpi('روز خالی سالن (۳۰ روز)', this.num(idleDays) + ' روز', 'زیر ۶ روز', idleDays <= 6,
+        idleDays <= 6 ? 'زیر هدف' : 'بالای هدف'),
+      this.kpi('برق هر کیلو', this.num(sim.kwhPerKg) + ' kWh', 'زیر ۲٫۵ kWh', sim.kwhPerKg <= 2.5,
+        sim.kwhPerKg <= 2.5 ? 'زیر هدف' : 'بالای هدف')
+    ];
+
+    // ---- نقدینگی ----
+    var recTotal = sim.receivables.reduce(function (s, r) { return s + r.amount; }, 0);
+    var upcoming = Math.round((tCompost * P.compostCost / 3 + P.fixedCost) / 100000) / 10;
+    var netCash = Math.round((sim.cashBalance + recTotal - upcoming) * 10) / 10;
+    var cash = {
+      balance: this.num(sim.cashBalance), receivable: this.num(Math.round(recTotal * 10) / 10),
+      upcoming: this.num(upcoming), net: this.num(netCash),
+      netColor: netCash > 0 ? '#166534' : '#A32222'
+    };
+
+    var receivables = sim.receivables.map(function (r) {
+      var late = r.days > 21;
+      var mid = r.days > 10 && r.days <= 21;
+      return {
+        name: r.name, amount: self.num(r.amount), days: self.num(r.days),
+        status: late ? 'معوق' : (mid ? 'نزدیک سررسید' : 'جاری'),
+        bg: late ? '#F5E1DF' : (mid ? '#F5E9D6' : '#E3EEE1'),
+        color: late ? '#A32222' : (mid ? '#8A5410' : '#166534')
+      };
+    });
+
+    // ---- نوارهای گذشته و سالن فعال ----
+    var maxTotal = 1;
+    sim.bars.forEach(function (b) { if (b.total > maxTotal) { maxTotal = b.total; } });
+    var bars = sim.bars.map(function (b) {
+      var t = b.total || 1;
+      return {
+        label: b.offset === 0 ? 'امروز' : self.fa(b.offset) + ' روز',
+        total: b.total > 0 ? self.num(b.total) : '—',
+        h: Math.max(2, Math.round((b.total / maxTotal) * 76)),
+        s1: Math.round((b.segs[0] / t) * 100),
+        s2: Math.round((b.segs[1] / t) * 100),
+        s3: Math.round((b.segs[2] / t) * 100)
+      };
+    });
+
+    var tabs = rooms.map(function (r, i) {
+      var on = i === self.state.active;
+      return {
+        name: r.name, phase: r.phase, day: self.num(r.day), color: r.color, soft: r.soft,
+        bg: on ? r.soft : '#FFFFFF', border: on ? r.color : '#E4E1D6',
+        yieldLabel: r.produced > 0 ? ('برداشت امروز ' + self.num(r.produced) + ' کیلو') : 'امروز برداشتی ندارد',
+        pick: function () { self.setState({ active: i }); }
+      };
+    });
+
+    var env = active.env;
+    var metrics = [
+      this.metricOf('دمای کمپوست', '°C', env.map(function (e) { return e.compost; }), active.today.compost, 14, 30, rng.compost, '#B4530E', '#F4E3D3'),
+      this.metricOf('دمای سالن', '°C', env.map(function (e) { return e.room; }), active.today.room, 14, 30, rng.room, '#0E6FB4', '#DCEBFA'),
+      this.metricOf('رطوبت RH', '٪', env.map(function (e) { return e.rh; }), active.today.rh, 80, 100, rng.rh, '#2A6F51', '#E3EEE1'),
+      this.metricOf('دی‌اکسید کربن', 'ppm', env.map(function (e) { return e.co2; }), active.today.co2, 0, 20000, rng.co2, '#5B3F92', '#EBE3F5')
+    ];
+
+    return {
+      tick: this.num(this.state.tick),
+      nextDay: function () { self.nextDay(); },
+      week: function () { self.week(); },
+      reshuffle: function () { self.reshuffle(); },
+      reset: function () { self.reset(); },
+      f: this.state,
+      h: {
+        price: this.set('price'), compostCost: this.set('compostCost'),
+        pickCost: this.set('pickCost'), fixedCost: this.set('fixedCost')
+      },
+      decisions: decisions, kpis: kpis, econRows: econRows, total: total,
+      breakEven: breakEven, costMix: costMix, sensitivity: sensitivity,
+      gradeRows: gradeRows, cycleCompare: cycleCompare,
+      labor: {
+        days: laborDays,
+        weekHours: this.num(weekHours),
+        peakKg: this.num(peakKg),
+        peakDay: '+' + this.fa(peakIdx + 1),
+        peakWorkers: this.num(peakWorkers)
+      },
+      forecast: forecast, commitments: commitments, coverage: coverage, gantt: gantt,
+      bars: bars, tabs: tabs, metrics: metrics, logs: sim.logs,
+      cash: cash, receivables: receivables,
+      room: {
+        name: active.name, color: active.color, soft: active.soft, phase: active.phase,
+        day: this.num(active.day), remain: this.num(42 - active.day),
+        dayPct: Math.round((active.day / 42) * 100),
+        alerts: alerts, noAlerts: alerts.length === 0
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
