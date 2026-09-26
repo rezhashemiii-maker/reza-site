@@ -17,6 +17,7 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
+  { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'الگوی پیشرفت' },
   { file: 'Glossary.dc.html', out: 'glossary.html', nav: 'واژه‌نامه' },
   { file: 'Learn.dc.html', out: 'learn.html', nav: 'مسیر یادگیری' },
   { file: 'Ideas.dc.html', out: 'ideas.html', nav: 'ایده‌ها' },
@@ -113,9 +114,13 @@ for (const d of docs) applyClasses(d.ast, styleUse);
 const rewriteLinks = (ast) => {
   const visit = (n) => {
     if (typeof n === 'string' || n.h !== undefined) return;
-    if (n.a && typeof n.a.href === 'string' && n.a.href.endsWith('.dc.html')) {
-      const base = n.a.href.replace(/^\.?\//, '');
-      if (MAP[base]) n.a.href = MAP[base] === 'index.html' ? './' : MAP[base];
+    if (n.a && typeof n.a.href === 'string') {
+      // «Foo.dc.html» و «./Foo.dc.html#bookmark» هر دو باید بازنویسی شوند
+      const m = /^\.?\/?([A-Za-z0-9_.-]+\.dc\.html)(#.*)?$/.exec(n.a.href);
+      if (m && MAP[m[1]]) {
+        const target = MAP[m[1]] === 'index.html' ? './' : MAP[m[1]];
+        n.a.href = target + (m[2] || '');
+      }
     }
     (n.k || []).forEach(visit);
   };
@@ -157,6 +162,8 @@ fs.writeFileSync(
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'pattern.html':
+    'پروژهٔ تحقیقاتی: الگوی پیشرفت سیندره سورهوس در عدد و نمودار — ۱٬۱۰۰ بستهٔ npm، ۲ میلیارد دانلود در ماه، و شش قاعده‌ای که از داده بیرون آمد.',
   'glossary.html':
     'واژه‌نامهٔ فارسی یادگیری ماشین: ۲۸۵ اصطلاح با معادل انگلیسی، توضیح ساده، مترادف‌های رایج و هشدار اشتباه‌های پرتکرار. قابل جست‌وجو و فیلتر.',
   'learn.html':

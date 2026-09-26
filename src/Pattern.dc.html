@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>هزار بسته، یک الگو — کالبدشکافی مسیر سیندره سورهوس</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#2F5233;text-decoration:none}
+  a:hover{color:#1F3A22}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:78px}
+  table{border-collapse:collapse}
+  ::selection{background:#E7ECE4;color:#1F3A22}
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F5F3EE; direction: rtl;">
+
+  <!-- ============ سربرگ ============ -->
+  <header style="position: sticky; top: 0; z-index: 30; border-bottom: 1px solid #E4E1D6; background: rgba(245,243,238,0.93); backdrop-filter: blur(10px);">
+    <div style="max-width: 1060px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+      <a href="Main.dc.html#writing" style="font-size: 13.5px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <nav style="display: flex; gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
+        <a href="#s1" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۱ فکت‌ها</a>
+        <a href="#s2" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۲ خط زمان</a>
+        <a href="#s3" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۳ توجه</a>
+        <a href="#s4" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۴ تمرکز</a>
+        <a href="#s5" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۵ موتور</a>
+        <a href="#s6" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۶ قاعده‌ها</a>
+        <a href="#s7" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۷ الگوی من</a>
+        <a href="#s8" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۸ روش</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ هیرو ============ -->
+    <section style="max-width: 1060px; margin: 0 auto; padding: 62px 24px 20px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 16px;">پروژهٔ تحقیقاتی · مهر ۱۴۰۵ · یک سوژه، داده‌های عمومی</p>
+      <h1 style="font-size: clamp(30px, 4.6vw, 50px); line-height: 1.38; font-weight: 800; margin: 0 0 20px; letter-spacing: -0.01em;">هزار بسته، یک الگو</h1>
+      <p style="font-size: 18.5px; line-height: 1.95; color: #45494F; max-width: 62ch; margin: 0 0 18px;">یک برنامه‌نویس نروژی به‌تنهایی به زیرساخت نامرئی وب تبدیل شده است: <b>۱٬۱۰۰ بستهٔ npm</b> با <b>۲ میلیارد دانلود در ماه</b>. سؤال من این نبود که چقدر کار کرده؛ این بود که <b>کارش چه شکلی داشته</b> که این‌طور جمع شده.</p>
+      <p style="font-size: 16px; line-height: 2; color: #45494F; max-width: 62ch; margin: 0 0 16px;">داده‌های عمومی مسیر سیندره سورهوس را جمع کردم، شمردم و رسم کردم. آن‌چه بیرون آمد یک داستان انگیزشی نیست — یک <b>ساختار قابل تقلید</b> است که شش قاعده دارد و هیچ‌کدامشان به استعداد ربطی ندارد.</p>
+      <p style="font-size: 14.5px; line-height: 1.9; color: #666158; max-width: 62ch; margin: 0 0 30px;">این نوشته را برای پیدا کردن الگوی خودم شروع کردم. بخش ۰۷ همان جایی است که نتیجه را روی کار خودم می‌گذارم.</p>
+
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+        <a href="#s1" style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #2F5233; padding: 12px 24px; border-radius: 10px;">شروع از فکت‌ها</a>
+        <a href="#s8" style="font-size: 14px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 12px 24px; border-radius: 10px;">روش و منابع</a>
+        <a href="https://sindresorhus.com/" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 12px 24px; border-radius: 10px;">سایت خودش ↗</a>
+      </div>
+    </section>
+
+    <!-- ============ ۰۱ فکت‌ها ============ -->
+    <section id="s1" style="background: #EDF1EB; border-top: 1px solid #D5DDD2; border-bottom: 1px solid #D5DDD2; margin-top: 30px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 46px 24px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۱ — اندازهٔ ماجرا</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px;">هشت عدد که بقیهٔ نوشته را توضیح می‌دهند</h2>
+        <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 66ch; margin: 0 0 26px;">همهٔ این‌ها از صفحه‌های عمومی گیت‌هاب و صفحهٔ حمایت مالی خودش برداشته شده‌اند. تاریخ برداشت: مهر ۱۴۰۵.</p>
+
+        <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 16px; padding: 26px 28px; margin-bottom: 14px;">
+          <div style="font-size: 12.5px; font-weight: 700; color: #666158; margin-bottom: 6px;">عددی که همه‌چیز را قاب می‌گیرد</div>
+          <div style="font-size: clamp(40px, 7vw, 62px); font-weight: 800; color: #2F5233; line-height: 1.15; margin-bottom: 8px;">۲ میلیارد</div>
+          <div style="font-size: 15px; line-height: 1.8; color: #45494F; max-width: 60ch;">دانلود در ماه، روی بسته‌هایی که یک نفر نگه‌داری می‌کند. برای مقایسه: این عدد از جمعیت کرهٔ زمین بیشتر است — هر ماه.</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px;">
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #16181C; line-height: 1.2;">۱٬۱۰۰+</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">بستهٔ npm که فعالانه نگه می‌دارد</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #16181C; line-height: 1.2;">۱٬۱۰۰</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">مخزن عمومی روی گیت‌هاب</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #16181C; line-height: 1.2;">۸۴٬۲۰۰</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">دنبال‌کننده روی گیت‌هاب</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #B4530E; line-height: 1.2;">۳۱</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">نفری که خودش دنبال می‌کند</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #16181C; line-height: 1.2;">۵۱۰٬۷۷۷</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">ستاره فقط روی مخزن <span style="direction: ltr; unicode-bidi: isolate;">awesome</span></div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #16181C; line-height: 1.2;">۱۸۸</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">حامی مالی فعلی (از ۱٬۹۳۳ حامی تا امروز)</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #16181C; line-height: 1.2;">۱۰۰+</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">بستهٔ او که فقط webpack و babel به آن وابسته‌اند</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+            <div style="font-size: 30px; font-weight: 800; color: #16181C; line-height: 1.2;">۲۰۱۲</div>
+            <div style="font-size: 12.5px; color: #666158; margin-top: 5px; line-height: 1.7;">سالی که شروع کرد — و هنوز همان حساب است</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ۰۲ خط زمان ============ -->
+    <section id="s2" style="border-bottom: 1px solid #E4E1D6;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 52px 24px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۲ — خط زمان</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px;">سه دورهٔ نابرابر</h2>
+        <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 66ch; margin: 0 0 8px;">مسیر او سه فاز دارد و طول‌شان خیلی نابرابر است. دورهٔ «قمار» — یعنی تمام‌وقت روی پس‌انداز — فقط سه سال و نیم طول کشید. بیشترِ عمرِ این پروژه، دوره‌ای است که دیگران هزینه‌اش را می‌دهند.</p>
+        <p style="font-size: 14px; line-height: 1.9; color: #666158; max-width: 66ch; margin: 0 0 28px;">عرض هر نوار دقیقاً متناسب با طول زمانی آن فاز است.</p>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px 28px 22px;">
+
+          <!-- راهنما -->
+          <div style="display: flex; gap: 10px 22px; flex-wrap: wrap; margin-bottom: 20px;">
+            <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: #45494F;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #166534; flex-shrink: 0;"></span>در حاشیهٔ شغل</span>
+            <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: #45494F;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #0E6FB4; flex-shrink: 0;"></span>تمام‌وقت، روی پس‌انداز</span>
+            <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: #45494F;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #B4530E; flex-shrink: 0;"></span>تمام‌وقت، با پول جامعه</span>
+          </div>
+
+          <!-- نوار زمان -->
+          <div style="display: flex; width: 100%; height: 34px; margin-bottom: 10px;">
+            <div style="width: 17.2%; background: #166534; border-radius: 0 6px 6px 0;" title="۲۰۱۲ تا میانهٔ ۲۰۱۴ — حدود ۲.۵ سال"></div>
+            <div style="width: 2px; flex-shrink: 0; background: #FFFFFF;"></div>
+            <div style="width: 24.1%; background: #0E6FB4;" title="میانهٔ ۲۰۱۴ تا ابتدای ۲۰۱۸ — حدود ۳.۵ سال"></div>
+            <div style="width: 2px; flex-shrink: 0; background: #FFFFFF;"></div>
+            <div style="flex: 1; background: #B4530E; border-radius: 6px 0 0 6px;" title="ابتدای ۲۰۱۸ تا امروز — بیش از ۸.۵ سال"></div>
+          </div>
+
+          <!-- محور -->
+          <div style="display: flex; width: 100%; font-size: 11.5px; color: #666158; border-top: 1px solid #E4E1D6; padding-top: 8px; margin-bottom: 24px; font-variant-numeric: tabular-nums;">
+            <div style="width: 17.2%; text-align: start;">۲۰۱۲</div>
+            <div style="width: 24.1%; text-align: start;">۲۰۱۴</div>
+            <div style="flex: 1; display: flex; justify-content: space-between;"><span>۲۰۱۸</span><span>امروز</span></div>
+          </div>
+
+          <!-- روایت هر فاز -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+            <div style="border-inline-start: 3px solid #166534; padding-inline-start: 14px;">
+              <div style="font-size: 12px; font-weight: 700; color: #666158; margin-bottom: 6px;">۲۰۱۲ — ۲۰۱۴ · حدود ۲.۵ سال</div>
+              <h3 style="font-size: 15.5px; font-weight: 700; margin: 0 0 8px; line-height: 1.6;">کدنویسی متن‌باز در کنار کار اداری</h3>
+              <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">هیچ جهش ناگهانی‌ای در کار نیست. دو سال کار عمومی و پیوسته، بدون اینکه درآمدی داشته باشد.</p>
+            </div>
+            <div style="border-inline-start: 3px solid #0E6FB4; padding-inline-start: 14px;">
+              <div style="font-size: 12px; font-weight: 700; color: #666158; margin-bottom: 6px;">۲۰۱۴ — ۲۰۱۸ · حدود ۳.۵ سال</div>
+              <h3 style="font-size: 15.5px; font-weight: 700; margin: 0 0 8px; line-height: 1.6;">شغل را رها کرد و رفت جنوب‌شرق آسیا</h3>
+              <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">تمام‌وقت روی متن‌باز، با خرج از پس‌انداز. در همین دوره، در ۱۱ ژوئیهٔ ۲۰۱۴، فهرست <span style="direction: ltr; unicode-bidi: isolate;">awesome</span> را منتشر کرد.</p>
+            </div>
+            <div style="border-inline-start: 3px solid #B4530E; padding-inline-start: 14px;">
+              <div style="font-size: 12px; font-weight: 700; color: #666158; margin-bottom: 6px;">۲۰۱۸ — امروز · بیش از ۸.۵ سال</div>
+              <h3 style="font-size: 15.5px; font-weight: 700; margin: 0 0 8px; line-height: 1.6;">کاملاً با حمایت جامعه تأمین می‌شود</h3>
+              <p style="font-size: 13px; line-height: 1.9; color: #45494F; margin: 0;">از ابتدای ۲۰۱۸ هزینهٔ زندگی‌اش از حمایت مالی کاربران و شرکت‌ها می‌آید. هم‌زمان به اپ‌های مک با سویفت هم گسترش پیدا کرد.</p>
+            </div>
+          </div>
+
+          <div style="background: #FAFAF7; border-radius: 10px; padding: 14px 16px; margin-top: 20px;">
+            <span style="font-size: 11px; font-weight: 700; color: #8A5410;">آن‌چه من از این نمودار برداشتم — </span>
+            <span style="font-size: 13.5px; color: #45494F; line-height: 1.9;">فاز پرریسک کوتاه بود و بعد از دو سال کارِ پیوسته آمد، نه قبلش. کسی که اول شغلش را رها می‌کند و بعد دنبال الگو می‌گردد، ترتیب را وارونه رفته است.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ۰۳ توزیع توجه ============ -->
+    <section id="s3" style="border-bottom: 1px solid #E4E1D6; background: #FAFAF7;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 52px 24px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۳ — توزیع توجه</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px;">غافلگیرکننده‌ترین یافته: بیشترِ شهرتش از کد نیست</h2>
+        <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 68ch; margin: 0 0 8px;">ستاره‌های ۳۰ مخزن برتر او را شمردم و به دو دسته تقسیم کردم: چیزی که <b>کد</b> است، و چیزی که <b>فهرست یا سند</b> است. نتیجه وارونهٔ چیزی بود که انتظار داشتم.</p>
+        <p style="font-size: 14px; line-height: 1.9; color: #666158; max-width: 68ch; margin: 0 0 26px;">ستاره معیار کیفیت نیست؛ معیار توجه است. دقیقاً همان چیزی که این‌جا می‌خواستم بسنجم.</p>
+
+        <!-- کارت سرشماری دو دسته -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-bottom: 20px;">
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #0E6FB4;">
+            <div style="font-size: 32px; font-weight: 800; color: #16181C; line-height: 1.2;">۷۸٪</div>
+            <div style="font-size: 13px; color: #45494F; margin-top: 6px; line-height: 1.8;">از ستاره‌های ۳۰ مخزن برتر، روی <b>فهرست و سند</b> است — نه کد. (۶۵۰٬۳۱۳ از ۸۳۰٬۶۴۸)</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #166534;">
+            <div style="font-size: 32px; font-weight: 800; color: #16181C; line-height: 1.2;">۲۲٪</div>
+            <div style="font-size: 13px; color: #45494F; margin-top: 6px; line-height: 1.8;">روی <b>کد</b> — همان کدی که ۲ میلیارد بار در ماه دانلود می‌شود. (۱۸۰٬۳۳۵ ستاره)</div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px; border-top: 3px solid #B4530E;">
+            <div style="font-size: 32px; font-weight: 800; color: #16181C; line-height: 1.2;">۶۱٪</div>
+            <div style="font-size: 13px; color: #45494F; margin-top: 6px; line-height: 1.8;">از همان ۸۳۰٬۶۴۸ ستاره، فقط روی <b>یک</b> مخزن است: <span style="direction: ltr; unicode-bidi: isolate;">awesome</span>.</div>
+          </div>
+        </div>
+
+        <!-- نمودار میله‌ای -->
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px 28px;">
+          <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 6px;">ستارهٔ مخزن‌های ۲ تا ۱۳</h3>
+          <p style="font-size: 13px; line-height: 1.85; color: #666158; margin: 0 0 6px;">رتبهٔ اول، <span style="direction: ltr; unicode-bidi: isolate;">awesome</span> با ۵۱۰٬۷۷۷ ستاره، در این نمودار نیست: ۷.۶ برابرِ بلندترین میلهٔ این‌جاست و اگر بماند بقیه دیده نمی‌شوند.</p>
+          <div style="display: flex; gap: 10px 20px; flex-wrap: wrap; margin: 14px 0 20px;">
+            <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: #45494F;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #0E6FB4; flex-shrink: 0;"></span>فهرست / سند</span>
+            <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: #45494F;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #166534; flex-shrink: 0;"></span>کد</span>
+          </div>
+
+          <div style="margin-top: 4px;">
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">awesome-nodejs</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۶۶٬۹۳۱</span>
+              </div>
+              <div style="height: 15px; width: 100.0%; background: #0E6FB4; border-radius: 4px 0 0 4px;" title="awesome-nodejs — ۶۶٬۹۳۱ ستاره · فهرست / سند"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">awesome-electron</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۲۷٬۲۹۴</span>
+              </div>
+              <div style="height: 15px; width: 40.8%; background: #0E6FB4; border-radius: 4px 0 0 4px;" title="awesome-electron — ۲۷٬۲۹۴ ستاره · فهرست / سند"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">quick-look-plugins</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۱۸٬۷۶۷</span>
+              </div>
+              <div style="height: 15px; width: 28.0%; background: #0E6FB4; border-radius: 4px 0 0 4px;" title="quick-look-plugins — ۱۸٬۷۶۷ ستاره · فهرست / سند"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">type-fest</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۱۷٬۴۱۸</span>
+              </div>
+              <div style="height: 15px; width: 26.0%; background: #166534; border-radius: 4px 0 0 4px;" title="type-fest — ۱۷٬۴۱۸ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">ky</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۱۷٬۰۹۱</span>
+              </div>
+              <div style="height: 15px; width: 25.5%; background: #166534; border-radius: 4px 0 0 4px;" title="ky — ۱۷٬۰۹۱ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">got</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۱۴٬۹۴۷</span>
+              </div>
+              <div style="height: 15px; width: 22.3%; background: #166534; border-radius: 4px 0 0 4px;" title="got — ۱۴٬۹۴۷ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">pure</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۱۴٬۴۲۷</span>
+              </div>
+              <div style="height: 15px; width: 21.6%; background: #166534; border-radius: 4px 0 0 4px;" title="pure — ۱۴٬۴۲۷ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">ora</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۹٬۷۵۷</span>
+              </div>
+              <div style="height: 15px; width: 14.6%; background: #166534; border-radius: 4px 0 0 4px;" title="ora — ۹٬۷۵۷ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">pageres</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۹٬۷۳۱</span>
+              </div>
+              <div style="height: 15px; width: 14.5%; background: #166534; border-radius: 4px 0 0 4px;" title="pageres — ۹٬۷۳۱ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">github-markdown-css</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۸٬۹۳۷</span>
+              </div>
+              <div style="height: 15px; width: 13.4%; background: #166534; border-radius: 4px 0 0 4px;" title="github-markdown-css — ۸٬۹۳۷ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">Gifski</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۸٬۵۶۶</span>
+              </div>
+              <div style="height: 15px; width: 12.8%; background: #166534; border-radius: 4px 0 0 4px;" title="Gifski — ۸٬۵۶۶ ستاره · کد"></div>
+            </div>
+            <div style="margin-bottom: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 5px;">
+                <span style="font-size: 12.5px; color: #45494F; direction: ltr; unicode-bidi: isolate;">np</span>
+                <span style="font-size: 12px; color: #666158; font-variant-numeric: tabular-nums;">۷٬۷۱۳</span>
+              </div>
+              <div style="height: 15px; width: 11.5%; background: #166534; border-radius: 4px 0 0 4px;" title="np — ۷٬۷۱۳ ستاره · کد"></div>
+            </div>
+          </div>
+
+          <div style="background: #DCEBFA; border-radius: 10px; padding: 14px 16px; margin-top: 22px;">
+            <span style="font-size: 11px; font-weight: 700; color: #0E6FB4;">چرا مهم است — </span>
+            <span style="font-size: 13.5px; color: #45494F; line-height: 1.9;">سه تا از پنج مخزن پرستارهٔ او یک خط کد ندارند. کاری که بیشترین توجه را برایش آورد، <b>مرتب‌کردن دانش دیگران</b> بود، نه نوشتن کد جدید. این تنها بخشی از الگوست که هیچ پیش‌نیاز فنی ندارد.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ۰۴ تمرکز ============ -->
+    <section id="s4" style="border-bottom: 1px solid #E4E1D6;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 52px 24px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۴ — تمرکز و عدم‌تقارن</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px;">هزار بسته، ده پروژه</h2>
+        <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 68ch; margin: 0 0 26px;">خودش گفته است وقتش را روی حدود <b>۱۰ پروژهٔ اصلی</b> می‌گذارد که بیشترِ کد در آن‌هاست؛ باقی، تکه‌های کوچکی‌اند که از دلِ همان‌ها بیرون کشیده و جدا منتشر شده‌اند. یعنی ۱٬۱۰۰ بسته محصول ۱٬۱۰۰ تصمیم نیست — محصول ۱۰ تصمیم است و یک عادت.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px;">
+
+          <!-- شبکهٔ نقطه‌ای -->
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 26px;">
+            <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 6px;">۱٬۱۰۰ بسته در برابر ۱۰ پروژه</h3>
+            <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0 0 16px;">هر مربع = ۱۰ بسته. مربع تیره = ۱۰ پروژهٔ اصلی که بیشترِ کد در آن‌هاست.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 3px;">
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #B4530E;" title="۱۰ پروژهٔ اصلی"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+              <span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span><span style="width: 11px; height: 11px; border-radius: 2px; background: #C9D4C6;"></span>
+            </div>
+            <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 16px 0 0;">تعداد زیاد، خروجیِ یک عادت است: هر بار که چیزی را دو بار می‌نویسی، دفعهٔ دوم به‌جای کپی‌کردن، جدا و منتشرش کن.</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <!-- عدم‌تقارن توجه -->
+            <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 26px;">
+              <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 6px;">عدم‌تقارن توجه</h3>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0 0 18px;">۸۴٬۲۰۰ نفر او را دنبال می‌کنند؛ او ۳۱ نفر را. نسبت: حدود <b>۲٬۷۰۰ به ۱</b>.</p>
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 9px;">
+                <span style="font-size: 11.5px; color: #666158; width: 74px; flex-shrink: 0;">دنبال‌کننده</span>
+                <div style="flex: 1; height: 16px; background: #2F5233; border-radius: 4px 0 0 4px;" title="۸۴٬۲۰۰ دنبال‌کننده"></div>
+                <span style="font-size: 12px; color: #45494F; font-variant-numeric: tabular-nums; width: 52px; flex-shrink: 0; text-align: end;">۸۴٬۲۰۰</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 11.5px; color: #666158; width: 74px; flex-shrink: 0;">دنبال می‌کند</span>
+                <div style="flex: 1;"><div style="height: 16px; width: 3px; background: #B4530E; border-radius: 2px;" title="۳۱ نفر — در همین مقیاس، سه پیکسل"></div></div>
+                <span style="font-size: 12px; color: #45494F; font-variant-numeric: tabular-nums; width: 52px; flex-shrink: 0; text-align: end;">۳۱</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 16px 0 0;">هر دو میله در یک مقیاس‌اند. میلهٔ پایینی واقعاً همین‌قدر است. کسی که این‌همه دیده می‌شود، تقریباً هیچ‌چیز را دنبال نمی‌کند.</p>
+            </div>
+
+            <!-- ماندگاری حامیان -->
+            <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 26px;">
+              <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 6px;">واقعیت پول</h3>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0 0 16px;">۱٬۹۳۳ نفر تا امروز حامی‌اش شده‌اند. ۱۸۸ نفر هنوز هستند.</p>
+              <div style="height: 22px; background: #E7ECE4; border-radius: 6px; overflow: hidden; display: flex;">
+                <div style="width: 9.7%; background: #2F5233; border-radius: 0 6px 6px 0;" title="۱۸۸ حامی فعلی — ۹.۷٪"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                <span style="font-size: 12px; font-weight: 700; color: #2F5233;">۹.۷٪ هنوز حامی‌اند</span>
+                <span style="font-size: 12px; color: #666158;">۱٬۷۴۵ نفر رفته‌اند</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 16px 0 0;">حمایت مالی متن‌باز نشتی دارد. مدلی که کار می‌کند بر <b>جریان مدام آدم‌های تازه</b> تکیه دارد، نه بر وفاداری. این را هیچ‌کس در پست‌های انگیزشی نمی‌نویسد.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ۰۵ موتور ============ -->
+    <section id="s5" style="border-bottom: 1px solid #E4E1D6; background: #FAFAF7;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 52px 24px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۵ — مکانیزم</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px;">موتور: چرخهٔ استخراج</h2>
+        <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 68ch; margin: 0 0 26px;">همهٔ عددهای بالا خروجی یک حلقهٔ پنج‌مرحله‌ای‌اند که هر دور، دورِ بعد را ارزان‌تر می‌کند. این نمودار توضیحِ من از داده‌هاست، نه نقل‌قول از او.</p>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px 20px 20px;">
+          <svg viewBox="0 0 760 305" style="width: 100%; height: auto; display: block;" role="img" aria-label="چرخهٔ پنج‌مرحله‌ای: ساختن ابزار برای خود، استخراج تکهٔ قابل استفادهٔ مجدد، انتشار عمومی، وابسته‌شدن دیگران، و بازگشت اعتبار و پول که زمان بیشتری برای ساختن آزاد می‌کند">
+            <defs>
+              <marker id="pat-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#B9B3A6"></path>
+              </marker>
+            </defs>
+
+            <!-- مسیر حلقه -->
+            <path d="M 660 78 L 480 78" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
+            <path d="M 280 78 L 100 78" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
+            <path d="M 60 110 L 60 170 L 660 170 L 660 200" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
+            <path d="M 580 232 L 400 232" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
+            <path d="M 200 232 L 130 232 L 130 292 L 700 292 L 700 96" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
+
+            <!-- گام ۱ -->
+            <rect x="660" y="56" width="100" height="44" rx="10" fill="#E3EEE1"></rect>
+            <text x="710" y="74" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۱ · ابزارِ خودت</text>
+            <text x="710" y="90" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">مسئلهٔ واقعی خودت</text>
+
+            <!-- گام ۲ -->
+            <rect x="280" y="56" width="200" height="44" rx="10" fill="#E3EEE1"></rect>
+            <text x="380" y="74" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۲ · تکهٔ کوچک را بیرون بکش</text>
+            <text x="380" y="90" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">هر چیزی که دو بار لازم شد</text>
+
+            <!-- گام ۳ -->
+            <rect x="0" y="56" width="100" height="44" rx="10" fill="#E3EEE1"></rect>
+            <text x="50" y="74" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۳ · منتشر کن</text>
+            <text x="50" y="90" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">با نام و مستند</text>
+
+            <!-- گام ۴ -->
+            <rect x="580" y="210" width="180" height="44" rx="10" fill="#DCEBFA"></rect>
+            <text x="670" y="228" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۴ · دیگران وابسته می‌شوند</text>
+            <text x="670" y="244" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">۱۰۰+ بستهٔ او در webpack و babel</text>
+
+            <!-- گام ۵ -->
+            <rect x="200" y="210" width="200" height="44" rx="10" fill="#F4E3D3"></rect>
+            <text x="300" y="228" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۵ · اعتبار، و بعد پول</text>
+            <text x="300" y="244" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">زمانِ بیشتر برای گام ۱</text>
+
+          </svg>
+          <p style="font-size: 12px; color: #666158; margin: 6px 2px 0; text-align: start;">هر دور، دورِ بعد را ارزان‌تر می‌کند.</p>
+
+          <div style="background: #F4E3D3; border-radius: 10px; padding: 14px 16px; margin-top: 14px;">
+            <span style="font-size: 11px; font-weight: 700; color: #8A5410;">نکتهٔ کلیدی — </span>
+            <span style="font-size: 13.5px; color: #45494F; line-height: 1.9;">گام ۲ جایی است که بیشتر آدم‌ها از حلقه بیرون می‌افتند. کدِ مفید را همه می‌نویسند؛ کمتر کسی زحمتِ جدا کردن و نام‌گذاری و مستندکردنش را می‌کشد. تفاوت بین «۱۰ پروژه» و «۱٬۱۰۰ بسته» دقیقاً همین یک گام است.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ۰۶ قاعده‌ها ============ -->
+    <section id="s6" style="border-bottom: 1px solid #E4E1D6;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 52px 24px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۶ — نتیجه</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px;">شش قاعده‌ای که از داده درآمد</h2>
+        <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 68ch; margin: 0 0 26px;">کنار هر قاعده نوشته‌ام که بر چه شواهدی ایستاده است — تا بشود جدا کرد کدام <b>اندازه‌گیری</b> است و کدام <b>تفسیر من</b>.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-top: 3px solid #2F5233;">
+            <div style="font-size: 11px; font-weight: 700; color: #2F5233; background: #E7ECE4; border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 12px;">اندازه‌گیری‌شده</div>
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 9px; line-height: 1.55;">۱ · واحد کار را کوچک کن</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 10px;">۱٬۱۰۰ بسته یعنی هر بسته یک کار می‌کند. واحد کوچک یعنی تمام‌شدنی است، یعنی قابل نگه‌داری است، و یعنی شکستِ یکی بقیه را زمین نمی‌زند.</p>
+            <p style="font-size: 12px; color: #666158; margin: 0;">شاهد: ۱٬۱۰۰ بستهٔ npm، ۱٬۱۰۰ مخزن عمومی.</p>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-top: 3px solid #2F5233;">
+            <div style="font-size: 11px; font-weight: 700; color: #2F5233; background: #E7ECE4; border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 12px;">اندازه‌گیری‌شده</div>
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 9px; line-height: 1.55;">۲ · مرتب‌کردن، به‌اندازهٔ ساختن ارزش دارد</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 10px;">۷۸٪ از توجهی که گرفته، روی فهرست و سند است نه کد. مرتب‌کردن دانشِ پراکندهٔ دیگران، ارزانی است که بیشترین بازده را دارد.</p>
+            <p style="font-size: 12px; color: #666158; margin: 0;">شاهد: ۶۵۰٬۳۱۳ از ۸۳۰٬۶۴۸ ستارهٔ ۳۰ مخزن برتر.</p>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-top: 3px solid #B4530E;">
+            <div style="font-size: 11px; font-weight: 700; color: #8A5410; background: #F4E3D3; border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 12px;">تفسیر من</div>
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 9px; line-height: 1.55;">۳ · از کار واقعی استخراج کن، از هوا نه</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 10px;">بسته‌ها از دلِ ۱۰ پروژهٔ واقعی بیرون آمده‌اند. هیچ‌کدام «ایدهٔ یک بستهٔ خوب» نبوده‌اند؛ همه قبلاً در یک کار واقعی لازم شده بودند.</p>
+            <p style="font-size: 12px; color: #666158; margin: 0;">پایه: گفتهٔ خودش دربارهٔ ۱۰ پروژهٔ اصلی + ساختار مخزن‌ها.</p>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-top: 3px solid #B4530E;">
+            <div style="font-size: 11px; font-weight: 700; color: #8A5410; background: #F4E3D3; border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 12px;">تفسیر من</div>
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 9px; line-height: 1.55;">۴ · ورودی را ببند</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 10px;">۳۱ نفر را دنبال می‌کند. کسی که این حجم خروجی دارد، مصرفِ محتوایش نزدیک صفر است. زمان از یک جا می‌آید: از جایی که خرجش نمی‌کنی.</p>
+            <p style="font-size: 12px; color: #666158; margin: 0;">شاهد: ۳۱ دنبال‌شونده در برابر ۸۴٬۲۰۰ دنبال‌کننده.</p>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-top: 3px solid #2F5233;">
+            <div style="font-size: 11px; font-weight: 700; color: #2F5233; background: #E7ECE4; border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 12px;">اندازه‌گیری‌شده</div>
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 9px; line-height: 1.55;">۵ · یک جا بمان، طولانی</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 10px;">از ۲۰۱۲ تا امروز: همان نام، همان حساب، همان جا. ترکیبِ آثار وقتی کار می‌کند که آدرس عوض نشود — نه در یک سال، در چهارده سال.</p>
+            <p style="font-size: 12px; color: #666158; margin: 0;">شاهد: پیوستگی فعالیت عمومی از ۲۰۱۲.</p>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-top: 3px solid #2F5233;">
+            <div style="font-size: 11px; font-weight: 700; color: #2F5233; background: #E7ECE4; border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 12px;">اندازه‌گیری‌شده</div>
+            <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 9px; line-height: 1.55;">۶ · پول را از کاربر بگیر، نه از کارفرما</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 10px;">از ۲۰۱۸ درآمدش مستقیم از کسانی می‌آید که از کارش استفاده می‌کنند. اما ۹۰٪ حامی‌ها می‌روند — این مدل به ورودی تازه وابسته است، نه به وفاداری.</p>
+            <p style="font-size: 12px; color: #666158; margin: 0;">شاهد: ۱۸۸ حامی فعلی از ۱٬۹۳۳ حامی تا امروز.</p>
+          </div>
+
+        </div>
+
+        <div style="background: #F5E1DF; border-radius: 12px; padding: 18px 22px; margin-top: 18px;">
+          <span style="font-size: 11.5px; font-weight: 700; color: #A32222;">چیزی که این الگو تضمین نمی‌کند — </span>
+          <span style="font-size: 14px; color: #45494F; line-height: 1.95;">یک نمونه، الگو را <b>نشان</b> می‌دهد اما <b>اثبات</b> نمی‌کند. هزاران نفر همین شش کار را کرده‌اند و به این‌جا نرسیده‌اند؛ من فقط بازمانده‌ها را می‌بینم. آن‌چه این‌جا هست، فهرستی از کارهای ارزان و کم‌ریسک است که <b>شانس</b> را بالا می‌برند — نه دستور پخت.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ۰۷ الگوی من ============ -->
+    <section id="s7" style="background: #EDF1EB; border-top: 1px solid #D5DDD2; border-bottom: 1px solid #D5DDD2;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 52px 24px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۷ — ترجمه به کار خودم</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px;">الگوی من چه شکلی است</h2>
+        <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 68ch; margin: 0 0 26px;">من بستهٔ npm نمی‌نویسم. ولی هر شش قاعده ترجمه‌شدنی است — کافی است «بسته» را با «واحد کارِ من» عوض کنم. این جدول قرارِ من با خودم است.</p>
+
+        <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 16px; overflow-x: auto;">
+          <table style="width: 100%; min-width: 620px; font-size: 13.5px;">
+            <thead>
+              <tr style="background: #FAFAF7;">
+                <th style="text-align: start; padding: 14px 18px; font-size: 12px; font-weight: 700; color: #666158; border-bottom: 1px solid #E4E1D6;">قاعده</th>
+                <th style="text-align: start; padding: 14px 18px; font-size: 12px; font-weight: 700; color: #666158; border-bottom: 1px solid #E4E1D6;">شکلش پیش او</th>
+                <th style="text-align: start; padding: 14px 18px; font-size: 12px; font-weight: 700; color: #666158; border-bottom: 1px solid #E4E1D6;">شکلش پیش من</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">واحد کوچک</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک بسته = یک کار</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک مدخل واژه‌نامه = یک مفهوم. یک ایده = یک مسئلهٔ واقعی. هیچ‌کدام به نوشتهٔ بعدی وابسته نیستند.</td>
+              </tr>
+              <tr>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">مرتب‌کردن</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">فهرست <span style="direction: ltr; unicode-bidi: isolate;">awesome</span></td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">واژه‌نامهٔ ۲۸۵ واژه و مسیر ۸ ایستگاهی. مرتب‌کردن چیزی که در فارسی آشفته است، خودش تولید است.</td>
+              </tr>
+              <tr>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">استخراج از کار واقعی</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">بسته‌ها از دل ۱۰ پروژه</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">سیستم‌هایی که برای کسب‌وکارهای واقعی می‌سازم؛ هر الگوی عمومی که در آن‌ها پیدا شود، نوشتهٔ بعدی است.</td>
+              </tr>
+              <tr>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">بستنِ ورودی</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">۳۱ دنبال‌شونده</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">خواندن از مقالهٔ اصلی، نه از خلاصه و وبلاگ. کمتر منبع، عمیق‌تر.</td>
+              </tr>
+              <tr>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">ماندن طولانی</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">۱۴ سال، یک حساب</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک آدرس، فارسی، بدون مهاجرت به پلتفرم بعدی. هر نوشته همین‌جا می‌ماند.</td>
+              </tr>
+              <tr>
+                <td style="padding: 15px 18px; font-weight: 700; line-height: 1.7;">رایگان‌بودنِ ورودی</td>
+                <td style="padding: 15px 18px; color: #45494F; line-height: 1.85;">کد رایگان، حمایت اختیاری</td>
+                <td style="padding: 15px 18px; color: #45494F; line-height: 1.85;">همهٔ نوشته‌ها رایگان و بدون ثبت‌نام؛ درآمد از ساختن سیستم برای کسب‌وکارها، نه از فروش محتوا.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 20px 24px; margin-top: 16px;">
+          <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 10px;">تفاوتی که نمی‌شود نادیده گرفت</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">او در بازاری کار می‌کند که مخاطبش تمام دنیاست و پولش به دلار می‌آید. بازار من فارسی است: کوچک‌تر، و بدون زیرساخت حمایت مالی. پس قاعدهٔ ششم برای من عوض می‌شود — درآمد باید از <b>ساختنِ سیستم برای کسب‌وکار</b> بیاید و نوشتن، کاری است که اعتبارش را می‌سازد. همان حلقه، با یک گام متفاوت.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ۰۸ روش و منابع ============ -->
+    <section id="s8">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 52px 24px 64px;">
+        <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۸ — روش، محدودیت‌ها و منابع</p>
+        <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 22px;">چطور این را در آوردم</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 18px;">
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+            <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 10px;">روش</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">صفحه‌های عمومی پروفایل، مخزن‌ها و حمایت مالی را در مهر ۱۴۰۵ برداشتم. ۳۰ مخزن برتر را بر اساس ستاره مرتب کردم و دستی به دو دستهٔ «کد» و «فهرست/سند» تقسیم کردم. درصدها از همین ۳۰ مخزن حساب شده‌اند، نه از کل ۱٬۱۰۰ مخزن.</p>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+            <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 10px;">محدودیت‌ها</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">دسته‌بندی «کد» و «فهرست» قضاوت من است و مرزش همیشه تیز نیست. عددها لحظه‌ای‌اند و فردا فرق می‌کنند. و مهم‌تر از همه: این یک نمونه است — <b>سوگیری بازمانده</b> در کل این تحلیل حاضر است و من راهی برای حذفش ندارم.</p>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+            <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 10px;">چه چیزی را عمداً نگفتم</h3>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">دربارهٔ درآمد دقیق، ساعت کاری روزانه و زندگی شخصی‌اش عددهایی نقل می‌شود که نتوانستم از منبع اول تأییدشان کنم. هرچه تأیید نشد، این‌جا نیامد.</p>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 26px;">
+          <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 14px;">منابع</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.5px; line-height: 2.1; color: #45494F;">
+            <li><a href="https://sindresorhus.com/" target="_blank" rel="noopener">سایت شخصی سیندره سورهوس</a> — معرفی و فهرست اپ‌ها</li>
+            <li><a href="https://github.com/sindresorhus" target="_blank" rel="noopener">پروفایل گیت‌هاب</a> — دنبال‌کننده‌ها، شمار مخزن‌ها، مخزن‌های سنجاق‌شده</li>
+            <li><a href="https://github.com/sindresorhus?tab=repositories&amp;sort=stargazers" target="_blank" rel="noopener">مخزن‌ها به ترتیب ستاره</a> — دادهٔ خام نمودار بخش ۰۳</li>
+            <li><a href="https://github.com/sponsors/sindresorhus" target="_blank" rel="noopener">صفحهٔ حمایت مالی گیت‌هاب</a> — شمار حامیان، ۲ میلیارد دانلود، وابستگی webpack و babel</li>
+            <li><a href="https://opencollective.com/sindresorhus" target="_blank" rel="noopener">اوپن‌کالکتیو</a> — شمار بسته‌ها و دانلودها</li>
+            <li><a href="https://www.freecodecamp.org/news/sindre-sorhus-8426c0ed785d/" target="_blank" rel="noopener">مصاحبهٔ Between the Wires</a> — ترک شغل در ۲۰۱۴، ۱۰ پروژهٔ اصلی، فلسفهٔ بسته‌های ریز</li>
+            <li><a href="https://github.com/sindresorhus/awesome" target="_blank" rel="noopener">مخزن awesome</a> — تاریخ انتشار ۱۱ ژوئیهٔ ۲۰۱۴</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
+    <div style="max-width: 1060px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · پروژهٔ تحقیقاتی الگوی پیشرفت</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1120,"height":1400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
