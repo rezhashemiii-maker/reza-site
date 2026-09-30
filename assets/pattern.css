@@ -1,41 +1,38 @@
 .s0.s0{width: 11px;height: 11px;border-radius: 2px;background: #C9D4C6}
-.s1t.s1t{margin-bottom: 13px}
-.s1u.s1u{display: flex;justify-content: space-between;align-items: baseline;gap: 12px;margin-bottom: 5px}
-.s1v.s1v{font-size: 12.5px;color: #45494F;direction: ltr;unicode-bidi: isolate}
-.s28.s28{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;color: #45494F;line-height: 1.85}
-.s34.s34{background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 18px 20px}
-.s35.s35{font-size: 12.5px;color: #666158;margin-top: 5px;line-height: 1.7}
-.s5w.s5w{font-size: clamp(22px, 3vw, 30px);font-weight: 800;margin: 0 0 14px}
-.s5x.s5x{font-size: 30px;font-weight: 800;color: #16181C;line-height: 1.2}
-.s6c.s6c{max-width: 1060px;margin: 0 auto;padding: 52px 24px}
-.s6d.s6d{font-size: 16px;font-weight: 800;margin: 0 0 9px;line-height: 1.55}
-.s6e.s6e{font-size: 12px;color: #666158;margin: 0}
-.s6v.s6v{direction: ltr;unicode-bidi: isolate}
-.s6w.s6w{display: inline-flex;align-items: center;gap: 7px;font-size: 12.5px;color: #45494F}
-.s6x.s6x{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;font-weight: 700;line-height: 1.7}
-.s7t.s7t{font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 68ch;margin: 0 0 26px}
-.s7u.s7u{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 24px 26px}
-.s7w.s7w{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px 24px;border-top: 3px solid #2F5233}
-.s7x.s7x{font-size: 11px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
-.s7y.s7y{font-size: 15px;font-weight: 800;margin: 0 0 10px}
-.s93.s93{border-bottom: 1px solid #E4E1D6}
-.s94.s94{font-size: 12px;font-weight: 700;color: #666158;margin-bottom: 6px}
-.s95.s95{font-size: 15.5px;font-weight: 700;margin: 0 0 8px;line-height: 1.6}
-.s96.s96{font-size: 32px;font-weight: 800;color: #16181C;line-height: 1.2}
-.s97.s97{font-size: 13px;color: #45494F;margin-top: 6px;line-height: 1.8}
-.s98.s98{font-size: 15.5px;font-weight: 800;margin: 0 0 6px}
-.s99.s99{font-size: 12.5px;line-height: 1.85;color: #45494F;margin: 16px 0 0}
-.s9a.s9a{text-align: start;padding: 14px 18px;font-size: 12px;font-weight: 700;color: #666158;border-bottom: 1px solid #E4E1D6}
-.aq.aq{font-size: 14px;font-weight: 700;color: #16181C;background: #FFFFFF;border: 1px solid #E4E1D6;padding: 12px 24px;border-radius: 10px}
-.ar.ar{width: 11px;height: 11px;border-radius: 3px;background: #166534;flex-shrink: 0}
-.as.as{width: 11px;height: 11px;border-radius: 3px;background: #0E6FB4;flex-shrink: 0}
-.at.at{width: 2px;flex-shrink: 0;background: #FFFFFF}
-.au.au{border-bottom: 1px solid #E4E1D6;background: #FAFAF7}
-.ay.ay{font-size: 12.5px;line-height: 1.8;color: #666158;margin: 0 0 16px}
-.b0.b0{font-size: 11.5px;color: #666158;width: 74px;flex-shrink: 0}
-.b1.b1{font-size: 12px;color: #45494F;font-variant-numeric: tabular-nums;width: 52px;flex-shrink: 0;text-align: end}
-.b2.b2{font-size: 11px;font-weight: 700;color: #8A5410;background: #F4E3D3;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
-.b3.b3{padding: 15px 18px;color: #45494F;line-height: 1.85}
+.s1u.s1u{margin-bottom: 13px}
+.s1v.s1v{display: flex;justify-content: space-between;align-items: baseline;gap: 12px;margin-bottom: 5px}
+.s1w.s1w{font-size: 12.5px;color: #45494F;direction: ltr;unicode-bidi: isolate}
+.s2b.s2b{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;color: #45494F;line-height: 1.85}
+.s3a.s3a{background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 18px 20px}
+.s3b.s3b{font-size: 12.5px;color: #666158;margin-top: 5px;line-height: 1.7}
+.s63.s63{font-size: clamp(22px, 3vw, 30px);font-weight: 800;margin: 0 0 14px}
+.s64.s64{font-size: 30px;font-weight: 800;color: #16181C;line-height: 1.2}
+.s6j.s6j{max-width: 1060px;margin: 0 auto;padding: 52px 24px}
+.s6k.s6k{font-size: 16px;font-weight: 800;margin: 0 0 9px;line-height: 1.55}
+.s6l.s6l{font-size: 12px;color: #666158;margin: 0}
+.s71.s71{direction: ltr;unicode-bidi: isolate}
+.s72.s72{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;font-weight: 700;line-height: 1.7}
+.s82.s82{font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 68ch;margin: 0 0 26px}
+.s83.s83{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 24px 26px}
+.s85.s85{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px 24px;border-top: 3px solid #2F5233}
+.s86.s86{font-size: 11px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
+.s87.s87{font-size: 15px;font-weight: 800;margin: 0 0 10px}
+.s9g.s9g{border-bottom: 1px solid #E4E1D6}
+.s9h.s9h{font-size: 12px;font-weight: 700;color: #666158;margin-bottom: 6px}
+.s9i.s9i{font-size: 15.5px;font-weight: 700;margin: 0 0 8px;line-height: 1.6}
+.s9j.s9j{font-size: 32px;font-weight: 800;color: #16181C;line-height: 1.2}
+.s9k.s9k{font-size: 13px;color: #45494F;margin-top: 6px;line-height: 1.8}
+.s9l.s9l{font-size: 15.5px;font-weight: 800;margin: 0 0 6px}
+.s9m.s9m{font-size: 12.5px;line-height: 1.85;color: #45494F;margin: 16px 0 0}
+.s9n.s9n{text-align: start;padding: 14px 18px;font-size: 12px;font-weight: 700;color: #666158;border-bottom: 1px solid #E4E1D6}
+.bf.bf{font-size: 14px;font-weight: 700;color: #16181C;background: #FFFFFF;border: 1px solid #E4E1D6;padding: 12px 24px;border-radius: 10px}
+.bg.bg{width: 2px;flex-shrink: 0;background: #FFFFFF}
+.bh.bh{border-bottom: 1px solid #E4E1D6;background: #FAFAF7}
+.bl.bl{font-size: 12.5px;line-height: 1.8;color: #666158;margin: 0 0 16px}
+.bn.bn{font-size: 11.5px;color: #666158;width: 74px;flex-shrink: 0}
+.bo.bo{font-size: 12px;color: #45494F;font-variant-numeric: tabular-nums;width: 52px;flex-shrink: 0;text-align: end}
+.bp.bp{font-size: 11px;font-weight: 700;color: #8A5410;background: #F4E3D3;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
+.bq.bq{padding: 15px 18px;color: #45494F;line-height: 1.85}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 table{border-collapse:collapse}
