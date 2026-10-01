@@ -1,0 +1,29 @@
+.s5l.s5l{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px}
+.s5m.s5m{font-size: 16px;font-weight: 700;margin: 0 0 9px}
+.s5z.s5z{font-size: clamp(22px, 2.8vw, 29px);font-weight: 800;margin: 0 0 16px}
+.s6m.s6m{font-size: 15.5px;line-height: 2;color: #4A4F58;max-width: 66ch;margin: 0 0 24px}
+.s6n.s6n{font-size: 12px;font-weight: 700;color: #666158;margin-bottom: 9px}
+.s6o.s6o{font-weight: 800;color: #16181C}
+.s7e.s7e{display: inline-flex;align-items: center;gap: 7px;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 999px;padding: 7px 14px;font-size: 13px}
+.s7f.s7f{display: grid;grid-template-columns: 2fr 0.8fr 3.2fr;gap: 14px;padding: 14px 20px;font-size: 13.5px;line-height: 1.85;color: #4A4F58;border-bottom: 1px solid #EFEDE4}
+.s8i.s8i{font-size: 13.5px;line-height: 1.95;color: #4A4F58;margin: 0 0 12px}
+.s8j.s8j{background: rgba(255,255,255,0.08);border-radius: 11px;padding: 16px}
+.s8k.s8k{font-size: 13.5px;font-weight: 700;color: #F5F3EE;margin-bottom: 6px}
+.s8l.s8l{font-size: 12.5px;line-height: 1.85;color: #D6DFD4}
+.s8m.s8m{font-size: 15px;font-weight: 700;margin: 0 0 9px}
+.s8n.s8n{font-size: 13.5px;line-height: 1.9;color: #4A4F58;margin: 0 0 10px}
+.bw.bw{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 24px;border-top: 3px solid #C7652A}
+.bx.bx{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 24px;border-top: 3px solid #2E7D4F}
+.by.by{background: #FFF8EE;border: 1px solid #EBD9BE;border-radius: 14px;padding: 20px 22px}
+.bz.bz{color: #8A3E0A}
+.c0.c0{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px;border-top: 3px solid #B57F12}
+.c1.c1{font-size: 13.5px;line-height: 2.05;color: #4A4F58}
+.c2.c2{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 26px 28px}
+.c3.c3{font-size: 15.5px;font-weight: 700;margin: 0 0 14px}
+.c4.c4{font-size: 12.5px;color: #8E1F33;line-height: 1.8}
+.c5.c5{font-size: 12.5px;color: #4A4F58;line-height: 1.8}
+.c6.c6{color: #2F5233}
+.c7.c7{margin-bottom: 9px}
+a{color:#B4530E;text-decoration:none}
+a:hover{color:#8A3E0A}
+table{border-collapse:collapse}

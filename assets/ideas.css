@@ -1,22 +1,22 @@
 .m.m{font-size: 10px;font-weight: 700;color: #FFFFFF}
-.s20.s20{display: flex;align-items: center;gap: 8px;font-size: 12.5px;color: #45494F}
-.s21.s21{display: flex;align-items: center;gap: 12px}
-.s22.s22{font-size: 12.5px;font-weight: 600;color: #16181C;width: 150px;flex-shrink: 0}
-.s23.s23{flex: 1;direction: ltr;display: flex;height: 26px;border-radius: 6px;overflow: hidden;background: #F1EEE7}
-.s3p.s3p{display: flex;align-items: baseline;gap: 10px;margin-bottom: 8px;flex-wrap: wrap}
-.s3q.s3q{font-size: 12px;font-weight: 800;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
-.s3r.s3r{font-size: 16px;font-weight: 700;line-height: 1.65;margin: 0 0 10px}
-.s3s.s3s{font-size: 13.5px;line-height: 1.95;color: #45494F;margin: 0 0 14px;flex: 1}
-.s3t.s3t{font-size: 11px;font-weight: 700;color: #666158;margin-bottom: 4px}
-.s3u.s3u{font-size: 12.5px;line-height: 1.85;color: #45494F}
-.s6o.s6o{width: 10%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
-.s8n.s8n{width: 50%;background: #166534;display: flex;align-items: center;justify-content: center}
-.s8o.s8o{width: 30%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.s8p.s8p{width: 60%;background: #166534;display: flex;align-items: center;justify-content: center}
-.aa.aa{width: 20%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
-.ab.ab{width: 20%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.ac.ac{width: 10%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.ag.ag{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 14px}
+.s24.s24{display: flex;align-items: center;gap: 8px;font-size: 12.5px;color: #45494F}
+.s25.s25{display: flex;align-items: center;gap: 12px}
+.s26.s26{font-size: 12.5px;font-weight: 600;color: #16181C;width: 150px;flex-shrink: 0}
+.s27.s27{flex: 1;direction: ltr;display: flex;height: 26px;border-radius: 6px;overflow: hidden;background: #F1EEE7}
+.s3s.s3s{display: flex;align-items: baseline;gap: 10px;margin-bottom: 8px;flex-wrap: wrap}
+.s3t.s3t{font-size: 12px;font-weight: 800;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
+.s3u.s3u{font-size: 16px;font-weight: 700;line-height: 1.65;margin: 0 0 10px}
+.s3v.s3v{font-size: 13.5px;line-height: 1.95;color: #45494F;margin: 0 0 14px;flex: 1}
+.s3w.s3w{font-size: 11px;font-weight: 700;color: #666158;margin-bottom: 4px}
+.s3x.s3x{font-size: 12.5px;line-height: 1.85;color: #45494F}
+.s6x.s6x{width: 10%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
+.s92.s92{width: 50%;background: #166534;display: flex;align-items: center;justify-content: center}
+.s93.s93{width: 30%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.s94.s94{width: 60%;background: #166534;display: flex;align-items: center;justify-content: center}
+.as.as{width: 20%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
+.at.at{width: 20%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.au.au{width: 10%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.ay.ay{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 14px}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 button{font-family:inherit;cursor:pointer;border:none}

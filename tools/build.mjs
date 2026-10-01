@@ -24,6 +24,7 @@ const PAGES = [
   { file: 'Patents.dc.html', out: 'patents.html', nav: 'ثبت اختراع' },
   { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
   { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
+  { file: 'Campaign.dc.html', out: 'campaign.html', nav: 'کمپین‌ها' },
 ];
 const MAP = Object.fromEntries(PAGES.map((p) => [p.file, p.out]));
 const SITE = (process.env.SITE_URL || '').replace(/\/$/, '');
@@ -113,9 +114,13 @@ for (const d of docs) applyClasses(d.ast, styleUse);
 const rewriteLinks = (ast) => {
   const visit = (n) => {
     if (typeof n === 'string' || n.h !== undefined) return;
-    if (n.a && typeof n.a.href === 'string' && n.a.href.endsWith('.dc.html')) {
-      const base = n.a.href.replace(/^\.?\//, '');
-      if (MAP[base]) n.a.href = MAP[base] === 'index.html' ? './' : MAP[base];
+    if (n.a && typeof n.a.href === 'string') {
+      // لینک ممکن است دنبالهٔ #hash یا ?query داشته باشد؛ فقط بخش مسیر نگاشت می‌شود
+      const m = /^(\.?\/)?([^#?]+\.dc\.html)([#?].*)?$/.exec(n.a.href);
+      if (m && MAP[m[2]]) {
+        const out = MAP[m[2]] === 'index.html' ? './' : MAP[m[2]];
+        n.a.href = out + (m[3] || '');
+      }
     }
     (n.k || []).forEach(visit);
   };

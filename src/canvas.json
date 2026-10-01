@@ -74,6 +74,13 @@
       "h": 1300,
       "expand": "fill",
       "is_interactive": true
+    },
+    "Campaign.dc.html": {
+      "x": 10180,
+      "y": 0,
+      "w": 1040,
+      "h": 1300,
+      "expand": "fill"
     }
   },
   "order": [
@@ -84,7 +91,8 @@
     "Ideas.dc.html",
     "GameTheory.dc.html",
     "Patents.dc.html",
-    "Glossary.dc.html"
+    "Glossary.dc.html",
+    "Campaign.dc.html"
   ],
   "notes": {},
   "designSystems": []
