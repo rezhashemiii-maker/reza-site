@@ -18,8 +18,6 @@
   html{scroll-behavior:smooth}
   [id]{scroll-margin-top:78px}
   ::selection{background:#E7ECE4;color:#1F3A22}
-  .scrollhint{display:none;font-size:11.5px;color:#666158;margin:8px 2px 0}
-  @media (max-width:760px){.scrollhint{display:block}}
 </style>
 </helmet>
 
@@ -136,32 +134,23 @@
         <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 16px; padding: 22px 24px 18px; margin-top: 20px;">
           <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 4px;">نقشهٔ کل سایت در یک نگاه</h3>
           <p style="font-size: 12.8px; line-height: 1.85; color: #4A4F58; margin: 0 0 16px;">سه ناحیه، از راست به چپ. هیچ‌کدام پیش‌نیاز دیگری نیست — اگر فقط برای خواندن آمده‌ای، ناحیهٔ اول به‌تنهایی کامل است.</p>
-          <div style="overflow-x: auto;">
-<svg viewBox="0 0 760 246" style="width: 100%; min-width: 620px; height: auto; display: block;" role="img" aria-label="نقشهٔ سایت در سه ناحیه: بخوان (واژه‌نامه، مسیر یادگیری، صد ایده، نظریهٔ بازی و پتنت و الگو)، بعد ببین چه ساخته‌ام (مطالعهٔ موردی دُرّین و دموی پل فرماندهی)، و بعد با هم بسازیم (گفت‌وگوی کوتاه رایگان)">
-<defs><marker id="mapArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#A9A294"></path></marker></defs>
-<rect x="510" y="18" width="250" height="200" rx="14" fill="#E7ECE4"></rect>
-<rect x="270" y="18" width="210" height="200" rx="14" fill="#DCEBFA"></rect>
-<rect x="0" y="18" width="240" height="200" rx="14" fill="#F4E3D3"></rect>
-<text x="635" y="44" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">۱ · بخوان</text>
-<text x="375" y="44" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">۲ · ببین چه ساخته‌ام</text>
-<text x="120" y="44" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">۳ · با هم بسازیم</text>
-<path d="M 510 118 H 482" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#mapArrow)"></path>
-<path d="M 270 118 H 242" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#mapArrow)"></path>
-<rect x="524" y="58" width="222" height="30" rx="8" fill="#FFFFFF" stroke="#D5DDD2"></rect><text x="635" y="78" font-size="12.5" direction="rtl" fill="#16181C" text-anchor="middle">واژه‌نامه · ۲۸۵ واژه</text>
-<rect x="524" y="96" width="222" height="30" rx="8" fill="#FFFFFF" stroke="#D5DDD2"></rect><text x="635" y="116" font-size="12.5" direction="rtl" fill="#16181C" text-anchor="middle">مسیر یادگیری · ۸ ایستگاه</text>
-<rect x="524" y="134" width="222" height="30" rx="8" fill="#FFFFFF" stroke="#D5DDD2"></rect><text x="635" y="154" font-size="12.5" direction="rtl" fill="#16181C" text-anchor="middle">صد ایده · ۱۰ حوزه</text>
-<rect x="524" y="172" width="222" height="30" rx="8" fill="#FFFFFF" stroke="#D5DDD2"></rect><text x="635" y="192" font-size="12.5" direction="rtl" fill="#16181C" text-anchor="middle">نظریهٔ بازی · پتنت · الگو</text>
-<rect x="284" y="58" width="182" height="30" rx="8" fill="#FFFFFF" stroke="#D5DDD2"></rect><text x="375" y="78" font-size="12.5" direction="rtl" fill="#16181C" text-anchor="middle">مطالعهٔ موردی دُرّین</text>
-<rect x="284" y="96" width="182" height="30" rx="8" fill="#FFFFFF" stroke="#D5DDD2"></rect><text x="375" y="116" font-size="12.5" direction="rtl" fill="#16181C" text-anchor="middle">دموی پل فرماندهی</text>
-<text x="375" y="156" font-size="11.5" direction="rtl" fill="#45494F" text-anchor="middle">یک سیستم واقعی،</text>
-<text x="375" y="174" font-size="11.5" direction="rtl" fill="#45494F" text-anchor="middle">با دادهٔ شبیه‌سازی‌شده</text>
-<rect x="14" y="58" width="212" height="30" rx="8" fill="#FFFFFF" stroke="#D5DDD2"></rect><text x="120" y="78" font-size="12.5" direction="rtl" fill="#16181C" text-anchor="middle">گفت‌وگوی کوتاه، رایگان</text>
-<text x="120" y="118" font-size="11.5" direction="rtl" fill="#45494F" text-anchor="middle">سه سؤال می‌پرسم،</text>
-<text x="120" y="136" font-size="11.5" direction="rtl" fill="#45494F" text-anchor="middle">و می‌گویم به دردت می‌خورد</text>
-<text x="120" y="154" font-size="11.5" direction="rtl" fill="#45494F" text-anchor="middle">یا نه.</text>
-</svg>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+            <div style="background: #E7ECE4; border-radius: 14px; padding: 18px 20px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۱</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">بخوان</h4></div>
+              <span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">واژه‌نامه · ۲۸۵ واژه</span><span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">مسیر یادگیری · ۸ ایستگاه</span><span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">صد ایده · ۱۰ حوزه</span><span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">نظریهٔ بازی · پتنت · الگو</span>
+            </div>
+            <div style="background: #DCEBFA; border-radius: 14px; padding: 18px 20px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #0E6FB4; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۲</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">ببین چه ساخته‌ام</h4></div>
+              <span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">مطالعهٔ موردی دُرّین</span><span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">دموی پل فرماندهی</span>
+              <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 10px 0 0;">یک سیستم واقعی، با دادهٔ شبیه‌سازی‌شده.</p>
+            </div>
+            <div style="background: #F4E3D3; border-radius: 14px; padding: 18px 20px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #B4530E; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۳</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">با هم بسازیم</h4></div>
+              <span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">گفت‌وگوی کوتاه، رایگان</span>
+              <p style="font-size: 12.5px; line-height: 1.85; color: #45494F; margin: 10px 0 0;">سه سؤال می‌پرسم، و می‌گویم به دردت می‌خورد یا نه.</p>
+            </div>
           </div>
-            <p class="scrollhint">برای دیدن کل نمودار، آن را افقی بکش ←</p>
+          <p style="font-size: 12px; line-height: 1.8; color: #666158; margin: 12px 2px 0;">ترتیب از راست به چپ است، ولی اجباری نیست — هر ناحیه به‌تنهایی کامل است.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 22px;">
@@ -204,31 +193,20 @@
         <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px 18px; margin-bottom: 26px;">
           <h3 style="font-size: 15px; font-weight: 800; margin: 0 0 4px;">این نوشته‌ها چه ربطی به هم دارند</h3>
           <p style="font-size: 12.8px; line-height: 1.85; color: #4A4F58; margin: 0 0 16px;">واژه‌نامه نقطهٔ صفر است: اگر اصطلاح‌ها را بلد باشی، بقیه راحت‌تر خوانده می‌شوند. باقی فلش‌ها ترتیب پیشنهادی‌اند، نه اجباری.</p>
-          <div style="overflow-x: auto;">
-<svg viewBox="0 0 760 268" style="width: 100%; min-width: 620px; height: auto; display: block;" role="img" aria-label="نقشهٔ ارتباط نوشته‌ها: واژه‌نامه پایهٔ همه است و به مسیر یادگیری می‌رسد؛ مسیر یادگیری به نظریهٔ بازی‌ها، پتنت‌ها و صد ایده باز می‌شود">
-<defs><marker id="libArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#A9A294"></path></marker></defs>
-<rect x="580" y="100" width="180" height="60" rx="10" fill="#E7ECE4" stroke="#C4D2C0"></rect>
-<text x="670" y="124" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">واژه‌نامه</text>
-<text x="670" y="142" font-size="11" direction="rtl" fill="#666158" text-anchor="middle">۲۸۵ واژه · نقطهٔ صفر</text>
-<rect x="370" y="100" width="180" height="60" rx="10" fill="#E7ECE4" stroke="#C4D2C0"></rect>
-<text x="460" y="124" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">مسیر یادگیری</text>
-<text x="460" y="142" font-size="11" direction="rtl" fill="#666158" text-anchor="middle">۸ ایستگاه · ۴۶ مقاله</text>
-<rect x="160" y="16" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#D5DDD2"></rect>
-<text x="250" y="47" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">نظریهٔ بازی‌ها</text>
-<rect x="160" y="104" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#D5DDD2"></rect>
-<text x="250" y="135" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">پتنت‌ها</text>
-<rect x="160" y="192" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#D5DDD2"></rect>
-<text x="250" y="223" font-size="13.5" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">صد ایده</text>
-<path d="M 580 130 H 550" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#libArrow)"></path>
-<path d="M 370 130 H 352 V 42 H 340" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#libArrow)"></path>
-<path d="M 370 130 H 340" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#libArrow)"></path>
-<path d="M 370 130 H 352 V 218 H 340" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#libArrow)"></path>
-<text x="565" y="122" font-size="10.5" direction="rtl" fill="#666158" text-anchor="middle">بعد</text>
-<text x="60" y="126" font-size="11.5" direction="rtl" fill="#45494F" text-anchor="middle">هر کدام</text>
-<text x="60" y="144" font-size="11.5" direction="rtl" fill="#45494F" text-anchor="middle">مستقل خوانده می‌شود</text>
-</svg>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; align-items: start;">
+            <div style="background: #E7ECE4; border-radius: 14px; padding: 18px 20px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۱</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">واژه‌نامه</h4></div>
+              <p style="font-size: 12.8px; line-height: 1.9; color: #45494F; margin: 0;">نقطهٔ صفر. ۲۸۵ واژه، بدون پیش‌نیاز.</p>
+            </div>
+            <div style="background: #E7ECE4; border-radius: 14px; padding: 18px 20px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۲</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">مسیر یادگیری</h4></div>
+              <p style="font-size: 12.8px; line-height: 1.9; color: #45494F; margin: 0;">۸ ایستگاه و ۴۶ مقالهٔ مرجع، به ترتیب.</p>
+            </div>
+            <div style="background: #FAFAF7; border: 1px solid #D5DDD2; border-radius: 14px; padding: 18px 20px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #F0EEE7; color: #45494F; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۳</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">بعد، هر کدام جدا</h4></div>
+              <span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">نظریهٔ بازی‌ها</span><span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">پتنت‌ها</span><span style="display: block; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 12px; padding: 9px 13px; font-size: 12.8px; color: #16181C; margin-bottom: 7px;">صد ایده</span>
+            </div>
           </div>
-            <p class="scrollhint">برای دیدن کل نمودار، آن را افقی بکش ←</p>
           <p style="font-size: 12px; line-height: 1.85; color: #666158; margin: 14px 0 0;">دو نوشته بیرون این نقشه‌اند و هر وقت بخواهی خوانده می‌شوند: <b>هزار بسته، یک الگو</b> (تحلیل مسیر پیشرفت) و <b>۱۹ مقاله، یک مسیر</b> (طرح درس فهرست Ilya Sutskever).</p>
         </div>
 
@@ -366,29 +344,25 @@
         <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 16px; padding: 24px 26px 18px; margin-bottom: 30px;">
           <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 4px;">مسیری که هر عدد طی می‌کند</h3>
           <p style="font-size: 13px; line-height: 1.85; color: #4A4F58; margin: 0 0 18px;">ارزش این سیستم‌ها در فرم‌ها نیست؛ در سه مرحلهٔ بعد از فرم است. مرحلهٔ دوم همان چیزی است که «انبار داده» را از «سیستم تصمیم» جدا می‌کند.</p>
-          <div style="overflow-x: auto;">
-<svg viewBox="0 0 760 196" style="width: 100%; min-width: 620px; height: auto; display: block;" role="img" aria-label="فلوچارت چهار مرحله‌ای از راست به چپ: ثبت در سالن، سنجش با مرحلهٔ سیکل، تبدیل به پول، و تصمیم امروز؛ با یک فلش بازگشتی از تصمیم به ثبت">
-<defs><marker id="flowArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#A9A294"></path></marker></defs>
-<rect x="588" y="20" width="172" height="74" rx="12" fill="#E3EEE1" stroke="#C4D2C0"></rect>
-<text x="674" y="50" font-size="13" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">۱ · ثبت در سالن</text>
-<text x="674" y="72" font-size="10" direction="rtl" fill="#45494F" text-anchor="middle">فرم کوتاه، زیر ۳۰ ثانیه</text>
-<rect x="392" y="20" width="172" height="74" rx="12" fill="#DCEBFA" stroke="#B9D3EC"></rect>
-<text x="478" y="50" font-size="13" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">۲ · سنجش با مرحله</text>
-<text x="478" y="72" font-size="10" direction="rtl" fill="#45494F" text-anchor="middle">با بازهٔ همان مرحله</text>
-<rect x="196" y="20" width="172" height="74" rx="12" fill="#F4E3D3" stroke="#E3C7A9"></rect>
-<text x="282" y="50" font-size="13" font-weight="700" direction="rtl" fill="#16181C" text-anchor="middle">۳ · تبدیل به پول</text>
-<text x="282" y="72" font-size="10" direction="rtl" fill="#45494F" text-anchor="middle">بهای تمام‌شدهٔ هر کیلو</text>
-<rect x="0" y="20" width="172" height="74" rx="12" fill="#2F5233" stroke="#2F5233"></rect>
-<text x="86" y="50" font-size="13" font-weight="700" direction="rtl" fill="#FFFFFF" text-anchor="middle">۴ · تصمیم امروز</text>
-<text x="86" y="72" font-size="10" direction="rtl" fill="#D7E0D4" text-anchor="middle">با اقدام مشخص</text>
-<path d="M 588 57 H 564" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#flowArrow)"></path>
-<path d="M 392 57 H 368" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#flowArrow)"></path>
-<path d="M 196 57 H 172" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#flowArrow)"></path>
-<path d="M 86 94 V 140 H 674 V 102" fill="none" stroke="#A9A294" stroke-width="2" marker-end="url(#flowArrow)"></path>
-<text x="380" y="164" font-size="11.5" direction="rtl" fill="#666158" text-anchor="middle">اقدامی که انجام می‌شود، خودش ثبتِ بعدی است — حلقه بسته می‌ماند</text>
-</svg>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px;">
+            <div style="background: #E3EEE1; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۱</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; color: #16181C; line-height: 1.5;">ثبت در سالن</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">فرم کوتاه موبایلی، زیر ۳۰ ثانیه</p>
+            </div>
+            <div style="background: #DCEBFA; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #0E6FB4; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۲</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; color: #16181C; line-height: 1.5;">سنجش با مرحله</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">عدد با بازهٔ همان مرحله سنجیده می‌شود، نه با یک آستانهٔ ثابت</p>
+            </div>
+            <div style="background: #F4E3D3; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #B4530E; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۳</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; color: #16181C; line-height: 1.5;">تبدیل به پول</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">بهای تمام‌شدهٔ هر کیلو و حاشیهٔ سود همان سیکل</p>
+            </div>
+            <div style="background: #2F5233; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۴</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; color: #FFFFFF; line-height: 1.5;">تصمیم امروز</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #D7E0D4; margin: 0;">با اقدام مشخص، بالای صفحه</p>
+            </div>
           </div>
-            <p class="scrollhint">برای دیدن کل نمودار، آن را افقی بکش ←</p>
+          <p style="font-size: 12.5px; line-height: 1.85; color: #666158; margin: 12px 2px 0;">و حلقه بسته می‌ماند: اقدامی که در گام ۴ انجام می‌شود، خودش ثبتِ بعدی در گام ۱ است.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 16px;">
@@ -480,42 +454,9 @@
       <div style="max-width: 1120px; margin: 0 auto; padding: 64px 24px;">
         <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 12px;">۰۵ — کارهای اجراشده</p>
         <h2 style="font-size: clamp(24px, 3vw, 32px); font-weight: 800; margin: 0 0 18px;">سیستم‌هایی که ساخته‌ام</h2>
-        <p style="font-size: 16px; line-height: 1.95; color: #4A4F58; max-width: 66ch; margin: 0 0 40px;">نوشته‌ها و ایده‌ها بالای صفحه‌اند؛ این‌جا چیزهایی است که <b>ساخته</b> شده‌اند و کار می‌کنند. فعلاً یک سیستم واقعی و دموی تعاملی‌اش.</p>
+        <p style="font-size: 16px; line-height: 1.95; color: #4A4F58; max-width: 66ch; margin: 0 0 40px;">نوشته‌ها و ایده‌ها بالای صفحه‌اند؛ این‌جا فقط چیزهایی است که <b>ساخته</b> شده‌اند و کار می‌کنند — یک سیستم واقعی، و دموی تعاملی‌اش که می‌توانی همین حالا بازش کنی.</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 20px;">
-
-          <!-- کارت شاخص: ۱۹ مقاله -->
-          <div style="grid-column: 1 / -1; background: #FFFFFF; border: 1.5px solid #2F5233; border-radius: 16px; padding: 32px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap;">
-            <div style="flex: 0 0 auto; width: 180px; height: 180px; border-radius: 16px; background: #E7ECE4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
-              <span style="font-size: 46px; font-weight: 800; color: #2F5233;">۱۹</span>
-              <span style="font-size: 12.5px; font-weight: 600; color: #2F5233;">مقاله، یک مسیر</span>
-            </div>
-            <div style="flex: 1 1 380px; min-width: 260px;">
-              <span style="display: inline-block; font-size: 11px; font-weight: 700; color: #2F5233; background: #E7ECE4; padding: 3px 10px; border-radius: 999px; margin-bottom: 14px;">طرح درس · منتشرشده</span>
-              <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 10px; line-height: 1.55;">فهرست نوزده مقالهٔ Ilya Sutskever، به فارسی</h3>
-              <p style="font-size: 14px; line-height: 1.95; color: #4A4F58; margin: 0 0 14px;">فهرستی که گفته می‌شود «اگر این‌ها را بخوانی، نود درصد چیزی که امروز در هوش مصنوعی مهم است را می‌دانی». برای هر مقاله: پیش‌زمینهٔ لازم، یک مثال روزمره، و جای دقیقش در نقشهٔ خواندن.</p>
-              <div style="display: flex; gap: 10px 22px; flex-wrap: wrap; margin-bottom: 16px;">
-                <span style="font-size: 12.5px; color: #666158;">۱۹ مقاله</span>
-                <span style="font-size: 12.5px; color: #666158;">۱۹۹۳ تا ۲۰۲۰</span>
-                <span style="font-size: 12.5px; color: #666158;">ترتیب پیشنهادی خواندن</span>
-              </div>
-              <a href="https://claude.ai/artifact/WhcnXRGG2JwEJWwCCa5xjH" target="_blank" rel="noopener" style="font-size: 13.5px; font-weight: 700; color: #2F5233;">مشاهدهٔ سند ←</a>
-            </div>
-          </div>
-
-          <!-- کارت: صد ایده -->
-          <div style="grid-column: 1 / -1; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 28px; display: flex; gap: 26px; align-items: center; flex-wrap: wrap;">
-            <div style="flex: 0 0 auto; width: 96px; height: 96px; border-radius: 16px; background: #E7ECE4; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-              <span style="font-size: 32px; font-weight: 800; color: #2F5233;">۱۰۰</span>
-              <span style="font-size: 11px; font-weight: 600; color: #2F5233;">ایده</span>
-            </div>
-            <div style="flex: 1 1 380px; min-width: 260px;">
-              <span style="display: inline-block; font-size: 11px; font-weight: 700; color: #2F5233; background: #E7ECE4; padding: 3px 10px; border-radius: 999px; margin-bottom: 12px;">دفترچهٔ ایده · قابل فیلتر</span>
-              <h3 style="font-size: 17px; font-weight: 800; margin: 0 0 10px; line-height: 1.55;">صد جایی که یادگیری ماشین واقعاً فرق می‌سازد</h3>
-              <p style="font-size: 13.5px; line-height: 1.95; color: #4A4F58; margin: 0 0 14px;">ده حوزه، از سلامت و آب تا زبان فارسی و بلایای طبیعی. کنار هر ایده نوشته‌ام دقیقاً چه داده‌ای لازم دارد — چون بیشتر ایده‌های خوب سر همین یک سؤال زمین می‌خورند.</p>
-              <a href="Ideas.dc.html" style="font-size: 13.5px; font-weight: 700; color: #2F5233;">مرور ایده‌ها ←</a>
-            </div>
-          </div>
 
           <!-- کارت: مطالعه موردی دُرّین -->
           <div style="background: #FFFFFF; border: 1.5px solid #B4530E; border-radius: 16px; padding: 26px; display: flex; flex-direction: column;">
@@ -691,7 +632,7 @@
         <p style="font-size: 16px; line-height: 1.95; color: #4A4F58; max-width: 62ch; margin: 0 0 30px;">برای همکاری، مشاوره یا سفارش یک سیستم مشخص. اولین گفت‌وگو رایگان است و هدفش فقط این است که بفهمیم مسئله‌ای هست یا نه.</p>
 
         <div style="display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start;">
-          <div style="flex: 1; min-width: 300px; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px;">
+          <div style="flex: 1; min-width: 240px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px;">
             <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 12px;">در پیام اول این سه را بنویس</h3>
             <ol style="margin: 0 0 16px; padding-inline-start: 20px; font-size: 14px; line-height: 2.05; color: #4A4F58;">
               <li>چه چیزی هر روز در کارتان ثبت می‌شود — یا باید بشود و نمی‌شود؟</li>

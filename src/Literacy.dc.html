@@ -22,8 +22,6 @@
   summary{cursor:pointer;list-style:none}
   summary::-webkit-details-marker{display:none}
   details[open] summary{border-bottom:1px solid #F0EEE7}
-  .scrollhint{display:none;font-size:11.5px;color:#666158;margin:8px 2px 0;text-align:center}
-  @media (max-width:760px){.scrollhint{display:block}}
 </style>
 </helmet>
 
@@ -187,8 +185,7 @@
       <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px 28px 20px; margin-bottom: 14px;">
         <h2 style="font-size: 17px; font-weight: 800; margin: 0 0 4px;">شکل نیمرخ</h2>
         <p style="font-size: 12.8px; line-height: 1.85; color: #666158; margin: 0 0 8px;">حلقه‌ها از داخل به بیرون: ۲۵، ۵۰، ۷۵ و ۱۰۰ درصد. برای خواندن عددِ دقیق، نمودار میله‌ای پایین را ببین.</p>
-        <div style="overflow-x: auto;">
-          <svg viewBox="0 0 460 324" style="width: 100%; min-width: 380px; max-width: 480px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="نمودار شش‌ضلعی نیمرخ سواد هوش مصنوعی در شش بُعد">
+          <svg viewBox="0 0 380 330" style="width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="نمودار شش‌ضلعی نیمرخ سواد هوش مصنوعی در شش بُعد">
             <sc-for list="{{hexRings}}" as="r" hint-placeholder-count="4">
               <polygon points="{{r.points}}" fill="none" stroke="#E4E1D6" stroke-width="1"></polygon>
             </sc-for>
@@ -202,7 +199,6 @@
             </sc-for>
           </svg>
         </div>
-        <p class="scrollhint">برای دیدن کامل نمودار، آن را افقی بکش ←</p>
       </div>
 
       <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px 28px; margin-bottom: 14px;">
@@ -400,14 +396,14 @@ class Component extends DCLogic {
   }
 
   hexGeometry(values) {
-    var cx = 230, cy = 158, R = 100, n = DIMS.length;
+    var cx = 190, cy = 160, R = 86, n = DIMS.length;
     var pts = [], axes = [], rings = [];
     for (var i = 0; i < n; i++) {
       var ang = -Math.PI / 2 + (i * 2 * Math.PI) / n;
       var cos = Math.cos(ang), sin = Math.sin(ang);
       var r = R * (0.10 + 0.90 * (values[i] / 100));
       pts.push((cx + r * cos).toFixed(1) + ',' + (cy + r * sin).toFixed(1));
-      var lx = cx + (R + 34) * cos, ly = cy + (R + 34) * sin;
+      var lx = cx + (R + 30) * cos, ly = cy + (R + 30) * sin;
       var anchor = Math.abs(cos) < 0.2 ? 'middle' : (cos > 0 ? 'start' : 'end');
       axes.push({
         x1: cx, y1: cy, x2: (cx + R * cos).toFixed(1), y2: (cy + R * sin).toFixed(1),

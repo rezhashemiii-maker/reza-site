@@ -21,8 +21,6 @@
   ::selection{background:#E7ECE4;color:#1F3A22}
   input{font-family:inherit;font-size:15px;color:#16181C;background:#FFFFFF;border:1px solid #D9D5C9;border-radius:12px;padding:13px 16px;width:100%;box-sizing:border-box}
   input:focus{outline:2px solid #2F5233;outline-offset:1px}
-  .scrollhint{display:none;font-size:11.5px;color:#666158;margin:8px 2px 0;text-align:center}
-  @media (max-width:900px){.scrollhint{display:block}}
 </style>
 </helmet>
 
@@ -64,27 +62,32 @@
       <p style="font-size: 13.5px; line-height: 1.9; color: #666158; max-width: 70ch; margin: 0 0 20px;">نشانگر را روی هر نقطه نگه دار تا نامش را ببینی. فیلترهای بخش ۰۳ روی نقطه‌های پایین اثر می‌گذارند؛ رویدادهای بالا همیشه می‌مانند، چون زمینه‌اند نه داده.</p>
 
       <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px 16px; margin-bottom: 14px;">
-        <div style="overflow-x: auto;">
-          <svg viewBox="0 0 1000 {{plotH}}" style="width: 100%; min-width: 860px; height: auto; display: block;" role="img" aria-label="خط زمان شش دستهٔ ادبیات امنیت از ۱۹۷۳ تا امروز؛ هر نقطه یک کتاب، مقاله یا استاندارد است و اندازه‌اش برآورد اثرگذاری">
-            <sc-for list="{{ticks}}" as="t" hint-placeholder-count="6">
-              <line x1="{{t.x}}" y1="22" x2="{{t.x}}" y2="{{t.y2}}" stroke="#EAE7DE" stroke-width="1"></line>
-              <text x="{{t.x}}" y="14" font-size="11.5" direction="rtl" fill="#666158" text-anchor="middle">{{t.label}}</text>
-            </sc-for>
-            <sc-for list="{{events}}" as="e" hint-placeholder-count="19">
-              <path d="{{e.d}}" fill="#A32222" fill-opacity="0.9" stroke="#FFFFFF" stroke-width="1.5"><title>{{e.tip}}</title></path>
-            </sc-for>
-            <text x="{{gutter}}" y="{{evLabelY}}" font-size="12" font-weight="700" direction="rtl" fill="#A32222" text-anchor="start">حمله‌ها</text>
-            <line x1="{{plotX0}}" y1="{{sepY}}" x2="{{plotX1}}" y2="{{sepY}}" stroke="#E4E1D6" stroke-width="1"></line>
-            <sc-for list="{{lanes}}" as="l" hint-placeholder-count="6">
-              <line x1="{{l.x0}}" y1="{{l.lineY}}" x2="{{l.x1}}" y2="{{l.lineY}}" stroke="#EFECE3" stroke-width="1"></line>
-              <text x="{{l.lx}}" y="{{l.ly}}" font-size="12" font-weight="700" direction="rtl" fill="{{l.color}}" text-anchor="start">{{l.name}}</text>
-            </sc-for>
-            <sc-for list="{{dots}}" as="d" hint-placeholder-count="20">
-              <circle cx="{{d.cx}}" cy="{{d.cy}}" r="{{d.r}}" fill="{{d.color}}" fill-opacity="0.85" stroke="#FFFFFF" stroke-width="2"><title>{{d.tip}}</title></circle>
-            </sc-for>
-          </svg>
+        <div style="display: flex; gap: 8px 16px; flex-wrap: wrap; margin-bottom: 14px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #A32222;"><svg viewBox="0 0 16 16" style="width: 13px; height: 13px;"><path d="M 8 2 L 14 8 L 8 14 L 2 8 Z" fill="#A32222"></path></svg>حمله‌ها</span>
+          <sc-for list="{{lanes}}" as="l" hint-placeholder-count="6">
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #45494F;"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{l.color}}; flex-shrink: 0;"></span>{{l.name}}</span>
+          </sc-for>
         </div>
-        <p class="scrollhint">برای دیدن کل خط زمان، آن را افقی بکش ←</p>
+        <svg viewBox="0 0 1000 {{plotH}}" style="width: 100%; height: auto; display: block;" role="img" aria-label="خط زمان شش دستهٔ ادبیات امنیت از ۱۹۷۳ تا امروز، با ردیف حمله‌ها در بالا؛ هر نقطه یک کتاب، مقاله یا استاندارد است و اندازه‌اش برآورد اثرگذاری">
+          <sc-for list="{{ticks}}" as="t" hint-placeholder-count="6">
+            <line x1="{{t.x}}" y1="4" x2="{{t.x}}" y2="{{t.y2}}" stroke="#EAE7DE" stroke-width="1"></line>
+          </sc-for>
+          <sc-for list="{{events}}" as="e" hint-placeholder-count="19">
+            <path d="{{e.d}}" fill="#A32222" fill-opacity="0.9" stroke="#FFFFFF" stroke-width="1.5"><title>{{e.tip}}</title></path>
+          </sc-for>
+          <line x1="{{plotX0}}" y1="{{sepY}}" x2="{{plotX1}}" y2="{{sepY}}" stroke="#E4E1D6" stroke-width="1"></line>
+          <sc-for list="{{lanes}}" as="l" hint-placeholder-count="6">
+            <line x1="{{l.x0}}" y1="{{l.lineY}}" x2="{{l.x1}}" y2="{{l.lineY}}" stroke="#EFECE3" stroke-width="1"></line>
+          </sc-for>
+          <sc-for list="{{dots}}" as="d" hint-placeholder-count="20">
+            <circle cx="{{d.cx}}" cy="{{d.cy}}" r="{{d.r}}" fill="{{d.color}}" fill-opacity="0.85" stroke="#FFFFFF" stroke-width="2"><title>{{d.tip}}</title></circle>
+          </sc-for>
+        </svg>
+        <div style="position: relative; height: 20px; margin-top: 4px;">
+          <sc-for list="{{ticks}}" as="t" hint-placeholder-count="6">
+            <span style="position: absolute; left: {{t.pct}}%; transform: translateX(-50%); font-size: 11.5px; color: #666158; font-variant-numeric: tabular-nums;">{{t.label}}</span>
+          </sc-for>
+        </div>
         <div style="display: flex; gap: 10px 20px; flex-wrap: wrap; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid #F0EEE7;">
           <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: #45494F;"><svg viewBox="0 0 16 16" style="width: 14px; height: 14px;"><path d="M 8 2 L 14 8 L 8 14 L 2 8 Z" fill="#A32222"></path></svg>رویداد</span><span style="font-size: 11.5px; color: #666158; margin-inline-start: 8px;">اندازهٔ نقطه = برآورد اثرگذاری:</span>
           <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: #45494F;"><svg viewBox="0 0 16 16" style="width: 16px; height: 16px;"><circle cx="8" cy="8" r="4" fill="#666158"></circle></svg>مهم</span>
@@ -225,7 +228,7 @@
         </div>
         <div style="display: flex; gap: 6px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #F0EEE7; direction: rtl;">
           <sc-for list="{{bars}}" as="b" hint-placeholder-count="12">
-            <span style="flex: 1; text-align: center; font-size: 10px; color: #666158; font-variant-numeric: tabular-nums;">{{b.label}}</span>
+            <span style="flex: 1; text-align: center; font-size: 10px; color: #666158; font-variant-numeric: tabular-nums; overflow: hidden;">{{b.axis}}</span>
           </sc-for>
         </div>
       </div>
@@ -412,7 +415,7 @@ function faNum(x) {
 }
 
 var Y0 = 1973, Y1 = 2026;
-var PLOT = { x0: 40, x1: 880, gutter: 992, evY: 44, sep: 62, y0: 68, laneH: 48 };
+var PLOT = { x0: 40, x1: 880, gutter: 992, evY: 18, sep: 36, y0: 42, laneH: 46 };
 
 class Component extends DCLogic {
   constructor(props) {
@@ -485,7 +488,8 @@ class Component extends DCLogic {
 
     var ticks = [];
     for (var y = 1975; y <= 2025; y += 10) {
-      ticks.push({ x: self.xOf(y).toFixed(1), label: faNum(y), y2: (PLOT.y0 + CATS.length * PLOT.laneH).toFixed(1) });
+      var tx = self.xOf(y);
+      ticks.push({ x: tx.toFixed(1), pct: (tx / 10).toFixed(1), label: faNum(y), y2: (PLOT.y0 + CATS.length * PLOT.laneH).toFixed(1) });
     }
 
     // رویدادها همیشه نشان داده می‌شوند — زمینه‌اند، نه داده‌ای که فیلتر شود
@@ -512,8 +516,10 @@ class Component extends DCLogic {
     }
     var maxB = 1;
     for (var m = 0; m < buckets.length; m++) { if (buckets[m].n > maxB) { maxB = buckets[m].n; } }
-    var bars = buckets.map(function (bk) {
-      return { label: bk.label, n: bk.n, nFa: bk.n ? faNum(bk.n) : '', h: Math.round((bk.n / maxB) * 100), show: bk.n > 0 };
+    // روی صفحهٔ باریک، برچسب هر بازهٔ دوم کافی است تا ردیف سرریز نکند
+    var bars = buckets.map(function (bk, bi) {
+      return { label: bk.label, axis: bi % 2 === 0 ? bk.label : '·', n: bk.n,
+               nFa: bk.n ? faNum(bk.n) : '', h: Math.round((bk.n / maxB) * 100), show: bk.n > 0 };
     });
 
     var byDecadeNote = '';

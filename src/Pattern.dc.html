@@ -370,47 +370,29 @@
         <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 68ch; margin: 0 0 26px;">همهٔ عددهای بالا خروجی یک حلقهٔ پنج‌مرحله‌ای‌اند که هر دور، دورِ بعد را ارزان‌تر می‌کند. این نمودار توضیحِ من از داده‌هاست، نه نقل‌قول از او.</p>
 
         <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px 20px 20px;">
-          <svg viewBox="0 0 760 305" style="width: 100%; height: auto; display: block;" role="img" aria-label="چرخهٔ پنج‌مرحله‌ای: ساختن ابزار برای خود، استخراج تکهٔ قابل استفادهٔ مجدد، انتشار عمومی، وابسته‌شدن دیگران، و بازگشت اعتبار و پول که زمان بیشتری برای ساختن آزاد می‌کند">
-            <defs>
-              <marker id="pat-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#B9B3A6"></path>
-              </marker>
-            </defs>
-
-            <!-- مسیر حلقه -->
-            <path d="M 660 78 L 480 78" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
-            <path d="M 280 78 L 100 78" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
-            <path d="M 60 110 L 60 170 L 660 170 L 660 200" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
-            <path d="M 580 232 L 400 232" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
-            <path d="M 200 232 L 130 232 L 130 292 L 700 292 L 700 96" fill="none" stroke="#B9B3A6" stroke-width="2" marker-end="url(#pat-arrow)"></path>
-
-            <!-- گام ۱ -->
-            <rect x="660" y="56" width="100" height="44" rx="10" fill="#E3EEE1"></rect>
-            <text x="710" y="74" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۱ · ابزارِ خودت</text>
-            <text x="710" y="90" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">مسئلهٔ واقعی خودت</text>
-
-            <!-- گام ۲ -->
-            <rect x="280" y="56" width="200" height="44" rx="10" fill="#E3EEE1"></rect>
-            <text x="380" y="74" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۲ · تکهٔ کوچک را بیرون بکش</text>
-            <text x="380" y="90" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">هر چیزی که دو بار لازم شد</text>
-
-            <!-- گام ۳ -->
-            <rect x="0" y="56" width="100" height="44" rx="10" fill="#E3EEE1"></rect>
-            <text x="50" y="74" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۳ · منتشر کن</text>
-            <text x="50" y="90" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">با نام و مستند</text>
-
-            <!-- گام ۴ -->
-            <rect x="580" y="210" width="180" height="44" rx="10" fill="#DCEBFA"></rect>
-            <text x="670" y="228" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۴ · دیگران وابسته می‌شوند</text>
-            <text x="670" y="244" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">۱۰۰+ بستهٔ او در webpack و babel</text>
-
-            <!-- گام ۵ -->
-            <rect x="200" y="210" width="200" height="44" rx="10" fill="#F4E3D3"></rect>
-            <text x="300" y="228" font-size="12.5" direction="rtl" font-weight="700" fill="#16181C" text-anchor="middle">۵ · اعتبار، و بعد پول</text>
-            <text x="300" y="244" font-size="11" direction="rtl" fill="#45494F" text-anchor="middle">زمانِ بیشتر برای گام ۱</text>
-
-          </svg>
-          <p style="font-size: 12px; color: #666158; margin: 6px 2px 0; text-align: start;">هر دور، دورِ بعد را ارزان‌تر می‌کند.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 12px;">
+            <div style="background: #E3EEE1; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۱</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">ابزارِ خودت</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">مسئلهٔ واقعی خودت را حل کن.</p>
+            </div>
+            <div style="background: #E3EEE1; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۲</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">تکهٔ کوچک را بیرون بکش</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">هر چیزی که دو بار لازم شد، جدا و نام‌گذاری‌اش کن.</p>
+            </div>
+            <div style="background: #E3EEE1; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #2F5233; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۳</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">منتشر کن</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">با نام و مستند، جایی که دیگران پیدایش کنند.</p>
+            </div>
+            <div style="background: #DCEBFA; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #0E6FB4; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۴</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">دیگران وابسته می‌شوند</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">webpack و babel به ۱۰۰+ بستهٔ او وابسته‌اند.</p>
+            </div>
+            <div style="background: #F4E3D3; border-radius: 13px; padding: 17px 19px;">
+              <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 9px;"><span style="width: 23px; height: 23px; border-radius: 7px; background: #FFFFFF; color: #B4530E; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">۵</span><h4 style="font-size: 14.5px; font-weight: 800; margin: 0; line-height: 1.5;">اعتبار، و بعد پول</h4></div>
+              <p style="font-size: 12.5px; line-height: 1.9; color: #45494F; margin: 0;">که یعنی زمانِ بیشتر برای گام ۱.</p>
+            </div>
+          </div>
+          <p style="font-size: 12.5px; line-height: 1.85; color: #666158; margin: 12px 2px 0;">و حلقه بسته می‌شود: گام ۵ دوباره به گام ۱ می‌رسد، و هر دور، دورِ بعد را ارزان‌تر می‌کند.</p>
 
           <div style="background: #F4E3D3; border-radius: 10px; padding: 14px 16px; margin-top: 14px;">
             <span style="font-size: 11px; font-weight: 700; color: #8A5410;">نکتهٔ کلیدی — </span>
