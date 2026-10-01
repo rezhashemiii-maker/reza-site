@@ -17,6 +17,7 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
+  { file: 'AILiteracy.dc.html', out: 'ai-literacy.html', nav: 'سواد هوش مصنوعی' },
   { file: 'Security.dc.html', out: 'security.html', nav: 'کتاب‌های امنیت' },
   { file: 'Literacy.dc.html', out: 'literacy.html', nav: 'سنجش سواد' },
   { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'الگوی پیشرفت' },
@@ -164,6 +165,8 @@ fs.writeFileSync(
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'ai-literacy.html':
+    'معماری سواد هوش مصنوعی در ۱۶ ستون و ۵ لایه: همهٔ آن چیزی که باید بدانی، با ۲۲۰ مفهوم، تقدم یادگیری، خط زمان ۱۲ هفته‌ای و سه سطح عمق برای هر ستون.',
   'security.html':
     'نقشهٔ ۶۱ کتاب، مقاله و استاندارد که معماری امنیت شبکه و اطلاعات را ساختند، کنار ۱۹ حمله و افشاگری که باعثشان شد — از ۱۹۷۳ تا امروز روی یک خط زمان مشترک.',
   'literacy.html':
