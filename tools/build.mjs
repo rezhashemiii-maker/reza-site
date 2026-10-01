@@ -17,6 +17,7 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
+  { file: 'Literacy.dc.html', out: 'literacy.html', nav: 'سنجش سواد' },
   { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'الگوی پیشرفت' },
   { file: 'Glossary.dc.html', out: 'glossary.html', nav: 'واژه‌نامه' },
   { file: 'Learn.dc.html', out: 'learn.html', nav: 'مسیر یادگیری' },
@@ -162,6 +163,8 @@ fs.writeFileSync(
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'literacy.html':
+    'سنجش سواد هوش مصنوعی در ۳۰ سؤال و ۱۰ دقیقه: نیمرخ شش‌بعدی، کارهایی که با دانش امروزت می‌توانی بکنی، و دو قدم بعدی‌ات. بر پایهٔ چارچوب‌های یونسکو، Long و Magerko، و Ng و همکاران.',
   'pattern.html':
     'پروژهٔ تحقیقاتی: الگوی پیشرفت سیندره سورهوس در عدد و نمودار — ۱٬۱۰۰ بستهٔ npm، ۲ میلیارد دانلود در ماه، و شش قاعده‌ای که از داده بیرون آمد.',
   'glossary.html':
