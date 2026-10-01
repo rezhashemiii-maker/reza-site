@@ -17,6 +17,7 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
+  { file: 'Security.dc.html', out: 'security.html', nav: 'کتاب‌های امنیت' },
   { file: 'Literacy.dc.html', out: 'literacy.html', nav: 'سنجش سواد' },
   { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'الگوی پیشرفت' },
   { file: 'Glossary.dc.html', out: 'glossary.html', nav: 'واژه‌نامه' },
@@ -163,6 +164,8 @@ fs.writeFileSync(
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'security.html':
+    'نقشهٔ ۶۱ کتاب، مقاله و استاندارد که معماری امنیت شبکه و اطلاعات را ساختند — از ۱۹۷۳ تا امروز، روی یک خط زمان، با توضیح اینکه هرکدام چه چیزی را جلو برد.',
   'literacy.html':
     'سنجش سواد هوش مصنوعی در ۳۰ سؤال و ۱۰ دقیقه: نیمرخ شش‌بعدی، کارهایی که با دانش امروزت می‌توانی بکنی، و دو قدم بعدی‌ات. بر پایهٔ چارچوب‌های یونسکو، Long و Magerko، و Ng و همکاران.',
   'pattern.html':

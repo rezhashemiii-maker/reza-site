@@ -1,27 +1,28 @@
-.s7.s7{font-size: 12px;color: #666158;margin-top: 3px}
-.s8.s8{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
-.s9.s9{font-size: 11.5px;color: #2F5233;margin-top: 8px}
-.s4y.s4y{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
-.s4z.s4z{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
-.s50.s50{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
-.s51.s51{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
-.s52.s52{margin-bottom: 60px;scroll-margin-top: 80px}
-.s53.s53{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
-.s54.s54{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
-.s55.s55{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
-.s56.s56{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
-.s57.s57{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
-.s58.s58{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
-.s59.s59{font-size: 15px;font-weight: 800;margin: 0 0 12px}
-.s5a.s5a{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
-.s5b.s5b{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
-.s5c.s5c{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
-.s9i.s9i{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px 22px}
-.d6.d6{margin-bottom: 52px}
-.d7.d7{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
-.dc.dc{margin-bottom: 26px}
-.dd.dd{font-size: 17px;font-weight: 800;margin: 0 0 6px}
-.de.de{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
+.s8.s8{font-size: 12px;color: #666158;margin-top: 3px}
+.s9.s9{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
+.a.a{font-size: 11.5px;color: #2F5233;margin-top: 8px}
+.s5p.s5p{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
+.s5q.s5q{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
+.s5r.s5r{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
+.s5s.s5s{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
+.s5t.s5t{margin-bottom: 60px;scroll-margin-top: 80px}
+.s5u.s5u{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
+.s5v.s5v{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
+.s5w.s5w{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
+.s5x.s5x{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
+.s5y.s5y{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
+.s5z.s5z{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
+.s60.s60{font-size: 15px;font-weight: 800;margin: 0 0 12px}
+.s61.s61{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
+.s62.s62{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
+.s63.s63{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
+.ab.ab{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px 22px}
+.ec.ec{margin-bottom: 52px}
+.ed.ed{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
+.ei.ei{margin-bottom: 26px}
+.ej.ej{font-size: 17px;font-weight: 800;margin: 0 0 6px}
+.ek.ek{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
+[id]{scroll-margin-top:78px}
 ::selection{background:#E7ECE4;color:#1F3A22}
