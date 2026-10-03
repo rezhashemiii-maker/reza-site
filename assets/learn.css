@@ -1,28 +1,28 @@
-.i.i{font-size: 12px;color: #666158;margin-top: 3px}
-.j.j{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
-.k.k{font-size: 11.5px;color: #2F5233;margin-top: 8px}
-.s7p.s7p{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
-.s7q.s7q{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
-.s7r.s7r{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
-.s7s.s7s{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
-.s7t.s7t{display: flex;align-items: baseline;gap: 10px;flex-wrap: wrap;margin-bottom: 5px}
-.s7u.s7u{position: relative;height: 13px}
-.s7v.s7v{margin-bottom: 60px;scroll-margin-top: 80px}
-.s7w.s7w{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
-.s7x.s7x{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
-.s7y.s7y{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
-.s7z.s7z{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
-.s80.s80{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
-.s81.s81{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
-.s82.s82{font-size: 15px;font-weight: 800;margin: 0 0 12px}
-.s83.s83{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
-.s84.s84{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
-.s85.s85{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
-.dq.dq{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px 22px}
-.j8.j8{margin-bottom: 52px}
-.j9.j9{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
-.je.je{margin-bottom: 26px}
-.jf.jf{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
+.l.l{font-size: 12px;color: #666158;margin-top: 3px}
+.m.m{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
+.n.n{font-size: 11.5px;color: #2F5233;margin-top: 8px}
+.s8m.s8m{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
+.s8n.s8n{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
+.s8o.s8o{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
+.s8p.s8p{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
+.s8q.s8q{display: flex;align-items: baseline;gap: 10px;flex-wrap: wrap;margin-bottom: 5px}
+.s8r.s8r{position: relative;height: 13px}
+.s8s.s8s{margin-bottom: 60px;scroll-margin-top: 80px}
+.s8t.s8t{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
+.s8u.s8u{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
+.s8v.s8v{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
+.s8w.s8w{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
+.s8x.s8x{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
+.s8y.s8y{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
+.s8z.s8z{font-size: 15px;font-weight: 800;margin: 0 0 12px}
+.s90.s90{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
+.s91.s91{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
+.s92.s92{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
+.f9.f9{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px 22px}
+.lx.lx{margin-bottom: 52px}
+.ly.ly{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
+.m3.m3{margin-bottom: 26px}
+.m4.m4{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}
