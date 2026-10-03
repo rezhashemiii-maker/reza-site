@@ -1,22 +1,22 @@
-.s1c.s1c{font-size: 10px;font-weight: 700;color: #FFFFFF}
-.s5c.s5c{display: flex;align-items: center;gap: 8px;font-size: 12.5px;color: #45494F}
-.s5d.s5d{display: flex;align-items: center;gap: 12px}
-.s5e.s5e{font-size: 12.5px;font-weight: 600;color: #16181C;width: 150px;flex-shrink: 0}
-.s5f.s5f{flex: 1;direction: ltr;display: flex;height: 26px;border-radius: 6px;overflow: hidden;background: #F1EEE7}
-.s93.s93{display: flex;align-items: baseline;gap: 10px;margin-bottom: 8px;flex-wrap: wrap}
-.s94.s94{font-size: 12px;font-weight: 800;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
-.s95.s95{font-size: 16px;font-weight: 700;line-height: 1.65;margin: 0 0 10px}
-.s96.s96{font-size: 13.5px;line-height: 1.95;color: #45494F;margin: 0 0 14px;flex: 1}
-.s97.s97{font-size: 11px;font-weight: 700;color: #666158;margin-bottom: 4px}
-.s98.s98{font-size: 12.5px;line-height: 1.85;color: #45494F}
-.da.da{width: 10%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
-.i3.i3{width: 50%;background: #166534;display: flex;align-items: center;justify-content: center}
-.i4.i4{width: 30%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.i5.i5{width: 60%;background: #166534;display: flex;align-items: center;justify-content: center}
-.m7.m7{width: 20%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
-.m8.m8{width: 20%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.m9.m9{width: 10%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.md.md{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 14px}
+.s1e.s1e{font-size: 10px;font-weight: 700;color: #FFFFFF}
+.s5q.s5q{display: flex;align-items: center;gap: 8px;font-size: 12.5px;color: #45494F}
+.s5r.s5r{display: flex;align-items: center;gap: 12px}
+.s5s.s5s{font-size: 12.5px;font-weight: 600;color: #16181C;width: 150px;flex-shrink: 0}
+.s5t.s5t{flex: 1;direction: ltr;display: flex;height: 26px;border-radius: 6px;overflow: hidden;background: #F1EEE7}
+.s9f.s9f{display: flex;align-items: baseline;gap: 10px;margin-bottom: 8px;flex-wrap: wrap}
+.s9g.s9g{font-size: 12px;font-weight: 800;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
+.s9h.s9h{font-size: 16px;font-weight: 700;line-height: 1.65;margin: 0 0 10px}
+.s9i.s9i{font-size: 13.5px;line-height: 1.95;color: #45494F;margin: 0 0 14px;flex: 1}
+.s9j.s9j{font-size: 11px;font-weight: 700;color: #666158;margin-bottom: 4px}
+.s9k.s9k{font-size: 12.5px;line-height: 1.85;color: #45494F}
+.dx.dx{width: 10%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
+.j5.j5{width: 50%;background: #166534;display: flex;align-items: center;justify-content: center}
+.j6.j6{width: 30%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.j7.j7{width: 60%;background: #166534;display: flex;align-items: center;justify-content: center}
+.nk.nk{width: 20%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
+.nl.nl{width: 20%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.nm.nm{width: 10%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.nq.nq{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 14px}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 button{font-family:inherit;cursor:pointer;border:none}
