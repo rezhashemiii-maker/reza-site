@@ -1,13 +1,11 @@
-.fj.fj{font-size: 22px;font-weight: 800;color: #16181C}
-.fk.fk{font-size: 12.5px;color: #666158;margin-top: 2px}
-.fl.fl{background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px}
-.fm.fm{display: flex;align-items: center;gap: 10px;margin-bottom: 10px}
-.fn.fn{width: 22px;height: 22px;flex-shrink: 0}
-.fo.fo{font-size: 14.5px;font-weight: 700;margin: 0;line-height: 1.55}
-.fp.fp{font-size: 12.8px;line-height: 1.9;color: #4A4F58;margin: 0}
-.fq.fq{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px}
-.fr.fr{font-size: 10.5px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 3px 10px;align-self: flex-start;margin-bottom: 12px}
-.fs.fs{font-size: 12.8px;line-height: 1.9;color: #4A4F58;margin: 0 0 12px;flex: 1}
+.fi.fi{background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px}
+.fj.fj{display: flex;align-items: center;gap: 10px;margin-bottom: 10px}
+.fk.fk{width: 22px;height: 22px;flex-shrink: 0}
+.fl.fl{font-size: 14.5px;font-weight: 700;margin: 0;line-height: 1.55}
+.fm.fm{font-size: 12.8px;line-height: 1.9;color: #4A4F58;margin: 0}
+.fn.fn{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px}
+.fo.fo{font-size: 10.5px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 3px 10px;align-self: flex-start;margin-bottom: 12px}
+.fp.fp{font-size: 12.8px;line-height: 1.9;color: #4A4F58;margin: 0 0 12px;flex: 1}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}

@@ -72,25 +72,25 @@
 .s9u.s9u{display: flex;align-items: center;gap: 12px;padding: 11px 14px;border: 1px solid #E4E1D6;border-radius: 10px;flex-wrap: wrap}
 .s9v.s9v{font-size: 11.5px;font-weight: 700;border-radius: 999px;padding: 3px 10px;flex-shrink: 0}
 .s9w.s9w{font-size: 13.5px;color: #16181C;flex: 1;min-width: 200px}
-.ei.ei{margin-bottom: 44px;scroll-margin-top: 76px}
-.ej.ej{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #B4530E;margin: 0 0 10px}
-.ek.ek{font-size: 23px;font-weight: 800;margin: 0 0 6px}
-.gn.gn{font-size: 14px;line-height: 1.95;color: #666158;max-width: 68ch;margin: 0 0 18px}
-.go.go{font-size: 20px;font-weight: 800;margin: 0 0 6px}
-.gp.gp{padding: 12px 14px;background: #FAFAF7;font-weight: 700;font-variant-numeric: tabular-nums}
-.gq.gq{font-size: 13.5px;line-height: 1.9;color: #666158;max-width: 68ch;margin: 0 0 16px}
-.gr.gr{text-align: right;padding: 8px 12px;font-size: 12px;font-weight: 700;color: #45494F}
-.je.je{font-size: 13.5px;color: #666158;margin: 0 0 16px;max-width: 68ch}
-.jf.jf{padding: 12px 14px;background: #FAFAF7;font-weight: 800;font-variant-numeric: tabular-nums}
-.jg.jg{font-size: 13.5px;font-weight: 700;margin: 0 0 8px}
-.ji.ji{font-size: 19px;font-weight: 800}
-.jj.jj{width: 9.5%;background: #BFDCBA}
-.nf.nf{font-size: 14px;font-weight: 700;color: #16181C;background: #F1EEE7;padding: 12px 20px;border-radius: 10px}
-.nh.nh{font-size: 12.5px;color: #666158;margin: 0 0 14px}
-.ni.ni{font-size: 18px;font-weight: 800;margin: 34px 0 6px}
-.nj.nj{width: 10px;height: 10px;background: #166534;border-radius: 3px}
-.nl.nl{width: 7.1%;background: #F1EEE7}
-.nm.nm{display: grid;grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));gap: 14px}
+.eh.eh{margin-bottom: 44px;scroll-margin-top: 76px}
+.ei.ei{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #B4530E;margin: 0 0 10px}
+.ej.ej{font-size: 23px;font-weight: 800;margin: 0 0 6px}
+.gl.gl{font-size: 14px;line-height: 1.95;color: #666158;max-width: 68ch;margin: 0 0 18px}
+.gm.gm{font-size: 20px;font-weight: 800;margin: 0 0 6px}
+.gn.gn{padding: 12px 14px;background: #FAFAF7;font-weight: 700;font-variant-numeric: tabular-nums}
+.go.go{font-size: 13.5px;line-height: 1.9;color: #666158;max-width: 68ch;margin: 0 0 16px}
+.gp.gp{text-align: right;padding: 8px 12px;font-size: 12px;font-weight: 700;color: #45494F}
+.jc.jc{font-size: 13.5px;color: #666158;margin: 0 0 16px;max-width: 68ch}
+.jd.jd{padding: 12px 14px;background: #FAFAF7;font-weight: 800;font-variant-numeric: tabular-nums}
+.je.je{font-size: 13.5px;font-weight: 700;margin: 0 0 8px}
+.jg.jg{font-size: 19px;font-weight: 800}
+.jh.jh{width: 9.5%;background: #BFDCBA}
+.nd.nd{font-size: 14px;font-weight: 700;color: #16181C;background: #F1EEE7;padding: 12px 20px;border-radius: 10px}
+.nf.nf{font-size: 12.5px;color: #666158;margin: 0 0 14px}
+.ng.ng{font-size: 18px;font-weight: 800;margin: 34px 0 6px}
+.nh.nh{width: 10px;height: 10px;background: #166534;border-radius: 3px}
+.nj.nj{width: 7.1%;background: #F1EEE7}
+.nk.nk{display: grid;grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));gap: 14px}
 a{color:#B4530E;text-decoration:none}
 a:hover{color:#8A3E0A}
 button{font-family:inherit;cursor:pointer;border:none}
