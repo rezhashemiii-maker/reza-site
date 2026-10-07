@@ -120,9 +120,9 @@ for (const d of docs) applyClasses(d.ast, styleUse);
 const rewriteLinks = (ast) => {
   const visit = (n) => {
     if (typeof n === 'string' || n.h !== undefined) return;
-    if (n.a && typeof n.a.href === 'string' && n.a.href.endsWith('.dc.html')) {
-      const base = n.a.href.replace(/^\.?\//, '');
-      if (MAP[base]) n.a.href = MAP[base] === 'index.html' ? './' : MAP[base];
+    if (n.a && typeof n.a.href === 'string' && /\.dc\.html(#.*)?$/.test(n.a.href)) {
+      const [file, hash = ''] = n.a.href.replace(/^\.?\//, '').split(/(?=#)/);
+      if (MAP[file]) n.a.href = (MAP[file] === 'index.html' ? './' : MAP[file]) + hash;
     }
     (n.k || []).forEach(visit);
   };
