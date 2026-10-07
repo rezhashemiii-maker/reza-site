@@ -39,6 +39,10 @@ const PAGES = [
   { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'هزار بسته، یک الگو' },
   { file: 'Campaign.dc.html', out: 'campaign.html', nav: 'کمپین' },
 ];
+// صفحه‌های پروژهٔ مسیر مهندس هوش مصنوعی: Aie101.dc.html → aie-1-01.html
+for (const f of fs.readdirSync(SRC).filter((f) => /^Aie\d{3}\.dc\.html$/.test(f)).sort()) {
+  PAGES.push({ file: f, out: `aie-${f[3]}-${f.slice(4, 6)}.html`, nav: 'پروژه' });
+}
 const MAP = Object.fromEntries(PAGES.map((p) => [p.file, p.out]));
 const SITE = (process.env.SITE_URL || '').replace(/\/$/, '');
 // پیشوند مسیر سایت (برای Pagesِ پروژه‌ای مثل /reza-site/) — فقط در صفحهٔ ۴۰۴ لازم است
