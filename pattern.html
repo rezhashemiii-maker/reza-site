@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>هزار بسته، یک الگو — کالبدشکافی مسیر سیندره سورهوس</title>
+<meta name="description" content="">
+<meta name="author" content="رضا هاشمی">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="هزار بسته، یک الگو — کالبدشکافی مسیر سیندره سورهوس">
+<meta property="og:description" content="">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232F5233%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22sans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5F3EE%22%20text-anchor%3D%22middle%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pattern.css">
+</head>
+<body>
+
+
+<div class="s44">
+
+<header class="i3">
+<div class="i4">
+<a class="s46" href="Main.dc.html#writing">← بازگشت به نوشته‌ها</a>
+<nav class="s5h">
+<a class="q" href="#s1">۰۱ فکت‌ها</a>
+<a class="q" href="#s2">۰۲ خط زمان</a>
+<a class="q" href="#s3">۰۳ توجه</a>
+<a class="q" href="#s4">۰۴ تمرکز</a>
+<a class="q" href="#s5">۰۵ موتور</a>
+<a class="q" href="#s6">۰۶ قاعده‌ها</a>
+<a class="q" href="#s7">۰۷ الگوی من</a>
+<a class="q" href="#s8">۰۸ روش</a>
+</nav>
+</div>
+</header>
+<main>
+
+<section style="max-width: 1060px;margin: 0 auto;padding: 62px 24px 20px">
+<p class="dg">پروژهٔ تحقیقاتی · مهر ۱۴۰۵ · یک سوژه، داده‌های عمومی</p>
+<h1 style="font-size: clamp(30px, 4.6vw, 50px);line-height: 1.38;font-weight: 800;margin: 0 0 20px;letter-spacing: -0.01em">هزار بسته، یک الگو</h1>
+<p style="font-size: 18.5px;line-height: 1.95;color: #45494F;max-width: 62ch;margin: 0 0 18px">یک برنامه‌نویس نروژی به‌تنهایی به زیرساخت نامرئی وب تبدیل شده است: <b>۱٬۱۰۰ بستهٔ npm</b> با <b>۲ میلیارد دانلود در ماه</b>. سؤال من این نبود که چقدر کار کرده؛ این بود که <b>کارش چه شکلی داشته</b> که این‌طور جمع شده.</p>
+<p style="font-size: 16px;line-height: 2;color: #45494F;max-width: 62ch;margin: 0 0 16px">داده‌های عمومی مسیر سیندره سورهوس را جمع کردم، شمردم و رسم کردم. آن‌چه بیرون آمد یک داستان انگیزشی نیست — یک <b>ساختار قابل تقلید</b> است که شش قاعده دارد و هیچ‌کدامشان به استعداد ربطی ندارد.</p>
+<p style="font-size: 14.5px;line-height: 1.9;color: #666158;max-width: 62ch;margin: 0 0 30px">این نوشته را برای پیدا کردن الگوی خودم شروع کردم. بخش ۰۷ همان جایی است که نتیجه را روی کار خودم می‌گذارم.</p>
+<div style="display: flex;gap: 10px;flex-wrap: wrap;margin-bottom: 8px">
+<a href="#s1" style="font-size: 14px;font-weight: 700;color: #FFFFFF;background: #2F5233;padding: 12px 24px;border-radius: 10px">شروع از فکت‌ها</a>
+<a class="p7" href="#s8">روش و منابع</a>
+<a class="p7" href="https://sindresorhus.com/" target="_blank" rel="noopener">سایت خودش ↗</a>
+</div>
+</section>
+
+<section id="s1" style="background: #EDF1EB;border-top: 1px solid #D5DDD2;border-bottom: 1px solid #D5DDD2;margin-top: 30px">
+<div style="max-width: 1060px;margin: 0 auto;padding: 46px 24px">
+<p class="o">۰۱ — اندازهٔ ماجرا</p>
+<h2 class="s65">هشت عدد که بقیهٔ نوشته را توضیح می‌دهند</h2>
+<p style="font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 66ch;margin: 0 0 26px">همهٔ این‌ها از صفحه‌های عمومی گیت‌هاب و صفحهٔ حمایت مالی خودش برداشته شده‌اند. تاریخ برداشت: مهر ۱۴۰۵.</p>
+<div style="background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 16px;padding: 26px 28px;margin-bottom: 14px">
+<div style="font-size: 12.5px;font-weight: 700;color: #666158;margin-bottom: 6px">عددی که همه‌چیز را قاب می‌گیرد</div>
+<div style="font-size: clamp(40px, 7vw, 62px);font-weight: 800;color: #2F5233;line-height: 1.15;margin-bottom: 8px">۲ میلیارد</div>
+<div style="font-size: 15px;line-height: 1.8;color: #45494F;max-width: 60ch">دانلود در ماه، روی بسته‌هایی که یک نفر نگه‌داری می‌کند. برای مقایسه: این عدد از جمعیت کرهٔ زمین بیشتر است — هر ماه.</div>
+</div>
+<div class="l4">
+<div class="b7">
+<div class="bu">۱٬۱۰۰+</div>
+<div class="b8">بستهٔ npm که فعالانه نگه می‌دارد</div>
+</div>
+<div class="b7">
+<div class="bu">۱٬۱۰۰</div>
+<div class="b8">مخزن عمومی روی گیت‌هاب</div>
+</div>
+<div class="b7">
+<div class="bu">۸۴٬۲۰۰</div>
+<div class="b8">دنبال‌کننده روی گیت‌هاب</div>
+</div>
+<div class="b7">
+<div style="font-size: 30px;font-weight: 800;color: #B4530E;line-height: 1.2">۳۱</div>
+<div class="b8">نفری که خودش دنبال می‌کند</div>
+</div>
+<div class="b7">
+<div class="bu">۵۱۰٬۷۷۷</div>
+<div class="b8">ستاره فقط روی مخزن <span class="ez">awesome</span></div>
+</div>
+<div class="b7">
+<div class="bu">۱۸۸</div>
+<div class="b8">حامی مالی فعلی (از ۱٬۹۳۳ حامی تا امروز)</div>
+</div>
+<div class="b7">
+<div class="bu">۱۰۰+</div>
+<div class="b8">بستهٔ او که فقط webpack و babel به آن وابسته‌اند</div>
+</div>
+<div class="b7">
+<div class="bu">۲۰۱۲</div>
+<div class="b8">سالی که شروع کرد — و هنوز همان حساب است</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="kq" id="s2">
+<div class="db">
+<p class="o">۰۲ — خط زمان</p>
+<h2 class="s65">سه دورهٔ نابرابر</h2>
+<p style="font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 66ch;margin: 0 0 8px">مسیر او سه فاز دارد و طول‌شان خیلی نابرابر است. دورهٔ «قمار» — یعنی تمام‌وقت روی پس‌انداز — فقط سه سال و نیم طول کشید. بیشترِ عمرِ این پروژه، دوره‌ای است که دیگران هزینه‌اش را می‌دهند.</p>
+<p style="font-size: 14px;line-height: 1.9;color: #666158;max-width: 66ch;margin: 0 0 28px">عرض هر نوار دقیقاً متناسب با طول زمانی آن فاز است.</p>
+<div style="background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 26px 28px 22px">
+
+<div style="display: flex;gap: 10px 22px;flex-wrap: wrap;margin-bottom: 20px">
+<span class="s5f"><span class="hx"></span>در حاشیهٔ شغل</span>
+<span class="s5f"><span class="fh"></span>تمام‌وقت، روی پس‌انداز</span>
+<span class="s5f"><span class="lf"></span>تمام‌وقت، با پول جامعه</span>
+</div>
+
+<div style="display: flex;width: 100%;height: 34px;margin-bottom: 10px">
+<div title="۲۰۱۲ تا میانهٔ ۲۰۱۴ — حدود ۲.۵ سال" style="width: 17.2%;background: #166534;border-radius: 0 6px 6px 0"></div>
+<div class="p8"></div>
+<div title="میانهٔ ۲۰۱۴ تا ابتدای ۲۰۱۸ — حدود ۳.۵ سال" style="width: 24.1%;background: #0E6FB4"></div>
+<div class="p8"></div>
+<div class="lh" title="ابتدای ۲۰۱۸ تا امروز — بیش از ۸.۵ سال"></div>
+</div>
+
+<div style="display: flex;width: 100%;font-size: 11.5px;color: #666158;border-top: 1px solid #E4E1D6;padding-top: 8px;margin-bottom: 24px;font-variant-numeric: tabular-nums">
+<div style="width: 17.2%;text-align: start">۲۰۱۲</div>
+<div style="width: 24.1%;text-align: start">۲۰۱۴</div>
+<div class="lj"><span>۲۰۱۸</span><span>امروز</span></div>
+</div>
+
+<div class="s68">
+<div style="border-inline-start: 3px solid #166534;padding-inline-start: 14px">
+<div class="kr">۲۰۱۲ — ۲۰۱۴ · حدود ۲.۵ سال</div>
+<h3 class="ks">کدنویسی متن‌باز در کنار کار اداری</h3>
+<p class="s1f">هیچ جهش ناگهانی‌ای در کار نیست. دو سال کار عمومی و پیوسته، بدون اینکه درآمدی داشته باشد.</p>
+</div>
+<div style="border-inline-start: 3px solid #0E6FB4;padding-inline-start: 14px">
+<div class="kr">۲۰۱۴ — ۲۰۱۸ · حدود ۳.۵ سال</div>
+<h3 class="ks">شغل را رها کرد و رفت جنوب‌شرق آسیا</h3>
+<p class="s1f">تمام‌وقت روی متن‌باز، با خرج از پس‌انداز. در همین دوره، در ۱۱ ژوئیهٔ ۲۰۱۴، فهرست <span class="ez">awesome</span> را منتشر کرد.</p>
+</div>
+<div style="border-inline-start: 3px solid #B4530E;padding-inline-start: 14px">
+<div class="kr">۲۰۱۸ — امروز · بیش از ۸.۵ سال</div>
+<h3 class="ks">کاملاً با حمایت جامعه تأمین می‌شود</h3>
+<p class="s1f">از ابتدای ۲۰۱۸ هزینهٔ زندگی‌اش از حمایت مالی کاربران و شرکت‌ها می‌آید. هم‌زمان به اپ‌های مک با سویفت هم گسترش پیدا کرد.</p>
+</div>
+</div>
+<div style="background: #FAFAF7;border-radius: 10px;padding: 14px 16px;margin-top: 20px">
+<span class="s4e">آن‌چه من از این نمودار برداشتم — </span>
+<span class="s49">فاز پرریسک کوتاه بود و بعد از دو سال کارِ پیوسته آمد، نه قبلش. کسی که اول شغلش را رها می‌کند و بعد دنبال الگو می‌گردد، ترتیب را وارونه رفته است.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="p9" id="s3">
+<div class="db">
+<p class="o">۰۳ — توزیع توجه</p>
+<h2 class="s65">غافلگیرکننده‌ترین یافته: بیشترِ شهرتش از کد نیست</h2>
+<p style="font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 68ch;margin: 0 0 8px">ستاره‌های ۳۰ مخزن برتر او را شمردم و به دو دسته تقسیم کردم: چیزی که <b>کد</b> است، و چیزی که <b>فهرست یا سند</b> است. نتیجه وارونهٔ چیزی بود که انتظار داشتم.</p>
+<p style="font-size: 14px;line-height: 1.9;color: #666158;max-width: 68ch;margin: 0 0 26px">ستاره معیار کیفیت نیست؛ معیار توجه است. دقیقاً همان چیزی که این‌جا می‌خواستم بسنجم.</p>
+
+<div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 12px;margin-bottom: 20px">
+<div class="mt">
+<div class="kt">۷۸٪</div>
+<div class="ku">از ستاره‌های ۳۰ مخزن برتر، روی <b>فهرست و سند</b> است — نه کد. (۶۵۰٬۳۱۳ از ۸۳۰٬۶۴۸)</div>
+</div>
+<div class="mu">
+<div class="kt">۲۲٪</div>
+<div class="ku">روی <b>کد</b> — همان کدی که ۲ میلیارد بار در ماه دانلود می‌شود. (۱۸۰٬۳۳۵ ستاره)</div>
+</div>
+<div class="ms">
+<div class="kt">۶۱٪</div>
+<div class="ku">از همان ۸۳۰٬۶۴۸ ستاره، فقط روی <b>یک</b> مخزن است: <span class="ez">awesome</span>.</div>
+</div>
+</div>
+
+<div class="ed">
+<h3 class="jf">ستارهٔ مخزن‌های ۲ تا ۱۳</h3>
+<p style="font-size: 13px;line-height: 1.85;color: #666158;margin: 0 0 6px">رتبهٔ اول، <span class="ez">awesome</span> با ۵۱۰٬۷۷۷ ستاره، در این نمودار نیست: ۷.۶ برابرِ بلندترین میلهٔ این‌جاست و اگر بماند بقیه دیده نمی‌شوند.</p>
+<div style="display: flex;gap: 10px 20px;flex-wrap: wrap;margin: 14px 0 20px">
+<span class="s5f"><span class="fh"></span>فهرست / سند</span>
+<span class="s5f"><span class="hx"></span>کد</span>
+</div>
+<div style="margin-top: 4px">
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">awesome-nodejs</span>
+<span class="s2f">۶۶٬۹۳۱</span>
+</div>
+<div title="awesome-nodejs — ۶۶٬۹۳۱ ستاره · فهرست / سند" style="height: 15px;width: 100.0%;background: #0E6FB4;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">awesome-electron</span>
+<span class="s2f">۲۷٬۲۹۴</span>
+</div>
+<div title="awesome-electron — ۲۷٬۲۹۴ ستاره · فهرست / سند" style="height: 15px;width: 40.8%;background: #0E6FB4;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">quick-look-plugins</span>
+<span class="s2f">۱۸٬۷۶۷</span>
+</div>
+<div title="quick-look-plugins — ۱۸٬۷۶۷ ستاره · فهرست / سند" style="height: 15px;width: 28.0%;background: #0E6FB4;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">type-fest</span>
+<span class="s2f">۱۷٬۴۱۸</span>
+</div>
+<div title="type-fest — ۱۷٬۴۱۸ ستاره · کد" style="height: 15px;width: 26.0%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">ky</span>
+<span class="s2f">۱۷٬۰۹۱</span>
+</div>
+<div title="ky — ۱۷٬۰۹۱ ستاره · کد" style="height: 15px;width: 25.5%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">got</span>
+<span class="s2f">۱۴٬۹۴۷</span>
+</div>
+<div title="got — ۱۴٬۹۴۷ ستاره · کد" style="height: 15px;width: 22.3%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">pure</span>
+<span class="s2f">۱۴٬۴۲۷</span>
+</div>
+<div title="pure — ۱۴٬۴۲۷ ستاره · کد" style="height: 15px;width: 21.6%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">ora</span>
+<span class="s2f">۹٬۷۵۷</span>
+</div>
+<div title="ora — ۹٬۷۵۷ ستاره · کد" style="height: 15px;width: 14.6%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">pageres</span>
+<span class="s2f">۹٬۷۳۱</span>
+</div>
+<div title="pageres — ۹٬۷۳۱ ستاره · کد" style="height: 15px;width: 14.5%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">github-markdown-css</span>
+<span class="s2f">۸٬۹۳۷</span>
+</div>
+<div title="github-markdown-css — ۸٬۹۳۷ ستاره · کد" style="height: 15px;width: 13.4%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">Gifski</span>
+<span class="s2f">۸٬۵۶۶</span>
+</div>
+<div title="Gifski — ۸٬۵۶۶ ستاره · کد" style="height: 15px;width: 12.8%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+<div class="s5b">
+<div class="s5c">
+<span class="s5d">np</span>
+<span class="s2f">۷٬۷۱۳</span>
+</div>
+<div title="np — ۷٬۷۱۳ ستاره · کد" style="height: 15px;width: 11.5%;background: #166534;border-radius: 4px 0 0 4px"></div>
+</div>
+</div>
+<div style="background: #DCEBFA;border-radius: 10px;padding: 14px 16px;margin-top: 22px">
+<span style="font-size: 11px;font-weight: 700;color: #0E6FB4">چرا مهم است — </span>
+<span class="s49">سه تا از پنج مخزن پرستارهٔ او یک خط کد ندارند. کاری که بیشترین توجه را برایش آورد، <b>مرتب‌کردن دانش دیگران</b> بود، نه نوشتن کد جدید. این تنها بخشی از الگوست که هیچ پیش‌نیاز فنی ندارد.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="kq" id="s4">
+<div class="db">
+<p class="o">۰۴ — تمرکز و عدم‌تقارن</p>
+<h2 class="s65">هزار بسته، ده پروژه</h2>
+<p class="hd">خودش گفته است وقتش را روی حدود <b>۱۰ پروژهٔ اصلی</b> می‌گذارد که بیشترِ کد در آن‌هاست؛ باقی، تکه‌های کوچکی‌اند که از دلِ همان‌ها بیرون کشیده و جدا منتشر شده‌اند. یعنی ۱٬۱۰۰ بسته محصول ۱٬۱۰۰ تصمیم نیست — محصول ۱۰ تصمیم است و یک عادت.</p>
+<div class="oy">
+
+<div class="da">
+<h3 class="kv">۱٬۱۰۰ بسته در برابر ۱۰ پروژه</h3>
+<p class="pa">هر مربع = ۱۰ بسته. مربع تیره = ۱۰ پروژهٔ اصلی که بیشترِ کد در آن‌هاست.</p>
+<div style="display: flex;flex-wrap: wrap;gap: 3px">
+<span title="۱۰ پروژهٔ اصلی" style="width: 11px;height: 11px;border-radius: 2px;background: #B4530E"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+<span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span><span class="s1"></span>
+</div>
+<p class="kw">تعداد زیاد، خروجیِ یک عادت است: هر بار که چیزی را دو بار می‌نویسی، دفعهٔ دوم به‌جای کپی‌کردن، جدا و منتشرش کن.</p>
+</div>
+<div class="n9">
+
+<div class="da">
+<h3 class="kv">عدم‌تقارن توجه</h3>
+<p style="font-size: 12.5px;line-height: 1.8;color: #666158;margin: 0 0 18px">۸۴٬۲۰۰ نفر او را دنبال می‌کنند؛ او ۳۱ نفر را. نسبت: حدود <b>۲٬۷۰۰ به ۱</b>.</p>
+<div style="display: flex;align-items: center;gap: 10px;margin-bottom: 9px">
+<span class="pb">دنبال‌کننده</span>
+<div title="۸۴٬۲۰۰ دنبال‌کننده" style="flex: 1;height: 16px;background: #2F5233;border-radius: 4px 0 0 4px"></div>
+<span class="pc">۸۴٬۲۰۰</span>
+</div>
+<div class="s2v">
+<span class="pb">دنبال می‌کند</span>
+<div class="s2j"><div title="۳۱ نفر — در همین مقیاس، سه پیکسل" style="height: 16px;width: 3px;background: #B4530E;border-radius: 2px"></div></div>
+<span class="pc">۳۱</span>
+</div>
+<p class="kw">هر دو میله در یک مقیاس‌اند. میلهٔ پایینی واقعاً همین‌قدر است. کسی که این‌همه دیده می‌شود، تقریباً هیچ‌چیز را دنبال نمی‌کند.</p>
+</div>
+
+<div class="da">
+<h3 class="kv">واقعیت پول</h3>
+<p class="pa">۱٬۹۳۳ نفر تا امروز حامی‌اش شده‌اند. ۱۸۸ نفر هنوز هستند.</p>
+<div style="height: 22px;background: #E7ECE4;border-radius: 6px;overflow: hidden;display: flex">
+<div title="۱۸۸ حامی فعلی — ۹.۷٪" style="width: 9.7%;background: #2F5233;border-radius: 0 6px 6px 0"></div>
+</div>
+<div style="display: flex;justify-content: space-between;margin-top: 8px">
+<span class="s6a">۹.۷٪ هنوز حامی‌اند</span>
+<span class="s5">۱٬۷۴۵ نفر رفته‌اند</span>
+</div>
+<p class="kw">حمایت مالی متن‌باز نشتی دارد. مدلی که کار می‌کند بر <b>جریان مدام آدم‌های تازه</b> تکیه دارد، نه بر وفاداری. این را هیچ‌کس در پست‌های انگیزشی نمی‌نویسد.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="p9" id="s5">
+<div class="db">
+<p class="o">۰۵ — مکانیزم</p>
+<h2 class="s65">موتور: چرخهٔ استخراج</h2>
+<p class="hd">همهٔ عددهای بالا خروجی یک حلقهٔ پنج‌مرحله‌ای‌اند که هر دور، دورِ بعد را ارزان‌تر می‌کند. این نمودار توضیحِ من از داده‌هاست، نه نقل‌قول از او.</p>
+<div style="background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 26px 20px 20px">
+<div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));gap: 12px">
+<div class="fg">
+<div class="s69"><span class="dk">۱</span><h4 class="f0">ابزارِ خودت</h4></div>
+<p class="s1g">مسئلهٔ واقعی خودت را حل کن.</p>
+</div>
+<div class="fg">
+<div class="s69"><span class="dk">۲</span><h4 class="f0">تکهٔ کوچک را بیرون بکش</h4></div>
+<p class="s1g">هر چیزی که دو بار لازم شد، جدا و نام‌گذاری‌اش کن.</p>
+</div>
+<div class="fg">
+<div class="s69"><span class="dk">۳</span><h4 class="f0">منتشر کن</h4></div>
+<p class="s1g">با نام و مستند، جایی که دیگران پیدایش کنند.</p>
+</div>
+<div class="l5">
+<div class="s69"><span class="l6">۴</span><h4 class="f0">دیگران وابسته می‌شوند</h4></div>
+<p class="s1g">webpack و babel به ۱۰۰+ بستهٔ او وابسته‌اند.</p>
+</div>
+<div class="l7">
+<div class="s69"><span class="l8">۵</span><h4 class="f0">اعتبار، و بعد پول</h4></div>
+<p class="s1g">که یعنی زمانِ بیشتر برای گام ۱.</p>
+</div>
+</div>
+<p class="ht">و حلقه بسته می‌شود: گام ۵ دوباره به گام ۱ می‌رسد، و هر دور، دورِ بعد را ارزان‌تر می‌کند.</p>
+<div style="background: #F4E3D3;border-radius: 10px;padding: 14px 16px;margin-top: 14px">
+<span class="s4e">نکتهٔ کلیدی — </span>
+<span class="s49">گام ۲ جایی است که بیشتر آدم‌ها از حلقه بیرون می‌افتند. کدِ مفید را همه می‌نویسند؛ کمتر کسی زحمتِ جدا کردن و نام‌گذاری و مستندکردنش را می‌کشد. تفاوت بین «۱۰ پروژه» و «۱٬۱۰۰ بسته» دقیقاً همین یک گام است.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="kq" id="s6">
+<div class="db">
+<p class="o">۰۶ — نتیجه</p>
+<h2 class="s65">شش قاعده‌ای که از داده درآمد</h2>
+<p class="hd">کنار هر قاعده نوشته‌ام که بر چه شواهدی ایستاده است — تا بشود جدا کرد کدام <b>اندازه‌گیری</b> است و کدام <b>تفسیر من</b>.</p>
+<div class="fk">
+<div class="he">
+<div class="hf">اندازه‌گیری‌شده</div>
+<h3 class="dc">۱ · واحد کار را کوچک کن</h3>
+<p class="s47">۱٬۱۰۰ بسته یعنی هر بسته یک کار می‌کند. واحد کوچک یعنی تمام‌شدنی است، یعنی قابل نگه‌داری است، و یعنی شکستِ یکی بقیه را زمین نمی‌زند.</p>
+<p class="s24">شاهد: ۱٬۱۰۰ بستهٔ npm، ۱٬۱۰۰ مخزن عمومی.</p>
+</div>
+<div class="he">
+<div class="hf">اندازه‌گیری‌شده</div>
+<h3 class="dc">۲ · مرتب‌کردن، به‌اندازهٔ ساختن ارزش دارد</h3>
+<p class="s47">۷۸٪ از توجهی که گرفته، روی فهرست و سند است نه کد. مرتب‌کردن دانشِ پراکندهٔ دیگران، ارزانی است که بیشترین بازده را دارد.</p>
+<p class="s24">شاهد: ۶۵۰٬۳۱۳ از ۸۳۰٬۶۴۸ ستارهٔ ۳۰ مخزن برتر.</p>
+</div>
+<div class="s4z">
+<div class="pd">تفسیر من</div>
+<h3 class="dc">۳ · از کار واقعی استخراج کن، از هوا نه</h3>
+<p class="s47">بسته‌ها از دلِ ۱۰ پروژهٔ واقعی بیرون آمده‌اند. هیچ‌کدام «ایدهٔ یک بستهٔ خوب» نبوده‌اند؛ همه قبلاً در یک کار واقعی لازم شده بودند.</p>
+<p class="s24">پایه: گفتهٔ خودش دربارهٔ ۱۰ پروژهٔ اصلی + ساختار مخزن‌ها.</p>
+</div>
+<div class="s4z">
+<div class="pd">تفسیر من</div>
+<h3 class="dc">۴ · ورودی را ببند</h3>
+<p class="s47">۳۱ نفر را دنبال می‌کند. کسی که این حجم خروجی دارد، مصرفِ محتوایش نزدیک صفر است. زمان از یک جا می‌آید: از جایی که خرجش نمی‌کنی.</p>
+<p class="s24">شاهد: ۳۱ دنبال‌شونده در برابر ۸۴٬۲۰۰ دنبال‌کننده.</p>
+</div>
+<div class="he">
+<div class="hf">اندازه‌گیری‌شده</div>
+<h3 class="dc">۵ · یک جا بمان، طولانی</h3>
+<p class="s47">از ۲۰۱۲ تا امروز: همان نام، همان حساب، همان جا. ترکیبِ آثار وقتی کار می‌کند که آدرس عوض نشود — نه در یک سال، در چهارده سال.</p>
+<p class="s24">شاهد: پیوستگی فعالیت عمومی از ۲۰۱۲.</p>
+</div>
+<div class="he">
+<div class="hf">اندازه‌گیری‌شده</div>
+<h3 class="dc">۶ · پول را از کاربر بگیر، نه از کارفرما</h3>
+<p class="s47">از ۲۰۱۸ درآمدش مستقیم از کسانی می‌آید که از کارش استفاده می‌کنند. اما ۹۰٪ حامی‌ها می‌روند — این مدل به ورودی تازه وابسته است، نه به وفاداری.</p>
+<p class="s24">شاهد: ۱۸۸ حامی فعلی از ۱٬۹۳۳ حامی تا امروز.</p>
+</div>
+</div>
+<div style="background: #F5E1DF;border-radius: 12px;padding: 18px 22px;margin-top: 18px">
+<span class="p4">چیزی که این الگو تضمین نمی‌کند — </span>
+<span style="font-size: 14px;color: #45494F;line-height: 1.95">یک نمونه، الگو را <b>نشان</b> می‌دهد اما <b>اثبات</b> نمی‌کند. هزاران نفر همین شش کار را کرده‌اند و به این‌جا نرسیده‌اند؛ من فقط بازمانده‌ها را می‌بینم. آن‌چه این‌جا هست، فهرستی از کارهای ارزان و کم‌ریسک است که <b>شانس</b> را بالا می‌برند — نه دستور پخت.</span>
+</div>
+</div>
+</section>
+
+<section class="ky" id="s7">
+<div class="db">
+<p class="o">۰۷ — ترجمه به کار خودم</p>
+<h2 class="s65">الگوی من چه شکلی است</h2>
+<p class="hd">من بستهٔ npm نمی‌نویسم. ولی هر شش قاعده ترجمه‌شدنی است — کافی است «بسته» را با «واحد کارِ من» عوض کنم. این جدول قرارِ من با خودم است.</p>
+<div style="background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 16px;overflow-x: auto">
+<table style="width: 100%;min-width: 620px;font-size: 13.5px">
+<thead>
+<tr style="background: #FAFAF7">
+<th class="kx">قاعده</th>
+<th class="kx">شکلش پیش او</th>
+<th class="kx">شکلش پیش من</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="f1">واحد کوچک</td>
+<td class="s67">یک بسته = یک کار</td>
+<td class="s67">یک مدخل واژه‌نامه = یک مفهوم. یک ایده = یک مسئلهٔ واقعی. هیچ‌کدام به نوشتهٔ بعدی وابسته نیستند.</td>
+</tr>
+<tr>
+<td class="f1">مرتب‌کردن</td>
+<td class="s67">فهرست <span class="ez">awesome</span></td>
+<td class="s67">واژه‌نامهٔ ۲۸۵ واژه و مسیر ۸ ایستگاهی. مرتب‌کردن چیزی که در فارسی آشفته است، خودش تولید است.</td>
+</tr>
+<tr>
+<td class="f1">استخراج از کار واقعی</td>
+<td class="s67">بسته‌ها از دل ۱۰ پروژه</td>
+<td class="s67">سیستم‌هایی که برای کسب‌وکارهای واقعی می‌سازم؛ هر الگوی عمومی که در آن‌ها پیدا شود، نوشتهٔ بعدی است.</td>
+</tr>
+<tr>
+<td class="f1">بستنِ ورودی</td>
+<td class="s67">۳۱ دنبال‌شونده</td>
+<td class="s67">خواندن از مقالهٔ اصلی، نه از خلاصه و وبلاگ. کمتر منبع، عمیق‌تر.</td>
+</tr>
+<tr>
+<td class="f1">ماندن طولانی</td>
+<td class="s67">۱۴ سال، یک حساب</td>
+<td class="s67">یک آدرس، فارسی، بدون مهاجرت به پلتفرم بعدی. هر نوشته همین‌جا می‌ماند.</td>
+</tr>
+<tr>
+<td style="padding: 15px 18px;font-weight: 700;line-height: 1.7">رایگان‌بودنِ ورودی</td>
+<td class="pe">کد رایگان، حمایت اختیاری</td>
+<td class="pe">همهٔ نوشته‌ها رایگان و بدون ثبت‌نام؛ درآمد از ساختن سیستم برای کسب‌وکارها، نه از فروش محتوا.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 24px;margin-top: 16px">
+<h3 class="s2p">تفاوتی که نمی‌شود نادیده گرفت</h3>
+<p class="s9">او در بازاری کار می‌کند که مخاطبش تمام دنیاست و پولش به دلار می‌آید. بازار من فارسی است: کوچک‌تر، و بدون زیرساخت حمایت مالی. پس قاعدهٔ ششم برای من عوض می‌شود — درآمد باید از <b>ساختنِ سیستم برای کسب‌وکار</b> بیاید و نوشتن، کاری است که اعتبارش را می‌سازد. همان حلقه، با یک گام متفاوت.</p>
+</div>
+</div>
+</section>
+
+<section id="s8">
+<div style="max-width: 1060px;margin: 0 auto;padding: 52px 24px 64px">
+<p class="o">۰۸ — روش، محدودیت‌ها و منابع</p>
+<h2 class="p5">چطور این را در آوردم</h2>
+<div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 14px;margin-bottom: 18px">
+<div class="s26">
+<h3 class="s2p">روش</h3>
+<p class="s9">صفحه‌های عمومی پروفایل، مخزن‌ها و حمایت مالی را در مهر ۱۴۰۵ برداشتم. ۳۰ مخزن برتر را بر اساس ستاره مرتب کردم و دستی به دو دستهٔ «کد» و «فهرست/سند» تقسیم کردم. درصدها از همین ۳۰ مخزن حساب شده‌اند، نه از کل ۱٬۱۰۰ مخزن.</p>
+</div>
+<div class="s26">
+<h3 class="s2p">محدودیت‌ها</h3>
+<p class="s9">دسته‌بندی «کد» و «فهرست» قضاوت من است و مرزش همیشه تیز نیست. عددها لحظه‌ای‌اند و فردا فرق می‌کنند. و مهم‌تر از همه: این یک نمونه است — <b>سوگیری بازمانده</b> در کل این تحلیل حاضر است و من راهی برای حذفش ندارم.</p>
+</div>
+<div class="s26">
+<h3 class="s2p">چه چیزی را عمداً نگفتم</h3>
+<p class="s9">دربارهٔ درآمد دقیق، ساعت کاری روزانه و زندگی شخصی‌اش عددهایی نقل می‌شود که نتوانستم از منبع اول تأییدشان کنم. هرچه تأیید نشد، این‌جا نیامد.</p>
+</div>
+</div>
+<div class="da">
+<h3 style="font-size: 15px;font-weight: 800;margin: 0 0 14px">منابع</h3>
+<ul style="margin: 0;padding-inline-start: 20px;font-size: 13.5px;line-height: 2.1;color: #45494F">
+<li><a href="https://sindresorhus.com/" target="_blank" rel="noopener">سایت شخصی سیندره سورهوس</a> — معرفی و فهرست اپ‌ها</li>
+<li><a href="https://github.com/sindresorhus" target="_blank" rel="noopener">پروفایل گیت‌هاب</a> — دنبال‌کننده‌ها، شمار مخزن‌ها، مخزن‌های سنجاق‌شده</li>
+<li><a href="https://github.com/sindresorhus?tab=repositories&amp;sort=stargazers" target="_blank" rel="noopener">مخزن‌ها به ترتیب ستاره</a> — دادهٔ خام نمودار بخش ۰۳</li>
+<li><a href="https://github.com/sponsors/sindresorhus" target="_blank" rel="noopener">صفحهٔ حمایت مالی گیت‌هاب</a> — شمار حامیان، ۲ میلیارد دانلود، وابستگی webpack و babel</li>
+<li><a href="https://opencollective.com/sindresorhus" target="_blank" rel="noopener">اوپن‌کالکتیو</a> — شمار بسته‌ها و دانلودها</li>
+<li><a href="https://www.freecodecamp.org/news/sindre-sorhus-8426c0ed785d/" target="_blank" rel="noopener">مصاحبهٔ Between the Wires</a> — ترک شغل در ۲۰۱۴، ۱۰ پروژهٔ اصلی، فلسفهٔ بسته‌های ریز</li>
+<li><a href="https://github.com/sindresorhus/awesome" target="_blank" rel="noopener">مخزن awesome</a> — تاریخ انتشار ۱۱ ژوئیهٔ ۲۰۱۴</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<footer class="s2i">
+<div class="m5">
+<a class="s4v" href="Main.dc.html#writing">← بازگشت به نوشته‌ها</a>
+<span class="s1m">رضا هاشمی · پروژهٔ تحقیقاتی الگوی پیشرفت</span>
+</div>
+</footer>
+</div>
+
+
+</body>
+</html>

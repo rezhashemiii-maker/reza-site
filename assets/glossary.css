@@ -1,17 +1,17 @@
-.s34.s34{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
-.s35.s35{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
-.s36.s36{font-size: 17px;font-weight: 800;margin: 0;line-height: 1.5}
-.s37.s37{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
-.s38.s38{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
-.s39.s39{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
-.s3a.s3a{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
-.s3b.s3b{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
-.s3c.s3c{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
-.s3d.s3d{font-size: 10.5px;font-weight: 700;color: #8A5410}
-.s3e.s3e{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
-.s3f.s3f{font-size: 10.5px;font-weight: 700;color: #A32222}
+.s6v.s6v{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
+.s6w.s6w{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
+.s6x.s6x{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
+.s6y.s6y{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
+.s6z.s6z{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
+.s70.s70{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
+.s71.s71{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
+.s72.s72{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
+.s73.s73{font-size: 10.5px;font-weight: 700;color: #8A5410}
+.s74.s74{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
+.s75.s75{font-size: 10.5px;font-weight: 700;color: #A32222}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
+[id]{scroll-margin-top:78px}
 button{font-family:inherit;cursor:pointer;border:none}
 input{font-family:inherit;font-size:15px;color:#16181C;background:#FFFFFF;border:1px solid #D9D5C9;border-radius:12px;padding:14px 16px;width:100%;box-sizing:border-box}
 input:focus{outline:2px solid #2F5233;outline-offset:1px}

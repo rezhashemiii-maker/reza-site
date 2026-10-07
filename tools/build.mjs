@@ -25,6 +25,12 @@ const PAGES = [
   { file: 'Patents.dc.html', out: 'patents.html', nav: 'ثبت اختراع' },
   { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
   { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
+  { file: 'Chess.dc.html', out: 'chess.html', nav: 'شصت‌وچهار خانه' },
+  { file: 'AILiteracy.dc.html', out: 'ai-literacy.html', nav: 'شانزده ستون' },
+  { file: 'Security.dc.html', out: 'security.html', nav: 'پنجاه سال دفاع' },
+  { file: 'Literacy.dc.html', out: 'literacy.html', nav: 'آزمون سواد' },
+  { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'هزار بسته، یک الگو' },
+  { file: 'Campaign.dc.html', out: 'campaign.html', nav: 'کمپین' },
 ];
 const MAP = Object.fromEntries(PAGES.map((p) => [p.file, p.out]));
 const SITE = (process.env.SITE_URL || '').replace(/\/$/, '');

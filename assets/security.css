@@ -1,0 +1,50 @@
+.s66.s66{font-size: 14.5px;font-weight: 700;margin-top: 3px;line-height: 1.6}
+.s9m.s9m{width: 10px;height: 10px;border-radius: 50%;flex-shrink: 0}
+.s9n.s9n{position: absolute;transform: translateX(-50%);font-size: 11.5px;color: #666158;font-variant-numeric: tabular-nums}
+.s9o.s9o{background: #FAFAF7;border-radius: 11px;padding: 14px 16px;border-inline-start: 3px solid #A32222}
+.s9p.s9p{display: flex;align-items: baseline;gap: 8px;flex-wrap: wrap;margin-bottom: 5px}
+.s9q.s9q{font-size: 14.5px;font-weight: 800;color: #A32222;font-variant-numeric: tabular-nums}
+.s9r.s9r{font-size: 13.5px;font-weight: 700;margin: 0;line-height: 1.6}
+.s9s.s9s{font-size: 11.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 6px;unicode-bidi: isolate}
+.s9t.s9t{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 18px 20px}
+.s9u.s9u{display: flex;align-items: baseline;gap: 9px;margin-bottom: 8px}
+.s9v.s9v{font-size: 14.5px;font-weight: 700;margin: 0;line-height: 1.5}
+.s9w.s9w{margin-inline-start: auto;font-size: 12px;font-weight: 700;border-radius: 999px;padding: 2px 9px}
+.s9x.s9x{flex: 1;display: flex;flex-direction: column;align-items: center;justify-content: flex-end;gap: 5px}
+.s9y.s9y{font-size: 11px;font-weight: 700;color: #45494F;font-variant-numeric: tabular-nums}
+.s9z.s9z{width: 100%;background: #2F5233;border-radius: 4px 4px 0 0;min-height: 2px}
+.a0.a0{flex: 1;text-align: center;font-size: 10px;color: #666158;font-variant-numeric: tabular-nums;overflow: hidden}
+.a1.a1{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 9px 14px}
+.a2.a2{font-size: 12.5px;font-weight: 600;border-radius: 999px;padding: 9px 14px}
+.a3.a3{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 20px 22px;display: flex;flex-direction: column}
+.a4.a4{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 8px}
+.a5.a5{font-size: 17px;font-weight: 800;font-variant-numeric: tabular-nums}
+.a6.a6{font-size: 10.5px;font-weight: 700;color: #666158;background: #F5F3EE;border-radius: 999px;padding: 3px 9px}
+.a7.a7{margin-inline-start: auto;font-size: 10.5px;border-radius: 999px;padding: 3px 9px}
+.a8.a8{font-size: 15.5px;font-weight: 700;margin: 0 0 6px;line-height: 1.65}
+.a9.a9{font-size: 12px;color: #666158;direction: ltr;text-align: right;margin: 0 0 6px;line-height: 1.6;unicode-bidi: isolate}
+.aa.aa{font-size: 12.5px;color: #45494F;margin: 0 0 12px;line-height: 1.75}
+.ab.ab{font-size: 13.3px;line-height: 1.95;color: #45494F;margin: 0 0 14px;flex: 1}
+.ac.ac{display: flex;align-items: center;gap: 10px;flex-wrap: wrap;padding-top: 12px;border-top: 1px solid #F0EEE7}
+.ad.ad{font-size: 12px;color: #B4530E;letter-spacing: 1px}
+.ae.ae{margin-inline-start: auto;font-size: 12.5px;font-weight: 700}
+.af.af{font-size: 11.5px;color: #666158;margin-top: 9px}
+.es.es{display: grid;grid-template-columns: 1fr auto 1fr;gap: 14px;align-items: center;padding: 16px 0;border-top: 1px solid #F0EEE7}
+.et.et{font-size: 11.5px;font-weight: 700;color: #A32222;font-variant-numeric: tabular-nums}
+.eu.eu{text-align: center;min-width: 86px}
+.ev.ev{font-size: 16px;color: #B9B3A6;line-height: 1}
+.ew.ew{font-size: 10.5px;color: #666158;margin-top: 4px}
+.ex.ex{font-size: 11.5px;font-weight: 700;color: #2F5233;font-variant-numeric: tabular-nums}
+.ey.ey{grid-column: 1 / -1;font-size: 12.8px;line-height: 1.95;color: #45494F;margin: 8px 0 0}
+.km.km{max-width: 1120px;margin: 0 auto;padding: 44px 24px 10px}
+.kn.kn{width: 16px;height: 16px}
+.ko.ko{font-size: 12px;font-weight: 700;color: #2F5233;margin-bottom: 8px}
+.p1.p1{font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 8px}
+.p2.p2{font-size: 13.5px;line-height: 1.9;color: #666158;max-width: 70ch;margin: 0 0 20px}
+a{color:#2F5233;text-decoration:none}
+a:hover{color:#1F3A22}
+button{font-family:inherit;cursor:pointer;border:none}
+[id]{scroll-margin-top:92px}
+::selection{background:#E7ECE4;color:#1F3A22}
+input{font-family:inherit;font-size:15px;color:#16181C;background:#FFFFFF;border:1px solid #D9D5C9;border-radius:12px;padding:13px 16px;width:100%;box-sizing:border-box}
+input:focus{outline:2px solid #2F5233;outline-offset:1px}

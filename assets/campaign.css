@@ -1,0 +1,29 @@
+.b9.b9{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px}
+.ba.ba{font-size: 16px;font-weight: 700;margin: 0 0 9px}
+.bv.bv{font-size: clamp(22px, 2.8vw, 29px);font-weight: 800;margin: 0 0 16px}
+.dd.dd{font-size: 15.5px;line-height: 2;color: #4A4F58;max-width: 66ch;margin: 0 0 24px}
+.de.de{font-size: 12px;font-weight: 700;color: #666158;margin-bottom: 9px}
+.df.df{font-weight: 800;color: #16181C}
+.f2.f2{display: inline-flex;align-items: center;gap: 7px;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 999px;padding: 7px 14px;font-size: 13px}
+.f3.f3{display: grid;grid-template-columns: 2fr 0.8fr 3.2fr;gap: 14px;padding: 14px 20px;font-size: 13.5px;line-height: 1.85;color: #4A4F58;border-bottom: 1px solid #EFEDE4}
+.hg.hg{font-size: 13.5px;line-height: 1.95;color: #4A4F58;margin: 0 0 12px}
+.hh.hh{background: rgba(255,255,255,0.08);border-radius: 11px;padding: 16px}
+.hi.hi{font-size: 13.5px;font-weight: 700;color: #F5F3EE;margin-bottom: 6px}
+.hj.hj{font-size: 12.5px;line-height: 1.85;color: #D6DFD4}
+.hk.hk{font-size: 15px;font-weight: 700;margin: 0 0 9px}
+.hl.hl{font-size: 13.5px;line-height: 1.9;color: #4A4F58;margin: 0 0 10px}
+.pf.pf{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 24px;border-top: 3px solid #C7652A}
+.pg.pg{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 24px;border-top: 3px solid #2E7D4F}
+.ph.ph{background: #FFF8EE;border: 1px solid #EBD9BE;border-radius: 14px;padding: 20px 22px}
+.pi.pi{color: #8A3E0A}
+.pj.pj{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px;border-top: 3px solid #B57F12}
+.pk.pk{font-size: 13.5px;line-height: 2.05;color: #4A4F58}
+.pl.pl{font-size: 15.5px;font-weight: 700;margin: 0 0 14px}
+.pm.pm{font-size: 12.5px;color: #8E1F33;line-height: 1.8}
+.pn.pn{font-size: 12.5px;color: #4A4F58;line-height: 1.8}
+.po.po{color: #2F5233}
+.pp.pp{margin-bottom: 9px}
+a{color:#B4530E;text-decoration:none}
+a:hover{color:#8A3E0A}
+[id]{scroll-margin-top:78px}
+table{border-collapse:collapse}
