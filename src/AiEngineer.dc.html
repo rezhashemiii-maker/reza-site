@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مسیر مهندس هوش مصنوعی — شش مرحله، سی پروژه</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#2F5233;text-decoration:none}
+  a:hover{color:#1F3A22}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:78px}
+  ::selection{background:#E7ECE4;color:#1F3A22}
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F5F3EE; direction: rtl;">
+  <header style="position: sticky; top: 0; z-index: 30; border-bottom: 1px solid #E4E1D6; background: rgba(245,243,238,0.93); backdrop-filter: blur(10px);">
+    <div style="max-width: 1060px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+      <a href="Main.dc.html#writing" style="font-size: 13.5px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <nav style="display: flex; gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
+        <a href="#s1" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۱</a>
+        <a href="#s2" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۲</a>
+        <a href="#s3" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۳</a>
+        <a href="#s4" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۴</a>
+        <a href="#s5" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۵</a>
+        <a href="#s6" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۶</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1060px; margin: 0 auto; padding: 52px 24px 80px;">
+    <span style="display: inline-block; font-size: 11.5px; font-weight: 700; color: #2F5233; background: #E7ECE4; padding: 4px 12px; border-radius: 999px; margin-bottom: 18px;">مسیر یادگیری · از پایتون تا ابرهوش</span>
+    <h1 style="font-size: clamp(27px, 3.8vw, 40px); font-weight: 800; line-height: 1.45; margin: 0 0 16px;">مسیر مهندس هوش مصنوعی شدن</h1>
+    <p style="font-size: 17px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">شش مرحله، از پایتون و مهندسی نرم‌افزار تا ساخت Agentهای آمادهٔ Production. هر مرحله سرفصل‌ها، نکته‌های کلیدی یادگیری و <b>پنج پروژهٔ کاربردی</b> دارد — پروژه‌هایی با سختی متوسط که دیتاستشان رایگان در اینترنت هست و نتیجه‌شان به درد مردم عادی هم می‌خورد.</p>
+    <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 30px;">هر پروژه را طوری بسازید که در رزومه حرفی برای گفتن داشته باشد: README روشن با «مسئله ← داده ← روش ← نتیجه ← دمو»، یک دموی قابل اجرا و انتشار تمیز در GitHub. درسنامهٔ هر بخش به‌مرور به همین صفحه اضافه می‌شود.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px; margin-bottom: 52px;">
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۶</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">مرحله</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۳۰</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">پروژهٔ کاربردی</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۲۳</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">سرفصل اصلی</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 18px 20px;">
+        <div style="font-size: 27px; font-weight: 800; color: #2F5233;">۱۰۰٪</div>
+        <div style="font-size: 12.5px; color: #666158; margin-top: 4px;">دیتاست عمومی</div>
+      </div>
+    </div>
+
+    <section id="s1" style="margin-bottom: 56px; padding-top: 8px; border-top: 1px solid #E4E1D6;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 26px 0 10px;">مرحلهٔ ۱</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 29px); font-weight: 800; margin: 0 0 10px;">پایتون و مهندسی نرم‌افزار</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">پایه‌ای که همه‌چیز رویش ساخته می‌شود: کد تمیز، کار با داده و ابزارهای روزمرهٔ یک مهندس.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 22px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px;">سرفصل‌ها</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #45494F;">
+            <li>Functions، Classes و Data Structures</li>
+            <li>Git و APIها</li>
+            <li>NumPy، Pandas و SQL</li>
+          </ul>
+        </div>
+        <div style="background: #E7ECE4; border: 1px solid #D5DDD2; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px; color: #1F3A22;">نکته‌های کلیدی یادگیری</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #2F3A30;">
+            <li>کد تمیز مهم‌تر از کد زیاد است: توابع کوچک، نام‌گذاری روشن، type hint.</li>
+            <li>از روز اول Git و venv / requirements.txt داشته باشید.</li>
+            <li>SQL را جدی بگیرید؛ بیشتر دادهٔ واقعی در پایگاه داده است، نه CSV.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 14px;">پنج پروژهٔ پیشنهادی</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۱.۱</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">داشبورد قیمت مواد غذایی و تورم</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">پاک‌سازی با Pandas، ذخیره در SQLite، کوئری روند ماهانه و داشبورد Streamlit.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">FAO Food Price Index / World Bank Commodity Prices</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۱.۲</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">تحلیل کیفیت هوای شهرها</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">دریافت داده از API، ذخیره در SQL، گزارش روزهای آلوده و مقایسهٔ شهرها.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">OpenAQ API</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۱.۳</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">تحلیل تأخیر پروازها</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">پاک‌سازی دادهٔ حجیم و کوئری‌های SQL برای یافتن بدترین فرودگاه، ساعت و ایرلاین.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">US DOT Flight Delays (Kaggle)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۱.۴</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">ردیاب مخارج شخصی (CLI + SQLite)</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">اپ خط فرمان مبتنی بر Classes، دسته‌بندی خودکار هزینه‌ها و گزارش ماهانه.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Personal Finance dataset (Kaggle)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۱.۵</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">کاوش داده‌های زلزله</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">دریافت زندهٔ داده، نقشهٔ تعاملی و آمار فراوانی و شدت به تفکیک منطقه.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">USGS Earthquake API</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="s2" style="margin-bottom: 56px; padding-top: 8px; border-top: 1px solid #E4E1D6;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 26px 0 10px;">مرحلهٔ ۲</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 29px); font-weight: 800; margin: 0 0 10px;">مبانی یادگیری ماشین</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">انتخاب مدل درست و ارزیابی صادقانه — مهارتی که از حفظ کردن الگوریتم‌ها مهم‌تر است.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 22px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px;">سرفصل‌ها</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #45494F;">
+            <li>یادگیری با نظارت و بدون نظارت</li>
+            <li>Classification، Regression و Clustering</li>
+            <li>Feature Engineering</li>
+            <li>Cross-Validation و Bias-Variance</li>
+          </ul>
+        </div>
+        <div style="background: #E7ECE4; border: 1px solid #D5DDD2; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px; color: #1F3A22;">نکته‌های کلیدی یادگیری</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #2F3A30;">
+            <li>حفظ الگوریتم مهم نیست؛ مهم انتخاب مدل و ارزیابی درست است.</li>
+            <li>همیشه با یک baseline ساده شروع کنید.</li>
+            <li>مراقب Data Leakage باشید؛ Pipeline در scikit-learn بهترین همراه شماست.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 14px;">پنج پروژهٔ پیشنهادی</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۲.۱</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پیش‌بینی قیمت مسکن</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">Regression و Feature Engineering، مقایسهٔ Linear با Gradient Boosting و توضیح‌پذیری با SHAP.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">California Housing / Ames Housing</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۲.۲</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">تشخیص پیامک و ایمیل اسپم</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">TF-IDF + Logistic Regression و تحلیل Precision / Recall.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">SMS Spam Collection (UCI)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۲.۳</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پیش‌بینی ریزش مشتری (Churn)</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">Classification روی دادهٔ نامتوازن و انتخاب آستانه بر اساس هزینهٔ کسب‌وکار.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Telco Customer Churn (Kaggle)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۲.۴</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پیش‌بینی بیماری قلبی</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">Cross-Validation، مقایسهٔ مدل‌ها و شرح محدودیت‌های مدل‌های پزشکی.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Heart Disease (UCI)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۲.۵</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">بخش‌بندی مشتریان فروشگاه</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">تحلیل RFM + K-Means و تفسیر خوشه‌ها برای بازاریابی.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Online Retail II (UCI)</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="s3" style="margin-bottom: 56px; padding-top: 8px; border-top: 1px solid #E4E1D6;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 26px 0 10px;">مرحلهٔ ۳</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 29px); font-weight: 800; margin: 0 0 10px;">یادگیری عمیق</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">شبکه‌های عصبی از درون: از Backpropagation تا Transformer، با PyTorch.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 22px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px;">سرفصل‌ها</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #45494F;">
+            <li>شبکه‌های عصبی و Backpropagation</li>
+            <li>CNN و Embedding</li>
+            <li>مدل‌های ترتیبی</li>
+            <li>Transformerها و کار با PyTorch</li>
+          </ul>
+        </div>
+        <div style="background: #E7ECE4; border: 1px solid #D5DDD2; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px; color: #1F3A22;">نکته‌های کلیدی یادگیری</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #2F3A30;">
+            <li>یک بار training loop را دستی در PyTorch بنویسید.</li>
+            <li>پیش از آموزش از صفر، Transfer Learning را امتحان کنید.</li>
+            <li>منحنی loss را بخوانید و overfitting را با چشم تشخیص دهید.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 14px;">پنج پروژهٔ پیشنهادی</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۳.۱</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">تشخیص بیماری برگ گیاهان</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">Transfer Learning با ResNet / EfficientNet، دموی Gradio و سرویس FastAPI.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">PlantVillage</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۳.۲</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">دسته‌بندی پسماند برای بازیافت</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">CNN با Data Augmentation و آزمون روی عکس موبایل.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">TrashNet / Garbage Classification (Kaggle)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۳.۳</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">تحلیل احساسات نظرات کاربران</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">مقایسهٔ LSTM با یک Transformer کوچک (DistilBERT).</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">IMDB / Amazon Reviews</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۳.۴</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پیش‌بینی مصرف برق خانگی</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">مدل‌های ترتیبی LSTM / GRU برای سری زمانی.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Household Electric Power Consumption (UCI)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۳.۵</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">تشخیص احساس از چهره</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">CNN، ماتریس درهم‌ریختگی و بحث دربارهٔ سوگیری داده.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">FER-2013</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="s4" style="margin-bottom: 56px; padding-top: 8px; border-top: 1px solid #E4E1D6;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 26px 0 10px;">مرحلهٔ ۴</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 29px); font-weight: 800; margin: 0 0 10px;">LLM و هوش مصنوعی مولد</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">به‌جای آموزش مدل زبانی از صفر، با مدل‌های آماده محصول بسازید.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 22px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px;">سرفصل‌ها</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #45494F;">
+            <li>Transformerها، Embedding، Token و Context Window</li>
+            <li>Prompting و Structured Output</li>
+            <li>Function Calling</li>
+            <li>Fine-tuning</li>
+          </ul>
+        </div>
+        <div style="background: #E7ECE4; border: 1px solid #D5DDD2; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px; color: #1F3A22;">نکته‌های کلیدی یادگیری</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #2F3A30;">
+            <li>به‌جای آموزش LLM از صفر، با مدل‌های آماده محصول بسازید.</li>
+            <li>خروجی ساختاریافته (JSON Schema / Pydantic) را همیشه اعتبارسنجی کنید.</li>
+            <li>پیش از Fine-tuning مطمئن شوید Prompting و RAG کافی نیست.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 14px;">پنج پروژهٔ پیشنهادی</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۴.۱</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">دستیار هوشمند اسناد</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">استخراج اطلاعات، پرسش و پاسخ و خروجی JSON.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">CUAD (قراردادها) یا اسناد عمومی دولتی</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۴.۲</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">استخراج اطلاعات از فاکتور و رسید</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">LLM چندوجهی + Structured Output و خروجی CSV.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">SROIE / CORD</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۴.۳</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">خلاصه‌ساز اخبار و مقالات</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">خلاصه‌سازی چندسطحی و ارزیابی با ROUGE.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">CNN/DailyMail یا arXiv Abstracts</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۴.۴</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">دستیار سفر با Function Calling</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">مدل ابزار آب‌وهوا و مکان را فراخوانی می‌کند و برنامهٔ سفر می‌سازد.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Open-Meteo API + OpenStreetMap</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۴.۵</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">Fine-tune مدل کوچک برای نظرات فارسی</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">LoRA روی یک مدل کوچک و مقایسه با Prompting.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Digikala / SnappFood Comments (Hugging Face)</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="s5" style="margin-bottom: 56px; padding-top: 8px; border-top: 1px solid #E4E1D6;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 26px 0 10px;">مرحلهٔ ۵</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 29px); font-weight: 800; margin: 0 0 10px;">RAG و AI Agentها</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">مدل را به دانش و ابزار وصل کنید: بازیابی، برنامه‌ریزی و حافظه.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 22px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px;">سرفصل‌ها</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #45494F;">
+            <li>RAG و Vector Database</li>
+            <li>استراتژی‌های Retrieval</li>
+            <li>Tool Use و چرخهٔ Agent</li>
+            <li>Memory، Planning و Orchestration</li>
+          </ul>
+        </div>
+        <div style="background: #E7ECE4; border: 1px solid #D5DDD2; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px; color: #1F3A22;">نکته‌های کلیدی یادگیری</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #2F3A30;">
+            <li>کیفیت RAG بیشتر به chunking و retrieval بستگی دارد تا خود مدل.</li>
+            <li>Hybrid Search (BM25 + Vector) و Reranking را امتحان کنید.</li>
+            <li>Agent را ساده شروع کنید؛ هر ابزار اضافه یعنی احتمال خطای بیشتر.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 14px;">پنج پروژهٔ پیشنهادی</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۵.۱</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">دستیار پرسش و پاسخ قوانین و آیین‌نامه‌ها</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">RAG همراه با ذکر منبع (citation).</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">متون عمومی قانون کار / GDPR</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۵.۲</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">Agent پشتیبانی مشتری</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">Agentic RAG + ابزار پیگیری سفارش آزمایشی.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Bitext Customer Support (Hugging Face)</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۵.۳</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">دستیار پژوهش مقالات علمی</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">جست‌وجو، خلاصه و مقایسهٔ مقالات.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">arXiv API / Semantic Scholar</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۵.۴</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">دستیار تغذیه و دستور پخت</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">Agent با ابزار محاسبهٔ کالری و پیشنهاد غذا.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">USDA FoodData Central + RecipeNLG</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۵.۵</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">Agent تحلیل داده (Text-to-SQL)</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">پرسش فارسی یا انگلیسی ← SQL ← نمودار، همراه با حافظهٔ گفت‌وگو.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Chinook / Northwind DB</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6" style="margin-bottom: 56px; padding-top: 8px; border-top: 1px solid #E4E1D6;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 26px 0 10px;">مرحلهٔ ۶</p>
+      <h2 style="font-size: clamp(22px, 2.8vw, 29px); font-weight: 800; margin: 0 0 10px;">MCP، ارزیابی و استقرار</h2>
+      <p style="font-size: 15.5px; line-height: 2; color: #45494F; max-width: 68ch; margin: 0 0 22px;">از نمونهٔ اولیه تا سرویس قابل اعتماد: امنیت، سنجش و پایش.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 22px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px;">سرفصل‌ها</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #45494F;">
+            <li>MCP و Tool Serverها</li>
+            <li>Permission و احراز هویت</li>
+            <li>Observability و Guardrails</li>
+            <li>مدیریت خطا و Evaluation Dataset</li>
+            <li>FastAPI، Docker و CI/CD</li>
+            <li>Monitoring و بررسی تغییر عملکرد مدل</li>
+          </ul>
+        </div>
+        <div style="background: #E7ECE4; border: 1px solid #D5DDD2; border-radius: 14px; padding: 20px 22px;">
+          <h3 style="font-size: 15px; font-weight: 700; margin: 0 0 10px; color: #1F3A22;">نکته‌های کلیدی یادگیری</h3>
+          <ul style="margin: 0; padding-inline-start: 20px; font-size: 13.8px; line-height: 2.1; color: #2F3A30;">
+            <li>بدون Evaluation Dataset، بهبود فقط حدس است.</li>
+            <li>Logging و Tracing را از ابتدا طراحی کنید، نه بعد از خرابی.</li>
+            <li>اصل کمترین دسترسی (Least Privilege) را برای ابزارهای Agent رعایت کنید.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; font-weight: 800; margin: 0 0 14px;">پنج پروژهٔ پیشنهادی</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۶.۱</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">MCP Server داده‌های آب‌وهوا و کیفیت هوا</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">سرور MCP با احراز هویت و rate limit.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Open-Meteo + OpenAQ</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۶.۲</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">Production RAG با ارزیابی خودکار</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">سنجش faithfulness و relevance و گزارش خودکار در CI.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">SQuAD / HotpotQA به‌عنوان eval set</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۶.۳</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">API تحلیل احساسات با Docker و Monitoring</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">FastAPI + Docker + GitHub Actions و تشخیص Data Drift با Evidently.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">مدل مرحلهٔ ۳</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۶.۴</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">Agent ایمن با Guardrails</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">آزمون Prompt Injection، فیلتر PII و لاگ کامل تصمیم‌ها.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">ابزارهای SQL و ایمیل آزمایشی</span>
+        </div>
+        <div style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px; border-top: 3px solid #2F5233;">
+          <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 8px;">پروژهٔ ۶.۵</span>
+          <h4 style="font-size: 15px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">سامانهٔ پایش هوشمند مزرعه و گلخانه</h4>
+          <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 12px; flex: 1;">مدل پیش‌بینی + Agent هشدار + MCP + داشبورد پایش در Production.</p>
+          <span style="font-size: 11.5px; color: #2F5233; background: #E7ECE4; border-radius: 8px; padding: 6px 10px; direction: ltr; text-align: left;">Smart Agriculture / Greenhouse sensor datasets (Kaggle)</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 26px 28px;">
+      <h2 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">چک‌لیست هر پروژه برای رزومه</h2>
+      <ul style="margin: 0; padding-inline-start: 20px; font-size: 14.5px; line-height: 2.2; color: #45494F;">
+        <li>README با مسئله، داده، روش، نتیجه و تصویر یا GIF دمو</li>
+        <li>دموی آنلاین (Hugging Face Spaces / Streamlit Cloud)</li>
+        <li>معیار ارزیابی مشخص و مقایسه با baseline</li>
+        <li>کد ماژولار همراه با تست ساده</li>
+        <li>بخش «محدودیت‌ها و قدم‌های بعدی»</li>
+      </ul>
+    </section>
+  </main>
+</div>
+</x-dc>
+</body>
+</html>

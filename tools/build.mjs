@@ -19,6 +19,7 @@ const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
   { file: 'Glossary.dc.html', out: 'glossary.html', nav: 'واژه‌نامه' },
   { file: 'Learn.dc.html', out: 'learn.html', nav: 'مسیر یادگیری' },
+  { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
   { file: 'Ideas.dc.html', out: 'ideas.html', nav: 'ایده‌ها' },
   { file: 'GameTheory.dc.html', out: 'game-theory.html', nav: 'نظریهٔ بازی' },
   { file: 'Patents.dc.html', out: 'patents.html', nav: 'ثبت اختراع' },
@@ -161,6 +162,8 @@ const DESCRIPTIONS = {
     'واژه‌نامهٔ فارسی یادگیری ماشین: ۲۸۵ اصطلاح با معادل انگلیسی، توضیح ساده، مترادف‌های رایج و هشدار اشتباه‌های پرتکرار. قابل جست‌وجو و فیلتر.',
   'learn.html':
     'مسیر یادگیری ماشین در هشت ایستگاه؛ هر ایستگاه فقط به ایستگاه قبلی تکیه می‌کند و مقالهٔ مرجع و تمرین خودش را دارد.',
+  'ai-engineer.html':
+    'مسیر مهندس هوش مصنوعی شدن در شش مرحله — از پایتون تا Agentهای آمادهٔ Production — با سی پروژهٔ کاربردی روی دیتاست‌های عمومی.',
   'ideas.html':
     'صد ایدهٔ کاربردی یادگیری ماشین در ده حوزه، و کنار هر ایده دقیقاً همان داده‌ای که لازم دارد. قابل جست‌وجو و فیلتر.',
   'game-theory.html':
