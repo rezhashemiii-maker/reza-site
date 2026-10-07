@@ -1,17 +1,17 @@
-.s19.s19{display: flex;flex-direction: column;background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px;border-top: 3px solid #2F5233}
-.s1a.s1a{font-size: 13px;line-height: 1.9;color: #4A4F58;margin: 0 0 12px;flex: 1}
-.s1b.s1b{font-size: 11.5px;color: #2F5233;background: #E7ECE4;border-radius: 8px;padding: 6px 10px;direction: ltr;text-align: left}
-.c3.c3{margin-bottom: 56px;padding-top: 8px;border-top: 1px solid #E4E1D6}
-.c4.c4{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #2F5233;margin: 26px 0 10px}
-.c5.c5{font-size: clamp(22px, 2.8vw, 29px);font-weight: 800;margin: 0 0 10px}
-.c6.c6{font-size: 15.5px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
-.c7.c7{display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 14px;margin-bottom: 22px}
-.c8.c8{font-size: 15px;font-weight: 700;margin: 0 0 10px}
-.c9.c9{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #45494F}
-.ca.ca{background: #E7ECE4;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px}
-.cb.cb{font-size: 15px;font-weight: 700;margin: 0 0 10px;color: #1F3A22}
-.cc.cc{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #2F3A30}
-.cd.cd{font-size: 16px;font-weight: 800;margin: 0 0 14px}
+.s1b.s1b{display: flex;flex-direction: column;background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px;border-top: 3px solid #2F5233}
+.s1c.s1c{font-size: 13px;line-height: 1.9;color: #4A4F58;margin: 0 0 12px;flex: 1}
+.s1d.s1d{font-size: 11.5px;color: #2F5233;background: #E7ECE4;border-radius: 8px;padding: 6px 10px;direction: ltr;text-align: left}
+.c6.c6{margin-bottom: 56px;padding-top: 8px;border-top: 1px solid #E4E1D6}
+.c7.c7{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #2F5233;margin: 26px 0 10px}
+.c8.c8{font-size: clamp(22px, 2.8vw, 29px);font-weight: 800;margin: 0 0 10px}
+.c9.c9{font-size: 15.5px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
+.ca.ca{display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 14px;margin-bottom: 22px}
+.cb.cb{font-size: 15px;font-weight: 700;margin: 0 0 10px}
+.cc.cc{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #45494F}
+.cd.cd{background: #E7ECE4;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px}
+.ce.ce{font-size: 15px;font-weight: 700;margin: 0 0 10px;color: #1F3A22}
+.cf.cf{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #2F3A30}
+.cg.cg{font-size: 16px;font-weight: 800;margin: 0 0 14px}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}

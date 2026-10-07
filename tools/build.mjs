@@ -17,6 +17,13 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
+  { file: 'Writing.dc.html', out: 'writing.html', nav: 'نوشته‌ها' },
+  { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها' },
+  { file: 'About.dc.html', out: 'about.html', nav: 'درباره من' },
+  { file: 'Work.dc.html', out: 'work.html', nav: 'کارها' },
+  { file: 'Process.dc.html', out: 'process.html', nav: 'روش کار' },
+  { file: 'FAQ.dc.html', out: 'faq.html', nav: 'پرسش‌ها' },
+  { file: 'Contact.dc.html', out: 'contact.html', nav: 'تماس' },
   { file: 'Glossary.dc.html', out: 'glossary.html', nav: 'واژه‌نامه' },
   { file: 'Learn.dc.html', out: 'learn.html', nav: 'مسیر یادگیری' },
   { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
