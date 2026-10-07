@@ -38,3 +38,12 @@ a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}
 table{border-collapse:collapse}
 ::selection{background:#E7ECE4;color:#1F3A22}
+@media (max-width:720px){
+table.rt,.rt tbody,.rt tr,.rt td{display:block;width:100%;box-sizing:border-box}
+table.rt{min-width:0 !important}
+.rt thead{display:none}
+.rt tr{padding:10px 0;border-bottom:1px solid #E4E1D6}
+.rt tr:last-child{border-bottom:none}
+.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:none !important;padding:6px 14px !important}
+.rt td::before{content:attr(data-label);flex:0 0 38%;font-size:12px;font-weight:700;color:#666158}
+}

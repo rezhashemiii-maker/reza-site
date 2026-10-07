@@ -98,3 +98,12 @@ button{font-family:inherit;cursor:pointer;border:none}
 input{font-family:inherit;font-size:13.5px;color:#16181C;background:#FFFFFF;border:1px solid #D9D5C9;border-radius:9px;padding:9px 11px;width:100%;box-sizing:border-box}
 input:focus{outline:2px solid #B4530E;outline-offset:1px}
 table{border-collapse:collapse}
+@media (max-width:720px){
+table.rt,.rt tbody,.rt tr,.rt td{display:block;width:100%;box-sizing:border-box}
+table.rt{min-width:0 !important}
+.rt thead{display:none}
+.rt tr{padding:10px 0;border-bottom:1px solid #E4E1D6}
+.rt tr:last-child{border-bottom:none}
+.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:none !important;padding:6px 14px !important}
+.rt td::before{content:attr(data-label);flex:0 0 38%;font-size:12px;font-weight:700;color:#666158}
+}

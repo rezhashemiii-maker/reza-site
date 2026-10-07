@@ -21,6 +21,16 @@
   html{scroll-behavior:smooth}
   [id]{scroll-margin-top:78px}
   table{border-collapse:collapse}
+
+  @media (max-width:720px){
+    table.rt,.rt tbody,.rt tr,.rt td{display:block;width:100%;box-sizing:border-box}
+    table.rt{min-width:0 !important}
+    .rt thead{display:none}
+    .rt tr{padding:10px 0;border-bottom:1px solid #E4E1D6}
+    .rt tr:last-child{border-bottom:none}
+    .rt td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:none !important;padding:6px 14px !important}
+    .rt td::before{content:attr(data-label);flex:0 0 38%;font-size:12px;font-weight:700;color:#666158}
+  }
 </style>
 </helmet>
 
@@ -327,7 +337,7 @@
 
       <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 14px;">بازه‌های مرجع هر مرحله</h3>
       <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; margin-bottom: 14px;">
-        <table style="width: 100%; min-width: 640px; font-size: 13.5px;">
+        <table class="rt" style="width: 100%; min-width: 640px; font-size: 13.5px;">
           <thead>
             <tr>
               <th style="text-align: right; padding: 12px 16px; font-size: 12.5px; font-weight: 700; color: #45494F; background: #FAFAF7; border-bottom: 1px solid #D9D5C9;">مرحله</th>
@@ -340,44 +350,44 @@
           </thead>
           <tbody>
             <tr>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">اسپان‌ران</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۰–۱۴</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۴–۲۶ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۳–۲۶ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۹۲–۹۶٪</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۵٬۰۰۰–۲۰٬۰۰۰</td>
+              <td data-label="مرحله" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">اسپان‌ران</td>
+              <td data-label="روز" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۰–۱۴</td>
+              <td data-label="دمای کمپوست" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۴–۲۶ °C</td>
+              <td data-label="دمای سالن" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۳–۲۶ °C</td>
+              <td data-label="رطوبت" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۹۲–۹۶٪</td>
+              <td data-label="CO₂" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۵٬۰۰۰–۲۰٬۰۰۰</td>
             </tr>
             <tr>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">کیسینگ‌ران</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۴–۱۸</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۳–۲۶ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۲–۲۵ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۹۳–۹۷٪</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۴٬۰۰۰–۱۲٬۰۰۰</td>
+              <td data-label="مرحله" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">کیسینگ‌ران</td>
+              <td data-label="روز" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۴–۱۸</td>
+              <td data-label="دمای کمپوست" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۳–۲۶ °C</td>
+              <td data-label="دمای سالن" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۲–۲۵ °C</td>
+              <td data-label="رطوبت" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۹۳–۹۷٪</td>
+              <td data-label="CO₂" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۴٬۰۰۰–۱۲٬۰۰۰</td>
             </tr>
             <tr>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">ونتیلیشن و پین‌ست</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۶–۱۹ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۸–۹۳٪</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۰۰–۱٬۵۰۰</td>
+              <td data-label="مرحله" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">ونتیلیشن و پین‌ست</td>
+              <td data-label="روز" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱</td>
+              <td data-label="دمای کمپوست" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱ °C</td>
+              <td data-label="دمای سالن" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۶–۱۹ °C</td>
+              <td data-label="رطوبت" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۸–۹۳٪</td>
+              <td data-label="CO₂" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۰۰–۱٬۵۰۰</td>
             </tr>
             <tr>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">فلاش و برداشت</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۱–۳۹</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۶–۱۹ °C</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۵–۹۰٪</td>
-              <td style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۰۰–۱٬۵۰۰</td>
+              <td data-label="مرحله" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; font-weight: 600;">فلاش و برداشت</td>
+              <td data-label="روز" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۲۱–۳۹</td>
+              <td data-label="دمای کمپوست" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۸–۲۱ °C</td>
+              <td data-label="دمای سالن" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۱۶–۱۹ °C</td>
+              <td data-label="رطوبت" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۵–۹۰٪</td>
+              <td data-label="CO₂" style="padding: 11px 16px; border-bottom: 1px solid #EDEAE1; color: #45494F;">۸۰۰–۱٬۵۰۰</td>
             </tr>
             <tr>
-              <td style="padding: 11px 16px; font-weight: 600;">تخلیه و ضدعفونی</td>
-              <td style="padding: 11px 16px; color: #45494F;">۳۹–۴۲</td>
-              <td style="padding: 11px 16px; color: #45494F;">—</td>
-              <td style="padding: 11px 16px; color: #45494F;">بخار تا ۷۰ °C</td>
-              <td style="padding: 11px 16px; color: #45494F;">—</td>
-              <td style="padding: 11px 16px; color: #45494F;">—</td>
+              <td data-label="مرحله" style="padding: 11px 16px; font-weight: 600;">تخلیه و ضدعفونی</td>
+              <td data-label="روز" style="padding: 11px 16px; color: #45494F;">۳۹–۴۲</td>
+              <td data-label="دمای کمپوست" style="padding: 11px 16px; color: #45494F;">—</td>
+              <td data-label="دمای سالن" style="padding: 11px 16px; color: #45494F;">بخار تا ۷۰ °C</td>
+              <td data-label="رطوبت" style="padding: 11px 16px; color: #45494F;">—</td>
+              <td data-label="CO₂" style="padding: 11px 16px; color: #45494F;">—</td>
             </tr>
           </tbody>
         </table>

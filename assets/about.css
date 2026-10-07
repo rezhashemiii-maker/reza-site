@@ -10,4 +10,4 @@ a:hover{color:#1F3A22}
 .tab{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;font-size:13.5px;font-weight:600;color:#3A3F46;background:#F5F3EE;border:1px solid #E4E1D6;border-radius:999px}
 .tab:hover{background:#E7ECE4;border-color:#C9D4C5;color:#1F3A22}
 .tab.on{background:#2F5233;border-color:#2F5233;color:#FFFFFF}
-@media (max-width:720px){.navbar{border-radius:22px}.tabs{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:2px}.tab{flex:0 0 auto}}
+@media (max-width:720px){.navbar{border-radius:22px;padding:12px}.tabs{display:flex;flex-wrap:wrap;gap:6px;width:100%;margin-inline-start:0 !important}.tab{flex:1 1 84px;justify-content:center;padding:0 6px;font-size:13px;text-align:center}.navcta{width:100%;justify-content:center;box-sizing:border-box}}
