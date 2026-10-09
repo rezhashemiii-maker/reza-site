@@ -17,6 +17,7 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
+  { file: 'Library.dc.html', out: 'library.html', nav: 'کتابخانه' },
   { file: 'Chess.dc.html', out: 'chess.html', nav: 'شطرنج' },
   { file: 'AILiteracy.dc.html', out: 'ai-literacy.html', nav: 'سواد هوش مصنوعی' },
   { file: 'Security.dc.html', out: 'security.html', nav: 'کتاب‌های امنیت' },
@@ -166,6 +167,8 @@ fs.writeFileSync(
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'library.html':
+    'کتابخانهٔ یکپارچهٔ منابع سایت: ۱۶۸ کتاب، مقاله، استاندارد و گزارش از ۱۹۱۳ تا ۲۰۲۵، قابل جست‌وجو و فیلتر بر اساس بخش و نوع — با ۱۲۵ پیوند مستقیم به متن اصلی.',
   'chess.html':
     'شطرنج، یادگیری ماشین و نظریهٔ بازی‌ها: از قضیهٔ زرملو (۱۹۱۳) تا ترنسفورمر بدون جست‌وجو (۲۰۲۴) — ۲۵ ایستگاه تاریخی، ۱۴ ارتباط میان شطرنج و یادگیری ماشین، و ۸ ایدهٔ تازه.',
   'ai-literacy.html':
