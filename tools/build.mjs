@@ -31,6 +31,11 @@ const PAGES = [
   { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
   { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
 ];
+// صفحه‌های خودبسنده: HTML کاملی که از خط لولهٔ قالب رد نمی‌شود و همان‌طور که هست منتشر می‌شود.
+// منبعشان src/standalone/ است و فقط در نقشهٔ سایت و ناوبری ۴۰۴ دیده می‌شوند.
+const STANDALONE = [
+  { file: 'iraq.html', out: 'iraq.html', nav: 'پروندهٔ عراق' },
+];
 const MAP = Object.fromEntries(PAGES.map((p) => [p.file, p.out]));
 const SITE = (process.env.SITE_URL || '').replace(/\/$/, '');
 // پیشوند مسیر سایت (برای Pagesِ پروژه‌ای مثل /reza-site/) — فقط در صفحهٔ ۴۰۴ لازم است
@@ -286,7 +291,7 @@ if (SITE) {
   fs.writeFileSync(
     path.join(OUT, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-      PAGES.map(
+      [...PAGES, ...STANDALONE].map(
         (p) =>
           `  <url><loc>${SITE}/${p.out === 'index.html' ? '' : p.out}</loc><lastmod>${today}</lastmod></url>`
       ).join('\n') +
@@ -294,6 +299,11 @@ if (SITE) {
   );
   fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 }
+// ---------------------------------------------------------------- صفحه‌های خودبسنده
+for (const sa of STANDALONE) {
+  fs.copyFileSync(path.join(SRC, 'standalone', sa.file), path.join(OUT, sa.out));
+}
+
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 
 // ---------------------------------------------------------------- صفحهٔ ۴۰۴
@@ -318,7 +328,7 @@ fs.writeFileSync(
 <h1 style="font-size:clamp(26px,5vw,40px);font-weight:800;line-height:1.5;margin:0 0 18px">این صفحه این‌جا نیست</h1>
 <p style="font-size:16px;line-height:2;color:#4A4F58;margin:0 0 30px">شاید نشانی را اشتباه وارد کرده‌اید یا صفحه جابه‌جا شده است.</p>
 <nav style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-${PAGES.map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
+${[...PAGES, ...STANDALONE].map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
 </nav>
 </main>
 </body>
