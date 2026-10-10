@@ -662,7 +662,18 @@ function harvestedSoFar(day, scale) {
   return Math.round(s * scale);
 }
 
-function jitter(v, a) { return v + (Math.random() * 2 - 1) * a; }
+// مولد شبه‌تصادفیِ بذردار. دمو باید عددهای ثابتی داشته باشد، وگرنه:
+// ۱) خروجی ساخت در هر بار اجرا فرق می‌کند و مخزن بی‌دلیل کثیف می‌شود،
+// ۲) پیش‌رندر و مرورگر دو دنیای متفاوت می‌سازند و صفحه موقع بارگذاری می‌پرد.
+var SEED0 = 20261010;
+var _seed = SEED0;
+var _firstBuild = true;
+function rnd() {
+  _seed = (_seed * 1664525 + 1013904223) % 4294967296;
+  return _seed / 4294967296;
+}
+
+function jitter(v, a) { return v + (rnd() * 2 - 1) * a; }
 function r1(v) { return Math.round(v * 10) / 10; }
 
 class Component extends DCLogic {
@@ -685,6 +696,9 @@ class Component extends DCLogic {
   mt(n) { return this.num(Math.round(n / 100000) / 10); }
 
   build(days) {
+    // فقط اولین دنیا بذر ثابت دارد تا پیش‌رندر و مرورگر یکی باشند؛
+    // «نمونهٔ تازه» و جلو بردن روز باید واقعاً عددهای تازه بدهند.
+    if (_firstBuild) { _seed = SEED0; _firstBuild = false; }
     var self = this;
     var rooms = days.map(function (day, i) {
       var cfg = ROOMS[i];
@@ -701,18 +715,18 @@ class Component extends DCLogic {
         });
       }
       var today = env[13];
-      if (Math.random() < 0.3) {
-        var pick = ['compost', 'room', 'rh', 'co2'][Math.floor(Math.random() * 4)];
+      if (rnd() < 0.3) {
+        var pick = ['compost', 'room', 'rh', 'co2'][Math.floor(rnd() * 4)];
         var band = rng[pick];
         var span = band[1] - band[0];
-        var below = Math.random() < 0.5;
-        var v = below ? band[0] - span * (0.08 + Math.random() * 0.2) : band[1] + span * (0.08 + Math.random() * 0.2);
+        var below = rnd() < 0.5;
+        var v = below ? band[0] - span * (0.08 + rnd() * 0.2) : band[1] + span * (0.08 + rnd() * 0.2);
         today[pick] = pick === 'co2' ? Math.round(v) : r1(v);
         env[13] = today;
       }
-      var gradeA = Math.round(60 + Math.random() * 24);
+      var gradeA = Math.round(60 + rnd() * 24);
       var restPct = 100 - gradeA;
-      var gradeC = Math.round(restPct * (0.12 + Math.random() * 0.2));
+      var gradeC = Math.round(restPct * (0.12 + rnd() * 0.2));
       var gradeB = restPct - gradeC;
 
       return {
@@ -721,7 +735,7 @@ class Component extends DCLogic {
         day: day, phaseKey: key, phase: rng.label, env: env, today: today,
         produced: yieldOf(day, cfg.scale),
         gradeA: gradeA, gradeB: gradeB, gradeC: gradeC,
-        prevTotal: Math.round(cycleTotal(cfg.scale) * (0.86 + Math.random() * 0.26))
+        prevTotal: Math.round(cycleTotal(cfg.scale) * (0.86 + rnd() * 0.26))
       };
     });
 
@@ -745,23 +759,23 @@ class Component extends DCLogic {
     var names = ['میدان مرکزی — غرفه ۱۲', 'هایپر شهر', 'صنایع غذایی آریان', 'رستوران‌های زنجیره‌ای پیوند'];
     var offsets = [2, 5, 9, 13];
     var commitments = offsets.map(function (o, i) {
-      return { inDays: o, customer: names[i], kg: Math.round((150 + Math.random() * 190) / 10) * 10 };
+      return { inDays: o, customer: names[i], kg: Math.round((150 + rnd() * 190) / 10) * 10 };
     });
 
     var receivables = names.map(function (n, i) {
       return {
         name: n,
-        amount: Math.round((8 + Math.random() * 34) * 10) / 10,
-        days: Math.round(2 + Math.random() * 36)
+        amount: Math.round((8 + rnd() * 34) * 10) / 10,
+        days: Math.round(2 + rnd() * 36)
       };
     });
 
     return {
       rooms: rooms, bars: bars, forecast: forecast, commitments: commitments,
       receivables: receivables, logs: this.buildLogs(rooms),
-      kwhPerKg: r1(2.0 + Math.random() * 1.2),
-      wastePct: r1(3 + Math.random() * 6),
-      cashBalance: Math.round((60 + Math.random() * 120) * 10) / 10
+      kwhPerKg: r1(2.0 + rnd() * 1.2),
+      wastePct: r1(3 + rnd() * 6),
+      cashBalance: Math.round((60 + rnd() * 120) * 10) / 10
     };
   }
 
@@ -779,28 +793,28 @@ class Component extends DCLogic {
     rooms.forEach(function (r) {
       out.push({ t: T.visit, room: r.name, text: 'دمای کمپوست ' + self.num(r.today.compost) + ' °C · رطوبت ' + self.num(r.today.rh) + '٪ · CO₂ ' + self.num(r.today.co2) + ' ppm' });
       if (r.produced > 0) {
-        out.push({ t: T.harvest, room: r.name, text: 'قارچ دکمه‌ای ' + self.num(r.produced) + ' کیلو · Flush ' + self.fa(r.day < 28 ? 1 : (r.day < 35 ? 2 : 3)) + ' · ' + (Math.random() < 0.7 ? 'درجه یک' : 'درجه دو') });
+        out.push({ t: T.harvest, room: r.name, text: 'قارچ دکمه‌ای ' + self.num(r.produced) + ' کیلو · Flush ' + self.fa(r.day < 28 ? 1 : (r.day < 35 ? 2 : 3)) + ' · ' + (rnd() < 0.7 ? 'درجه یک' : 'درجه دو') });
       }
       if (r.phaseKey === 'casing' || r.phaseKey === 'flush') {
-        out.push({ t: T.water, room: r.name, text: self.num(80 + Math.round(Math.random() * 90)) + ' لیتر آبیاری سطحی' });
+        out.push({ t: T.water, room: r.name, text: self.num(80 + Math.round(rnd() * 90)) + ' لیتر آبیاری سطحی' });
       }
       if (r.phaseKey === 'spawn' && r.day < 2) {
-        out.push({ t: T.compost, room: r.name, text: 'ورود ' + self.num(r.compostKg) + ' کیلو کمپوست · Batch ' + self.fa('A-' + (100 + Math.floor(Math.random() * 90))) });
+        out.push({ t: T.compost, room: r.name, text: 'ورود ' + self.num(r.compostKg) + ' کیلو کمپوست · Batch ' + self.fa('A-' + (100 + Math.floor(rnd() * 90))) });
       }
     });
-    if (Math.random() < 0.5) {
-      var rr = rooms[Math.floor(Math.random() * 3)];
-      out.push({ t: T.disease, room: rr.name, text: 'لکه‌های قهوه‌ای پراکنده · شدت ' + (Math.random() < 0.6 ? 'کم' : 'متوسط') });
+    if (rnd() < 0.5) {
+      var rr = rooms[Math.floor(rnd() * 3)];
+      out.push({ t: T.disease, room: rr.name, text: 'لکه‌های قهوه‌ای پراکنده · شدت ' + (rnd() < 0.6 ? 'کم' : 'متوسط') });
     }
     var sold = rooms.reduce(function (s, r) { return s + r.produced; }, 0);
     if (sold > 0) {
       out.push({ t: T.sale, room: '—', text: self.num(sold) + ' کیلو قارچ دکمه‌ای به میدان مرکزی' });
     }
     var hours = [];
-    for (var i = 0; i < out.length; i++) { hours.push(6 + Math.floor(Math.random() * 13)); }
+    for (var i = 0; i < out.length; i++) { hours.push(6 + Math.floor(rnd() * 13)); }
     hours.sort(function (a, b) { return b - a; });
     return out.map(function (o, i) {
-      var mm = Math.floor(Math.random() * 6) * 10;
+      var mm = Math.floor(rnd() * 6) * 10;
       return {
         type: o.t.type, bg: o.t.bg, color: o.t.color, room: o.room, text: o.text,
         time: self.fa((hours[i] < 10 ? '0' : '') + hours[i] + ':' + (mm < 10 ? '0' : '') + mm)
