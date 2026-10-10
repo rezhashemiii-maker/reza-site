@@ -31,6 +31,76 @@ const PAGES = [
   { file: 'Patents.dc.html', out: 'patents.html', nav: 'ثبت اختراع' },
   { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
   { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
+  { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
+  { file: 'Aie101.dc.html', out: 'aie-101.html', nav: 'پروژهٔ 1.1', sub: true },
+  { file: 'Aie102.dc.html', out: 'aie-102.html', nav: 'پروژهٔ 1.2', sub: true },
+  { file: 'Aie103.dc.html', out: 'aie-103.html', nav: 'پروژهٔ 1.3', sub: true },
+  { file: 'Aie104.dc.html', out: 'aie-104.html', nav: 'پروژهٔ 1.4', sub: true },
+  { file: 'Aie105.dc.html', out: 'aie-105.html', nav: 'پروژهٔ 1.5', sub: true },
+  { file: 'Aie106.dc.html', out: 'aie-106.html', nav: 'پروژهٔ 1.6', sub: true },
+  { file: 'Aie107.dc.html', out: 'aie-107.html', nav: 'پروژهٔ 1.7', sub: true },
+  { file: 'Aie108.dc.html', out: 'aie-108.html', nav: 'پروژهٔ 1.8', sub: true },
+  { file: 'Aie109.dc.html', out: 'aie-109.html', nav: 'پروژهٔ 1.9', sub: true },
+  { file: 'Aie110.dc.html', out: 'aie-110.html', nav: 'پروژهٔ 1.10', sub: true },
+  { file: 'Aie201.dc.html', out: 'aie-201.html', nav: 'پروژهٔ 2.1', sub: true },
+  { file: 'Aie202.dc.html', out: 'aie-202.html', nav: 'پروژهٔ 2.2', sub: true },
+  { file: 'Aie203.dc.html', out: 'aie-203.html', nav: 'پروژهٔ 2.3', sub: true },
+  { file: 'Aie204.dc.html', out: 'aie-204.html', nav: 'پروژهٔ 2.4', sub: true },
+  { file: 'Aie205.dc.html', out: 'aie-205.html', nav: 'پروژهٔ 2.5', sub: true },
+  { file: 'Aie206.dc.html', out: 'aie-206.html', nav: 'پروژهٔ 2.6', sub: true },
+  { file: 'Aie207.dc.html', out: 'aie-207.html', nav: 'پروژهٔ 2.7', sub: true },
+  { file: 'Aie208.dc.html', out: 'aie-208.html', nav: 'پروژهٔ 2.8', sub: true },
+  { file: 'Aie209.dc.html', out: 'aie-209.html', nav: 'پروژهٔ 2.9', sub: true },
+  { file: 'Aie210.dc.html', out: 'aie-210.html', nav: 'پروژهٔ 2.10', sub: true },
+  { file: 'Aie301.dc.html', out: 'aie-301.html', nav: 'پروژهٔ 3.1', sub: true },
+  { file: 'Aie302.dc.html', out: 'aie-302.html', nav: 'پروژهٔ 3.2', sub: true },
+  { file: 'Aie303.dc.html', out: 'aie-303.html', nav: 'پروژهٔ 3.3', sub: true },
+  { file: 'Aie304.dc.html', out: 'aie-304.html', nav: 'پروژهٔ 3.4', sub: true },
+  { file: 'Aie305.dc.html', out: 'aie-305.html', nav: 'پروژهٔ 3.5', sub: true },
+  { file: 'Aie306.dc.html', out: 'aie-306.html', nav: 'پروژهٔ 3.6', sub: true },
+  { file: 'Aie307.dc.html', out: 'aie-307.html', nav: 'پروژهٔ 3.7', sub: true },
+  { file: 'Aie308.dc.html', out: 'aie-308.html', nav: 'پروژهٔ 3.8', sub: true },
+  { file: 'Aie309.dc.html', out: 'aie-309.html', nav: 'پروژهٔ 3.9', sub: true },
+  { file: 'Aie310.dc.html', out: 'aie-310.html', nav: 'پروژهٔ 3.10', sub: true },
+  { file: 'Aie401.dc.html', out: 'aie-401.html', nav: 'پروژهٔ 4.1', sub: true },
+  { file: 'Aie402.dc.html', out: 'aie-402.html', nav: 'پروژهٔ 4.2', sub: true },
+  { file: 'Aie403.dc.html', out: 'aie-403.html', nav: 'پروژهٔ 4.3', sub: true },
+  { file: 'Aie404.dc.html', out: 'aie-404.html', nav: 'پروژهٔ 4.4', sub: true },
+  { file: 'Aie405.dc.html', out: 'aie-405.html', nav: 'پروژهٔ 4.5', sub: true },
+  { file: 'Aie406.dc.html', out: 'aie-406.html', nav: 'پروژهٔ 4.6', sub: true },
+  { file: 'Aie407.dc.html', out: 'aie-407.html', nav: 'پروژهٔ 4.7', sub: true },
+  { file: 'Aie408.dc.html', out: 'aie-408.html', nav: 'پروژهٔ 4.8', sub: true },
+  { file: 'Aie409.dc.html', out: 'aie-409.html', nav: 'پروژهٔ 4.9', sub: true },
+  { file: 'Aie410.dc.html', out: 'aie-410.html', nav: 'پروژهٔ 4.10', sub: true },
+  { file: 'Aie501.dc.html', out: 'aie-501.html', nav: 'پروژهٔ 5.1', sub: true },
+  { file: 'Aie502.dc.html', out: 'aie-502.html', nav: 'پروژهٔ 5.2', sub: true },
+  { file: 'Aie503.dc.html', out: 'aie-503.html', nav: 'پروژهٔ 5.3', sub: true },
+  { file: 'Aie504.dc.html', out: 'aie-504.html', nav: 'پروژهٔ 5.4', sub: true },
+  { file: 'Aie505.dc.html', out: 'aie-505.html', nav: 'پروژهٔ 5.5', sub: true },
+  { file: 'Aie506.dc.html', out: 'aie-506.html', nav: 'پروژهٔ 5.6', sub: true },
+  { file: 'Aie507.dc.html', out: 'aie-507.html', nav: 'پروژهٔ 5.7', sub: true },
+  { file: 'Aie508.dc.html', out: 'aie-508.html', nav: 'پروژهٔ 5.8', sub: true },
+  { file: 'Aie509.dc.html', out: 'aie-509.html', nav: 'پروژهٔ 5.9', sub: true },
+  { file: 'Aie510.dc.html', out: 'aie-510.html', nav: 'پروژهٔ 5.10', sub: true },
+  { file: 'Aie601.dc.html', out: 'aie-601.html', nav: 'پروژهٔ 6.1', sub: true },
+  { file: 'Aie602.dc.html', out: 'aie-602.html', nav: 'پروژهٔ 6.2', sub: true },
+  { file: 'Aie603.dc.html', out: 'aie-603.html', nav: 'پروژهٔ 6.3', sub: true },
+  { file: 'Aie604.dc.html', out: 'aie-604.html', nav: 'پروژهٔ 6.4', sub: true },
+  { file: 'Aie605.dc.html', out: 'aie-605.html', nav: 'پروژهٔ 6.5', sub: true },
+  { file: 'Aie606.dc.html', out: 'aie-606.html', nav: 'پروژهٔ 6.6', sub: true },
+  { file: 'Aie607.dc.html', out: 'aie-607.html', nav: 'پروژهٔ 6.7', sub: true },
+  { file: 'Aie608.dc.html', out: 'aie-608.html', nav: 'پروژهٔ 6.8', sub: true },
+  { file: 'Aie609.dc.html', out: 'aie-609.html', nav: 'پروژهٔ 6.9', sub: true },
+  { file: 'Aie610.dc.html', out: 'aie-610.html', nav: 'پروژهٔ 6.10', sub: true },
+  // آینه‌های آرتیفکت: همان محتوای بخش‌های صفحهٔ اصلی، در قالب صفحهٔ جدا.
+  // برای همگامی با آرتیفکت نگه داشته می‌شوند و noindex دارند تا با index.html رقابت نکنند.
+  { file: 'Writing.dc.html', out: 'writing.html', nav: 'نوشته‌ها', mirror: true },
+  { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها', mirror: true },
+  { file: 'About.dc.html', out: 'about.html', nav: 'درباره من', mirror: true },
+  { file: 'Work.dc.html', out: 'work.html', nav: 'کارها', mirror: true },
+  { file: 'Process.dc.html', out: 'process.html', nav: 'روش کار', mirror: true },
+  { file: 'FAQ.dc.html', out: 'faq.html', nav: 'پرسش‌ها', mirror: true },
+  { file: 'Contact.dc.html', out: 'contact.html', nav: 'تماس', mirror: true },
 ];
 // صفحه‌های خودبسنده: HTML کاملی که از خط لولهٔ قالب رد نمی‌شود و همان‌طور که هست منتشر می‌شود.
 // منبعشان src/standalone/ است و فقط در نقشهٔ سایت و ناوبری ۴۰۴ دیده می‌شوند.
@@ -38,6 +108,9 @@ const STANDALONE = [
   { file: 'iraq.html', out: 'iraq.html', nav: 'پروندهٔ عراق' },
 ];
 const MAP = Object.fromEntries(PAGES.map((p) => [p.file, p.out]));
+// آرتبوردهایی که در مخزن قالب دیگری دارند: «پروندهٔ عراق» این‌جا صفحهٔ خودبسنده است،
+// پس پیوندهای Iraq.dc.html که از آرتیفکت آمده‌اند باید به همان فایل برسند.
+for (const s of STANDALONE) MAP[s.file.replace(/\.html$/, '.dc.html').replace(/^./, (c) => c.toUpperCase())] = s.out;
 const SITE = (process.env.SITE_URL || '').replace(/\/$/, '');
 // پیشوند مسیر سایت (برای Pagesِ پروژه‌ای مثل /reza-site/) — فقط در صفحهٔ ۴۰۴ لازم است
 const BASE = SITE ? new URL(SITE + '/').pathname : '/';
@@ -179,6 +252,12 @@ fs.writeFileSync(
 
 // ---------------------------------------------------------------- پاس ۳: رندر و نوشتن
 
+// توضیح متای صفحه‌های منتقل‌شده از آرتیفکت، تولیدشده با tools/port (اگر بود)
+const AUTO_DESC = (() => {
+  const f = path.join(SRC, 'descriptions.auto.json');
+  return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {};
+})();
+
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
@@ -268,7 +347,10 @@ for (const d of docs) {
     .join('\n');
 
   const canonical = SITE ? `\n<link rel="canonical" href="${SITE}/${d.out === 'index.html' ? '' : d.out}">` : '';
-  const desc = DESCRIPTIONS[d.out] || '';
+  const desc = DESCRIPTIONS[d.out] || AUTO_DESC[d.out] || '';
+  // صفحه‌های آینه همان محتوای بخش‌های index.html را دارند؛ ایندکس‌شدنشان
+  // یعنی دو نشانی برای یک متن. پیوندهایشان دنبال می‌شود، خودشان نه.
+  const robots = d.mirror ? '\n<meta name="robots" content="noindex,follow">' : '';
 
   const html = `<!doctype html>
 <html lang="${d.lang}" dir="${d.dir}">
@@ -282,7 +364,7 @@ for (const d of docs) {
 <meta property="og:locale" content="fa_IR">
 <meta property="og:title" content="${escapeAttr(d.title)}">
 <meta property="og:description" content="${escapeAttr(desc)}">
-<link rel="icon" href="${FAVICON}">${canonical}
+<link rel="icon" href="${FAVICON}">${canonical}${robots}
 ${links}
 <link rel="stylesheet" href="assets/site.css">${cssFile ? `\n<link rel="stylesheet" href="${cssFile}">` : ''}
 </head>
@@ -303,7 +385,7 @@ if (SITE) {
   fs.writeFileSync(
     path.join(OUT, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-      [...PAGES, ...STANDALONE].map(
+      [...PAGES.filter((p) => !p.mirror), ...STANDALONE].map(
         (p) =>
           `  <url><loc>${SITE}/${p.out === 'index.html' ? '' : p.out}</loc><lastmod>${today}</lastmod></url>`
       ).join('\n') +
@@ -340,7 +422,7 @@ fs.writeFileSync(
 <h1 style="font-size:clamp(26px,5vw,40px);font-weight:800;line-height:1.5;margin:0 0 18px">این صفحه این‌جا نیست</h1>
 <p style="font-size:16px;line-height:2;color:#4A4F58;margin:0 0 30px">شاید نشانی را اشتباه وارد کرده‌اید یا صفحه جابه‌جا شده است.</p>
 <nav style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-${[...PAGES, ...STANDALONE].map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
+${[...PAGES.filter((p) => !p.sub), ...STANDALONE].map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
 </nav>
 </main>
 </body>

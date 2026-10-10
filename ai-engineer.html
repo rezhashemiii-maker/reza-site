@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مسیر مهندس هوش مصنوعی — شش مرحله، سی پروژه</title>
+<meta name="description" content="مسیر مهندس هوش مصنوعی شدن در شش مرحله، از پایتون و مهندسی نرم‌افزار تا RAG و Agentهای آمادهٔ Production — با ۶۰ پروژهٔ کاربردی که دیتاستشان رایگان است و هر کدام صفحهٔ خودش را دارد.">
+<meta name="author" content="رضا هاشمی">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="مسیر مهندس هوش مصنوعی — شش مرحله، سی پروژه">
+<meta property="og:description" content="مسیر مهندس هوش مصنوعی شدن در شش مرحله، از پایتون و مهندسی نرم‌افزار تا RAG و Agentهای آمادهٔ Production — با ۶۰ پروژهٔ کاربردی که دیتاستشان رایگان است و هر کدام صفحهٔ خودش را دارد.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232F5233%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22sans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5F3EE%22%20text-anchor%3D%22middle%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/ai-engineer.css">
+</head>
+<body>
+
+
+<div class="c7">
+<header class="cj">
+<div class="cod">
+<a class="cb" href="writing.html">← بازگشت به نوشته‌ها</a>
+<nav class="c73">
+<a class="c1c" href="#s1">۰۱</a>
+<a class="c1c" href="#s2">۰۲</a>
+<a class="c1c" href="#s3">۰۳</a>
+<a class="c1c" href="#s4">۰۴</a>
+<a class="c1c" href="#s5">۰۵</a>
+<a class="c1c" href="#s6">۰۶</a>
+</nav>
+</div>
+</header>
+<main class="cuo">
+<span class="cgg">مسیر یادگیری · از پایتون تا ابرهوش</span>
+<h1 class="cgh">مسیر مهندس هوش مصنوعی شدن</h1>
+<p class="cup">شش مرحله، از پایتون و مهندسی نرم‌افزار تا ساخت Agentهای آمادهٔ Production. هر مرحله سرفصل‌ها، نکته‌های کلیدی یادگیری و <b>ده پروژهٔ کاربردی</b> دارد — پروژه‌هایی با سختی متوسط که دیتاستشان رایگان در اینترنت هست و نتیجه‌شان به درد مردم عادی هم می‌خورد.</p>
+<p class="ceq">هر پروژه را طوری بسازید که در رزومه حرفی برای گفتن داشته باشد: README روشن با «مسئله ← داده ← روش ← نتیجه ← دمو»، یک دموی قابل اجرا و انتشار تمیز در GitHub. درسنامهٔ هر بخش به‌مرور به همین صفحه اضافه می‌شود.</p>
+<div class="cuq">
+<div class="cc">
+<div class="c6g">۶</div>
+<div class="c3h">مرحله</div>
+</div>
+<div class="cc">
+<div class="c6g">۶۰</div>
+<div class="c3h">پروژهٔ کاربردی</div>
+</div>
+<div class="cc">
+<div class="c6g">۲۳</div>
+<div class="c3h">سرفصل اصلی</div>
+</div>
+<div class="cc">
+<div class="c6g">۱۰۰٪</div>
+<div class="c3h">دیتاست عمومی</div>
+</div>
+</div>
+<section class="cgt" id="s1">
+<p class="cgu">مرحلهٔ ۱</p>
+<h2 class="cgv">پایتون و مهندسی نرم‌افزار</h2>
+<p class="cgw">پایه‌ای که همه‌چیز رویش ساخته می‌شود: کد تمیز، کار با داده و ابزارهای روزمرهٔ یک مهندس.</p>
+<div class="cgx">
+<div class="c80">
+<h3 class="cgy">سرفصل‌ها</h3>
+<ul class="cgz">
+<li>Functions، Classes و Data Structures</li>
+<li>Git و APIها</li>
+<li>NumPy، Pandas و SQL</li>
+</ul>
+</div>
+<div class="ch0">
+<h3 class="ch1">نکته‌های کلیدی یادگیری</h3>
+<ul class="ch2">
+<li>کد تمیز مهم‌تر از کد زیاد است: توابع کوچک، نام‌گذاری روشن، type hint.</li>
+<li>از روز اول Git و venv / requirements.txt داشته باشید.</li>
+<li>SQL را جدی بگیرید؛ بیشتر دادهٔ واقعی در پایگاه داده است، نه CSV.</li>
+</ul>
+</div>
+</div>
+<h3 class="ch3">ده پروژهٔ پیشنهادی</h3>
+<div class="c6r">
+<a class="cl" href="aie-101.html">
+<span class="c9">پروژهٔ ۱.۱</span>
+<h4 class="cf">داشبورد قیمت مواد غذایی و تورم</h4>
+<p class="cm">پاک‌سازی با Pandas، ذخیره در SQLite، کوئری روند ماهانه و داشبورد Streamlit.</p>
+<span class="cn">FAO Food Price Index</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-102.html">
+<span class="c9">پروژهٔ ۱.۲</span>
+<h4 class="cf">تحلیل کیفیت هوای شهرها</h4>
+<p class="cm">دریافت داده از API، ذخیره در SQL، گزارش روزهای آلوده و مقایسهٔ شهرها.</p>
+<span class="cn">OpenAQ</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-103.html">
+<span class="c9">پروژهٔ ۱.۳</span>
+<h4 class="cf">تحلیل تأخیر پروازها</h4>
+<p class="cm">پاک‌سازی دادهٔ حجیم و کوئری‌های SQL برای یافتن بدترین فرودگاه، ساعت و ایرلاین.</p>
+<span class="cn">US DOT Flight Delays (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-104.html">
+<span class="c9">پروژهٔ ۱.۴</span>
+<h4 class="cf">ردیاب مخارج شخصی (CLI + SQLite)</h4>
+<p class="cm">اپ خط فرمان مبتنی بر Classes، دسته‌بندی خودکار هزینه‌ها و گزارش ماهانه.</p>
+<span class="cn">Personal Finance datasets (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-105.html">
+<span class="c9">پروژهٔ ۱.۵</span>
+<h4 class="cf">کاوش داده‌های زلزله</h4>
+<p class="cm">دریافت زندهٔ داده، نقشهٔ تعاملی و آمار فراوانی و شدت به تفکیک منطقه.</p>
+<span class="cn">USGS Earthquake API</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-106.html">
+<span class="c9">پروژهٔ ۱.۶</span>
+<h4 class="cf">تحلیل بازار خودروی کارکرده</h4>
+<p class="cm">پاک‌سازی آگهی‌ها، حذف داده‌های پرت و تحلیل افت قیمت بر اساس سن، کارکرد و برند.</p>
+<span class="cn">Craigslist Cars &amp; Trucks (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-107.html">
+<span class="c9">پروژهٔ ۱.۷</span>
+<h4 class="cf">داشبورد بازار اجارهٔ کوتاه‌مدت</h4>
+<p class="cm">ادغام چند فایل CSV، جدول‌های SQL و نقشهٔ قیمت هر محله.</p>
+<span class="cn">Inside Airbnb</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-108.html">
+<span class="c9">پروژهٔ ۱.۸</span>
+<h4 class="cf">تحلیل تصادفات رانندگی</h4>
+<p class="cm">کار با چند میلیون ردیف، تحلیل اثر آب‌وهوا، ساعت و نوع جاده بر تصادف.</p>
+<span class="cn">US Accidents (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-109.html">
+<span class="c9">پروژهٔ ۱.۹</span>
+<h4 class="cf">تحلیل تغییرات دما و بارش</h4>
+<p class="cm">کار با سری زمانی چنددهه‌ای، میانگین متحرک و مقایسهٔ شهرها.</p>
+<span class="cn">NOAA GHCN-Daily</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-110.html">
+<span class="c9">پروژهٔ ۱.۱۰</span>
+<h4 class="cf">تحلیل کتاب‌های پرطرفدار</h4>
+<p class="cm">پاک‌سازی دادهٔ متنی، کوئری روی نویسنده‌ها و ناشران و ساخت فهرست پیشنهادی.</p>
+<span class="cn">Goodreads Books (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+</div>
+</section>
+<section class="cgt" id="s2">
+<p class="cgu">مرحلهٔ ۲</p>
+<h2 class="cgv">مبانی یادگیری ماشین</h2>
+<p class="cgw">انتخاب مدل درست و ارزیابی صادقانه — مهارتی که از حفظ کردن الگوریتم‌ها مهم‌تر است.</p>
+<div class="cgx">
+<div class="c80">
+<h3 class="cgy">سرفصل‌ها</h3>
+<ul class="cgz">
+<li>یادگیری با نظارت و بدون نظارت</li>
+<li>Classification، Regression و Clustering</li>
+<li>Feature Engineering</li>
+<li>Cross-Validation و Bias-Variance</li>
+</ul>
+</div>
+<div class="ch0">
+<h3 class="ch1">نکته‌های کلیدی یادگیری</h3>
+<ul class="ch2">
+<li>حفظ الگوریتم مهم نیست؛ مهم انتخاب مدل و ارزیابی درست است.</li>
+<li>همیشه با یک baseline ساده شروع کنید.</li>
+<li>مراقب Data Leakage باشید؛ Pipeline در scikit-learn بهترین همراه شماست.</li>
+</ul>
+</div>
+</div>
+<h3 class="ch3">ده پروژهٔ پیشنهادی</h3>
+<div class="c6r">
+<a class="cl" href="aie-201.html">
+<span class="c9">پروژهٔ ۲.۱</span>
+<h4 class="cf">پیش‌بینی قیمت مسکن</h4>
+<p class="cm">Regression و Feature Engineering، مقایسهٔ Linear با Gradient Boosting و توضیح‌پذیری با SHAP.</p>
+<span class="cn">California Housing (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-202.html">
+<span class="c9">پروژهٔ ۲.۲</span>
+<h4 class="cf">تشخیص پیامک و ایمیل اسپم</h4>
+<p class="cm">TF-IDF + Logistic Regression و تحلیل Precision / Recall.</p>
+<span class="cn">SMS Spam Collection (UCI)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-203.html">
+<span class="c9">پروژهٔ ۲.۳</span>
+<h4 class="cf">پیش‌بینی ریزش مشتری (Churn)</h4>
+<p class="cm">Classification روی دادهٔ نامتوازن و انتخاب آستانه بر اساس هزینهٔ کسب‌وکار.</p>
+<span class="cn">Telco Customer Churn (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-204.html">
+<span class="c9">پروژهٔ ۲.۴</span>
+<h4 class="cf">پیش‌بینی بیماری قلبی</h4>
+<p class="cm">Cross-Validation، مقایسهٔ مدل‌ها و شرح محدودیت‌های مدل‌های پزشکی.</p>
+<span class="cn">Heart Disease (UCI)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-205.html">
+<span class="c9">پروژهٔ ۲.۵</span>
+<h4 class="cf">بخش‌بندی مشتریان فروشگاه</h4>
+<p class="cm">تحلیل RFM + K-Means و تفسیر خوشه‌ها برای بازاریابی.</p>
+<span class="cn">Online Retail II (UCI)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-206.html">
+<span class="c9">پروژهٔ ۲.۶</span>
+<h4 class="cf">پیش‌بینی تقاضای دوچرخهٔ اشتراکی</h4>
+<p class="cm">Regression با ویژگی‌های زمانی و آب‌وهوایی و ارزیابی روی بازهٔ زمانی جدا.</p>
+<span class="cn">Bike Sharing (UCI)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-207.html">
+<span class="c9">پروژهٔ ۲.۷</span>
+<h4 class="cf">تشخیص تراکنش جعلی</h4>
+<p class="cm">کار با دادهٔ به‌شدت نامتوازن، معیار PR-AUC و مقایسهٔ Undersampling و class weight.</p>
+<span class="cn">Credit Card Fraud (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-208.html">
+<span class="c9">پروژهٔ ۲.۸</span>
+<h4 class="cf">پیش‌بینی عملکرد محصول کشاورزی</h4>
+<p class="cm">Regression با دادهٔ بارش، دما و سم و تحلیل اهمیت ویژگی‌ها.</p>
+<span class="cn">Crop Yield Prediction (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-209.html">
+<span class="c9">پروژهٔ ۲.۹</span>
+<h4 class="cf">سیستم پیشنهاد فیلم</h4>
+<p class="cm">Collaborative Filtering با Matrix Factorization و ارزیابی با RMSE و Precision@K.</p>
+<span class="cn">MovieLens</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-210.html">
+<span class="c9">پروژهٔ ۲.۱۰</span>
+<h4 class="cf">پیش‌بینی لغو رزرو هتل</h4>
+<p class="cm">Classification، جلوگیری از Data Leakage و تفسیر مدل برای مدیر هتل.</p>
+<span class="cn">Hotel Booking Demand (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+</div>
+</section>
+<section class="cgt" id="s3">
+<p class="cgu">مرحلهٔ ۳</p>
+<h2 class="cgv">یادگیری عمیق</h2>
+<p class="cgw">شبکه‌های عصبی از درون: از Backpropagation تا Transformer، با PyTorch.</p>
+<div class="cgx">
+<div class="c80">
+<h3 class="cgy">سرفصل‌ها</h3>
+<ul class="cgz">
+<li>شبکه‌های عصبی و Backpropagation</li>
+<li>CNN و Embedding</li>
+<li>مدل‌های ترتیبی</li>
+<li>Transformerها و کار با PyTorch</li>
+</ul>
+</div>
+<div class="ch0">
+<h3 class="ch1">نکته‌های کلیدی یادگیری</h3>
+<ul class="ch2">
+<li>یک بار training loop را دستی در PyTorch بنویسید.</li>
+<li>پیش از آموزش از صفر، Transfer Learning را امتحان کنید.</li>
+<li>منحنی loss را بخوانید و overfitting را با چشم تشخیص دهید.</li>
+</ul>
+</div>
+</div>
+<h3 class="ch3">ده پروژهٔ پیشنهادی</h3>
+<div class="c6r">
+<a class="cl" href="aie-301.html">
+<span class="c9">پروژهٔ ۳.۱</span>
+<h4 class="cf">تشخیص بیماری برگ گیاهان</h4>
+<p class="cm">Transfer Learning با ResNet / EfficientNet، دموی Gradio و سرویس FastAPI.</p>
+<span class="cn">PlantVillage (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-302.html">
+<span class="c9">پروژهٔ ۳.۲</span>
+<h4 class="cf">دسته‌بندی پسماند برای بازیافت</h4>
+<p class="cm">CNN با Data Augmentation و آزمون روی عکس موبایل.</p>
+<span class="cn">TrashNet</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-303.html">
+<span class="c9">پروژهٔ ۳.۳</span>
+<h4 class="cf">تحلیل احساسات نظرات کاربران</h4>
+<p class="cm">مقایسهٔ LSTM با یک Transformer کوچک (DistilBERT).</p>
+<span class="cn">IMDB Reviews</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-304.html">
+<span class="c9">پروژهٔ ۳.۴</span>
+<h4 class="cf">پیش‌بینی مصرف برق خانگی</h4>
+<p class="cm">مدل‌های ترتیبی LSTM / GRU برای سری زمانی.</p>
+<span class="cn">Household Electric Power Consumption (UCI)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-305.html">
+<span class="c9">پروژهٔ ۳.۵</span>
+<h4 class="cf">تشخیص احساس از چهره</h4>
+<p class="cm">CNN، ماتریس درهم‌ریختگی و بحث دربارهٔ سوگیری داده.</p>
+<span class="cn">FER-2013 (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-306.html">
+<span class="c9">پروژهٔ ۳.۶</span>
+<h4 class="cf">شمارش جای خالی پارکینگ</h4>
+<p class="cm">Classification تصویر هر جایگاه و اجرای آن روی عکس کامل پارکینگ.</p>
+<span class="cn">PKLot</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-307.html">
+<span class="c9">پروژهٔ ۳.۷</span>
+<h4 class="cf">تشخیص ارقام دست‌نویس فارسی</h4>
+<p class="cm">CNN از صفر در PyTorch و ساخت دموی نوشتن روی صفحه.</p>
+<span class="cn">HODA Dataset</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-308.html">
+<span class="c9">پروژهٔ ۳.۸</span>
+<h4 class="cf">تشخیص فرمان صوتی</h4>
+<p class="cm">تبدیل صدا به Spectrogram و طبقه‌بندی با CNN.</p>
+<span class="cn">Speech Commands</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-309.html">
+<span class="c9">پروژهٔ ۳.۹</span>
+<h4 class="cf">تشخیص میوهٔ سالم از خراب</h4>
+<p class="cm">Transfer Learning و تحلیل اشتباه‌های مدل با Grad-CAM.</p>
+<span class="cn">Fruits Fresh and Rotten (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-310.html">
+<span class="c9">پروژهٔ ۳.۱۰</span>
+<h4 class="cf">تشخیص ذات‌الریه از عکس قفسهٔ سینه</h4>
+<p class="cm">CNN با دادهٔ نامتوازن، معیار Recall و نمایش ناحیهٔ تصمیم مدل.</p>
+<span class="cn">Chest X-Ray Pneumonia (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+</div>
+</section>
+<section class="cgt" id="s4">
+<p class="cgu">مرحلهٔ ۴</p>
+<h2 class="cgv">LLM و هوش مصنوعی مولد</h2>
+<p class="cgw">به‌جای آموزش مدل زبانی از صفر، با مدل‌های آماده محصول بسازید.</p>
+<div class="cgx">
+<div class="c80">
+<h3 class="cgy">سرفصل‌ها</h3>
+<ul class="cgz">
+<li>Transformerها، Embedding، Token و Context Window</li>
+<li>Prompting و Structured Output</li>
+<li>Function Calling</li>
+<li>Fine-tuning</li>
+</ul>
+</div>
+<div class="ch0">
+<h3 class="ch1">نکته‌های کلیدی یادگیری</h3>
+<ul class="ch2">
+<li>به‌جای آموزش LLM از صفر، با مدل‌های آماده محصول بسازید.</li>
+<li>خروجی ساختاریافته (JSON Schema / Pydantic) را همیشه اعتبارسنجی کنید.</li>
+<li>پیش از Fine-tuning مطمئن شوید Prompting و RAG کافی نیست.</li>
+</ul>
+</div>
+</div>
+<h3 class="ch3">ده پروژهٔ پیشنهادی</h3>
+<div class="c6r">
+<a class="cl" href="aie-401.html">
+<span class="c9">پروژهٔ ۴.۱</span>
+<h4 class="cf">دستیار هوشمند اسناد</h4>
+<p class="cm">استخراج اطلاعات، پرسش و پاسخ و خروجی JSON.</p>
+<span class="cn">CUAD (قراردادها)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-402.html">
+<span class="c9">پروژهٔ ۴.۲</span>
+<h4 class="cf">استخراج اطلاعات از فاکتور و رسید</h4>
+<p class="cm">LLM چندوجهی + Structured Output و خروجی CSV.</p>
+<span class="cn">CORD</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-403.html">
+<span class="c9">پروژهٔ ۴.۳</span>
+<h4 class="cf">خلاصه‌ساز اخبار و مقالات</h4>
+<p class="cm">خلاصه‌سازی چندسطحی و ارزیابی با ROUGE.</p>
+<span class="cn">CNN/DailyMail (Hugging Face)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-404.html">
+<span class="c9">پروژهٔ ۴.۴</span>
+<h4 class="cf">دستیار سفر با Function Calling</h4>
+<p class="cm">مدل ابزار آب‌وهوا و مکان را فراخوانی می‌کند و برنامهٔ سفر می‌سازد.</p>
+<span class="cn">Open-Meteo + OpenStreetMap</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-405.html">
+<span class="c9">پروژهٔ ۴.۵</span>
+<h4 class="cf">Fine-tune مدل کوچک برای نظرات فارسی</h4>
+<p class="cm">LoRA روی یک مدل کوچک و مقایسه با Prompting.</p>
+<span class="cn">Persian sentiment datasets (Hugging Face)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-406.html">
+<span class="c9">پروژهٔ ۴.۶</span>
+<h4 class="cf">ساخت خودکار آزمون از متن درسی</h4>
+<p class="cm">تولید سؤال چهارگزینه‌ای با Structured Output و سنجش کیفیت سؤال‌ها.</p>
+<span class="cn">SQuAD</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-407.html">
+<span class="c9">پروژهٔ ۴.۷</span>
+<h4 class="cf">ساده‌سازی متون پزشکی</h4>
+<p class="cm">بازنویسی پاسخ‌های تخصصی به زبان ساده و سنجش خوانایی.</p>
+<span class="cn">MedQuAD</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-408.html">
+<span class="c9">پروژهٔ ۴.۸</span>
+<h4 class="cf">دستیار رزومه و تطبیق با آگهی شغلی</h4>
+<p class="cm">استخراج مهارت‌ها با Embedding و امتیاز تطبیق رزومه با آگهی.</p>
+<span class="cn">Resume Dataset (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-409.html">
+<span class="c9">پروژهٔ ۴.۹</span>
+<h4 class="cf">دسته‌بندی و پیش‌نویس پاسخ ایمیل</h4>
+<p class="cm">Classification با LLM و تولید پیش‌نویس پاسخ با لحن قابل تنظیم.</p>
+<span class="cn">Enron Email Dataset</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-410.html">
+<span class="c9">پروژهٔ ۴.۱۰</span>
+<h4 class="cf">توصیف تصویر برای نابینایان</h4>
+<p class="cm">مدل چندوجهی برای توصیف عکس و ارزیابی روی عکس‌های واقعی کاربران نابینا.</p>
+<span class="cn">VizWiz Captioning</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+</div>
+</section>
+<section class="cgt" id="s5">
+<p class="cgu">مرحلهٔ ۵</p>
+<h2 class="cgv">RAG و AI Agentها</h2>
+<p class="cgw">مدل را به دانش و ابزار وصل کنید: بازیابی، برنامه‌ریزی و حافظه.</p>
+<div class="cgx">
+<div class="c80">
+<h3 class="cgy">سرفصل‌ها</h3>
+<ul class="cgz">
+<li>RAG و Vector Database</li>
+<li>استراتژی‌های Retrieval</li>
+<li>Tool Use و چرخهٔ Agent</li>
+<li>Memory، Planning و Orchestration</li>
+</ul>
+</div>
+<div class="ch0">
+<h3 class="ch1">نکته‌های کلیدی یادگیری</h3>
+<ul class="ch2">
+<li>کیفیت RAG بیشتر به chunking و retrieval بستگی دارد تا خود مدل.</li>
+<li>Hybrid Search (BM25 + Vector) و Reranking را امتحان کنید.</li>
+<li>Agent را ساده شروع کنید؛ هر ابزار اضافه یعنی احتمال خطای بیشتر.</li>
+</ul>
+</div>
+</div>
+<h3 class="ch3">ده پروژهٔ پیشنهادی</h3>
+<div class="c6r">
+<a class="cl" href="aie-501.html">
+<span class="c9">پروژهٔ ۵.۱</span>
+<h4 class="cf">دستیار پرسش و پاسخ قوانین</h4>
+<p class="cm">RAG همراه با ذکر منبع (citation).</p>
+<span class="cn">GDPR Text</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-502.html">
+<span class="c9">پروژهٔ ۵.۲</span>
+<h4 class="cf">Agent پشتیبانی مشتری</h4>
+<p class="cm">Agentic RAG + ابزار پیگیری سفارش آزمایشی.</p>
+<span class="cn">Bitext Customer Support (Hugging Face)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-503.html">
+<span class="c9">پروژهٔ ۵.۳</span>
+<h4 class="cf">دستیار پژوهش مقالات علمی</h4>
+<p class="cm">جست‌وجو، خلاصه و مقایسهٔ مقالات.</p>
+<span class="cn">arXiv API</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-504.html">
+<span class="c9">پروژهٔ ۵.۴</span>
+<h4 class="cf">دستیار تغذیه و دستور پخت</h4>
+<p class="cm">Agent با ابزار محاسبهٔ کالری و پیشنهاد غذا.</p>
+<span class="cn">USDA FoodData Central</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-505.html">
+<span class="c9">پروژهٔ ۵.۵</span>
+<h4 class="cf">Agent تحلیل داده (Text-to-SQL)</h4>
+<p class="cm">پرسش فارسی یا انگلیسی ← SQL ← نمودار، همراه با حافظهٔ گفت‌وگو.</p>
+<span class="cn">Chinook Database</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-506.html">
+<span class="c9">پروژهٔ ۵.۶</span>
+<h4 class="cf">دستیار مستندات برنامه‌نویسی</h4>
+<p class="cm">RAG روی مستندات با Hybrid Search و Reranking.</p>
+<span class="cn">Python Documentation</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-507.html">
+<span class="c9">پروژهٔ ۵.۷</span>
+<h4 class="cf">Agent برنامه‌ریز سفر چندابزاره</h4>
+<p class="cm">Planning چندمرحله‌ای با چند ابزار و حافظهٔ ترجیحات کاربر.</p>
+<span class="cn">OpenTripMap + Open-Meteo</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-508.html">
+<span class="c9">پروژهٔ ۵.۸</span>
+<h4 class="cf">دستیار کشاورز</h4>
+<p class="cm">RAG روی راهنماهای آفات و کوددهی با پاسخ به زبان ساده.</p>
+<span class="cn">FAO Publications</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-509.html">
+<span class="c9">پروژهٔ ۵.۹</span>
+<h4 class="cf">دستیار بررسی تداخل دارو</h4>
+<p class="cm">Agent با ابزار جست‌وجوی دارو و هشدار ایمنی، با Guardrail پزشکی.</p>
+<span class="cn">openFDA API</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-510.html">
+<span class="c9">پروژهٔ ۵.۱۰</span>
+<h4 class="cf">Agent مقایسهٔ قیمت و خرید</h4>
+<p class="cm">Retrieval روی محصولات، مقایسهٔ ویژگی‌ها و توصیه با دلیل.</p>
+<span class="cn">Amazon Products (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+</div>
+</section>
+<section class="cgt" id="s6">
+<p class="cgu">مرحلهٔ ۶</p>
+<h2 class="cgv">MCP، ارزیابی و استقرار</h2>
+<p class="cgw">از نمونهٔ اولیه تا سرویس قابل اعتماد: امنیت، سنجش و پایش.</p>
+<div class="cgx">
+<div class="c80">
+<h3 class="cgy">سرفصل‌ها</h3>
+<ul class="cgz">
+<li>MCP و Tool Serverها</li>
+<li>Permission و احراز هویت</li>
+<li>Observability و Guardrails</li>
+<li>مدیریت خطا و Evaluation Dataset</li>
+<li>FastAPI، Docker و CI/CD</li>
+<li>Monitoring و بررسی تغییر عملکرد مدل</li>
+</ul>
+</div>
+<div class="ch0">
+<h3 class="ch1">نکته‌های کلیدی یادگیری</h3>
+<ul class="ch2">
+<li>بدون Evaluation Dataset، بهبود فقط حدس است.</li>
+<li>Logging و Tracing را از ابتدا طراحی کنید، نه بعد از خرابی.</li>
+<li>اصل کمترین دسترسی (Least Privilege) را برای ابزارهای Agent رعایت کنید.</li>
+</ul>
+</div>
+</div>
+<h3 class="ch3">ده پروژهٔ پیشنهادی</h3>
+<div class="c6r">
+<a class="cl" href="aie-601.html">
+<span class="c9">پروژهٔ ۶.۱</span>
+<h4 class="cf">MCP Server آب‌وهوا و کیفیت هوا</h4>
+<p class="cm">سرور MCP با احراز هویت و rate limit.</p>
+<span class="cn">Open-Meteo + OpenAQ</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-602.html">
+<span class="c9">پروژهٔ ۶.۲</span>
+<h4 class="cf">Production RAG با ارزیابی خودکار</h4>
+<p class="cm">سنجش faithfulness و relevance و گزارش خودکار در CI.</p>
+<span class="cn">HotpotQA</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-603.html">
+<span class="c9">پروژهٔ ۶.۳</span>
+<h4 class="cf">API تحلیل احساسات با Docker و Monitoring</h4>
+<p class="cm">FastAPI + Docker + GitHub Actions و تشخیص Data Drift.</p>
+<span class="cn">Evidently</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-604.html">
+<span class="c9">پروژهٔ ۶.۴</span>
+<h4 class="cf">Agent ایمن با Guardrails</h4>
+<p class="cm">آزمون Prompt Injection، فیلتر PII و لاگ کامل تصمیم‌ها.</p>
+<span class="cn">garak (LLM scanner)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-605.html">
+<span class="c9">پروژهٔ ۶.۵</span>
+<h4 class="cf">سامانهٔ پایش هوشمند مزرعه و گلخانه</h4>
+<p class="cm">مدل پیش‌بینی + Agent هشدار + MCP + داشبورد پایش در Production.</p>
+<span class="cn">Greenhouse sensor datasets (Kaggle)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-606.html">
+<span class="c9">پروژهٔ ۶.۶</span>
+<h4 class="cf">داشبورد Observability برای LLM</h4>
+<p class="cm">Tracing هر درخواست، هزینه، تأخیر و کیفیت پاسخ در یک داشبورد.</p>
+<span class="cn">Langfuse</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-607.html">
+<span class="c9">پروژهٔ ۶.۷</span>
+<h4 class="cf">مجموعهٔ آزمون رگرسیون برای Prompt</h4>
+<p class="cm">Evaluation Dataset، LLM-as-judge و A/B تست Prompt در CI.</p>
+<span class="cn">MT-Bench (Hugging Face)</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-608.html">
+<span class="c9">پروژهٔ ۶.۸</span>
+<h4 class="cf">استقرار مدل روی Kubernetes</h4>
+<p class="cm">Deployment، Autoscaling و Health Check برای مدل مرحلهٔ ۲.</p>
+<span class="cn">Kubernetes Tutorials</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-609.html">
+<span class="c9">پروژهٔ ۶.۹</span>
+<h4 class="cf">MCP Server تقویم شخصی با OAuth</h4>
+<p class="cm">OAuth، Permission سطح‌بندی‌شده و ابزارهای خواندن و نوشتن رویداد.</p>
+<span class="cn">Google Calendar API</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+<a class="cl" href="aie-610.html">
+<span class="c9">پروژهٔ ۶.۱۰</span>
+<h4 class="cf">Pipeline بازآموزی خودکار مدل</h4>
+<p class="cm">زمان‌بندی بازآموزی، مقایسه با مدل فعلی و استقرار فقط در صورت بهبود.</p>
+<span class="cn">Apache Airflow</span>
+<span class="c8">صفحهٔ پروژه ←</span>
+</a>
+</div>
+</section>
+<section style="background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 26px 28px">
+<h2 style="font-size: 20px;font-weight: 800;margin: 0 0 12px">چک‌لیست هر پروژه برای رزومه</h2>
+<ul style="margin: 0;padding-inline-start: 20px;font-size: 14.5px;line-height: 2.2;color: #45494F">
+<li>README با مسئله، داده، روش، نتیجه و تصویر یا GIF دمو</li>
+<li>دموی آنلاین (Hugging Face Spaces / Streamlit Cloud)</li>
+<li>معیار ارزیابی مشخص و مقایسه با baseline</li>
+<li>کد ماژولار همراه با تست ساده</li>
+<li>بخش «محدودیت‌ها و قدم‌های بعدی»</li>
+</ul>
+</section>
+</main>
+</div>
+
+
+</body>
+</html>

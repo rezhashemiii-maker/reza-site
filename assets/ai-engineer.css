@@ -1,0 +1,18 @@
+.cl.cl{display: flex;flex-direction: column;background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px;border-top: 3px solid #2F5233;color: #16181C}
+.cm.cm{font-size: 13px;line-height: 1.9;color: #4A4F58;margin: 0 0 12px;flex: 1}
+.cn.cn{font-size: 11.5px;color: #2F5233;background: #E7ECE4;border-radius: 8px;padding: 6px 10px;direction: ltr;text-align: left;margin-bottom: 10px}
+.cgt.cgt{margin-bottom: 56px;padding-top: 8px;border-top: 1px solid #E4E1D6}
+.cgu.cgu{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #2F5233;margin: 26px 0 10px}
+.cgv.cgv{font-size: clamp(22px, 2.8vw, 29px);font-weight: 800;margin: 0 0 10px}
+.cgw.cgw{font-size: 15.5px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
+.cgx.cgx{display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 14px;margin-bottom: 22px}
+.cgy.cgy{font-size: 15px;font-weight: 700;margin: 0 0 10px}
+.cgz.cgz{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #45494F}
+.ch0.ch0{background: #E7ECE4;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px}
+.ch1.ch1{font-size: 15px;font-weight: 700;margin: 0 0 10px;color: #1F3A22}
+.ch2.ch2{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #2F3A30}
+.ch3.ch3{font-size: 16px;font-weight: 800;margin: 0 0 14px}
+a{color:#2F5233;text-decoration:none}
+a:hover{color:#1F3A22}
+[id]{scroll-margin-top:78px}
+::selection{background:#E7ECE4;color:#1F3A22}
