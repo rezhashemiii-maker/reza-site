@@ -1,5 +1,8 @@
 .bv.bv{display: flex;flex-direction: column;background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px;border-top: 3px solid #2F5233}
 .bw.bw{font-size: 11px;font-weight: 700;color: #666158;margin-bottom: 10px}
+.la.la{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 22px;border-top: 3px solid #B4530E}
+.lb.lb{font-size: 11px;font-weight: 700;color: #8A5410;margin-bottom: 10px}
+.lc.lc{font-size: 13px;font-weight: 700;color: #B4530E}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}

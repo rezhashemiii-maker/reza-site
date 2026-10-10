@@ -3,20 +3,20 @@
 .s66.s66{display: flex;align-items: center;gap: 12px}
 .s67.s67{font-size: 12.5px;font-weight: 600;color: #16181C;width: 150px;flex-shrink: 0}
 .s68.s68{flex: 1;direction: ltr;display: flex;height: 26px;border-radius: 6px;overflow: hidden;background: #F1EEE7}
-.s86.s86{display: flex;align-items: baseline;gap: 10px;margin-bottom: 8px;flex-wrap: wrap}
-.s87.s87{font-size: 12px;font-weight: 800;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
-.s88.s88{font-size: 16px;font-weight: 700;line-height: 1.65;margin: 0 0 10px}
-.s89.s89{font-size: 13.5px;line-height: 1.95;color: #45494F;margin: 0 0 14px;flex: 1}
-.s8a.s8a{font-size: 11px;font-weight: 700;color: #666158;margin-bottom: 4px}
-.s8b.s8b{font-size: 12.5px;line-height: 1.85;color: #45494F}
-.e4.e4{width: 10%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
+.s88.s88{display: flex;align-items: baseline;gap: 10px;margin-bottom: 8px;flex-wrap: wrap}
+.s89.s89{font-size: 12px;font-weight: 800;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
+.s8a.s8a{font-size: 16px;font-weight: 700;line-height: 1.65;margin: 0 0 10px}
+.s8b.s8b{font-size: 13.5px;line-height: 1.95;color: #45494F;margin: 0 0 14px;flex: 1}
+.s8c.s8c{font-size: 11px;font-weight: 700;color: #666158;margin-bottom: 4px}
+.s8d.s8d{font-size: 12.5px;line-height: 1.85;color: #45494F}
+.e5.e5{width: 10%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
 .id.id{width: 50%;background: #166534;display: flex;align-items: center;justify-content: center}
 .ie.ie{width: 30%;background: #8A5410;display: flex;align-items: center;justify-content: center}
 .if.if{width: 60%;background: #166534;display: flex;align-items: center;justify-content: center}
-.m9.m9{width: 20%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
-.ma.ma{width: 20%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.mb.mb{width: 10%;background: #8A5410;display: flex;align-items: center;justify-content: center}
-.mh.mh{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 14px}
+.mc.mc{width: 20%;background: #5B3F92;display: flex;align-items: center;justify-content: center}
+.md.md{width: 20%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.me.me{width: 10%;background: #8A5410;display: flex;align-items: center;justify-content: center}
+.mk.mk{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 14px}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 button{font-family:inherit;cursor:pointer;border:none}
