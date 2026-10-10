@@ -17,6 +17,7 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
+  { file: 'Services.dc.html', out: 'services.html', nav: 'سرویس‌های فروشنی' },
   { file: 'Library.dc.html', out: 'library.html', nav: 'کتابخانه' },
   { file: 'Chess.dc.html', out: 'chess.html', nav: 'شطرنج' },
   { file: 'AILiteracy.dc.html', out: 'ai-literacy.html', nav: 'سواد هوش مصنوعی' },
@@ -172,6 +173,8 @@ fs.writeFileSync(
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'services.html':
+    'پنجاه‌ودو سرویسی که با ابزارهای هوش مصنوعی و بدون دانش کدنویسی زیاد می‌شود ساخت و فروخت — هر کدام با شش سنجه (سختی، تقاضا، رقابت، سرعت درآمد، سرمایه، ریسک) و پنج فیلتر برای اولویت‌بندی.',
   'library.html':
     'کتابخانهٔ یکپارچهٔ منابع سایت: ۱۶۸ کتاب، مقاله، استاندارد و گزارش از ۱۹۱۳ تا ۲۰۲۵، قابل جست‌وجو و فیلتر بر اساس بخش و نوع — با ۱۲۵ پیوند مستقیم به متن اصلی.',
   'chess.html':
