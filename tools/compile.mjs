@@ -97,7 +97,8 @@ export function compile(templateRoot, ctx) {
     if (cls !== null) out.s = cls;
     if (Object.keys(a).length) out.a = a;
     if (Object.keys(ev).length) out.e = ev;
-    if (!isVoid(node.tag)) {
+    if (node.self) out.sf = 1;
+    if (!isVoid(node.tag) && !node.self) {
       const k = kids(node);
       if (k.length) out.k = k;
     }

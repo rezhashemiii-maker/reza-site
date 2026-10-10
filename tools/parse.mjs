@@ -63,11 +63,12 @@ export function parse(src) {
     let p = lt + m[0].length;
     const attrs = {};
     const order = [];
+    let selfClosed = false;
     for (;;) {
       while (p < src.length && /\s/.test(src[p])) p++;
       if (p >= src.length) break;
       if (src[p] === '>') { p++; break; }
-      if (src.startsWith('/>', p)) { p += 2; break; }
+      if (src.startsWith('/>', p)) { p += 2; selfClosed = true; break; }
       const am = /^([^\s=/>]+)/.exec(src.slice(p));
       if (!am) { p++; continue; }
       const name = am[1];
@@ -95,10 +96,14 @@ export function parse(src) {
     }
 
     const node = { tag, attrs, order, kids: [] };
+    if (selfClosed) node.self = true;
     top().kids.push(node);
     i = p;
 
     if (VOID.has(tag)) continue;
+    // `<rect …/>` در SVG واقعاً خودبسته است. اگر نادیده بگیریم، همهٔ
+    // هم‌نیاهای بعدی فرزندش می‌شوند و تصویر از هم می‌پاشد.
+    if (selfClosed) continue;
     if (RAW.has(tag)) {
       const close = src.toLowerCase().indexOf(`</${tag}`, i);
       const end = close === -1 ? src.length : close;

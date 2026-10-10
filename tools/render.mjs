@@ -69,6 +69,7 @@ export function renderToString(ast, scopes, selectValue) {
     }
     if (node.n === 'option' && selectValue !== undefined && ownValue === selectValue) attrs += ' selected';
 
+    if (node.sf) { out += `<${node.n}${attrs}/>`; continue; }
     out += `<${node.n}${attrs}>`;
     if (isVoid(node.n)) continue;
     const nextSelect = node.n === 'select' ? (ownValue ?? '') : undefined;
