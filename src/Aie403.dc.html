@@ -46,7 +46,39 @@
       </section>
       <section style="background: #FAFAF7; border: 1.5px dashed #C9D4C5; border-radius: 14px; padding: 22px 24px;">
         <h2 style="font-size: 16px; font-weight: 800; margin: 0 0 8px;">راهنمای قدم‌به‌قدم</h2>
-        <p style="font-size: 14px; line-height: 2; color: #666158; margin: 0;">توضیحات کامل این پروژه به‌زودی اضافه می‌شود.</p>
+        <p style="font-size: 13.5px; line-height: 1.95; color: #666158; margin: 0 0 18px;">این راهنما اسکلت کار است، نه نسخهٔ پیچیده‌شده: گام‌ها از مرحلهٔ همین پروژه و دیتاست و مهارت‌های خودش ساخته شده‌اند. تصمیم‌های ریز را خودت می‌گیری — که اصلاً نکتهٔ پروژه همین است.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; gap: 12px; align-items: stretch;">
+            <div style="flex-shrink: 0; width: 42px; font-size: 11.5px; font-weight: 700; color: #2F5233; padding-top: 3px;">گام ۱</div>
+            <div style="flex: 1; min-width: 0; padding-inline-start: 14px; border-inline-start: 2px solid #D5DDD2; font-size: 14px; line-height: 2.05; color: #45494F;">دادهٔ «CNN/DailyMail (Hugging Face)» را بردار و اول فقط نگاهش کن. صد ردیف اولش را باز کن و سه چیز بنویس: چه ستون‌هایی دارد، کجایش خالی یا خراب است، و یک سؤال مشخص که با همین داده جواب دارد.</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: stretch;">
+            <div style="flex-shrink: 0; width: 42px; font-size: 11.5px; font-weight: 700; color: #2F5233; padding-top: 3px;">گام ۲</div>
+            <div style="flex: 1; min-width: 0; padding-inline-start: 14px; border-inline-start: 2px solid #D5DDD2; font-size: 14px; line-height: 2.05; color: #45494F;">اول بدون fine-tune جلو برو: فقط با prompt خوب و خروجی ساختاریافته. در بیشتر پروژه‌ها همین کافی است و وقتت را نگه می‌دارد.</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: stretch;">
+            <div style="flex-shrink: 0; width: 42px; font-size: 11.5px; font-weight: 700; color: #2F5233; padding-top: 3px;">گام ۳</div>
+            <div style="flex: 1; min-width: 0; padding-inline-start: 14px; border-inline-start: 2px solid #D5DDD2; font-size: 14px; line-height: 2.05; color: #45494F;">حالا سراغ مهارت اصلی این پروژه برو: <b>Transformerها، Embedding، Token و Context Window، Prompting و Structured Output، Function Calling</b>. این همان چیزی است که قرار است از این پروژه یاد بگیری؛ بقیه‌اش بستربندی است.</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: stretch;">
+            <div style="flex-shrink: 0; width: 42px; font-size: 11.5px; font-weight: 700; color: #2F5233; padding-top: 3px;">گام ۴</div>
+            <div style="flex: 1; min-width: 0; padding-inline-start: 14px; border-inline-start: 2px solid #D5DDD2; font-size: 14px; line-height: 2.05; color: #45494F;">خروجی را با یک مجموعهٔ کوچک آزمون بسنج — بیست تا سی نمونه با جواب درستِ دستی. بدون این، نمی‌فهمی تغییر prompt بهتر کرده یا بدتر.</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: stretch;">
+            <div style="flex-shrink: 0; width: 42px; font-size: 11.5px; font-weight: 700; color: #2F5233; padding-top: 3px;">گام ۵</div>
+            <div style="flex: 1; min-width: 0; padding-inline-start: 14px; border-inline-start: 2px solid #D5DDD2; font-size: 14px; line-height: 2.05; color: #45494F;">مخزن را مرتب کن و README را با همان پنج تیتر بنویس: مسئله ← داده ← روش ← نتیجه ← دمو. یک تصویر یا گیف از خروجی بگذار؛ کسی که رزومه‌ات را می‌خواند، کد را باز نمی‌کند.</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #D5DDD2;">
+          <div>
+            <div style="font-size: 11.5px; font-weight: 700; color: #166534; margin-bottom: 6px;">تمام‌شده یعنی چه</div>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">یک مجموعهٔ آزمون کوچک داری و می‌توانی بگویی نسخهٔ امروز از نسخهٔ دیروز بهتر است یا نه، با عدد.</p>
+          </div>
+          <div>
+            <div style="font-size: 11.5px; font-weight: 700; color: #B4530E; margin-bottom: 6px;">دام رایج این مرحله</div>
+            <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">اعتماد به چند نمونهٔ دستی. مدل زبانی روی نمونه‌های انتخابی همیشه خوب به نظر می‌رسد.</p>
+          </div>
+        </div>
       </section>
     </div>
     <nav style="display: flex; gap: 14px; margin-top: 34px; padding-top: 20px; border-top: 1px solid #E4E1D6;"><a href="Aie402.dc.html" style="font-size: 13.5px; font-weight: 600; color: #2F5233;">→ پروژهٔ قبلی</a><span style="flex: 1;"></span><a href="Aie404.dc.html" style="font-size: 13.5px; font-weight: 600; color: #2F5233;">پروژهٔ بعدی ←</a></nav>

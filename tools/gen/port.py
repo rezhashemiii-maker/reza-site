@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """انتقال آرتبوردهای آرتیفکت به src/ مخزن، با پاک‌سازی جاهای ناتمام."""
 import io, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from paths import SRC  # noqa: E402
 
-AF = '/tmp/claude-0/-home-user-reza-site/33dd78ae-a2ff-5a12-96f6-fd8a58212c20/scratchpad/artifact-files/53663088-e6c9-4773-90f2-fa9a60239869/project'
-SRC = '/home/user/reza-site/src'
+AF = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'artifact')
 
 IA = ['Writing', 'Books', 'About', 'Work', 'Process', 'FAQ', 'Contact']
 AIE = ['AiEngineer'] + ['Aie%d%02d' % (s, i) for s in range(1, 7) for i in range(1, 11)]
@@ -45,6 +46,15 @@ def clean(t, name):
         '''<p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0;">یا اگر ترجیح می‌دهی: [لینک LinkedIn] · [لینک GitHub]</p>''',
         '''<p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0;">یا اگر ترجیح می‌دهی، کد همین سایت را این‌جا ببین:<br><a href="%s" target="_blank" rel="noopener" style="font-weight: 600; direction: ltr; unicode-bidi: isolate;">github.com/rezhashemiii-maker/reza-site</a></p>''' % GITHUB)
     if t != before: n.append('contact-links')
+
+    # ۳.۵) در آرتیفکت این صفحه‌ها بخشی از یک صفحهٔ بلند بودند، پس تیتر اصلی‌شان
+    #      h2 است. به‌عنوان صفحهٔ مستقل باید دقیقاً یک h1 داشته باشند.
+    if name in ('About', 'Contact', 'FAQ', 'Process', 'Work', 'Writing'):
+        before = t
+        t = re.sub(r'<h2( style="font-size: clamp\(24px, 3vw, 32px\);[^"]*">.*?)</h2>',
+                   r'<h1\1</h1>', t, count=1, flags=re.S)
+        if t != before:
+            n.append('h2→h1')
 
     # ۴) بازگشت به نوشته‌ها در مخزن یعنی همان بخش صفحهٔ اصلی هم کار کند
     #    (پیوندهای .dc.html را خود خط لوله بازنویسی می‌کند)
@@ -105,7 +115,9 @@ def describe():
             d = '%s — پروژهٔ %s.%s از مسیر مهندس هوش مصنوعی. %s' % (h1, fa(s), fa(i), lead)
             if what:
                 d += ' ' + text(what.group(1))
-            OUT['aie-%d%02d.html' % (s, i)] = d[:300]
+            if len(d) > 178:
+                d = d[:178].rsplit(' ', 1)[0].rstrip('،.,:؛ ') + '…'
+            OUT['aie-%d%02d.html' % (s, i)] = d
 
     io.open(os.path.join(SRC, 'descriptions.auto.json'), 'w', encoding='utf-8').write(
         json.dumps(OUT, ensure_ascii=False, indent=1, sort_keys=True) + '\n')

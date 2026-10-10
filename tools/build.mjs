@@ -32,6 +32,21 @@ const PAGES = [
   { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
   { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
   { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
+  { file: 'SecBook01.dc.html', out: 'sec-book-01.html', nav: 'کتاب 1', sub: true },
+  { file: 'SecBook02.dc.html', out: 'sec-book-02.html', nav: 'کتاب 2', sub: true },
+  { file: 'SecBook03.dc.html', out: 'sec-book-03.html', nav: 'کتاب 3', sub: true },
+  { file: 'SecBook04.dc.html', out: 'sec-book-04.html', nav: 'کتاب 4', sub: true },
+  { file: 'SecBook05.dc.html', out: 'sec-book-05.html', nav: 'کتاب 5', sub: true },
+  { file: 'SecBook06.dc.html', out: 'sec-book-06.html', nav: 'کتاب 6', sub: true },
+  { file: 'SecBook07.dc.html', out: 'sec-book-07.html', nav: 'کتاب 7', sub: true },
+  { file: 'SecBook08.dc.html', out: 'sec-book-08.html', nav: 'کتاب 8', sub: true },
+  { file: 'SecBook09.dc.html', out: 'sec-book-09.html', nav: 'کتاب 9', sub: true },
+  { file: 'SecBook10.dc.html', out: 'sec-book-10.html', nav: 'کتاب 10', sub: true },
+  { file: 'SecBook11.dc.html', out: 'sec-book-11.html', nav: 'کتاب 11', sub: true },
+  { file: 'SecBook12.dc.html', out: 'sec-book-12.html', nav: 'کتاب 12', sub: true },
+  { file: 'SecBook13.dc.html', out: 'sec-book-13.html', nav: 'کتاب 13', sub: true },
+  { file: 'SecBook14.dc.html', out: 'sec-book-14.html', nav: 'کتاب 14', sub: true },
+  { file: 'SecBook15.dc.html', out: 'sec-book-15.html', nav: 'کتاب 15', sub: true },
   { file: 'Aie101.dc.html', out: 'aie-101.html', nav: 'پروژهٔ 1.1', sub: true },
   { file: 'Aie102.dc.html', out: 'aie-102.html', nav: 'پروژهٔ 1.2', sub: true },
   { file: 'Aie103.dc.html', out: 'aie-103.html', nav: 'پروژهٔ 1.3', sub: true },
@@ -95,7 +110,7 @@ const PAGES = [
   // آینه‌های آرتیفکت: همان محتوای بخش‌های صفحهٔ اصلی، در قالب صفحهٔ جدا.
   // برای همگامی با آرتیفکت نگه داشته می‌شوند و noindex دارند تا با index.html رقابت نکنند.
   { file: 'Writing.dc.html', out: 'writing.html', nav: 'نوشته‌ها', mirror: true },
-  { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها', mirror: true },
+  { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها' },
   { file: 'About.dc.html', out: 'about.html', nav: 'درباره من', mirror: true },
   { file: 'Work.dc.html', out: 'work.html', nav: 'کارها', mirror: true },
   { file: 'Process.dc.html', out: 'process.html', nav: 'روش کار', mirror: true },
@@ -254,13 +269,19 @@ fs.writeFileSync(
 
 // توضیح متای صفحه‌های منتقل‌شده از آرتیفکت، تولیدشده با tools/port (اگر بود)
 const AUTO_DESC = (() => {
-  const f = path.join(SRC, 'descriptions.auto.json');
-  return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {};
+  const out = {};
+  for (const n of ['descriptions.auto.json', 'descriptions.books.json']) {
+    const f = path.join(SRC, n);
+    if (fs.existsSync(f)) Object.assign(out, JSON.parse(fs.readFileSync(f, 'utf8')));
+  }
+  return out;
 })();
 
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'books.html':
+    'پانزده کتاب امنیت که معماری این رشته را ساختند، از ۱۹۹۴ تا ۲۰۲۰. برای هر کتاب: چرا مهم است، داخلش چیست، چه چیزی کهنه شده و چه چیزی نشده.',
   'services.html':
     'هفتادوپنج سرویسی که با ابزارهای هوش مصنوعی و بدون دانش کدنویسی زیاد می‌شود ساخت و فروخت — با شش سنجه برای هر سرویس، انتخابگر پنج‌سؤالی، ماشین‌حساب درآمد و ضدفهرست ده چیزی که نباید ساخت.',
   'library.html':
