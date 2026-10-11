@@ -1,33 +1,38 @@
-.cr.cr{font-size: 15.5px;line-height: 2.1;color: #45494F;max-width: 68ch;margin: 0 0 16px}
-.c3f.c3f{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 18px 22px;border-inline-start: 3px solid #6B4226}
-.c3g.c3g{font-size: 14.5px;color: #666158}
-.c3h.c3h{font-size: 11.5px;color: #666158;margin-inline-start: auto}
-.c3i.c3i{direction: ltr;text-align: left;unicode-bidi: isolate;font-size: 12.5px;line-height: 1.7;color: #45494F;margin: 0 0 8px}
-.c6g.c6g{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #6B4226;margin: 0 0 12px}
-.c78.c78{font-size: 16px;line-height: 2.05;color: #45494F;max-width: 68ch;margin: 0 0 14px}
-.c7o.c7o{font-size: 15.5px;font-weight: 800;margin: 0 0 10px;line-height: 1.6}
-.c8g.c8g{margin: 0 0 18px;background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px 18px}
-.c8h.c8h{width: 100%;max-width: 100%;height: auto;display: block;font-family: inherit}
-.c8i.c8i{font-size: 12.5px;line-height: 1.9;color: #666158;margin-top: 14px;text-align: center}
-.cb0.cb0{background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px 24px;border-top: 3px solid #6B4226}
-.cb1.cb1{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 20px 18px;text-align: center}
-.cb2.cb2{font-size: 11.5px;font-weight: 700;color: #6B4226;background: #F3E8DE;border-radius: 999px;padding: 4px 12px;display: inline-block;margin-bottom: 14px}
-.cb3.cb3{font-size: 11.5px;color: #666158;margin-top: 10px;line-height: 1.7}
-.cb4.cb4{font-size: 13px;line-height: 1.8;color: #16181C;padding-inline-start: 11px;border-inline-start: 2px solid #6B4226}
-.cgd.cgd{max-width: 1060px;margin: 0 auto;padding: 48px 24px 10px}
-.cge.cge{max-width: 1060px;margin: 0 auto;padding: 50px 24px}
-.ch8.ch8{color: #6B4226}
-.cje.cje{font-size: 13px;line-height: 1.95;color: #45494F;margin: 0 0 12px}
-.cjf.cjf{font-size: 11.5px;color: #666158;padding-top: 10px;border-top: 1px solid #F0EEE7}
-.clw.clw{font-size: 30px;font-weight: 800;color: #6B4226;line-height: 1}
-.clx.clx{font-size: 12.5px;line-height: 1.8;color: #666158;margin-top: 8px}
-.clz.clz{font-size: 12px;font-weight: 700;color: #6B4226}
-.cm0.cm0{direction: ltr;text-align: left;unicode-bidi: isolate;font-size: 12.5px;line-height: 1.8;color: #45494F;margin: 0 0 9px;overflow-wrap: anywhere}
-.cm1.cm1{font-size: 13px;line-height: 1.9;color: #666158;margin: 0 0 9px}
-.cm2.cm2{margin: 0}
-.cm3.cm3{font-size: 12px;font-weight: 700;color: #6B4226;direction: ltr;text-align: left;unicode-bidi: isolate;display: inline-block;max-width: 100%;overflow-wrap: anywhere}
-.cp6.cp6{font-size: 26px;font-weight: 800;color: #6B4226;line-height: 1}
-.cp7.cp7{font-size: 13.5px;line-height: 1.95;color: #16181C;margin: 0 0 10px;font-weight: 600}
+.cj.cj{font-size: 15.5px;line-height: 2.1;color: #45494F;max-width: 68ch;margin: 0 0 16px}
+.c1f.c1f{font-size: 14px;line-height: 2.05;color: #45494F;margin: 0 0 12px}
+.c3g.c3g{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 18px 22px;border-inline-start: 3px solid #6B4226}
+.c3h.c3h{font-size: 14.5px;color: #666158}
+.c3i.c3i{font-size: 11.5px;color: #666158;margin-inline-start: auto}
+.c3j.c3j{direction: ltr;text-align: left;unicode-bidi: isolate;font-size: 12.5px;line-height: 1.7;color: #45494F;margin: 0 0 8px}
+.c4n.c4n{background: #FFFFFF;border: 1px dashed #D6CCC0;border-radius: 14px;padding: 20px 22px;margin: 0 0 18px;max-width: 72ch}
+.c4o.c4o{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #6B4226;margin-bottom: 11px}
+.c6j.c6j{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #6B4226;margin: 0 0 12px}
+.c7b.c7b{font-size: 16px;line-height: 2.05;color: #45494F;max-width: 68ch;margin: 0 0 14px}
+.c7l.c7l{font-size: 15.5px;font-weight: 800;margin: 0 0 10px;line-height: 1.6}
+.c8j.c8j{margin: 0 0 18px;background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px 18px}
+.c8k.c8k{width: 100%;max-width: 100%;height: auto;display: block;font-family: inherit}
+.c8l.c8l{font-size: 12.5px;line-height: 1.9;color: #666158;margin-top: 14px;text-align: center}
+.cb3.cb3{background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px 24px;border-top: 3px solid #6B4226}
+.cb4.cb4{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 20px 18px;text-align: center}
+.cb5.cb5{font-size: 11.5px;font-weight: 700;color: #6B4226;background: #F3E8DE;border-radius: 999px;padding: 4px 12px;display: inline-block;margin-bottom: 14px}
+.cb6.cb6{font-size: 11.5px;color: #666158;margin-top: 10px;line-height: 1.7}
+.cb7.cb7{font-size: 13px;line-height: 1.8;color: #16181C;padding-inline-start: 11px;border-inline-start: 2px solid #6B4226}
+.cgg.cgg{max-width: 1060px;margin: 0 auto;padding: 48px 24px 10px}
+.cgh.cgh{max-width: 1060px;margin: 0 auto;padding: 50px 24px}
+.chb.chb{color: #6B4226}
+.cjh.cjh{font-size: 13px;line-height: 1.95;color: #45494F;margin: 0 0 12px}
+.cji.cji{font-size: 11.5px;color: #666158;padding-top: 10px;border-top: 1px solid #F0EEE7}
+.clz.clz{font-size: 30px;font-weight: 800;color: #6B4226;line-height: 1}
+.cm0.cm0{font-size: 12.5px;line-height: 1.8;color: #666158;margin-top: 8px}
+.cm1.cm1{font-size: 14.5px;line-height: 2.05;color: #45494F;margin: 0 0 12px}
+.cm3.cm3{font-size: 12px;font-weight: 700;color: #6B4226}
+.cm4.cm4{direction: ltr;text-align: left;unicode-bidi: isolate;font-size: 12.5px;line-height: 1.8;color: #45494F;margin: 0 0 9px;overflow-wrap: anywhere}
+.cm5.cm5{font-size: 13px;line-height: 1.9;color: #666158;margin: 0 0 9px}
+.cm6.cm6{margin: 0}
+.cm7.cm7{font-size: 12px;font-weight: 700;color: #6B4226;direction: ltr;text-align: left;unicode-bidi: isolate;display: inline-block;max-width: 100%;overflow-wrap: anywhere}
+.cpa.cpa{font-size: 26px;font-weight: 800;color: #6B4226;line-height: 1}
+.cpb.cpb{font-size: 13.5px;line-height: 1.95;color: #16181C;margin: 0 0 10px;font-weight: 600}
+.cuv.cuv{font-size: 14.5px;line-height: 2.05;color: #45494F;margin: 0}
 a{color:#6B4226;text-decoration:none}
 a:hover{opacity:.82}
 button{font-family:inherit;cursor:pointer;border:none}
