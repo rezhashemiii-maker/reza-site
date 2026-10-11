@@ -20,6 +20,7 @@ STEPS = [
     ('sec',   ['sec/logic.py', 'sec/page.py']),
     ('serv',  ['serv/logic.py', 'serv/page.py']),
     ('logic', ['logic/logic.py', 'logic/page.py']),
+    ('math',  ['math/logic.py', 'math/page.py']),
     ('port',  ['port.py', 'lessons.py']),
     ('books', ['books/page.py']),
     ('lib',   ['lib/collect.py', 'lib/logic.py', 'lib/page.py']),

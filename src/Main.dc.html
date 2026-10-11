@@ -18,6 +18,13 @@
   html{scroll-behavior:smooth}
   [id]{scroll-margin-top:78px}
   ::selection{background:#E7ECE4;color:#1F3A22}
+  /* روی گوشی، نوار کاملِ دوازده‌تایی شش سطر می‌شد و نزدیک نیمی از صفحه را
+     می‌گرفت. آن‌جا فهرست کوتاه می‌نشیند؛ بقیهٔ پیوندها در «نوشته‌ها» و پاورقی هست. */
+  nav[data-shortnav]{display:none}
+  @media (max-width:860px){
+    nav[data-fullnav]{display:none !important}
+    nav[data-shortnav]{display:flex !important}
+  }
 </style>
 </helmet>
 
@@ -30,10 +37,11 @@
         <span style="width: 12px; height: 12px; border-radius: 50%; background: #2F5233; flex-shrink: 0;"></span>
         رضا هاشمی
       </a>
-      <nav style="display: flex; gap: 4px; margin-inline-start: auto; flex-wrap: wrap;">
+      <nav data-fullnav="1" style="display: flex; gap: 4px; margin-inline-start: auto; flex-wrap: wrap;">
         <a href="#start" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">شروع</a>
         <a href="#writing" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">نوشته‌ها</a>
         <a href="Logic.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">منطق برنامه‌نویسی</a>
+        <a href="Math.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">ریاضیات هوش مصنوعی</a>
         <a href="AiEngineer.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">مهندس هوش مصنوعی</a>
         <a href="Services.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">سرویس‌های فروشنی</a>
         <a href="iraq.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">پروندهٔ عراق</a>
@@ -47,6 +55,11 @@
         <a href="#gallery" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">کارها</a>
         <a href="#process" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">روش کار</a>
         <a href="#faq" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">پرسش‌ها</a>
+      </nav>
+      <nav data-shortnav="1" style="gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
+        <a href="#writing" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">نوشته‌ها</a>
+        <a href="#gallery" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">کارها</a>
+        <a href="#faq" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">پرسش‌ها</a>
       </nav>
       <a href="#contact" style="font-size: 13px; font-weight: 600; color: #FFFFFF; background: #2F5233; padding: 9px 18px; border-radius: 999px; flex-shrink: 0;">تماس بگیرید</a>
     </div>
@@ -225,6 +238,14 @@
             <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">اصول و منطق برنامه‌نویسی، طوری توضیح داده شده که کسی در هزار سال پیش هم بفهمد: کوزه و آسیاب و نسخه و دفتر، به‌جای متغیر و حلقه و تابع. با یازده تصویر و یک ماشین که خودت گام‌به‌گام می‌گردانی‌اش.</p>
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۴ بخش · ۱۱ تصویر · ۲۵ مفهوم پایه</span>
             <span style="font-size: 13px; font-weight: 700; color: #6B4226;">خواندن نامه ←</span>
+          </a>
+
+          <a href="Math.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #1E3A5F;">
+            <span style="font-size: 11px; font-weight: 700; color: #1E3A5F; margin-bottom: 10px;">نامهٔ دوم · تازه</span>
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">نامهٔ دوم به ابوریحان</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">مبانی ریاضی و آماری هوش مصنوعی، با ابزارهای همان روزگار: از شمردن حرف‌ها در متن رمز نزد الکندی و جبر خوارزمی تا احتمال و قضیهٔ بیز و کمترین مربعات و سراشیبی. هر بار هم گفته می‌شود این فکر چند سال بعد از ابوریحان به دنیا آمده.</p>
+            <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۴ بخش · ۱۱۰۰ سال تاریخ · ماشین یادگیرندهٔ گام‌به‌گام</span>
+            <span style="font-size: 13px; font-weight: 700; color: #1E3A5F;">خواندن نامهٔ دوم ←</span>
           </a>
 
           <a href="AiEngineer.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
@@ -734,6 +755,7 @@
           <h4 style="font-size: 12.5px; font-weight: 700; color: #16181C; margin: 0 0 12px;">پروژه‌ها</h4>
           <div style="display: flex; flex-direction: column; gap: 8px;">
             <a href="Logic.dc.html" style="font-size: 13px; color: #4A4F58;">نامه‌ای به ابوریحان — منطق برنامه‌نویسی</a>
+            <a href="Math.dc.html" style="font-size: 13px; color: #4A4F58;">نامهٔ دوم به ابوریحان — ریاضیات هوش مصنوعی</a>
             <a href="AiEngineer.dc.html" style="font-size: 13px; color: #4A4F58;">مسیر مهندس هوش مصنوعی</a>
             <a href="Services.dc.html" style="font-size: 13px; color: #4A4F58;">هفتادوپنج در — سرویس‌های فروشنی</a>
             <a href="iraq.html" style="font-size: 13px; color: #4A4F58;">پروندهٔ عراق ۲۰۰۳–۲۰۲۶</a>

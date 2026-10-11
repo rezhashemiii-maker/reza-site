@@ -128,6 +128,7 @@ w('''<!doctype html>
   <header style="position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #E4E1D6; background: rgba(245,243,238,0.94); backdrop-filter: blur(10px);">
     <div style="max-width: 1060px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
       <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <a href="Math.dc.html" style="font-size: 12.5px; font-weight: 700; color: #1E3A5F;">نامهٔ دوم ←</a>
       <nav data-sections="1" style="display: flex; gap: 1px; margin-inline-start: auto; flex-wrap: wrap;">''')
 for sid, lab in NAV:
     w('''        <a href="#%s" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">%s</a>''' % (sid, lab))
@@ -918,6 +919,7 @@ for i, (fat, ent, url, note) in enumerate(SOURCES):
 w('''      </div>
       <p style="font-size: 14px; line-height: 2.05; color: %s; margin: 26px 0 18px; max-width: 70ch;">و یک حرف آخر. نوشتن این متن یک چیز را به خودم ثابت کرد: هر جا نتوانستم مفهومی را با ابزار هزار سال پیش توضیح بدهم، مشکل از مخاطب فرضی نبود — از این بود که خودم آن را خوب نفهمیده بودم. این بهترین محکی است که برای فهمیدن می‌شناسم.</p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="Math.dc.html" style="font-size: 13.5px; font-weight: 700; color: #FFFFFF; background: #1E3A5F; padding: 12px 22px; border-radius: 10px;">نامهٔ دوم: ریاضیات هوش مصنوعی ←</a>
         <a href="Glossary.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid %s; padding: 12px 22px; border-radius: 10px;">واژه‌نامهٔ یادگیری ماشین ←</a>
         <a href="AiEngineer.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid %s; padding: 12px 22px; border-radius: 10px;">قدم بعدی: مسیر مهندس هوش مصنوعی ←</a>
         <a href="Chess.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid %s; padding: 12px 22px; border-radius: 10px;">شطرنج و یادگیری ماشین ←</a>
