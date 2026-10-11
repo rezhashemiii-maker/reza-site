@@ -73,7 +73,7 @@ w('''<!doctype html>
 # ----------------------------------------------------------------- هیرو
 w('''
     <section style="max-width: 1120px; margin: 0 auto; padding: 58px 24px 10px;">
-      <p style="%s">یادداشت بلند · %s رویداد · %s ارتباط کشف‌شده · %s منبع</p>
+      <p style="%s">یادداشت بلند، %s رویداد، %s ارتباط کشف‌شده، %s منبع</p>
       <h1 style="font-size: clamp(30px, 5vw, 50px); line-height: 1.38; font-weight: 800; margin: 0 0 20px; letter-spacing: -0.01em;">شصت‌وچهار خانه</h1>
       <p style="font-size: 18.5px; line-height: 1.95; color: #45494F; max-width: 64ch; margin: 0 0 18px;">در سال ۱۹۱۳، ارنست زرملو ثابت کرد <b>شطرنج یک جواب دارد</b>. نه استعاره — اثبات ریاضی. یکی از این سه جمله قطعاً درست است: سفید با بازی بی‌نقص می‌برد، سیاه با بازی بی‌نقص می‌برد، یا بازی بی‌نقص به تساوی می‌رسد.</p>
       <p style="font-size: 18.5px; line-height: 1.95; color: %s; max-width: 64ch; margin: 0 0 22px; font-weight: 700;">صد و سیزده سال گذشته و هیچ‌کس روی زمین نمی‌داند کدام یکی.</p>

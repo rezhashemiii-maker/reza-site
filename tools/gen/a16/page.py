@@ -76,7 +76,7 @@ w('''<!doctype html>
 # ---------------------------------------------------------------- هیرو
 w('''
     <section style="max-width: 1120px; margin: 0 auto; padding: 58px 24px 10px;">
-      <p style="%s">معماری یادگیری · ۱۶ ستون · %s مفهوم · ۵ لایه · ۳ سطح عمق</p>
+      <p style="%s">معماری یادگیری، ۱۶ ستون، %s مفهوم، ۵ لایه، ۳ سطح عمق</p>
       <h1 style="font-size: clamp(30px, 5vw, 50px); line-height: 1.38; font-weight: 800; margin: 0 0 20px; letter-spacing: -0.01em;">شانزده ستون</h1>
       <p style="font-size: 18.5px; line-height: 1.95; color: #45494F; max-width: 64ch; margin: 0 0 18px;">این نقشهٔ کسی است که می‌خواهد بداند <b>همهٔ آن چیزهایی که باید دربارهٔ هوش مصنوعی بداند، چیست</b> — و در هرکدام <b>تا کجا می‌تواند عمیق شود</b>.</p>
       <p style="font-size: 16px; line-height: 2; color: #45494F; max-width: 64ch; margin: 0 0 16px;">مشکل یادگیری این حوزه کمبود منبع نیست؛ نداشتن نقشه است. آدم‌ها از یک ویدیو به یک دورهٔ دیگر می‌پرند، صد اصطلاح یاد می‌گیرند و باز هم نمی‌دانند چه چیزی را <i>نمی‌دانند</i>. این معماری برای همین ساخته شد: نه یک فهرست خواندنی، یک <b>ساختار</b> — که بشود در آن جای خودت را پیدا کنی، بدانی گام بعدی‌ات کدام است، و بدانی کجا می‌توانی آگاهانه بایستی و جلوتر نروی.</p>
@@ -123,7 +123,7 @@ for b in BANDS:
         <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px;">
           <span style="width: 26px; height: 26px; border-radius: 8px; background: %s; color: #FFFFFF; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">%s</span>
           <h3 style="font-size: 18px; font-weight: 800; margin: 0;">لایهٔ %s</h3>
-          <span style="font-size: 12px; color: #666158;">%s ستون · %s مفهوم</span>
+          <span style="font-size: 12px; color: #666158;">%s ستون، %s مفهوم</span>
         </div>
         <p style="font-size: 12.5px; color: #666158; margin: 0 0 4px; %s">%s</p>
         <p style="font-size: 14px; line-height: 1.95; color: #45494F; margin: 0 0 16px; max-width: 72ch;">%s</p>
@@ -226,13 +226,13 @@ for ph in PHASES:
             <div style="font-size: 13.5px; font-weight: 800; color: %s; margin-top: 2px;">%s</div>
           </div>''' % (ph['w'], ph['color'], ph['label'], ph['color'], ph['fa']))
 w('''        </div>
-        <p style="font-size: 11.5px; color: #666158; margin: 10px 0 0;">مجموع: ۱۲ هفته · حدود ۶۰ ساعت · ۱۲ ستون از ۱۶ ستون</p>
+        <p style="font-size: 11.5px; color: #666158; margin: 10px 0 0;">مجموع: ۱۲ هفته · حدود ۶۰ ساعت، ۱۲ ستون از ۱۶ ستون</p>
       </div>''')
 
 w('''      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; margin-bottom: 14px;">''')
 for ph in PHASES:
     w('''        <div style="%s padding: 22px 24px; border-top: 3px solid %s;">
-          <div style="font-size: 11.5px; font-weight: 700; color: %s; margin-bottom: 8px;">%s · %s هفته</div>
+          <div style="font-size: 11.5px; font-weight: 700; color: %s; margin-bottom: 8px;">%s، %s هفته</div>
           <h3 style="font-size: 17px; font-weight: 800; margin: 0 0 12px;">%s</h3>
           <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">''' % (CARD, ph['color'], ph['color'], ph['label'], fa(ph['w']), ph['fa']))
     for pn in ph['pillars']:

@@ -52,7 +52,7 @@ PAGE = '''<!doctype html>
 
     <!-- ============ هیرو ============ -->
     <section style="max-width: 1120px; margin: 0 auto; padding: 60px 24px 10px;">
-      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 16px;">پروژهٔ تحقیقاتی · {{totalFa}} اثر · {{spanFa}} سال · از ۱۹۷۳ تا امروز</p>
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #2F5233; margin: 0 0 16px;">پروژهٔ تحقیقاتی، {{totalFa}} اثر، {{spanFa}} سال · از ۱۹۷۳ تا امروز</p>
       <h1 style="font-size: clamp(30px, 5vw, 50px); line-height: 1.38; font-weight: 800; margin: 0 0 20px; letter-spacing: -0.01em;">پنجاه سال دفاع</h1>
       <p style="font-size: 18.5px; line-height: 1.95; color: #45494F; max-width: 64ch; margin: 0 0 18px;">امنیت اطلاعات یک رشتهٔ مهندسی نبود؛ ساخته شد. در این نقشه <b>{{totalFa}} اثر</b> — کتاب، مقاله، استاندارد و چارچوب — را به ترتیب تاریخ کنار هم گذاشته‌ام و برای هرکدام نوشته‌ام <b>دقیقاً چه چیزی را جلو برد</b>.</p>
       <p style="font-size: 16px; line-height: 2; color: #45494F; max-width: 64ch; margin: 0 0 16px;">خطِ داستان ساده است و در نمودار پایین دیده می‌شود: نیم قرن تلاش برای ساختن یک مرز قابل‌دفاع، و بعد فروپاشی تدریجی خودِ مفهوم مرز — اول با ابر و موبایل، و حالا با سامانه‌هایی که ورودی و دستور را از هم تشخیص نمی‌دهند.</p>

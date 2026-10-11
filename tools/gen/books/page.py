@@ -73,7 +73,7 @@ def page(b):
 
     <div style="display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-bottom: 18px;">
       <span style="font-size: 11.5px; font-weight: 700; color: %s; background: %s; border-radius: 999px; padding: 4px 12px;">%s</span>
-      <span style="font-size: 11.5px; color: #666158; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 999px; padding: 4px 12px;">کتاب · %s</span>
+      <span style="font-size: 11.5px; color: #666158; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 999px; padding: 4px 12px;">کتاب، %s</span>
       <span style="font-size: 11.5px; color: #666158;">%s از ۱۵ کتاب فهرست</span>
     </div>
 
@@ -128,7 +128,7 @@ def page(b):
     w('''    <section style="%s padding: 26px 28px; margin-bottom: 14px;">
       <h2 style="font-size: 19px; font-weight: 800; margin: 0 0 14px;">کنارش چه بخوان</h2>
       <a href="SecBook%02d.dc.html" style="display: block; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 12px; padding: 18px 20px; border-inline-start: 3px solid %s;">
-        <div style="font-size: 11.5px; font-weight: 700; color: %s; margin-bottom: 7px;">%s · %s</div>
+        <div style="font-size: 11.5px; font-weight: 700; color: %s; margin-bottom: 7px;">%s، %s</div>
         <div style="font-size: 15.5px; font-weight: 700; color: #16181C; margin-bottom: 6px;">%s</div>
         <div style="font-size: 13.5px; line-height: 1.85; color: #45494F;">%s</div>
       </a>
