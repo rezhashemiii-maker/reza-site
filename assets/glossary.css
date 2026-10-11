@@ -1,14 +1,14 @@
-.cel.cel{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
-.cem.cem{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
-.cen.cen{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
-.ceo.ceo{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
-.cep.cep{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
-.ceq.ceq{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
-.cer.cer{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
-.ces.ces{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
-.cet.cet{font-size: 10.5px;font-weight: 700;color: #8A5410}
-.ceu.ceu{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
-.cev.cev{font-size: 10.5px;font-weight: 700;color: #A32222}
+.cf2.cf2{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
+.cf3.cf3{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
+.cf4.cf4{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
+.cf5.cf5{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
+.cf6.cf6{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
+.cf7.cf7{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
+.cf8.cf8{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
+.cf9.cf9{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
+.cfa.cfa{font-size: 10.5px;font-weight: 700;color: #8A5410}
+.cfb.cfb{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
+.cfc.cfc{font-size: 10.5px;font-weight: 700;color: #A32222}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}
