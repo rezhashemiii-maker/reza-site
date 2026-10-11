@@ -12,18 +12,18 @@
 .cno.cno{font-size: 14.5px;line-height: 2;color: #45494F;margin: 0 0 12px;max-width: 74ch}
 .cnp.cnp{background: #E7ECE4;border-radius: 10px;padding: 12px 16px;margin-bottom: 14px;max-width: 74ch}
 .cnq.cnq{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 20px 22px;border-inline-start: 4px solid #8A5410}
-.cr2.cr2{display: block;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 12px;padding: 14px 16px;text-decoration: none}
-.cr3.cr3{font-size: 12px;color: #45494F;line-height: 1.8}
-.cr4.cr4{font-size: 11px;color: #666158;margin-top: 6px}
-.cuw.cuw{margin-bottom: 52px;scroll-margin-top: 80px}
-.cux.cux{display: flex;align-items: baseline;gap: 12px;margin-bottom: 10px}
-.cuy.cuy{font-size: 22px;font-weight: 800;margin: 0}
-.cuz.cuz{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 22px}
-.cv0.cv0{display: grid;grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));gap: 14px}
-.c12g.c12g{text-align: center;font-size: 12.5px;font-weight: 700;color: #666158;padding-bottom: 4px}
-.c12h.c12h{display: flex;align-items: center;font-size: 12.5px;font-weight: 700;color: #666158}
-.c12i.c12i{background: #F5E9D6;border-radius: 10px;padding: 14px 16px}
-.c12j.c12j{font-size: 15px;font-weight: 800;color: #8A5410;margin-bottom: 4px}
+.cr4.cr4{display: block;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 12px;padding: 14px 16px;text-decoration: none}
+.cr5.cr5{font-size: 12px;color: #45494F;line-height: 1.8}
+.cr6.cr6{font-size: 11px;color: #666158;margin-top: 6px}
+.cv1.cv1{margin-bottom: 52px;scroll-margin-top: 80px}
+.cv2.cv2{display: flex;align-items: baseline;gap: 12px;margin-bottom: 10px}
+.cv3.cv3{font-size: 22px;font-weight: 800;margin: 0}
+.cv4.cv4{font-size: 15px;line-height: 2.05;color: #45494F;max-width: 72ch;margin: 0 0 22px}
+.cv5.cv5{display: grid;grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));gap: 14px}
+.c12v.c12v{text-align: center;font-size: 12.5px;font-weight: 700;color: #666158;padding-bottom: 4px}
+.c12w.c12w{display: flex;align-items: center;font-size: 12.5px;font-weight: 700;color: #666158}
+.c12x.c12x{background: #F5E9D6;border-radius: 10px;padding: 14px 16px}
+.c12y.c12y{font-size: 15px;font-weight: 800;color: #8A5410;margin-bottom: 4px}
 body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}

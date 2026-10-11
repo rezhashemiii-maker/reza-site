@@ -262,10 +262,10 @@ const baseCssRules = (() => {
 const TABS = [
   { label: 'شروع',     href: 'index.html',         anchor: '#home' },
   { label: 'نوشته‌ها',  href: 'index.html#writing', anchor: '#writing' },
-  { label: 'رصدخانه',  href: 'watch.html',         anchor: null },
   { label: 'کتاب‌ها',   href: 'books.html',         anchor: null },
   { label: 'درباره من', href: 'index.html#about',   anchor: '#about' },
   { label: 'کارها',    href: 'index.html#gallery', anchor: '#gallery' },
+  { label: 'رصدخانه',  href: 'watch.html',         anchor: null },
   { label: 'پرسش‌ها',   href: 'index.html#faq',     anchor: '#faq' },
 ];
 // صفحه‌هایی که تب دیگری را روشن می‌کنند (آینه‌ها و زیرصفحه‌ها)
@@ -460,7 +460,7 @@ ${links}
 <link rel="stylesheet" href="assets/site.css">${cssFile ? `\n<link rel="stylesheet" href="${cssFile}">` : ''}
 </head>
 <body>
-${siteTabs(d.out)}
+${bodyHtml.includes('class="navbar"') ? '' : siteTabs(d.out)}
 ${interactive ? `<div id="dc-root">${bodyHtml}</div>` : bodyHtml}
 ${interactive ? `<script src="assets/dc.js" defer></script>\n<script src="${jsFile}" defer></script>` : ''}
 </body>
