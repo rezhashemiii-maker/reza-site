@@ -18,56 +18,10 @@
   html{scroll-behavior:smooth}
   [id]{scroll-margin-top:78px}
   ::selection{background:#E7ECE4;color:#1F3A22}
-  /* روی گوشی، نوار کاملِ دوازده‌تایی شش سطر می‌شد و نزدیک نیمی از صفحه را
-     می‌گرفت. آن‌جا فهرست کوتاه می‌نشیند؛ بقیهٔ پیوندها در «نوشته‌ها» و پاورقی هست. */
-  nav[data-shortnav]{display:none}
-  @media (max-width:860px){
-    nav[data-fullnav]{display:none !important}
-    nav[data-shortnav]{display:flex !important}
-  }
 </style>
 </helmet>
 
 <div style="width: 100%; min-height: 100vh; background: #F5F3EE; direction: rtl;">
-
-  <!-- ============ هدر ============ -->
-  <header style="position: sticky; top: 0; z-index: 40; background: rgba(245,243,238,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #E4E1D6;">
-    <div style="max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-      <a href="#home" style="display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; color: #16181C;">
-        <span style="width: 12px; height: 12px; border-radius: 50%; background: #2F5233; flex-shrink: 0;"></span>
-        رضا هاشمی
-      </a>
-      <nav data-fullnav="1" style="display: flex; gap: 4px; margin-inline-start: auto; flex-wrap: wrap;">
-        <a href="#start" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">شروع</a>
-        <a href="#writing" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">نوشته‌ها</a>
-        <a href="Logic.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">منطق برنامه‌نویسی</a>
-        <a href="Watch.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">رصدخانه</a>
-        <a href="Workshop.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">کارگاه</a>
-        <a href="Math.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">ریاضیات هوش مصنوعی</a>
-        <a href="AiEngineer.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">مهندس هوش مصنوعی</a>
-        <a href="Services.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">سرویس‌های فروشنی</a>
-        <a href="iraq.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">پروندهٔ عراق</a>
-        <a href="Library.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">کتابخانه</a>
-        <a href="Chess.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">شطرنج</a>
-        <a href="AILiteracy.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">سواد هوش مصنوعی</a>
-        <a href="Literacy.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">آزمون سواد</a>
-        <a href="Security.dc.html" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">کتاب‌های امنیت</a>
-        <a href="#about" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">درباره من</a>
-        <a href="#build" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">چه می‌سازم</a>
-        <a href="#gallery" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">کارها</a>
-        <a href="#process" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">روش کار</a>
-        <a href="#faq" style="font-size: 13.5px; color: #4A4F58; padding: 10px 12px; border-radius: 999px;">پرسش‌ها</a>
-      </nav>
-      <nav data-shortnav="1" style="gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
-        <a href="#writing" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">نوشته‌ها</a>
-        <a href="Watch.dc.html" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">رصدخانه</a>
-        <a href="Workshop.dc.html" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">کارگاه</a>
-        <a href="#gallery" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">کارها</a>
-        <a href="#faq" style="font-size: 13px; color: #4A4F58; padding: 8px 10px; border-radius: 999px;">پرسش‌ها</a>
-      </nav>
-      <a href="#contact" style="font-size: 13px; font-weight: 600; color: #FFFFFF; background: #2F5233; padding: 9px 18px; border-radius: 999px; flex-shrink: 0;">تماس بگیرید</a>
-    </div>
-  </header>
 
   <main>
 
@@ -234,16 +188,12 @@
           <p style="font-size: 12px; line-height: 1.85; color: #666158; margin: 14px 0 0;">دو نوشته بیرون این نقشه‌اند و هر وقت بخواهی خوانده می‌شوند: <b>هزار بسته، یک الگو</b> (تحلیل مسیر پیشرفت) و <b>۱۹ مقاله، یک مسیر</b> (طرح درس فهرست Ilya Sutskever).</p>
         </div>
 
+        <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 0 0 6px;">
+          <h3 style="font-size: 19px; font-weight: 800; margin: 0;">فناوری و هوش مصنوعی</h3>
+          <span style="font-size: 12.5px; color: #666158;">بیشترِ نوشته‌ها این‌جایند</span>
+        </div>
+        <p style="font-size: 13.5px; line-height: 1.9; color: #4A4F58; max-width: 70ch; margin: 0 0 18px;">هرچه در یادگیری ماشین و ابزارهایش می‌خوانم. در همهٔ این‌ها یک قاعده رعایت شده: هر مفهومی که توضیح داده می‌شود به مقالهٔ اصلی‌اش ارجاع دارد.</p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
-
-          <a href="Watch.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #16494D;">
-            <span style="font-size: 11px; font-weight: 700; color: #16494D; margin-bottom: 10px;">دفترِ روزانه · تازه</span>
-            <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">رصدخانه</h3>
-            <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">هرچه در هوش مصنوعی اتفاق می‌افتد، به تاریخ همان روز ثبت می‌شود و دیگر دست نمی‌خورد: مدل تازه، قابلیت تازه، پرونده، عدد و حاشیه. بالای هر رصد نوشته شده از کجا آمده و چقدر می‌شود باورش کرد.</p>
-            <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۶ دسته، ۴ درجهٔ اعتبار · هر رصد با پیوند به منبع</span>
-            <span style="font-size: 13px; font-weight: 700; color: #16494D;">دیدن دفتر ←</span>
-          </a>
-
           <a href="Workshop.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #6B2152;">
             <span style="font-size: 11px; font-weight: 700; color: #6B2152; margin-bottom: 10px;">آموزش · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">کارگاه</h3>
@@ -251,7 +201,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">هر دکمه، هزینه‌ها، و دستور کارِ روز اول</span>
             <span style="font-size: 13px; font-weight: 700; color: #6B2152;">رفتن به کارگاه ←</span>
           </a>
-
           <a href="Logic.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #6B4226;">
             <span style="font-size: 11px; font-weight: 700; color: #6B4226; margin-bottom: 10px;">از صفر · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">نامه‌ای به ابوریحان</h3>
@@ -260,6 +209,13 @@
             <span style="font-size: 13px; font-weight: 700; color: #6B4226;">خواندن نامه ←</span>
           </a>
 
+          <a href="Plain.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #5B6E2F;">
+            <span style="font-size: 11px; font-weight: 700; color: #5B6E2F; margin-bottom: 10px;">همان حرف، ساده‌تر · تازه</span>
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">برنامه‌نویسی به زبان ساده</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">همان منطق برنامه‌نویسی، ولی بدون تمثیل تاریخی و با زبان امروز: مثال گوشی و آسانسور و دستگاه خودپرداز و سبد خرید. بیست دقیقه، بدون هیچ پیش‌نیازی.</p>
+            <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۰ بخش، ۶ مفهوم · یک برنامهٔ کامل خط‌به‌خط</span>
+            <span style="font-size: 13px; font-weight: 700; color: #5B6E2F;">شروع از صفر ←</span>
+          </a>
           <a href="Math.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #1E3A5F;">
             <span style="font-size: 11px; font-weight: 700; color: #1E3A5F; margin-bottom: 10px;">نامهٔ دوم · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">نامهٔ دوم به ابوریحان</h3>
@@ -267,7 +223,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۴ بخش، ۱۱۰۰ سال تاریخ · ماشین یادگیرندهٔ گام‌به‌گام</span>
             <span style="font-size: 13px; font-weight: 700; color: #1E3A5F;">خواندن نامهٔ دوم ←</span>
           </a>
-
           <a href="AiEngineer.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
             <span style="font-size: 11px; font-weight: 700; color: #2F5233; margin-bottom: 10px;">مسیر یادگیری، ۶۰ پروژه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">مسیر مهندس هوش مصنوعی شدن</h3>
@@ -275,7 +230,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۶ مرحله، ۶۰ پروژه، ۲۳ سرفصل</span>
             <span style="font-size: 13px; font-weight: 700; color: #2F5233;">دیدن مسیر ←</span>
           </a>
-
           <a href="Services.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #166534;">
             <span style="font-size: 11px; font-weight: 700; color: #166534; margin-bottom: 10px;">فهرست کاربردی · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">هفتادوپنج در</h3>
@@ -283,15 +237,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۷۵ سرویس، ۱۰ دسته، ۱۸ تای کاملاً بدون کد</span>
             <span style="font-size: 13px; font-weight: 700; color: #166534;">دیدن فهرست ←</span>
           </a>
-
-          <a href="iraq.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #17656E;">
-            <span style="font-size: 11px; font-weight: 700; color: #17656E; margin-bottom: 10px;">روایت مستند · تازه</span>
-            <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پروندهٔ عراق</h3>
-            <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">بیست‌وسه سال در سیزده فصل: از سقوط بغداد تا پایان مأموریت ائتلاف. با گاه‌شمار، اطلس تعاملی، آمار مورد مناقشه و کتابخانه‌ای از بیش از صد منبع.</p>
-            <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۳ فصل، ۲۰۰۳ تا ۲۰۲۶ · هر ادعا با منبع</span>
-            <span style="font-size: 13px; font-weight: 700; color: #17656E;">گشودن پرونده ←</span>
-          </a>
-
           <a href="Library.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #1F4E5F;">
             <span style="font-size: 11px; font-weight: 700; color: #1F4E5F; margin-bottom: 10px;">مرجع · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">کتابخانه</h3>
@@ -299,7 +244,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۶۸ اثر، ۵ بخش، ۱۳ اثر مشترک</span>
             <span style="font-size: 13px; font-weight: 700; color: #1F4E5F;">جست‌وجو در کتابخانه ←</span>
           </a>
-
           <a href="Chess.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #8A1538;">
             <span style="font-size: 11px; font-weight: 700; color: #8A1538; margin-bottom: 10px;">یادداشت بلند · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">شصت‌وچهار خانه</h3>
@@ -307,7 +251,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۲۵ ایستگاه، ۱۴ ارتباط، ۸ ایدهٔ تازه</span>
             <span style="font-size: 13px; font-weight: 700; color: #8A1538;">خواندن یادداشت ←</span>
           </a>
-
           <a href="AILiteracy.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #7E22CE;">
             <span style="font-size: 11px; font-weight: 700; color: #7E22CE; margin-bottom: 10px;">معماری یادگیری · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">شانزده ستون</h3>
@@ -315,7 +258,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۲۲۰ مفهوم، ۱۲ هفته، ۳۱ منبع</span>
             <span style="font-size: 13px; font-weight: 700; color: #7E22CE;">دیدن نقشه ←</span>
           </a>
-
           <a href="Security.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #C2410C;">
             <span style="font-size: 11px; font-weight: 700; color: #C2410C; margin-bottom: 10px;">پروژهٔ تحقیقاتی · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پنجاه سال دفاع</h3>
@@ -323,7 +265,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۶۱ اثر و ۱۹ رویداد، ۱۹۷۳ تا امروز</span>
             <span style="font-size: 13px; font-weight: 700; color: #C2410C;">مرور نقشه ←</span>
           </a>
-
           <a href="Literacy.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #0E6FB4;">
             <span style="font-size: 11px; font-weight: 700; color: #0E6FB4; margin-bottom: 10px;">آزمون تعاملی · تازه</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">کجای این نقشه ایستاده‌ای؟</h3>
@@ -331,15 +272,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۶ بُعد · نمودار نیمرخ · تحلیل کامل</span>
             <span style="font-size: 13px; font-weight: 700; color: #0E6FB4;">شروع آزمون ←</span>
           </a>
-
-          <a href="Pattern.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #B4530E;">
-            <span style="font-size: 11px; font-weight: 700; color: #8A5410; margin-bottom: 10px;">پروژهٔ تحقیقاتی · تازه</span>
-            <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">هزار بسته، یک الگو</h3>
-            <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">مسیر سیندره سورهوس را شمردم و رسم کردم تا ببینم الگوی پیشرفت چه شکلی دارد — و کدام تکه‌اش به کار من می‌آید.</p>
-            <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۸ عدد، ۵ نمودار، ۶ قاعده</span>
-            <span style="font-size: 13px; font-weight: 700; color: #B4530E;">خواندن تحلیل ←</span>
-          </a>
-
           <a href="Learn.dc.html" style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
             <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 10px;">مسیر آموزشی</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">مسیر یادگیری ماشین</h3>
@@ -347,7 +279,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۸ ایستگاه، ۴۶ مقالهٔ مرجع</span>
             <span style="font-size: 13px; font-weight: 700; color: #2F5233;">شروع مسیر ←</span>
           </a>
-
           <a href="Ideas.dc.html" style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
             <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 10px;">دفترچهٔ ایده</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">صد جایی که یادگیری ماشین فرق می‌سازد</h3>
@@ -355,7 +286,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۰۰ ایده، ۱۰ حوزه · قابل فیلتر</span>
             <span style="font-size: 13px; font-weight: 700; color: #2F5233;">مرور ایده‌ها ←</span>
           </a>
-
           <a href="GameTheory.dc.html" style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
             <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 10px;">نظریه و کاربرد</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">نظریهٔ بازی‌ها و یادگیری ماشین</h3>
@@ -363,7 +293,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۳۰ ایده، ۲۰ مقالهٔ مرجع</span>
             <span style="font-size: 13px; font-weight: 700; color: #2F5233;">مطالعهٔ بخش ←</span>
           </a>
-
           <a href="Glossary.dc.html" style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
             <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 10px;">مرجع</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">واژه‌نامهٔ یادگیری ماشین</h3>
@@ -371,7 +300,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۲۸۵ واژه، ۱۷ دسته</span>
             <span style="font-size: 13px; font-weight: 700; color: #2F5233;">مرور واژه‌نامه ←</span>
           </a>
-
           <a href="Patents.dc.html" style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
             <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 10px;">تاریخ و مالکیت</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پتنت‌های شاخص یادگیری ماشین</h3>
@@ -379,7 +307,6 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۷ پتنت، ۱۲ ایدهٔ آینده</span>
             <span style="font-size: 13px; font-weight: 700; color: #2F5233;">مطالعهٔ بخش ←</span>
           </a>
-
           <a href="https://claude.ai/artifact/WhcnXRGG2JwEJWwCCa5xjH" target="_blank" rel="noopener" style="display: flex; flex-direction: column; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px; border-top: 3px solid #2F5233;">
             <span style="font-size: 11px; font-weight: 700; color: #666158; margin-bottom: 10px;">طرح درس</span>
             <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">۱۹ مقاله، یک مسیر</h3>
@@ -387,7 +314,30 @@
             <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۹ مقاله، ۱۹۹۳ تا ۲۰۲۰</span>
             <span style="font-size: 13px; font-weight: 700; color: #2F5233;">مشاهدهٔ سند ←</span>
           </a>
+        </div>
 
+        <div style="height: 1px; background: #E4E1D6; margin: 38px 0 30px;"></div>
+
+        <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 0 0 6px;">
+          <h3 style="font-size: 19px; font-weight: 800; margin: 0;">بیرون از فناوری</h3>
+          <span style="font-size: 12.5px; color: #666158;">کمتر، ولی همان‌قدر جدی</span>
+        </div>
+        <p style="font-size: 13.5px; line-height: 1.9; color: #4A4F58; max-width: 70ch; margin: 0 0 18px;">نوشته‌هایی که موضوعشان فناوری نیست — تاریخ و سیاست، و الگوی کار آدم‌ها. همان قاعدهٔ ارجاع این‌جا هم برقرار است: هر ادعا با منبعش می‌آید.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+          <a href="iraq.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #17656E;">
+            <span style="font-size: 11px; font-weight: 700; color: #17656E; margin-bottom: 10px;">روایت مستند · تازه</span>
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">پروندهٔ عراق</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">بیست‌وسه سال در سیزده فصل: از سقوط بغداد تا پایان مأموریت ائتلاف. با گاه‌شمار، اطلس تعاملی، آمار مورد مناقشه و کتابخانه‌ای از بیش از صد منبع.</p>
+            <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۱۳ فصل، ۲۰۰۳ تا ۲۰۲۶ · هر ادعا با منبع</span>
+            <span style="font-size: 13px; font-weight: 700; color: #17656E;">گشودن پرونده ←</span>
+          </a>
+          <a href="Pattern.dc.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 14px; padding: 22px; border-top: 3px solid #B4530E;">
+            <span style="font-size: 11px; font-weight: 700; color: #8A5410; margin-bottom: 10px;">پروژهٔ تحقیقاتی · تازه</span>
+            <h3 style="font-size: 15.5px; font-weight: 700; color: #16181C; margin: 0 0 8px; line-height: 1.6;">هزار بسته، یک الگو</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A4F58; margin: 0 0 14px; flex: 1;">مسیر سیندره سورهوس را شمردم و رسم کردم تا ببینم الگوی پیشرفت چه شکلی دارد — و کدام تکه‌اش به کار من می‌آید.</p>
+            <span style="font-size: 11.5px; color: #666158; margin-bottom: 8px;">۸ عدد، ۵ نمودار، ۶ قاعده</span>
+            <span style="font-size: 13px; font-weight: 700; color: #B4530E;">خواندن تحلیل ←</span>
+          </a>
         </div>
       </div>
     </section>
@@ -775,6 +725,7 @@
           <h4 style="font-size: 12.5px; font-weight: 700; color: #16181C; margin: 0 0 12px;">پروژه‌ها</h4>
           <div style="display: flex; flex-direction: column; gap: 8px;">
             <a href="Logic.dc.html" style="font-size: 13px; color: #4A4F58;">نامه‌ای به ابوریحان — منطق برنامه‌نویسی</a>
+            <a href="Plain.dc.html" style="font-size: 13px; color: #4A4F58;">برنامه‌نویسی به زبان ساده</a>
             <a href="Watch.dc.html" style="font-size: 13px; color: #4A4F58;">رصدخانه — دفترِ روزانهٔ هوش مصنوعی</a>
             <a href="Workshop.dc.html" style="font-size: 13px; color: #4A4F58;">کارگاه — آموزش ابزارهای کاربردی</a>
             <a href="Math.dc.html" style="font-size: 13px; color: #4A4F58;">نامهٔ دوم به ابوریحان — ریاضیات هوش مصنوعی</a>

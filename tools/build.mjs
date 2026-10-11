@@ -18,6 +18,7 @@ const OUT = root;
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
   { file: 'Logic.dc.html', out: 'logic.html', nav: 'منطق برنامه‌نویسی' },
+  { file: 'Plain.dc.html', out: 'plain.html', nav: 'برنامه‌نویسی به زبان ساده' },
   { file: 'Watch.dc.html', out: 'watch.html', nav: 'رصدخانه' },
   { file: 'Workshop.dc.html', out: 'workshop.html', nav: 'کارگاه' },
   { file: 'Higgsfield.dc.html', out: 'higgsfield.html', nav: 'هیگزفیلد', sub: true },
@@ -254,6 +255,58 @@ const baseCssRules = (() => {
   return common;
 })();
 
+
+// ---------------------------------------------------------------- نوار تب‌های سراسری
+// همان نوار بالای صفحهٔ اصلی، ولی روی هر صفحهٔ سایت. چون صفحه‌ها از ژنراتورهای
+// مختلف می‌آیند، این‌جا موقع ساخت تزریق می‌شود نه در تک‌تک قالب‌ها.
+const TABS = [
+  { label: 'شروع',     href: 'index.html',         anchor: '#home' },
+  { label: 'نوشته‌ها',  href: 'index.html#writing', anchor: '#writing' },
+  { label: 'رصدخانه',  href: 'watch.html',         anchor: null },
+  { label: 'کتاب‌ها',   href: 'books.html',         anchor: null },
+  { label: 'درباره من', href: 'index.html#about',   anchor: '#about' },
+  { label: 'کارها',    href: 'index.html#gallery', anchor: '#gallery' },
+  { label: 'پرسش‌ها',   href: 'index.html#faq',     anchor: '#faq' },
+];
+// صفحه‌هایی که تب دیگری را روشن می‌کنند (آینه‌ها و زیرصفحه‌ها)
+const TAB_ALIAS = {
+  'writing.html': 'index.html#writing',
+  'about.html': 'index.html#about',
+  'work.html': 'index.html#gallery',
+  'faq.html': 'index.html#faq',
+};
+for (let i = 1; i <= 15; i++) TAB_ALIAS[`sec-book-${String(i).padStart(2, '0')}.html`] = 'books.html';
+
+const TABS_CSS = [
+  '.stabs{background:#FFFFFF;border-bottom:1px solid #E4E1D6}',
+  '.stabs-in{max-width:1120px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}',
+  '.stabs-brand{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14px;color:#16181C;margin-inline-end:8px;text-decoration:none}',
+  '.stabs-brand span{width:9px;height:9px;border-radius:50%;background:#2F5233;flex-shrink:0}',
+  '.stab{font-size:13px;color:#4A4F58;padding:6px 11px;border-radius:999px;text-decoration:none;white-space:nowrap}',
+  '.stab:hover{background:#F0EEE7;color:#16181C;text-decoration:none}',
+  '.stab[aria-current]{background:#2F5233;color:#FFFFFF;font-weight:700}',
+  '.stab-cta{margin-inline-start:auto;color:#B4530E;font-weight:700}',
+  '.stab-cta:hover{background:#F7E3D6;color:#B4530E}',
+  // روی دسکتاپ نوار می‌چسبد و هدرِ خودِ صفحه زیرش می‌نشیند؛ روی گوشی نمی‌چسبد
+  // تا دو نوارِ چسبان نیمی از نما را نگیرند.
+  '@media (min-width:861px){.stabs{position:sticky;top:0;z-index:60}body header{top:43px !important}[id]{scroll-margin-top:122px !important}}',
+  '@media (max-width:860px){.stabs-in{padding:6px 12px;gap:3px}.stabs-brand{font-size:13px;margin-inline-end:5px}.stab{font-size:12.5px;padding:5px 9px}}',
+];
+
+const siteTabs = (out, base = '') => {
+  const active = TAB_ALIAS[out] || out;
+  const items = TABS.map((t) => {
+    const self = out === 'index.html' && t.anchor;
+    const href = self ? t.anchor : base + t.href;
+    const on = self ? t.href === 'index.html' : active === t.href || (out === 'index.html' && t.href === 'index.html');
+    return `<a class="stab" href="${href}"${on ? ' aria-current="page"' : ''}>${t.label}</a>`;
+  }).join('');
+  const cta = out === 'index.html'
+    ? '<a class="stab stab-cta" href="#contact">تماس</a>'
+    : `<a class="stab stab-cta" href="${base}index.html#contact">تماس</a>`;
+  return `<nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="${base}index.html"><span></span>رضا هاشمی</a>${items}${cta}</div></nav>`;
+};
+
 const RESPONSIVE = [
   '@media (max-width:640px){body{font-size:15px}}',
   'img,svg{max-width:100%}',
@@ -267,7 +320,7 @@ for (const f of fs.readdirSync(path.join(OUT, 'assets'))) fs.unlinkSync(path.joi
 fs.copyFileSync(path.join(root, 'tools/dc.js'), path.join(OUT, 'assets/dc.js'));
 fs.writeFileSync(
   path.join(OUT, 'assets/site.css'),
-  [...baseCssRules, ...RESPONSIVE, ...shared].join('\n') + '\n'
+  [...baseCssRules, ...RESPONSIVE, ...TABS_CSS, ...shared].join('\n') + '\n'
 );
 
 // ---------------------------------------------------------------- پاس ۳: رندر و نوشتن
@@ -291,6 +344,8 @@ const DESCRIPTIONS = {
     'اصول و منطق برنامه‌نویسی از صفر، در قالب نامه‌ای به ابوریحان بیرونی: متغیر، شرط، حلقه، تابع، داده‌ساختار، دودویی و بازگشت — با تمثیل‌های هزار سال پیش و بدون واژهٔ تخصصی.',
   'watch.html':
     'رصدخانه — دفترِ روزانهٔ آنچه در هوش مصنوعی اتفاق می‌افتد: مدل تازه، قابلیت تازه، پرونده، عدد و حاشیه. بالای هر رصد نوشته شده از کجا آمده و چقدر می‌شود باورش کرد.',
+  'plain.html':
+    'منطق برنامه‌نویسی به زبان امروز و برای آدم معمولی: برنامه، متغیر، شرط، حلقه، تابع، فهرست و خطا — با مثال گوشی و آسانسور و سبد خرید، و یک برنامهٔ کامل خط‌به‌خط.',
   'workshop.html':
     'کارگاه — راهنمای کاملِ ابزارهای کاربردی، از صفر. نه معرفی و نه فهرست قابلیت‌ها: وارد که شدی، این دکمه‌ای که جلویت است برای چیست.',
   'higgsfield.html':
@@ -405,6 +460,7 @@ ${links}
 <link rel="stylesheet" href="assets/site.css">${cssFile ? `\n<link rel="stylesheet" href="${cssFile}">` : ''}
 </head>
 <body>
+${siteTabs(d.out)}
 ${interactive ? `<div id="dc-root">${bodyHtml}</div>` : bodyHtml}
 ${interactive ? `<script src="assets/dc.js" defer></script>\n<script src="${jsFile}" defer></script>` : ''}
 </body>
@@ -431,7 +487,13 @@ if (SITE) {
 }
 // ---------------------------------------------------------------- صفحه‌های خودبسنده
 for (const sa of STANDALONE) {
-  fs.copyFileSync(path.join(SRC, 'standalone', sa.file), path.join(OUT, sa.out));
+  let raw = fs.readFileSync(path.join(SRC, 'standalone', sa.file), 'utf8');
+  // این صفحه از خط لولهٔ قالب رد نمی‌شود، پس CSS نوار را هم باید همراهش برد
+  // قاعدهٔ چسبندگیِ دسکتاپ بازنویسی می‌شود: این صفحه هدرِ چسبانِ خودش را ندارد
+  const tabCss = `<style>${TABS_CSS.filter((r) => !r.startsWith('@media (min-width')).join('')}`
+    + '@media (min-width:861px){.stabs{position:sticky;top:0;z-index:60}}</style>';
+  raw = raw.replace('</head>', `${tabCss}</head>`).replace('<body>', `<body>\n${siteTabs(sa.out)}`);
+  fs.writeFileSync(path.join(OUT, sa.out), raw);
 }
 
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');

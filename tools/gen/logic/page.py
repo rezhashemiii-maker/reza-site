@@ -918,6 +918,11 @@ for i, (fat, ent, url, note) in enumerate(SOURCES):
         </div>''' % (SOFTC, AC, fa('%02d' % (i + 1)), fat, LTR, MID, ent, DIM, note, url, AC, LTR, url))
 w('''      </div>
       <p style="font-size: 14px; line-height: 2.05; color: %s; margin: 26px 0 18px; max-width: 70ch;">و یک حرف آخر. نوشتن این متن یک چیز را به خودم ثابت کرد: هر جا نتوانستم مفهومی را با ابزار هزار سال پیش توضیح بدهم، مشکل از مخاطب فرضی نبود — از این بود که خودم آن را خوب نفهمیده بودم. این بهترین محکی است که برای فهمیدن می‌شناسم.</p>
+      <div style="background: #EDF1E2; border-inline-start: 4px solid #5B6E2F; border-radius: 14px; padding: 22px 24px; margin: 0 0 22px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #5B6E2F; margin-bottom: 11px;">اگر این قالب به دلت ننشست</div>
+        <p style="font-size: 15px; line-height: 2.1; color: #45494F; margin: 0 0 14px;">همهٔ این حرف‌ها را یک بار دیگر هم نوشته‌ام، این بار بدون کوزه و آسیاب و بدون ابوریحان — با زبانِ همین امروز و مثالِ گوشی و آسانسور و سبد خرید. کوتاه‌تر است، ساده‌تر است، و برای کسی نوشته شده که می‌خواهد در بیست دقیقه ته قضیه را بفهمد.</p>
+        <a href="Plain.dc.html" style="display: inline-block; font-size: 14px; font-weight: 700; color: #FFFFFF; background: #5B6E2F; padding: 12px 22px; border-radius: 10px;">همین را به زبان ساده بخوان ←</a>
+      </div>
       <div style="display: flex; gap: 10px; flex-wrap: wrap;">
         <a href="Math.dc.html" style="font-size: 13.5px; font-weight: 700; color: #FFFFFF; background: #1E3A5F; padding: 12px 22px; border-radius: 10px;">نامهٔ دوم: ریاضیات هوش مصنوعی ←</a>
         <a href="Glossary.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid %s; padding: 12px 22px; border-radius: 10px;">واژه‌نامهٔ یادگیری ماشین ←</a>
