@@ -1,0 +1,12 @@
+.coa.coa{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 21px 23px}
+.cob.cob{font-size: 12px;font-weight: 800;color: #6B2152}
+.cy3.cy3{font-size: 13.5px;line-height: 1.98;color: #45494F;margin: 0 0 9px;max-width: 72ch}
+a{color:#6B2152;text-decoration:none}
+a:hover{text-decoration:underline}
+[id]{scroll-margin-top:84px}
+b,strong{font-weight:700;color:#16181C}
+::selection{background:#F3E4EE;color:#6B2152}
+@media (max-width:860px){
+nav[data-sections]{display:none !important}
+div[data-sectionlist]{display:flex !important}
+}
