@@ -22,6 +22,7 @@ STEPS = [
     ('logic', ['logic/logic.py', 'logic/page.py']),
     ('math',  ['math/logic.py', 'math/page.py']),
     ('plain', ['plain/page.py']),
+    ('found', ['found/logic.py', 'found/page.py']),
     ('watch', ['watch/logic.py', 'watch/page.py']),
     ('shop',  ['workshop/hf.py', 'workshop/page.py']),
     ('port',  ['port.py', 'lessons.py']),
