@@ -11,7 +11,9 @@ def load(name, path):
     spec.loader.exec_module(m)
     return m
 
+sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'found'))
 D = load('bookdata', os.path.join(HERE, 'data.py'))
+FB = load('foundbooks', os.path.join(os.path.dirname(HERE), 'found', 'books.py'))
 SEC = load('secdata', os.path.join(os.path.dirname(HERE), 'sec', 'data.py'))
 CAT = {c['key']: c for c in SEC.CATS}
 
@@ -217,6 +219,28 @@ def inject_books_page():
           </a>''' % (num(b['id']), c['color'], c['color'], c['name'], fa(b['year']),
                      b['fa'], LTR, b['en'], b['idea'], c['color']))
     w('''        </div>''')
+
+    # ------------------------------------------------ فهرستِ کتاب‌های ریاضی
+    # خودِ فهرست در صفحهٔ «ریاضی، از راهِ شکستن» است؛ این‌جا فقط دروازه‌اش.
+    spine = [b for b in FB.B if b['spine']]
+    w('''
+        <h2 style="font-size: 18px; font-weight: 800; margin: 44px 0 6px;">و سی‌ویک کتاب برای یادگیری ریاضی، به ترتیب</h2>
+        <p style="font-size: 14.5px; line-height: 1.95; color: #4A4F58; max-width: 66ch; margin: 0 0 18px;">فهرستِ کتابِ ریاضی زیاد است؛ چیزی که کم است <b>ترتیب</b> است. این فهرست شش مرحله دارد، از «چرا اصلاً» تا «سخت، و فقط اگر خواستی»، و هر مرحله پیش‌نیازِ مرحلهٔ بعد است. کاملش — با دلیلِ هر کتاب، نسخه‌های رایگان، و فیلترِ مرحله — در صفحهٔ <a href="Foundations.dc.html" style="font-weight: 600;">ریاضی، از راهِ شکستن</a> است.</p>
+        <div style="''' + SOFT + ''' padding: 22px 24px; margin: 0 0 18px;">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #4C3575; margin-bottom: 14px;">ستونِ فقرات — اگر فقط هشت کتاب</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">''')
+    for i, b in enumerate(spine):
+        w('''            <div style="display: flex; gap: 13px; align-items: flex-start; flex-wrap: wrap; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 11px; padding: 13px 16px;">
+              <span style="font-size: 11.5px; font-weight: 800; color: #4C3575; flex-shrink: 0; margin-top: 2px;">%s</span>
+              <div style="flex: 1; min-width: 190px;">
+                <div style="font-size: 13.5px; font-weight: 700; color: #16181C; line-height: 1.6;">%s</div>
+                <div style="%s font-size: 11.5px; color: #666158; margin-top: 4px;">%s — %s</div>
+              </div>
+              <span style="font-size: 11px; color: #666158; flex-shrink: 0;">مرحلهٔ %s</span>
+            </div>''' % (fa('%02d' % (i + 1)), b['fa'], LTR, b['en'], b['who'], fa(b['st'])))
+    w('''          </div>
+          <p style="margin: 16px 0 0;"><a href="Foundations.dc.html#books" style="font-size: 13px; font-weight: 700; color: #4C3575;">هر سی‌ویک کتاب، با دلیل و به ترتیبِ خواندن ←</a></p>
+        </div>''')
     w(SENTINEL)
 
     block = '\n'.join(o)

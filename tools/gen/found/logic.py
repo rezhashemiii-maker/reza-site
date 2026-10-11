@@ -5,9 +5,12 @@
    از تیک به ضربدر می‌رود — همان چیزی که در مدرسه هیچ‌وقت نشان داده نمی‌شود.
 ۲) قطرِ کانتور: استدلال را رقم‌به‌رقم جلوی چشم می‌سازد.
 """
-import io, json, os, re
+import io, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import more as M  # noqa: E402
+import books as BK  # noqa: E402
 
 # نام‌ها و نمادهای لاتین داخل جملهٔ فارسی: بدون جداسازی، نقطه و پرانتزِ کنارشان
 # به سمت غلط می‌پرد. LRI/PDI همان کار unicode-bidi: isolate را در متن ساده می‌کند.
@@ -132,15 +135,26 @@ for _r in RUNGS:
 J = lambda x: json.dumps(x, ensure_ascii=False)
 
 LOGIC = '''
-var PROPS = %s;
-var RUNGS = %s;
-var DEC = %s;
-var DIAG = %s;
-var NEWD = %s;
+var PROPS = @@PROPS@@;
+var RUNGS = @@RUNGS@@;
+var DEC = @@DEC@@;
+var DIAG = @@DIAG@@;
+var NEWD = @@NEWD@@;
+var RULES = @@RULES@@;
+var FX = @@FX@@;
+var GRP_SYS = @@GRP_SYS@@;
+var GRP_PROPS = @@GRP_PROPS@@;
+var GRP_UNIV = @@GRP_UNIV@@;
+var BOOKS = @@BOOKS@@;
+var BSTAGES = @@BSTAGES@@;
 
 function faNum(x) {
   var m = { '0': '۰', '1': '۱', '2': '۲', '3': '۳', '4': '۴', '5': '۵', '6': '۶', '7': '۷', '8': '۸', '9': '۹' };
   return String(x).replace(/[0-9]/g, function (c) { return m[c]; });
+}
+
+function fa1(x) {
+  return faNum((Math.round(x * 10) / 10).toFixed(1)).replace('.', '٫');
 }
 
 var AC = '#4C3575', SOFT = '#EDE6F6', GREEN = '#2F5233', RUST = '#B4530E', DIM = '#666158';
@@ -148,7 +162,14 @@ var AC = '#4C3575', SOFT = '#EDE6F6', GREEN = '#2F5233', RUST = '#B4530E', DIM =
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { rung: 0, dstep: 0 };
+    this.state = {
+      rung: 0, dstep: 0,
+      rule: 0,
+      fx: 0, fxPart: 0,
+      mSeed: 20261011, mPlays: 0, mStay: 0, mSwitch: 0,
+      grpCur: -1, grpSel: [],
+      bkStage: -1, bkSpine: false, bkFree: false
+    };
   }
 
   btn(label, on, onClick, color, soft) {
@@ -247,6 +268,166 @@ class Component extends DCLogic {
            + 'یعنی آن ادعا غلط بود — و برای «هر» فهرستی غلط است.';
     }
 
+
+    // ---- ده قاعده‌ای که حفظ کردی
+    var rules = RULES.map(function (x, i) {
+      var open = i === s.rule;
+      return {
+        num: faNum(i + 1), r: x.r, tag: x.tag, school: x.school,
+        why: x.why, breaks: x.breaks, open: open, sign: open ? '–' : '+',
+        onClick: function () { self.setState({ rule: open ? -1 : i }); },
+        rowStyle: 'border: 1px solid ' + (open ? '#D5CEDF' : '#E4E1D6')
+          + '; background: ' + (open ? '#FFFFFF' : '#FAFAF7')
+          + '; border-radius: 14px; overflow: hidden;',
+        headStyle: 'display: flex; align-items: center; gap: 11px; width: 100%; text-align: start; '
+          + 'cursor: pointer; border: 0; background: transparent; padding: 15px 18px; '
+          + 'font-family: inherit; flex-wrap: wrap;',
+        numStyle: 'font-size: 11.5px; font-weight: 800; color: ' + AC + '; flex-shrink: 0;',
+        titleStyle: 'font-size: 15px; font-weight: 700; color: #16181C; line-height: 1.6;',
+        tagStyle: 'direction: ltr; unicode-bidi: isolate; font-size: 13px; font-weight: 700; color: '
+          + (open ? AC : '#8D8678') + ';',
+        signStyle: 'margin-inline-start: auto; font-size: 18px; font-weight: 800; color: '
+          + AC + '; flex-shrink: 0; line-height: 1;'
+      };
+    });
+
+    // ---- فرمول‌خوانی
+    var f = FX[s.fx];
+    var fxTabs = FX.map(function (x, i) {
+      return self.btn(x.name, i === s.fx, function () { self.setState({ fx: i, fxPart: 0 }); });
+    });
+    var fxParts = f.parts.map(function (pt, i) {
+      var on = i === s.fxPart;
+      return {
+        t: pt.t, on: on,
+        onClick: function () { self.setState({ fxPart: i }); },
+        style: 'font-size: 17px; font-weight: ' + (on ? '800' : '600') + '; padding: 10px 13px; '
+          + 'border-radius: 10px; cursor: pointer; font-family: inherit; white-space: nowrap; '
+          + 'border: 1px solid ' + (on ? AC : '#E4E1D6')
+          + '; background: ' + (on ? SOFT : '#FFFFFF')
+          + '; color: ' + (on ? AC : '#45494F') + ';'
+      };
+    });
+    var fxCur = f.parts[s.fxPart];
+    var fxStep = 'تکهٔ ' + faNum(s.fxPart + 1) + ' از ' + faNum(f.parts.length);
+
+    // ---- مونتی هال: دانهٔ تصادفی در state است و فقط با کلیک عوض می‌شود،
+    // تا رندرِ سرور و مرورگر یکی بماند.
+    function lehmer(x) { return (x * 48271) % 2147483647; }
+    function runMonty(n) {
+      var st = self.state;
+      var seed = st.mSeed, stay = st.mStay, sw = st.mSwitch;
+      for (var k = 0; k < n; k++) {
+        seed = lehmer(seed); var car = seed % 3;
+        seed = lehmer(seed); var pick = seed % 3;
+        if (pick === car) { stay++; } else { sw++; }
+      }
+      self.setState({ mSeed: seed, mPlays: st.mPlays + n, mStay: stay, mSwitch: sw });
+    }
+    var mHas = s.mPlays > 0;
+    var mStayP = mHas ? (s.mStay * 100 / s.mPlays) : 0;
+    var mSwP = mHas ? (s.mSwitch * 100 / s.mPlays) : 0;
+    var mBars = [
+      { lab: 'ماندم', winFa: faNum(s.mStay), pctFa: fa1(mStayP), w: mStayP, c: '#8D8678', bg: '#EFEDE6' },
+      { lab: 'عوض کردم', winFa: faNum(s.mSwitch), pctFa: fa1(mSwP), w: mSwP, c: AC, bg: SOFT }
+    ].map(function (b) {
+      return {
+        lab: b.lab, winFa: b.winFa, pctFa: b.pctFa,
+        labStyle: 'font-size: 13.5px; font-weight: 700; color: ' + b.c + '; min-width: 6em;',
+        barStyle: 'flex: 1; min-width: 90px; height: 11px; border-radius: 999px; background: ' + b.bg + ';',
+        fillStyle: 'width: ' + b.w + '%; height: 100%; border-radius: 999px; background: ' + b.c + ';',
+        pctStyle: 'font-size: 13.5px; font-weight: 800; color: ' + b.c + '; min-width: 4.5em; text-align: start;'
+      };
+    });
+    var mBtns = [
+      self.btn('۱۰ بازی', false, function () { runMonty(10); }),
+      self.btn('۱۰۰ بازی', false, function () { runMonty(100); }),
+      self.btn('۱۰۰۰ بازی', false, function () { runMonty(1000); }),
+      self.btn('از نو', false, function () { self.setState({ mPlays: 0, mStay: 0, mSwitch: 0 }); })
+    ];
+
+    // ---- خودت انتزاع کن
+    var grpFound = 0;
+    for (var gi = 0; gi < GRP_UNIV.length; gi++) {
+      if (s.grpSel.indexOf(GRP_UNIV[gi]) >= 0) { grpFound++; }
+    }
+    var grpProps = GRP_PROPS.map(function (x, i) {
+      var open = i === s.grpCur;
+      var seen = s.grpSel.indexOf(i) >= 0;
+      var univ = GRP_UNIV.indexOf(i) >= 0;
+      return {
+        q: x.q, nick: x.nick, why: x.why, open: open, seen: seen, univ: univ, notUniv: !univ,
+        verdict: univ ? 'هر چهار دستگاه این را دارند' : 'مشترک نیست — کنار می‌رود',
+        marks: GRP_SYS.map(function (sy, j) {
+          var ok = x.have[j] === 1;
+          return {
+            sym: sy.sym, mark: ok ? '✓' : '✗',
+            style: 'display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; '
+              + 'border-radius: 999px; font-size: 12.5px; font-weight: 700; '
+              + 'background: ' + (ok ? '#E7F0E3' : '#F7E3D6') + '; '
+              + 'color: ' + (ok ? GREEN : RUST) + ';'
+          };
+        }),
+        onClick: function () {
+          var sel = self.state.grpSel.slice();
+          if (sel.indexOf(i) < 0) { sel.push(i); }
+          self.setState({ grpCur: open ? -1 : i, grpSel: sel });
+        },
+        rowStyle: 'border: 1px solid ' + (open ? '#D5CEDF' : (seen ? '#E4E1D6' : '#E4E1D6'))
+          + '; background: ' + (open ? '#FFFFFF' : (seen ? '#FDFDFB' : '#FAFAF7'))
+          + '; border-radius: 14px; overflow: hidden;',
+        headStyle: 'display: flex; align-items: center; gap: 11px; width: 100%; text-align: start; '
+          + 'cursor: pointer; border: 0; background: transparent; padding: 15px 18px; '
+          + 'font-family: inherit; flex-wrap: wrap;',
+        qStyle: 'font-size: 14.5px; font-weight: 700; line-height: 1.7; color: '
+          + (seen ? '#16181C' : '#45494F') + ';',
+        tickStyle: 'margin-inline-start: auto; font-size: 12px; font-weight: 800; flex-shrink: 0; color: '
+          + (univ ? GREEN : RUST) + ';',
+        verdictStyle: 'font-size: 12.5px; font-weight: 800; color: ' + (univ ? GREEN : RUST) + ';'
+      };
+    });
+    var grpRevealed = grpFound >= GRP_UNIV.length;
+    var grpLeft = GRP_UNIV.length - grpFound;
+
+    // ---- فهرست کتاب‌ها
+    var bkSpineN = 0, bkFreeN = 0;
+    BOOKS.forEach(function (b) { if (b.spine) { bkSpineN++; } if (b.free) { bkFreeN++; } });
+    var bkPass = BOOKS.filter(function (b) {
+      if (s.bkStage >= 0 && b.st !== s.bkStage) { return false; }
+      if (s.bkSpine && !b.spine) { return false; }
+      if (s.bkFree && !b.free) { return false; }
+      return true;
+    });
+    var bkGroups = [];
+    BSTAGES.forEach(function (st) {
+      var list = bkPass.filter(function (b) { return b.st === st.i; });
+      if (!list.length) { return; }
+      bkGroups.push({
+        stFa: faNum(st.i), name: st.n, desc: st.d, countFa: faNum(list.length),
+        books: list.map(function (b) {
+          return {
+            fa: b.fa, en: b.en, who: b.who, yrLat: String(b.yr), why: b.why,
+            note: b.note, hasNote: !!b.note, free: b.free, hasFree: !!b.free,
+            spine: !!b.spine, idFa: faNum(b.id),
+            style: 'background: #FFFFFF; border: 1px solid ' + (b.spine ? '#D5CEDF' : '#E4E1D6')
+              + '; border-radius: 15px; padding: 20px 22px;'
+              + (b.spine ? ' box-shadow: inset 3px 0 0 ' + AC + ';' : '')
+          };
+        })
+      });
+    });
+    var bkBtns = [self.btn('همه', s.bkStage < 0, function () { self.setState({ bkStage: -1 }); })].concat(
+      BSTAGES.map(function (st) {
+        return self.btn(faNum(st.i) + '  ' + st.n, s.bkStage === st.i,
+          function () { self.setState({ bkStage: st.i }); });
+      }));
+    var bkToggles = [
+      self.btn('فقط ستونِ فقرات (' + faNum(bkSpineN) + ')', s.bkSpine,
+        function () { self.setState({ bkSpine: !self.state.bkSpine }); }, AC, SOFT),
+      self.btn('فقط رایگان (' + faNum(bkFreeN) + ')', s.bkFree,
+        function () { self.setState({ bkFree: !self.state.bkFree }); }, GREEN, '#E7F0E3')
+    ];
+
     return {
       rungBtns: rungBtns,
       sym: r.sym, rname: r.name, rfa: r.fa,
@@ -262,11 +443,38 @@ class Component extends DCLogic {
         self.btn('یک رقم جلو', false, function () { self.setState({ dstep: Math.min(n, self.state.dstep + 1) }); }),
         self.btn('تا آخر', false, function () { self.setState({ dstep: n }); }),
         self.btn('از نو', false, function () { self.setState({ dstep: 0 }); })
-      ]
+      ],
+
+      rules: rules,
+
+      fxTabs: fxTabs, fxParts: fxParts, fxStep: fxStep,
+      fxName: f.name, fxTag: f.tag, fxRead: f.read, fxGist: f.gist,
+      fxLab: fxCur.lab, fxSay: fxCur.say, fxWhy: fxCur.why,
+
+      mBars: mBars, mBtns: mBtns, mHas: mHas, mNone: !mHas,
+      mPlaysFa: faNum(s.mPlays),
+
+      grpProps: grpProps, grpRevealed: grpRevealed, grpNotYet: !grpRevealed,
+      grpFoundFa: faNum(grpFound), grpTotalFa: faNum(GRP_UNIV.length),
+      grpLeftFa: faNum(grpLeft),
+
+      bkBtns: bkBtns, bkToggles: bkToggles, bkGroups: bkGroups,
+      bkCountFa: faNum(bkPass.length), bkTotalFa: faNum(BOOKS.length),
+      bkNone: bkPass.length === 0, bkSome: bkPass.length > 0
     };
   }
 }
-''' % (J(PROPS), J(RUNGS), J(DEC), J(DIAG), J(NEWD))
+'''
+
+_DATA = [
+    ('PROPS', PROPS), ('RUNGS', RUNGS), ('DEC', DEC), ('DIAG', DIAG), ('NEWD', NEWD),
+    ('RULES', M.RULES), ('FX', M.FX), ('GRP_SYS', M.GRP_SYS),
+    ('GRP_PROPS', M.GRP_PROPS), ('GRP_UNIV', M.GRP_UNIV),
+    ('BOOKS', BK.B), ('BSTAGES', [dict(i=i, n=n, d=d) for i, n, d in BK.STAGES]),
+]
+for _k, _v in _DATA:
+    LOGIC = LOGIC.replace('@@' + _k + '@@', J(_v))
+assert '@@' not in LOGIC
 
 if __name__ == '__main__':
     io.open(os.path.join(HERE, 'logic.js'), 'w', encoding='utf-8').write(LOGIC)
