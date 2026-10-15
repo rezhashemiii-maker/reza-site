@@ -22,32 +22,32 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - uses: actions/configure-pages@v5
         id: pages
 
-      # ساخت دوباره با نشانی واقعی سایت، تا canonical و sitemap درست باشند
+      - name: Run unit and integration tests
+        run: node --test tests/*.test.mjs
+
       - name: Build the site
         run: node tools/build.mjs
         env:
+          OUTPUT_DIR: dist
           SITE_URL: ${{ steps.pages.outputs.base_url }}
 
-      - name: Collect the deployable files
-        run: |
-          mkdir -p _site
-          cp *.html _site/
-          cp -r assets _site/
-          cp .nojekyll _site/
-          [ -f sitemap.xml ] && cp sitemap.xml _site/ || true
-          [ -f robots.txt ] && cp robots.txt _site/ || true
-          du -sh _site
+      - name: Check generated site
+        run: node tools/check-site.mjs dist
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: dist
 
       - id: deployment
         uses: actions/deploy-pages@v4

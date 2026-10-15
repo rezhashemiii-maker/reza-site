@@ -3,3 +3,9 @@ sitemap.xml
 robots.txt
 _site/
 .DS_Store
+dist/
+/manus-routes.json
+.env
+.env.*
+!.env.example
+__pycache__/

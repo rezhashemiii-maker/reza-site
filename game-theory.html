@@ -4,12 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>نظریهٔ بازی‌ها و یادگیری ماشین</title>
-<meta name="description" content="نظریهٔ بازی برای کسی که مدل می‌سازد: تعادل، انگیزه و بازی‌های تکرارشونده، با ارجاع به مقاله‌های اصلی.">
 <meta name="author" content="رضا هاشمی">
+<meta name="description" content="نظریهٔ بازی برای کسی که مدل می‌سازد: تعادل، انگیزه و بازی‌های تکرارشونده، با ارجاع به مقاله‌های اصلی.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fa_IR">
+<meta property="og:site_name" content="رضا هاشمی">
 <meta property="og:title" content="نظریهٔ بازی‌ها و یادگیری ماشین">
 <meta property="og:description" content="نظریهٔ بازی برای کسی که مدل می‌سازد: تعادل، انگیزه و بازی‌های تکرارشونده، با ارجاع به مقاله‌های اصلی.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="نظریهٔ بازی‌ها و یادگیری ماشین">
+<meta name="twitter:description" content="نظریهٔ بازی برای کسی که مدل می‌سازد: تعادل، انگیزه و بازی‌های تکرارشونده، با ارجاع به مقاله‌های اصلی.">
+<link rel="canonical" href="https://rezhashemiii-maker.github.io/reza-site/game-theory.html">
+<meta property="og:url" content="https://rezhashemiii-maker.github.io/reza-site/game-theory.html">
+<meta property="og:image" content="https://rezhashemiii-maker.github.io/reza-site/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="رضا هاشمی — یادگیری ماشین و سیستم‌های داده">
+<meta name="twitter:image" content="https://rezhashemiii-maker.github.io/reza-site/assets/social-preview.png">
+<meta name="twitter:image:alt" content="رضا هاشمی — یادگیری ماشین و سیستم‌های داده">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232F5233%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22sans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5F3EE%22%20text-anchor%3D%22middle%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,12 +37,12 @@
 <div style="max-width: 1100px;margin: 0 auto;padding: 14px 24px;display: flex;align-items: center;gap: 12px;flex-wrap: wrap">
 <a class="a" href="writing.html">← نوشته‌ها</a>
 <nav class="s5y">
-<a class="s3d" href="#why">چرا</a>
-<a class="s3d" href="#concepts">مفاهیم</a>
-<a class="s3d" href="#breakthroughs">جهش‌ها</a>
-<a class="s3d" href="#fin">مالی</a>
-<a class="s3d" href="#biz">کسب‌وکار</a>
-<a class="s3d" href="#pol">سیاست</a>
+<a class="s3c" href="#why">چرا</a>
+<a class="s3c" href="#concepts">مفاهیم</a>
+<a class="s3c" href="#breakthroughs">جهش‌ها</a>
+<a class="s3c" href="#fin">مالی</a>
+<a class="s3c" href="#biz">کسب‌وکار</a>
+<a class="s3c" href="#pol">سیاست</a>
 </nav>
 </div>
 </header>
@@ -39,7 +51,7 @@
 <h1 class="ci">نظریهٔ بازی‌ها و یادگیری ماشین</h1>
 <p style="font-size: 17px;line-height: 2.05;color: #45494F;max-width: 70ch;margin: 0 0 34px">وقتی محیطی که در آن تصمیم می‌گیری، به تصمیم تو <b>واکنش نشان می‌دهد</b>، یادگیری ماشین معمولی زیر پایت خالی می‌کند. این صفحه دربارهٔ همان نقطه است: جایی که پیش‌بینی کافی نیست و باید استراتژی داشت.</p>
 
-<section class="s3c" id="why">
+<section class="s3b" id="why">
 <p class="s1e">۰۱ — چرا</p>
 <h2 class="e6">فرضی که تقریباً همهٔ مدل‌ها دارند و در این حوزه غلط است</h2>
 <p class="s1o">یادگیری ماشین متعارف یک فرض بنیادی دارد که معمولاً حتی نوشته نمی‌شود: <b>توزیع داده ثابت است</b>. مدل روی گذشته آموزش می‌بیند چون فرض می‌کند آینده از همان قاعده می‌آید. برای تشخیص بیماری از عکس، این فرض تقریباً درست است — تومور نمی‌داند دارد دیده می‌شود و رفتارش را عوض نمی‌کند.</p>
@@ -56,67 +68,67 @@
 </div>
 </section>
 
-<section class="s3c" id="concepts">
+<section class="s3b" id="concepts">
 <p class="s1e">۰۲ — مفاهیم</p>
 <h2 class="e6">پنج مفهومی که بقیهٔ صفحه رویشان بنا شده</h2>
 <p class="e7">بدون این‌ها ایده‌های پایین صفحه فقط شعارند. با این‌ها، هر کدامشان یک طرح کار مشخص است.</p>
 <div class="s2u">
 <div class="e8">
-<h3 class="s36">تعادل نش</h3>
+<h3 class="s35">تعادل نش</h3>
 <span class="e9">Nash Equilibrium</span>
 </div>
 <p class="ea">وضعیتی که در آن هیچ بازیکنی با تغییر یک‌طرفهٔ استراتژی‌اش سود نمی‌برد. نکتهٔ مهمی که اغلب گم می‌شود: تعادل نش <b>لزوماً بهترین نتیجهٔ ممکن برای همه نیست</b> — فقط پایدار است. معمای زندانی دقیقاً همین است: تعادل، بدترین نتیجهٔ جمعی است.</p>
 <div class="eb">
-<span class="s5f">چرا برایت مهم است — </span>
-<span class="s4r">هر جا چند تصمیم‌گیرنده روی یک نتیجه اثر می‌گذارند، «بهینه» بی‌معناست و «پایدار» معنادار است.</span>
+<span class="s5e">چرا برایت مهم است — </span>
+<span class="s4q">هر جا چند تصمیم‌گیرنده روی یک نتیجه اثر می‌گذارند، «بهینه» بی‌معناست و «پایدار» معنادار است.</span>
 </div>
 <a class="g1" href="https://doi.org/10.1073/pnas.36.1.48" target="_blank" rel="noopener"><div class="b">Equilibrium Points in n-Person Games</div><div class="s1y">John Nash · ۱۹۵۰ · PNAS 36(1)</div><div class="s2t">دو صفحه که کل اقتصاد مدرن را شکل داد.</div><div class="s2w">مشاهدهٔ مقاله ←</div></a>
 </div>
 <div class="s2u">
 <div class="e8">
-<h3 class="s36">جمع‌صفر در برابر جمع‌غیرصفر</h3>
+<h3 class="s35">جمع‌صفر در برابر جمع‌غیرصفر</h3>
 <span class="e9">Zero-sum vs. General-sum</span>
 </div>
 <p class="ea">در بازی جمع‌صفر، سود من دقیقاً ضرر توست — شطرنج، پوکر دونفره. در بازی جمع‌غیرصفر، ممکن است هر دو ببریم یا هر دو ببازیم. تقریباً همهٔ بازی‌های واقعی کسب‌وکار و سیاست از نوع دوم‌اند، و همین باعث می‌شود الگوریتم‌هایی که در شطرنج می‌درخشند، آن‌جا مستقیماً کار نکنند.</p>
 <div class="eb">
-<span class="s5f">چرا برایت مهم است — </span>
-<span class="s4r">اشتباه رایج: با ابزار جمع‌صفر به مسئله‌ای حمله کردن که فضای همکاری دارد.</span>
+<span class="s5e">چرا برایت مهم است — </span>
+<span class="s4q">اشتباه رایج: با ابزار جمع‌صفر به مسئله‌ای حمله کردن که فضای همکاری دارد.</span>
 </div>
 <a class="g1" href="https://doi.org/10.1126/science.7466396" target="_blank" rel="noopener"><div class="b">The Evolution of Cooperation</div><div class="s1y">Axelrod, Hamilton · ۱۹۸۱ · Science 211</div><div class="s2t">چرا همکاری بین بازیکنان خودخواه هم می‌تواند پایدار شود.</div><div class="s2w">مشاهدهٔ مقاله ←</div></a>
 </div>
 <div class="s2u">
 <div class="e8">
-<h3 class="s36">اطلاعات ناقص</h3>
+<h3 class="s35">اطلاعات ناقص</h3>
 <span class="e9">Imperfect Information</span>
 </div>
 <p class="ea">در شطرنج هر دو طرف کل تخته را می‌بینند؛ در پوکر، مذاکره و بازار این‌طور نیست. وقتی اطلاعات پنهان است، استراتژی بهینه تقریباً همیشه <b>تصادفی</b> است — اگر همیشه یک کار کنی، حریف الگویت را می‌خواند. همین یک جمله، تفاوت بنیادی بازی واقعی با مسئلهٔ بهینه‌سازی است.</p>
 <div class="eb">
-<span class="s5f">چرا برایت مهم است — </span>
-<span class="s4r">در بازار و مذاکره، قابل‌پیش‌بینی بودن خودش یک آسیب‌پذیری است.</span>
+<span class="s5e">چرا برایت مهم است — </span>
+<span class="s4q">در بازار و مذاکره، قابل‌پیش‌بینی بودن خودش یک آسیب‌پذیری است.</span>
 </div>
 <div style="background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 12px;padding: 14px 16px"><div class="m4">Regret Minimization in Games with Incomplete Information</div><div class="s1y">Zinkevich, Johanson, Bowling, Piccione · ۲۰۰۷ · NeurIPS 2007</div><div class="s2t">معرفی CFR؛ الگوریتمی که بعداً پوکر را حل کرد.</div><div style="font-size: 11px;color: #666158;margin-top: 8px">بدون نسخهٔ آزاد آنلاین</div></div>
 </div>
 <div class="s2u">
 <div class="e8">
-<h3 class="s36">بازی تکرارشونده و شهرت</h3>
+<h3 class="s35">بازی تکرارشونده و شهرت</h3>
 <span class="e9">Repeated Games &amp; Reputation</span>
 </div>
 <p class="ea">اگر بازی فقط یک بار انجام شود، خیانت عقلانی است. اگر بی‌نهایت بار تکرار شود، همکاری می‌تواند پایدار باشد چون تنبیه در دورهای بعد ممکن است. کل مفهوم «شهرت» در کسب‌وکار، ریاضیاتش همین‌جاست.</p>
 <div class="eb">
-<span class="s5f">چرا برایت مهم است — </span>
-<span class="s4r">پاسخ به این سؤال که چرا تأمین‌کننده‌ای که می‌تواند سرت کلاه بگذارد، نمی‌گذارد.</span>
+<span class="s5e">چرا برایت مهم است — </span>
+<span class="s4q">پاسخ به این سؤال که چرا تأمین‌کننده‌ای که می‌تواند سرت کلاه بگذارد، نمی‌گذارد.</span>
 </div>
 <a class="g1" href="https://doi.org/10.1126/science.7466396" target="_blank" rel="noopener"><div class="b">The Evolution of Cooperation</div><div class="s1y">Axelrod, Hamilton · ۱۹۸۱ · Science 211</div><div class="s2t">مسابقهٔ معروفی که نشان داد استراتژی ساده «مقابله‌به‌مثل» می‌برد.</div><div class="s2w">مشاهدهٔ مقاله ←</div></a>
 </div>
 <div class="s2u">
 <div class="e8">
-<h3 class="s36">طراحی مکانیزم</h3>
+<h3 class="s35">طراحی مکانیزم</h3>
 <span class="e9">Mechanism Design</span>
 </div>
 <p class="ea">نظریهٔ بازی‌ها معمولاً می‌پرسد «با این قواعد، بازیکن‌ها چه می‌کنند؟» طراحی مکانیزم سؤال را برعکس می‌کند: «چه قواعدی بگذارم تا رفتاری که می‌خواهم، خودش به‌صرفه‌ترین انتخاب بازیکن‌ها باشد؟» این همان چیزی است که مزایده، سیستم پاداش فروش و سیاست یارانه را می‌سازد.</p>
 <div class="eb">
-<span class="s5f">چرا برایت مهم است — </span>
-<span class="s4r">قوی‌ترین ابزار این حوزه برای کسی که می‌تواند قواعد را تعیین کند — یعنی مدیر و سیاست‌گذار.</span>
+<span class="s5e">چرا برایت مهم است — </span>
+<span class="s4q">قوی‌ترین ابزار این حوزه برای کسی که می‌تواند قواعد را تعیین کند — یعنی مدیر و سیاست‌گذار.</span>
 </div>
 <a class="g1" href="https://arxiv.org/abs/1706.03459" target="_blank" rel="noopener"><div class="b">Optimal Auctions through Deep Learning</div><div class="s1y">Dütting, Feng, Narasimhan, Parkes, Ravindranath · ۲۰۱۷ · ICML 2019</div><div class="s2t">طراحی مزایدهٔ بهینه با شبکهٔ عصبی، جایی که راه‌حل ریاضی بسته وجود ندارد.</div><div class="s2w">مشاهدهٔ مقاله ←</div></a>
 </div>
@@ -138,12 +150,12 @@
 </div>
 <div style="border-top: 1px solid #E4E1D6;margin-top: 18px;padding-top: 16px">
 <p style="font-size: 14px;line-height: 2;color: #45494F;margin: 0 0 10px;max-width: 72ch">خانهٔ سبز بهترین نتیجهٔ <b>جمعی</b> است: مجموعاً دو سال. اما پایدار نیست — هر کدام با تغییر یک‌طرفهٔ انتخابش، وضع خودش را بهتر می‌کند. تنها خانهٔ پایدار، خانهٔ قرمز است: هیچ‌کس با تغییر یک‌طرفه سود نمی‌برد، و مجموعاً شش سال زندان.</p>
-<p class="s37">هر بار که دو رقیب هم‌زمان قیمت را می‌شکنند و هر دو ضرر می‌کنند، یا دو کشور هم‌زمان بودجهٔ نظامی را بالا می‌برند، دقیقاً همین جدول در حال اجراست. <b>و همین است که تعادل را از بهینه جدا می‌کند.</b></p>
+<p class="s36">هر بار که دو رقیب هم‌زمان قیمت را می‌شکنند و هر دو ضرر می‌کنند، یا دو کشور هم‌زمان بودجهٔ نظامی را بالا می‌برند، دقیقاً همین جدول در حال اجراست. <b>و همین است که تعادل را از بهینه جدا می‌کند.</b></p>
 </div>
 </div>
 </section>
 
-<section class="s3c" id="breakthroughs">
+<section class="s3b" id="breakthroughs">
 <p class="s1e">۰۳ — جهش‌ها</p>
 <h2 class="e6">چه چیزی واقعاً حل شده است</h2>
 <p class="s1o">این حوزه بیش از حد شعار دارد، پس بهتر است روشن باشد کجا نتیجهٔ واقعی و داوری‌شده وجود دارد. ترتیب زیر تقریباً ترتیب سختی است: از بازی دونفرهٔ جمع‌صفر تا بازی چندنفره‌ای که در آن باید <b>مذاکره</b> هم بکنی.</p>
@@ -172,7 +184,7 @@
 <div class="ii">
 <span class="g4"></span>
 <h3 class="ij">بازارهای مالی</h3>
-<span class="s5d">۱۰ ایده</span>
+<span class="s5c">۱۰ ایده</span>
 </div>
 <p class="ik">بازار، تمیزترین نمونهٔ یک بازی است: قواعد مشخص، بازیکنان متعدد، اطلاعات ناقص، و نتیجه‌ای که مستقیماً پول است. اما دقیقاً به همین دلیل، ساده‌لوحانه‌ترین جایی است که می‌شود مدل پیش‌بینی خام به کار برد.</p>
 <div class="il">
@@ -292,11 +304,11 @@
 <div class="ii">
 <span class="mq"></span>
 <h3 class="ij">کسب‌وکار</h3>
-<span class="s5d">۱۰ ایده</span>
+<span class="s5c">۱۰ ایده</span>
 </div>
 <p class="ik">بیشتر تصمیم‌های مهم کسب‌وکار — قیمت، ورود به بازار، مذاکره، قرارداد — تصمیم در برابر یک حریف هوشمندند، نه در برابر طبیعت. با این حال تقریباً همهٔ ابزارهای تحلیلی رایج، رقیب را ثابت فرض می‌کنند.</p>
 <div class="il">
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۱</span>
 <h4 class="s20">قیمت‌گذاری پویا که واکنش رقیب را پیش‌بینی می‌کند</h4>
@@ -307,7 +319,7 @@
 <span class="y">LOLA؛ بهینه‌سازی با درنظرگرفتن گام یادگیری حریف</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۲</span>
 <h4 class="s20">حسابرسی تبانی ناخواستهٔ الگوریتم خودت</h4>
@@ -318,7 +330,7 @@
 <span class="y">شبیه‌سازی چندعاملی قیمت‌گذاری و سنجش فاصله از تعادل رقابتی</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۳</span>
 <h4 class="s20">اتاق تمرین مذاکره با تأمین‌کننده</h4>
@@ -329,7 +341,7 @@
 <span class="y">خودبازی در بازی چانه‌زنی با اطلاعات ناقص دربارهٔ ارزش‌گذاری طرف</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۴</span>
 <h4 class="s20">تخصیص منابع داخلی با مزایدهٔ درون‌سازمانی</h4>
@@ -340,7 +352,7 @@
 <span class="y">طراحی مکانیزم سازگار با انگیزه؛ الگوی مزایدهٔ یادگیرنده</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۵</span>
 <h4 class="s20">تخصیص بودجهٔ رقابتی روی چند جبهه</h4>
@@ -351,7 +363,7 @@
 <span class="y">بازی بلاتو؛ یادگیری استراتژی مختلط روی تخصیص منابع</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۶</span>
 <h4 class="s20">ورود به بازار و اعلام سرمایه‌گذاری به‌عنوان سیگنال</h4>
@@ -362,7 +374,7 @@
 <span class="y">بازی سیگنالینگ با هزینهٔ تعهد؛ ارزیابی باورپذیری</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۷</span>
 <h4 class="s20">طرح پاداش فروش که رفتار درست را بسازد</h4>
@@ -373,7 +385,7 @@
 <span class="y">مسئلهٔ کارفرما-کارگزار؛ کشف بهره‌کشی از مکانیزم با یادگیری تقویتی</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۸</span>
 <h4 class="s20">زنجیرهٔ تأمین به‌عنوان بازی چندعاملی</h4>
@@ -384,7 +396,7 @@
 <span class="y">شبیه‌سازی چندعاملی و طراحی قرارداد هماهنگ‌کننده</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۹</span>
 <h4 class="s20">دفاع در برابر مشتری‌ای که سامانه را بازی می‌دهد</h4>
@@ -395,7 +407,7 @@
 <span class="y">طبقه‌بندی استراتژیک؛ آموزش با فرض پاسخ بهینهٔ سوژه</span>
 </div>
 </div>
-<div class="s5g">
+<div class="s5f">
 <div class="s1z">
 <span class="s6b">۱۰</span>
 <h4 class="s20">برنامهٔ وفاداری به‌عنوان بازی تکرارشونده</h4>
@@ -412,7 +424,7 @@
 <div class="ii">
 <span style="width: 12px;height: 12px;border-radius: 50%;background: #5B3F92;flex-shrink: 0"></span>
 <h3 class="ij">سیاست و حکمرانی</h3>
-<span class="s5d">۱۰ ایده</span>
+<span class="s5c">۱۰ ایده</span>
 </div>
 <p class="ik">سیاست‌گذار برخلاف بازیکن بازار، قدرت ویژه‌ای دارد: می‌تواند قواعد را عوض کند. این یعنی ابزار اصلی‌اش نه پیش‌بینی، که طراحی مکانیزم است — و این کم‌استفاده‌ترین بخش این حوزه است.</p>
 <div class="il">
@@ -560,19 +572,19 @@
 <div class="fy">
 <a class="e3" href="learn.html">
 <h3 class="s6r">پیش‌نیاز فنی</h3>
-<p class="s4p">بیشتر روش‌های این صفحه روی یادگیری تقویتی و خودبازی بنا شده‌اند. ایستگاه‌های مسیر یادگیری، پایه‌اش را می‌سازند.</p>
+<p class="s4o">بیشتر روش‌های این صفحه روی یادگیری تقویتی و خودبازی بنا شده‌اند. ایستگاه‌های مسیر یادگیری، پایه‌اش را می‌سازند.</p>
 <span class="s6s">مسیر یادگیری ماشین ←</span>
 </a>
 <a class="fz" href="ideas.html">
 <h3 class="s6r">صد ایدهٔ دیگر</h3>
-<p class="s4p">ایده‌های این صفحه همه بازی‌محورند. صد ایدهٔ دیگر در ده حوزه — از سلامت تا محیط‌زیست — جای دیگری جمع شده‌اند.</p>
+<p class="s4o">ایده‌های این صفحه همه بازی‌محورند. صد ایدهٔ دیگر در ده حوزه — از سلامت تا محیط‌زیست — جای دیگری جمع شده‌اند.</p>
 <span class="s6s">صد ایده ←</span>
 </a>
 </div>
 </main>
 <footer class="s27">
 <div style="max-width: 1100px;margin: 0 auto;padding: 24px;display: flex;justify-content: space-between;flex-wrap: wrap;gap: 10px">
-<a class="s5c" href="writing.html">← بازگشت به نوشته‌ها</a>
+<a class="s5b" href="writing.html">← بازگشت به نوشته‌ها</a>
 <span class="s1i">رضا هاشمی · نظریهٔ بازی‌ها</span>
 </div>
 </footer>
