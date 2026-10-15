@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232F5233%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22sans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5F3EE%22%20text-anchor%3D%22middle%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="داشبورد تعاملی مقایسهٔ سرمایه‌گذاری در ۱۹ فعالیت کشاورزی ایران: بازده، دورهٔ بازگشت، حساسیت به قیمت، ماتریس امتیازدهی و مدل وام با اثر تورم.">
+<meta name="author" content="رضا هاشمی">
+<meta name="theme-color" content="#F5F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121512" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="سرمایه‌گذاری در کشاورزی، با عدد">
+<meta property="og:description" content="داشبورد تعاملی مقایسهٔ سرمایه‌گذاری در ۱۹ فعالیت کشاورزی ایران، همراه با مدل وام و اثر تورم.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"سرمایه‌گذاری در کشاورزی، با عدد","inLanguage":"fa","author":{"@type":"Person","name":"رضا هاشمی"},"dateModified":"2026-10-15","about":["Agricultural investment","Iran","Mushroom farming","Aquaculture","Poultry"]}</script>
+<title>سرمایه‌گذاری در کشاورزی، با عدد — رضا هاشمی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#F5F3EE; --paper:#FFFFFF; --fg:#16181C; --muted:#5C6168; --line:#E4E1D6;
+  --accent:#2F5233; --accent-soft:#E7ECE4; --brick:#B4530E; --brick-soft:#F6E7DA; --chip:#EFECE4;
+  --good:#2F5233; --bad:#B42318; --bar:#2F5233; --bar2:#B4530E; --grid:#E4E1D6;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121512; --paper:#1A1E1A; --fg:#E9E7E1; --muted:#A3A89F; --line:#2E342D;
+  --accent:#8DBF8F; --accent-soft:#223024; --brick:#E0975E; --brick-soft:#3A2A1E; --chip:#242A23;
+  --good:#8DBF8F; --bad:#F08A7E; --bar:#8DBF8F; --bar2:#E0975E; --grid:#2E342D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121512; --paper:#1A1E1A; --fg:#E9E7E1; --muted:#A3A89F; --line:#2E342D;
+  --accent:#8DBF8F; --accent-soft:#223024; --brick:#E0975E; --brick-soft:#3A2A1E; --chip:#242A23;
+  --good:#8DBF8F; --bad:#F08A7E; --bar:#8DBF8F; --bar2:#E0975E; --grid:#2E342D; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Vazirmatn",Tahoma,"Segoe UI",sans-serif;font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased}
+[id]{scroll-margin-top:84px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+[hidden]{display:none!important}
+
+/* header */
+.top{position:sticky;top:0;z-index:30;padding:12px 16px 0}
+.top-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:0 14px 34px -22px rgba(31,58,34,.35);padding:8px 10px 8px 18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:var(--fg);text-decoration:none}
+.brand i{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block}
+.top nav{display:flex;gap:6px;flex-wrap:wrap;margin-inline-start:auto}
+.top nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;font-size:13.5px;font-weight:600;color:var(--muted);background:var(--chip);border:1px solid var(--line);border-radius:999px;text-decoration:none}
+.top nav a:hover{color:var(--fg);background:var(--accent-soft)}
+.tbtn{min-width:40px;min-height:40px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+@media (max-width:720px){.top{position:static}.top nav{width:100%;margin-inline-start:0}.top nav a{flex:1 1 90px;justify-content:center;padding:0 6px;font-size:13px}}
+
+main{max-width:1120px;margin:0 auto;padding:28px 16px 64px}
+section{margin-top:44px}
+.eyebrow{font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--brick);margin:0 0 8px}
+h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;line-height:1.35;margin:0 0 14px;text-wrap:balance}
+h2{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.45;margin:0 0 10px;text-wrap:balance}
+h3{font-size:17px;font-weight:700;margin:0 0 8px}
+p{margin:0 0 12px;max-width:72ch}
+.lead{font-size:17.5px;color:var(--fg);max-width:66ch}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.note{font-size:13px;color:var(--muted);background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:10px 14px;max-width:none}
+
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+
+/* key findings */
+.find{border-top:3px solid var(--accent)}
+.find.b{border-top-color:var(--brick)}
+.find b{display:block;font-size:22px;font-weight:800;color:var(--accent);line-height:1.4;margin-bottom:4px}
+.find.b b{color:var(--brick)}
+.find p{font-size:14px;color:var(--muted);margin:0}
+
+/* controls */
+.ctl{display:flex;flex-direction:column;gap:4px}
+.ctl label{font-size:13px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.ctl label output{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--accent);min-height:32px}
+input[type=number],select{width:100%;font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);min-height:42px}
+.btn{font:inherit;font-size:13.5px;font-weight:700;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:var(--fg);cursor:pointer}
+.btn:hover{background:var(--accent-soft)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--chip)}
+.seg button{font:inherit;font-size:13px;font-weight:600;border:0;background:transparent;color:var(--muted);padding:0 14px;min-height:40px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--paper)}
+
+/* table */
+.tbox{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:760px}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+th{font-size:12px;color:var(--muted);font-weight:700;background:var(--chip);position:sticky;top:0}
+th button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;display:inline-flex;gap:4px;align-items:center}
+th button[aria-sort="descending"]::after{content:"▼";font-size:9px}
+th button[aria-sort="ascending"]::after{content:"▲";font-size:9px}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--accent-soft)}
+tbody tr.sel{background:var(--accent-soft);box-shadow:inset -3px 0 0 var(--accent)}
+td.neg{color:var(--bad);font-weight:700}
+td.pos{color:var(--good);font-weight:700}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--chip);color:var(--muted);margin-inline-start:6px}
+.tag.e{background:var(--brick-soft);color:var(--brick)}
+
+/* charts */
+.chart{width:100%;height:auto;display:block;direction:ltr}
+.chart text{fill:var(--muted);font-family:inherit}
+.chart .lbl{fill:var(--fg);font-size:12px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-inline-end:6px}
+
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px}
+.kpi{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi span{display:block;font-size:12px;color:var(--muted)}
+.kpi strong{display:block;font-size:19px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.5}
+.kpi strong.neg{color:var(--bad)} .kpi strong.pos{color:var(--good)}
+.kpi em{font-style:normal;font-size:11.5px;color:var(--muted)}
+.verdict{border-radius:12px;padding:12px 14px;font-size:14px;margin-top:12px;border:1px solid var(--line);background:var(--accent-soft)}
+.verdict.warn{background:var(--brick-soft)}
+
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-top:10px}
+summary{cursor:pointer;font-weight:700}
+.foot{max-width:1120px;margin:0 auto;padding:20px 16px 40px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
+ol.src{font-size:13.5px;padding-inline-start:20px}
+ol.src li{margin-bottom:4px}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="./"><i aria-hidden="true"></i>رضا هاشمی</a>
+  <nav aria-label="بخش‌های صفحه">
+    <a href="#dashboard">داشبورد</a>
+    <a href="#loan">مدل وام</a>
+    <a href="#score">امتیازدهی</a>
+    <a href="#method">روش و منابع</a>
+    <a href="writing.html">نوشته‌ها</a>
+  </nav>
+  <button class="tbtn" id="themeBtn" type="button" aria-label="تغییر پوسته" title="تغییر پوسته"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.7a6.3 6.3 0 0 1 0 12.6z" fill="currentColor"/></svg></button>
+</div></header>
+
+<main>
+  <p class="eyebrow">اقتصاد کشاورزی · داشبورد تعاملی</p>
+  <h1>سرمایه‌گذاری در کشاورزی، با عدد</h1>
+  <p class="lead">جدول‌های رسمی معمولاً فقط می‌گویند ورود به هر فعالیت چقدر سرمایهٔ ثابت می‌خواهد. این صفحه یک قدم جلوتر می‌رود: برای ۱۹ فعالیت کشاورزی، درآمد، سود، دورهٔ بازگشت و اثر وام و تورم را کنار هم می‌گذارد تا بتوانید فرض‌ها را خودتان عوض کنید و نتیجه را همان لحظه ببینید.</p>
+  <p class="note">پایهٔ سرمایهٔ ثابت: برآورد مهندسین مشاور پارس رابین برای سه‌ماههٔ چهارم ۱۴۰۵ (با دامنهٔ نوسان ±۲۰٪). قیمت‌های فروش از بازار مهر ۱۴۰۵ است و هر جا عدد دقیق در دسترس نبود، با برچسب «تخمین» مشخص شده. این ابزار برای غربال اولیه ساخته شده و جای طرح توجیهی را نمی‌گیرد.</p>
+
+  <section aria-labelledby="h-find">
+    <h2 id="h-find" style="font-size:20px">چهار یافتهٔ اصلی</h2>
+    <div class="grid g4">
+      <div class="card find"><b>گردش دارایی</b><p>وقتی درآمد سالانه کمتر از یک‌سوم سرمایهٔ ثابت باشد، با قیمت بازار داخلی سودی باقی نمی‌ماند؛ گلخانه و شیلات گوشتی در این دسته‌اند.</p></div>
+      <div class="card find b"><b>اهرم قیمت</b><p>مرغ، بوقلمون و پرواربندی با ۲۰٪ افزایش قیمت چند برابر سود می‌دهند و با ۱۰٪ کاهش زیان‌ده می‌شوند.</p></div>
+      <div class="card find"><b>تاب‌آوری</b><p>زنبور عسل، میگو و قارچ در سناریوی بد هم سودشان را نگه می‌دارند.</p></div>
+      <div class="card find b"><b>وام ارزان</b><p>وقتی تورم از نرخ وام بالاتر است، بخش بزرگی از بازده سهم سرمایه‌گذار از خود وام می‌آید، نه از تولید. بخش «مدل وام» این را نشان می‌دهد.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <section id="dashboard" aria-labelledby="h-dash">
+    <p class="eyebrow">بخش ۱</p>
+    <h2 id="h-dash">مقایسهٔ ۱۹ فعالیت</h2>
+    <p class="muted">با لغزنده‌ها کل بازار را جابه‌جا کنید. روی هر ردیف جدول بزنید تا فرض‌های همان فعالیت را ببینید و ویرایش کنید؛ همان فعالیت در مدل وام هم انتخاب می‌شود.</p>
+
+    <div class="card" style="margin-top:14px">
+      <div class="grid g3">
+        <div class="ctl"><label for="gPrice">تغییر قیمت فروش <output id="oPrice">۰٪</output></label><input id="gPrice" type="range" min="-30" max="50" step="5" value="0"></div>
+        <div class="ctl"><label for="gCost">تغییر هزینهٔ جاری (خوراک، انرژی، دستمزد) <output id="oCost">۰٪</output></label><input id="gCost" type="range" min="-20" max="40" step="5" value="0"></div>
+        <div class="ctl"><label for="gCapex">تغییر سرمایهٔ ثابت (دامنهٔ ±۲۰٪ جدول) <output id="oCapex">۰٪</output></label><input id="gCapex" type="range" min="-20" max="20" step="5" value="0"></div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <span class="small muted">سناریوی آماده:</span>
+        <div class="seg" role="group" aria-label="سناریوها">
+          <button type="button" data-scn="0,0,0" aria-pressed="true">پایه</button>
+          <button type="button" data-scn="20,0,0" aria-pressed="false">قیمت +۲۰٪</button>
+          <button type="button" data-scn="-10,0,20" aria-pressed="false">بدبینانه</button>
+          <button type="button" data-scn="0,25,0" aria-pressed="false">جهش نهاده</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <h3>بازده سالانهٔ سرمایه (ROI)</h3>
+        <p class="small muted" style="margin:0 0 6px">سود خالص بعد از استهلاک، تقسیم بر سرمایهٔ ثابت به‌اضافهٔ سرمایه در گردش. ارقام به قیمت ثابت امروزند، پس تقریباً «واقعی»‌اند.</p>
+        <svg id="roiChart" class="chart" role="img" aria-label="نمودار میله‌ای بازده سرمایهٔ فعالیت‌ها"></svg>
+      </div>
+      <div class="card" id="detail">
+        <h3 id="dTitle">—</h3>
+        <p class="small muted" id="dDesc" style="margin:0 0 10px"></p>
+        <div class="kpis" id="dKpis"></div>
+        <h3 style="margin-top:16px;font-size:15px">فرض‌های این فعالیت</h3>
+        <div class="grid g3" id="dInputs" style="gap:10px"></div>
+        <div class="row" style="margin-top:10px"><button type="button" class="btn" id="dReset">بازگرداندن فرض‌های پیش‌فرض</button></div>
+      </div>
+    </div>
+
+    <div class="tbox" style="margin-top:14px">
+      <table id="tbl">
+        <thead><tr>
+          <th scope="col"><button type="button" data-k="name">فعالیت</button></th>
+          <th scope="col"><button type="button" data-k="fixed">سرمایهٔ ثابت/واحد</button></th>
+          <th scope="col"><button type="button" data-k="rev">درآمد سالانه/واحد</button></th>
+          <th scope="col"><button type="button" data-k="turn">گردش دارایی</button></th>
+          <th scope="col"><button type="button" data-k="margin">حاشیهٔ EBITDA</button></th>
+          <th scope="col"><button type="button" data-k="roi" aria-sort="descending">ROI</button></th>
+          <th scope="col"><button type="button" data-k="pb">بازگشت (سال)</button></th>
+          <th scope="col"><button type="button" data-k="per10">سود سالانهٔ ۱۰ میلیارد</button></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:8px">مبالغ به میلیون تومان، مگر جایی که واحد دیگری نوشته شده. «سود سالانهٔ ۱۰ میلیارد» یعنی اگر ۱۰ میلیارد تومان کل سرمایه (ثابت و در گردش) وارد همین فعالیت شود.</p>
+  </section>
+
+  <!-- ===================== LOAN ===================== -->
+  <section id="loan" aria-labelledby="h-loan">
+    <p class="eyebrow">بخش ۲</p>
+    <h2 id="h-loan">مدل وام و تورم</h2>
+    <p class="muted">در اقتصاد تورمی، قسط وام ثابت می‌ماند ولی قیمت محصول بالا می‌رود. این مدل جریان نقدی ماه‌به‌ماه را برای ده سال شبیه‌سازی می‌کند و بازده سهم سرمایه‌گذار را با وام و بدون وام مقایسه می‌کند.</p>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <div class="grid g3" style="gap:12px">
+          <div class="ctl" style="grid-column:1/-1"><label for="lSector">فعالیت</label><select id="lSector"></select></div>
+          <div class="ctl"><label for="lBudget">کل سرمایهٔ طرح (میلیارد تومان)</label><input id="lBudget" type="number" min="1" max="5000" step="1" value="50"></div>
+          <div class="ctl"><label for="lShare">سهم وام <output id="oShare">۶۰٪</output></label><input id="lShare" type="range" min="0" max="80" step="5" value="60"></div>
+          <div class="ctl"><label for="lRate">نرخ سود وام (سالانه) <output id="oRate">۲۳٪</output></label><input id="lRate" type="range" min="4" max="40" step="1" value="23"></div>
+          <div class="ctl"><label for="lTerm">مدت بازپرداخت <output id="oTerm">۵ سال</output></label><input id="lTerm" type="range" min="1" max="10" step="1" value="5"></div>
+          <div class="ctl"><label for="lGrace">دورهٔ تنفس <output id="oGrace">۱۲ ماه</output></label><input id="lGrace" type="range" min="0" max="36" step="3" value="12"></div>
+          <div class="ctl"><label for="lInf">تورم سالانهٔ مورد انتظار <output id="oInf">۴۰٪</output></label><input id="lInf" type="range" min="0" max="70" step="5" value="40"></div>
+          <div class="ctl"><label for="lGap">رشد قیمت محصول نسبت به تورم <output id="oGap">۰ واحد</output></label><input id="lGap" type="range" min="-15" max="10" step="1" value="0"></div>
+          <div class="ctl" style="grid-column:1/-1"><label><span><input id="lResid" type="checkbox" checked> ارزش باقی‌ماندهٔ دارایی در پایان سال دهم حساب شود</span></label></div>
+        </div>
+        <p class="small muted" style="margin:10px 0 0">پیش‌فرض‌ها: نرخ تسهیلات کشاورزی حدود ۱۸ تا ۲۳ درصد و تورم ۴۰ درصد، که هر دو تخمین‌اند و قابل تغییرند. در دورهٔ تنفس فقط سود پرداخت می‌شود و بعد از آن اقساط مساوی ماهانه است. «رشد قیمت نسبت به تورم» برای کالاهایی است که قیمت دستوری دارند و عقب می‌مانند (مثلاً ۵- واحد برای شیر).</p>
+      </div>
+      <div class="card">
+        <h3 id="lTitle">نتیجه</h3>
+        <div class="kpis" id="lKpis"></div>
+        <div id="lVerdict" class="verdict"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>جریان نقدی تجمعی سهم سرمایه‌گذار (به قیمت امروز)</h3>
+      <div class="legend"><span><i style="background:var(--bar)"></i>با وام</span><span><i style="background:var(--bar2)"></i>بدون وام (همهٔ سرمایه از جیب)</span></div>
+      <svg id="cfChart" class="chart" role="img" aria-label="نمودار جریان نقدی تجمعی ده‌ساله"></svg>
+      <p class="small muted" style="margin:6px 0 0">همهٔ مبالغ با نرخ تورم به ارزش امروز برگردانده شده‌اند. جایی که خط از صفر رد می‌شود، سرمایهٔ شخصی برگشته است.</p>
+    </div>
+
+    <details>
+      <summary>جدول سالانهٔ جریان نقدی</summary>
+      <div class="tbox" style="margin-top:10px"><table id="cfTbl" style="min-width:640px"><thead><tr><th>سال</th><th>درآمد (اسمی)</th><th>EBITDA (اسمی)</th><th>قسط و سود وام</th><th>جریان نقد سهامدار (اسمی)</th><th>همان، به قیمت امروز</th><th>DSCR</th></tr></thead><tbody></tbody></table></div>
+      <p class="small muted">DSCR یعنی EBITDA تقسیم بر قسط و سود سالانه. بانک‌ها معمولاً حداقل ۱٫۲ تا ۱٫۳ می‌خواهند.</p>
+    </details>
+  </section>
+
+  <!-- ===================== SCORE ===================== -->
+  <section id="score" aria-labelledby="h-score">
+    <p class="eyebrow">بخش ۳</p>
+    <h2 id="h-score">ماتریس امتیازدهی</h2>
+    <p class="muted">بازده مالی همهٔ ماجرا نیست. شش معیار، هر کدام از ۱ تا ۱۰ (عدد بالاتر یعنی بهتر). وزن‌ها را مطابق اولویت خودتان تغییر دهید.</p>
+    <div class="card" style="margin-top:14px">
+      <div class="grid g3" id="wCtl" style="gap:12px"></div>
+      <p class="small muted" style="margin:10px 0 0">جمع وزن‌ها خودکار به ۱۰۰٪ نرمال می‌شود.</p>
+    </div>
+    <div class="tbox" style="margin-top:14px"><table id="scTbl"><thead><tr><th>رتبه</th><th>فعالیت</th><th>بازگشت</th><th>حاشیهٔ سود</th><th>آب و اقلیم</th><th>ریسک زیستی</th><th>استقلال از واردات</th><th>آینده و فناوری</th><th>امتیاز</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <!-- ===================== METHOD ===================== -->
+  <section id="method" aria-labelledby="h-method">
+    <p class="eyebrow">بخش ۴</p>
+    <h2 id="h-method">روش، فرض‌ها و منابع</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>فرمول‌ها</h3>
+        <p class="small">درآمد واحد × (۱ + تغییر قیمت) − هزینهٔ جاری × (۱ + تغییر هزینه) = EBITDA</p>
+        <p class="small">ROI = (EBITDA − استهلاک) ÷ (سرمایهٔ ثابت + سرمایه در گردش)</p>
+        <p class="small">دورهٔ بازگشت ساده = زمان تا اولین درآمد + کل سرمایه ÷ EBITDA</p>
+        <p class="small">مدل وام: شبیه‌سازی ۱۲۰ ماهه، با رشد درآمد و هزینه به اندازهٔ تورم، قسط ثابت اسمی، و تنزیل همه‌چیز با نرخ تورم. IRR از جریان نقدی ماهانهٔ سهامدار محاسبه و سالانه می‌شود.</p>
+        <p class="small muted">درآمد کشاورزی طبق مادهٔ ۸۱ قانون مالیات‌های مستقیم معاف است، پس مالیات کسر نشده.</p>
+      </div>
+      <div class="card">
+        <h3>قیمت‌های پایه (مهر ۱۴۰۵)</h3>
+        <ul class="small" style="padding-inline-start:18px;margin:0">
+          <li>شیر خام درب دامداری: ۶۰٬۵۰۰ تومان در کیلو</li>
+          <li>تخم‌مرغ: شانهٔ ۳۰تایی ۵۳۵ تا ۵۴۰ هزار تومان در خرده‌فروشی؛ حدود ۲۲۰ هزار در کیلو درب مرغداری (تخمین)</li>
+          <li>قارچ دکمه‌ای: ۲۸۰ هزار تومان خرده‌فروشی؛ حدود ۲۰۰ هزار درب مزرعه (تخمین)</li>
+          <li>قزل‌آلا: ۴۶۰ هزار تومان خرده‌فروشی؛ حدود ۳۳۰ هزار درب مزرعه (تخمین)</li>
+          <li>مرغ زنده حدود ۱۷۰ هزار، عسل حدود ۱٫۵ میلیون، گوجهٔ گلخانه‌ای حدود ۴۵ هزار تومان (تخمین)</li>
+        </ul>
+      </div>
+    </div>
+    <details>
+      <summary>محدودیت‌ها</summary>
+      <ul class="small" style="padding-inline-start:18px">
+        <li>واحدها یکسان نیستند: «تن» در شیلات و قارچ یعنی ظرفیت تولید سالانه و «قطعه» در مرغ گوشتی یعنی ظرفیت هر دوره.</li>
+        <li>جدول سرمایهٔ ثابت برای سه‌ماههٔ چهارم ۱۴۰۵ است و قیمت‌های فروش برای مهر؛ پس نتایج کمی محافظه‌کارانه‌اند.</li>
+        <li>حاشیه‌های سود و عملکردها از استانداردهای رایج صنعت برآورد شده‌اند و ممکن است ۱۰ تا ۳۰ درصد با واقعیت یک واحد مشخص فاصله داشته باشند.</li>
+        <li>خاویاری در «فاز پایدار» آمده؛ در هفت تا هشت سال اول تقریباً درآمد خاویار ندارد.</li>
+      </ul>
+    </details>
+    <h3 style="margin-top:20px">منابع</h3>
+    <ol class="src">
+      <li>مهندسین مشاور پارس رابین (ETARH.com)، برآورد سرمایهٔ ثابت فعالیت‌های اولویت‌دار بخش کشاورزی، سه‌ماههٔ چهارم ۱۴۰۵.</li>
+      <li><a href="https://www.yjc.ir/fa/news/9132760" target="_blank" rel="noopener">قیمت خرید هر کیلو شیر خام ۶۰ هزار و ۵۰۰ تومان، باشگاه خبرنگاران جوان</a></li>
+      <li><a href="https://nabzgheymat.ir/%D9%82%DB%8C%D9%85%D8%AA-%D9%82%D8%A7%D8%B1%DA%86-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%DB%B1%DB%B3-%D9%85%D9%87%D8%B1-%DB%B1%DB%B4%DB%B0%DB%B5-%E2%94%82-%D9%82%D8%A7%D8%B1%DA%86-%D8%AF%DA%A9%D9%85%D9%87/" target="_blank" rel="noopener">قیمت قارچ، ۱۳ مهر ۱۴۰۵، نبض قیمت</a></li>
+      <li><a href="https://nabzgheymat.ir/%D9%82%DB%8C%D9%85%D8%AA-%D8%AA%D8%AE%D9%85-%D9%85%D8%B1%D8%BA-%D8%AF%D8%B1-%D9%85%D9%87%D8%B1-%DB%B1%DB%B4%DB%B0%DB%B5-%E2%94%82-%D8%B4%D8%A7%D9%86%D9%87-%DB%B3%DB%B0-%D8%B9%D8%AF%D8%AF%DB%8C-%D8%A8/" target="_blank" rel="noopener">قیمت تخم‌مرغ در مهر ۱۴۰۵، نبض قیمت</a></li>
+      <li><a href="https://www.qudsonline.ir/news/1167496" target="_blank" rel="noopener">قیمت مرغ، تخم‌مرغ و ماهی، ۴ مهر ۱۴۰۵، قدس آنلاین</a></li>
+      <li><a href="https://nabzgheymat.ir/%D9%82%DB%8C%D9%85%D8%AA-%D8%B9%D8%B3%D9%84-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D8%B4%D9%86%D8%A8%D9%87-%DB%B1%DB%B8-%D9%85%D9%87%D8%B1-%DB%B1%DB%B4%DB%B0%DB%B5-%E2%94%82-%D8%B9%D8%B3%D9%84-%D8%B7%D8%A8/" target="_blank" rel="noopener">قیمت عسل، ۱۸ مهر ۱۴۰۵، نبض قیمت</a></li>
+      <li>Mekonnen, M. M. & Hoekstra, A. Y. — ردپای آب محصولات دامی و گیاهی، Water Footprint Network.</li>
+    </ol>
+  </section>
+</main>
+<footer class="foot"><span>سرمایه‌گذاری در کشاورزی، با عدد · رضا هاشمی</span><span>آخرین به‌روزرسانی: ۲۳ مهر ۱۴۰۵</span></footer>
+
+<script>
+(function(){
+'use strict';
+/* ---------- data (million toman) ---------- */
+// k,name,unit,fixed,rev,margin,wc,dep,months,desc,est,scores[payback,margin,water,bio,import,future]
+var BASE=[
+ ['broiler','مرغ گوشتی','قطعه ظرفیت',1.575,2.37,0.10,0.26,0.06,8,'حدود ۵٫۵ دوره در سال، ۲٫۷ کیلو وزن زنده و ۶٪ تلفات؛ قیمت مرغ زنده حدود ۱۷۰ هزار تومان.',1,[5,3,6,3,2,4]],
+ ['layer','مرغ تخمگذار','قطعه',1.95,4.54,0.11,0.60,0.06,14,'۳۲۰ تخم در سال (حدود ۱۹٫۵ کیلو) با قیمت درب مرغداری حدود ۲۲۰ هزار تومان، به‌اضافهٔ فروش مرغ حذفی.',1,[6,4,6,3,3,5]],
+ ['turkey','بوقلمون گوشتی','قطعه ظرفیت',1.6875,5.30,0.12,0.90,0.06,9,'حدود ۲٫۵ دوره در سال و ۲۳ کیلو وزن زنده برای هر جایگاه، با قیمت حدود ۲۳۰ هزار تومان.',1,[7,5,6,4,3,5]],
+ ['quail','بلدرچین','قطعه ظرفیت',0.43125,0.27,0.18,0.10,0.07,4,'حدود شش دوره در سال با فروش هر قطعه حدود ۴۵ هزار تومان.',1,[4,4,7,5,4,4]],
+ ['bee','زنبور عسل','کلنی',22.5,21,0.40,0.13,0.12,4,'حدود ۱۲ کیلو عسل برای هر کلنی با قیمت عمدهٔ ۱٫۵ میلیون تومان، به‌اضافهٔ موم، گرده و فروش بستهٔ زنبور.',1,[9,8,8,4,9,7]],
+ ['dairy','گاو شیری','راس',635,605,0.18,0.24,0.07,15,'میانگین گله حدود ۲۵ کیلو شیر در روز (۹ تن در سال) با قیمت مصوب ۶۰٬۵۰۰ تومان، به‌اضافهٔ فروش گوساله و دام حذفی.',0,[4,4,2,5,3,6]],
+ ['calf','پرواربندی گوساله اصیل','راس ظرفیت',125.375,607,0.08,2.50,0.05,7,'حدود ۱٫۷ دوره در سال و فروش دام حدود ۵۵۰ کیلویی؛ بخش بزرگ سرمایه در گردش، خرید خود گوساله است.',1,[5,3,2,6,3,3]],
+ ['lamb','پرواربندی بره','راس ظرفیت',26.25,127,0.10,1.30,0.05,4,'سه دوره در سال، فروش بره حدود ۵۰ کیلویی با قیمت زنده حدود ۸۵۰ هزار تومان.',1,[8,5,3,6,4,4]],
+ ['sheep','گوسفند و بز داشتی','راس',75,43,0.25,0.13,0.05,8,'حدود ۱٫۲ بره در سال برای هر میش، به‌اضافهٔ شیر و پشم.',1,[4,5,3,7,6,3]],
+ ['sheephp','گوسفند و بز پرتولید','راس',156.75,85,0.28,0.10,0.05,9,'حدود ۲٫۲ بره در سال به لطف دوقلوزایی؛ دام مولد اصلاح‌شده گران‌تر است.',1,[5,6,3,7,5,7]],
+ ['trout','ماهی سردآبی (قزل‌آلا)','تن ظرفیت',1012.5,330,0.25,0.13,0.06,10,'هر تن ظرفیت سالانه با قیمت درب مزرعه حدود ۳۳۰ هزار تومان در کیلو.',1,[2,4,3,5,5,6]],
+ ['warm','ماهی گرمابی','تن ظرفیت',675,200,0.25,0.10,0.06,12,'یک دورهٔ پرورش در سال با قیمت حدود ۲۰۰ هزار تومان در کیلو.',1,[2,3,4,6,6,4]],
+ ['tilapia','تیلاپیا','تن ظرفیت',1075,250,0.25,0.10,0.07,10,'سیستم مداربسته با قیمت حدود ۲۵۰ هزار تومان در کیلو.',1,[2,3,8,7,5,7]],
+ ['cage','ماهی در قفس','تن ظرفیت',2255,550,0.30,0.09,0.10,14,'قفس دریایی با قیمت حدود ۵۵۰ هزار تومان در کیلو؛ استهلاک تجهیزات دریایی بالاست.',1,[2,5,8,5,4,8]],
+ ['shrimp','میگو پرورشی','هکتار',3168,2400,0.30,0.32,0.06,10,'حدود ۴ تن در هکتار با قیمت صادراتی درب مزرعه حدود ۶۰۰ هزار تومان.',1,[6,8,6,3,5,7]],
+ ['sturgeon','ماهیان خاویاری (فاز پایدار)','تن ظرفیت',1842.5,2500,0.45,0.30,0.06,90,'گوشت به‌اضافهٔ حدود ۲۵ کیلو خاویار برای هر تن ظرفیت؛ درآمد خاویار از سال هفتم یا هشتم شروع می‌شود.',1,[2,10,5,6,6,8]],
+ ['soil','گلخانهٔ خاکی','متر مربع',7.425,1.26,0.35,0.05,0.06,6,'حدود ۲۸ کیلو در متر مربع با قیمت درب گلخانه حدود ۴۵ هزار تومان.',1,[2,4,5,6,6,4]],
+ ['hydro','گلخانهٔ هیدروپونیک','متر مربع',11,2.40,0.40,0.05,0.08,8,'حدود ۴۸ کیلو در متر مربع با قیمت حدود ۵۰ هزار تومان؛ با بازار صادراتی بازده به حدود ۱۳٪ می‌رسد.',1,[3,5,10,7,4,10]],
+ ['mushroom','قارچ خوراکی (دکمه‌ای)','تن ظرفیت',398.75,200,0.30,0.06,0.07,8,'هر تن ظرفیت سالانه با قیمت درب مزرعه حدود ۲۰۰ هزار تومان؛ با برند و بسته‌بندی بازده تقریباً دو برابر می‌شود.',1,[6,6,9,6,6,9]]
+];
+var DEF={};
+var S=BASE.map(function(r){var o={k:r[0],name:r[1],unit:r[2],fixed:r[3],rev:r[4],margin:r[5],wc:r[6],dep:r[7],months:r[8],desc:r[9],est:!!r[10],sc:r[11]};DEF[o.k]=JSON.parse(JSON.stringify(o));return o;});
+var BY={};S.forEach(function(s){BY[s.k]=s;});
+
+/* ---------- helpers ---------- */
+var fa=new Intl.NumberFormat('fa-IR',{maximumFractionDigits:1});
+var fa0=new Intl.NumberFormat('fa-IR',{maximumFractionDigits:0});
+var fa2=new Intl.NumberFormat('fa-IR',{maximumFractionDigits:2});
+function pct(x,d){if(!isFinite(x))return '—';return (d===0?fa0:fa).format(x*100)+'٪';}
+function money(m){ // m in million toman
+  if(!isFinite(m))return '—';var a=Math.abs(m),s=m<0?'−':'';if(a<0.0005)return '۰';
+  if(a>=1000)return s+fa.format(a/1000)+' میلیارد';
+  if(a>=1)return s+fa.format(a)+' میلیون';
+  return s+fa0.format(a*1000)+' هزار';
+}
+function $(id){return document.getElementById(id);}
+function el(tag,attrs,txt){var e=document.createElementNS(tag==='svg'||/^(rect|line|text|path|g|polyline|circle)$/.test(tag)?'http://www.w3.org/2000/svg':'http://www.w3.org/1999/xhtml',tag);for(var a in attrs)e.setAttribute(a,attrs[a]);if(txt!=null)e.textContent=(tag==='text'?'\u2067'+txt+'\u2069':txt);return e;}
+function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+function safeGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function safeSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+
+/* ---------- theme ---------- */
+var themes=['auto','light','dark'],tIdx=Math.max(0,themes.indexOf(safeGet('agri-theme')||'auto'));
+function applyTheme(){var t=themes[tIdx];if(t==='auto')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',t);$('themeBtn').setAttribute('aria-label','پوسته: '+({auto:'خودکار',light:'روشن',dark:'تیره'})[t]);}
+$('themeBtn').addEventListener('click',function(){tIdx=(tIdx+1)%3;safeSet('agri-theme',themes[tIdx]);applyTheme();renderAll();});
+applyTheme();
+if(window.matchMedia){var mq=window.matchMedia('(prefers-color-scheme: dark)');if(mq.addEventListener)mq.addEventListener('change',function(){renderAll();});}
+
+/* ---------- economics ---------- */
+var G={p:0,c:0,x:0};
+function econ(s){
+  var rev=s.rev*(1+G.p), cost=s.rev*(1-s.margin)*(1+G.c), e=rev-cost;
+  var fixed=s.fixed*(1+G.x), wcAbs=s.fixed*s.wc*(1+G.c), I=fixed+wcAbs;
+  var net=e-fixed*s.dep, roi=net/I, pb=e>0?s.months/12+I/e:Infinity;
+  return {rev:rev,cost:cost,e:e,fixed:fixed,wc:wcAbs,I:I,net:net,roi:roi,pb:pb,turn:rev/fixed,margin:rev>0?e/rev:0,per10:net*(10000/I)};
+}
+
+/* ---------- table + chart ---------- */
+var sortK='roi',sortDir=-1,selK='mushroom';
+function renderTable(){
+  var rows=S.map(function(s){var r=econ(s);r.s=s;r.name=s.name;return r;});
+  rows.sort(function(a,b){var va=sortK==='name'?a.name:(sortK==='fixed'?a.fixed:a[sortK]),vb=sortK==='name'?b.name:(sortK==='fixed'?b.fixed:b[sortK]);
+    if(sortK==='name')return sortDir*va.localeCompare(vb,'fa');
+    if(!isFinite(va))va=sortDir<0?-1e18:1e18;if(!isFinite(vb))vb=sortDir<0?-1e18:1e18;return sortDir*(va-vb);});
+  var tb=document.querySelector('#tbl tbody');tb.textContent='';
+  rows.forEach(function(r){
+    var tr=el('tr',{'data-k':r.s.k,tabindex:'0'});if(r.s.k===selK)tr.className='sel';
+    var td=el('td');td.appendChild(document.createTextNode(r.s.name));if(r.s.est)td.appendChild(el('span',{'class':'tag e'},'تخمین'));tr.appendChild(td);
+    tr.appendChild(el('td',{},money(r.fixed)+' / '+r.s.unit));
+    tr.appendChild(el('td',{},money(r.rev)));
+    tr.appendChild(el('td',{},fa2.format(r.turn)));
+    tr.appendChild(el('td',{},pct(r.margin,0)));
+    tr.appendChild(el('td',{'class':r.roi<0?'neg':(r.roi>=0.12?'pos':'')},pct(r.roi)));
+    tr.appendChild(el('td',{},isFinite(r.pb)&&r.pb<60?fa.format(r.pb):'هرگز'));
+    tr.appendChild(el('td',{'class':r.per10<0?'neg':''},money(r.per10)));
+    tb.appendChild(tr);
+  });
+  document.querySelectorAll('#tbl th button').forEach(function(b){b.setAttribute('aria-sort',b.dataset.k===sortK?(sortDir<0?'descending':'ascending'):'none');});
+}
+function renderRoiChart(){
+  var svg=$('roiChart');svg.textContent='';
+  var rows=S.map(function(s){return {s:s,r:econ(s).roi};}).sort(function(a,b){return b.r-a.r;});
+  var W=560,rowH=24,top=8,H=top+rows.length*rowH+24,labW=170;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var vals=rows.map(function(x){return x.r;});
+  var mn=Math.min(0,Math.min.apply(null,vals)),mx=Math.max(0.05,Math.max.apply(null,vals));
+  var plotX0=48,plotX1=W-labW-10; // RTL: labels on right
+  function X(v){return plotX1-(v-mn)/(mx-mn)*(plotX1-plotX0);} // larger -> left
+  var bar=css('--bar'),bad=css('--bad'),grid=css('--grid'),fg=css('--fg');
+  var z=X(0);
+  [0,0.1,0.2,0.3,0.4].forEach(function(t){if(t>mx)return;var x=X(t);svg.appendChild(el('line',{x1:x,x2:x,y1:top,y2:H-20,stroke:grid,'stroke-width':1}));svg.appendChild(el('text',{x:x,y:H-6,'font-size':10,'text-anchor':'middle'},pct(t,0)));});
+  rows.forEach(function(x,i){
+    var y=top+i*rowH, xv=X(x.r), sel=x.s.k===selK;
+    var g=el('g',{style:'cursor:pointer','data-k':x.s.k});
+    g.appendChild(el('rect',{x:Math.min(xv,z),y:y+4,width:Math.max(1,Math.abs(z-xv)),height:rowH-8,rx:3,fill:x.r<0?bad:bar,opacity:sel?1:0.72}));
+    g.appendChild(el('text',{x:W-4,y:y+rowH/2+4,'text-anchor':'end','class':'lbl','font-weight':sel?'700':'400'},x.s.name));
+    var lx=x.r>=0?xv-4:xv+4;
+    g.appendChild(el('text',{x:lx,y:y+rowH/2+4,'text-anchor':x.r>=0?'end':'start','font-size':10.5,fill:fg},pct(x.r)));
+    g.addEventListener('click',function(){select(x.s.k);});
+    svg.appendChild(g);
+  });
+  svg.appendChild(el('line',{x1:z,x2:z,y1:top,y2:H-20,stroke:fg,'stroke-width':1}));
+}
+
+/* ---------- detail ---------- */
+var FIELDS=[['fixed','سرمایهٔ ثابت هر واحد (میلیون)',0.01],['rev','درآمد سالانهٔ هر واحد (میلیون)',0.01],['margin','حاشیهٔ EBITDA (٪)',1,100],['wc','سرمایه در گردش (٪ ثابت)',1,100],['dep','استهلاک سالانه (٪ ثابت)',0.5,100],['months','ماه تا اولین درآمد',1]];
+function renderDetail(){
+  var s=BY[selK],r=econ(s);
+  $('dTitle').textContent=s.name;
+  $('dDesc').textContent=s.desc;
+  var k=$('dKpis');k.textContent='';
+  [['بازده سالانه',pct(r.roi),r.roi<0?'neg':(r.roi>=0.12?'pos':'')],['دورهٔ بازگشت',isFinite(r.pb)&&r.pb<60?fa.format(r.pb)+' سال':'هرگز',''],['کل سرمایهٔ هر واحد',money(r.I),''],['EBITDA هر واحد',money(r.e),r.e<0?'neg':''],
+   ['تغییر سود با ۱۰٪ قیمت کمتر',sens(s),'']].forEach(function(a){var d=el('div',{'class':'kpi'});d.appendChild(el('span',{},a[0]));d.appendChild(el('strong',{'class':a[2]},a[1]));k.appendChild(d);});
+  var box=$('dInputs');box.textContent='';
+  FIELDS.forEach(function(f){
+    var id='in-'+f[0],w=el('div',{'class':'ctl'});
+    w.appendChild(el('label',{'for':id},f[1]));
+    var v=f[3]?+(s[f[0]]*f[3]).toFixed(2):s[f[0]];
+    var inp=el('input',{id:id,type:'number',step:String(f[2]),value:String(v),min:'0'});
+    inp.addEventListener('change',function(){var n=parseFloat(inp.value);if(!isFinite(n)||n<0){inp.value=String(v);return;}
+      if(f[0]==='margin'&&n>95)n=95;s[f[0]]=f[3]?n/f[3]:n;renderAll(true);});
+    w.appendChild(inp);box.appendChild(w);
+  });
+}
+function sens(s){var b=econ(s).net,save=G.p;G.p=save-0.10;var l=econ(s).net;G.p=save;if(Math.abs(b)<1e-9)return '—';var ch=(l-b)/Math.abs(b);return pct(ch,0);}
+$('dReset').addEventListener('click',function(){var d=DEF[selK],s=BY[selK];['fixed','rev','margin','wc','dep','months'].forEach(function(f){s[f]=d[f];});renderAll();});
+function select(k){selK=k;$('lSector').value=k;renderAll();}
+
+/* ---------- loan model ---------- */
+function loanSim(s,o){
+  // o: budgetM (million), share, rate, termY, grace, inf, gap, resid
+  var r=econ(s); if(r.I<=0) return null;
+  var units=o.budget/r.I, I=o.budget, L=I*o.share, E=I-L;
+  var mi=Math.pow(1+o.inf,1/12)-1, mg=Math.pow(1+o.inf+o.gap,1/12)-1, mr=o.rate/12;
+  var n=Math.round(o.termY*12), G0=o.grace;
+  var pay=n>0?(mr>0?L*mr/(1-Math.pow(1+mr,-n)):L/n):0;
+  var revM=r.rev*units/12, costM=r.cost*units/12;
+  var cfL=[-E],cfU=[-I],years=[],bal=L,y=null;
+  var N=120;
+  for(var m=1;m<=N;m++){
+    var op=m>s.months;
+    var rv=op?revM*Math.pow(1+mg,m):0, cs=op?costM*Math.pow(1+mi,m):0, eb=rv-cs;
+    var ds=0;
+    if(L>0){
+      if(m<=G0){ds=bal*mr;}
+      else if(m<=G0+n){var it=bal*mr,pr=pay-it;bal=Math.max(0,bal-pr);ds=pay;}
+    }
+    var cL=eb-ds,cU=eb;
+    if(m===N&&o.resid){
+      var resid=r.fixed*units*Math.pow(1+mi,N)*Math.max(0,1-s.dep*10)+r.wc*units*Math.pow(1+mi,N);
+      cL+=resid-(bal>0?bal:0);cU+=resid;
+    }
+    cfL.push(cL);cfU.push(cU);
+    var yi=Math.ceil(m/12)-1;if(!years[yi])years[yi]={rev:0,eb:0,ds:0,cf:0,real:0};
+    years[yi].rev+=rv;years[yi].eb+=eb;years[yi].ds+=ds;years[yi].cf+=cL;years[yi].real+=cL/Math.pow(1+mi,m);
+  }
+  function npv(cf,rate){var s=0;for(var i=0;i<cf.length;i++)s+=cf[i]/Math.pow(1+rate,i);return s;}
+  function irr(cf){var lo=-0.3,hi=1,flo=npv(cf,lo),fhi=npv(cf,hi);if(!isFinite(flo)||flo*fhi>0)return NaN;for(var i=0;i<200;i++){var md=(lo+hi)/2,f=npv(cf,md);if(f*flo>0){lo=md;flo=f;}else hi=md;}return Math.pow(1+(lo+hi)/2,12)-1;}
+  function realCum(cf){var c=0,out=[],pb=null;for(var i=0;i<cf.length;i++){c+=cf[i]/Math.pow(1+mi,i);out.push(c);if(pb===null&&i>0&&c>=0)pb=i;}return {c:out,pb:pb};}
+  var rl=realCum(cfL),ru=realCum(cfU);
+  var irrL=irr(cfL),irrU=irr(cfU);
+  var realL=isFinite(irrL)?(1+irrL)/(1+o.inf)-1:NaN, realU=isFinite(irrU)?(1+irrU)/(1+o.inf)-1:NaN;
+  var dscr=null,fullFrom=Math.ceil(s.months/12);years.forEach(function(yr,i){if(i>=fullFrom&&yr.ds>0){var d=yr.eb/yr.ds;if(dscr===null||d<dscr)dscr=d;}});
+  var realRate=(1+o.rate)/(1+o.inf)-1;
+  return {units:units,I:I,L:L,E:E,pay:pay,years:years,cumL:rl.c,cumU:ru.c,pbL:rl.pb,pbU:ru.pb,irrL:irrL,irrU:irrU,realL:realL,realU:realU,dscr:dscr,realRate:realRate,npvL:npv(cfL,mi),npvU:npv(cfU,mi)};
+}
+function loanOpts(){
+  var b=parseFloat($('lBudget').value);if(!isFinite(b)||b<=0)b=50;
+  return {budget:b*1000,share:+$('lShare').value/100,rate:+$('lRate').value/100,termY:+$('lTerm').value,grace:+$('lGrace').value,inf:+$('lInf').value/100,gap:+$('lGap').value/100,resid:$('lResid').checked};
+}
+function kpi(box,label,val,cls,sub){var d=el('div',{'class':'kpi'});d.appendChild(el('span',{},label));d.appendChild(el('strong',{'class':cls||''},val));if(sub)d.appendChild(el('em',{},sub));box.appendChild(d);}
+function pbTxt(m){return m===null?'بیش از ۱۰ سال':fa.format(m/12)+' سال';}
+function renderLoan(){
+  var s=BY[$('lSector').value]||BY.mushroom,o=loanOpts(),R=loanSim(s,o);
+  $('oShare').textContent=fa0.format(o.share*100)+'٪';$('oRate').textContent=fa0.format(o.rate*100)+'٪';$('oTerm').textContent=fa0.format(o.termY)+' سال';
+  $('oGrace').textContent=fa0.format(o.grace)+' ماه';$('oInf').textContent=fa0.format(o.inf*100)+'٪';$('oGap').textContent=(o.gap>0?'+':'')+fa0.format(o.gap*100)+' واحد';
+  $('lTitle').textContent='نتیجه برای '+s.name;
+  var k=$('lKpis');k.textContent='';
+  if(!R){k.appendChild(el('p',{},'داده کافی نیست.'));return;}
+  kpi(k,'ظرفیت قابل خرید',fa0.format(R.units)+' '+s.unit);
+  kpi(k,'سهم آورده',money(R.E),'',R.L>0?'وام: '+money(R.L):'بدون وام');
+  kpi(k,'قسط ماهانه بعد از تنفس',R.L>0?money(R.pay):'—');
+  kpi(k,'نرخ واقعی وام',pct(R.realRate),R.realRate<0?'pos':'neg',R.realRate<0?'منفی یعنی وام به نفع وام‌گیرنده است':'وام از تورم گران‌تر است');
+  kpi(k,'بازده واقعی آورده (با وام)',pct(R.realL),R.realL<0?'neg':'pos','IRR اسمی: '+pct(R.irrL));
+  kpi(k,'بازده واقعی بدون وام',pct(R.realU),R.realU<0?'neg':'','IRR اسمی: '+pct(R.irrU));
+  kpi(k,'بازگشت آورده (واقعی)',pbTxt(R.pbL),'','بدون وام: '+pbTxt(R.pbU));
+  kpi(k,'کمترین DSCR (سال‌های کامل بهره‌برداری)',R.dscr===null?'—':fa2.format(R.dscr),R.dscr!==null&&R.dscr<1.2?'neg':'', R.dscr!==null&&R.dscr<1?'درآمد قسط را پوشش نمی‌دهد':'');
+  var v=$('lVerdict'),txt,warn=false;
+  var lev=(isFinite(R.realL)&&isFinite(R.realU))?R.realL-R.realU:NaN;
+  if(R.L===0)txt='بدون وام، بازده واقعی سرمایه '+pct(R.realU)+' است.';
+  else if(R.dscr!==null&&R.dscr<1){warn=true;txt='در دست‌کم یک سال، درآمد عملیاتی قسط وام را پوشش نمی‌دهد. یا دورهٔ تنفس را بیشتر کنید، یا سهم وام را کم کنید.';}
+  else if(isFinite(lev)&&lev>0){txt='وام بازده واقعی سهم شما را حدود '+pct(lev)+' بالا می‌برد. بخشی از این مزیت از منفی‌بودن نرخ واقعی وام می‌آید، نه از خود تولید.';}
+  else if(isFinite(lev)){warn=true;txt='با این شرایط وام بازده سهم شما را پایین می‌آورد؛ بازده عملیاتی فعالیت از هزینهٔ واقعی وام کمتر است.';}
+  else {warn=true;txt='جریان نقدی در افق ده‌ساله به نقطهٔ بازگشت نمی‌رسد؛ با این فرض‌ها طرح توجیه مالی ندارد.';}
+  v.textContent=txt;v.className='verdict'+(warn?' warn':'');
+  renderCf(R);
+  var tb=document.querySelector('#cfTbl tbody');tb.textContent='';
+  R.years.forEach(function(yr,i){var tr=el('tr');[fa0.format(i+1),money(yr.rev),money(yr.eb),money(yr.ds),money(yr.cf),money(yr.real),yr.ds>0&&i>=Math.ceil(s.months/12)?fa2.format(yr.eb/yr.ds):'—'].forEach(function(c,j){tr.appendChild(el('td',{'class':(j===4||j===5)&&(j===4?yr.cf:yr.real)<0?'neg':''},c));});tb.appendChild(tr);});
+}
+function renderCf(R){
+  var svg=$('cfChart');svg.textContent='';
+  var W=720,H=280,pl=24,pr=100,pt=12,pb=28;svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var all=R.cumL.concat(R.cumU),mn=Math.min.apply(null,all),mx=Math.max.apply(null,all);if(mx===mn){mx+=1;}
+  var pad=(mx-mn)*0.06;mn-=pad;mx+=pad;
+  var n=R.cumL.length-1;
+  function X(i){return W-pr-(i/n)*(W-pr-pl);} // RTL: time flows right-to-left
+  function Y(v){return pt+(mx-v)/(mx-mn)*(H-pt-pb);}
+  var grid=css('--grid'),fg=css('--fg');
+  for(var t=0;t<=5;t++){var v=mn+(mx-mn)*t/5,y=Y(v);svg.appendChild(el('line',{x1:pl,x2:W-pr,y1:y,y2:y,stroke:grid}));svg.appendChild(el('text',{x:W-pr+6,y:y+4,'font-size':10,'text-anchor':'start'},money(v)));}
+  for(var yr=0;yr<=10;yr+=2){var x=X(yr*12);svg.appendChild(el('text',{x:x,y:H-8,'font-size':10.5,'text-anchor':'middle'},'سال '+fa0.format(yr)));}
+  if(mn<0&&mx>0)svg.appendChild(el('line',{x1:pl,x2:W-pr,y1:Y(0),y2:Y(0),stroke:fg,'stroke-width':1}));
+  function line(arr,color){var p='';for(var i=0;i<arr.length;i++)p+=(i?' ':'')+X(i).toFixed(1)+','+Y(arr[i]).toFixed(1);svg.appendChild(el('polyline',{points:p,fill:'none',stroke:color,'stroke-width':2.5,'stroke-linejoin':'round'}));}
+  line(R.cumU,css('--bar2'));line(R.cumL,css('--bar'));
+}
+
+/* ---------- scoring ---------- */
+var WN=['بازگشت','حاشیهٔ سود','آب و اقلیم','ریسک زیستی','استقلال از واردات','آینده و فناوری'],W=[20,20,15,15,15,15];
+(function(){var box=$('wCtl');WN.forEach(function(n,i){var w=el('div',{'class':'ctl'}),id='w'+i;var lab=el('label',{'for':id});lab.appendChild(document.createTextNode(n+' '));var out=el('output',{id:'ow'+i},fa0.format(W[i])+'٪');lab.appendChild(out);w.appendChild(lab);
+  var inp=el('input',{id:id,type:'range',min:'0',max:'40',step:'5',value:String(W[i])});inp.addEventListener('input',function(){W[i]=+inp.value;renderScore();});w.appendChild(inp);box.appendChild(w);});})();
+function renderScore(){
+  var tot=W.reduce(function(a,b){return a+b;},0)||1;
+  W.forEach(function(w,i){$('ow'+i).textContent=fa0.format(w/tot*100)+'٪';});
+  var rows=S.map(function(s){var sc=s.sc.reduce(function(a,v,i){return a+v*W[i]/tot;},0);return {s:s,sc:sc};}).sort(function(a,b){return b.sc-a.sc;});
+  var tb=document.querySelector('#scTbl tbody');tb.textContent='';
+  rows.forEach(function(r,i){var tr=el('tr',{'data-k':r.s.k,tabindex:'0'});tr.appendChild(el('td',{},fa0.format(i+1)));tr.appendChild(el('td',{},r.s.name));r.s.sc.forEach(function(v){tr.appendChild(el('td',{},fa0.format(v)));});tr.appendChild(el('td',{'class':'pos'},fa2.format(r.sc)));tb.appendChild(tr);});
+}
+
+/* ---------- wiring ---------- */
+function syncSeg(){var key=[G.p*100,G.c*100,G.x*100].map(Math.round).join(',');document.querySelectorAll('[data-scn]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.scn===key));});}
+function readG(){G.p=+$('gPrice').value/100;G.c=+$('gCost').value/100;G.x=+$('gCapex').value/100;
+  $('oPrice').textContent=(G.p>0?'+':'')+fa0.format(G.p*100)+'٪';$('oCost').textContent=(G.c>0?'+':'')+fa0.format(G.c*100)+'٪';$('oCapex').textContent=(G.x>0?'+':'')+fa0.format(G.x*100)+'٪';syncSeg();}
+['gPrice','gCost','gCapex'].forEach(function(id){$(id).addEventListener('input',function(){readG();renderAll();});});
+document.querySelectorAll('[data-scn]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.scn.split(',');$('gPrice').value=v[0];$('gCost').value=v[1];$('gCapex').value=v[2];readG();renderAll();});});
+document.querySelectorAll('#tbl th button').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.k;if(sortK===k)sortDir=-sortDir;else{sortK=k;sortDir=k==='name'||k==='pb'||k==='fixed'?1:-1;}renderTable();});});
+function rowPick(e){var tr=e.target.closest('tr[data-k]');if(!tr)return;if(e.type==='keydown'&&e.key!=='Enter'&&e.key!==' ')return;if(e.type==='keydown')e.preventDefault();select(tr.dataset.k);}
+['click','keydown'].forEach(function(t){document.querySelector('#tbl tbody').addEventListener(t,rowPick);document.querySelector('#scTbl tbody').addEventListener(t,rowPick);});
+var sel=$('lSector');S.forEach(function(s){sel.appendChild(el('option',{value:s.k},s.name));});sel.value=selK;
+sel.addEventListener('change',function(){selK=sel.value;renderAll();});
+['lBudget','lShare','lRate','lTerm','lGrace','lInf','lGap','lResid'].forEach(function(id){$(id).addEventListener('input',renderLoan);$(id).addEventListener('change',renderLoan);});
+
+function renderAll(keepDetailInputs){renderTable();renderRoiChart();if(keepDetailInputs){var s=BY[selK],r=econ(s);/* refresh kpis only */var save=document.activeElement&&document.activeElement.id;renderDetail();if(save&&$(save))$(save).focus();}else renderDetail();renderLoan();renderScore();}
+readG();renderAll();
+})();
+</script>
+</body>
+</html>

@@ -6,45 +6,32 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse, find, rawTextOf } from './parse.mjs';
 import { compile, applyClasses } from './compile.mjs';
 import { renderToString } from './render.mjs';
+import { getPages, STATIC_PAGES } from './pages.mjs';
+import { expandPartials } from './partials.mjs';
+import { normalizeSiteUrl, metadataTags, withStaticMetadata, encodeText, encodeAttr } from './metadata.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(root, 'src');
-const OUT = root;
-
-const PAGES = [
-  { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
-  { file: 'Writing.dc.html', out: 'writing.html', nav: 'نوشته‌ها' },
-  { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها' },
-  { file: 'About.dc.html', out: 'about.html', nav: 'درباره من' },
-  { file: 'Work.dc.html', out: 'work.html', nav: 'کارها' },
-  { file: 'Process.dc.html', out: 'process.html', nav: 'روش کار' },
-  { file: 'FAQ.dc.html', out: 'faq.html', nav: 'پرسش‌ها' },
-  { file: 'Contact.dc.html', out: 'contact.html', nav: 'تماس' },
-  { file: 'Glossary.dc.html', out: 'glossary.html', nav: 'واژه‌نامه' },
-  { file: 'Learn.dc.html', out: 'learn.html', nav: 'مسیر یادگیری' },
-  { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
-  { file: 'Ideas.dc.html', out: 'ideas.html', nav: 'ایده‌ها' },
-  { file: 'GameTheory.dc.html', out: 'game-theory.html', nav: 'نظریهٔ بازی' },
-  { file: 'Patents.dc.html', out: 'patents.html', nav: 'ثبت اختراع' },
-  { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
-  { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
-  { file: 'Chess.dc.html', out: 'chess.html', nav: 'شصت‌وچهار خانه' },
-  { file: 'AILiteracy.dc.html', out: 'ai-literacy.html', nav: 'شانزده ستون' },
-  { file: 'Security.dc.html', out: 'security.html', nav: 'پنجاه سال دفاع' },
-  { file: 'Literacy.dc.html', out: 'literacy.html', nav: 'آزمون سواد' },
-  { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'هزار بسته، یک الگو' },
-  { file: 'Campaign.dc.html', out: 'campaign.html', nav: 'کمپین' },
-];
-// صفحه‌های پروژهٔ مسیر مهندس هوش مصنوعی: Aie101.dc.html → aie-1-01.html
-for (const f of fs.readdirSync(SRC).filter((f) => /^Aie\d{3}\.dc\.html$/.test(f)).sort()) {
-  PAGES.push({ file: f, out: `aie-${f[3]}-${f.slice(4, 6)}.html`, nav: 'پروژه' });
+const OUT = process.env.OUTPUT_DIR ? path.resolve(root, process.env.OUTPUT_DIR) : root;
+// خروجی جدا نباید پوشهٔ منبع، ابزار یا والد مخزن را بازنویسی کند.
+if (OUT !== root) {
+  const rel = path.relative(root, OUT);
+  const protectedDirs = ['src', 'tools', 'public', '.git', 'assets', 'tests'];
+  if (!path.relative(OUT, root).startsWith('..') || protectedDirs.some((name) => rel === name || rel.startsWith(name + path.sep))) {
+    throw new Error('OUTPUT_DIR نباید روی منبع یا والد مخزن باشد');
+  }
 }
+fs.mkdirSync(OUT, { recursive: true });
+
+const PAGES = getPages(root);
+const PUBLIC_PAGES = [...PAGES, ...STATIC_PAGES];
 const MAP = Object.fromEntries(PAGES.map((p) => [p.file, p.out]));
-const SITE = (process.env.SITE_URL || '').replace(/\/$/, '');
+const SITE = normalizeSiteUrl(process.env.SITE_URL || '');
 // پیشوند مسیر سایت (برای Pagesِ پروژه‌ای مثل /reza-site/) — فقط در صفحهٔ ۴۰۴ لازم است
 const BASE = SITE ? new URL(SITE + '/').pathname : '/';
 
@@ -63,7 +50,7 @@ const styleUse = new Map();
 const docs = [];
 
 for (const page of PAGES) {
-  const src = fs.readFileSync(path.join(SRC, page.file), 'utf8');
+  const src = expandPartials(fs.readFileSync(path.join(SRC, page.file), 'utf8'), page.file, root);
   const tree = parse(src);
 
   const htmlEl = find(tree, 'html');
@@ -163,7 +150,9 @@ const RESPONSIVE = [
 
 fs.mkdirSync(path.join(OUT, 'assets'), { recursive: true });
 // خروجی‌های ساخت پیشین پاک می‌شوند تا فایل مرده جا نماند
-for (const f of fs.readdirSync(path.join(OUT, 'assets'))) fs.unlinkSync(path.join(OUT, 'assets', f));
+for (const f of fs.readdirSync(path.join(OUT, 'assets'))) fs.rmSync(path.join(OUT, 'assets', f), { recursive: true });
+// فایل‌های دست‌نویس خارج از assets تولیدشده نگه‌داری می‌شوند.
+fs.cpSync(path.join(root, 'public/assets'), path.join(OUT, 'assets'), { recursive: true });
 fs.copyFileSync(path.join(root, 'tools/dc.js'), path.join(OUT, 'assets/dc.js'));
 fs.writeFileSync(
   path.join(OUT, 'assets/site.css'),
@@ -172,28 +161,7 @@ fs.writeFileSync(
 
 // ---------------------------------------------------------------- پاس ۳: رندر و نوشتن
 
-const DESCRIPTIONS = {
-  'index.html':
-    'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
-  'glossary.html':
-    'واژه‌نامهٔ فارسی یادگیری ماشین: ۲۸۵ اصطلاح با معادل انگلیسی، توضیح ساده، مترادف‌های رایج و هشدار اشتباه‌های پرتکرار. قابل جست‌وجو و فیلتر.',
-  'learn.html':
-    'مسیر یادگیری ماشین در هشت ایستگاه؛ هر ایستگاه فقط به ایستگاه قبلی تکیه می‌کند و مقالهٔ مرجع و تمرین خودش را دارد.',
-  'ai-engineer.html':
-    'مسیر مهندس هوش مصنوعی شدن در شش مرحله — از پایتون تا Agentهای آمادهٔ Production — با سی پروژهٔ کاربردی روی دیتاست‌های عمومی.',
-  'ideas.html':
-    'صد ایدهٔ کاربردی یادگیری ماشین در ده حوزه، و کنار هر ایده دقیقاً همان داده‌ای که لازم دارد. قابل جست‌وجو و فیلتر.',
-  'game-theory.html':
-    'نظریهٔ بازی برای کسی که مدل می‌سازد: تعادل، انگیزه و بازی‌های تکرارشونده، با ارجاع به مقاله‌های اصلی.',
-  'patents.html':
-    'ثبت اختراع در ایران و بیرون از ایران، از نگاه کسی که سیستم می‌سازد: چه چیزی ثبت‌شدنی است، چه مسیری دارد و چه هزینه‌ای.',
-  'dorrin.html':
-    'مطالعهٔ موردی دُرّین: سیستم ثبت و تصمیم برای یک واحد پرورش قارچ — از ثبت دمای کمپوست تا سود هر سالن.',
-  'demo.html':
-    'دموی زندهٔ سامانهٔ پایش سالن‌های پرورش قارچ: فاز رشد، دما، رطوبت، دی‌اکسید کربن، برداشت و اقتصاد هر فلاش.',
-};
-
-const escapeAttr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+const escapeAttr = encodeAttr;
 let report = [];
 
 for (const d of docs) {
@@ -211,7 +179,7 @@ for (const d of docs) {
     const context = vm.createContext(sandbox);
     new vm.Script(`${d.logic}\n;globalThis.__vals = new Component({}).renderVals();`, {
       filename: d.file,
-    }).runInContext(context);
+    }).runInContext(context, { timeout: 5000 });
     vals = context.__vals || {};
   }
   scopes[0] = vals;
@@ -248,22 +216,17 @@ for (const d of docs) {
     })
     .join('\n');
 
-  const canonical = SITE ? `\n<link rel="canonical" href="${SITE}/${d.out === 'index.html' ? '' : d.out}">` : '';
-  const desc = DESCRIPTIONS[d.out] || '';
+  const meta = metadataTags(d, SITE);
 
   const html = `<!doctype html>
 <html lang="${d.lang}" dir="${d.dir}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${d.title}</title>
-<meta name="description" content="${escapeAttr(desc)}">
+<title>${encodeText(d.title)}</title>
 <meta name="author" content="رضا هاشمی">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:title" content="${escapeAttr(d.title)}">
-<meta property="og:description" content="${escapeAttr(desc)}">
-<link rel="icon" href="${FAVICON}">${canonical}
+${meta}
+<link rel="icon" href="${FAVICON}">
 ${links}
 <link rel="stylesheet" href="assets/site.css">${cssFile ? `\n<link rel="stylesheet" href="${cssFile}">` : ''}
 </head>
@@ -277,20 +240,46 @@ ${interactive ? `<script src="assets/dc.js" defer></script>\n<script src="${jsFi
   report.push([d.out, html.length, cssFile ? fs.statSync(path.join(OUT, cssFile)).size : 0, jsFile ? fs.statSync(path.join(OUT, jsFile)).size : 0]);
 }
 
+// صفحات مستقل نیز از همان مسیر انتشار و متادیتا عبور می‌کنند.
+for (const page of STATIC_PAGES) {
+  const source = fs.readFileSync(path.join(root, 'public/pages', page.file), 'utf8');
+  fs.writeFileSync(path.join(OUT, page.out), withStaticMetadata(source, page, SITE));
+}
+
+const lastModified = (page) => {
+  const source = page.file.endsWith('.dc.html') ? `src/${page.file}` : `public/pages/${page.file}`;
+  const sources = [source];
+  if (page.file.endsWith('.dc.html') && fs.readFileSync(path.join(root, source), 'utf8').includes('<dc-include')) {
+    sources.push('src/partials');
+  }
+  try {
+    // تاریخ تغییر منبع، نه تاریخ هر بار ساخت؛ در archive بدون Git، lastmod حذف می‌شود.
+    const gitDate = (paths) => execFileSync('git', ['log', '-1', '--format=%cs', '--', ...paths], {
+      cwd: root,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    // برای اولین مهاجرت صفحهٔ مستقل، تاریخ منبع قبلی در ریشه معتبر است.
+    const date = gitDate(sources) || (!page.file.endsWith('.dc.html') ? gitDate([page.file]) : '');
+    return /^\d{4}-\d{2}-\d{2}$/.test(date) ? `<lastmod>${date}</lastmod>` : '';
+  } catch { return ''; }
+};
+
 // ---------------------------------------------------------------- نقشهٔ سایت و خروجی گزارش
 
 if (SITE) {
-  const today = new Date().toISOString().slice(0, 10);
   fs.writeFileSync(
     path.join(OUT, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-      PAGES.map(
+      PUBLIC_PAGES.map(
         (p) =>
-          `  <url><loc>${SITE}/${p.out === 'index.html' ? '' : p.out}</loc><lastmod>${today}</lastmod></url>`
+          `  <url><loc>${encodeText(SITE + '/' + (p.out === 'index.html' ? '' : p.out))}</loc>${lastModified(p)}</url>`
       ).join('\n') +
       `\n</urlset>\n`
   );
   fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
+} else {
+  for (const name of ['sitemap.xml', 'robots.txt']) fs.rmSync(path.join(OUT, name), { force: true });
 }
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 
@@ -316,13 +305,15 @@ fs.writeFileSync(
 <h1 style="font-size:clamp(26px,5vw,40px);font-weight:800;line-height:1.5;margin:0 0 18px">این صفحه این‌جا نیست</h1>
 <p style="font-size:16px;line-height:2;color:#4A4F58;margin:0 0 30px">شاید نشانی را اشتباه وارد کرده‌اید یا صفحه جابه‌جا شده است.</p>
 <nav style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-${PAGES.map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
+${PUBLIC_PAGES.map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
 </nav>
 </main>
 </body>
 </html>
 `
 );
+
+fs.writeFileSync(path.join(OUT, 'manus-routes.json'), JSON.stringify({ routes: PUBLIC_PAGES.map((p) => ({ path: p.out === 'index.html' ? '/' : '/' + p.out, title: p.nav })) }, null, 2) + '\n');
 
 const srcTotal = PAGES.reduce((n, p) => n + fs.statSync(path.join(SRC, p.file)).size, 0);
 const outTotal = report.reduce((n, r) => n + r[1] + r[2] + r[3], 0)

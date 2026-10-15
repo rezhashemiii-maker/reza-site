@@ -1,0 +1,34 @@
+name: گزارش مشکل سایت
+description: نشانی صفحه، رفتار مورد انتظار و مراحل بازتولید را بنویسید.
+title: "[مشکل] "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: نشانی صفحه
+      placeholder: https://rezhashemiii-maker.github.io/reza-site/...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: مراحل بازتولید
+      description: چه کاری انجام دادید و چه چیزی نمایش داده شد؟
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: رفتار مورد انتظار
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: مرورگر و دستگاه
+      placeholder: Chrome، موبایل Android یا لپ‌تاپ
+  - type: textarea
+    id: context
+    attributes:
+      label: تصویر یا توضیح تکمیلی
+      description: اطلاعات خصوصی یا توکن‌ها را در گزارش قرار ندهید.
