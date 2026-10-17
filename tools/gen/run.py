@@ -23,6 +23,7 @@ STEPS = [
     ('math',  ['math/logic.py', 'math/page.py']),
     ('plain', ['plain/page.py']),
     ('found', ['found/logic.py', 'found/page.py']),
+    ('music', ['music/page.py']),
     ('watch', ['watch/logic.py', 'watch/page.py']),
     ('shop',  ['workshop/hf.py', 'workshop/page.py']),
     ('port',  ['port.py', 'lessons.py']),
@@ -37,7 +38,8 @@ for name, scripts in STEPS:
         continue
     for s in scripts:
         print('\n── %s' % s)
-        r = subprocess.run([sys.executable, os.path.join(GEN, s)], cwd=GEN)
+        env = dict(os.environ, GEN_RUNNER='1')
+        r = subprocess.run([sys.executable, os.path.join(GEN, s)], cwd=GEN, env=env)
         if r.returncode:
             fail += 1
             print('   ✗ شکست خورد')

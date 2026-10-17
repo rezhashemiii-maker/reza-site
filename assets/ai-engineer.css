@@ -2,17 +2,17 @@
 .cy.cy{font-size: 15px;font-weight: 700;color: #16181C;margin: 0 0 8px;line-height: 1.6}
 .cz.cz{font-size: 13px;line-height: 1.9;color: #4A4F58;margin: 0 0 12px;flex: 1}
 .c10.c10{font-size: 11.5px;color: #2F5233;background: #E7ECE4;border-radius: 8px;padding: 6px 10px;direction: ltr;text-align: left;margin-bottom: 10px}
-.cjz.cjz{margin-bottom: 56px;padding-top: 8px;border-top: 1px solid #E4E1D6}
-.ck0.ck0{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #2F5233;margin: 26px 0 10px}
-.ck1.ck1{font-size: clamp(22px, 2.8vw, 29px);font-weight: 800;margin: 0 0 10px}
-.ck2.ck2{font-size: 15.5px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
-.ck3.ck3{display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 14px;margin-bottom: 22px}
-.ck4.ck4{font-size: 15px;font-weight: 700;margin: 0 0 10px}
-.ck5.ck5{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #45494F}
-.ck6.ck6{background: #E7ECE4;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px}
-.ck7.ck7{font-size: 15px;font-weight: 700;margin: 0 0 10px;color: #1F3A22}
-.ck8.ck8{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #2F3A30}
-.ck9.ck9{font-size: 16px;font-weight: 800;margin: 0 0 14px}
+.cki.cki{margin-bottom: 56px;padding-top: 8px;border-top: 1px solid #E4E1D6}
+.ckj.ckj{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #2F5233;margin: 26px 0 10px}
+.ckk.ckk{font-size: clamp(22px, 2.8vw, 29px);font-weight: 800;margin: 0 0 10px}
+.ckl.ckl{font-size: 15.5px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
+.ckm.ckm{display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 14px;margin-bottom: 22px}
+.ckn.ckn{font-size: 15px;font-weight: 700;margin: 0 0 10px}
+.cko.cko{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #45494F}
+.ckp.ckp{background: #E7ECE4;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px}
+.ckq.ckq{font-size: 15px;font-weight: 700;margin: 0 0 10px;color: #1F3A22}
+.ckr.ckr{margin: 0;padding-inline-start: 20px;font-size: 13.8px;line-height: 2.1;color: #2F3A30}
+.cks.cks{font-size: 16px;font-weight: 800;margin: 0 0 14px}
 body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
