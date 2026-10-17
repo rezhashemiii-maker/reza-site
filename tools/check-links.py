@@ -1,7 +1,19 @@
 # -*- coding: utf-8 -*-
 """بررسی پیوندهای داخلی و لنگرهای خروجی سایت."""
 import re, os, glob, sys
-os.chdir('/home/user/reza-site')
+
+# ریشهٔ مخزن از روی جای خودِ این فایل درمی‌آید، نه از یک مسیر ثابت؛
+# وگرنه روی رانرِ گیت‌هاب که مخزن جای دیگری است، اجرا نمی‌شود.
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# وقتی سایت زیرپوشه‌ای منتشر می‌شود (مثل /reza-site/)، صفحهٔ ۴۰۴ ناچار است
+# پیوندهایش را مطلق بنویسد، چون در هر عمقی سرو می‌شود. آن پیشوند باید
+# پیش از رسیدگی برداشته شود، وگرنه هر پیوندِ درست «شکسته» شمرده می‌شود.
+_site = (os.environ.get('SITE_URL') or '').rstrip('/')
+BASE = ''
+if _site:
+    from urllib.parse import urlparse
+    BASE = urlparse(_site + '/').path.strip('/')
 pages = {os.path.basename(f): re.sub(r'<script\b.*?</script>', '', open(f, encoding='utf-8').read(), flags=re.S)
          for f in glob.glob('*.html')}
 ids = {k: set(re.findall(r'id="([^"]+)"', v)) for k, v in pages.items()}
@@ -11,6 +23,8 @@ for f, t in sorted(pages.items()):
         if href.startswith(('http', 'mailto:', 'data:')):
             continue
         page, sep, frag = href.partition('#')
+        if BASE and page.startswith('/' + BASE):
+            page = page[len(BASE) + 1:]
         page = page.lstrip('/')
         if page in ('', '.', './'):
             target = 'index.html' if page else f
