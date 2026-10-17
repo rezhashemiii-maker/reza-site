@@ -37,8 +37,6 @@ const PAGES = [
   { file: 'Ideas.dc.html', out: 'ideas.html', nav: 'ایده‌ها' },
   { file: 'GameTheory.dc.html', out: 'game-theory.html', nav: 'نظریهٔ بازی' },
   { file: 'Patents.dc.html', out: 'patents.html', nav: 'ثبت اختراع' },
-  { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
-  { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
   { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
   { file: 'SecBook01.dc.html', out: 'sec-book-01.html', nav: 'کتاب 1', sub: true },
   { file: 'SecBook02.dc.html', out: 'sec-book-02.html', nav: 'کتاب 2', sub: true },
@@ -119,11 +117,6 @@ const PAGES = [
   // برای همگامی با آرتیفکت نگه داشته می‌شوند و noindex دارند تا با index.html رقابت نکنند.
   { file: 'Writing.dc.html', out: 'writing.html', nav: 'نوشته‌ها', mirror: true },
   { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها' },
-  { file: 'About.dc.html', out: 'about.html', nav: 'درباره من', mirror: true },
-  { file: 'Work.dc.html', out: 'work.html', nav: 'کارها', mirror: true },
-  { file: 'Process.dc.html', out: 'process.html', nav: 'روش کار', mirror: true },
-  { file: 'FAQ.dc.html', out: 'faq.html', nav: 'پرسش‌ها', mirror: true },
-  { file: 'Contact.dc.html', out: 'contact.html', nav: 'تماس', mirror: true },
 ];
 // صفحه‌های خودبسنده: HTML کاملی که از خط لولهٔ قالب رد نمی‌شود و همان‌طور که هست منتشر می‌شود.
 // منبعشان src/standalone/ است و فقط در نقشهٔ سایت و ناوبری ۴۰۴ دیده می‌شوند.
@@ -265,17 +258,11 @@ const TABS = [
   { label: 'شروع',     href: 'index.html',         anchor: '#home' },
   { label: 'نوشته‌ها',  href: 'index.html#writing', anchor: '#writing' },
   { label: 'کتاب‌ها',   href: 'books.html',         anchor: null },
-  { label: 'درباره من', href: 'index.html#about',   anchor: '#about' },
-  { label: 'کارها',    href: 'index.html#gallery', anchor: '#gallery' },
   { label: 'رصدخانه',  href: 'watch.html',         anchor: null },
-  { label: 'پرسش‌ها',   href: 'index.html#faq',     anchor: '#faq' },
 ];
 // صفحه‌هایی که تب دیگری را روشن می‌کنند (آینه‌ها و زیرصفحه‌ها)
 const TAB_ALIAS = {
   'writing.html': 'index.html#writing',
-  'about.html': 'index.html#about',
-  'work.html': 'index.html#gallery',
-  'faq.html': 'index.html#faq',
 };
 for (let i = 1; i <= 15; i++) TAB_ALIAS[`sec-book-${String(i).padStart(2, '0')}.html`] = 'books.html';
 
@@ -287,8 +274,6 @@ const TABS_CSS = [
   '.stab{font-size:13px;color:#4A4F58;padding:6px 11px;border-radius:999px;text-decoration:none;white-space:nowrap}',
   '.stab:hover{background:#F0EEE7;color:#16181C;text-decoration:none}',
   '.stab[aria-current]{background:#2F5233;color:#FFFFFF;font-weight:700}',
-  '.stab-cta{margin-inline-start:auto;color:#B4530E;font-weight:700}',
-  '.stab-cta:hover{background:#F7E3D6;color:#B4530E}',
   // روی دسکتاپ نوار می‌چسبد و هدرِ خودِ صفحه زیرش می‌نشیند؛ روی گوشی نمی‌چسبد
   // تا دو نوارِ چسبان نیمی از نما را نگیرند.
   '@media (min-width:861px){.stabs{position:sticky;top:0;z-index:60}body header{top:43px !important}[id]{scroll-margin-top:122px !important}}',
@@ -303,10 +288,7 @@ const siteTabs = (out, base = '') => {
     const on = self ? t.href === 'index.html' : active === t.href || (out === 'index.html' && t.href === 'index.html');
     return `<a class="stab" href="${href}"${on ? ' aria-current="page"' : ''}>${t.label}</a>`;
   }).join('');
-  const cta = out === 'index.html'
-    ? '<a class="stab stab-cta" href="#contact">تماس</a>'
-    : `<a class="stab stab-cta" href="${base}index.html#contact">تماس</a>`;
-  return `<nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="${base}index.html"><span></span>رضا هاشمی</a>${items}${cta}</div></nav>`;
+  return `<nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="${base}index.html"><span></span>رضا هاشمی</a>${items}</div></nav>`;
 };
 
 const RESPONSIVE = [
@@ -382,10 +364,6 @@ const DESCRIPTIONS = {
     'نظریهٔ بازی برای کسی که مدل می‌سازد: تعادل، انگیزه و بازی‌های تکرارشونده، با ارجاع به مقاله‌های اصلی.',
   'patents.html':
     'ثبت اختراع در ایران و بیرون از ایران، از نگاه کسی که سیستم می‌سازد: چه چیزی ثبت‌شدنی است، چه مسیری دارد و چه هزینه‌ای.',
-  'dorrin.html':
-    'مطالعهٔ موردی دُرّین: سیستم ثبت و تصمیم برای یک واحد پرورش قارچ — از ثبت دمای کمپوست تا سود هر سالن.',
-  'demo.html':
-    'دموی زندهٔ سامانهٔ پایش سالن‌های پرورش قارچ: فاز رشد، دما، رطوبت، دی‌اکسید کربن، برداشت و اقتصاد هر فلاش.',
 };
 
 const escapeAttr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;');

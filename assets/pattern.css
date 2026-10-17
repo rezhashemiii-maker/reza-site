@@ -1,32 +1,38 @@
-.cc.cc{width: 11px;height: 11px;border-radius: 2px;background: #C9D4C6}
-.ca0.ca0{display: flex;justify-content: space-between;align-items: baseline;gap: 12px;margin-bottom: 5px}
-.ca1.ca1{font-size: 12.5px;color: #45494F;direction: ltr;unicode-bidi: isolate}
-.cbv.cbv{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;color: #45494F;line-height: 1.85}
-.chv.chv{background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 18px 20px}
-.chw.chw{font-size: 12.5px;color: #666158;margin-top: 5px;line-height: 1.7}
-.cl4.cl4{font-size: 30px;font-weight: 800;color: #16181C;line-height: 1.2}
-.cna.cna{max-width: 1060px;margin: 0 auto;padding: 52px 24px}
-.cnb.cnb{font-size: 16px;font-weight: 800;margin: 0 0 9px;line-height: 1.55}
-.cpy.cpy{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;font-weight: 700;line-height: 1.7}
-.cu1.cu1{font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 68ch;margin: 0 0 26px}
-.cu3.cu3{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px 24px;border-top: 3px solid #2F5233}
-.cu4.cu4{font-size: 11px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
-.cyd.cyd{border-bottom: 1px solid #E4E1D6}
-.cye.cye{font-size: 12px;font-weight: 700;color: #666158;margin-bottom: 6px}
-.cyf.cyf{font-size: 15.5px;font-weight: 700;margin: 0 0 8px;line-height: 1.6}
-.cyg.cyg{font-size: 32px;font-weight: 800;color: #16181C;line-height: 1.2}
-.cyh.cyh{font-size: 13px;color: #45494F;margin-top: 6px;line-height: 1.8}
-.cyi.cyi{font-size: 15.5px;font-weight: 800;margin: 0 0 6px}
-.cyj.cyj{font-size: 12.5px;line-height: 1.85;color: #45494F;margin: 16px 0 0}
-.cyk.cyk{text-align: start;padding: 14px 18px;font-size: 12px;font-weight: 700;color: #666158;border-bottom: 1px solid #E4E1D6}
-.c15v.c15v{font-size: 14px;font-weight: 700;color: #16181C;background: #FFFFFF;border: 1px solid #E4E1D6;padding: 12px 24px;border-radius: 10px}
-.c15w.c15w{width: 2px;flex-shrink: 0;background: #FFFFFF}
-.c15x.c15x{border-bottom: 1px solid #E4E1D6;background: #FAFAF7}
-.c161.c161{font-size: 12.5px;line-height: 1.8;color: #666158;margin: 0 0 16px}
-.c162.c162{font-size: 11.5px;color: #666158;width: 74px;flex-shrink: 0}
-.c163.c163{font-size: 12px;color: #45494F;font-variant-numeric: tabular-nums;width: 52px;flex-shrink: 0;text-align: end}
-.c164.c164{font-size: 11px;font-weight: 700;color: #8A5410;background: #F4E3D3;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
-.c165.c165{padding: 15px 18px;color: #45494F;line-height: 1.85}
+.cb.cb{width: 11px;height: 11px;border-radius: 2px;background: #C9D4C6}
+.c8z.c8z{display: flex;justify-content: space-between;align-items: baseline;gap: 12px;margin-bottom: 5px}
+.c90.c90{font-size: 12.5px;color: #45494F;direction: ltr;unicode-bidi: isolate}
+.c91.c91{font-size: 12px;color: #666158;font-variant-numeric: tabular-nums}
+.cav.cav{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;color: #45494F;line-height: 1.85}
+.cg7.cg7{background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 18px 20px}
+.cg8.cg8{font-size: 12.5px;color: #666158;margin-top: 5px;line-height: 1.7}
+.ci0.ci0{font-size: 30px;font-weight: 800;color: #16181C;line-height: 1.2}
+.cjs.cjs{max-width: 1060px;margin: 0 auto;padding: 52px 24px}
+.cjt.cjt{font-size: 16px;font-weight: 800;margin: 0 0 9px;line-height: 1.55}
+.cmg.cmg{display: flex;align-items: center;gap: 9px;margin-bottom: 9px}
+.cmh.cmh{font-size: 14.5px;font-weight: 800;margin: 0;line-height: 1.5}
+.cmi.cmi{padding: 15px 18px;border-bottom: 1px solid #F0EEE7;font-weight: 700;line-height: 1.7}
+.cpo.cpo{font-size: 15.5px;line-height: 1.95;color: #45494F;max-width: 68ch;margin: 0 0 26px}
+.cpq.cpq{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px 24px;border-top: 3px solid #2F5233}
+.cpr.cpr{font-size: 11px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
+.cta.cta{border-bottom: 1px solid #E4E1D6}
+.ctb.ctb{font-size: 12px;font-weight: 700;color: #666158;margin-bottom: 6px}
+.ctc.ctc{font-size: 15.5px;font-weight: 700;margin: 0 0 8px;line-height: 1.6}
+.ctd.ctd{font-size: 32px;font-weight: 800;color: #16181C;line-height: 1.2}
+.cte.cte{font-size: 13px;color: #45494F;margin-top: 6px;line-height: 1.8}
+.ctf.ctf{font-size: 15.5px;font-weight: 800;margin: 0 0 6px}
+.ctg.ctg{font-size: 12.5px;line-height: 1.85;color: #45494F;margin: 16px 0 0}
+.cth.cth{background: #E3EEE1;border-radius: 13px;padding: 17px 19px}
+.cti.cti{width: 23px;height: 23px;border-radius: 7px;background: #FFFFFF;color: #2F5233;font-size: 12px;font-weight: 800;display: flex;align-items: center;justify-content: center;flex-shrink: 0}
+.ctj.ctj{text-align: start;padding: 14px 18px;font-size: 12px;font-weight: 700;color: #666158;border-bottom: 1px solid #E4E1D6}
+.czg.czg{font-size: 14px;font-weight: 700;color: #16181C;background: #FFFFFF;border: 1px solid #E4E1D6;padding: 12px 24px;border-radius: 10px}
+.czh.czh{width: 11px;height: 11px;border-radius: 3px;background: #166534;flex-shrink: 0}
+.czi.czi{width: 2px;flex-shrink: 0;background: #FFFFFF}
+.czj.czj{border-bottom: 1px solid #E4E1D6;background: #FAFAF7}
+.czk.czk{font-size: 12.5px;line-height: 1.8;color: #666158;margin: 0 0 16px}
+.czl.czl{font-size: 11.5px;color: #666158;width: 74px;flex-shrink: 0}
+.czm.czm{font-size: 12px;color: #45494F;font-variant-numeric: tabular-nums;width: 52px;flex-shrink: 0;text-align: end}
+.czn.czn{font-size: 11px;font-weight: 700;color: #8A5410;background: #F4E3D3;border-radius: 999px;padding: 3px 10px;display: inline-block;margin-bottom: 12px}
+.czo.czo{padding: 15px 18px;color: #45494F;line-height: 1.85}
 body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}

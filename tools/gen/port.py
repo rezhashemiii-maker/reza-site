@@ -6,7 +6,7 @@ from paths import SRC  # noqa: E402
 
 AF = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'artifact')
 
-IA = ['Writing', 'Books', 'About', 'Work', 'Process', 'FAQ', 'Contact']
+IA = ['Writing', 'Books']
 AIE = ['AiEngineer'] + ['Aie%d%02d' % (s, i) for s in range(1, 7) for i in range(1, 11)]
 NAMES = IA + AIE
 
@@ -49,7 +49,7 @@ def clean(t, name):
 
     # ۳.۵) در آرتیفکت این صفحه‌ها بخشی از یک صفحهٔ بلند بودند، پس تیتر اصلی‌شان
     #      h2 است. به‌عنوان صفحهٔ مستقل باید دقیقاً یک h1 داشته باشند.
-    if name in ('About', 'Contact', 'FAQ', 'Process', 'Work', 'Writing'):
+    if name in ('Writing',):
         before = t
         t = re.sub(r'<h2( style="font-size: clamp\(24px, 3vw, 32px\);[^"]*">.*?)</h2>',
                    r'<h1\1</h1>', t, count=1, flags=re.S)
