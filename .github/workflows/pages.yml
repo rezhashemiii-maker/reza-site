@@ -38,6 +38,8 @@ jobs:
       # هر پیوند داخلی و هر لنگر باید به جایی برسد، وگرنه انتشار انجام نمی‌شود
       - name: Check internal links
         run: python3 tools/check-links.py
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
 
       # تیتر، شناسهٔ تکراری، alt، rel و طول متا
       - name: Check page hygiene

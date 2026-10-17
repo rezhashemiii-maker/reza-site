@@ -9,11 +9,26 @@ os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # وقتی سایت زیرپوشه‌ای منتشر می‌شود (مثل /reza-site/)، صفحهٔ ۴۰۴ ناچار است
 # پیوندهایش را مطلق بنویسد، چون در هر عمقی سرو می‌شود. آن پیشوند باید
 # پیش از رسیدگی برداشته شود، وگرنه هر پیوندِ درست «شکسته» شمرده می‌شود.
-_site = (os.environ.get('SITE_URL') or '').rstrip('/')
-BASE = ''
-if _site:
-    from urllib.parse import urlparse
-    BASE = urlparse(_site + '/').path.strip('/')
+#
+# پیشوند را از خودِ خروجیِ ساخته‌شده درمی‌آوریم، نه از متغیر محیطی: در
+# گردش‌کار، SITE_URL فقط به قدمِ ساخت داده می‌شود و این قدم آن را ندارد.
+# هر طور که ساخته شده باشد، نشانیِ site.css همان پیشوند را نشان می‌دهد.
+def _base():
+    try:
+        t404 = open('404.html', encoding='utf-8').read()
+    except OSError:
+        t404 = ''
+    m = re.search(r'href="(/[^"]*?)assets/site\.css"', t404)
+    if m:
+        return m.group(1).strip('/')
+    site = (os.environ.get('SITE_URL') or '').rstrip('/')
+    if site:
+        from urllib.parse import urlparse
+        return urlparse(site + '/').path.strip('/')
+    return ''
+
+
+BASE = _base()
 pages = {os.path.basename(f): re.sub(r'<script\b.*?</script>', '', open(f, encoding='utf-8').read(), flags=re.S)
          for f in glob.glob('*.html')}
 ids = {k: set(re.findall(r'id="([^"]+)"', v)) for k, v in pages.items()}
