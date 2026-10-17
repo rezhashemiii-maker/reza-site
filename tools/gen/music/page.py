@@ -26,6 +26,8 @@ V = dict(
     WARM='#B4530E',
     WSOFT='#F7E3D6',
     GREEN='#2F5233',
+    V2='#8A6A1F',        # طلاییِ چراغ — فقط برای افزوده‌های ویرایش دوم
+    V2SOFT='#FBF5E6',
 )
 V['LTR'] = 'direction: ltr; text-align: left; unicode-bidi: isolate;'
 V['EYE'] = 'font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: %(AC)s; margin: 0 0 12px;' % V
@@ -36,9 +38,24 @@ V['CARD'] = 'background: #FFFFFF; border: 1px solid %(LINE)s; border-radius: 16p
 V['SOFTC'] = 'background: #FAFAF7; border: 1px solid %(LINE)s; border-radius: 14px;' % V
 # متنِ قصه درشت‌تر و بازتر است، چون قرار است در نور کم و بلند خوانده شود
 V['TALE'] = 'font-size: 19px; line-height: 2.25; color: #23262B; max-width: 58ch; margin: 0 0 15px;'
+# بندِ افزوده: همان قلمِ قصه، با نوارِ طلایی در کنارش
+V['TALE2'] = ('font-size: 19px; line-height: 2.25; color: #23262B; max-width: 58ch; '
+              'margin: 0 0 15px; border-inline-start: 3px solid %(V2)s; '
+              'background: %(V2SOFT)s; border-radius: 0 10px 10px 0; padding: 10px 16px 10px 14px;') % V
 
 FAD = '۰۱۲۳۴۵۶۷۸۹'
 def fa(n): return ''.join(FAD[int(c)] if c.isdigit() else c for c in str(n))
+
+
+def add_in_box(t):
+    """افزودهٔ ویرایش دوم، داخلِ جعبه‌ای که از ویرایش اول مانده."""
+    if not t:
+        return ''
+    return ('\n        <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; '
+            'margin: 11px 0 0; padding-inline-start: 13px; border-inline-start: 3px solid %(V2)s;">'
+            '<span style="display: block; font-size: 10px; font-weight: 700; '
+            'letter-spacing: 0.08em; color: %(V2)s; margin-bottom: 5px;">افزودهٔ ویرایش دوم</span>'
+            '%(t)s</p>') % dict(V, t=t)
 
 o = []
 def w(s, **extra):
@@ -46,7 +63,7 @@ def w(s, **extra):
     o.append(s % vals if '%(' in s else s)
 
 NAV = [('n%d' % n['n'], 'شب %s' % fa(n['n'])) for n in S.NIGHTS]
-NAV += [('self', 'برای خودت'), ('src', 'منابع')]
+NAV += [('self', 'برای خودت'), ('v2', 'ویرایش دوم'), ('src', 'منابع')]
 
 w('''<!doctype html>
 <html lang="fa" dir="rtl">
@@ -92,7 +109,7 @@ w('''      </nav>
   <main>
 
     <section style="max-width: 1000px; margin: 0 auto; padding: 56px 24px 26px;">
-      <p style="%(EYE)s">قصه برای پیش از خواب · هفت شب</p>
+      <p style="%(EYE)s">قصه برای پیش از خواب · هفت شب · ویرایش دوم</p>
       <h1 style="font-size: clamp(30px, 4.6vw, 48px); font-weight: 800; margin: 0 0 20px; line-height: 1.35; letter-spacing: -0.01em;">ریاضیاتِ موسیقی</h1>
       <p style="%(LEAD)s">این یک درس نیست. هفت شب قصهٔ کوتاه است که بلند می‌خوانی، و تهش بچه یکی از قدیمی‌ترین و زیباترین کشف‌های آدمی را می‌داند — بی‌آنکه بفهمد ریاضی یاد گرفته.</p>
       <p style="%(BODY)s">هر شب حدود چهار دقیقه طول می‌کشد. هیچ ابزاری لازم نیست جز صدای خودتان، یک کِش، و اگر بود، یک ساز. چند جا هم دکمهٔ صدا هست که با هم گوش می‌دهید.</p>
@@ -102,6 +119,10 @@ w('''      </nav>
         <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0 0 10px;"><b>توضیح نده.</b> قصه را بخوان و کاری که گفته را بکن. فهمیدن کارِ خودش است، و دیرتر می‌آید.</p>
         <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0 0 10px;"><b>عجله نکن.</b> هر شب یک شب. اگر شبِ دوم را دو بار خواست، دو بار بخوان.</p>
         <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0;"><b>بخشِ فنی پایینِ صفحه است</b>، نه وسطِ قصه — تا وقتِ خواندن حواست پرت نشود. اگر خودت کنجکاو شدی، بعد از خواباندنش بخوانش.</p>
+      </div>
+
+      <div style="border-inline-start: 4px solid %(V2)s; background: %(V2SOFT)s; border-radius: 0 13px 13px 0; padding: 16px 20px; margin: 20px 0 0; max-width: 72ch;">
+        <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0;"><b>ویرایش دوم.</b> قصه یک بار نوشته شد و یک بار خوانده شد؛ جاهایی که موقع خواندن گیر داشت باز شدند. هر چیزی که تازه است <b>نوارِ طلایی</b> کنارش دارد، مثل همین کادر. فهرستِ کاملِ تغییرها <a href="#v2">پایینِ صفحه</a> است.</p>
       </div>
 
       <div data-sectionlist="1" style="display: none; gap: 6px; flex-wrap: wrap; margin-top: 24px;">''')
@@ -121,8 +142,16 @@ for i, N in enumerate(S.NIGHTS):
       <p style="%(EYE)s">شب %(nfa)s</p>
       <h2 style="%(H2)s">%(t)s</h2>''', n=N['n'], nfa=fa(N['n']), t=N['t'], bg=bg, bd=bd)
 
+    first2 = True
     for line in N['story']:
-        w('      <p style="%(TALE)s">%(t)s</p>', t=line)
+        if isinstance(line, tuple):
+            tag = ('<span style="display: block; font-size: 10.5px; font-weight: 700; '
+                   'letter-spacing: 0.08em; color: %(V2)s; margin-bottom: 7px;">'
+                   'افزودهٔ ویرایش دوم</span>') % V if first2 else ''
+            w('      <p style="%(TALE2)s">%(tag)s%(t)s</p>', t=line[1], tag=tag)
+            first2 = False
+        else:
+            w('      <p style="%(TALE)s">%(t)s</p>', t=line)
 
     if N['play']:
         w('''      <div style="%(CARD)s padding: 20px 22px; margin: 22px 0 20px; max-width: 68ch;">
@@ -137,14 +166,22 @@ for i, N in enumerate(S.NIGHTS):
 
     w('''      <div style="background: %(WSOFT)s; border-inline-start: 4px solid %(WARM)s; border-radius: 13px; padding: 17px 20px; margin: 20px 0 16px; max-width: 68ch;">
         <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(WARM)s; margin-bottom: 9px;">با هم امتحان کنید</div>
-        <p style="font-size: 15px; line-height: 2.1; color: %(MID)s; margin: 0;">%(do)s</p>
+        <p style="font-size: 15px; line-height: 2.1; color: %(MID)s; margin: 0;">%(do)s</p>%(do2)s
       </div>
 
       <div style="%(SOFTC)s padding: 17px 20px; max-width: 68ch;">
         <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(DIM)s; margin-bottom: 9px;">اگر پرسید</div>
         <p style="font-size: 14.5px; font-weight: 700; color: %(INK)s; line-height: 1.9; margin: 0 0 9px;">«%(ask)s»</p>
-        <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0;">%(answer)s</p>
-      </div>''', do=N['do'], ask=N['ask'], answer=N['answer'])
+        <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0;">%(answer)s</p>%(ans2)s
+      </div>''', do=N['do'], ask=N['ask'], answer=N['answer'],
+      do2=add_in_box(N.get('do2')), ans2=add_in_box(N.get('answer2')))
+
+    for title, body in N.get('extra', []):
+        w('''      <div style="border: 1px solid #E6DCC2; border-inline-start: 3px solid %(V2)s; background: %(V2SOFT)s; border-radius: 13px; padding: 18px 21px; margin: 16px 0 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(V2)s; margin-bottom: 9px;">افزودهٔ ویرایش دوم — %(title)s</div>
+        <p style="font-size: 15px; line-height: 2.15; color: %(MID)s; margin: 0;">%(body)s</p>
+      </div>''', title=title, body=body)
+
     w('      </div>\n    </section>\n')
 
 
@@ -190,6 +227,25 @@ w('''      <div style="background: %(SOFT)s; border-inline-start: 4px solid %(AC
       </div>
     </section>
 ''')
+
+# ------------------------------------------------------------- ویرایش دوم
+w("""
+    <section id="v2" style="margin-top: 38px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="%(EYE)s">ویرایش دوم</p>
+      <h2 style="%(H2)s">چه چیزی عوض شد، و چرا</h2>
+      <p style="%(BODY)s">قصه یک بار نوشته شد و یک بار خوانده شد. این فهرست می‌گوید در خواندن کجا گیر داشت و در ویرایش دوم چطور باز شد. هر افزوده روی صفحه نوارِ طلایی دارد، پس اگر بخواهی می‌توانی دقیقاً ببینی کجا اضافه شده.</p>
+      <p style="%(BODY)s">هیچ‌کدام از افزوده‌ها برای بلندتر کردنِ قصه نیستند. قرار بود ساده‌تر شود، نه بیشتر.</p>
+      <div style="display: flex; flex-direction: column; gap: 11px; max-width: 72ch;">""")
+for i, (t, d) in enumerate(S.CHANGES):
+    w("""        <div style="border: 1px solid #E6DCC2; border-inline-start: 3px solid %(V2)s; background: %(V2SOFT)s; border-radius: 13px; padding: 17px 20px;">
+          <div style="font-size: 14px; font-weight: 700; color: %(INK)s; margin-bottom: 7px;">%(n)s — %(t)s</div>
+          <p style="font-size: 13.5px; line-height: 2.05; color: %(MID)s; margin: 0;">%(d)s</p>
+        </div>""", n=fa('%02d' % (i + 1)), t=t, d=d)
+w("""      </div>
+      </div>
+    </section>
+""")
 
 # ------------------------------------------------------------------ منابع
 w('''
