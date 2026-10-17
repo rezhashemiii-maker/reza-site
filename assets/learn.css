@@ -1,27 +1,27 @@
-.c24.c24{font-size: 12px;color: #666158;margin-top: 3px}
-.c25.c25{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
-.c29.c29{font-size: 11.5px;color: #2F5233;margin-top: 8px}
-.cgs.cgs{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
-.cgt.cgt{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
-.cgu.cgu{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
-.cgv.cgv{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
-.cgw.cgw{position: relative;height: 13px}
-.cgx.cgx{margin-bottom: 60px;scroll-margin-top: 80px}
-.cgy.cgy{display: flex;align-items: baseline;gap: 14px;flex-wrap: wrap;margin-bottom: 8px}
-.cgz.cgz{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
-.ch0.ch0{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
-.ch1.ch1{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
-.ch2.ch2{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
-.ch3.ch3{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
-.ch4.ch4{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
-.ch5.ch5{font-size: 15px;font-weight: 800;margin: 0 0 12px}
-.ch6.ch6{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
-.ch7.ch7{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
-.ch8.ch8{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
-.c10z.c10z{margin-bottom: 52px}
-.c110.c110{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
-.c114.c114{margin-bottom: 26px}
-.c115.c115{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
+.c25.c25{font-size: 12px;color: #666158;margin-top: 3px}
+.c26.c26{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
+.c2a.c2a{font-size: 11.5px;color: #2F5233;margin-top: 8px}
+.cgz.cgz{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
+.ch0.ch0{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
+.ch1.ch1{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
+.ch2.ch2{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
+.ch3.ch3{position: relative;height: 13px}
+.ch4.ch4{margin-bottom: 60px;scroll-margin-top: 80px}
+.ch5.ch5{display: flex;align-items: baseline;gap: 14px;flex-wrap: wrap;margin-bottom: 8px}
+.ch6.ch6{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
+.ch7.ch7{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
+.ch8.ch8{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
+.ch9.ch9{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
+.cha.cha{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
+.chb.chb{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
+.chc.chc{font-size: 15px;font-weight: 800;margin: 0 0 12px}
+.chd.chd{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
+.che.che{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
+.chf.chf{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
+.c114.c114{margin-bottom: 52px}
+.c115.c115{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
+.c119.c119{margin-bottom: 26px}
+.c11a.c11a{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
 body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}

@@ -28,6 +28,7 @@ V = dict(
     GREEN='#2F5233',
     V2='#8A6A1F',        # طلاییِ چراغ — فقط برای افزوده‌های ویرایش دوم
     V2SOFT='#FBF5E6',
+    GSOFT='#E6EFE6',   # سبزِ روشن — قصهٔ دوم
 )
 V['LTR'] = 'direction: ltr; text-align: left; unicode-bidi: isolate;'
 V['EYE'] = 'font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: %(AC)s; margin: 0 0 12px;' % V
@@ -63,13 +64,15 @@ def w(s, **extra):
     o.append(s % vals if '%(' in s else s)
 
 NAV = [('n%d' % n['n'], 'شب %s' % fa(n['n'])) for n in S.NIGHTS]
+NAV += [('s2', 'قصهٔ دوم')]
+NAV += [('b%d' % n['n'], 'شمردن %s' % fa(n['n'])) for n in S.NIGHTS2]
 NAV += [('self', 'برای خودت'), ('v2', 'ویرایش دوم'), ('src', 'منابع')]
 
 w('''<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<title>ریاضیاتِ موسیقی — هفت شب قصه برای پیش از خواب</title>
+<title>ریاضیاتِ موسیقی — دوازده شب قصه برای پیش از خواب</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -109,10 +112,10 @@ w('''      </nav>
   <main>
 
     <section style="max-width: 1000px; margin: 0 auto; padding: 56px 24px 26px;">
-      <p style="%(EYE)s">قصه برای پیش از خواب · هفت شب · ویرایش دوم</p>
+      <p style="%(EYE)s">قصه برای پیش از خواب · دو قصه، دوازده شب · ویرایش دوم</p>
       <h1 style="font-size: clamp(30px, 4.6vw, 48px); font-weight: 800; margin: 0 0 20px; line-height: 1.35; letter-spacing: -0.01em;">ریاضیاتِ موسیقی</h1>
-      <p style="%(LEAD)s">این یک درس نیست. هفت شب قصهٔ کوتاه است که بلند می‌خوانی، و تهش بچه یکی از قدیمی‌ترین و زیباترین کشف‌های آدمی را می‌داند — بی‌آنکه بفهمد ریاضی یاد گرفته.</p>
-      <p style="%(BODY)s">هر شب حدود چهار دقیقه طول می‌کشد. هیچ ابزاری لازم نیست جز صدای خودتان، یک کِش، و اگر بود، یک ساز. چند جا هم دکمهٔ صدا هست که با هم گوش می‌دهید.</p>
+      <p style="%(LEAD)s">این یک درس نیست. دو قصه است که بلند می‌خوانی — هفت شب دربارهٔ نازکی و کلفتیِ صدا، و پنج شب دربارهٔ وقت. تهش بچه یکی از قدیمی‌ترین و زیباترین کشف‌های آدمی را می‌داند، بی‌آنکه بفهمد ریاضی یاد گرفته.</p>
+      <p style="%(BODY)s">هر شب سه تا چهار دقیقه طول می‌کشد. هیچ ابزاری لازم نیست جز صدای خودتان، دو تا دست، یک کِش، و اگر بود، یک ساز. چند جا هم دکمهٔ صدا هست که با هم گوش می‌دهید.</p>
 
       <div style="background: %(SOFT)s; border-inline-start: 4px solid %(AC)s; border-radius: 13px; padding: 18px 21px; margin: 24px 0 0; max-width: 68ch;">
         <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(AC)s; margin-bottom: 10px;">سه چیز، پیش از شب اول</div>
@@ -122,7 +125,7 @@ w('''      </nav>
       </div>
 
       <div style="border-inline-start: 4px solid %(V2)s; background: %(V2SOFT)s; border-radius: 0 13px 13px 0; padding: 16px 20px; margin: 20px 0 0; max-width: 72ch;">
-        <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0;"><b>ویرایش دوم.</b> قصه یک بار نوشته شد و یک بار خوانده شد؛ جاهایی که موقع خواندن گیر داشت باز شدند. هر چیزی که تازه است <b>نوارِ طلایی</b> کنارش دارد، مثل همین کادر. فهرستِ کاملِ تغییرها <a href="#v2">پایینِ صفحه</a> است.</p>
+        <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0;"><b>ویرایش دوم.</b> قصه یک بار نوشته شد و یک بار خوانده شد؛ جاهایی که موقع خواندن گیر داشت باز شدند. هر چیزی که تازه است <b>نوارِ طلایی</b> کنارش دارد، مثل همین کادر. فهرستِ کاملِ تغییرها <a href="#v2">پایینِ صفحه</a> است. نوارِ طلایی فقط مالِ هفت شبِ اول است؛ <a href="#s2">قصهٔ دوم</a> خودش تازه است و رنگِ خودش را دارد.</p>
       </div>
 
       <div data-sectionlist="1" style="display: none; gap: 6px; flex-wrap: wrap; margin-top: 24px;">''')
@@ -181,6 +184,63 @@ for i, N in enumerate(S.NIGHTS):
         <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(V2)s; margin-bottom: 9px;">افزودهٔ ویرایش دوم — %(title)s</div>
         <p style="font-size: 15px; line-height: 2.15; color: %(MID)s; margin: 0;">%(body)s</p>
       </div>''', title=title, body=body)
+
+    w('      </div>\n    </section>\n')
+
+
+# ------------------------------------------------------------- قصهٔ دوم
+S2 = S.STORY2
+w("""
+    <section id="s2" style="background: %(GREEN)s; margin-top: 44px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #BFD4BE; margin: 0 0 12px;">%(eyebrow)s</p>
+      <h2 style="font-size: clamp(26px, 3.6vw, 36px); font-weight: 800; color: #FFFFFF; margin: 0 0 18px; line-height: 1.4;">%(t)s</h2>
+      <p style="font-size: 17px; line-height: 2.1; color: #DCE8DB; max-width: 62ch; margin: 0 0 16px;">%(lead)s</p>
+      <p style="font-size: 14.5px; line-height: 2.05; color: #BFD4BE; max-width: 62ch; margin: 0;">%(note)s</p>
+      </div>
+    </section>
+""", eyebrow=S2['eyebrow'], t=S2['t'], lead=S2['lead'], note=S2['note'])
+
+for i, N in enumerate(S.NIGHTS2):
+    white = (i % 2 == 0)
+    bg = '#FFFFFF' if white else 'transparent'
+    bd = ('border-top: 1px solid %(LINE)s; border-bottom: 1px solid %(LINE)s;' % V) if white else ''
+    w("""
+    <section id="b%(n)s" style="background: %(bg)s; %(bd)s margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 46px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: %(GREEN)s; margin: 0 0 12px;">شمردن · شب %(nfa)s</p>
+      <h2 style="%(H2)s">%(t)s</h2>""", n=N['n'], nfa=fa(N['n']), t=N['t'], bg=bg, bd=bd)
+
+    for line in N['story']:
+        w('      <p style="%(TALE)s">%(t)s</p>', t=line)
+
+    if N.get('beat'):
+        w("""      <div style="%(CARD)s border-inline-start: 4px solid %(GREEN)s; padding: 20px 22px; margin: 22px 0 20px; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(GREEN)s; margin-bottom: 13px;">با هم گوش بدهید</div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">""")
+        for lab, spec in N['beat']:
+            w("""          <button data-beat="%(spec)s" style="font-size: 13.5px; font-weight: 600; padding: 10px 16px; border-radius: 10px; cursor: pointer; font-family: inherit; border: 1px solid #BBCDBA; background: #FFFFFF; color: %(GREEN)s;">%(lab)s</button>""",
+              lab=lab, spec=spec)
+        w("""        </div>
+        <p style="font-size: 12px; color: %(DIM)s; margin: 12px 0 0;">صدای ضربه‌ها خالی است، بی‌آهنگ — که فقط شمردن شنیده شود. با دست همراهش بزنید.</p>
+      </div>""")
+
+    w("""      <div style="background: %(GSOFT)s; border-inline-start: 4px solid %(GREEN)s; border-radius: 13px; padding: 17px 20px; margin: 20px 0 16px; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(GREEN)s; margin-bottom: 9px;">با هم امتحان کنید</div>
+        <p style="font-size: 15px; line-height: 2.1; color: %(MID)s; margin: 0;">%(do)s</p>
+      </div>
+
+      <div style="%(SOFTC)s padding: 17px 20px; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(DIM)s; margin-bottom: 9px;">اگر پرسید</div>
+        <p style="font-size: 14.5px; font-weight: 700; color: %(INK)s; line-height: 1.9; margin: 0 0 9px;">«%(ask)s»</p>
+        <p style="font-size: 14.5px; line-height: 2.1; color: %(MID)s; margin: 0;">%(answer)s</p>
+      </div>""", do=N['do'], ask=N['ask'], answer=N['answer'])
+
+    if N.get('close'):
+        w("""      <div style="border: 1px solid #C9DAC8; border-inline-start: 3px solid %(GREEN)s; background: %(GSOFT)s; border-radius: 13px; padding: 18px 21px; margin: 16px 0 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: %(GREEN)s; margin-bottom: 9px;">اگر خواست دوباره بشنود</div>
+        <p style="font-size: 15px; line-height: 2.15; color: %(MID)s; margin: 0;">%(body)s</p>
+      </div>""", body=N['close'])
 
     w('      </div>\n    </section>\n')
 
@@ -359,6 +419,63 @@ class Component extends DCLogic {
       note(c, freqs[0], t, 1.2, 0.18);
     }
   }
+  // ---- قصهٔ دوم: ضربه، نه نت. صدای کوتاهِ خالی تا فقط شمردن شنیده شود.
+  function click(c, f, at, gain) {
+    var o = c.createOscillator(), g = c.createGain();
+    o.type = 'triangle';
+    o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, at);
+    g.gain.exponentialRampToValueAtTime(gain, at + 0.004);
+    g.gain.exponentialRampToValueAtTime(0.0001, at + 0.09);
+    o.connect(g); g.connect(c.destination);
+    o.start(at); o.stop(at + 0.12);
+  }
+  var HI = 1050, LO = 620, OTHER = 420;
+  function beat(spec) {
+    var c = audio();
+    if (!c) { return; }
+    var t = c.currentTime + 0.05;
+    var i, k;
+    if (spec.indexOf('v') > 0) {
+      // دو الگو با هم: مثلاً سه روی دو. یک دور ۱٫۸ ثانیه، چهار دور.
+      var ab = spec.split('v'), A = parseInt(ab[0], 10), B = parseInt(ab[1], 10);
+      var cyc = 1.8, rounds = 4;
+      for (k = 0; k < rounds; k++) {
+        var t0 = t + k * cyc;
+        for (i = 0; i < A; i++) { click(c, i === 0 ? HI : LO, t0 + i * cyc / A, 0.2); }
+        for (i = 0; i < B; i++) { click(c, OTHER, t0 + i * cyc / B, 0.17); }
+      }
+      return;
+    }
+    if (spec.indexOf('x') > 0) {
+      // تندی مشخص: «1x120» یعنی بی‌تأکید، صد و بیست ضربه در دقیقه
+      var xp = spec.split('x'), gp = parseInt(xp[0], 10), bpm = parseInt(xp[1], 10);
+      var st = 60 / bpm, n = Math.round(bpm / 60 * 6);
+      for (i = 0; i < n; i++) {
+        click(c, (gp > 1 && i %% gp === 0) ? HI : LO, t + i * st, 0.2);
+      }
+      return;
+    }
+    var miss = 0;
+    if (spec.indexOf('-') > 0) {
+      var mp = spec.split('-');
+      spec = mp[0];
+      miss = parseInt(mp[1], 10);   // شمارهٔ ضربه‌ای که زده نمی‌شود
+    }
+    var g2 = parseInt(spec, 10), step = 0.5, total = g2 > 1 ? g2 * 4 : 8;
+    for (i = 0; i < total; i++) {
+      if (miss && (i %% g2) + 1 === miss) { continue; }
+      click(c, (g2 > 1 && i %% g2 === 0) ? HI : LO, t + i * step, 0.2);
+    }
+  }
+  var bb = document.querySelectorAll('button[data-beat]');
+  Array.prototype.forEach.call(bb, function (b) {
+    b.addEventListener('click', function () {
+      beat(b.getAttribute('data-beat'));
+      b.style.background = '#E6EFE6';
+      setTimeout(function () { b.style.background = '#FFFFFF'; }, 260);
+    });
+  });
   var btns = document.querySelectorAll('button[data-tone]');
   Array.prototype.forEach.call(btns, function (b) {
     b.addEventListener('click', function () {
@@ -378,5 +495,8 @@ class Component extends DCLogic {
 
 html = ''.join(o)
 io.open(os.path.join(SRC, 'Music.dc.html'), 'w', encoding='utf-8').write(html)
-print('written', len(html), 'نویسه ·', len(S.NIGHTS), 'شب ·',
-      sum(len(n['play']) for n in S.NIGHTS), 'دکمهٔ صدا ·', len(SOURCES), 'منبع')
+print('written', len(html), 'نویسه ·',
+      len(S.NIGHTS), '+', len(S.NIGHTS2), 'شب ·',
+      sum(len(n['play']) for n in S.NIGHTS), 'دکمهٔ نت ·',
+      sum(len(n.get('beat', [])) for n in S.NIGHTS2), 'دکمهٔ ضربه ·',
+      len(SOURCES), 'منبع')
