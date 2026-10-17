@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>نامهٔ دوم به ابوریحان — ریاضیاتِ حدس زدن</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#1E3A5F;text-decoration:none}
+  a:hover{opacity:.82}
+  button{font-family:inherit;cursor:pointer;border:none}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:92px}
+  ::selection{background:#E3E9F1;color:#1E3A5F}
+  @media (max-width:860px){
+    nav[data-sections]{display:none !important}
+    div[data-sectionlist]{display:flex !important}
+  }
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F5F3EE; direction: rtl;">
+
+  <header style="position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #E4E1D6; background: rgba(245,243,238,0.94); backdrop-filter: blur(10px);">
+    <div style="max-width: 1060px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <a href="Logic.dc.html" style="font-size: 12.5px; font-weight: 700; color: #6B4226;">نامهٔ اول ←</a>
+      <nav data-sections="1" style="display: flex; gap: 1px; margin-inline-start: auto; flex-wrap: wrap;">        <a href="#s1" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۱ شمردن</a>        <a href="#s2" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۲ روش</a>        <a href="#s3" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۳ شمارِ راه‌ها</a>        <a href="#s4" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۴ بخت</a>        <a href="#s5" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۵ اعداد بزرگ</a>        <a href="#s6" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۶ باور</a>        <a href="#s7" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۷ بهترین خط</a>        <a href="#s8" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۸ سراشیبی</a>        <a href="#s9" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۰۹ بازگشت</a>        <a href="#s10" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۱۰ خبر</a>        <a href="#s11" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۱۱ یادگیری</a>        <a href="#s12" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۱۲ همه با هم</a>        <a href="#s13" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۱۳ ترجمه</a>        <a href="#s14" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">۱۴ روش</a>      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section style="max-width: 1060px; margin: 0 auto; padding: 56px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">مبانی ریاضی و آماری هوش مصنوعی، با ابزار هزار سال پیش</p>
+      <h1 style="font-size: clamp(30px, 5vw, 50px); line-height: 1.38; font-weight: 800; margin: 0 0 22px; letter-spacing: -0.01em;">نامهٔ دوم به ابوریحان</h1>
+      <p style="font-size: 19px; line-height: 2; color: #45494F; max-width: 62ch; margin: 0 0 18px;">در <a href="Logic.dc.html" style="font-weight: 700;">نامهٔ اول</a> گفتم ماشین چیست و چطور فرمان می‌گیرد. آن ماشین چیزی نمی‌فهمید و فقط اطاعت می‌کرد. این نامه دربارهٔ چیز دیگری است: <b>چطور همان ماشینِ نفهم می‌تواند حدس بزند.</b></p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و جواب، بر خلاف آنچه به نظر می‌رسد، در فلسفه نیست؛ در <b>ریاضیات</b> است. دقیق‌تر: در شمردن، در اندازه‌گیریِ بخت، و در یک قاعدهٔ ساده برای عوض‌کردن باور وقتی خبر تازه‌ای می‌رسد.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">باز هم قاعده همان است: هیچ واژه‌ای که تو نشناسی اجازهٔ ورود ندارد. ولی این بار یک تفاوت هست — بخشی از این ریاضیات <b>پیش از تو</b> ساخته شده و تو نامِ سازندگانش را می‌شناسی. بقیه‌اش در نهصد سال بعد از تو ساخته می‌شود، و من هر بار می‌گویم چند سال بعد.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">یک چیز را هم از همین اول بگویم تا در راه گم نشویم: <b>همهٔ آنچه امروز «هوش مصنوعی» می‌نامند، روی چهار کار استوار است</b> — شمردن، برازشِ یک الگو بر شمارش‌ها، سُر خوردن به سمت کم‌ترین خطا، و به‌روز کردن باور با خبر تازه. هر چهارتا در این نامه می‌آید. هیچ کدام جادو نیست.</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px;">
+        <a href="#s1" style="font-size: 14.5px; font-weight: 700; color: #FFFFFF; background: #1E3A5F; padding: 13px 26px; border-radius: 10px;">شروع نامه</a>
+        <a href="#s8" style="font-size: 14.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 13px 26px; border-radius: 10px;">خودت خط را جا بینداز ←</a>
+        <a href="#s12" style="font-size: 14.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 13px 26px; border-radius: 10px;">خط زمان ←</a>
+      </div>
+    </section>
+    <section style="max-width: 1060px; margin: 0 auto; padding: 26px 24px 10px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px;">        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">۴</div>
+          <div style="font-size: 12.5px; line-height: 1.8; color: #666158; margin-top: 8px;">کارِ پایه که همهٔ هوش مصنوعی روی آن ایستاده</div>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">۱۱۰۰</div>
+          <div style="font-size: 12.5px; line-height: 1.8; color: #666158; margin-top: 8px;">سال، از الکندی تا امروز</div>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">۱۲</div>
+          <div style="font-size: 12.5px; line-height: 1.8; color: #666158; margin-top: 8px;">دانشمند، هر کدام با تاریخ و منبع</div>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">۱</div>
+          <div style="font-size: 12.5px; line-height: 1.8; color: #666158; margin-top: 8px;">خط که خودت جا می‌اندازی و بعد ماشین</div>
+        </div>      </div>
+    </section>
+
+    <section style="max-width: 1060px; margin: 0 auto; padding: 18px 24px 0;">
+      <div data-sectionlist="1" style="display: none; flex-wrap: wrap; gap: 7px; background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 20px;">
+        <div style="width: 100%; font-size: 11.5px; font-weight: 700; color: #666158; margin-bottom: 4px;">فهرست بخش‌ها</div>        <a href="#s1" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۱ شمردن</a>        <a href="#s2" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۲ روش</a>        <a href="#s3" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۳ شمارِ راه‌ها</a>        <a href="#s4" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۴ بخت</a>        <a href="#s5" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۵ اعداد بزرگ</a>        <a href="#s6" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۶ باور</a>        <a href="#s7" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۷ بهترین خط</a>        <a href="#s8" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۸ سراشیبی</a>        <a href="#s9" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۰۹ بازگشت</a>        <a href="#s10" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۱۰ خبر</a>        <a href="#s11" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۱۱ یادگیری</a>        <a href="#s12" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۱۲ همه با هم</a>        <a href="#s13" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۱۳ ترجمه</a>        <a href="#s14" style="font-size: 12.5px; color: #45494F; background: #FAFAF7; border: 1px solid #EDEAE1; border-radius: 999px; padding: 7px 12px;">۱۴ روش</a>      </div>
+    </section>
+    <section id="s1" style="max-width: 1060px; margin: 0 auto; padding: 48px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۱ — شمردن</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">نخستین باری که کسی از شمردن، چیزی پنهان را بیرون کشید</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۲۰۰ سال پیش از تو</span><span style="font-size: 12.5px; color: #45494F;">الکِندی (۸۰۱–۸۷۳) · رساله‌اش حدود سال ۸۵۰</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">ابوریحان، از جایی شروع می‌کنم که تو خودت می‌شناسی‌اش. <b>ابویوسف یعقوب بن اسحاق الکِندی</b> رساله‌ای دارد دربارهٔ گشودن نامه‌های رمزی. تا جایی که می‌دانیم، این کهن‌ترین متنی است که در آن کسی روشی برای شکستن رمز نوشته — و روشش چیزی جز <b>شمردن</b> نیست.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">فرض کن کسی نامه‌ای نوشته و در آن هر حرف را با نشانهٔ دیگری عوض کرده: هر جا «الف» بوده، «ج» گذاشته؛ هر جا «ل» بوده، «ط». نامه خوانا نیست. کلیدش را هم نداری.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">الکندی گفت: لازم نیست کلید داشته باشی. <b>بشمار.</b> در هر زبانی بعضی حرف‌ها بسیار پرتکرارند و بعضی بسیار کمیاب. در یک متن بلند، این نسبت‌ها تقریباً ثابت می‌مانند. پس پرتکرارترین نشانهٔ نامهٔ رمزی، به احتمال زیاد همان پرتکرارترین حرف آن زبان است.</p>      <figure style="margin: 0 0 18px; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 18px;">
+        <svg viewBox="0 0 720 256" role="img" aria-label="نمودار میله‌ای نسبت تکرار حرف‌ها در یک متن فارسی، از پرتکرار تا کمیاب" style="width: 100%; max-width: 100%; height: auto; display: block; font-family: inherit;">
+          <rect x="668" y="46.0" width="30" height="150.0" rx="4" fill="#1E3A5F"/>
+          <text x="683" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ا</text>
+          <rect x="624" y="73.0" width="30" height="123.0" rx="4" fill="#1E3A5F"/>
+          <text x="639" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ل</text>
+          <rect x="580" y="91.0" width="30" height="105.0" rx="4" fill="#1E3A5F"/>
+          <text x="595" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ی</text>
+          <rect x="536" y="109.0" width="30" height="87.0" rx="4" fill="#1E3A5F"/>
+          <text x="551" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">م</text>
+          <rect x="492" y="118.0" width="30" height="78.0" rx="4" fill="#1E3A5F"/>
+          <text x="507" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ن</text>
+          <rect x="448" y="127.0" width="30" height="69.0" rx="4" fill="#1E3A5F"/>
+          <text x="463" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">و</text>
+          <rect x="404" y="139.0" width="30" height="57.0" rx="4" fill="#666158"/>
+          <text x="419" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ر</text>
+          <rect x="360" y="151.0" width="30" height="45.0" rx="4" fill="#666158"/>
+          <text x="375" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ب</text>
+          <rect x="316" y="157.0" width="30" height="39.0" rx="4" fill="#666158"/>
+          <text x="331" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ه</text>
+          <rect x="272" y="163.0" width="30" height="33.0" rx="4" fill="#666158"/>
+          <text x="287" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ت</text>
+          <rect x="228" y="172.0" width="30" height="24.0" rx="4" fill="#666158"/>
+          <text x="243" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">س</text>
+          <rect x="184" y="178.0" width="30" height="18.0" rx="4" fill="#666158"/>
+          <text x="199" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ک</text>
+          <rect x="140" y="191.5" width="30" height="4.5" rx="4" fill="#B4530E"/>
+          <text x="155" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ژ</text>
+          <rect x="96" y="193.0" width="30" height="3.0" rx="4" fill="#B4530E"/>
+          <text x="111" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ذ</text>
+          <rect x="52" y="193.0" width="30" height="3.0" rx="4" fill="#B4530E"/>
+          <text x="67" y="216" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle">ث</text>
+          <text x="600" y="24" font-size="12.5" fill="#1E3A5F" font-weight="700" text-anchor="middle" direction="rtl">پرتکرارها</text>
+          <text x="130" y="24" font-size="12.5" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">کم‌تکرارها</text>
+          <text x="360" y="244" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">نسبت تقریبی حرف‌ها در یک متن فارسیِ بلند — نمایشی، برای نشان‌دادن شکل توزیع</text>
+        </svg>
+        <figcaption style="font-size: 12.5px; line-height: 1.9; color: #666158; margin-top: 14px; text-align: center;">شکل این نمودار، همان چیزی است که رمز را می‌شکند. اگر در نامهٔ رمزی هم چنین شکلی ببینی، بلندترین میلهٔ آن‌جا با بلندترین میلهٔ این‌جا یکی است.</figcaption>
+      </figure>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">اگر هیچ‌وقت با رمز کار نکرده‌ای: «رمز» در ساده‌ترین شکلش یعنی یک جدول جایگزینی. برای هر حرف الفبا، نشانهٔ دیگری انتخاب می‌کنی و همه‌جا به‌جایش همان را می‌گذاری. گیرنده جدول را دارد و برمی‌گرداند؛ کسی که ندارد، چیزی جز حروف بی‌معنا نمی‌بیند.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و اینکه چرا شمردن کار می‌کند: چون نسبت حرف‌ها خاصیتِ <b>زبان</b> است، نه خاصیتِ یک نامهٔ بخصوص. هر کسی هر چه بنویسد، باز هم «الف» و «ل» بیشتر از «ژ» و «ث» به کار می‌روند. جایگزینی، حرف‌ها را عوض می‌کند ولی <b>نسبت‌ها را دست‌نخورده می‌گذارد</b> — و همین، راهِ ورود است.</p>
+      </div>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">یک نکتهٔ ظریف که بعدها <b>ابن عَدلان</b> رویش انگشت گذاشت: این روش روی متن کوتاه کار نمی‌کند. اگر نامه فقط ده کلمه باشد، ممکن است اتفاقی «ژ» سه بار آمده باشد و «الف» یک بار.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">این همان چیزی است که امروز به آن «کم‌بودن نمونه» می‌گویند و یکی از دو سه خطای کشندهٔ کل این حرفه است. نسبت‌ها وقتی قابل اعتمادند که از <b>شمار زیادی</b> مشاهده آمده باشند. در بخش ۰۵ می‌بینی این «زیاد» یعنی چه و کجا باز هم نجاتت نمی‌دهد.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">حالا بگذار بگویم چرا این رساله برای نامهٔ من این‌قدر مهم است. الکندی کاری کرد که پیش از او کسی نکرده بود: <b>از شمارشِ چیزهای دیدنی، به چیزی نادیدنی رسید.</b> او جدول رمز را ندید؛ آن را از روی عددها <i>حدس زد</i>.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">هر چیزی که امروز «هوش مصنوعی» می‌نامند، در ته ماجرا همین کار را می‌کند — فقط با شمارش‌های بسیار بزرگ‌تر و حدس‌های بسیار پیچیده‌تر. ماشینی که حدس می‌زند کلمهٔ بعدی چه خواهد بود، دارد دقیقاً همان کاری را می‌کند که الکندی با حرف‌ها کرد.</p>
+      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-inline-start: 4px solid #1E3A5F;">
+        <p style="font-size: 16px; line-height: 2.05; color: #16181C; margin: 0;">پس تاریخ هوش مصنوعی از ماشین شروع نمی‌شود. از <b>شمردن</b> شروع می‌شود — و آن، هزار و دویست سال پیش در بغداد اتفاق افتاد.</p>
+      </div>
+    </section>
+    <section id="s2" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 44px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۲ — روش</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">هم‌ولایتیِ تو که نامش روی کل این حرفه ماند</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۲۰۰ سال پیش از تو</span><span style="font-size: 12.5px; color: #45494F;">خوارزمی (حدود ۷۸۰–۸۵۰) · اهل خوارزم، مثل تو</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;"><b>محمد بن موسی خوارزمی</b> در بیت‌الحکمهٔ بغداد کاری کرد که در نگاه اول کوچک به نظر می‌رسد: به‌جای حل کردن یک مسئله، <b>روشی نوشت که هر مسئله‌ای از آن دسته را حل می‌کند.</b></p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">تفاوت را ببین. اگر بگویم «مالی داشتم، ثلثش را دادم، ده دینار ماند؛ چقدر بود؟» و من جوابش را پیدا کنم، یک مسئله حل شده. ولی اگر قاعده‌ای بنویسم که برای <i>هر</i> عددی در جای ثلث و ده کار کند، چیز دیگری ساخته‌ام: چیزی که دیگر به هوش من احتیاج ندارد. هر کسی می‌تواند آن را دنبال کند، حتی اگر نفهمد چرا کار می‌کند.</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و اگر «جبر» برایت واژهٔ آشنایی نیست — که برای خوانندهٔ امروزی هم اغلب نیست — در ساده‌ترین بیان یعنی: پیدا کردن چیزی که نمی‌دانی، از روی چیزهایی که می‌دانی، با دنبال کردن چند قاعدهٔ ثابت.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">نام کتاب خوارزمی «الجبر و المقابله» بود. «جبر» یعنی سر جای خودش برگرداندن — وقتی چیزی از یک طرف تساوی کم شده، همان‌قدر را به طرف دیگر هم می‌افزایی تا تعادل برگردد. واژهٔ امروزی «algebra» از همین «الجبر» آمده است.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و حالا آن چیزی که به تو مربوط می‌شود: نام او، وقتی کتابش قرن‌ها بعد به لاتین ترجمه شد، به صورت <b>Algoritmi</b> نوشته شد. آن واژه ماند، معنایش عوض شد، و امروز به هر «روشِ مشخصِ انجام یک کار در گام‌های معلوم» می‌گویند <b>الگوریتم</b>.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">پس وقتی امروز کسی از «الگوریتمِ فلان شبکهٔ اجتماعی» حرف می‌زند، بی‌آنکه بداند دارد نام یک هم‌ولایتیِ تو را تکرار می‌کند.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">چرا این مهم‌ترین قدم بود؟ چون پل میان نامهٔ اول و نامهٔ دوم است. آن ماشینِ نفهمِ نامهٔ اول فقط وقتی به درد می‌خورد که روشی داشته باشی که بشود بی‌فهم دنبالش کرد. <b>خوارزمی آن جور فکر کردن را اختراع کرد؛ هزار سال بعد کسی ماشینی ساخت که بتواند دنبالش کند.</b></p>
+      </div>
+    </section>
+    <section id="s3" style="max-width: 1060px; margin: 0 auto; padding: 48px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۳ — شمارِ راه‌ها</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">پیش از آنکه بشود بخت را اندازه گرفت، باید راه‌ها را شمرد</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">در زمان خودِ تو</span><span style="font-size: 12.5px; color: #45494F;">الکَرَجی (حدود ۹۵۳–۱۰۲۹) · جدولش حدود سال ۱۰۰۰</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">این یکی عجیب‌ترین بخش نامه است، چون دربارهٔ <b>همین حالا</b>ی توست. در بغداد مردی هست به نام <b>ابوبکر الکَرَجی</b> که جدولی از عددها ساخته. خودِ نوشته‌اش به دست ما نرسیده؛ آنچه داریم از نقل‌قول‌های <b>السموأل</b> است که بعد از او آمد.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">جدول ساده است: هر عدد، جمعِ دو عددِ بالای خودش است. ولی آنچه می‌شمارد اصلاً ساده نیست — این جدول جواب این پرسش را می‌دهد که <b>از میان n چیز، چند راه برای برداشتن k تا هست.</b></p>      <figure style="margin: 0 0 18px; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 18px;">
+        <svg viewBox="0 0 720 286" role="img" aria-label="مثلث عددی که هر عدد جمع دو عدد بالای خودش است، تا شش ردیف" style="width: 100%; max-width: 100%; height: auto; display: block; font-family: inherit;">
+          <circle cx="360.0" cy="34" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="360.0" y="38" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <text x="648" y="38" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۰ چیز</text>
+          <circle cx="331.0" cy="72" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="331.0" y="76" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <circle cx="389.0" cy="72" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="389.0" y="76" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <text x="648" y="76" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۱ چیز</text>
+          <circle cx="302.0" cy="110" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="302.0" y="114" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <circle cx="360.0" cy="110" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="360.0" y="114" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۲</text>
+          <circle cx="418.0" cy="110" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="418.0" y="114" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <text x="648" y="114" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۲ چیز</text>
+          <circle cx="273.0" cy="148" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="273.0" y="152" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <circle cx="331.0" cy="148" r="15" fill="#E3E9F1" stroke="#1E3A5F" stroke-width="1.5"/>
+          <text x="331.0" y="152" font-size="12.5" fill="#1E3A5F" font-weight="800" text-anchor="middle">۳</text>
+          <circle cx="389.0" cy="148" r="15" fill="#E3E9F1" stroke="#1E3A5F" stroke-width="1.5"/>
+          <text x="389.0" y="152" font-size="12.5" fill="#1E3A5F" font-weight="800" text-anchor="middle">۳</text>
+          <circle cx="447.0" cy="148" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="447.0" y="152" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <text x="648" y="152" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۳ چیز</text>
+          <circle cx="244.0" cy="186" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="244.0" y="190" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <circle cx="302.0" cy="186" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="302.0" y="190" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۴</text>
+          <circle cx="360.0" cy="186" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="360.0" y="190" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۶</text>
+          <circle cx="418.0" cy="186" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="418.0" y="190" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۴</text>
+          <circle cx="476.0" cy="186" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="476.0" y="190" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <text x="648" y="190" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۴ چیز</text>
+          <circle cx="215.0" cy="224" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="215.0" y="228" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <circle cx="273.0" cy="224" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="273.0" y="228" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۵</text>
+          <circle cx="331.0" cy="224" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="331.0" y="228" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱۰</text>
+          <circle cx="389.0" cy="224" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="389.0" y="228" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱۰</text>
+          <circle cx="447.0" cy="224" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="447.0" y="228" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۵</text>
+          <circle cx="505.0" cy="224" r="15" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="505.0" y="228" font-size="12.5" fill="#16181C" font-weight="600" text-anchor="middle">۱</text>
+          <text x="648" y="228" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۵ چیز</text>
+          <text x="360" y="272" font-size="12" fill="#1E3A5F" text-anchor="middle" direction="rtl">در ردیف «۳ چیز»، عدد ۳ یعنی: برای برداشتن ۱ تا از ۳ تا، سه راه هست</text>
+        </svg>
+        <figcaption style="font-size: 12.5px; line-height: 1.9; color: #666158; margin-top: 14px; text-align: center;">هر ردیف، همهٔ راه‌های برداشتن از آن تعداد چیز را می‌شمارد. ردیف چهارم: یک راه برای برنداشتن، سه راه برای یکی، سه راه برای دوتا، یک راه برای هر سه.</figcaption>
+      </figure>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">بیایید یک بار با دست بشماریم تا عددها از آسمان نیفتند. سه کوزه داری: الف، ب، ج. می‌خواهی یکی برداری. سه راه هست: الف، یا ب، یا ج.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">حالا می‌خواهی دو تا برداری. باز هم سه راه: الف‌وب، الف‌وج، ب‌وج. (الف‌وب با ب‌والف یکی است، چون ترتیب مهم نیست.) هر سه را برداری؟ یک راه. هیچ‌کدام را؟ باز یک راه.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">پس برای سه چیز: ۱، ۳، ۳، ۱. دقیقاً همان ردیف چهارم جدول. جدول فقط این شمارش دستی را برای هر عددی انجام می‌دهد، بی‌آنکه مجبور باشی تک‌تک بنویسی.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و حالا چرا این برای نامهٔ من حیاتی است. اگر بخواهی بگویی «بخت این پیشامد چقدر است»، تنها راهش این است که <b>راه‌های ممکن را بشماری</b> و ببینی چند تایشان آن چیزی است که می‌خواهی. بدون شمردن راه‌ها، بخت عددی ندارد.</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">مثال کوچکی که همه‌چیز را روشن می‌کند. سه سکه می‌اندازی. چند حالت ممکن است؟ هر سکه دو حالت دارد، پس دو در دو در دو، یعنی هشت حالت. (همان دوبرابرشدنِ نخ‌های بافنده در نامهٔ اول.)</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">حالا چند تا از این هشت حالت دقیقاً یک «شیر» دارد؟ سه تا — چون از سه سکه باید یکی را انتخاب کنی که شیر باشد، و دیدیم که سه راه دارد.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">پس بخت اینکه دقیقاً یک شیر بیاید، سه از هشت است. <b>همین، تعریف احتمال است</b>: شمار راه‌های دلخواه، تقسیم بر شمار همهٔ راه‌ها. چیزی بیشتر از این نیست — و تا راه‌ها را نشماری، این کسر وجود ندارد.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و یک چیز دیگر که دلم می‌خواهد بدانی، هرچند نخواهی دید: <b>در همان سالی که تو از دنیا می‌روی، کودکی به دنیا می‌آید</b> که همین جدول را دوباره می‌سازد و پیش می‌برد. نامش <b>عمر خیام</b> است و مرگ و تولدتان هر دو در سال ۴۲۷ هجری است. امروز به آن جدول، هم «مثلث کرجی» می‌گویند و هم «مثلث خیام».</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">این جدول از شرق به غرب می‌رود و قرن‌ها بعد در اروپا به نام کس دیگری شناخته می‌شود. ولی ریشه‌اش این‌جاست، در همین سال‌هایی که تو زنده‌ای.</p>
+    </section>
+    <section id="s4" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 44px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۴ — بخت</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">روزی که «بخت» از یک حرف، به یک عدد تبدیل شد</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۶۰۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">پاسکال و فرما · نامه‌نگاری سال ۱۶۵۴</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">ششصد سال بعد از تو، در فرانسه، قماربازی مسئله‌ای را پیش دو ریاضی‌دان می‌برد. مسئله این است: دو نفر بازی می‌کنند و هر کس زودتر به امتیاز معین برسد، تمام شرط‌بندی را می‌برد. ولی بازی نیمه‌کاره قطع می‌شود. <b>پول را چطور تقسیم کنند؟</b></p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">به نظر پرسش کوچکی می‌آید. نیست. تا پیش از آن، «بخت» چیزی بود که دربارهٔ آن حرف می‌زدند؛ بعد از آن، چیزی شد که <b>حساب می‌کردند</b>. <b>بلز پاسکال</b> و <b>پی‌یر دو فرما</b> در نامه‌نگاری تابستان و پاییز ۱۶۵۴ جوابش را پیدا کردند، و همان نامه‌ها را امروز نقطهٔ آغاز نظریهٔ احتمال می‌دانند.</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">جوابشان این بود: پول را بر اساس آنچه <i>تا حالا</i> شده تقسیم نکن؛ بر اساس <b>آنچه از این به بعد می‌توانست بشود</b> تقسیم کن.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">یعنی همهٔ راه‌هایی را که بازی می‌توانست ادامه پیدا کند بشمار (همان جدول بخش ۰۳)، ببین در چند تایشان نفر اول می‌برد و در چند تا نفر دوم، و پول را به همان نسبت تقسیم کن.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">این یک جهش فکری بزرگ است: <b>آینده‌ای که هرگز اتفاق نیفتاد، باز هم قابل شمردن است.</b> هر پیش‌بینی‌ای که امروز هر ماشینی می‌کند، روی همین فرض ایستاده.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و از دل همین کار، مفهومی بیرون آمد که ستون فقرات همهٔ تصمیم‌گیری‌های امروز است: <b>امید ریاضی</b>. یعنی اگر کاری را هزار بار تکرار کنی، به‌طور متوسط چه عایدت می‌شود.</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">با عدد روشن‌تر می‌شود. فرض کن قماری هست که با بختِ یک‌دهم، صد دینار می‌دهد، و با بختِ نه‌دهم، هیچ.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">امید ریاضی‌اش این است: یک‌دهمِ صد، به‌علاوهٔ نه‌دهمِ صفر — یعنی ده دینار. پس اگر بیش از ده دینار برای ورود بدهی، در درازمدت ضرر می‌کنی؛ کمتر بدهی، سود.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">دقت کن این عدد در <b>هیچ یک</b> از دفعات واقعی اتفاق نمی‌افتد: یا صد می‌گیری یا هیچ، هیچ‌وقت ده. «ده» میانگینِ درازمدت است، نه پیش‌گوییِ دفعهٔ بعد. این تفاوت، جایی است که بیشترین سوءتفاهم‌ها دربارهٔ پیش‌بینی ماشینی از آن می‌آید.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و اینکه چرا این همه با قمار شروع شد، دلیل ساده‌ای دارد: قمار تنها جایی بود که <b>همهٔ راه‌های ممکن را می‌شد روی کاغذ نوشت</b>. دنیا بیرون از میز قمار آن‌قدر راه دارد که شمردنشان ممکن نیست. ریاضیات همیشه از جایی شروع می‌کند که بشود شمرد، و بعد بیرون می‌زند.</p>
+      </div>
+    </section>
+    <section id="s5" style="max-width: 1060px; margin: 0 auto; padding: 48px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۵ — اعداد بزرگ</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">چرا شمردنِ بیشتر، حدس را بهتر می‌کند — و کجا نمی‌کند</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۷۰۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">یاکوب برنولی · «Ars Conjectandi»، منتشرشده در ۱۷۱۳</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">الکندی در بخش ۰۱ فرض کرده بود که نسبت حرف‌ها در متن بلند «تقریباً ثابت» است. حدسِ خوبی بود، ولی اثبات نداشت. هفتصد سال بعد، <b>یاکوب برنولی</b> آن را ثابت کرد.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">کتابش «هنر حدس زدن» بعد از مرگش منتشر شد و در آن چیزی هست که امروز <b>قانون اعداد بزرگ</b> می‌نامندش. حرفش این است: هرچه بیشتر مشاهده کنی، نسبتی که می‌بینی به نسبتِ واقعی نزدیک‌تر می‌شود — و می‌شود دقیقاً گفت چقدر نزدیک.</p>      <figure style="margin: 0 0 18px; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 18px;">
+        <svg viewBox="0 0 720 214" role="img" aria-label="نمودار نسبت شیر در پرتاب‌های پیاپی سکه که به تدریج به نیم نزدیک می‌شود" style="width: 100%; max-width: 100%; height: auto; display: block; font-family: inherit;">
+          <line x1="70" y1="104" x2="670" y2="104" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="678" y="108" font-size="11.5" fill="#1E3A5F" text-anchor="start" direction="rtl">نیم</text>
+          <polyline points="70.0,44.0 75.0,44.0 80.1,84.0 85.1,74.0 90.2,92.0 95.2,84.0 100.3,78.3 105.3,89.0 110.3,84.0 115.4,80.0 120.4,76.7 125.5,74.0 130.5,71.7 135.5,78.3 140.6,76.0 145.6,74.0 150.7,79.3 155.7,84.0 160.8,88.2 165.8,86.0 170.8,89.7 175.9,87.6 180.9,91.0 186.0,89.0 191.0,87.2 196.1,85.5 201.1,84.0 206.1,86.9 211.2,85.4 216.2,88.0 221.3,90.5 226.3,89.0 231.3,91.3 236.4,89.9 241.4,88.6 246.5,87.3 251.5,89.4 256.6,88.2 261.6,87.1 266.6,89.0 271.7,87.9 276.7,86.9 281.8,88.7 286.8,90.4 291.8,89.3 296.9,91.0 301.9,92.5 307.0,94.0 312.0,95.4 317.1,94.4 322.1,95.8 327.1,94.8 332.2,93.8 337.2,95.1 342.3,94.2 347.3,93.3 352.4,92.4 357.4,93.7 362.4,94.8 367.5,96.0 372.5,97.1 377.6,96.3 382.6,97.3 387.6,98.4 392.7,99.4 397.7,98.5 402.8,99.5 407.8,100.5 412.9,99.7 417.9,100.6 422.9,99.8 428.0,100.7 433.0,101.5 438.1,102.4 443.1,103.2 448.2,102.4 453.2,101.7 458.2,102.5 463.3,101.7 468.3,101.0 473.4,100.3 478.4,99.6 483.4,98.9 488.5,99.7 493.5,99.1 498.6,98.4 503.6,97.8 508.7,98.5 513.7,97.9 518.7,97.3 523.8,98.1 528.8,98.8 533.9,99.5 538.9,100.2 543.9,99.6 549.0,99.0 554.0,98.4 559.1,99.1 564.1,99.8 569.2,99.2 574.2,98.7 579.2,98.1 584.3,97.6 589.3,97.1 594.4,97.7 599.4,97.2 604.5,96.7 609.5,96.2 614.5,95.7 619.6,96.4 624.6,97.0 629.7,97.6 634.7,98.2 639.7,98.7 644.8,99.3 649.8,98.8 654.9,99.4 659.9,99.9 665.0,100.5 670.0,101.0" fill="none" stroke="#B4530E" stroke-width="2"/>
+          <text x="120" y="182" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۱۰ پرتاب</text>
+          <text x="620" y="182" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">۱۲۰ پرتاب</text>
+          <text x="360" y="26" font-size="12.5" fill="#16181C" text-anchor="middle" direction="rtl" font-weight="700">نسبت «شیر» در پرتاب‌های پیاپی یک سکهٔ سالم</text>
+          <text x="360" y="202" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">اول بالا و پایین می‌پرد؛ هرچه جلوتر، به نیم نزدیک‌تر و آرام‌تر</text>
+        </svg>
+        <figcaption style="font-size: 12.5px; line-height: 1.9; color: #666158; margin-top: 14px; text-align: center;">این همان قانون است، به چشم. نوسان‌های اول بزرگ‌اند و بعد کوچک می‌شوند — ولی هیچ‌وقت دقیقاً صفر نمی‌شوند.</figcaption>
+      </figure>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">یک سوءتفاهم رایج را همین‌جا ببندم، چون قدیمی است و هنوز زنده: این قانون نمی‌گوید اگر ده بار پشت سر هم «خط» آمد، حالا «شیر» <i>بدهکار</i> است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">سکه حافظه ندارد. پرتاب بعدی باز هم نیم-نیم است. چیزی که اتفاق می‌افتد این است که آن ده تای ناهموار، در میان هزار پرتاب بعدی <b>رقیق</b> می‌شود، نه اینکه جبران شود.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">به همین دلیل در نمودار بالا خط به نیم نزدیک می‌شود ولی هیچ‌وقت نمی‌پرد تا «جبران» کند.</p>
+      </div>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و حالا مهم‌ترین هشدار این کل نامه، که اگر فقط یک جمله از این بخش یادت بماند باید این باشد: <b>شمارِ بیشتر، فقط بی‌نظمی را درمان می‌کند؛ کجیِ نمونه را نه.</b></p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">اگر بخواهی بدانی مردم این شهر چه می‌خورند و فقط از کسانی بپرسی که در بازار بزرگ‌اند، هزار جوابِ هم‌سو هم تو را به جواب درست نمی‌رساند. فقط مطمئن‌تر می‌شوی که <i>چیز غلط</i> را درست شمرده‌ای.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">هر مشکلی که امروز دربارهٔ «سوگیری» ماشین‌ها می‌شنوی، از همین‌جاست. آن‌ها از آنچه دیده‌اند یاد می‌گیرند، و اگر آنچه دیده‌اند کج باشد، بزرگ‌تر شدنشان فقط کجی را محکم‌تر می‌کند.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و اینکه «چقدر مشاهده کافی است»، جواب ثابتی ندارد. بستگی دارد به اینکه می‌خواهی چقدر دقیق باشی و چقدر حاضری اشتباه کنی. کار برنولی دقیقاً همین را قابل حساب کرد: به‌جای «زیاد»، عدد گذاشت.</p>
+    </section>
+    <section id="s6" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 44px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۶ — باور</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">قاعده‌ای برای عوض کردن باور، وقتی خبر تازه می‌رسد</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۷۰۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">توماس بِیز (۱۷۰۲–۱۷۶۱) · رساله در ۱۷۶۳، پس از مرگش</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">این مهم‌ترین بخش نامه است. اگر بقیه را فراموش کنی و فقط این یکی بماند، باز هم چیز بزرگی برده‌ای.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">کشیشی انگلیسی به نام <b>توماس بِیز</b> در زمان زندگی‌اش این را منتشر نکرد. پس از مرگش دوستی به نام <b>ریچارد پرایس</b> نوشته‌اش را آماده کرد و در دسامبر ۱۷۶۳ در انجمن سلطنتی خوانده شد.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">حرفش در یک جمله: <b>باورِ تازه = باورِ پیشین، تصحیح‌شده با قوّتِ شاهد.</b> نه خبرِ تازه به‌تنهایی تعیین‌کننده است، نه باور قبلی. هر دو با هم.</p>      <figure style="margin: 0 0 18px; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 18px;">
+        <svg viewBox="0 0 720 226" role="img" aria-label="نمودار هزار سکه: ده تقلبی و نهصدونود سالم، و نتیجهٔ تشخیص صرافی که نه بار از ده بار درست می‌گوید" style="width: 100%; max-width: 100%; height: auto; display: block; font-family: inherit;">
+          <text x="360" y="22" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">هزار سکه در کیسه</text>
+          <rect x="470" y="36" width="200" height="56" rx="8" fill="#E3E9F1" stroke="#1E3A5F" stroke-width="1.5"/>
+          <text x="570" y="60" font-size="12.5" fill="#1E3A5F" font-weight="700" text-anchor="middle" direction="rtl">۱۰ سکهٔ تقلبی</text>
+          <text x="570" y="79" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">یک در صد</text>
+          <rect x="50" y="36" width="390" height="56" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="245" y="60" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">۹۹۰ سکهٔ سالم</text>
+          <text x="245" y="79" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">نودونه در صد</text>
+          <text x="360" y="118" font-size="12" fill="#45494F" text-anchor="middle" direction="rtl">صرّاف می‌گوید «تقلبی است». او نُه بار از ده بار درست می‌گوید.</text>
+          <rect x="560" y="134" width="110" height="52" rx="8" fill="#E3E9F1" stroke="#1E3A5F" stroke-width="1.5"/>
+          <text x="615" y="156" font-size="12.5" fill="#1E3A5F" font-weight="700" text-anchor="middle" direction="rtl">۹</text>
+          <text x="615" y="175" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">درست</text>
+          <rect x="440" y="134" width="110" height="52" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="495" y="156" font-size="12.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+          <text x="495" y="175" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">جا انداخت</text>
+          <rect x="230" y="134" width="200" height="52" rx="8" fill="#FBEBE2" stroke="#B4530E" stroke-width="1.5"/>
+          <text x="330" y="156" font-size="12.5" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">۹۹</text>
+          <text x="330" y="175" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">اشتباه گفت تقلبی</text>
+          <rect x="50" y="134" width="170" height="52" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+          <text x="135" y="156" font-size="12.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۸۹۱</text>
+          <text x="135" y="175" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">درست گفت سالم</text>
+          <text x="360" y="212" font-size="13" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">از ۱۰۸ سکه‌ای که «تقلبی» خوانده شد، فقط ۹ تا واقعاً تقلبی است — کمتر از یک‌دوازدهم</text>
+        </svg>
+        <figcaption style="font-size: 12.5px; line-height: 1.9; color: #666158; margin-top: 14px; text-align: center;">کل تلهٔ ماجرا در پهنای مستطیل‌هاست: صرّاف در هر دو طرف به یک اندازه دقیق است، ولی چون طرف راست بسیار کوچک‌تر است، خطاهای طرف چپ آن را غرق می‌کنند.</figcaption>
+      </figure>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">بگذار با دست حساب کنیم، چون این جایی است که تقریباً همه اشتباه می‌کنند — و اشتباهشان هم همیشه در یک جهت است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">هزار سکه داری که ده تایش تقلبی است. صرّافی داری که نُه بار از هر ده بار درست تشخیص می‌دهد. سکه‌ای را نشانش می‌دهی و می‌گوید «تقلبی است». چقدر باور کنی؟</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">از ده سکهٔ تقلبیِ واقعی، نُه تا را درست می‌گیرد. از نهصدونود سکهٔ سالم، یک‌دهمشان را اشتباهاً تقلبی می‌خواند — یعنی نودونه تا. پس روی هم صد و هشت سکه «تقلبی» خوانده می‌شوند، که فقط نُه تایشان واقعاً تقلبی است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">یعنی وقتی صرّاف می‌گوید «تقلبی»، احتمال اینکه راست بگوید حدود <b>هشت در صد</b> است — نه نود در صد. و این با اینکه صرّاف واقعاً دقیق است هیچ تناقضی ندارد. <b>کمیاب بودنِ تقلبی، حرفِ صرّاف را رقیق می‌کند.</b></p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">این همان چیزی است که بیز قاعده‌مندش کرد. باورِ پیشینِ تو این بود که «یک سکه از صد تقلبی است». شاهد آمد و باورت را بالا برد — از یک درصد به هشت درصد. هشت برابر شد، ولی هنوز به نود نرسید. <b>شاهد باور را جابه‌جا می‌کند؛ جایش نمی‌نشیند.</b></p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و اگر باز هم صرّاف دومی هم همان را بگوید، باورت از هشت درصد شروع می‌شود، نه از یک درصد. این‌طور با هر شاهد تازه، عدد را به‌روز می‌کنی. <b>یادگیری، در ساده‌ترین تعریف ریاضی‌اش، همین است.</b></p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و اینکه «باور» چطور می‌تواند عدد باشد: عددی میان صفر و یک که می‌گوید چقدر به چیزی اطمینان داری. صفر یعنی محال، یک یعنی قطعی، و نیم یعنی هیچ ترجیحی نداری.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">این قسمت در زمان خودش جنجالی بود و هنوز هم کسانی با آن مخالف‌اند. ایرادشان این است که عددِ باورِ <i>پیشین</i> را از کجا می‌آوری؟ گاهی از شمارش (مثل همین ده سکه از هزار)، ولی گاهی فقط از قضاوت خودت — و آن‌وقت جواب نهایی هم به همان قضاوت آلوده است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">جواب عملی‌اش این است: پیشین را صریح بنویس تا دیگران بتوانند با آن مخالفت کنند. چیزی که پنهان بماند قابل نقد نیست. ماشین‌های امروزی هم همین کار را می‌کنند، فقط پیشینشان از میلیون‌ها مشاهده می‌آید نه از قضاوت یک نفر.</p>
+      </div>      </div>
+    </section>
+    <section id="s7" style="max-width: 1060px; margin: 0 auto; padding: 48px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۷ — بهترین خط</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">وقتی اندازه‌گیری‌ها با هم نمی‌خوانند</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۸۰۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">لوژاندر ۱۸۰۵ · گاوس ۱۸۰۹ · هر دو از دل نجوم</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">این بخش را مخصوص تو نوشته‌ام، چون مسئله‌اش دقیقاً مسئلهٔ خودِ توست.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">تو از بالای کوهی نزدیک قلعهٔ ناندنه، فرورفتگی افق را اندازه گرفتی و از روی آن شعاع زمین را حساب کردی. کاری که کردی زیرکانه بود، چون بر خلاف روش‌های پیش از تو به کاروان و سفرِ طولانی نیاز نداشت — از یک جا، با یک اندازه‌گیری.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">ولی یک مشکل داری که می‌دانمش: <b>اگر دو بار اندازه بگیری، دو عدد کمی متفاوت در می‌آید.</b> کدام درست است؟ میانگین؟ دقیق‌ترین؟ آن یکی که با انتظارت می‌خواند؟</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">این مسئله هزار سال بی‌جواب ماند و دلیلش هم روشن است: تا وقتی فکر می‌کنی خطا «اشتباهِ اندازه‌گیر» است، دنبال حذفش می‌گردی نه حسابش.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">جهش فکری این بود که بپذیریم خطا اجتناب‌ناپذیر است و خودش <b>قاعده</b> دارد: خطاهای کوچک بیشتر از بزرگ پیش می‌آیند، و کم‌و‌زیاد تقریباً به یک اندازه. وقتی خطا قاعده داشته باشد، می‌شود رویش ریاضی بنا کرد.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">هشتصد سال بعد از تو، دو نفر جداگانه جوابش را دادند. <b>آدرین-ماری لوژاندر</b> در ۱۸۰۵ نخستین شرح روشن آن را منتشر کرد، در کتابی دربارهٔ تعیین مدار دنباله‌دارها. <b>کارل فریدریش گاوس</b> در ۱۸۰۹ نسخهٔ خودش را منتشر کرد و گفت از ۱۷۹۵ به کارش می‌برده — که دعوای تقدمِ مفصلی راه انداخت.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">روششان را «کمترین مربعات» می‌نامند و منطقش ساده است: از میان همهٔ خط‌های ممکن، آن را بردار که <b>جمعِ مربعِ فاصله‌ها</b> از مشاهده‌هایت کمترین باشد.</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">چرا مربع؟ دو دلیل، و هر دو را می‌شود با دست دید.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;"><b>یک:</b> اگر فقط فاصله‌ها را جمع کنی، خطای «دو واحد بالاتر» و «دو واحد پایین‌تر» همدیگر را خنثی می‌کنند و جمعشان صفر می‌شود — یعنی خطی که از همهٔ نقطه‌ها دور است، می‌تواند نمرهٔ صفر بگیرد. مربع‌کردن علامت را از بین می‌برد.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;"><b>دو:</b> مربع، خطای بزرگ را به‌شدت تنبیه می‌کند. خطای دو واحدی چهار امتیاز بد می‌گیرد، ولی خطای چهار واحدی شانزده تا. پس خط ترجیح می‌دهد از کنار همه کمی رد شود تا از کنار یکی خیلی دور باشد.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و یک پیامد که باید بدانی: همین خاصیت، کمترین مربعات را در برابر یک مشاهدهٔ خیلی پرت <b>حساس</b> می‌کند. یک عدد غلط می‌تواند کل خط را بکشد.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و مشهورترین نمایشش دقیقاً در رشتهٔ تو اتفاق افتاد. سیارکی به نام سرس کشف شد و بعد پشت خورشید گم شد. فقط چند مشاهدهٔ کوتاه در دست بود. گاوسِ بیست‌وچهار ساله با همین روش پیش‌بینی کرد کجا دوباره پیدا می‌شود — و تنها پیش‌بینی‌ای بود که به درد خورد. ستاره‌شناس‌ها همان‌جا پیدایش کردند.</p>
+      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; border-inline-start: 4px solid #1E3A5F; margin-bottom: 4px;">
+        <p style="font-size: 16px; line-height: 2.05; color: #16181C; margin: 0;">این، تا جایی که من می‌فهمم، <b>نخستین یادگیری ماشینیِ تاریخ</b> است: چند مشاهدهٔ ناقص و پر خطا رفت تو، یک قاعده بیرون آمد، و آن قاعده چیزی را درست پیش‌بینی کرد که هیچ‌کس ندیده بود. نهصد سال بعد هم کاری که ماشین‌ها می‌کنند دقیقاً همین است — فقط به‌جای یک خط، میلیاردها عدد.</p>
+      </div>
+    </section>
+    <section id="s8" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 44px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۸ — سراشیبی</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">و حالا خودت خط را جا بینداز</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۸۰۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">اوگوستن-لویی کوشی · یادداشت سال ۱۸۴۷</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">شش کرت داری. به هر کدام چند پیمانه آب داده‌ای و چند خروار برداشته‌ای. حالا می‌خواهی خطی بکشی که بتواند بگوید کرت هفتم با هشت پیمانه آب چه می‌دهد.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">دو دکمهٔ اول، <b>شیب</b> خط را عوض می‌کنند و دو تای بعد آن را بالا و پایین می‌برند. عددی که باید کوچکش کنی، همان جمعِ مربعِ فاصله‌هاست. اول با دست امتحان کن — بعد بگذار ماشین خودش پیدایش کند.</p>
+
+      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px; margin-bottom: 14px;">
+        <svg viewBox="0 0 520 268" role="img" aria-label="نمودار پراکندگی شش کرت با خط برازش و فاصلهٔ هر نقطه تا خط" style="width: 100%; max-width: 100%; height: auto; display: block; font-family: inherit;">
+          <sc-for list="{{ticksY}}" as="t" hint-placeholder-count="5">
+            <line x1="{{t.gx1}}" y1="{{t.gy}}" x2="{{t.gx2}}" y2="{{t.gy}}" stroke="#F0EEE7" stroke-width="1"/>
+            <text x="{{t.x}}" y="{{t.y}}" font-size="11" fill="#666158" text-anchor="middle">{{t.t}}</text>
+          </sc-for>
+          <line x1="70" y1="232" x2="480" y2="232" stroke="#E4E1D6" stroke-width="1.5"/>
+          <line x1="70" y1="232" x2="70" y2="26" stroke="#E4E1D6" stroke-width="1.5"/>
+          <sc-for list="{{ticksX}}" as="t" hint-placeholder-count="6">
+            <text x="{{t.x}}" y="{{t.y}}" font-size="11" fill="#666158" text-anchor="middle">{{t.t}}</text>
+          </sc-for>
+          <text x="275" y="262" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">پیمانهٔ آب</text>
+          <text x="22" y="130" font-size="11.5" fill="#666158" text-anchor="middle" direction="rtl">خروار</text>
+          <sc-for list="{{dots}}" as="d" hint-placeholder-count="6">
+            <line x1="{{d.cx}}" y1="{{d.cy}}" x2="{{d.cx}}" y2="{{d.ey}}" stroke="{{d.eCol}}" stroke-width="2" stroke-dasharray="3 3"/>
+          </sc-for>
+          <line x1="{{lx1}}" y1="{{ly1}}" x2="{{lx2}}" y2="{{ly2}}" stroke="#1E3A5F" stroke-width="2.5"/>
+          <sc-for list="{{dots}}" as="d" hint-placeholder-count="6">
+            <circle cx="{{d.cx}}" cy="{{d.cy}}" r="5.5" fill="#FFFFFF" stroke="#1E3A5F" stroke-width="2"/>
+          </sc-for>
+        </svg>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 14px;">
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 12px; color: #666158; margin-bottom: 8px;">شیب خط</div>
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">{{aFa}}</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 8px;">هر پیمانه آب، این‌قدر خروار</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 12px; color: #666158; margin-bottom: 8px;">نقطهٔ شروع</div>
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">{{bFa}}</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 8px;">برداشت با صفر پیمانه</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 12px; color: #666158; margin-bottom: 8px;">جمع مربع فاصله‌ها</div>
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">{{errFa}}</div>
+          <div style="height: 9px; background: #F0EEE7; border-radius: 5px; overflow: hidden; margin-top: 10px;">
+            <div style="width: {{barW}}%; height: 100%; background: #B4530E; border-radius: 5px;"></div>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 20px 22px;">
+          <div style="font-size: 12px; color: #666158; margin-bottom: 8px;">گام‌های سراشیبی</div>
+          <div style="font-size: 30px; font-weight: 800; color: #1E3A5F; line-height: 1;">{{stepsFa}}</div>
+          <div style="font-size: 11.5px; color: #666158; margin-top: 8px;">کمترین خطای ممکن: {{bestFa}}</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 12px;">
+        <sc-for list="{{btns}}" as="c" hint-placeholder-count="4">
+          <button style="{{c.style}}" onClick="{{c.onClick}}">{{c.label}}</button>
+        </sc-for>
+      </div>
+      <div style="display: flex; gap: 9px; flex-wrap: wrap; align-items: center;">
+        <sc-for list="{{runs}}" as="c" hint-placeholder-count="4">
+          <button style="{{c.style}}" onClick="{{c.onClick}}">{{c.label}}</button>
+        </sc-for>
+      </div>
+      <p style="{{vStyle}}; margin-top: 14px;">{{verdict}}</p>
+      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">اگر دکمهٔ «تا ته برو» را بزنی، ماشین در چند صد گام به شیب ۱٫۶ و نقطهٔ شروع ۱٫۱ می‌رسد و خطا روی ۴٫۵۳ می‌ایستد. این دقیقاً همان جوابی است که روش لوژاندر و گاوس با یک حساب مستقیم می‌دهد.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">پس اگر جواب مستقیم هست، چرا سُر خوردن؟ چون برای یک خط ساده جوابِ مستقیم وجود دارد، ولی برای مدل‌های امروزی — که به‌جای دو عدد، میلیاردها عدد دارند — هیچ فرمول مستقیمی نیست. تنها راه، همین پایین رفتن گام‌به‌گام است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">به این سُر خوردن می‌گویند «کاهش گرادیان» و معمولاً سرچشمه‌اش را به یادداشت کوتاهی از <b>کوشی</b> در سال ۱۸۴۷ برمی‌گردانند — هرچند او آن را برای حل دستگاه معادله‌ها نوشت، نه برای یادگیری.</p>
+      </div>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">تصویرش ساده است: کسی را در شیب کوه گذاشته‌اند و چشم‌بندی زده‌اند. نمی‌داند دره کجاست. تنها کاری که می‌تواند بکند این است که با پا بسنجد کدام طرف سرازیرتر است و یک قدم آن طرف بردارد. بعد دوباره. و دوباره.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">اندازهٔ قدم خیلی مهم است. قدم بسیار کوچک یعنی تا شب هم به دره نمی‌رسی. قدم بسیار بزرگ یعنی از دره می‌پری آن طرف و بالا می‌روی، و گاهی هرگز آرام نمی‌گیری. پیدا کردن اندازهٔ درست قدم، هنوز یکی از دردسرهای روزمرهٔ این حرفه است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و یک محدودیت که تا امروز هم هست: اگر کوه چند درهٔ جدا داشته باشد، این آدم در نزدیک‌ترین دره گیر می‌افتد، نه لزوماً در گودترین. برای خط راست این مشکل وجود ندارد (یک دره بیشتر نیست)، ولی برای مدل‌های بزرگ همیشه هست.</p>
+      </div>      </div>
+    </section>
+    <section id="s9" style="max-width: 1060px; margin: 0 auto; padding: 48px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۰۹ — بازگشت</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">چرا پسرِ مردان بسیار بلند، معمولاً کوتاه‌تر از پدرش است</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۸۴۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">فرانسیس گالتون · مقالهٔ سال ۱۸۸۶</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;"><b>فرانسیس گالتون</b> قد صدها خانواده را اندازه گرفت — پدر و مادر، و فرزندانشان در بزرگ‌سالی — و چیز عجیبی دید.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">پسرانِ پدرانِ بسیار بلند، به‌طور متوسط بلندتر از میانگین بودند، ولی <b>کوتاه‌تر از پدرانشان</b>. و پسرانِ پدرانِ بسیار کوتاه، کوتاه‌تر از میانگین بودند ولی <b>بلندتر از پدرانشان</b>. انگار چیزی قد فرزندان را به سمت میانهٔ جمعیت می‌کشید.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">او اسمش را گذاشت «بازگشت به سوی میانمایگی». امروز آن واژهٔ تحقیرآمیز را برداشته‌اند و می‌گویند «بازگشت به میانگین» — ولی خودِ واژهٔ <b>«رگرسیون»</b>، که امروز نام یکی از پرکاربردترین ابزارهای هوش مصنوعی است، از همین مقاله مانده است.</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">اول بگویم این <b>چه چیزی نیست</b>، چون سوءتفاهمش خیلی گران تمام می‌شود.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">این نمی‌گوید نسل‌ها به سمت یکسان‌شدن می‌روند و بالاخره همه هم‌قد می‌شوند. اگر این‌طور بود، تا حالا شده بود. پراکندگی قدها نسل به نسل تقریباً ثابت می‌ماند.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">چیزی که می‌گوید دربارهٔ <b>انتخابِ نمونه</b> است: وقتی تو کسانی را انتخاب می‌کنی که در یک اندازه‌گیری <i>نهایت</i> بوده‌اند، بخشی از آن نهایت بودن از بخت آمده، نه از جوهر. و بخت در دفعهٔ بعد تکرار نمی‌شود.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">آن پدرِ بسیار بلند، هم ذاتاً بلند بوده و هم کمی خوش‌شانس. پسرش ذات را به ارث می‌برد، شانس را نه.</p>
+      </div>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و حالا تلهٔ عملی‌اش، که در هر دوره‌ای کسانی را فریب داده است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">فرض کن پس از هر برداشتِ بسیار بد، سرکارگر را سرزنش می‌کنی، و پس از هر برداشت بسیار خوب، او را می‌ستایی. چه می‌بینی؟ بعد از سرزنش، کار بهتر می‌شود. بعد از ستایش، بدتر. نتیجه می‌گیری سرزنش مؤثر است و ستایش مضر.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">ولی دقیقاً همین را می‌دیدی حتی اگر هیچ‌کدام را نگفته بودی. برداشتِ خیلی بد تا حدی بدشانسی بوده و دفعهٔ بعد خودبه‌خود بهتر می‌شود؛ خیلی خوب هم همین‌طور. <b>بازگشت به میانگین، تأثیرِ کارِ تو را جعل می‌کند.</b></p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">به همین دلیل در سنجیدن هر درمان و هر روش و هر مدل، باید گروهی هم باشد که کاری رویش نکرده‌ای. بدون آن، داری اثرِ بخت را به حساب خودت می‌گذاری.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و پیوندش با بخش قبل: آن خطی که در بخش ۰۸ جا انداختی، شیبش همیشه <b>کمتر</b> از آن است که از روی نقطه‌های حدی حدس بزنی. خط، عمداً محتاط است. این محافظه‌کاری عیب نیست — همان چیزی است که باعث می‌شود پیش‌بینی‌اش برای کرت هفتم قابل اعتماد باشد.</p>
+    </section>
+    <section id="s10" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 44px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۱۰ — خبر</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">اینکه «خبر» را هم می‌شود اندازه گرفت</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۹۰۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">کلود شانون · مقالهٔ ۱۹۴۸، در دو بخش</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">نهصد سال بعد از تو، مهندسی به نام <b>کلود شانون</b> مقاله‌ای نوشت که در آن کاری کرد که تا آن روز به نظر نشدنی می‌آمد: <b>خبر را اندازه گرفت.</b></p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">ایده‌اش به شکل غریبی به الکندیِ بخش ۰۱ وصل است. شانون گفت مقدار خبری که یک پیام می‌آورد، به این بستگی دارد که <b>چقدر غافلگیرکننده</b> باشد. چیزی که انتظارش را داشتی، خبر کمی دارد. چیزی که بعید بود، خبر زیادی دارد.</p>      <figure style="margin: 0 0 18px; background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 18px;">
+        <svg viewBox="0 0 720 246" role="img" aria-label="نمودار سه حرف با بسامد متفاوت و مقدار خبری که هر کدام می‌آورند" style="width: 100%; max-width: 100%; height: auto; display: block; font-family: inherit;">
+          <text x="668" y="40" font-size="13" fill="#16181C" font-weight="700" text-anchor="start" direction="rtl">حرف «الف»</text>
+          <text x="668" y="60" font-size="11" fill="#666158" text-anchor="start" direction="rtl">خیلی پرتکرار</text>
+          <rect x="467" y="26" width="52" height="22" rx="6" fill="#1E3A5F"/>
+          <text x="452" y="42" font-size="11.5" fill="#1E3A5F" text-anchor="start" direction="rtl">خبر کم</text>
+          <text x="668" y="104" font-size="13" fill="#16181C" font-weight="700" text-anchor="start" direction="rtl">حرف «ر»</text>
+          <text x="668" y="124" font-size="11" fill="#666158" text-anchor="start" direction="rtl">متوسط</text>
+          <rect x="326" y="90" width="193" height="22" rx="6" fill="#1E3A5F"/>
+          <text x="311" y="106" font-size="11.5" fill="#1E3A5F" text-anchor="start" direction="rtl">خبر متوسط</text>
+          <text x="668" y="168" font-size="13" fill="#16181C" font-weight="700" text-anchor="start" direction="rtl">حرف «ژ»</text>
+          <text x="668" y="188" font-size="11" fill="#666158" text-anchor="start" direction="rtl">خیلی کمیاب</text>
+          <rect x="115" y="154" width="404" height="22" rx="6" fill="#1E3A5F"/>
+          <text x="100" y="170" font-size="11.5" fill="#1E3A5F" text-anchor="start" direction="rtl">خبر زیاد</text>
+          <text x="360" y="232" font-size="12" fill="#45494F" text-anchor="middle" direction="rtl">هرچه دیدنِ چیزی کم‌انتظارتر باشد، خبرِ بیشتری با خود می‌آورد</text>
+        </svg>
+        <figcaption style="font-size: 12.5px; line-height: 1.9; color: #666158; margin-top: 14px; text-align: center;">همان نمودار بسامد بخش ۰۱، وارونه. حرفی که الکندی را به جواب می‌رساند کم‌خبرترین حرف است؛ و حرفی که به‌ندرت می‌آید، وقتی بیاید بیشترین خبر را دارد.</figcaption>
+      </figure>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">چرا این وارونگی معنا دارد: اگر بگویم «فردا خورشید طلوع می‌کند»، چیزی به دانش تو اضافه نکرده‌ام. اگر بگویم «فردا خورشید طلوع نمی‌کند»، جمله‌ای به همان کوتاهی گفته‌ام ولی دنیای تو را زیر و رو کرده.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">پس «مقدار خبر» خاصیتِ خودِ جمله نیست؛ خاصیت رابطهٔ جمله با <b>انتظار پیشینِ</b> شنونده است. و همین، این بخش را مستقیم به قاعدهٔ بیز در بخش ۰۶ وصل می‌کند: خبری که باور تو را خیلی جابه‌جا می‌کند، خبر پرمایه‌ای است.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">شانون واحدی هم برایش گذاشت و نامش را «بیت» نهاد. یک بیت یعنی خبری که دقیقاً یکی از دو حالتِ هم‌بخت را روشن می‌کند — همان «رو یا زیرِ نخ» در نامهٔ اول.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و چرا این برای ماشین‌های امروزی مرکزی است: ماشینی که حدس می‌زند کلمهٔ بعدی چیست، در هر گام دارد می‌پرسد «کدام گزینه کم‌غافلگیرکننده‌تر است؟» و آموزش دادنش یعنی تنظیم کردن عددهایش تا <b>روی متن‌های واقعی کمتر غافلگیر شود</b>. معیاری که با آن سنجیده می‌شود، نوهٔ مستقیم همین مقالهٔ ۱۹۴۸ است.</p>
+      </div>
+    </section>
+    <section id="s11" style="max-width: 1060px; margin: 0 auto; padding: 48px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۱۱ — یادگیری</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">ماشینی که به‌جای فرمان گرفتن، مثال می‌بیند</h2>
+      <div style="display: inline-flex; align-items: baseline; gap: 10px; background: #E3E9F1; border-radius: 999px; padding: 7px 16px; margin: 0 0 16px;"><span style="font-size: 12px; font-weight: 800; color: #1E3A5F;">۹۱۰ سال بعد از تو</span><span style="font-size: 12.5px; color: #45494F;">فرانک رزنبلات · پرسپترون، سال ۱۹۵۸</span></div>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">حالا همهٔ قطعه‌ها را داریم و می‌شود آن چیزی را ساخت که نامهٔ اول نمی‌توانست توضیحش بدهد.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">در نامهٔ اول، هر کاری که ماشین می‌کرد را کسی از پیش نوشته بود. <b>فرانک رزنبلات</b> دستگاهی ساخت که این‌طور نبود. به آن مثال نشان می‌دادی — این تصویر «الف» است، آن یکی نیست — و خودش عددهای درونی‌اش را کم‌وزیاد می‌کرد تا کمتر اشتباه کند.</p>      <div style="background: #FFFFFF; border: 1px dashed #C9D3DE; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px; max-width: 72ch;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1E3A5F; margin-bottom: 11px;">کمی بیشتر</div>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">و «یاد گرفتن» این‌جا هیچ معنای رازآلودی ندارد. دقیقاً همان کاری است که در بخش ۰۸ با دست انجام دادی.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">دستگاه برای هر ورودی یک عدد دارد — به آن می‌گویند «وزن»، چون تعیین می‌کند آن ورودی چقدر در تصمیم اثر بگذارد. جواب می‌دهد، با جواب درست می‌سنجد، و اگر اشتباه کرد وزن‌ها را کمی در جهتی عوض می‌کند که دفعهٔ بعد خطا کمتر باشد. همین، هزاران بار.</p>
+        <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 0 0 12px;"><b>تفاوت با فرمان‌گرفتن این است:</b> در نامهٔ اول تو می‌گفتی «چه کن». این‌جا تو می‌گویی «چه چیزی درست است» و دستگاه خودش «چه کن» را پیدا می‌کند. تو هدف را تعریف می‌کنی، نه راه را.</p>
+      </div>      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">پس بگذار صادقانه بگویم این چیست و چه نیست. دستگاهی که «یاد می‌گیرد» چیزی را نمی‌فهمد؛ عددهایش را طوری تنظیم می‌کند که روی مثال‌هایی که دیده کمتر خطا کند. همان خدمتکار نفهمِ نامهٔ اول است — فقط این بار به‌جای فهرست فرمان، <b>یک معیارِ خطا</b> به او داده‌ای و گفته‌ای کمش کن.</p>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">و این همه را که کنار هم بگذاری، چیزی که به دست می‌آید حیرت‌انگیز است ولی مرموز نیست:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;">        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #1E3A5F;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6; color: #1E3A5F;">۱. شمردن</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">از انبوه مثال‌ها، بسامدها و الگوها شمرده می‌شود.</p>
+          <div style="font-size: 11.5px; color: #666158; padding-top: 10px; border-top: 1px solid #F0EEE7;">الکندی، ۸۵۰</div>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #2F5233;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6; color: #2F5233;">۲. برازش</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">قاعده‌ای انتخاب می‌شود که به مشاهده‌ها نزدیک‌ترین باشد.</p>
+          <div style="font-size: 11.5px; color: #666158; padding-top: 10px; border-top: 1px solid #F0EEE7;">لوژاندر و گاوس، ۱۸۰۵</div>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #B4530E;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6; color: #B4530E;">۳. سراشیبی</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">عددهای قاعده گام‌به‌گام تغییر می‌کنند تا خطا کم شود.</p>
+          <div style="font-size: 11.5px; color: #666158; padding-top: 10px; border-top: 1px solid #F0EEE7;">کوشی، ۱۸۴۷</div>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 22px 24px; border-top: 3px solid #6B4226;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6; color: #6B4226;">۴. به‌روز کردن</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0 0 12px;">با هر شاهد تازه، باور جابه‌جا می‌شود، نه جایگزین.</p>
+          <div style="font-size: 11.5px; color: #666158; padding-top: 10px; border-top: 1px solid #F0EEE7;">بیز، ۱۷۶۳</div>
+        </div>      </div>
+    </section>
+    <section id="s12" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 44px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۱۲ — همه با هم</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">هزار و صد سال، روی یک خط</h2>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">نقطه‌های پررنگ در زمان تو یا پیش از تواند. بقیه بعد می‌آیند، و فاصله‌شان را که ببینی چیزی دستگیرت می‌شود: <b>میان نخستین شمردن و نخستین ماشینی که یاد گرفت، هزار و صد سال فاصله است</b> — و هیچ‌کدام از گام‌های میانی را نمی‌شد پرید.</p>
+      <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 26px 28px;">        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #1E3A5F; font-variant-numeric: tabular-nums;">۸۲۰</div>
+            <div style="width: 2px; background: #E3E9F1; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #E3E9F1; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #1E3A5F;">خوارزمی</span>
+                <span style="font-size: 13px; color: #16181C;">جبر و اندیشهٔ «روش»</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">واژهٔ الگوریتم از نام او ماند</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #1E3A5F; font-variant-numeric: tabular-nums;">۸۵۰</div>
+            <div style="width: 2px; background: #E3E9F1; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #E3E9F1; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #1E3A5F;">الکِندی</span>
+                <span style="font-size: 13px; color: #16181C;">شکستن رمز با شمردن حرف‌ها</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">نخستین استنتاج آماریِ شناخته‌شده</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #1E3A5F; font-variant-numeric: tabular-nums;">۱۰۰۰</div>
+            <div style="width: 2px; background: #E3E9F1; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #E3E9F1; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #1E3A5F;">الکَرَجی</span>
+                <span style="font-size: 13px; color: #16181C;">جدول شمارش راه‌ها</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">در زمان خودِ ابوریحان</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #1E3A5F; font-variant-numeric: tabular-nums;">۱۰۴۸</div>
+            <div style="width: 2px; background: #E3E9F1; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #E3E9F1; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #1E3A5F;">خیام</span>
+                <span style="font-size: 13px; color: #16181C;">همان جدول، پیش‌تر برده</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">سال مرگ ابوریحان، سال تولد خیام</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۶۵۴</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">پاسکال و فرما</span>
+                <span style="font-size: 13px; color: #16181C;">بخت، عدد می‌شود</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">نقطهٔ آغاز نظریهٔ احتمال</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۷۱۳</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">یاکوب برنولی</span>
+                <span style="font-size: 13px; color: #16181C;">قانون اعداد بزرگ</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">چرا شمردنِ بیشتر بهتر است</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۷۶۳</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">توماس بیز</span>
+                <span style="font-size: 13px; color: #16181C;">به‌روز کردن باور با شاهد</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">هستهٔ یادگیری امروز</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۸۰۵</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">لوژاندر و گاوس</span>
+                <span style="font-size: 13px; color: #16181C;">کمترین مربعات</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">نخستین مدلِ پیش‌بینی‌کننده</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۸۴۷</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">کوشی</span>
+                <span style="font-size: 13px; color: #16181C;">سُر خوردن به سمت کمینه</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">راهی که امروز همهٔ مدل‌ها یاد می‌گیرند</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۸۸۶</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">گالتون</span>
+                <span style="font-size: 13px; color: #16181C;">بازگشت به میانگین</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">واژهٔ «رگرسیون» از این‌جاست</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۹۴۸</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); "></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 10px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">شانون</span>
+                <span style="font-size: 13px; color: #16181C;">اندازه‌گیری خبر</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">معیاری که مدل‌ها با آن سنجیده می‌شوند</p>
+            </div>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: stretch;">
+          <div style="flex-shrink: 0; width: 56px; text-align: center;">
+            <div style="font-size: 13px; font-weight: 800; color: #666158; font-variant-numeric: tabular-nums;">۱۹۵۸</div>
+            <div style="width: 2px; background: #F0EEE7; margin: 6px auto 0; height: calc(100% - 26px); opacity: 0;"></div>
+          </div>
+          <div style="flex: 1; min-width: 0; padding-bottom: 0px;">
+            <div style="background: #FAFAF7; border-radius: 12px; padding: 13px 16px;">
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;">
+                <span style="font-size: 14.5px; font-weight: 800; color: #666158;">رزنبلات</span>
+                <span style="font-size: 13px; color: #16181C;">ماشینی که از مثال یاد می‌گیرد</span>
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.8; color: #666158; margin: 0;">نخستین گام به سمت امروز</p>
+            </div>
+          </div>
+        </div>      </div>
+      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 24px 26px; margin-top: 16px; border-inline-start: 4px solid #B4530E;">
+        <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6;">و آنچه هنوز نمی‌کند</h3>
+        <p style="font-size: 15px; line-height: 2.05; color: #45494F; margin: 0 0 12px;">هر چهار کارِ بالا دربارهٔ <b>الگو</b>ست، نه دربارهٔ <b>علت</b>. ماشین می‌بیند هر وقت آب بیشتر داده‌ای برداشت بیشتر شده، ولی از خودِ این شمارش نمی‌تواند بفهمد آب باعث برداشت است یا هر دو از چیز سومی می‌آیند — مثلاً اینکه کرت‌های بهتر هم آب بیشتری گرفته‌اند و هم خاک بهترى داشته‌اند.</p>
+        <p style="font-size: 15px; line-height: 2.05; color: #45494F; margin: 0;">این تفاوت میان «با هم می‌آیند» و «یکی سبب دیگری است»، قدیمی‌ترین دامِ این حوزه است و هنوز باز است. هیچ مقدار شمردن، به‌تنهایی، آن را حل نمی‌کند. برای فهمیدن علت باید <b>مداخله</b> کنی: عمداً به یک کرت آب بیشتر بدهی و ببینی چه می‌شود. و این دیگر ریاضی نیست، آزمایش است.</p>
+      </div>
+      </div>
+    </section>
+    <section id="s13" style="max-width: 1060px; margin: 0 auto; padding: 48px 24px 10px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۱۳ — ترجمه</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">حالا برگردیم به امروز</h2>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">باز هم بدون هیچ واژهٔ تخصصی تا این‌جا آمدیم. این جدول همان نامه است با نام‌های امروزی، و ستون انگلیسی را جدا گذاشته‌ام تا وقت خواندن فارسی به چشم نیاید.</p>
+      <div style="display: flex; flex-direction: column; gap: 10px;">        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">شمردن بسامد حرف‌ها</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">تحلیل بسامد</span>
+            <a href="#s1" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">frequency analysis</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">استنتاج چیزی پنهان از روی شمارش چیزهای دیدنی.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">روشِ مشخصِ کار</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">الگوریتم</span>
+            <a href="#s2" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">algorithm</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">دنباله‌ای متناهی از گام‌های معلوم که مسئله‌ای را حل می‌کند.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">شمارِ راه‌ها</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">ترکیبیات</span>
+            <a href="#s3" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">combinatorics</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">شمردن اینکه چند راه برای یک کار هست؛ پایهٔ احتمال.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">جدول کرجی و خیام</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">ضرایب دوجمله‌ای</span>
+            <a href="#s3" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">binomial coefficients</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">چند راه برای برداشتن k چیز از n چیز.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">بخت، به‌صورت عدد</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">احتمال</span>
+            <a href="#s4" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">probability</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">عددی میان صفر و یک: شمار راه‌های دلخواه بر شمار همهٔ راه‌ها.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">میانگین درازمدت</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">امید ریاضی</span>
+            <a href="#s4" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">expected value</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">اگر بی‌شمار بار تکرار کنی، به‌طور متوسط چه عایدت می‌شود.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">هرچه بیشتر بشماری، دقیق‌تر</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">قانون اعداد بزرگ</span>
+            <a href="#s5" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">law of large numbers</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">نسبتِ مشاهده‌شده با افزایش مشاهده به نسبت واقعی نزدیک می‌شود.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">نمونهٔ کج</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">سوگیری نمونه‌گیری</span>
+            <a href="#s5" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">sampling bias</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">وقتی مشاهده‌هایت نمایندهٔ واقعیت نیستند؛ بیشتر شدنشان درمانش نمی‌کند.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">باورِ پیش از شاهد</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">پیشین</span>
+            <a href="#s6" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">prior</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">اطمینانی که پیش از دیدن شاهد تازه داشتی.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">باور پس از شاهد</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">پسین</span>
+            <a href="#s6" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">posterior</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">اطمینان به‌روزشده، بعد از اینکه شاهد را دیدی.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">به‌روز کردن باور با شاهد</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">قاعدهٔ بیز</span>
+            <a href="#s6" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">Bayes' rule</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">قاعده‌ای که پیشین و قوّت شاهد را به پسین تبدیل می‌کند.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">کمیاب بودن که حرف شاهد را رقیق می‌کند</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">خطای نرخ پایه</span>
+            <a href="#s6" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">base rate fallacy</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">نادیده گرفتن اینکه خودِ پیشامد از اول چقدر نادر بوده.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">بهترین خط از میان نقطه‌ها</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">رگرسیون خطی</span>
+            <a href="#s7" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">linear regression</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">ساده‌ترین مدل پیش‌بینی: از x به y با یک خط.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">جمع مربع فاصله‌ها</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">کمترین مربعات</span>
+            <a href="#s7" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">least squares</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">معیاری که می‌گوید کدام خط به نقطه‌ها نزدیک‌تر است.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">فاصلهٔ هر نقطه تا خط</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">باقی‌مانده</span>
+            <a href="#s7" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">residual</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">اختلاف میان آنچه دیدی و آنچه مدل پیش‌بینی کرد.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">سُر خوردن به سمت کمترین خطا</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">کاهش گرادیان</span>
+            <a href="#s8" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">gradient descent</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">گام‌به‌گام در جهت سرازیری رفتن تا خطا کمینه شود.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">اندازهٔ قدم</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">نرخ یادگیری</span>
+            <a href="#s8" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">learning rate</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">چقدر در هر گام جابه‌جا شوی؛ کوچک یعنی کند، بزرگ یعنی پریدن.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">درهٔ نزدیک به‌جای گودترین دره</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">کمینهٔ محلی</span>
+            <a href="#s8" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">local minimum</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">جایی که دیگر سرازیری نیست، ولی بهترین جای ممکن هم نیست.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">کشیده‌شدن به سمت میانه</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">بازگشت به میانگین</span>
+            <a href="#s9" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">regression to the mean</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">مقدارهای حدی در اندازه‌گیری بعدی به میانه نزدیک‌تر می‌شوند.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">اندازهٔ غافلگیری</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">آنتروپی</span>
+            <a href="#s10" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">entropy · information</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">مقدار خبری که یک پیام می‌آورد؛ واحدش بیت است.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">عددی که اثر هر ورودی را تعیین می‌کند</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">وزن</span>
+            <a href="#s11" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">weight</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">همان چیزی که در آموزش کم‌وزیاد می‌شود.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">معیار اینکه چقدر بد کار می‌کند</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">تابع زیان</span>
+            <a href="#s11" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">loss function</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">عددی که آموزش می‌کوشد کمینه‌اش کند.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">نخستین ماشینی که از مثال یاد گرفت</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">پرسپترون</span>
+            <a href="#s11" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">perceptron</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">مدل سادهٔ رزنبلات؛ جدِ شبکه‌های امروزی.</p>
+        </div>        <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px; padding: 18px 22px; border-inline-start: 3px solid #1E3A5F;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 14.5px; color: #666158;">با هم آمدن، در برابر سبب بودن</span>
+            <span style="font-size: 13px; color: #666158;">←</span>
+            <span style="font-size: 15.5px; font-weight: 800; color: #16181C;">همبستگی و علیت</span>
+            <a href="#s12" style="font-size: 11.5px; color: #666158; margin-inline-start: auto;">بخش مربوط ←</a>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.7; color: #45494F; margin: 0 0 8px;">correlation vs. causation</p>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">شمردن، دومی را ثابت نمی‌کند؛ برای آن باید مداخله کرد.</p>
+        </div>      </div>
+      <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; max-width: 68ch; margin: 0 0 16px;">بیست‌وچهار واژه. با بیست‌وپنج واژهٔ <a href="Logic.dc.html" style="font-weight: 700;">نامهٔ اول</a> روی هم می‌شود چهل‌ونه — و این تقریباً همهٔ واژگانی است که برای خواندن یک کتاب مقدماتی یادگیری ماشین لازم داری.</p>
+    </section>
+    <section id="s14" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; margin-top: 44px;">
+      <div style="max-width: 1060px; margin: 0 auto; padding: 50px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.12em; font-weight: 700; color: #1E3A5F; margin: 0 0 12px;">۱۴ — روش و منابع</p>
+      <h2 style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 14px; line-height: 1.45;">کجا واقعیت است، کجا قالب، و کجا احتیاط کرده‌ام</h2>
+      <p style="font-size: 16px; line-height: 2.05; color: #45494F; max-width: 68ch; margin: 0 0 14px;">این نامه پر از تاریخ و نام است و قالب ادبی‌اش می‌تواند گمراه کند. پس مرزها را صریح می‌نویسم.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; margin-bottom: 26px;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6;">چه چیزی واقعیت تاریخی است</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">تاریخ‌ها، نام‌ها و عنوان آثار. الکندی (۸۰۱–۸۷۳) و رساله‌اش حدود ۸۵۰؛ خوارزمی (حدود ۷۸۰–۸۵۰) و «الجبر» حدود ۸۲۰؛ الکَرَجی (حدود ۹۵۳–۱۰۲۹) و جدولش حدود ۱۰۰۰؛ خیام (۱۰۴۸–۱۱۳۱)؛ نامه‌نگاری پاسکال و فرما در ۱۶۵۴؛ «Ars Conjectandi» در ۱۷۱۳؛ رسالهٔ بیز در ۱۷۶۳؛ لوژاندر ۱۸۰۵ و گاوس ۱۸۰۹؛ کوشی ۱۸۴۷؛ گالتون ۱۸۸۶؛ شانون ۱۹۴۸؛ رزنبلات ۱۹۵۸.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6;">چه چیزی قالب است</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">خودِ نامه. ابوریحان هیچ‌وقت چنین نامه‌ای نگرفت و هیچ‌چیز از این مفاهیم نخواند. خطاب‌های شخصی («تو که اندازه گرفتی») آرایهٔ ادبی‌اند، نه ادعای تاریخی. جایی هم که گفته‌ام فلان‌کس «پیوندی با هوش مصنوعی دارد»، تفسیر من از خطِ فکری است، نه ادعای اینکه خودش چنین قصدی داشته.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6;">دربارهٔ «نخستین»ها احتیاط کرده‌ام</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">رسالهٔ الکندی را «کهن‌ترین متن شناخته‌شده» در این باره نوشته‌ام، نه «نخستین». نوشته‌های پیش‌تر ممکن است از میان رفته باشند. جدول الکَرَجی هم از راه نقل‌قول‌های السموأل به ما رسیده، چون خودِ اثرش در دست نیست.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6;">دعواهای تقدم را پنهان نکرده‌ام</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">لوژاندر زودتر منتشر کرد و گاوس زودتر ادعای کشف کرد؛ دعوایشان واقعی و حل‌نشده است. دربارهٔ اینکه چقدر از قاعدهٔ بیز واقعاً از خودِ بیز است هم میان مورخان بحث هست. کوشی هم یادداشت ۱۸۴۷ را برای حل دستگاه معادله‌ها نوشت، نه برای یادگیری؛ انتسابِ رایجِ «نخستین کاهش گرادیان» به او، نسبت‌دادنِ پسینی است.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6;">عددها را خودم حساب کرده‌ام</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">مثال سکه‌های تقلبی در بخش ۰۶ و عددهای بخش ۰۸ ساختگی ولی درست‌اند: اگر خودت حسابشان کنی به همین می‌رسی. خطِ بهینهٔ بخش ۰۸ واقعاً شیب ۱٫۶ و مبدأ ۱٫۰۷ دارد و کمترین خطایش ۴٫۵۳ است — و کاهش گرادیانِ همان صفحه دقیقاً به همین می‌رسد.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 22px 24px;">
+          <h3 style="font-size: 15.5px; font-weight: 800; margin: 0 0 10px; line-height: 1.6;">چه چیزی این‌جا نیست</h3>
+          <p style="font-size: 13.5px; line-height: 1.95; color: #45494F; margin: 0;">شبکه‌های عصبی چندلایه، پس‌انتشار خطا، و هر چیزی که بعد از ۱۹۵۸ آمده. این نامه تا جایی می‌آید که <b>پایه</b> ساخته می‌شود. و نمودار بسامد حرف‌های فارسی در بخش ۰۱ نمایشی است، نه برگرفته از یک پیکرهٔ اندازه‌گیری‌شده — شکلش درست است، عددهایش دقیق نیستند.</p>
+        </div>      </div>
+      <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 8px;">منابع</h3>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #666158; margin: 0 0 18px; max-width: 70ch;">ده منبع، برای ادعاهای تاریخی. خودِ مفهوم‌های ریاضی منبع جداگانه ندارند چون در هر کتاب مقدماتی آمار و احتمال هستند.</p>
+      <div style="display: flex; flex-direction: column; gap: 10px;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۱</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">رسالهٔ رمزگشایی الکندی</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Al-Kindi — Manuscript on Deciphering Cryptographic Messages (c. 850)</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">کهن‌ترین متن شناخته‌شده دربارهٔ تحلیل بسامد. ابن عَدلان بعدها نکتهٔ حجم نمونه را افزود.</p>
+          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/Al-Kindi" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/Al-Kindi ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۲</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">ریشهٔ واژهٔ الگوریتم</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Algorism — from al-Khwārizmī</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">زنجیرهٔ نام خوارزمی تا واژهٔ امروزی.</p>
+          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/Algorism" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/Algorism ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۳</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">مثلث الکَرَجی</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Al-Karaji — Pascal’s triangle c. 1000, via al-Samaw’al</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">ساخت کلی مثلث به الکَرَجی نسبت داده می‌شود؛ اثرش گم شده و از راه نقل‌قول می‌شناسیمش.</p>
+          <p style="margin: 0;"><a href="https://mathshistory.st-andrews.ac.uk/Biographies/Al-Karaji/" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://mathshistory.st-andrews.ac.uk/Biographies/Al-Karaji/ ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۴</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">رسالهٔ بیز</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">An Essay towards solving a Problem in the Doctrine of Chances (1763)</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">خوانده‌شده در انجمن سلطنتی در ۲۳ دسامبر ۱۷۶۳، به کوشش ریچارد پرایس، پس از مرگ بیز در ۱۷۶۱.</p>
+          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/An_Essay_Towards_Solving_a_Problem_in_the_Doctrine_of_Chances" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/An_Essay_Towards_Solving_a_Problem_in_the_Doctrine_of_Chances ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۵</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">کمترین مربعات</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Least squares — Legendre 1805, Gauss 1809, and Ceres</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">نخستین شرح روشن از لوژاندر در ۱۸۰۵؛ پیش‌بینی گاوسِ بیست‌وچهارساله همان چیزی بود که سرس را دوباره پیدا کرد.</p>
+          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/Least_squares" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/Least_squares ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۶</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">کاهش گرادیان</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Gradient descent — attributed to Cauchy, Comptes rendus 25 (1847)</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">یادداشت ۱۸۴۷ دربارهٔ حل دستگاه معادله‌ها بود؛ هادامار در ۱۹۰۷ مستقلاً روش مشابهی پیشنهاد کرد.</p>
+          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/Gradient_descent" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/Gradient_descent ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۷</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">بازگشت به میانگین</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Galton — Regression towards Mediocrity in Hereditary Stature (1886)</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">مجلهٔ انجمن انسان‌شناسی، جلد ۱۵، صفحهٔ ۲۴۶ تا ۲۶۳.</p>
+          <p style="margin: 0;"><a href="https://galton.org/bib/JournalItem.aspx_action=view_id=157" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://galton.org/bib/JournalItem.aspx_action=view_id=157 ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۸</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">نظریهٔ اطلاعات</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Shannon — A Mathematical Theory of Communication (1948)</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">در دو بخش، در شماره‌های ژوئیه و اکتبر مجلهٔ فنی بل. واژهٔ «بیت» از همین‌جاست.</p>
+          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۰۹</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">پرسپترون</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Rosenblatt — The Perceptron, Psychological Review 65(6), 1958</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">صفحهٔ ۳۸۶ تا ۴۰۸.</p>
+          <p style="margin: 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/13602029/" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://pubmed.ncbi.nlm.nih.gov/13602029/ ↗</a></p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 20px 22px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 700; color: #1E3A5F;">۱۰</span>
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 0; line-height: 1.6;">اندازه‌گیری زمین به دست بیرونی</h4>
+          </div>
+          <p style="direction: ltr; text-align: left; unicode-bidi: isolate; font-size: 12.5px; line-height: 1.8; color: #45494F; margin: 0 0 9px; overflow-wrap: anywhere;">Al-Biruni’s method — measuring Earth’s radius at Nandana</p>
+          <p style="font-size: 13px; line-height: 1.9; color: #666158; margin: 0 0 9px;">از بالای تپه‌ای نزدیک قلعهٔ ناندنه، با زاویهٔ فرورفتگی افق. برخلاف روش‌های پیشین به سفر طولانی نیاز نداشت.</p>
+          <p style="margin: 0;"><a href="https://dictionary.obspm.fr/terms/birunis-method/" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #1E3A5F; direction: ltr; text-align: left; unicode-bidi: isolate; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://dictionary.obspm.fr/terms/birunis-method/ ↗</a></p>
+        </div>      </div>
+      <p style="font-size: 14px; line-height: 2.05; color: #45494F; margin: 26px 0 18px; max-width: 70ch;">و یک حرف آخر، همان که در نامهٔ اول هم گفتم: هر جا نتوانستم مفهومی را با ابزار هزار سال پیش توضیح بدهم، مشکل از مخاطب فرضی نبود. از این بود که خودم خوب نفهمیده بودمش.</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="Logic.dc.html" style="font-size: 13.5px; font-weight: 700; color: #FFFFFF; background: #6B4226; padding: 12px 22px; border-radius: 10px;">← نامهٔ اول: منطق برنامه‌نویسی</a>
+        <a href="AiEngineer.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 12px 22px; border-radius: 10px;">قدم بعدی: مسیر مهندس هوش مصنوعی ←</a>
+        <a href="AILiteracy.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 12px 22px; border-radius: 10px;">معماری سواد هوش مصنوعی ←</a>
+        <a href="Library.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 12px 22px; border-radius: 10px;">کتابخانهٔ منابع ←</a>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
+    <div style="max-width: 1060px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · نامهٔ دوم به ابوریحان</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1060,"height":1400}}'>
+function faNum(x) {
+  var m = { '0': '۰', '1': '۱', '2': '۲', '3': '۳', '4': '۴', '5': '۵', '6': '۶', '7': '۷', '8': '۸', '9': '۹' };
+  return String(x).replace(/[0-9]/g, function (c) { return m[c]; });
+}
+// جداکنندهٔ کسری در فارسی «٫» است، نه نقطهٔ لاتین؛ بقیهٔ متن سایت هم همین را دارد.
+function fa1(v) { return faNum((Math.round(v * 10) / 10).toFixed(1)).replace('.', '٫'); }
+function fa2(v) { return faNum((Math.round(v * 100) / 100).toFixed(2)).replace('.', '٫'); }
+
+// شش کرت: چند پیمانه آب دادی، چند خروار برداشتی
+var PTS = [{ x: 1, y: 3 }, { x: 2, y: 5 }, { x: 3, y: 4 },
+           { x: 4, y: 8 }, { x: 5, y: 9 }, { x: 6, y: 11 }];
+var BEST_A = 1.6, BEST_B = 16 / 15;   // جواب دقیقِ کمترین مربعات
+var LR = 0.008, MAXRUN = 600;
+
+// مختصات نقاشی
+var X0 = 70, X1 = 480, Y0 = 232, Y1 = 26;
+var XMIN = 0, XMAX = 7, YMIN = 0, YMAX = 12;
+function px(x) { return X0 + (x - XMIN) / (XMAX - XMIN) * (X1 - X0); }
+function py(y) { return Y0 + (y - YMIN) / (YMAX - YMIN) * (Y1 - Y0); }
+
+function sse(a, b) {
+  var s = 0;
+  PTS.forEach(function (p) { var e = p.y - (a * p.x + b); s += e * e; });
+  return s;
+}
+function grad(a, b) {
+  var ga = 0, gb = 0;
+  PTS.forEach(function (p) {
+    var e = p.y - (a * p.x + b);
+    ga += -2 * p.x * e; gb += -2 * e;
+  });
+  return [ga, gb];
+}
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { a: 0, b: 0, steps: 0 };
+  }
+
+  descend(s, n) {
+    var a = s.a, b = s.b, k = 0;
+    for (; k < n; k++) {
+      var g = grad(a, b);
+      a -= LR * g[0]; b -= LR * g[1];
+      if (Math.abs(g[0]) + Math.abs(g[1]) < 0.0008) { k++; break; }
+    }
+    return { a: a, b: b, steps: s.steps + k };
+  }
+
+  btn(label, onClick, strong) {
+    return {
+      label: label,
+      style: 'font-size: 13.5px; font-weight: ' + (strong ? '700' : '600') + '; padding: 10px 16px; '
+        + 'border-radius: 10px; cursor: pointer; border: 1px solid '
+        + (strong ? '#1E3A5F' : '#E4E1D6') + '; background: ' + (strong ? '#1E3A5F' : '#FFFFFF')
+        + '; color: ' + (strong ? '#FFFFFF' : '#16181C') + ';',
+      onClick: onClick
+    };
+  }
+
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    var a = s.a, b = s.b;
+    var err = sse(a, b);
+    var best = sse(BEST_A, BEST_B);
+    var close = Math.abs(a - BEST_A) < 0.02 && Math.abs(b - BEST_B) < 0.05;
+
+    var dots = PTS.map(function (p) {
+      var yh = a * p.x + b;
+      var e = p.y - yh;
+      return {
+        cx: px(p.x).toFixed(1), cy: py(p.y).toFixed(1),
+        ey: py(yh).toFixed(1),
+        eCol: Math.abs(e) < 0.6 ? '#2F5233' : (Math.abs(e) < 1.6 ? '#8A8578' : '#B4530E'),
+        label: faNum(p.x) + ' پیمانه، ' + faNum(p.y) + ' خروار'
+      };
+    });
+
+    // خط در دو لبهٔ محور، بریده‌شده تا از کادر بیرون نزند
+    var cl = function (x) { var y = a * x + b; return Math.max(YMIN, Math.min(YMAX, y)); };
+    var xa = XMIN, xb = XMAX;
+    var ya = cl(xa), yb = cl(xb);
+    if (a !== 0) {
+      if (a * xa + b < YMIN) { xa = (YMIN - b) / a; } else if (a * xa + b > YMAX) { xa = (YMAX - b) / a; }
+      if (a * xb + b < YMIN) { xb = (YMIN - b) / a; } else if (a * xb + b > YMAX) { xb = (YMAX - b) / a; }
+      xa = Math.max(XMIN, Math.min(XMAX, xa)); xb = Math.max(XMIN, Math.min(XMAX, xb));
+      ya = a * xa + b; yb = a * xb + b;
+    }
+
+    var ticksX = [1, 2, 3, 4, 5, 6].map(function (v) {
+      return { x: px(v).toFixed(1), y: (Y0 + 18).toFixed(1), t: faNum(v) };
+    });
+    var ticksY = [0, 3, 6, 9, 12].map(function (v) {
+      return { x: (X0 - 12).toFixed(1), y: (py(v) + 4).toFixed(1), t: faNum(v),
+               gx1: X0, gx2: X1, gy: py(v).toFixed(1) };
+    });
+
+    var set = function (da, db) {
+      return function () {
+        self.setState({ a: Math.max(-1, Math.min(4, self.state.a + da)),
+                        b: Math.max(-4, Math.min(10, self.state.b + db)),
+                        steps: self.state.steps });
+      };
+    };
+
+    return {
+      dots: dots, ticksX: ticksX, ticksY: ticksY,
+      lx1: px(xa).toFixed(1), ly1: py(ya).toFixed(1),
+      lx2: px(xb).toFixed(1), ly2: py(yb).toFixed(1),
+      aFa: fa1(a), bFa: fa1(b),
+      // نزدیک جواب، گردکردن به عدد صحیح خطا را ۵ نشان می‌داد در حالی که
+      // کمترین خطای ممکن ۴٫۵۳ است و خواننده فکر می‌کرد هنوز جا دارد.
+      errFa: err >= 20 ? faNum(Math.round(err)) : fa2(err), err2Fa: fa2(err),
+      bestFa: fa2(best),
+      barW: Math.max(1, Math.min(100, Math.round(err / 316 * 100))),
+      stepsFa: faNum(s.steps),
+      close: close, notClose: !close,
+      verdict: close
+        ? 'این همان کمترین خطای ممکن است. هیچ خط راستی نمی‌تواند از این بهتر باشد.'
+        : (err < 20 ? 'نزدیک شدی. هنوز می‌شود کمترش کرد.'
+                    : 'خطا هنوز بزرگ است؛ خط از نقطه‌ها دور است.'),
+      vStyle: 'font-size: 13.5px; line-height: 1.95; font-weight: 600; margin: 0; color: '
+        + (close ? '#2F5233' : (err < 20 ? '#8A8578' : '#B4530E')) + ';',
+      btns: [
+        self.btn('شیب بیشتر', set(0.2, 0)),
+        self.btn('شیب کمتر', set(-0.2, 0)),
+        self.btn('بالاتر', set(0, 0.5)),
+        self.btn('پایین‌تر', set(0, -0.5))
+      ],
+      runs: [
+        self.btn('یک گام سراشیبی', function () { self.setState(self.descend(self.state, 1)); }, true),
+        self.btn('ده گام', function () { self.setState(self.descend(self.state, 10)); }, true),
+        self.btn('تا ته برو', function () { self.setState(self.descend(self.state, MAXRUN)); }),
+        self.btn('از نو', function () { self.setState({ a: 0, b: 0, steps: 0 }); })
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

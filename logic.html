@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نامه‌ای به ابوریحان — منطق برنامه‌نویسی از صفر</title>
+<meta name="description" content="اصول و منطق برنامه‌نویسی از صفر، در قالب نامه‌ای به ابوریحان بیرونی: متغیر، شرط، حلقه، تابع، داده‌ساختار، دودویی و بازگشت — با تمثیل‌های هزار سال پیش و بدون واژهٔ تخصصی.">
+<meta name="author" content="رضا هاشمی">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="نامه‌ای به ابوریحان — منطق برنامه‌نویسی از صفر">
+<meta property="og:description" content="اصول و منطق برنامه‌نویسی از صفر، در قالب نامه‌ای به ابوریحان بیرونی: متغیر، شرط، حلقه، تابع، داده‌ساختار، دودویی و بازگشت — با تمثیل‌های هزار سال پیش و بدون واژهٔ تخصصی.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232F5233%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22sans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5F3EE%22%20text-anchor%3D%22middle%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="canonical" href="https://rezhashemiii-maker.github.io/reza-site/logic.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/logic.css">
+</head>
+<body>
+<nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="index.html"><span></span>رضا هاشمی</a><a class="stab" href="index.html">شروع</a><a class="stab" href="index.html#writing">نوشته‌ها</a><a class="stab" href="books.html">کتاب‌ها</a><a class="stab" href="index.html#about">درباره من</a><a class="stab" href="index.html#gallery">کارها</a><a class="stab" href="watch.html">رصدخانه</a><a class="stab" href="index.html#faq">پرسش‌ها</a><a class="stab stab-cta" href="index.html#contact">تماس</a></div></nav>
+<div id="dc-root">
+
+<div class="cd">
+<header class="caj">
+<div class="ckn">
+<a class="c2f" href="./#writing">← بازگشت به نوشته‌ها</a>
+<a href="math.html" style="font-size: 12.5px;font-weight: 700;color: #1E3A5F">نامهٔ دوم ←</a>
+<nav class="cko" data-sections="1">        <a class="cp" href="#s1">۰۱ خدمتکار</a>        <a class="cp" href="#s2">۰۲ کوزه</a>        <a class="cp" href="#s3">۰۳ دوراهی</a>        <a class="cp" href="#s4">۰۴ آسیاب</a>        <a class="cp" href="#s5">۰۵ نسخه</a>        <a class="cp" href="#s6">۰۶ انبار</a>        <a class="cp" href="#s7">۰۷ دو نخ</a>        <a class="cp" href="#s8">۰۸ ماشین</a>        <a class="cp" href="#s9">۰۹ گام‌ها</a>        <a class="cp" href="#s10">۱۰ پیک</a>        <a class="cp" href="#s11">۱۱ موریانه</a>        <a class="cp" href="#s12">۱۲ نقشه</a>        <a class="cp" href="#s13">۱۳ ترجمه</a>        <a class="cp" href="#s14">۱۴ روش</a>      </nav>
+</div>
+</header>
+<main>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position: absolute">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#6B4226"/>
+</marker>
+<marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#2F5233"/>
+</marker>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#B4530E"/>
+</marker>
+</defs>
+</svg>
+<section class="c125">
+<p class="c7v">اصول برنامه‌نویسی، بدون یک واژهٔ تازه</p>
+<h1 class="c126">نامه‌ای به ابوریحان</h1>
+<p class="c127">ابوریحان بیرونی در سال ۳۵۲ خورشیدی به دنیا آمد و در ۴۲۷ درگذشت — یعنی تقریباً <b>هزار سال پیش</b>. کتابی دارد به نام «التفهیم» که آن را برای یک شاگرد نوشته و از هندسه و حساب شروع می‌کند.</p>
+<p class="c8">این نوشته یک آزمایش است: <b>اگر می‌شد برای او نامه فرستاد و توضیح داد که برنامه‌نویسی چیست، چه می‌نوشتیم؟</b> قاعده‌اش سخت است — هیچ واژه‌ای که او نشناسد اجازهٔ ورود ندارد. نه رایانه، نه حافظه، نه کد. فقط کوزه و آسیاب و دفتر و نسخه و کاروان.</p>
+<p class="c8">و یک چیز عجیب: اگر این نامه واقعاً می‌رسید، او بخش بزرگی از آن را از قبل می‌دانست. واژهٔ «الگوریتم» از نام هم‌ولایتی او، <b>محمد بن موسی خوارزمی</b>، آمده است. هر دو اهل خوارزم بودند.</p>
+<p class="c8"><b>و اگر هیچ پیش‌زمینه‌ای نداری، کل ماجرا در یک جمله این است:</b> برنامه‌نویسی یعنی نوشتن فهرستی از فرمان‌ها برای دستگاهی که آن‌ها را یکی‌یکی، به همان ترتیبی که نوشته‌ای و بی‌کم‌وکاست انجام می‌دهد. به آن فهرست می‌گویند «برنامه». چهارده بخش بعدی، باز کردن همین یک جمله است.</p>
+<p class="c8">پس این متن دو کار می‌کند. اگر برنامه‌نویسی بلد نیستی، از صفر و بدون هیچ پیش‌نیازی یادت می‌دهد چطور کار می‌کند. و اگر بلدی، نشانت می‌دهد چیزهایی که هر روز به کار می‌بری چقدر کهنه‌اند — و این کهنگی، نقطهٔ قوتشان است.</p>
+<div class="cvh">
+<a href="#s1" style="font-size: 14.5px;font-weight: 700;color: #FFFFFF;background: #6B4226;padding: 13px 26px;border-radius: 10px">شروع نامه</a>
+<a class="c9j" href="#s8">خودت ماشین را بگردان ←</a>
+<a class="c9j" href="#s13">ترجمهٔ همهٔ تمثیل‌ها ←</a>
+</div>
+</section>
+<section class="c128">
+<div class="clp">        <div class="c3b">
+<div class="crd">۱۱</div>
+<div class="cdj">تصویر، برای چیزهایی که با جمله دیر فهمیده می‌شوند</div>
+</div>        <div class="c3b">
+<div class="crd">۱۴</div>
+<div class="cdj">بخش، از «ماشین چیست» تا «خطا از کجا می‌آید»</div>
+</div>        <div class="c3b">
+<div class="crd">۰</div>
+<div class="cdj">واژهٔ تخصصی تا بخش ۱۳</div>
+</div>        <div class="c3b">
+<div class="crd">۱</div>
+<div class="cdj">ماشین که خودت می‌توانی گام‌به‌گام بگردانی</div>
+</div>      </div>
+</section>
+<section class="c129">
+<div class="cvi" data-sectionlist="1">
+<div class="cvj">فهرست بخش‌ها</div>        <a class="c2n" href="#s1">۰۱ خدمتکار</a>        <a class="c2n" href="#s2">۰۲ کوزه</a>        <a class="c2n" href="#s3">۰۳ دوراهی</a>        <a class="c2n" href="#s4">۰۴ آسیاب</a>        <a class="c2n" href="#s5">۰۵ نسخه</a>        <a class="c2n" href="#s6">۰۶ انبار</a>        <a class="c2n" href="#s7">۰۷ دو نخ</a>        <a class="c2n" href="#s8">۰۸ ماشین</a>        <a class="c2n" href="#s9">۰۹ گام‌ها</a>        <a class="c2n" href="#s10">۱۰ پیک</a>        <a class="c2n" href="#s11">۱۱ موریانه</a>        <a class="c2n" href="#s12">۱۲ نقشه</a>        <a class="c2n" href="#s13">۱۳ ترجمه</a>        <a class="c2n" href="#s14">۱۴ روش</a>      </div>
+</section>
+<section class="c8t" id="s1">
+<p class="c7v">۰۱ — خدمتکار</p>
+<h2 class="c10">یک حقیقت که همهٔ این حرفه از آن می‌آید</h2>
+<p class="c3x">ابوریحان، تصور کن خدمتکاری به تو داده‌اند با سه خاصیت عجیب.</p>
+<p class="c8"><b>یک:</b> هر فرمانی بدهی، بی‌چون‌وچرا اجرا می‌کند. <b>دو:</b> هرگز خسته نمی‌شود؛ می‌توانی هزار بار یک کار را بخواهی و بار هزارم را به‌خوبی بار اول انجام می‌دهد. <b>سه</b> — و این مهم‌ترین است — <b>هیچ چیزی نمی‌فهمد.</b> نه نیت تو را، نه هدف کار را، نه اینکه اگر چیزی عجیب پیش آمد باید چه کرد.</p>
+<p class="c8">بگو «برو نان بخر» و یک آدم معمولی ده تصمیم را خودش می‌گیرد: کدام نانوایی، چند تا، اگر بسته بود چه. این خدمتکار هیچ‌کدام را نمی‌گیرد. نگفته‌ای، پس نمی‌کند.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 260" role="img" aria-label="نمودار مقایسهٔ واکنش آدم و ماشین به فرمان ناقص «برو نان بخر»">
+<rect x="250" y="14" width="220" height="44" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="360" y="42" font-size="14" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">فرمان: «برو نان بخر»</text>
+<line x1="330" y1="58" x2="230" y2="96" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="390" y1="58" x2="490" y2="96" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="30" y="96" width="300" height="148" rx="10" fill="#FFFFFF" stroke="#2F5233" stroke-width="1.5"/>
+<text x="180" y="124" font-size="14" fill="#2F5233" font-weight="800" text-anchor="middle" direction="rtl">آدم</text>
+<text x="180" y="152" font-size="12.5" fill="#45494F" font-weight="500" text-anchor="middle" direction="rtl">کدام نانوایی؟ نزدیک‌ترین.</text>
+<text x="180" y="176" font-size="12.5" fill="#45494F" font-weight="500" text-anchor="middle" direction="rtl">چند تا؟ به اندازهٔ همیشه.</text>
+<text x="180" y="200" font-size="12.5" fill="#45494F" font-weight="500" text-anchor="middle" direction="rtl">بسته بود؟ از جای دیگر می‌گیرم.</text>
+<text x="180" y="228" font-size="12" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">جاهای خالی را خودش پر می‌کند</text>
+<rect x="390" y="96" width="300" height="148" rx="10" fill="#FFFFFF" stroke="#B4530E" stroke-width="1.5"/>
+<text x="540" y="124" font-size="14" fill="#B4530E" font-weight="800" text-anchor="middle" direction="rtl">ماشین</text>
+<text x="540" y="152" font-size="12.5" fill="#45494F" font-weight="500" text-anchor="middle" direction="rtl">کدام نانوایی؟ نگفتی.</text>
+<text x="540" y="176" font-size="12.5" fill="#45494F" font-weight="500" text-anchor="middle" direction="rtl">چند تا؟ نگفتی.</text>
+<text x="540" y="200" font-size="12.5" fill="#45494F" font-weight="500" text-anchor="middle" direction="rtl">بسته بود؟ نگفتی.</text>
+<text x="540" y="228" font-size="12" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">می‌ایستد و هیچ کاری نمی‌کند</text>
+</svg>
+<figcaption class="c6i">یک فرمان، دو نتیجه. تفاوت در هوش نیست؛ در این است که آدم جاهای خالی فرمان را از تجربه‌اش پر می‌کند و ماشین جای خالی را خالی می‌بیند.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">آن «خدمتکار» استعاره نیست؛ یک دستگاه واقعی است. درونش میلیون‌ها کلید بسیار ریز هست که هر کدام یا باز است یا بسته. چیزی به نام اراده و خستگی و حوصله در آن نیست، چون اصلاً چیزی نیست که این‌ها را داشته باشد — همان‌طور که آسیاب آبی نه می‌خواهد آرد کند و نه نمی‌خواهد.</p>
+<p class="cb">و «سریع» را دست‌کم نگیر. اگر آدمی بخواهد در هر ثانیه یک گام از کار این دستگاه را انجام بدهد، کاری که دستگاه در <b>یک ثانیه</b> می‌کند او را حدود سی سال مشغول می‌کند. هیچ هوشی در این عدد نیست؛ فقط کارهای بسیار ساده، بسیار زیاد.</p>
+<p class="cb">و «برنامه‌نویس» هم شغل عجیبی نیست: کسی که این فهرست فرمان‌ها را می‌نویسد. بیشترِ وقتش هم صرف نوشتن نمی‌شود، صرف فهمیدن این است که دقیقاً چه چیزی باید نوشته شود.</p>
+</div>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">شاید شنیده باشی ماشین‌های امروزی حرف می‌زنند و جواب می‌دهند و انگار می‌فهمند. این قاعده را نقض نمی‌کند، فقط پنهانش می‌کند.</p>
+<p class="cb">آن‌ها هم دارند فرمان اجرا می‌کنند؛ فقط تعدادشان به‌جای چند صد، چند میلیارد است. کاری که کرده‌اند این است که از انبوه نوشته‌های گذشته <b>الگو</b> برداشته‌اند و حالا حدس می‌زنند چه چیزی احتمالاً بعدش می‌آید. حدسشان اغلب خوب است، ولی حدس است.</p>
+<p class="cb">به همین دلیل گاهی با اطمینان کامل چیزی می‌گویند که اصلاً درست نیست — کاری که آدمِ فهمیده نمی‌کند، چون می‌داند که نمی‌داند. در پایین‌ترین لایه، هنوز همان خدمتکاری است که نمی‌فهمد.</p>
+</div>      <p class="c8">پس کار برنامه‌نویس یک چیز بیشتر نیست: <b>نوشتن فرمان‌هایی که هیچ جای خالی ندارند.</b> همین. هر چیز دیگری که در این نامه می‌آید، ابزاری است برای همین یک کار.</p>
+<p class="c8">و حالا بخش عجیب ماجرا: همین خدمتکارِ نفهم، چون بی‌نهایت سریع است، کارهایی می‌کند که از هزار دبیر برنمی‌آید. سرعت، جای فهم را نمی‌گیرد؛ ولی وقتی فرمان بی‌عیب باشد، کمبود فهم دیگر مهم نیست.</p>
+<div style="background: #F3E8DE;border-radius: 14px;padding: 22px 24px;border-inline-start: 4px solid #6B4226;margin-top: 4px">
+<p style="font-size: 16px;line-height: 2.05;font-weight: 600;color: #16181C;margin: 0">هر اشکالی که تا آخر عمرت در برنامه‌ها می‌بینی، از یک چیز می‌آید: جایی از فرمان خالی مانده بود و تو ندیدی، چون ذهن خودت آن را بی‌اختیار پر کرده بود.</p>
+</div>
+</section>
+<section class="c50" id="s2">
+<div class="c7w">
+<p class="c7v">۰۲ — کوزه</p>
+<h2 class="c10">چیزی که نام دارد و درونش عوض می‌شود</h2>
+<p class="c3x">در انبار تو کوزه‌هایی هست که روی هر کدام برچسبی چسبانده‌ای: «گندم»، «جو»، «روغن». برچسب هیچ‌وقت عوض نمی‌شود؛ آنچه درون کوزه است مدام عوض می‌شود.</p>
+<p class="c8">این ساده‌ترین و پرکاربردترین ابزار کل این حرفه است. وقتی می‌گویم «در کوزهٔ گندم، پنج پیمانه بگذار»، نگفته‌ام گندم <i>برابر</i> پنج است. گفته‌ام <b>برو و این کار را بکن</b> — و هر چه از قبل در کوزه بود، دیگر نیست.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 225" role="img" aria-label="نمودار سه مرحله‌ای کوزهٔ برچسب‌دار: خالی، سپس پنج، سپس نه">
+<rect x="500" y="40" width="140" height="150" rx="12" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<rect x="530" y="60" width="80" height="22" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1"/>
+<text x="570" y="76" font-size="12" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">گندم</text>
+<path d="M 532 96 L 538 170 Q 538 182 548 182 L 592 182 Q 602 182 602 170 L 608 96 Z" fill="#FAFAF7" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="570" y="148" font-size="26" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl"></text>
+<text x="570" y="24" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">آغاز</text>
+<text x="570" y="208" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">کوزه هست، خالی است</text>
+<rect x="290" y="40" width="140" height="150" rx="12" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<rect x="320" y="60" width="80" height="22" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1"/>
+<text x="360" y="76" font-size="12" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">گندم</text>
+<path d="M 322 96 L 328 170 Q 328 182 338 182 L 382 182 Q 392 182 392 170 L 398 96 Z" fill="#FAFAF7" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="360" y="148" font-size="26" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl">۵</text>
+<text x="360" y="24" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">بگذار: ۵</text>
+<text x="360" y="208" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">پنج تا در آن گذاشتیم</text>
+<rect x="80" y="40" width="140" height="150" rx="12" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<rect x="110" y="60" width="80" height="22" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1"/>
+<text x="150" y="76" font-size="12" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">گندم</text>
+<path d="M 112 96 L 118 170 Q 118 182 128 182 L 172 182 Q 182 182 182 170 L 188 96 Z" fill="#FAFAF7" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="150" y="148" font-size="26" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl">۹</text>
+<text x="150" y="24" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">بگذار: ۹</text>
+<text x="150" y="208" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">پنج‌تای قبلی دیگر نیست</text>
+<line x1="490" y1="115" x2="440" y2="115" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="280" y1="115" x2="230" y2="115" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+</svg>
+<figcaption class="c6i">سه لحظه از یک کوزه. برچسب ثابت است و محتوا عوض می‌شود — و «گذاشتن» یعنی آنچه قبلاً بود دور ریخته شد، نه اینکه کنارش جا باز شد.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">اول از همه، چرا اصلاً کوزه لازم است: این دستگاه میان دو فرمان هیچ چیزی را به خاطر نمی‌سپارد. اگر چیزی را جایی نگذاری، در گام بعد انگار هیچ‌وقت نبوده. کوزه تنها راه نگه‌داشتن چیزی از یک فرمان تا فرمان بعدی است.</p>
+<p class="cb">در کوزه هر چیزی می‌شود گذاشت: یک عدد، یک نام، یک تاریخ، حتی فهرستی از چیزها. ولی باید روشن باشد چه نوع چیزی در آن است، چون جمع‌زدن «پنج» با «ابوریحان» کار بی‌معنایی است و دستگاه خودش این را نمی‌فهمد.</p>
+<p class="cb">شمارشان هم محدود نیست: هر چند کوزه که لازم داری می‌سازی، تا وقتی انبار جا داشته باشد. فقط هر کدام باید نامی داشته باشد که با بقیه فرق کند، وگرنه نمی‌دانی داری از کدام برمی‌داری.</p>
+<p class="cb">و برچسب به این دلیل عوض نمی‌شود که تنها راه اشاره‌کردن به آن کوزه است. اگر برچسب‌ها جابه‌جا می‌شدند، فرمان‌هایی که از قبل نوشته بودی ناگهان به کوزهٔ دیگری اشاره می‌کردند.</p>
+</div>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">و اگر فرمانِ «به خودش یکی اضافه کن» هنوز گیج‌کننده است، آهسته ببینش. فرض کن در کوزهٔ «شمار» سه تا هست.</p>
+<p class="cb">گام یک: دستگاه <b>نگاه می‌کند</b> ببیند در کوزه چه هست؛ می‌بیند سه. گام دو: سه را با یک جمع می‌کند و چهار به دست می‌آید. گام سه: چهار را در همان کوزه می‌ریزد و سهِ قبلی دور ریخته می‌شود.</p>
+<p class="cb">هیچ تناقضی در کار نیست، چون خواندن و نوشتن در دو لحظهٔ متفاوت‌اند. در بخش ۰۸ همین را گام‌به‌گام جلوی چشمت می‌بینی.</p>
+</div>      <p class="c8">این نکتهٔ ظریف، بزرگ‌ترین سوءتفاهم کسانی است که تازه شروع می‌کنند. در ریاضیات، «الف برابر پنج است» یک <b>خبر</b> است؛ چیزی را توصیف می‌کند. این‌جا یک <b>فرمان</b> است؛ چیزی را عوض می‌کند. اولی درست یا غلط است، دومی انجام می‌شود یا نمی‌شود.</p>
+<p class="c8">و از همین‌جا یک قاعدهٔ عجیب بیرون می‌آید که اگر ندانی گیجت می‌کند: فرمانِ <b>«در کوزهٔ گندم بگذار: آنچه در کوزهٔ گندم هست، به‌علاوهٔ یکی»</b> کاملاً بامعناست. اول نگاه می‌کند چه در کوزه هست، یکی به آن می‌افزاید، و نتیجه را دوباره در همان کوزه می‌ریزد. به‌صورت خبر، این جمله بی‌معنا بود؛ به‌صورت فرمان، یکی از پرتکرارترین کارهای دنیاست.</p>
+<p class="c8">کوزه‌ها همان چیزی‌اند که امروز به آن‌ها «متغیر» می‌گوییم. هر برنامه‌ای که تا آخر عمرت ببینی، در هستهٔ خود چند کوزه است و چند فرمان برای عوض‌کردن محتوایشان.</p>
+</div>
+</section>
+<section class="c8t" id="s3">
+<p class="c7v">۰۳ — دوراهی</p>
+<h2 class="c10">جایی که راه دو تا می‌شود</h2>
+<p class="c3x">تا این‌جا فرمان‌ها پشت سر هم می‌آمدند: این را بکن، بعد آن را. ولی کاروان همیشه یک راه ندارد.</p>
+<p class="c8">فرض کن به سرکاروان می‌گویی: «وقتی به رود رسیدی، نگاه کن. اگر آب بالا آمده، از پل برو. وگرنه از گدار رد شو. بعدش در هر دو حال، راه را ادامه بده.» این یک فرمان نیست، یک <b>ساختار</b> است: یک پرسش که جوابش فقط آری یا نه است، و دو راه که بعد از آن دوباره به هم می‌رسند.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 300" role="img" aria-label="نمودار دوراهی: پرسش «آیا رود بالا آمده» با دو شاخهٔ پل و گدار که دوباره به یک راه می‌رسند">
+<rect x="265" y="14" width="190" height="46" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="360" y="43" font-size="13.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">کاروان می‌رسد این‌جا</text>
+<line x1="360" y1="60" x2="360" y2="86" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M 360 92 L 448 140 L 360 188 L 272 140 Z" fill="#FFFFFF" stroke="#6B4226" stroke-width="2"/>
+<text x="360" y="136" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">آیا رود</text>
+<text x="360" y="154" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">بالا آمده؟</text>
+<line x1="448" y1="140" x2="540" y2="140" stroke="#2F5233" stroke-width="2" marker-end="url(#arg)"/>
+<text x="494" y="130" font-size="11.5" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">آری</text>
+<line x1="272" y1="140" x2="180" y2="140" stroke="#B4530E" stroke-width="2" marker-end="url(#arr)"/>
+<text x="226" y="130" font-size="11.5" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">نه</text>
+<rect x="540" y="112" width="160" height="56" rx="10" fill="#FFFFFF" stroke="#2F5233" stroke-width="1.5"/>
+<text x="620" y="146" font-size="13" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">از پل برو</text>
+<rect x="20" y="112" width="160" height="56" rx="10" fill="#FFFFFF" stroke="#B4530E" stroke-width="1.5"/>
+<text x="100" y="146" font-size="13" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">از گدار برو</text>
+<line x1="620" y1="168" x2="620" y2="226" stroke="#E4E1D6" stroke-width="2"/>
+<line x1="100" y1="168" x2="100" y2="226" stroke="#E4E1D6" stroke-width="2"/>
+<line x1="100" y1="226" x2="620" y2="226" stroke="#E4E1D6" stroke-width="2"/>
+<line x1="360" y1="226" x2="360" y2="252" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="265" y="252" width="190" height="40" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="360" y="277" font-size="13" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">راه را ادامه بده</text>
+</svg>
+<figcaption class="c6i">شرط، راه را دو شاخه می‌کند و دوباره یکی می‌کند. نکتهٔ مهم همین بازگشت است: بعد از دوراهی، کاروان هرجا رفته باشد، به یک جا می‌رسد.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">یک چیز در تصویر پنهان مانده: دستگاه خودش به رود <b>نگاه نمی‌کند</b>. چشم ندارد.</p>
+<p class="cb">کسی باید پیش از این اندازهٔ آب را گرفته و در کوزه‌ای گذاشته باشد — یا آدمی که با چشم و ترازو اندازه گرفته، یا ابزاری که عددش را می‌فرستد. پرسشِ «آیا رود بالا آمده؟» در واقع یعنی «آیا عددی که در آن کوزه هست از فلان حد بیشتر است؟»</p>
+<p class="cb">هر پرسشی که در این حرفه می‌پرسی، در نهایت پرسش از محتوای یک کوزه است. دستگاه به دنیا دسترسی ندارد؛ فقط به انبار خودش.</p>
+</div>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">دو تلهٔ کوچک در آن سه واژه هست که بهتر است از همین اول بدانی.</p>
+<p class="cb"><b>تلهٔ اول:</b> «یا» این‌جا یعنی «دست‌کم یکی» و شاملِ «هر دو» هم می‌شود. در فارسی روزمره وقتی می‌گوییم «چای یا قهوه؟» منظورمان یکی از دو تاست؛ این‌جا این‌طور نیست. اگر منظورت «یکی، نه هر دو» باشد باید جداگانه بنویسی‌اش.</p>
+<p class="cb"><b>تلهٔ دوم:</b> جواب پرسش فقط آری یا نه است و «شاید» وجود ندارد. اگر دنیای واقعی سه حالت داشته باشد، یک دوراهی کافی نیست؛ دوراهیِ دوم را درون شاخهٔ یکی از آن‌ها می‌گذاری. هر مسئله‌ای با هر تعداد حالت، به زنجیره‌ای از پرسش‌های آری-و-نه قابل تبدیل است.</p>
+</div>      <p class="c8">در زبان امروز به این می‌گویند «شرط»، ولی تو این را از قبل می‌شناسی. فقیه و قاضی هزار سال است با همین کار می‌کنند، و منطقِ ارسطویی که در مدرسه‌ها می‌خوانند دقیقاً همین را منظم کرده.</p>
+<p class="c8">و سه واژه هست که با آن‌ها می‌شود هر شرطی را از شرط‌های ساده‌تر ساخت. این سه، کل منطقِ هر ماشینی‌اند که تا امروز ساخته شده:</p>
+<div class="c12a">        <div class="cdk">
+<div class="c2o">
+<span class="cvk">و</span>
+<span class="ch">هر دو شرط</span>
+</div>
+<p class="cvl">فقط وقتی هر دو برقرار باشند</p>
+<p class="c1v">در قرارداد: «اگر باران ببارد <b>و</b> راه باز باشد» — یکی‌اش کافی نیست.</p>
+</div>        <div class="cdk">
+<div class="c2o">
+<span class="cvk">یا</span>
+<span class="ch">دست‌کم یکی</span>
+</div>
+<p class="cvl">اگر یکی برقرار باشد کافی است</p>
+<p class="c1v">در فقه و حقوق: «اگر شاهد باشد <b>یا</b> سند باشد» — هر کدام بیاید، کار راه می‌افتد.</p>
+</div>        <div class="cdk">
+<div class="c2o">
+<span class="cvk">نه</span>
+<span class="ch">وارونه‌کردن</span>
+</div>
+<p class="cvl">آنچه درست بود غلط می‌شود و برعکس</p>
+<p class="c1v">«<b>نه</b> اینکه راه بسته باشد» یعنی راه باز است. ساده به نظر می‌رسد و بیشترین اشتباه از همین‌جاست.</p>
+</div>      </div>
+<p class="c8">از همین سه واژه می‌شود شرط‌های بسیار پیچیده ساخت: «اگر بار ابریشم است <b>و</b> راه امن است، <b>یا</b> اگر خریدار پیش‌پرداخت داده و <b>نه</b> فصل بارندگی است». هر قراردادی که تا حالا نوشته‌ای، چیزی جز همین ترکیب‌ها نبوده.</p>
+<p class="c8">و این جملهٔ عجیب را نگه دار: <b>هر چیزی که یک ماشین تا امروز انجام داده، از همین سه واژه ساخته شده است.</b> در بخش ۰۷ می‌بینی چطور.</p>
+</section>
+<section class="c50" id="s4">
+<div class="c7w">
+<p class="c7v">۰۴ — آسیاب</p>
+<h2 class="c10">کاری که خودش را تکرار می‌کند</h2>
+<p class="c3x">آسیاب آبی را دیده‌ای. سنگ می‌چرخد و تا وقتی گندم در قیف هست، آرد می‌شود. کسی بالای سرش نمی‌ایستد که هر دور بگوید «یک دور دیگر».</p>
+<p class="c8">این دومین ساختار بزرگ است و از دوراهیِ بخش قبل ساخته شده — با یک تفاوت: به‌جای اینکه بعد از پرسش جلو برویم، <b>به خودِ پرسش برمی‌گردیم</b>.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 320" role="img" aria-label="نمودار حلقه: پرسش «آیا گندم مانده» با شاخهٔ آری که پس از آردکردن به همان پرسش بازمی‌گردد و شاخهٔ نه که می‌ایستد">
+<rect x="275" y="12" width="170" height="44" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="360" y="40" font-size="13" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">آسیاب را راه بینداز</text>
+<line x1="360" y1="56" x2="360" y2="82" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M 360 88 L 458 140 L 360 192 L 262 140 Z" fill="#FFFFFF" stroke="#6B4226" stroke-width="2"/>
+<text x="360" y="134" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">آیا هنوز</text>
+<text x="360" y="152" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">گندم مانده؟</text>
+<line x1="262" y1="140" x2="176" y2="140" stroke="#2F5233" stroke-width="2" marker-end="url(#arg)"/>
+<text x="219" y="130" font-size="11.5" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">آری</text>
+<rect x="16" y="112" width="160" height="56" rx="10" fill="#FFFFFF" stroke="#2F5233" stroke-width="1.5"/>
+<text x="96" y="139" font-size="12.5" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">یک پیمانه بریز</text>
+<text x="96" y="158" font-size="12.5" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">و آرد کن</text>
+<path d="M 96 168 L 96 258 L 560 258 L 560 140" fill="none" stroke="#2F5233" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M 560 146 L 555 156 L 565 156 Z" fill="#2F5233"/>
+<line x1="560" y1="140" x2="466" y2="140" stroke="#2F5233" stroke-width="2" marker-end="url(#arg)"/>
+<text x="186" y="278" font-size="11.5" fill="#2F5233" font-weight="600" text-anchor="middle" direction="rtl">و دوباره همان پرسش را بپرس — هر بار، نه یک بار</text>
+<line x1="360" y1="192" x2="360" y2="286" stroke="#B4530E" stroke-width="2"/>
+<path d="M 360 292 L 354 280 L 366 280 Z" fill="#B4530E"/>
+<text x="392" y="216" font-size="11.5" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">نه</text>
+<rect x="275" y="292" width="170" height="24" rx="8" fill="#FFFFFF" stroke="#B4530E" stroke-width="1.5"/>
+<text x="360" y="309" font-size="12" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">بایست</text>
+</svg>
+<figcaption class="c6i">حلقه چیزی جز یک دوراهی نیست که شاخهٔ «آری»‌اش به خودِ پرسش برمی‌گردد. برگشتن به پرسش، نه به کار، تمام تفاوت است.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">شاید به نظر برسد به‌جای این همه ساختار، می‌شد فرمان را هفت بار پشت سر هم نوشت. گاهی می‌شود، ولی معمولاً نه — به دو دلیل.</p>
+<p class="cb"><b>یک:</b> اغلب از قبل نمی‌دانی چند بار. چند کیسه گندم امروز می‌رسد؟ چند مشتری امروز می‌آیند؟ حلقه نمی‌گوید «هفت بار»؛ می‌گوید «تا وقتی که». و همین تفاوت، کل ارزشش است.</p>
+<p class="cb"><b>دو:</b> اگر هفت هزار بار باشد، نوشتنش عمر می‌خواهد. و اگر بعداً بخواهی یک کلمه از آن کار را عوض کنی، باید هر هفت هزار جا را عوض کنی.</p>
+</div>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">و آن آسیابی که نمی‌ایستد چه بلایی سر دستگاه می‌آورد؟ هیچ بلایی. چیزی نمی‌شکند و دود نمی‌کند.</p>
+<p class="cb">دستگاه فقط تا ابد اطاعت می‌کند: همان چند فرمان را بی‌وقفه تکرار می‌کند و هیچ‌وقت به فرمان بعدی نمی‌رسد. از بیرون این‌طور دیده می‌شود که برنامه «گیر کرده» — جواب نمی‌دهد، صفحه قفل می‌شود، و باید به‌زور متوقفش کنی.</p>
+<p class="cb">کسی هم بالای سرش نیست که شرط را بررسی کند؛ خودِ دستگاه در هر دور یک بار بررسی می‌کند، چون بررسی‌کردن خودش یکی از گام‌هاست. به همین دلیل اگر چیزی را که شرط به آن نگاه می‌کند عوض نکنی، جواب همیشه همان می‌ماند.</p>
+</div>      <p class="c8">دو خطر در این ساختار هست که هر دو را در زندگی دیده‌ای.</p>
+<p class="c8"><b>خطر اول: آسیابی که هرگز نمی‌ایستد.</b> اگر یادت برود پیمانه را از قیف کم کنی، گندم هیچ‌وقت تمام نمی‌شود و سنگ تا ابد می‌چرخد. ماشین هم همین می‌کند — و چون خسته نمی‌شود، تا ابد ادامه می‌دهد. این رایج‌ترین اشتباه مرگبار یک برنامه است و امروز به آن «حلقهٔ بی‌پایان» می‌گویند.</p>
+<p class="c8"><b>خطر دوم: آسیابی که اصلاً نمی‌چرخد.</b> اگر قیف از همان اول خالی باشد، پرسش همان بار اول جواب «نه» می‌گیرد و هیچ اتفاقی نمی‌افتد. این خطا آرام است و دیده نمی‌شود: برنامه بدون شکایت تمام می‌شود و هیچ کاری نکرده.</p>
+<p class="c8">و حالا بخش شگفت ماجرا: با همین دو ساختار — <b>دوراهی</b> و <b>آسیاب</b> — به‌علاوهٔ کوزه‌ها، هر کاری که هر ماشینی در تاریخ انجام داده قابل نوشتن است. هیچ چیز سومی لازم نیست. بقیهٔ این نامه دربارهٔ <i>آسان‌تر کردن</i> کار است، نه <i>ممکن کردنش</i>.</p>
+</div>
+</section>
+<section class="c8t" id="s5">
+<p class="c7v">۰۵ — نسخه</p>
+<h2 class="c10">کاری که یک بار می‌گویی و صد بار به کار می‌بری</h2>
+<p class="c3x">عطار نسخه می‌نویسد: چه چیزهایی، به چه اندازه، به چه ترتیب. نسخه را که داشته باشی، لازم نیست هر بار از اول توضیح بدهی.</p>
+<p class="c8">در این حرفه هم همین کار را می‌کنیم. دسته‌ای از فرمان‌ها را جدا می‌کنیم، به آن یک <b>نام</b> می‌دهیم، و از آن به بعد فقط نام را صدا می‌زنیم. سه چیز هر نسخه را می‌سازد: نامش، آنچه باید به آن بدهی، و آنچه پس می‌گیری.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 270" role="img" aria-label="نمودار نسخهٔ نان: آرد و آب و نمک وارد می‌شوند، نان بیرون می‌آید؛ و بار دوم با مقدار دو برابر">
+<text x="595" y="26" font-size="12" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">آنچه می‌دهی</text>
+<rect x="520" y="40" width="150" height="36" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="595" y="63" font-size="12.5" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">سه پیمانه آرد</text>
+<rect x="520" y="84" width="150" height="36" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="595" y="107" font-size="12.5" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">یک کاسه آب</text>
+<rect x="520" y="128" width="150" height="36" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="595" y="151" font-size="12.5" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">کمی نمک</text>
+<line x1="516" y1="58" x2="456" y2="92" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="516" y1="102" x2="456" y2="102" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="516" y1="146" x2="456" y2="112" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="276" y="56" width="180" height="92" rx="12" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="366" y="90" font-size="15" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl">نسخهٔ «نان»</text>
+<text x="366" y="118" font-size="11.5" fill="#45494F" font-weight="500" text-anchor="middle" direction="rtl">خمیر کن، در تنور بگذار</text>
+<line x1="272" y1="102" x2="212" y2="102" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="52" y="72" width="160" height="60" rx="10" fill="#FFFFFF" stroke="#2F5233" stroke-width="1.5"/>
+<text x="132" y="108" font-size="13.5" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">دو قرص نان</text>
+<text x="132" y="26" font-size="12" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">آنچه پس می‌گیری</text>
+<line x1="20" y1="178" x2="700" y2="178" stroke="#E4E1D6" stroke-width="1"/>
+<text x="540" y="206" font-size="12.5" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">بار دوم، بدون یک کلمه توضیح تازه:</text>
+<rect x="430" y="222" width="240" height="34" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="550" y="244" font-size="12" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">شش پیمانه آرد، دو کاسه آب…</text>
+<line x1="426" y1="239" x2="366" y2="239" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="206" y="222" width="160" height="34" rx="8" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="286" y="244" font-size="12" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">همان نسخهٔ «نان»</text>
+<line x1="202" y1="239" x2="142" y2="239" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="16" y="222" width="126" height="34" rx="8" fill="#FFFFFF" stroke="#2F5233" stroke-width="1.5"/>
+<text x="79" y="244" font-size="12" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">چهار قرص</text>
+</svg>
+<figcaption class="c6i">نسخه سه جزء دارد: نام، ورودی، خروجی. ارزشش در ردیف دوم است — همان نسخه با مقدارهای دیگر، بدون یک کلمه توضیح تازه.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">یک چیز هست که معمولاً دیر فهمیده می‌شود و بهتر است همین حالا بدانی: نسخه <b>کوزه‌های خودش</b> را دارد.</p>
+<p class="cb">نانوا وقتی نان می‌پزد، تشت و پیمانهٔ خودش را به کار می‌برد و بعد از کار می‌شویدشان. آن پیمانه مال نسخه است، نه مال انبار تو. پس اگر درون نسخهٔ «نان» کوزه‌ای به نام «آرد» باشد، این همان کوزهٔ «آرد» انبار تو نیست؛ فقط هم‌نام است.</p>
+<p class="cb">این ویژگی عمدی است و نعمت بزرگی است: یعنی می‌توانی نسخه‌ای بنویسی بدون اینکه بدانی بقیهٔ برنامه چه کوزه‌هایی دارد، و مطمئن باشی چیزی را خراب نمی‌کنی.</p>
+<p class="cb">و یک نسخه می‌تواند نسخهٔ دیگری را صدا بزند. «سفرهٔ مهمانی» نسخهٔ «نان» را صدا می‌زند و او خودش نسخهٔ «خمیر» را. چیزهای بزرگ دقیقاً همین‌طور ساخته می‌شوند.</p>
+</div>      <p class="c8">چرا این‌قدر مهم است؟ سه دلیل، و هر سه را از زندگی خودت می‌شناسی.</p>
+<p class="c8"><b>یک: یک‌بار درست‌کردن.</b> اگر در نسخهٔ نان اشتباهی باشد، یک جا اصلاحش می‌کنی و همهٔ نان‌های آینده درست می‌شوند. اگر به‌جای نسخه، هر بار از اول توضیح داده باشی، باید همهٔ آن توضیح‌ها را پیدا کنی و یکی‌یکی عوض کنی — و یکی‌شان را حتماً جا می‌اندازی.</p>
+<p class="c8"><b>دو: نام‌گذاری یعنی فهمیدن.</b> وقتی مجبور می‌شوی برای کاری یک نام بگذاری، ناچاری تصمیم بگیری که آن کار <i>دقیقاً چیست</i>. اگر نتوانی نامش را در دو کلمه بگویی، احتمالاً دو کار را قاتی کرده‌ای. این ساده‌ترین محک کیفیت در کل این حرفه است.</p>
+<p class="c8"><b>سه: فراموش‌کردن جزئیات.</b> وقتی نسخه را نوشتی، دیگر لازم نیست به درونش فکر کنی. «نان بپز» کافی است. ذهن تو ظرفیت محدودی دارد و نسخه همان چیزی است که ظرفیت را آزاد می‌کند. این مهم‌ترین ایدهٔ کل نامه است و در بخش ۱۲ دوباره سراغش می‌رویم.</p>
+</section>
+<section class="c50" id="s6">
+<div class="c7w">
+<p class="c7v">۰۶ — انبار</p>
+<h2 class="c10">کوزه‌ها کجا می‌ایستند، و در چه ظرفی</h2>
+<p class="c3x">تا این‌جا از کوزه حرف زدیم، انگار در هوا معلق‌اند. ولی کوزه‌ها در انباری‌اند که قفسه‌هایش شماره دارد.</p>
+<p class="c8">این نکتهٔ کوچک، یکی از عجیب‌ترین حقیقت‌های این حرفه را توضیح می‌دهد: <b>ماشین اسم «گندم» را نمی‌فهمد.</b> او فقط شمارهٔ قفسه را می‌شناسد. نام‌ها برای تو هستند، نه برای او. جایی میان تو و ماشین، دفتری هست که هر نام را به یک شماره ترجمه می‌کند.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 190" role="img" aria-label="نمودار هشت قفسهٔ شماره‌دار انبار با چند کوزهٔ نام‌دار درونشان">
+<rect x="640" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="675" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<rect x="560" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="595" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<rect x="480" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="515" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<rect x="400" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="435" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۴</text>
+<rect x="320" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="355" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۵</text>
+<rect x="240" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="275" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۶</text>
+<rect x="160" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="195" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۷</text>
+<rect x="80" y="46" width="70" height="70" rx="8" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="115" y="36" font-size="11.5" fill="#666158" font-weight="700" text-anchor="middle" direction="rtl">۸</text>
+<text x="675" y="88" font-size="12" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">گندم</text>
+<text x="595" y="88" font-size="12" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">جو</text>
+<text x="435" y="88" font-size="12" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">روغن</text>
+<text x="195" y="88" font-size="12" fill="#16181C" font-weight="500" text-anchor="middle" direction="rtl">نمک</text>
+<text x="360" y="146" font-size="13" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">ماشین نام نمی‌فهمد؛ فقط شمارهٔ قفسه را می‌فهمد.</text>
+<text x="360" y="170" font-size="12" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">کارِ دفترِ «کدام نام، کدام شماره» با برنامه‌نویس است.</text>
+</svg>
+<figcaption class="c6i">انبار شماره‌دار. نام روی کوزه راحتیِ توست؛ آنچه ماشین با آن کار می‌کند شمارهٔ قفسه است.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">اینکه دستگاه نام نمی‌فهمد عجیب به نظر می‌رسد، ولی دلیلش ساده است: روی قفسه جایی برای نوشتن نام نیست. شماره، خودِ <b>جای</b> قفسه است — مثل «سومین قفسه از در». نام‌ها را ما آدم‌ها اختراع کردیم چون «سومین قفسه از در» را فراموش می‌کنیم و «گندم» را نه.</p>
+<p class="cb">و آن دفترِ «کدام نام، کدام شماره» را هم کسی دستی نمی‌نویسد. برنامه‌ای که نوشتهٔ تو را به فرمان‌های دستگاه ترجمه می‌کند، خودش این دفتر را می‌سازد و نگه می‌دارد. تو هیچ‌وقت نمی‌بینی‌اش.</p>
+<p class="cb">و انبار بی‌انتها نیست. وقتی پر شود، کار می‌خوابد. به همین دلیل کار کردن با دادهٔ بسیار بزرگ خودش حرفه‌ای جداگانه است.</p>
+</div>      <p class="c8">و حالا پرسش بعدی: <b>چیزها را در چه ظرفی بگذاریم؟</b> تو این را از انبارداری می‌دانی — برای گندم جوال، برای روغن خمره، برای ادویه کیسهٔ کوچک. انتخاب ظرف، کار بعدی را آسان یا ناممکن می‌کند.</p>
+<p class="c8">در این حرفه هم پنج ظرف اصلی هست. هر پنج‌تا را از قبل می‌شناسی:</p>
+<div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));gap: 14px;margin-bottom: 16px">        <div class="cdk">
+<h3 class="c5b">نخ مهره</h3>
+<p class="c94">مهره‌ها به ترتیب روی یک نخ‌اند. می‌دانی مهرهٔ هفتم کدام است، و می‌توانی آخرش یکی اضافه کنی.</p>
+<p class="cod">برای وقتی ترتیب مهم است: فهرست نام مهمان‌ها، گام‌های یک کار.</p>
+<div class="cc9">امروز: <b class="clt">فهرست</b></div>
+</div>        <div class="cdk">
+<h3 class="c5b">دفتر نام و نشان</h3>
+<p class="c94">در برابر هر نام، یک نشانی. ترتیب مهم نیست؛ مهم این است که با دانستن نام، فوراً نشانی را پیدا کنی.</p>
+<p class="cod">برای وقتی با یک کلید دنبال یک چیزی: بهای هر کالا، نشانی هر مشتری.</p>
+<div class="cc9">امروز: <b class="clt">نگاشت</b></div>
+</div>        <div class="cdk">
+<h3 class="c5b">صف نانوایی</h3>
+<p class="c94">هر که زودتر آمد، زودتر می‌گیرد. از یک سر وارد می‌شوند و از سر دیگر خارج.</p>
+<p class="cod">برای کارهایی که باید به ترتیب رسیدن انجام شوند: سفارش‌ها، نامه‌های نرسیده.</p>
+<div class="cc9">امروز: <b class="clt">صف</b></div>
+</div>        <div class="cdk">
+<h3 class="c5b">طبق نان</h3>
+<p class="c94">نان‌ها را روی هم می‌گذاری. آخرین نانی که گذاشتی، اولین نانی است که برمی‌داری.</p>
+<p class="cod">برای برگشتن به عقب: کارهای نیمه‌تمامی که باید بعداً به آن‌ها برگردی.</p>
+<div class="cc9">امروز: <b class="clt">پشته</b></div>
+</div>        <div class="cdk">
+<h3 class="c5b">شجره‌نامه</h3>
+<p class="c94">هر کس یک پدر دارد و چند فرزند. از هر نقطه می‌توانی بالا بروی یا پایین بیایی.</p>
+<p class="cod">برای چیزهایی که درونِ هم‌اند: فصل و بخش یک کتاب، ولایت و شهر و ده.</p>
+<div class="cc9">امروز: <b class="clt">درخت</b></div>
+</div>      </div>
+<p class="c8">اینکه کدام ظرف را برداری، شاید بی‌اهمیت به نظر برسد. ولی اگر نام مهمان‌ها را در «صف» بگذاری، برای پیدا کردن مهمان صدم باید نود‌ونه نفر را رد کنی. در «دفتر نام و نشان»، مستقیم می‌روی سراغش. بخش ۰۹ نشان می‌دهد این تفاوت چقدر بزرگ است.</p>
+</div>
+</section>
+<section class="c8t" id="s7">
+<p class="c7v">۰۷ — دو نخ</p>
+<h2 class="c10">چرا همه‌چیز از «آری» و «نه» ساخته می‌شود</h2>
+<p class="c3x">این بخش عجیب‌ترین بخش نامه است و اگر فقط یک چیز از این نوشته با خودت ببری، بگذار این باشد.</p>
+<p class="c8">بافنده را نگاه کن. در ساده‌ترین حالت، هر نخ یا از <b>رو</b>ی تار می‌گذرد یا از <b>زیر</b>ش. دو حالت، نه بیشتر. با یک نخ دو نقش ممکن است. با دو نخ چهار تا. با سه نخ هشت تا. هر نخ که اضافه کنی، شمار نقش‌ها <b>دو برابر</b> می‌شود.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 336" role="img" aria-label="نمودار بافت: چهار ترکیب رو و زیر با دو نخ، و رشد دوبرابری شمار نقش‌ها با افزودن هر نخ">
+<text x="360" y="24" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">با دو نخ، چهار نقش ممکن است — نه بیشتر، نه کمتر</text>
+<rect x="368" y="40" width="78" height="32" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="407" y="61" font-size="12.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">زیر</text>
+<rect x="282" y="40" width="78" height="32" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="321" y="61" font-size="12.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">زیر</text>
+<text x="508" y="61" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">نقش ۱</text>
+<rect x="368" y="82" width="78" height="32" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="407" y="103" font-size="12.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">زیر</text>
+<rect x="282" y="82" width="78" height="32" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="321" y="103" font-size="12.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">رو</text>
+<text x="508" y="103" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">نقش ۲</text>
+<rect x="368" y="124" width="78" height="32" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="407" y="145" font-size="12.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">رو</text>
+<rect x="282" y="124" width="78" height="32" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="321" y="145" font-size="12.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">زیر</text>
+<text x="508" y="145" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">نقش ۳</text>
+<rect x="368" y="166" width="78" height="32" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="407" y="187" font-size="12.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">رو</text>
+<rect x="282" y="166" width="78" height="32" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="321" y="187" font-size="12.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">رو</text>
+<text x="508" y="187" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">نقش ۴</text>
+<line x1="40" y1="222" x2="680" y2="222" stroke="#E4E1D6" stroke-width="1"/>
+<text x="360" y="248" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">و هر نخ که اضافه کنی، شمار نقش‌ها دو برابر می‌شود</text>
+<rect x="560" y="266" width="140" height="54" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="630" y="288" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">یک نخ</text>
+<text x="630" y="310" font-size="14" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl">۲ نقش</text>
+<line x1="556" y1="293" x2="534" y2="293" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="390" y="266" width="140" height="54" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="460" y="288" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">دو نخ</text>
+<text x="460" y="310" font-size="14" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl">۴ نقش</text>
+<line x1="386" y1="293" x2="364" y2="293" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="220" y="266" width="140" height="54" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="290" y="288" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">سه نخ</text>
+<text x="290" y="310" font-size="14" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl">۸ نقش</text>
+<line x1="216" y1="293" x2="194" y2="293" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="50" y="266" width="140" height="54" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="120" y="288" font-size="12" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">هشت نخ</text>
+<text x="120" y="310" font-size="14" fill="#6B4226" font-weight="800" text-anchor="middle" direction="rtl">۲۵۶ نقش</text>
+</svg>
+<figcaption class="c6i">بالا: با دو نخ که هر کدام فقط دو حالت دارند، چهار نقش در می‌آید. پایین: همان قاعده وقتی نخ‌ها بیشتر می‌شوند. شگفتی در خودِ نخ‌ها نیست، در سرعت رشد عددهاست.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">اگر همه‌چیز فقط «رو و زیر» است، جای درستی برای پرسیدنِ این است که پس حرف و تصویر از کجا می‌آیند. جواب ساده‌تر از چیزی است که به نظر می‌رسد: <b>از قرارداد</b>.</p>
+<p class="cb">برای حرف‌ها همه با هم قرار می‌گذاریم که مثلاً یک یعنی الف، دو یعنی ب و همین‌طور تا آخر. آن عدد ذاتاً «الف» نیست؛ ما قرار گذاشته‌ایم که این‌طور خوانده شود. اگر قرارمان عوض شود، همان عدد چیز دیگری می‌شود.</p>
+<p class="cb">برای تصویر هم همین: تصویر را به هزاران نقطهٔ ریز تقسیم می‌کنیم و برای هر نقطه سه عدد می‌نویسیم — چقدر سرخ، چقدر سبز، چقدر آبی. یک تصویر، در ته ماجرا، فهرست بلندی از عدد است.</p>
+<p class="cb">و آن «چیزی که دو حالت دارد» در دستگاه‌های امروزی یک کلید بسیار ریز است. میلیاردها از این کلیدها روی صفحه‌ای به اندازهٔ ناخن جا می‌شوند. معنا هیچ‌وقت در خود کلیدها نیست؛ در قراری است که دربارهٔ خواندنشان گذاشته‌ایم.</p>
+</div>      <p class="c8">این عدد وحشتناک رشد می‌کند. با سی‌ودو نخ، بیش از چهار میلیارد نقش ممکن است. با شصت‌وچهار نخ، عددی که نامش را هم به‌زحمت می‌شود گفت. و این‌ها همه از چیزی ساخته شده‌اند که فقط <b>دو حالت</b> دارد.</p>
+<p class="c8">حالا به‌جای نخ، هر چیزی بگذار که دو حالت دارد: چراغ روشن یا خاموش، سنگ در کاسهٔ راست یا چپ، آب در جوی باز یا بسته. ماشین‌های امروزی میلیاردها از این «دو حالت» دارند که در کسری از پلک‌برهم‌زدن عوض می‌شوند.</p>
+<p class="c8">و این‌جا پیوند با بخش ۰۳ برقرار می‌شود. «آری و نه»ی منطق، همان «رو و زیر»ی بافنده است. سه واژهٔ <b>و</b>، <b>یا</b>، <b>نه</b> روی همین دو حالت کار می‌کنند. پس زنجیره کامل است:</p>
+<div style="background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 24px 26px;margin-bottom: 16px">
+<p style="font-size: 15px;line-height: 2.2;color: #16181C;margin: 0">
+چیزی که دو حالت دارد  ←  با «و» و «یا» و «نه» ترکیب می‌شود  ←  عدد و حرف و تصویر از آن ساخته می‌شود  ←  با دوراهی و آسیاب فرمان ساخته می‌شود  ←  و آن فرمان‌ها هر کاری می‌کنند.
+</p>
+</div>
+<p class="c8">هیچ جادویی در این زنجیره نیست. فقط <b>تعداد</b> است و <b>سرعت</b>. اگر کسی بتواند میلیاردها بار در ثانیه چراغی را روشن و خاموش کند و این کار را طبق سه واژهٔ منطق سامان بدهد، همان چیزی در می‌آید که امروز رایانه می‌نامیمش.</p>
+<p class="c8">ابوریحان، تو که در «التفهیم» از حساب هندی و جایگاه ارقام نوشتی، این را زودتر از هرکسی می‌فهمی: مسئله هیچ‌وقت خودِ نشانه‌ها نبود؛ <b>جایگاهشان</b> بود.</p>
+</section>
+<section class="c50" id="s8">
+<div class="c7w">
+<p class="c7v">۰۸ — ماشین</p>
+<h2 class="c10">حالا خودت خدمتکار باش</h2>
+<p class="c3x">بهترین راه فهمیدن این حرفه، خواندن دربارهٔ آن نیست؛ <b>یک بار خودت ماشین شدن</b> است.</p>
+<p class="c8">پایین هشت فرمان نوشته شده برای شمردن کیسه‌های گندم. هیچ‌کدام چیزی نمی‌فهمد. هر بار که «گام بعد» را بزنی، <b>دقیقاً یک</b> فرمان اجرا می‌شود — نه بیشتر، نه هوشمندانه‌تر. کوزه‌ها را تماشا کن.</p>
+<p class="c8">یک چیز را حتماً امتحان کن: ببین دستور ۳ چند بار اجرا می‌شود. حلقه همین است — نه یک چیز تازه، فقط همان دوراهی که بارها از آن رد می‌شوی.</p>
+<div style="display: flex;gap: 10px;flex-wrap: wrap;align-items: center;margin-bottom: 18px">
+<span style="font-size: 12.5px;font-weight: 700;color: #666158">چند کیسه بشمارد؟</span>
+
+<button style="font-size: 13px; font-weight: 500; padding: 7px 14px; border-radius: 999px; cursor: pointer; border: 1px solid #E4E1D6; background: #FFFFFF; color: #45494F;">۳ کیسه</button>
+
+<button style="font-size: 13px; font-weight: 700; padding: 7px 14px; border-radius: 999px; cursor: pointer; border: 1px solid #6B4226; background: #F3E8DE; color: #6B4226;">۵ کیسه</button>
+
+<button style="font-size: 13px; font-weight: 500; padding: 7px 14px; border-radius: 999px; cursor: pointer; border: 1px solid #E4E1D6; background: #FFFFFF; color: #45494F;">۸ کیسه</button>
+
+</div>
+<div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 16px;margin-bottom: 16px">
+<div class="cl">
+<div style="font-size: 11.5px;font-weight: 700;color: #666158;margin-bottom: 14px">دفترِ فرمان‌ها</div>
+<div style="display: flex;flex-direction: column;gap: 3px">
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: #F3E8DE; border: 1px solid #6B4226;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #6B4226;">۱</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #16181C;">در کوزهٔ «شمار» بگذار: هیچ</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: transparent; border: 1px solid transparent;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #A8A296;">۲</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #45494F;">در کوزهٔ «کیسه» بگذار: آنچه شمردی</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: transparent; border: 1px solid transparent;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #A8A296;">۳</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #45494F;">اگر کوزهٔ «کیسه» خالی است، برو به دستور ۸</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: transparent; border: 1px solid transparent;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #A8A296;">۴</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #45494F;">یکی به کوزهٔ «شمار» بیفزا</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: transparent; border: 1px solid transparent;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #A8A296;">۵</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #45494F;">یکی از کوزهٔ «کیسه» بردار</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: transparent; border: 1px solid transparent;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #A8A296;">۶</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #45494F;">بنویس: «یک کیسه شمرده شد»</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: transparent; border: 1px solid transparent;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #A8A296;">۷</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #45494F;">برو به دستور ۳</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 13px; border-radius: 9px; background: transparent; border: 1px solid transparent;">
+<span style="flex-shrink: 0; width: 20px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: #A8A296;">۸</span>
+<span style="font-size: 13.5px; line-height: 1.9; color: #45494F;">بنویس: «جمع کیسه‌ها» و آنچه در کوزهٔ «شمار» است</span>
+</div>
+
+</div>
+</div>
+<div>
+<div style="display: grid;grid-template-columns: 1fr 1fr;gap: 12px;margin-bottom: 12px">
+
+<div class="cdl">
+<div class="cdm">شمار</div>
+<div style="font-size: 34px; font-weight: 800; line-height: 1; color: #C8C2B6;">—</div>
+<div class="cdn">هنوز چیزی در آن نگذاشته‌ایم</div>
+</div>
+
+<div class="cdl">
+<div class="cdm">کیسه</div>
+<div style="font-size: 34px; font-weight: 800; line-height: 1; color: #C8C2B6;">—</div>
+<div class="cdn">هنوز چیزی در آن نگذاشته‌ایم</div>
+</div>
+
+</div>
+<div style="background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 16px;padding: 20px 22px;min-height: 120px">
+<div style="font-size: 11.5px;font-weight: 700;color: #666158;margin-bottom: 12px">آنچه نوشته شد</div>
+
+
+<p class="crc">هنوز چیزی نوشته نشده.</p>
+
+</div>
+</div>
+</div>
+<div style="display: flex;gap: 10px;flex-wrap: wrap;align-items: center">
+<button style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #6B4226; padding: 11px 22px; border-radius: 10px; cursor: pointer;">گام بعد ←</button>
+<button style="font-size: 14px;font-weight: 700;color: #16181C;background: #FFFFFF;border: 1px solid #E4E1D6;padding: 11px 22px;border-radius: 10px">تا آخر برو</button>
+<button style="font-size: 13.5px;color: #45494F;background: #FFFFFF;border: 1px solid #E4E1D6;padding: 10px 18px;border-radius: 10px">از نو</button>
+<span class="c6j">تا این‌جا <b class="clt">۰</b> گام</span>
+</div>
+
+<p class="c8">آن عدد گام هم از جایی نیامده و می‌شود با انگشت شمردش. برای پنج کیسه: <b>دو</b> گام برای پر کردن کوزه‌ها در آغاز، بعد <b>پنج دور</b> که هر دور <b>پنج</b> فرمان دارد (بررسی، افزودن، برداشتن، نوشتن، بازگشتن) که می‌شود بیست‌وپنج، بعد <b>یک</b> گام برای آخرین بررسی که این بار جوابش «نه» است، و <b>یک</b> گام برای نوشتن جمع. روی هم بیست‌ونه. برای هشت کیسه همین حساب چهل‌وچهار می‌شود.</p>
+<p class="c8">و اینکه چرا به‌جای «این کار را پنج بار تکرار کن» نوشته‌ام «برو به دستور ۳»، عمدی است: <b>دستگاه واقعاً همین‌طور کار می‌کند.</b> در پایین‌ترین لایه چیزی به نام حلقه وجود ندارد؛ فقط پریدن از یک شمارهٔ فرمان به شمارهٔ دیگر هست. امروز تو می‌نویسی «تا وقتی که…» و برنامهٔ دیگری آن را به همین پرش‌ها ترجمه می‌کند. این‌جا یک پله پایین‌تر ایستاده‌ایم تا ببینی زیر آن راحتی چه خبر است.</p>
+<p style="font-size: 12px;line-height: 1.9;color: #666158;margin: 10px 0 0;padding-top: 14px;border-top: 1px solid #F0EEE7">این هشت فرمان، همهٔ چیزی است که در بخش‌های قبل خواندی: کوزه (۲)، دوراهی (۳) و آسیاب (۴). هیچ ابزار تازه‌ای به کار نرفته.</p>
+</div>
+</section>
+<section class="c8t" id="s9">
+<p class="c7v">۰۹ — گام‌ها</p>
+<h2 class="c10">چرا یک کار درست، باز هم می‌تواند بی‌فایده باشد</h2>
+<p class="c3x">فرض کن دفتری داری با هزار نام و باید نامی را پیدا کنی.</p>
+<p class="c8">اگر دفتر <b>نامرتب</b> باشد، چاره‌ای نداری جز اینکه از اول شروع کنی و یکی‌یکی بخوانی. اگر بدشانس باشی، هزار نام را می‌خوانی.</p>
+<p class="c8">ولی اگر دفتر <b>به ترتیب الفبا</b> مرتب باشد، کار دیگری می‌کنی که بی‌آنکه بدانی هزار بار انجامش داده‌ای: دفتر را از وسط باز می‌کنی. نامی که می‌جویی یا قبل از این صفحه است یا بعدش. نیمی از دفتر، در یک نگاه، حذف شد. دوباره همین کار را روی نیمهٔ باقی‌مانده می‌کنی.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 320" role="img" aria-label="نمودار مقایسهٔ جست‌وجوی یکی‌یکی در دفتر نامرتب با نصف‌کردن پیاپی در دفتر مرتب">
+<rect x="614" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="640" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۱</text>
+<rect x="554" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="580" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۲</text>
+<rect x="494" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="520" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۳</text>
+<rect x="434" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="460" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۴</text>
+<rect x="374" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="400" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۵</text>
+<rect x="314" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="340" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۶</text>
+<rect x="254" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="280" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۷</text>
+<rect x="194" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="220" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۸</text>
+<rect x="134" y="40" width="52" height="34" rx="6" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="160" y="62" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">۹</text>
+<rect x="74" y="40" width="52" height="34" rx="6" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="100" y="62" font-size="11.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">۱۰</text>
+<text x="360" y="24" font-size="12.5" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">دفتر نامرتب — یکی‌یکی</text>
+<text x="360" y="96" font-size="13" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">برای هزار نام: تا هزار گام</text>
+<line x1="60" y1="140" x2="620" y2="140" stroke="#F3E8DE" stroke-width="10" stroke-linecap="round"/>
+<line x1="340.0" y1="131" x2="340.0" y2="149" stroke="#6B4226" stroke-width="2"/>
+<text x="655" y="144" font-size="11.5" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">گام ۱</text>
+<line x1="60" y1="170" x2="340" y2="170" stroke="#F3E8DE" stroke-width="10" stroke-linecap="round"/>
+<line x1="200.0" y1="161" x2="200.0" y2="179" stroke="#6B4226" stroke-width="2"/>
+<text x="655" y="174" font-size="11.5" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">گام ۲</text>
+<line x1="200" y1="200" x2="340" y2="200" stroke="#F3E8DE" stroke-width="10" stroke-linecap="round"/>
+<line x1="270.0" y1="191" x2="270.0" y2="209" stroke="#6B4226" stroke-width="2"/>
+<text x="655" y="204" font-size="11.5" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">گام ۳</text>
+<line x1="270" y1="230" x2="340" y2="230" stroke="#F3E8DE" stroke-width="10" stroke-linecap="round"/>
+<line x1="305.0" y1="221" x2="305.0" y2="239" stroke="#6B4226" stroke-width="2"/>
+<text x="655" y="234" font-size="11.5" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">گام ۴</text>
+<text x="360" y="268" font-size="12.5" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">دفتر مرتب — هر بار نصف</text>
+<text x="360" y="292" font-size="13" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">برای هزار نام: ده گام</text>
+</svg>
+<figcaption class="c6i">دو راه برای یک کار. بالا هر گام یک نام را حذف می‌کند، پایین هر گام نیمی از دفتر را. برای هزار نام، یکی تا هزار گام می‌خواهد و دیگری ده گام.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">آن عددِ «ده» از آسمان نیامده. با همان قاعدهٔ دوبرابرشدنِ بخش ۰۷ حساب می‌شود، فقط وارونه.</p>
+<p class="cb">بشمار: دو، چهار، هشت، شانزده، سی‌ودو، شصت‌وچهار، صدوبیست‌وهشت، دویست‌وپنجاه‌وشش، پانصدودوازده، هزاروبیست‌وچهار. ده بار دوبرابر کردیم و از هزار گذشتیم. هر بار که دفتر را نصف می‌کنی، داری همین زنجیره را از آن سر می‌روی.</p>
+<p class="cb">برای یک میلیون هم همین است: بیست بار دوبرابر کردن از یک میلیون می‌گذرد (یک میلیون و چهل‌وهشت هزار و پانصدوهفتادوشش). به همین دلیل بیست گام کافی است.</p>
+</div>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">و اگر مرتب‌بودن این‌قدر خوب است، چرا همیشه اول مرتب نکنیم؟ چون مرتب‌کردن خودش گام می‌خواهد و رایگان نیست.</p>
+<p class="cb">اگر فقط یک بار قرار است در دفتر بگردی، مرتب‌کردنش از همان یکی‌یکی‌گشتن گران‌تر در می‌آید. مرتب‌کردن وقتی می‌ارزد که قرار باشد بارها جست‌وجو کنی — هزینه را یک بار می‌دهی و هزار بار سودش را می‌بری.</p>
+<p class="cb">این خودش یکی از تصمیم‌های همیشگی این حرفه است: کاری را حالا انجام بدهم که بعداً ارزان‌تر شود، یا نه.</p>
+</div>      <p class="c8">عدد را درست بخوان، چون باورنکردنی است. برای هزار نام: <b>هزار گام در برابر ده گام</b>. و هرچه دفتر بزرگ‌تر شود، فاصله بدتر می‌شود. برای یک میلیون نام، راه اول یک میلیون گام می‌خواهد و راه دوم فقط <b>بیست</b> گام.</p>
+<p class="c8">این درس، بزرگ‌ترین درس عملی این نامه است: <b>«درست کار می‌کند» کافی نیست.</b> دو راه که هر دو جواب درست می‌دهند، می‌توانند آن‌قدر در شمار گام‌ها فرق داشته باشند که یکی‌شان عملاً بی‌فایده باشد.</p>
+<p class="c8">و دقت کن معجزه از کجا آمد: از <b>مرتب بودن دفتر</b>. کسی پیش از جست‌وجو زحمت کشیده بود. در این حرفه این الگو همه‌جا تکرار می‌شود — کاری که یک بار پیشاپیش انجام می‌شود تا هزاران کارِ بعدی ارزان شود.</p>
+<p class="c8">همین‌جاست که آن واژه معنا پیدا می‌کند: <b>الگوریتم</b>. یعنی روشِ مشخصِ انجام یک کار، در گام‌های معلوم و متناهی. و این واژه از نام محمد بن موسی خوارزمی آمده — همان‌طور که «جبر» از نام کتابش. در بخش ۱۴ منبعش را گذاشته‌ام.</p>
+</section>
+<section class="c50" id="s10">
+<div class="c7w">
+<p class="c7v">۱۰ — پیک</p>
+<h2 class="c10">چیزی که خودش را صدا می‌زند</h2>
+<p class="c3x">این بخش را می‌شود رد کرد. ولی اگر بفهمی‌اش، یکی از زیباترین ایده‌های این حرفه را فهمیده‌ای.</p>
+<p class="c8">فرض کن از پیکی می‌پرسی «کاروان چند منزل تا شهر مانده؟» و او نمی‌داند. ولی کار عجیبی می‌کند: پیک دیگری را صدا می‌زند و <b>دقیقاً همان پرسش</b> را از او می‌پرسد — فقط برای یک منزل جلوتر. آن یکی هم اگر نداند، همین کار را می‌کند.</p>
+<p class="c8">تا جایی که پیکی برسد که جواب را می‌داند، چون خودش در شهر است. آن‌جا زنجیره می‌ایستد، جواب برمی‌گردد به پیک قبلی، او یکی به آن می‌افزاید و به قبلی‌اش می‌دهد — تا به تو برسد.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 235" role="img" aria-label="نمودار بازگشت: زنجیرهٔ پیک‌ها که پرسش را به پیک کوچک‌تر می‌سپارند و جواب از انتها بازمی‌گردد">
+<rect x="560" y="46" width="150" height="70" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="635.0" y="77.0" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">پیک ۱</text>
+<text x="635.0" y="97.0" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">نمی‌دانم</text>
+<rect x="400" y="54" width="130" height="60" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="465.0" y="80.0" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">پیک ۲</text>
+<text x="465.0" y="100.0" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">نمی‌دانم</text>
+<rect x="262" y="62" width="110" height="52" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="317.0" y="84.0" font-size="12.5" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">پیک ۳</text>
+<text x="317.0" y="104.0" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">نمی‌دانم</text>
+<rect x="140" y="70" width="104" height="46" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="192.0" y="89.0" font-size="12.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">پیک ۴</text>
+<text x="192.0" y="109.0" font-size="11.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">می‌دانم!</text>
+<line x1="556" y1="84" x2="536" y2="84" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="396" y1="84" x2="376" y2="84" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="258" y1="84" x2="248" y2="84" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<text x="620" y="28" font-size="11.5" fill="#666158" font-weight="600" text-anchor="middle" direction="rtl">پرسش به پایین می‌رود</text>
+<path d="M 192 164 L 192 196 L 635 196 L 635 150" fill="none" stroke="#2F5233" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M 635 144 L 630 156 L 640 156 Z" fill="#2F5233"/>
+<text x="403" y="216" font-size="12.5" fill="#2F5233" font-weight="700" text-anchor="middle" direction="rtl">و جواب، از همان راه، به بالا برمی‌گردد</text>
+</svg>
+<figcaption class="c6i">یک پرسش که خودش را به پایین می‌فرستد تا به پیکی برسد که جواب را می‌داند، و جوابی که از همان راه بالا می‌آید. بدون آن پیک آخر، زنجیره هیچ‌وقت نمی‌ایستد.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">اولین چیزی که ممکن است به ذهنت برسد این است که نکند این همان آسیابی باشد که نمی‌ایستد. نیست، و فرقش مهم است.</p>
+<p class="cb">آسیابِ نایستاده هیچ‌وقت کوچک‌تر نمی‌شود؛ همان کار را با همان حال تکرار می‌کند. این‌جا هر پیک پرسشی <b>کوچک‌تر</b> از خودش را می‌پرسد و زنجیره ناگزیر به جایی می‌رسد که دیگر کوچک‌شدنی نیست. دو شرطی که پایین‌تر آمده، دقیقاً همین را تضمین می‌کنند.</p>
+</div>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">و اینکه چه کسی یادش می‌ماند این همه پیکِ منتظر کجا بودند، جواب قشنگی دارد: خودِ دستگاه، در یک <b>طبق نان</b>.</p>
+<p class="cb">همان ظرفی که در بخش ۰۶ دیدی: آخرین چیزی که گذاشتی، اولین چیزی که برمی‌داری. هر بار که پیکی پیک دیگری را صدا می‌زند، خودش روی طبق گذاشته می‌شود و منتظر می‌ماند. وقتی جواب برگشت، از بالای طبق برداشته می‌شود و کارش را تمام می‌کند.</p>
+<p class="cb">پس آن ظرفِ به‌ظاهر ساده در بخش ۰۶ بی‌دلیل آن‌جا نبود؛ بازگشت بدون آن اصلاً کار نمی‌کند. و چون طبق بی‌انتها نیست، اگر زنجیره خیلی بلند شود طبق پر می‌شود و کار می‌خوابد.</p>
+</div>      <p class="c8">به این می‌گویند <b>بازگشت</b>: یک نسخه که در میانهٔ خودش، باز همان نسخه را صدا می‌زند. و دو شرط دارد که هر دو حیاتی‌اند:</p>
+<p class="c8"><b>یک: باید جایی باشد که دیگر خودش را صدا نزند.</b> همان پیکی که در شهر است. بی او، پیک‌ها تا ابد یکدیگر را صدا می‌زنند — همان آسیابی که نمی‌ایستد، با لباس دیگر.</p>
+<p class="c8"><b>دو: هر بار باید مسئله کوچک‌تر شود.</b> اگر هر پیک همان پرسش را برای همان منزل بپرسد، هیچ‌وقت به شهر نمی‌رسیم.</p>
+<p class="c8">چرا این‌قدر ارزشمند است؟ چون بعضی چیزها در دنیا <b>ذاتاً</b> همین شکل‌اند. شجره‌نامه: برای شمردن نوادگان یک نفر، باید نوادگان هر فرزندش را بشماری — همان مسئله، یک پله پایین‌تر. یا حکایتی که درونش حکایتی دیگر هست. وقتی مسئله این شکل باشد، هر راه دیگری از این پیچیده‌تر در می‌آید.</p>
+</div>
+</section>
+<section class="c8t" id="s11">
+<p class="c7v">۱۱ — موریانه</p>
+<h2 class="c10">خطا از کجا می‌آید و چرا همیشه هست</h2>
+<p class="c3x">ابوریحان، تو که با کاتبان کار کرده‌ای این را بهتر از هر کسی می‌دانی: در هر رونویسی، خطا راه پیدا می‌کند. و خطای یک کاتب، در همهٔ نسخه‌هایی که از روی کار او نوشته می‌شوند تکرار می‌شود.</p>
+<p class="c8">در این حرفه هم دقیقاً همین است، با یک تفاوت تلخ: چون ماشین نمی‌فهمد، <b>خطا را نمی‌بیند</b>. کاتبِ باهوش گاهی می‌گوید «این جمله بی‌معناست، حتماً بد خوانده‌ام». ماشین هرگز این را نمی‌گوید.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 170" role="img" aria-label="نمودار تکثیر خطا: یک حرف غلط در نسخهٔ اصلی که در رونویس‌های پیاپی تکرار می‌شود">
+<rect x="540" y="30" width="160" height="60" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="620" y="56" font-size="12.5" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">نسخهٔ اصلی</text>
+<text x="620" y="76" font-size="11.5" fill="#B4530E" font-weight="700" text-anchor="middle" direction="rtl">یک حرف غلط</text>
+<line x1="536" y1="60" x2="476" y2="60" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="316" y="18" width="160" height="32" rx="8" fill="#FFFFFF" stroke="#B4530E" stroke-width="1.5"/>
+<text x="396" y="39" font-size="12" fill="#B4530E" font-weight="600" text-anchor="middle" direction="rtl">رونویس ۱</text>
+<line x1="312" y1="34" x2="252" y2="34" stroke="#B4530E" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="316" y="60" width="160" height="32" rx="8" fill="#FFFFFF" stroke="#B4530E" stroke-width="1.5"/>
+<text x="396" y="81" font-size="12" fill="#B4530E" font-weight="600" text-anchor="middle" direction="rtl">رونویس ۲</text>
+<line x1="312" y1="76" x2="252" y2="76" stroke="#B4530E" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="316" y="102" width="160" height="32" rx="8" fill="#FFFFFF" stroke="#B4530E" stroke-width="1.5"/>
+<text x="396" y="123" font-size="12" fill="#B4530E" font-weight="600" text-anchor="middle" direction="rtl">رونویس ۳</text>
+<line x1="312" y1="118" x2="252" y2="118" stroke="#B4530E" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="92" y="10" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#B4530E" stroke-width="1"/>
+<text x="126" y="28" font-size="10" fill="#B4530E" font-weight="500" text-anchor="middle" direction="rtl">رونویس</text>
+<rect x="168" y="10" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#B4530E" stroke-width="1"/>
+<text x="202" y="28" font-size="10" fill="#B4530E" font-weight="500" text-anchor="middle" direction="rtl">رونویس</text>
+<rect x="92" y="46" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#B4530E" stroke-width="1"/>
+<text x="126" y="64" font-size="10" fill="#B4530E" font-weight="500" text-anchor="middle" direction="rtl">رونویس</text>
+<rect x="168" y="46" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#B4530E" stroke-width="1"/>
+<text x="202" y="64" font-size="10" fill="#B4530E" font-weight="500" text-anchor="middle" direction="rtl">رونویس</text>
+<rect x="92" y="82" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#B4530E" stroke-width="1"/>
+<text x="126" y="100" font-size="10" fill="#B4530E" font-weight="500" text-anchor="middle" direction="rtl">رونویس</text>
+<rect x="168" y="82" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#B4530E" stroke-width="1"/>
+<text x="202" y="100" font-size="10" fill="#B4530E" font-weight="500" text-anchor="middle" direction="rtl">رونویس</text>
+<text x="360" y="152" font-size="12" fill="#16181C" font-weight="600" text-anchor="middle" direction="rtl">یک خطا در آغاز، در هر رونویسیِ بعدی تکثیر می‌شود — و هر چه دیرتر پیدا شود، گران‌تر است.</text>
+</svg>
+<figcaption class="c6i">خطا کپی می‌شود. در نوشتن برنامه هم هر اشتباه در جایی که بقیه به آن تکیه کرده‌اند، در همهٔ آن جاها ظاهر می‌شود.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">اگر دستگاه خطا را نمی‌بیند، پس چطور کسی پیدایش می‌کند؟ با دو کار ساده که هر دو را می‌شود از همین امروز انجام داد.</p>
+<p class="cb"><b>یک: آزمودن.</b> ورودی‌ای می‌دهی که جوابش را از قبل می‌دانی و خروجی را با آن می‌سنجی. اگر بدانی برای پنج کیسه باید «۵» بنویسد و ننوشت، خطایی هست. این ساده‌ترین و قوی‌ترین ابزار این حرفه است.</p>
+<p class="cb"><b>دو: نگاه‌کردن به درون.</b> در هر گام محتوای کوزه‌ها را می‌نویسی و می‌بینی از کجا به بعد عدد عوض شد. ماشین بخش ۰۸ دقیقاً همین کار را می‌کند — به همین دلیل ساخته شده.</p>
+</div>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">و اینکه چرا اصلاً خطا هست، وقتی خودمان فرمان‌ها را می‌نویسیم: چون فاصله‌ای هست میان آنچه در ذهن داشتی و آنچه روی کاغذ آمد.</p>
+<p class="cb">ذهن تو جاهای خالی را بی‌اختیار پر می‌کند (همان بخش ۰۱)، پس وقتی فرمان خودت را می‌خوانی، همان چیزی را می‌بینی که <i>قصد</i> داشتی بنویسی، نه آنچه واقعاً نوشته‌ای. به همین دلیل خطای خودت را سخت‌تر از خطای دیگران می‌بینی.</p>
+<p class="cb">به این اضافه کن که برنامه‌های واقعی از آنچه در یک ذهن جا می‌شود بزرگ‌ترند. هیچ‌کس همهٔ یک برنامهٔ بزرگ را در سر ندارد؛ همه فقط تکه‌ای را می‌بینند. خطا در درزِ میان تکه‌ها زاده می‌شود.</p>
+</div>      <p class="c8">سه نوع خطا هست و فرقشان مهم است:</p>
+<p class="c8"><b>خطای بی‌معنا نوشتن.</b> جمله‌ای می‌نویسی که اصلاً فرمان نیست. ماشین همان اول می‌ایستد و می‌گوید نمی‌فهمم. این بهترین نوع خطاست، چون فوراً خودش را نشان می‌دهد.</p>
+<p class="c8"><b>خطای کار نشدنی.</b> فرمان درست است ولی در عمل نمی‌شود انجامش داد: می‌گویی از کوزه‌ای بردار که اصلاً نساخته‌ای. ماشین وسط کار می‌ایستد. این هم بد نیست — دست‌کم می‌دانی کجا.</p>
+<p class="c8"><b>و خطای سوم، که کابوس است: فرمانِ درستِ غلط.</b> همه‌چیز بی‌عیب اجرا می‌شود، جوابی هم بیرون می‌آید، و آن جواب غلط است. چون گفته بودی «از کوزهٔ جو بردار» در حالی که منظورت گندم بود. ماشین هیچ راهی ندارد که بفهمد. هر کاری که این حرفه برای آزمودن و بررسی انجام می‌دهد، برای شکار همین نوع سوم است.</p>
+<div style="background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 22px 24px;border-inline-start: 4px solid #6B4226">
+<p style="font-size: 15.5px;line-height: 2.05;color: #16181C;margin: 0">و یک نکتهٔ انسانی: وقتی برنامه‌ات کار نمی‌کند، اولین حدست این است که ماشین اشتباه کرده. تقریباً همیشه اشتباه نکرده. <b>او فقط دقیقاً همان کاری را کرده که نوشته‌ای</b> — و مسئله این است که آنچه نوشته‌ای با آنچه در ذهن داشتی یکی نبوده.</p>
+</div>
+</section>
+<section class="c50" id="s12">
+<div class="c7w">
+<p class="c7v">۱۲ — نقشه</p>
+<h2 class="c10">مهم‌ترین ایدهٔ این نامه</h2>
+<p class="c3x">تو نقشه کشیده‌ای و می‌دانی نقشه چیست: <b>شهر نیست.</b> نقشه عمداً ناقص است. درخت‌ها نیستند، آدم‌ها نیستند، رنگ درها نیست. و دقیقاً به‌خاطر همین ناقص بودن، به درد می‌خورد.</p>
+<p class="c8">اگر نقشه‌ای می‌کشیدی که همه‌چیزِ شهر را داشت، به اندازهٔ خودِ شهر می‌شد و هیچ فایده‌ای نداشت.</p>      <figure class="c6h">
+<svg class="c67" viewBox="0 0 720 300" role="img" aria-label="نمودار پلکان انتزاع: شهر، نقشه، نشانه روی نقشهٔ ولایت، و نام شهر در یک نامه">
+<rect x="60.0" y="12" width="600" height="46" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="360" y="34" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">شهر</text>
+<text x="360" y="51" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">کوچه، خانه، آدم‌ها، همه‌چیز</text>
+<line x1="360" y1="58" x2="360" y2="72" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="120.0" y="74" width="480" height="46" rx="10" fill="#FFFFFF" stroke="#E4E1D6" stroke-width="1.5"/>
+<text x="360" y="96" font-size="13" fill="#16181C" font-weight="700" text-anchor="middle" direction="rtl">نقشه</text>
+<text x="360" y="113" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">فقط خیابان‌ها و میدان‌ها</text>
+<line x1="360" y1="120" x2="360" y2="134" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="180.0" y="136" width="360" height="46" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="360" y="158" font-size="13" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">نشانهٔ شهر روی نقشهٔ ولایت</text>
+<text x="360" y="175" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">یک دایره</text>
+<line x1="360" y1="182" x2="360" y2="196" stroke="#6B4226" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="240.0" y="198" width="240" height="46" rx="10" fill="#F3E8DE" stroke="#6B4226" stroke-width="1.5"/>
+<text x="360" y="220" font-size="13" fill="#6B4226" font-weight="700" text-anchor="middle" direction="rtl">نامِ شهر در نامه</text>
+<text x="360" y="237" font-size="11.5" fill="#666158" font-weight="500" text-anchor="middle" direction="rtl">یک واژه</text>
+<text x="360" y="282" font-size="12" fill="#16181C" font-weight="600" text-anchor="middle" direction="rtl">هر پله چیزی را دور می‌ریزد — و همین دورریختن است که فکر کردن را ممکن می‌کند.</text>
+</svg>
+<figcaption class="c6i">چهار پله از شهر تا یک واژه. در هر پله چیزهایی دور ریخته می‌شود و توان فکر کردن دربارهٔ چیزهای بزرگ‌تر به دست می‌آید.</figcaption>
+</figure>      <div class="c5u">
+<div class="c5v">کمی بیشتر</div>
+<p class="cb">اگر هر پله روی پلهٔ زیرینش سوار است، طبیعی است بپرسی ته این پلکان چیست. ته‌اش همان کلیدهای ریزِ باز و بسته است (بخش ۰۷) و بس.</p>
+<p class="cb">نکتهٔ مهم این است که امروز تقریباً هیچ‌کس آن‌جا کار نمی‌کند. کسانی هفتاد سال پیش آن پله را به نقشه تبدیل کردند و نامی رویش گذاشتند، و از آن به بعد همه از روی نقشه کار کرده‌اند.</p>
+<p class="cb">سود عملی‌اش این است: می‌توانی چیزی را به کار ببری بدون اینکه درونش را بفهمی. تو هم سوار اسب می‌شوی بدون اینکه بدانی ماهیچه‌اش چطور کار می‌کند. همین است که یک نفر می‌تواند چیزی بسازد که ساختنش از صفر، عمر صد نفر را می‌گرفت.</p>
+</div>      <p class="c8">کل این حرفه روی همین یک ایده بنا شده. وقتی نسخهٔ «نان» را ساختیم (بخش ۰۵)، کاری که کردیم این بود: جزئیات خمیر و تنور را <b>دور ریختیم</b> و به‌جایش یک نام گذاشتیم. از آن لحظه می‌توانستیم به نان فکر کنیم بدون فکر کردن به خمیر.</p>
+<p class="c8">و این پله‌ها روی هم سوار می‌شوند. کسی نسخهٔ «نان» را نوشت. کس دیگری با آن نسخهٔ «سفرهٔ مهمانی» را نوشت و دیگر به تنور فکر نکرد. سومی با آن «جشن عروسی» را نوشت و دیگر به سفره فکر نکرد.</p>
+<p class="c8">ماشینی که امروز از آن حرف می‌زنم، همین است: <b>پلکانی از نقشه‌ها روی نقشه‌ها</b>. در پایین‌ترین پله فقط چراغ‌های روشن و خاموش‌اند (بخش ۰۷). هیچ‌کس دیگر آن‌جا کار نمی‌کند، چون کسی پیش از ما آن پله را به نقشه تبدیل کرد و نامی رویش گذاشت.</p>
+<p class="c8">پس اگر بپرسی «برنامه‌نویس چه کار می‌کند؟»، صادقانه‌ترین جواب این است: <b>پله‌های تازه می‌سازد.</b> چیزهای پیچیده را می‌گیرد، جزئیاتی را که دیگر لازم نیست دور می‌ریزد، به باقی‌مانده نامی می‌دهد، و آن را به نفر بعدی می‌سپارد تا او از این پله بالاتر برود.</p>
+<p class="c8">و این — ابوریحان — دقیقاً همان کاری است که تو با «التفهیم» کردی.</p>
+</div>
+</section>
+<section class="c8t" id="s13">
+<p class="c7v">۱۳ — ترجمه</p>
+<h2 class="c10">حالا برگردیم به امروز</h2>
+<p class="c3x">تا این‌جا یک واژهٔ تخصصی هم به کار نبردم. ولی اگر بخواهی در این دنیا کار کنی، باید نام امروزی هر کدام را بدانی — وگرنه با هیچ‌کس نمی‌توانی حرف بزنی.</p>
+<p style="font-size: 13.5px;line-height: 1.95;color: #666158;max-width: 68ch;margin: 0 0 20px">این جدول همان نامه است، فقط با نام‌های امروزی. ستون انگلیسی را جدا گذاشته‌ام تا وقت خواندن متن فارسی به چشم نیاید.</p>
+<div class="c35">        <div class="c4a">
+<div class="ck">
+<span class="c1w">کوزهٔ برچسب‌دار</span>
+<span class="cw">←</span>
+<span class="c1q">متغیر</span>
+<a class="c1m" href="#s2">بخش مربوط ←</a>
+</div>
+<p class="c1x">variable</p>
+<p class="c0">نامی که به جایی از حافظه داده می‌شود و محتوایش عوض می‌شود.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">گذاشتن در کوزه</span>
+<span class="cw">←</span>
+<span class="c1q">انتساب</span>
+<a class="c1m" href="#s2">بخش مربوط ←</a>
+</div>
+<p class="c1x">assignment</p>
+<p class="c0">فرمانِ «این مقدار را آن‌جا بگذار» — نه خبرِ «این برابر آن است».</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">دوراهی</span>
+<span class="cw">←</span>
+<span class="c1q">شرط</span>
+<a class="c1m" href="#s3">بخش مربوط ←</a>
+</div>
+<p class="c1x">conditional · if / else</p>
+<p class="c0">دو شاخه، بر اساس چیزی که یا درست است یا غلط.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">و، یا، نه</span>
+<span class="cw">←</span>
+<span class="c1q">منطق بولی</span>
+<a class="c1m" href="#s3">بخش مربوط ←</a>
+</div>
+<p class="c1x">boolean logic · AND / OR / NOT</p>
+<p class="c0">سه عملگری که هر شرط پیچیده‌ای از آن‌ها ساخته می‌شود.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">آسیاب</span>
+<span class="cw">←</span>
+<span class="c1q">حلقه</span>
+<a class="c1m" href="#s4">بخش مربوط ←</a>
+</div>
+<p class="c1x">loop · while</p>
+<p class="c0">تکرار یک کار تا وقتی شرطی برقرار است.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">آسیابی که نمی‌ایستد</span>
+<span class="cw">←</span>
+<span class="c1q">حلقهٔ بی‌پایان</span>
+<a class="c1m" href="#s4">بخش مربوط ←</a>
+</div>
+<p class="c1x">infinite loop</p>
+<p class="c0">شرط پایان هیچ‌وقت برقرار نمی‌شود و برنامه تا ابد می‌چرخد.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">نسخه</span>
+<span class="cw">←</span>
+<span class="c1q">تابع</span>
+<a class="c1m" href="#s5">بخش مربوط ←</a>
+</div>
+<p class="c1x">function</p>
+<p class="c0">دسته‌ای از فرمان‌ها که نام دارد، ورودی می‌گیرد و خروجی می‌دهد.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">آنچه به نسخه می‌دهی</span>
+<span class="cw">←</span>
+<span class="c1q">آرگومان و پارامتر</span>
+<a class="c1m" href="#s5">بخش مربوط ←</a>
+</div>
+<p class="c1x">argument · parameter</p>
+<p class="c0">مقدارهایی که هنگام صدا زدن به تابع می‌دهی.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">قفسهٔ شماره‌دار</span>
+<span class="cw">←</span>
+<span class="c1q">حافظه و نشانی</span>
+<a class="c1m" href="#s6">بخش مربوط ←</a>
+</div>
+<p class="c1x">memory · address</p>
+<p class="c0">جایی که مقدارها واقعاً می‌نشینند؛ ماشین فقط شماره را می‌شناسد.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">نخ مهره</span>
+<span class="cw">←</span>
+<span class="c1q">فهرست یا آرایه</span>
+<a class="c1m" href="#s6">بخش مربوط ←</a>
+</div>
+<p class="c1x">list · array</p>
+<p class="c0">چند چیز به ترتیب، با جایگاه شماره‌دار.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">دفتر نام و نشان</span>
+<span class="cw">←</span>
+<span class="c1q">نگاشت یا دیکشنری</span>
+<a class="c1m" href="#s6">بخش مربوط ←</a>
+</div>
+<p class="c1x">map · dictionary · hash table</p>
+<p class="c0">در برابر هر کلید، یک مقدار؛ پیدا کردن با کلید، فوری.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">صف نانوایی</span>
+<span class="cw">←</span>
+<span class="c1q">صف</span>
+<a class="c1m" href="#s6">بخش مربوط ←</a>
+</div>
+<p class="c1x">queue</p>
+<p class="c0">هر که زودتر آمد، زودتر می‌رود. اول‌آمده، اول‌رفته.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">طبق نان</span>
+<span class="cw">←</span>
+<span class="c1q">پشته</span>
+<a class="c1m" href="#s6">بخش مربوط ←</a>
+</div>
+<p class="c1x">stack</p>
+<p class="c0">آخرین چیزی که گذاشتی، اولین چیزی که برمی‌داری.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">شجره‌نامه</span>
+<span class="cw">←</span>
+<span class="c1q">درخت</span>
+<a class="c1m" href="#s6">بخش مربوط ←</a>
+</div>
+<p class="c1x">tree</p>
+<p class="c0">ساختاری که هر گره یک والد و چند فرزند دارد.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">رو و زیرِ نخ</span>
+<span class="cw">←</span>
+<span class="c1q">دودویی</span>
+<a class="c1m" href="#s7">بخش مربوط ←</a>
+</div>
+<p class="c1x">binary · bit</p>
+<p class="c0">چیزی که فقط دو حالت دارد؛ پایهٔ همهٔ داده‌ها.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">دفتر فرمان‌ها</span>
+<span class="cw">←</span>
+<span class="c1q">برنامه</span>
+<a class="c1m" href="#s8">بخش مربوط ←</a>
+</div>
+<p class="c1x">program · code</p>
+<p class="c0">فهرست فرمان‌ها، به ترتیبی که اجرا می‌شوند.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">یکی‌یکی گشتن</span>
+<span class="cw">←</span>
+<span class="c1q">جست‌وجوی خطی</span>
+<a class="c1m" href="#s9">بخش مربوط ←</a>
+</div>
+<p class="c1x">linear search</p>
+<p class="c0">از اول تا آخر گشتن؛ برای n چیز تا n گام.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">باز کردن دفتر از وسط</span>
+<span class="cw">←</span>
+<span class="c1q">جست‌وجوی دودویی</span>
+<a class="c1m" href="#s9">بخش مربوط ←</a>
+</div>
+<p class="c1x">binary search</p>
+<p class="c0">هر بار نصف‌کردن فضای جست‌وجو؛ برای n چیز حدود log n گام.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">شمردن گام‌ها</span>
+<span class="cw">←</span>
+<span class="c1q">پیچیدگی زمانی</span>
+<a class="c1m" href="#s9">بخش مربوط ←</a>
+</div>
+<p class="c1x">time complexity · big-O</p>
+<p class="c0">اینکه شمار گام‌ها با بزرگ‌شدن مسئله چطور رشد می‌کند.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">روشِ مشخصِ کار</span>
+<span class="cw">←</span>
+<span class="c1q">الگوریتم</span>
+<a class="c1m" href="#s9">بخش مربوط ←</a>
+</div>
+<p class="c1x">algorithm</p>
+<p class="c0">دنبالهٔ متناهی و معلومی از گام‌ها که مسئله‌ای را حل می‌کند.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">پیکی که پیک می‌فرستد</span>
+<span class="cw">←</span>
+<span class="c1q">بازگشت</span>
+<a class="c1m" href="#s10">بخش مربوط ←</a>
+</div>
+<p class="c1x">recursion</p>
+<p class="c0">نسخه‌ای که در میان خودش، خودش را صدا می‌زند.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">پیکی که در شهر است</span>
+<span class="cw">←</span>
+<span class="c1q">حالت پایه</span>
+<a class="c1m" href="#s10">بخش مربوط ←</a>
+</div>
+<p class="c1x">base case</p>
+<p class="c0">جایی که بازگشت می‌ایستد؛ بدون آن، پایانی نیست.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">خطای کاتب</span>
+<span class="cw">←</span>
+<span class="c1q">اشکال</span>
+<a class="c1m" href="#s11">بخش مربوط ←</a>
+</div>
+<p class="c1x">bug</p>
+<p class="c0">تفاوت میان آنچه نوشته‌ای و آنچه در ذهن داشتی.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">گشتن دنبال موریانه</span>
+<span class="cw">←</span>
+<span class="c1q">اشکال‌زدایی</span>
+<a class="c1m" href="#s11">بخش مربوط ←</a>
+</div>
+<p class="c1x">debugging</p>
+<p class="c0">پیدا کردن جایی که فرمان با نیت نمی‌خواند.</p>
+</div>        <div class="c4a">
+<div class="ck">
+<span class="c1w">نقشه به‌جای شهر</span>
+<span class="cw">←</span>
+<span class="c1q">انتزاع</span>
+<a class="c1m" href="#s12">بخش مربوط ←</a>
+</div>
+<p class="c1x">abstraction</p>
+<p class="c0">دور ریختن عمدی جزئیات و نام گذاشتن بر باقی‌مانده.</p>
+</div>      </div>
+<p class="c8">بیست‌وپنج واژه. اگر این‌ها را بفهمی — نه حفظ کنی، بفهمی — هر کتاب مقدماتی برنامه‌نویسی در هر زبانی برایت خواندنی می‌شود. چون آن کتاب‌ها هم چیزی جز همین‌ها ندارند؛ فقط با املای دیگری.</p>
+<div style="background: #FAFAF7;border: 1px solid #E4E1D6;border-radius: 14px;padding: 24px 26px;margin-top: 10px">
+<h3 class="c5b">و یک چیز که از قلم افتاد</h3>
+<p class="c5m">زبان‌های برنامه‌نویسی — پایتون، جاوااسکریپت، سی — در این نامه اصلاً نیامدند، چون مهم نیستند. آن‌ها فقط <b>املاهای متفاوتِ همین بیست‌وپنج چیز</b>اند. کسی که این بیست‌وپنج را فهمیده، زبان تازه را در یک هفته یاد می‌گیرد؛ کسی که فقط املای یک زبان را حفظ کرده، در زبان دوم هم از صفر شروع می‌کند.</p>
+</div>
+<div class="c12c">
+<h3 class="c5b">و یک چیز که هیچ‌جای این نامه گفته نشد</h3>
+<p class="cre">تا این‌جا از «نوشتن فرمان» حرف زدیم، ولی نگفتیم آن فرمان‌ها <b>چطور</b> به دستگاه می‌رسند. ماجرا کمتر از چیزی که به نظر می‌رسد جادویی است و سه گام دارد.</p>
+<p class="cre"><b>یک:</b> تو فرمان‌ها را به‌صورت متن ساده در یک پرونده می‌نویسی — دقیقاً مثل نوشتن یک نامه، فقط با قاعده‌های سخت‌گیرانه‌تر دربارهٔ اینکه هر چیز را چطور باید نوشت. همان قاعده‌ها را «زبان برنامه‌نویسی» می‌نامند.</p>
+<p class="cre"><b>دو:</b> برنامهٔ دیگری — که کس دیگری سال‌ها پیش نوشته — نوشتهٔ تو را می‌خواند و به فرمان‌هایی ترجمه می‌کند که دستگاه می‌فهمد، یعنی همان باز و بستهٔ کلیدها. اگر چیزی را غلط نوشته باشی، همین‌جا سرت داد می‌زند و جلوتر نمی‌رود.</p>
+<p class="cre"><b>سه:</b> دستگاه آن فرمان‌ها را یکی‌یکی اجرا می‌کند، و آنچه قرار بوده بنویسد روی صفحه ظاهر می‌شود یا در پرونده‌ای ذخیره می‌شود. به این کار می‌گویند «اجرا کردن» برنامه.</p>
+<p class="c5m">و زبان‌ها به این دلیل زیادند که هر کدام چیزی را فدای چیز دیگری کرده‌اند: یکی نوشتنش آسان‌تر است، یکی تندتر اجرا می‌شود، یکی جلوی اشتباه‌های بیشتری را می‌گیرد. اگر می‌پرسی کدام را اول برداری، برای مسیری که در این سایت هست پایتون نقطهٔ شروع خوبی است — <a class="crf" href="ai-engineer.html">مسیر مهندس هوش مصنوعی</a> از همان‌جا شروع می‌شود و اولین پروژه‌اش هم همین است.</p>
+</div>
+</section>
+<section class="cvm" id="s14">
+<div class="c7w">
+<p class="c7v">۱۴ — روش و منابع</p>
+<h2 class="c10">کجا واقعیت است و کجا قالب</h2>
+<p class="c3x">این نوشته یک قالب ادبی دارد و قالب می‌تواند گمراه کند. پس مرزها را صریح می‌نویسم.</p>
+<div class="cvn">        <div class="c28">
+<h3 class="c5b">چه چیزی واقعی است</h3>
+<p class="c0">ابوریحان بیرونی در ۴ سپتامبر ۹۷۳ در کاث خوارزم به دنیا آمد و در ۹ دسامبر ۱۰۴۸ در غزنه درگذشت. «التفهیم» را به فارسی و عربی نوشت و از هندسه و حساب آغاز می‌کند و به نجوم و گاه‌شماری و کاربرد اسطرلاب می‌رسد. «آثار الباقیه» را حدود سال ۱۰۰۰ نوشت.</p>
+</div>        <div class="c28">
+<h3 class="c5b">چه چیزی ساختگی است</h3>
+<p class="c0">خودِ نامه. هیچ‌کس چنین نامه‌ای ننوشت و ابوریحان هیچ‌وقت چیزی دربارهٔ برنامه‌نویسی نخواند. این یک <b>قالب</b> است برای اجبار خودم: اگر مخاطب هیچ واژهٔ تازه‌ای نمی‌داند، باید هر مفهوم را تا ته باز کنم. هر جا به او نسبتی داده‌ام («تو که نقشه کشیده‌ای»)، خطاب ادبی است نه ادعای تاریخی.</p>
+</div>        <div class="c28">
+<h3 class="c5b">چرا خوارزمی</h3>
+<p class="c0">واژهٔ «الگوریتم» از نام محمد بن موسی خوارزمی (حدود ۷۸۰ تا ۸۵۰) آمده است. رسالهٔ او دربارهٔ حساب هندی در لاتین با عنوان «Algoritmi de numero Indorum» ترجمه شد؛ «Algoritmi» صورت لاتینِ نام اوست. این واژه در لاتینِ سده‌های میانه به معنی «دستگاه شمار دهدهی» بود و معنای امروزی‌اش را در اواخر سدهٔ نوزدهم گرفت. خوارزمی هم مانند بیرونی اهل خوارزم بود.</p>
+</div>        <div class="c28">
+<h3 class="c5b">تمثیل‌ها از کجا آمده‌اند</h3>
+<p class="c0">کوزه، آسیاب، نسخه، دفتر و صف تمثیل‌های رایجی‌اند و ادعای ابداعشان را ندارم. چیزی که این‌جا کوشیده‌ام این است که همه‌شان را در <b>یک</b> دنیا نگه دارم — دنیای یک شهر ایرانی هزار سال پیش — تا تمثیل‌ها به هم وصل شوند و هر کدام جداگانه معلق نمانند.</p>
+</div>        <div class="c28">
+<h3 class="c5b">چه چیزی عمداً ساده شده</h3>
+<p class="c0">در بخش ۰۶ گفتم ماشین «فقط شمارهٔ قفسه را می‌فهمد»؛ در واقعیت چند لایهٔ ترجمه در میان است. در بخش ۰۹ عدد ده را برای هزار نام گفتم؛ دقیقش کمی کمتر است. این ساده‌سازی‌ها جهت درست دارند و وقتی عمیق‌تر بخوانی، چیزی را باید <b>اضافه</b> کنی، نه اینکه چیزی را پس بگیری.</p>
+</div>        <div class="c28">
+<h3 class="c5b">چه چیزی این‌جا نیست</h3>
+<p class="c0">شیءگرایی، همروندی، شبکه، پایگاه داده و هر چیزی که یک پله بالاتر از مقدمات است. این نامه فقط آن بیست‌وپنج واژه را پوشش می‌دهد — ولی آن بیست‌وپنج‌تا، پایهٔ هر چیز دیگری‌اند.</p>
+</div>      </div>
+<h3 class="cvo">منابع</h3>
+<p class="coe">چهار منبع، فقط برای ادعاهای تاریخی. مفهوم‌های برنامه‌نویسی در این نامه منبع ندارند چون دانش پایه‌اند و در هر کتاب مقدماتی هست.</p>
+<div class="c35">        <div class="c2g">
+<div class="ck">
+<span class="crg">۰۱</span>
+<h4 class="c3m">ابوریحان بیرونی</h4>
+</div>
+<p class="c8v">Al-Biruni — biography, al-Tafhim, Chronology of Ancient Nations</p>
+<p class="c8w">تاریخ تولد و وفات، و فهرست آثار. برای جزئیات دقیق‌تر باید به ویرایش‌های پژوهشی خود متن‌ها رجوع کرد.</p>
+<p class="cy"><a class="crh" href="https://en.wikipedia.org/wiki/Al-Biruni" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Al-Biruni ↗</a></p>
+</div>        <div class="c2g">
+<div class="ck">
+<span class="crg">۰۲</span>
+<h4 class="c3m">گاه‌شماری ملل، پروژهٔ دانشگاه لندن</h4>
+</div>
+<p class="c8v">UCL — Al-Biruni's Chronology of the Ancient Nations</p>
+<p class="c8w">دربارهٔ «آثار الباقیه» و اینکه هدفش سنجیدن دقیق فاصلهٔ دوره‌های تاریخی بود.</p>
+<p class="cy"><a class="crh" href="https://www.ucl.ac.uk/hebrew-jewish/research/research-pro/calendars-antiquity-middle-ages/al-biruni" target="_blank" rel="noopener">https://www.ucl.ac.uk/hebrew-jewish/research/research-pro/calendars-antiquity-middle-ages/al-biruni ↗</a></p>
+</div>        <div class="c2g">
+<div class="ck">
+<span class="crg">۰۳</span>
+<h4 class="c3m">ریشهٔ واژهٔ الگوریتم</h4>
+</div>
+<p class="c8v">Algorism — etymology from al-Khwārizmī</p>
+<p class="c8w">زنجیرهٔ نام خوارزمی تا واژهٔ امروزی، و اینکه معنای امروزی‌اش چقدر تازه است.</p>
+<p class="cy"><a class="crh" href="https://en.wikipedia.org/wiki/Algorism" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Algorism ↗</a></p>
+</div>        <div class="c2g">
+<div class="ck">
+<span class="crg">۰۴</span>
+<h4 class="c3m">دانش بیرونی — مرور پژوهشی</h4>
+</div>
+<p class="c8v">The Science of al-Biruni (arXiv 1312.7288)</p>
+<p class="c8w">مروری بر کارهای نجومی و ریاضی او، از جمله اسطرلاب.</p>
+<p class="cy"><a class="crh" href="https://arxiv.org/pdf/1312.7288" target="_blank" rel="noopener">https://arxiv.org/pdf/1312.7288 ↗</a></p>
+</div>      </div>
+<p class="c12d">و یک حرف آخر. نوشتن این متن یک چیز را به خودم ثابت کرد: هر جا نتوانستم مفهومی را با ابزار هزار سال پیش توضیح بدهم، مشکل از مخاطب فرضی نبود — از این بود که خودم آن را خوب نفهمیده بودم. این بهترین محکی است که برای فهمیدن می‌شناسم.</p>
+<div style="background: #EDF1E2;border-inline-start: 4px solid #5B6E2F;border-radius: 14px;padding: 22px 24px;margin: 0 0 22px;max-width: 72ch">
+<div style="font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #5B6E2F;margin-bottom: 11px">اگر این قالب به دلت ننشست</div>
+<p style="font-size: 15px;line-height: 2.1;color: #45494F;margin: 0 0 14px">همهٔ این حرف‌ها را یک بار دیگر هم نوشته‌ام، این بار بدون کوزه و آسیاب و بدون ابوریحان — با زبانِ همین امروز و مثالِ گوشی و آسانسور و سبد خرید. کوتاه‌تر است، ساده‌تر است، و برای کسی نوشته شده که می‌خواهد در بیست دقیقه ته قضیه را بفهمد.</p>
+<a href="plain.html" style="display: inline-block;font-size: 14px;font-weight: 700;color: #FFFFFF;background: #5B6E2F;padding: 12px 22px;border-radius: 10px">همین را به زبان ساده بخوان ←</a>
+</div>
+<div class="c7x">
+<a class="c12e" href="math.html">نامهٔ دوم: ریاضیات هوش مصنوعی ←</a>
+<a class="c39" href="glossary.html">واژه‌نامهٔ یادگیری ماشین ←</a>
+<a class="c39" href="ai-engineer.html">قدم بعدی: مسیر مهندس هوش مصنوعی ←</a>
+<a class="c39" href="chess.html">شطرنج و یادگیری ماشین ←</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="c1t">
+<div class="cca">
+<a class="c2f" href="./#writing">← بازگشت به نوشته‌ها</a>
+<span class="ch">رضا هاشمی · نامه‌ای به ابوریحان</span>
+</div>
+</footer>
+</div>
+</div>
+<script src="assets/dc.js" defer></script>
+<script src="assets/logic.js" defer></script>
+</body>
+</html>

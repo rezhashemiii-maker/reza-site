@@ -1,9 +1,4 @@
-.le.le{display: grid;grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));gap: 20px}
-.lf.lf{background: #FFFFFF;border: 1.5px solid #B4530E;border-radius: 16px;padding: 26px;display: flex;flex-direction: column}
-.lg.lg{display: inline-block;font-size: 11px;font-weight: 700;color: #B4530E;background: #F4E3D3;padding: 3px 10px;border-radius: 999px;margin-bottom: 14px;align-self: flex-start}
-.lh.lh{font-size: 16.5px;font-weight: 700;margin: 0 0 8px}
-.li.li{font-size: 13.5px;line-height: 1.9;color: #4A4F58;margin: 0 0 18px;flex: 1}
-.lj.lj{font-size: 13.5px;font-weight: 700;color: #B4530E}
+body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}

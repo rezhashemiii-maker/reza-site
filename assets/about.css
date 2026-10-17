@@ -1,6 +1,4 @@
-.i2.i2{font-size: 14px;line-height: 1.9;color: #4A4F58;margin: 0}
-.i3.i3{border-inline-start: 3px solid #2F5233;padding: 4px 16px}
-.i4.i4{font-size: 13px;line-height: 1.9;color: #4A4F58;margin: 0}
+body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}

@@ -19,16 +19,6 @@
   [id]{scroll-margin-top:78px}
   table{border-collapse:collapse}
   ::selection{background:#E7ECE4;color:#1F3A22}
-
-  @media (max-width:720px){
-    table.rt,.rt tbody,.rt tr,.rt td{display:block;width:100%;box-sizing:border-box}
-    table.rt{min-width:0 !important}
-    .rt thead{display:none}
-    .rt tr{padding:10px 0;border-bottom:1px solid #E4E1D6}
-    .rt tr:last-child{border-bottom:none}
-    .rt td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:none !important;padding:6px 14px !important}
-    .rt td::before{content:attr(data-label);flex:0 0 38%;font-size:12px;font-weight:700;color:#666158}
-  }
 </style>
 </helmet>
 
@@ -37,7 +27,7 @@
   <!-- ============ سربرگ ============ -->
   <header style="position: sticky; top: 0; z-index: 30; border-bottom: 1px solid #E4E1D6; background: rgba(245,243,238,0.93); backdrop-filter: blur(10px);">
     <div style="max-width: 1060px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
-      <a href="Writing.dc.html" style="font-size: 13.5px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <a href="Main.dc.html#writing" style="font-size: 13.5px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
       <nav style="display: flex; gap: 2px; margin-inline-start: auto; flex-wrap: wrap;">
         <a href="#s1" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۱ فکت‌ها</a>
         <a href="#s2" style="font-size: 12.5px; color: #45494F; padding: 6px 9px; border-radius: 999px;">۰۲ خط زمان</a>
@@ -480,7 +470,7 @@
         <p style="font-size: 15.5px; line-height: 1.95; color: #45494F; max-width: 68ch; margin: 0 0 26px;">من بستهٔ npm نمی‌نویسم. ولی هر شش قاعده ترجمه‌شدنی است — کافی است «بسته» را با «واحد کارِ من» عوض کنم. این جدول قرارِ من با خودم است.</p>
 
         <div style="background: #FFFFFF; border: 1px solid #D5DDD2; border-radius: 16px; overflow-x: auto;">
-          <table class="rt" style="width: 100%; min-width: 620px; font-size: 13.5px;">
+          <table style="width: 100%; min-width: 620px; font-size: 13.5px;">
             <thead>
               <tr style="background: #FAFAF7;">
                 <th style="text-align: start; padding: 14px 18px; font-size: 12px; font-weight: 700; color: #666158; border-bottom: 1px solid #E4E1D6;">قاعده</th>
@@ -490,34 +480,34 @@
             </thead>
             <tbody>
               <tr>
-                <td data-label="قاعده" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">واحد کوچک</td>
-                <td data-label="شکلش پیش او" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک بسته = یک کار</td>
-                <td data-label="شکلش پیش من" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک مدخل واژه‌نامه = یک مفهوم. یک ایده = یک مسئلهٔ واقعی. هیچ‌کدام به نوشتهٔ بعدی وابسته نیستند.</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">واحد کوچک</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک بسته = یک کار</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک مدخل واژه‌نامه = یک مفهوم. یک ایده = یک مسئلهٔ واقعی. هیچ‌کدام به نوشتهٔ بعدی وابسته نیستند.</td>
               </tr>
               <tr>
-                <td data-label="قاعده" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">مرتب‌کردن</td>
-                <td data-label="شکلش پیش او" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">فهرست <span style="direction: ltr; unicode-bidi: isolate;">awesome</span></td>
-                <td data-label="شکلش پیش من" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">واژه‌نامهٔ ۲۸۵ واژه و مسیر ۸ ایستگاهی. مرتب‌کردن چیزی که در فارسی آشفته است، خودش تولید است.</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">مرتب‌کردن</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">فهرست <span style="direction: ltr; unicode-bidi: isolate;">awesome</span></td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">واژه‌نامهٔ ۲۸۵ واژه و مسیر ۸ ایستگاهی. مرتب‌کردن چیزی که در فارسی آشفته است، خودش تولید است.</td>
               </tr>
               <tr>
-                <td data-label="قاعده" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">استخراج از کار واقعی</td>
-                <td data-label="شکلش پیش او" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">بسته‌ها از دل ۱۰ پروژه</td>
-                <td data-label="شکلش پیش من" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">سیستم‌هایی که برای کسب‌وکارهای واقعی می‌سازم؛ هر الگوی عمومی که در آن‌ها پیدا شود، نوشتهٔ بعدی است.</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">استخراج از کار واقعی</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">بسته‌ها از دل ۱۰ پروژه</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">سیستم‌هایی که برای کسب‌وکارهای واقعی می‌سازم؛ هر الگوی عمومی که در آن‌ها پیدا شود، نوشتهٔ بعدی است.</td>
               </tr>
               <tr>
-                <td data-label="قاعده" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">بستنِ ورودی</td>
-                <td data-label="شکلش پیش او" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">۳۱ دنبال‌شونده</td>
-                <td data-label="شکلش پیش من" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">خواندن از مقالهٔ اصلی، نه از خلاصه و وبلاگ. کمتر منبع، عمیق‌تر.</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">بستنِ ورودی</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">۳۱ دنبال‌شونده</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">خواندن از مقالهٔ اصلی، نه از خلاصه و وبلاگ. کمتر منبع، عمیق‌تر.</td>
               </tr>
               <tr>
-                <td data-label="قاعده" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">ماندن طولانی</td>
-                <td data-label="شکلش پیش او" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">۱۴ سال، یک حساب</td>
-                <td data-label="شکلش پیش من" style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک آدرس، فارسی، بدون مهاجرت به پلتفرم بعدی. هر نوشته همین‌جا می‌ماند.</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; font-weight: 700; line-height: 1.7;">ماندن طولانی</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">۱۴ سال، یک حساب</td>
+                <td style="padding: 15px 18px; border-bottom: 1px solid #F0EEE7; color: #45494F; line-height: 1.85;">یک آدرس، فارسی، بدون مهاجرت به پلتفرم بعدی. هر نوشته همین‌جا می‌ماند.</td>
               </tr>
               <tr>
-                <td data-label="قاعده" style="padding: 15px 18px; font-weight: 700; line-height: 1.7;">رایگان‌بودنِ ورودی</td>
-                <td data-label="شکلش پیش او" style="padding: 15px 18px; color: #45494F; line-height: 1.85;">کد رایگان، حمایت اختیاری</td>
-                <td data-label="شکلش پیش من" style="padding: 15px 18px; color: #45494F; line-height: 1.85;">همهٔ نوشته‌ها رایگان و بدون ثبت‌نام؛ درآمد از ساختن سیستم برای کسب‌وکارها، نه از فروش محتوا.</td>
+                <td style="padding: 15px 18px; font-weight: 700; line-height: 1.7;">رایگان‌بودنِ ورودی</td>
+                <td style="padding: 15px 18px; color: #45494F; line-height: 1.85;">کد رایگان، حمایت اختیاری</td>
+                <td style="padding: 15px 18px; color: #45494F; line-height: 1.85;">همهٔ نوشته‌ها رایگان و بدون ثبت‌نام؛ درآمد از ساختن سیستم برای کسب‌وکارها، نه از فروش محتوا.</td>
               </tr>
             </tbody>
           </table>
@@ -570,7 +560,7 @@
 
   <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
     <div style="max-width: 1060px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-      <a href="Writing.dc.html" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
       <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · پروژهٔ تحقیقاتی الگوی پیشرفت</span>
     </div>
   </footer>

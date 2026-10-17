@@ -1,14 +1,15 @@
-.s7g.s7g{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
-.s7h.s7h{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
-.s7i.s7i{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
-.s7j.s7j{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
-.s7k.s7k{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
-.s7l.s7l{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
-.s7m.s7m{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
-.s7n.s7n{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
-.s7o.s7o{font-size: 10.5px;font-weight: 700;color: #8A5410}
-.s7p.s7p{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
-.s7q.s7q{font-size: 10.5px;font-weight: 700;color: #A32222}
+.chx.chx{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
+.chy.chy{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
+.chz.chz{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
+.ci0.ci0{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
+.ci1.ci1{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
+.ci2.ci2{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
+.ci3.ci3{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
+.ci4.ci4{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
+.ci5.ci5{font-size: 10.5px;font-weight: 700;color: #8A5410}
+.ci6.ci6{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
+.ci7.ci7{font-size: 10.5px;font-weight: 700;color: #A32222}
+body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
 [id]{scroll-margin-top:78px}

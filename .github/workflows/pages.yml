@@ -35,6 +35,23 @@ jobs:
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
 
+      # هر پیوند داخلی و هر لنگر باید به جایی برسد، وگرنه انتشار انجام نمی‌شود
+      - name: Check internal links
+        run: python3 tools/check-links.py
+
+      # تیتر، شناسهٔ تکراری، alt، rel و طول متا
+      - name: Check page hygiene
+        run: python3 tools/audit.py
+
+      # صفحه‌های تولیدی باید با ژنراتورشان یکی باشند، وگرنه src/ و tools/gen/ از هم دور شده‌اند
+      - name: Check the generated pages are in sync
+        run: |
+          python3 tools/gen/run.py
+          git diff --exit-code --stat -- src/ || {
+            echo '::error::src/ با tools/gen/ نمی‌خواند — ژنراتورها را اجرا و نتیجه را کامیت کنید'
+            exit 1
+          }
+
       - name: Collect the deployable files
         run: |
           mkdir -p _site

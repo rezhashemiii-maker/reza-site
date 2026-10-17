@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تحلیل کیفیت هوای شهرها — مسیر مهندس هوش مصنوعی</title>
+<meta name="description" content="تحلیل کیفیت هوای شهرها — پروژهٔ ۱.۲ از مسیر مهندس هوش مصنوعی. کمک می‌کند ببینیم کدام ساعت‌ها و فصل‌ها برای فعالیت بیرون از خانه امن‌ترند. دریافت داده از API، ذخیره در SQL، گزارش…">
+<meta name="author" content="رضا هاشمی">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="تحلیل کیفیت هوای شهرها — مسیر مهندس هوش مصنوعی">
+<meta property="og:description" content="تحلیل کیفیت هوای شهرها — پروژهٔ ۱.۲ از مسیر مهندس هوش مصنوعی. کمک می‌کند ببینیم کدام ساعت‌ها و فصل‌ها برای فعالیت بیرون از خانه امن‌ترند. دریافت داده از API، ذخیره در SQL، گزارش…">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232F5233%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22sans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5F3EE%22%20text-anchor%3D%22middle%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="canonical" href="https://rezhashemiii-maker.github.io/reza-site/aie-102.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/aie-102.css">
+</head>
+<body>
+<nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="index.html"><span></span>رضا هاشمی</a><a class="stab" href="index.html">شروع</a><a class="stab" href="index.html#writing">نوشته‌ها</a><a class="stab" href="books.html">کتاب‌ها</a><a class="stab" href="index.html#about">درباره من</a><a class="stab" href="index.html#gallery">کارها</a><a class="stab" href="watch.html">رصدخانه</a><a class="stab" href="index.html#faq">پرسش‌ها</a><a class="stab stab-cta" href="index.html#contact">تماس</a></div></nav>
+
+
+<div class="cd">
+<header class="cv">
+<div class="c16">
+<a class="cg" href="ai-engineer.html">← بازگشت به مسیر مهندس هوش مصنوعی</a>
+</div>
+</header>
+<main class="c17">
+<span class="c18">مرحلهٔ ۱ · پایتون و مهندسی نرم‌افزار · پروژهٔ ۱.۲</span>
+<h1 class="c19">تحلیل کیفیت هوای شهرها</h1>
+<p class="c1a">کمک می‌کند ببینیم کدام ساعت‌ها و فصل‌ها برای فعالیت بیرون از خانه امن‌ترند.</p>
+<div class="c1b">
+<section class="c6">
+<h2 class="c4">این پروژه چیه؟</h2>
+<p class="cf">دریافت داده از API، ذخیره در SQL، گزارش روزهای آلوده و مقایسهٔ شهرها.</p>
+</section>
+<section class="c6">
+<h2 class="c4">دیتاست</h2>
+<a class="c1c" href="https://openaq.org" target="_blank" rel="noopener">OpenAQ ↗</a>
+</section>
+<section class="c6">
+<h2 class="c4">مهارت‌هایی که تمرین می‌شود</h2>
+<ul class="c1d"><li>Functions، Classes و Data Structures</li><li>Git و APIها</li><li>NumPy، Pandas و SQL</li></ul>
+</section>
+<section class="c1e">
+<h2 class="c4">راهنمای قدم‌به‌قدم</h2>
+<p class="c1f">این راهنما اسکلت کار است، نه نسخهٔ پیچیده‌شده: گام‌ها از مرحلهٔ همین پروژه و دیتاست و مهارت‌های خودش ساخته شده‌اند. تصمیم‌های ریز را خودت می‌گیری — که اصلاً نکتهٔ پروژه همین است.</p>
+<div class="cx">
+<div class="c1">
+<div class="c2">گام ۱</div>
+<div class="c3">دادهٔ «OpenAQ» را بردار و اول فقط نگاهش کن. صد ردیف اولش را باز کن و سه چیز بنویس: چه ستون‌هایی دارد، کجایش خالی یا خراب است، و یک سؤال مشخص که با همین داده جواب دارد.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۲</div>
+<div class="c3">کوچک‌ترین نسخهٔ کارکننده را بساز: یک اسکریپت که داده را می‌خواند، تمیز می‌کند و یک جدول خروجی می‌دهد. هنوز خبری از رابط کاربری نیست.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۳</div>
+<div class="c3">حالا سراغ مهارت اصلی این پروژه برو: <b>Functions، Classes و Data Structures، Git و APIها، NumPy، Pandas و SQL</b>. این همان چیزی است که قرار است از این پروژه یاد بگیری؛ بقیه‌اش بستربندی است.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۴</div>
+<div class="c3">خروجی را به چیزی تبدیل کن که بشود نشانش داد: یک داشبورد ساده یا چند نمودار که بدون توضیح تو هم فهمیده شود.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۵</div>
+<div class="c3">مخزن را مرتب کن و README را با همان پنج تیتر بنویس: مسئله ← داده ← روش ← نتیجه ← دمو. یک تصویر یا گیف از خروجی بگذار؛ کسی که رزومه‌ات را می‌خواند، کد را باز نمی‌کند.</div>
+</div>
+</div>
+<div class="c1g">
+<div>
+<div class="c1h">تمام‌شده یعنی چه</div>
+<p class="c0">یک نفر غریبه بتواند مخزن را کلون کند، یک دستور بزند و همان چیزی را ببیند که تو می‌بینی.</p>
+</div>
+<div>
+<div class="c1i">دام رایج این مرحله</div>
+<p class="c0">افتادن در دام پاک‌سازی بی‌پایان داده. یک بار تمیزش کن، تصمیم‌هایت را در README بنویس و برو جلو.</p>
+</div>
+</div>
+</section>
+</div>
+<nav class="c1j"><a class="ca" href="aie-101.html">→ پروژهٔ قبلی</a><span class="ce"></span><a class="ca" href="aie-103.html">پروژهٔ بعدی ←</a></nav>
+</main>
+</div>
+
+
+</body>
+</html>

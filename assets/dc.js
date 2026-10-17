@@ -124,5 +124,8 @@
     c._ast = ast;
     c._host = host;
     c._render();
+    // تخته‌هایی که به‌جای حفره‌های {{...}} مستقیم با DOM کار می‌کنند، کارشان را
+    // این‌جا شروع می‌کنند؛ بعد از اینکه نخستین رندر در صفحه نشست.
+    if (typeof c.componentDidMount === 'function') c.componentDidMount();
   };
 })(window);

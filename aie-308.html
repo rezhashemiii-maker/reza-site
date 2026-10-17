@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تشخیص فرمان صوتی — مسیر مهندس هوش مصنوعی</title>
+<meta name="description" content="تشخیص فرمان صوتی — پروژهٔ ۳.۸ از مسیر مهندس هوش مصنوعی. کنترل صوتی ساده برای وسایل خانه، مناسب افراد کم‌توان. تبدیل صدا به Spectrogram و طبقه‌بندی با CNN.">
+<meta name="author" content="رضا هاشمی">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="تشخیص فرمان صوتی — مسیر مهندس هوش مصنوعی">
+<meta property="og:description" content="تشخیص فرمان صوتی — پروژهٔ ۳.۸ از مسیر مهندس هوش مصنوعی. کنترل صوتی ساده برای وسایل خانه، مناسب افراد کم‌توان. تبدیل صدا به Spectrogram و طبقه‌بندی با CNN.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232F5233%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22sans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5F3EE%22%20text-anchor%3D%22middle%22%3E%D8%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="canonical" href="https://rezhashemiii-maker.github.io/reza-site/aie-308.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/aie-308.css">
+</head>
+<body>
+<nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="index.html"><span></span>رضا هاشمی</a><a class="stab" href="index.html">شروع</a><a class="stab" href="index.html#writing">نوشته‌ها</a><a class="stab" href="books.html">کتاب‌ها</a><a class="stab" href="index.html#about">درباره من</a><a class="stab" href="index.html#gallery">کارها</a><a class="stab" href="watch.html">رصدخانه</a><a class="stab" href="index.html#faq">پرسش‌ها</a><a class="stab stab-cta" href="index.html#contact">تماس</a></div></nav>
+
+
+<div class="cd">
+<header class="cv">
+<div class="c16">
+<a class="cg" href="ai-engineer.html">← بازگشت به مسیر مهندس هوش مصنوعی</a>
+</div>
+</header>
+<main class="c17">
+<span class="c18">مرحلهٔ ۳ · یادگیری عمیق · پروژهٔ ۳.۸</span>
+<h1 class="c19">تشخیص فرمان صوتی</h1>
+<p class="c1a">کنترل صوتی ساده برای وسایل خانه، مناسب افراد کم‌توان.</p>
+<div class="c1b">
+<section class="c6">
+<h2 class="c4">این پروژه چیه؟</h2>
+<p class="cf">تبدیل صدا به Spectrogram و طبقه‌بندی با CNN.</p>
+</section>
+<section class="c6">
+<h2 class="c4">دیتاست</h2>
+<a class="c1c" href="https://www.tensorflow.org/datasets/catalog/speech_commands" target="_blank" rel="noopener">Speech Commands ↗</a>
+</section>
+<section class="c6">
+<h2 class="c4">مهارت‌هایی که تمرین می‌شود</h2>
+<ul class="c1d"><li>شبکه‌های عصبی و Backpropagation</li><li>CNN و Embedding</li><li>مدل‌های ترتیبی</li><li>Transformerها و کار با PyTorch</li></ul>
+</section>
+<section class="c1e">
+<h2 class="c4">راهنمای قدم‌به‌قدم</h2>
+<p class="c1f">این راهنما اسکلت کار است، نه نسخهٔ پیچیده‌شده: گام‌ها از مرحلهٔ همین پروژه و دیتاست و مهارت‌های خودش ساخته شده‌اند. تصمیم‌های ریز را خودت می‌گیری — که اصلاً نکتهٔ پروژه همین است.</p>
+<div class="cx">
+<div class="c1">
+<div class="c2">گام ۱</div>
+<div class="c3">دادهٔ «Speech Commands» را بردار و اول فقط نگاهش کن. صد ردیف اولش را باز کن و سه چیز بنویس: چه ستون‌هایی دارد، کجایش خالی یا خراب است، و یک سؤال مشخص که با همین داده جواب دارد.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۲</div>
+<div class="c3">با یک معماری کوچک و کم‌لایه شروع کن و آموزشش بده تا overfit شود. اگر نتواند روی دادهٔ کم overfit شود، جایی اشکال دارد.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۳</div>
+<div class="c3">حالا سراغ مهارت اصلی این پروژه برو: <b>شبکه‌های عصبی و Backpropagation، CNN و Embedding، مدل‌های ترتیبی</b>. این همان چیزی است که قرار است از این پروژه یاد بگیری؛ بقیه‌اش بستربندی است.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۴</div>
+<div class="c3">منحنی آموزش و اعتبارسنجی را رسم کن و چند نمونهٔ اشتباه مدل را دستی نگاه کن. همین نگاه کردن، بیشتر از تنظیم ابرپارامتر به دردت می‌خورد.</div>
+</div>
+<div class="c1">
+<div class="c2">گام ۵</div>
+<div class="c3">مخزن را مرتب کن و README را با همان پنج تیتر بنویس: مسئله ← داده ← روش ← نتیجه ← دمو. یک تصویر یا گیف از خروجی بگذار؛ کسی که رزومه‌ات را می‌خواند، کد را باز نمی‌کند.</div>
+</div>
+</div>
+<div class="c1g">
+<div>
+<div class="c1h">تمام‌شده یعنی چه</div>
+<p class="c0">منحنی یادگیری داری، چند نمونهٔ خطا را تحلیل کرده‌ای، و می‌توانی بگویی مدل کجا و چرا اشتباه می‌کند.</p>
+</div>
+<div>
+<div class="c1i">دام رایج این مرحله</div>
+<p class="c0">تنظیم‌کردن ابرپارامترها پیش از اینکه خط لولهٔ آموزش درست کار کند. اول درستی، بعد کیفیت.</p>
+</div>
+</div>
+</section>
+</div>
+<nav class="c1j"><a class="ca" href="aie-307.html">→ پروژهٔ قبلی</a><span class="ce"></span><a class="ca" href="aie-309.html">پروژهٔ بعدی ←</a></nav>
+</main>
+</div>
+
+
+</body>
+</html>

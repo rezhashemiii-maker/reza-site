@@ -17,33 +17,123 @@ const OUT = root;
 
 const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
-  { file: 'Writing.dc.html', out: 'writing.html', nav: 'نوشته‌ها' },
-  { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها' },
-  { file: 'About.dc.html', out: 'about.html', nav: 'درباره من' },
-  { file: 'Work.dc.html', out: 'work.html', nav: 'کارها' },
-  { file: 'Process.dc.html', out: 'process.html', nav: 'روش کار' },
-  { file: 'FAQ.dc.html', out: 'faq.html', nav: 'پرسش‌ها' },
-  { file: 'Contact.dc.html', out: 'contact.html', nav: 'تماس' },
+  { file: 'Logic.dc.html', out: 'logic.html', nav: 'منطق برنامه‌نویسی' },
+  { file: 'Foundations.dc.html', out: 'foundations.html', nav: 'مبانی ریاضی' },
+  { file: 'AgriInvest.dc.html', out: 'agri-invest.html', nav: 'سرمایه‌گذاری کشاورزی' },
+  { file: 'Plain.dc.html', out: 'plain.html', nav: 'برنامه‌نویسی به زبان ساده' },
+  { file: 'Watch.dc.html', out: 'watch.html', nav: 'رصدخانه' },
+  { file: 'Workshop.dc.html', out: 'workshop.html', nav: 'کارگاه' },
+  { file: 'Higgsfield.dc.html', out: 'higgsfield.html', nav: 'هیگزفیلد', sub: true },
+  { file: 'Math.dc.html', out: 'math.html', nav: 'ریاضیات هوش مصنوعی' },
+  { file: 'Services.dc.html', out: 'services.html', nav: 'سرویس‌های فروشنی' },
+  { file: 'Library.dc.html', out: 'library.html', nav: 'کتابخانه' },
+  { file: 'Chess.dc.html', out: 'chess.html', nav: 'شطرنج' },
+  { file: 'AILiteracy.dc.html', out: 'ai-literacy.html', nav: 'سواد هوش مصنوعی' },
+  { file: 'Security.dc.html', out: 'security.html', nav: 'کتاب‌های امنیت' },
+  { file: 'Literacy.dc.html', out: 'literacy.html', nav: 'سنجش سواد' },
+  { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'الگوی پیشرفت' },
   { file: 'Glossary.dc.html', out: 'glossary.html', nav: 'واژه‌نامه' },
   { file: 'Learn.dc.html', out: 'learn.html', nav: 'مسیر یادگیری' },
-  { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
   { file: 'Ideas.dc.html', out: 'ideas.html', nav: 'ایده‌ها' },
   { file: 'GameTheory.dc.html', out: 'game-theory.html', nav: 'نظریهٔ بازی' },
   { file: 'Patents.dc.html', out: 'patents.html', nav: 'ثبت اختراع' },
   { file: 'Dorrin.dc.html', out: 'dorrin.html', nav: 'مطالعهٔ موردی' },
   { file: 'Demo.dc.html', out: 'demo.html', nav: 'دموی زنده' },
-  { file: 'Chess.dc.html', out: 'chess.html', nav: 'شصت‌وچهار خانه' },
-  { file: 'AILiteracy.dc.html', out: 'ai-literacy.html', nav: 'شانزده ستون' },
-  { file: 'Security.dc.html', out: 'security.html', nav: 'پنجاه سال دفاع' },
-  { file: 'Literacy.dc.html', out: 'literacy.html', nav: 'آزمون سواد' },
-  { file: 'Pattern.dc.html', out: 'pattern.html', nav: 'هزار بسته، یک الگو' },
-  { file: 'Campaign.dc.html', out: 'campaign.html', nav: 'کمپین' },
+  { file: 'AiEngineer.dc.html', out: 'ai-engineer.html', nav: 'مهندس هوش مصنوعی' },
+  { file: 'SecBook01.dc.html', out: 'sec-book-01.html', nav: 'کتاب 1', sub: true },
+  { file: 'SecBook02.dc.html', out: 'sec-book-02.html', nav: 'کتاب 2', sub: true },
+  { file: 'SecBook03.dc.html', out: 'sec-book-03.html', nav: 'کتاب 3', sub: true },
+  { file: 'SecBook04.dc.html', out: 'sec-book-04.html', nav: 'کتاب 4', sub: true },
+  { file: 'SecBook05.dc.html', out: 'sec-book-05.html', nav: 'کتاب 5', sub: true },
+  { file: 'SecBook06.dc.html', out: 'sec-book-06.html', nav: 'کتاب 6', sub: true },
+  { file: 'SecBook07.dc.html', out: 'sec-book-07.html', nav: 'کتاب 7', sub: true },
+  { file: 'SecBook08.dc.html', out: 'sec-book-08.html', nav: 'کتاب 8', sub: true },
+  { file: 'SecBook09.dc.html', out: 'sec-book-09.html', nav: 'کتاب 9', sub: true },
+  { file: 'SecBook10.dc.html', out: 'sec-book-10.html', nav: 'کتاب 10', sub: true },
+  { file: 'SecBook11.dc.html', out: 'sec-book-11.html', nav: 'کتاب 11', sub: true },
+  { file: 'SecBook12.dc.html', out: 'sec-book-12.html', nav: 'کتاب 12', sub: true },
+  { file: 'SecBook13.dc.html', out: 'sec-book-13.html', nav: 'کتاب 13', sub: true },
+  { file: 'SecBook14.dc.html', out: 'sec-book-14.html', nav: 'کتاب 14', sub: true },
+  { file: 'SecBook15.dc.html', out: 'sec-book-15.html', nav: 'کتاب 15', sub: true },
+  { file: 'Aie101.dc.html', out: 'aie-101.html', nav: 'پروژهٔ 1.1', sub: true },
+  { file: 'Aie102.dc.html', out: 'aie-102.html', nav: 'پروژهٔ 1.2', sub: true },
+  { file: 'Aie103.dc.html', out: 'aie-103.html', nav: 'پروژهٔ 1.3', sub: true },
+  { file: 'Aie104.dc.html', out: 'aie-104.html', nav: 'پروژهٔ 1.4', sub: true },
+  { file: 'Aie105.dc.html', out: 'aie-105.html', nav: 'پروژهٔ 1.5', sub: true },
+  { file: 'Aie106.dc.html', out: 'aie-106.html', nav: 'پروژهٔ 1.6', sub: true },
+  { file: 'Aie107.dc.html', out: 'aie-107.html', nav: 'پروژهٔ 1.7', sub: true },
+  { file: 'Aie108.dc.html', out: 'aie-108.html', nav: 'پروژهٔ 1.8', sub: true },
+  { file: 'Aie109.dc.html', out: 'aie-109.html', nav: 'پروژهٔ 1.9', sub: true },
+  { file: 'Aie110.dc.html', out: 'aie-110.html', nav: 'پروژهٔ 1.10', sub: true },
+  { file: 'Aie201.dc.html', out: 'aie-201.html', nav: 'پروژهٔ 2.1', sub: true },
+  { file: 'Aie202.dc.html', out: 'aie-202.html', nav: 'پروژهٔ 2.2', sub: true },
+  { file: 'Aie203.dc.html', out: 'aie-203.html', nav: 'پروژهٔ 2.3', sub: true },
+  { file: 'Aie204.dc.html', out: 'aie-204.html', nav: 'پروژهٔ 2.4', sub: true },
+  { file: 'Aie205.dc.html', out: 'aie-205.html', nav: 'پروژهٔ 2.5', sub: true },
+  { file: 'Aie206.dc.html', out: 'aie-206.html', nav: 'پروژهٔ 2.6', sub: true },
+  { file: 'Aie207.dc.html', out: 'aie-207.html', nav: 'پروژهٔ 2.7', sub: true },
+  { file: 'Aie208.dc.html', out: 'aie-208.html', nav: 'پروژهٔ 2.8', sub: true },
+  { file: 'Aie209.dc.html', out: 'aie-209.html', nav: 'پروژهٔ 2.9', sub: true },
+  { file: 'Aie210.dc.html', out: 'aie-210.html', nav: 'پروژهٔ 2.10', sub: true },
+  { file: 'Aie301.dc.html', out: 'aie-301.html', nav: 'پروژهٔ 3.1', sub: true },
+  { file: 'Aie302.dc.html', out: 'aie-302.html', nav: 'پروژهٔ 3.2', sub: true },
+  { file: 'Aie303.dc.html', out: 'aie-303.html', nav: 'پروژهٔ 3.3', sub: true },
+  { file: 'Aie304.dc.html', out: 'aie-304.html', nav: 'پروژهٔ 3.4', sub: true },
+  { file: 'Aie305.dc.html', out: 'aie-305.html', nav: 'پروژهٔ 3.5', sub: true },
+  { file: 'Aie306.dc.html', out: 'aie-306.html', nav: 'پروژهٔ 3.6', sub: true },
+  { file: 'Aie307.dc.html', out: 'aie-307.html', nav: 'پروژهٔ 3.7', sub: true },
+  { file: 'Aie308.dc.html', out: 'aie-308.html', nav: 'پروژهٔ 3.8', sub: true },
+  { file: 'Aie309.dc.html', out: 'aie-309.html', nav: 'پروژهٔ 3.9', sub: true },
+  { file: 'Aie310.dc.html', out: 'aie-310.html', nav: 'پروژهٔ 3.10', sub: true },
+  { file: 'Aie401.dc.html', out: 'aie-401.html', nav: 'پروژهٔ 4.1', sub: true },
+  { file: 'Aie402.dc.html', out: 'aie-402.html', nav: 'پروژهٔ 4.2', sub: true },
+  { file: 'Aie403.dc.html', out: 'aie-403.html', nav: 'پروژهٔ 4.3', sub: true },
+  { file: 'Aie404.dc.html', out: 'aie-404.html', nav: 'پروژهٔ 4.4', sub: true },
+  { file: 'Aie405.dc.html', out: 'aie-405.html', nav: 'پروژهٔ 4.5', sub: true },
+  { file: 'Aie406.dc.html', out: 'aie-406.html', nav: 'پروژهٔ 4.6', sub: true },
+  { file: 'Aie407.dc.html', out: 'aie-407.html', nav: 'پروژهٔ 4.7', sub: true },
+  { file: 'Aie408.dc.html', out: 'aie-408.html', nav: 'پروژهٔ 4.8', sub: true },
+  { file: 'Aie409.dc.html', out: 'aie-409.html', nav: 'پروژهٔ 4.9', sub: true },
+  { file: 'Aie410.dc.html', out: 'aie-410.html', nav: 'پروژهٔ 4.10', sub: true },
+  { file: 'Aie501.dc.html', out: 'aie-501.html', nav: 'پروژهٔ 5.1', sub: true },
+  { file: 'Aie502.dc.html', out: 'aie-502.html', nav: 'پروژهٔ 5.2', sub: true },
+  { file: 'Aie503.dc.html', out: 'aie-503.html', nav: 'پروژهٔ 5.3', sub: true },
+  { file: 'Aie504.dc.html', out: 'aie-504.html', nav: 'پروژهٔ 5.4', sub: true },
+  { file: 'Aie505.dc.html', out: 'aie-505.html', nav: 'پروژهٔ 5.5', sub: true },
+  { file: 'Aie506.dc.html', out: 'aie-506.html', nav: 'پروژهٔ 5.6', sub: true },
+  { file: 'Aie507.dc.html', out: 'aie-507.html', nav: 'پروژهٔ 5.7', sub: true },
+  { file: 'Aie508.dc.html', out: 'aie-508.html', nav: 'پروژهٔ 5.8', sub: true },
+  { file: 'Aie509.dc.html', out: 'aie-509.html', nav: 'پروژهٔ 5.9', sub: true },
+  { file: 'Aie510.dc.html', out: 'aie-510.html', nav: 'پروژهٔ 5.10', sub: true },
+  { file: 'Aie601.dc.html', out: 'aie-601.html', nav: 'پروژهٔ 6.1', sub: true },
+  { file: 'Aie602.dc.html', out: 'aie-602.html', nav: 'پروژهٔ 6.2', sub: true },
+  { file: 'Aie603.dc.html', out: 'aie-603.html', nav: 'پروژهٔ 6.3', sub: true },
+  { file: 'Aie604.dc.html', out: 'aie-604.html', nav: 'پروژهٔ 6.4', sub: true },
+  { file: 'Aie605.dc.html', out: 'aie-605.html', nav: 'پروژهٔ 6.5', sub: true },
+  { file: 'Aie606.dc.html', out: 'aie-606.html', nav: 'پروژهٔ 6.6', sub: true },
+  { file: 'Aie607.dc.html', out: 'aie-607.html', nav: 'پروژهٔ 6.7', sub: true },
+  { file: 'Aie608.dc.html', out: 'aie-608.html', nav: 'پروژهٔ 6.8', sub: true },
+  { file: 'Aie609.dc.html', out: 'aie-609.html', nav: 'پروژهٔ 6.9', sub: true },
+  { file: 'Aie610.dc.html', out: 'aie-610.html', nav: 'پروژهٔ 6.10', sub: true },
+  // آینه‌های آرتیفکت: همان محتوای بخش‌های صفحهٔ اصلی، در قالب صفحهٔ جدا.
+  // برای همگامی با آرتیفکت نگه داشته می‌شوند و noindex دارند تا با index.html رقابت نکنند.
+  { file: 'Writing.dc.html', out: 'writing.html', nav: 'نوشته‌ها', mirror: true },
+  { file: 'Books.dc.html', out: 'books.html', nav: 'کتاب‌ها' },
+  { file: 'About.dc.html', out: 'about.html', nav: 'درباره من', mirror: true },
+  { file: 'Work.dc.html', out: 'work.html', nav: 'کارها', mirror: true },
+  { file: 'Process.dc.html', out: 'process.html', nav: 'روش کار', mirror: true },
+  { file: 'FAQ.dc.html', out: 'faq.html', nav: 'پرسش‌ها', mirror: true },
+  { file: 'Contact.dc.html', out: 'contact.html', nav: 'تماس', mirror: true },
 ];
-// صفحه‌های پروژهٔ مسیر مهندس هوش مصنوعی: Aie101.dc.html → aie-1-01.html
-for (const f of fs.readdirSync(SRC).filter((f) => /^Aie\d{3}\.dc\.html$/.test(f)).sort()) {
-  PAGES.push({ file: f, out: `aie-${f[3]}-${f.slice(4, 6)}.html`, nav: 'پروژه' });
-}
+// صفحه‌های خودبسنده: HTML کاملی که از خط لولهٔ قالب رد نمی‌شود و همان‌طور که هست منتشر می‌شود.
+// منبعشان src/standalone/ است و فقط در نقشهٔ سایت و ناوبری ۴۰۴ دیده می‌شوند.
+const STANDALONE = [
+  { file: 'iraq.html', out: 'iraq.html', nav: 'پروندهٔ عراق' },
+];
 const MAP = Object.fromEntries(PAGES.map((p) => [p.file, p.out]));
+// آرتبوردهایی که در مخزن قالب دیگری دارند: «پروندهٔ عراق» این‌جا صفحهٔ خودبسنده است،
+// پس پیوندهای Iraq.dc.html که از آرتیفکت آمده‌اند باید به همان فایل برسند.
+for (const s of STANDALONE) MAP[s.file.replace(/\.html$/, '.dc.html').replace(/^./, (c) => c.toUpperCase())] = s.out;
 const SITE = (process.env.SITE_URL || '').replace(/\/$/, '');
 // پیشوند مسیر سایت (برای Pagesِ پروژه‌ای مثل /reza-site/) — فقط در صفحهٔ ۴۰۴ لازم است
 const BASE = SITE ? new URL(SITE + '/').pathname : '/';
@@ -102,10 +192,12 @@ for (const page of PAGES) {
 // ---------------------------------------------------------------- پاس ۲: نام‌گذاری کلاس‌ها
 
 const NAME = '0123456789abcdefghijklmnopqrstuvwxyz';
+// پیشوند ثابت `c`: بدون آن، نامِ عددیِ پیشوندگرفته (۳ → s3) با نامِ پایهٔ ۳۶ِ
+// شمارندهٔ ۱۰۱۱ (که خودش «s3» می‌شود) یکی می‌شد و استایل دو عنصر بی‌ربط قاتی می‌شد.
 const shortName = (n) => {
   let s = '';
   do { s = NAME[n % 36] + s; n = Math.floor(n / 36); } while (n > 0);
-  return /^[0-9]/.test(s) ? `s${s}` : s;
+  return `c${s}`;
 };
 
 let counter = 0;
@@ -124,6 +216,13 @@ for (const [css, rec] of ordered) {
     perPage.get(only).push(rule);
   }
 }
+{
+  // نگهبان: هیچ دو کلاسی نباید نام یکسان بگیرد
+  const names = [...styleUse.values()].filter((r) => r.cls).map((r) => r.cls);
+  const dup = names.filter((n, i) => names.indexOf(n) !== i);
+  if (dup.length) throw new Error(`نام کلاس تکراری: ${[...new Set(dup)].join(', ')}`);
+}
+
 for (const d of docs) applyClasses(d.ast, styleUse);
 
 // ---------------------------------------------------------------- بازنویسی لینک‌ها
@@ -131,9 +230,13 @@ for (const d of docs) applyClasses(d.ast, styleUse);
 const rewriteLinks = (ast) => {
   const visit = (n) => {
     if (typeof n === 'string' || n.h !== undefined) return;
-    if (n.a && typeof n.a.href === 'string' && /\.dc\.html(#.*)?$/.test(n.a.href)) {
-      const [file, hash = ''] = n.a.href.replace(/^\.?\//, '').split(/(?=#)/);
-      if (MAP[file]) n.a.href = (MAP[file] === 'index.html' ? './' : MAP[file]) + hash;
+    if (n.a && typeof n.a.href === 'string') {
+      // «Foo.dc.html» و «./Foo.dc.html#bookmark» هر دو باید بازنویسی شوند
+      const m = /^\.?\/?([A-Za-z0-9_.-]+\.dc\.html)(#.*)?$/.exec(n.a.href);
+      if (m && MAP[m[1]]) {
+        const target = MAP[m[1]] === 'index.html' ? './' : MAP[m[1]];
+        n.a.href = target + (m[2] || '');
+      }
     }
     (n.k || []).forEach(visit);
   };
@@ -154,6 +257,58 @@ const baseCssRules = (() => {
   return common;
 })();
 
+
+// ---------------------------------------------------------------- نوار تب‌های سراسری
+// همان نوار بالای صفحهٔ اصلی، ولی روی هر صفحهٔ سایت. چون صفحه‌ها از ژنراتورهای
+// مختلف می‌آیند، این‌جا موقع ساخت تزریق می‌شود نه در تک‌تک قالب‌ها.
+const TABS = [
+  { label: 'شروع',     href: 'index.html',         anchor: '#home' },
+  { label: 'نوشته‌ها',  href: 'index.html#writing', anchor: '#writing' },
+  { label: 'کتاب‌ها',   href: 'books.html',         anchor: null },
+  { label: 'درباره من', href: 'index.html#about',   anchor: '#about' },
+  { label: 'کارها',    href: 'index.html#gallery', anchor: '#gallery' },
+  { label: 'رصدخانه',  href: 'watch.html',         anchor: null },
+  { label: 'پرسش‌ها',   href: 'index.html#faq',     anchor: '#faq' },
+];
+// صفحه‌هایی که تب دیگری را روشن می‌کنند (آینه‌ها و زیرصفحه‌ها)
+const TAB_ALIAS = {
+  'writing.html': 'index.html#writing',
+  'about.html': 'index.html#about',
+  'work.html': 'index.html#gallery',
+  'faq.html': 'index.html#faq',
+};
+for (let i = 1; i <= 15; i++) TAB_ALIAS[`sec-book-${String(i).padStart(2, '0')}.html`] = 'books.html';
+
+const TABS_CSS = [
+  '.stabs{background:#FFFFFF;border-bottom:1px solid #E4E1D6}',
+  '.stabs-in{max-width:1120px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}',
+  '.stabs-brand{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14px;color:#16181C;margin-inline-end:8px;text-decoration:none}',
+  '.stabs-brand span{width:9px;height:9px;border-radius:50%;background:#2F5233;flex-shrink:0}',
+  '.stab{font-size:13px;color:#4A4F58;padding:6px 11px;border-radius:999px;text-decoration:none;white-space:nowrap}',
+  '.stab:hover{background:#F0EEE7;color:#16181C;text-decoration:none}',
+  '.stab[aria-current]{background:#2F5233;color:#FFFFFF;font-weight:700}',
+  '.stab-cta{margin-inline-start:auto;color:#B4530E;font-weight:700}',
+  '.stab-cta:hover{background:#F7E3D6;color:#B4530E}',
+  // روی دسکتاپ نوار می‌چسبد و هدرِ خودِ صفحه زیرش می‌نشیند؛ روی گوشی نمی‌چسبد
+  // تا دو نوارِ چسبان نیمی از نما را نگیرند.
+  '@media (min-width:861px){.stabs{position:sticky;top:0;z-index:60}body header{top:43px !important}[id]{scroll-margin-top:122px !important}}',
+  '@media (max-width:860px){.stabs-in{padding:6px 12px;gap:3px}.stabs-brand{font-size:13px;margin-inline-end:5px}.stab{font-size:12.5px;padding:5px 9px}}',
+];
+
+const siteTabs = (out, base = '') => {
+  const active = TAB_ALIAS[out] || out;
+  const items = TABS.map((t) => {
+    const self = out === 'index.html' && t.anchor;
+    const href = self ? t.anchor : base + t.href;
+    const on = self ? t.href === 'index.html' : active === t.href || (out === 'index.html' && t.href === 'index.html');
+    return `<a class="stab" href="${href}"${on ? ' aria-current="page"' : ''}>${t.label}</a>`;
+  }).join('');
+  const cta = out === 'index.html'
+    ? '<a class="stab stab-cta" href="#contact">تماس</a>'
+    : `<a class="stab stab-cta" href="${base}index.html#contact">تماس</a>`;
+  return `<nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="${base}index.html"><span></span>رضا هاشمی</a>${items}${cta}</div></nav>`;
+};
+
 const RESPONSIVE = [
   '@media (max-width:640px){body{font-size:15px}}',
   'img,svg{max-width:100%}',
@@ -167,20 +322,60 @@ for (const f of fs.readdirSync(path.join(OUT, 'assets'))) fs.unlinkSync(path.joi
 fs.copyFileSync(path.join(root, 'tools/dc.js'), path.join(OUT, 'assets/dc.js'));
 fs.writeFileSync(
   path.join(OUT, 'assets/site.css'),
-  [...baseCssRules, ...RESPONSIVE, ...shared].join('\n') + '\n'
+  [...baseCssRules, ...RESPONSIVE, ...TABS_CSS, ...shared].join('\n') + '\n'
 );
 
 // ---------------------------------------------------------------- پاس ۳: رندر و نوشتن
 
+// توضیح متای صفحه‌های منتقل‌شده از آرتیفکت، تولیدشده با tools/port (اگر بود)
+const AUTO_DESC = (() => {
+  const out = {};
+  for (const n of ['descriptions.auto.json', 'descriptions.books.json']) {
+    const f = path.join(SRC, n);
+    if (fs.existsSync(f)) Object.assign(out, JSON.parse(fs.readFileSync(f, 'utf8')));
+  }
+  return out;
+})();
+
 const DESCRIPTIONS = {
   'index.html':
     'رضا هاشمی — یادگیری ماشین را به فارسی می‌نویسم و برای کسب‌وکارها سیستم ثبت داده و تصمیم می‌سازم. هر مفهوم با ارجاع به مقالهٔ اصلی‌اش.',
+  'books.html':
+    'پانزده کتاب امنیت که معماری این رشته را ساختند، از ۱۹۹۴ تا ۲۰۲۰. برای هر کتاب: چرا مهم است، داخلش چیست، چه چیزی کهنه شده و چه چیزی نشده.',
+  'logic.html':
+    'اصول و منطق برنامه‌نویسی از صفر، در قالب نامه‌ای به ابوریحان بیرونی: متغیر، شرط، حلقه، تابع، داده‌ساختار، دودویی و بازگشت — با تمثیل‌های هزار سال پیش و بدون واژهٔ تخصصی.',
+  'watch.html':
+    'رصدخانه — دفترِ روزانهٔ آنچه در هوش مصنوعی اتفاق می‌افتد: مدل تازه، قابلیت تازه، پرونده، عدد و حاشیه. بالای هر رصد نوشته شده از کجا آمده و چقدر می‌شود باورش کرد.',
+  'foundations.html':
+    'مبانی ریاضی از راهی دیگر: هر مفهوم وقتی ساخته شد که چیزی شکست. ده قاعدهٔ بی‌دلیل، فرمول‌خوانی، بی‌نهایت، احتمال، تمرین انتزاع، و ۳۱ کتاب به ترتیبِ خواندن.',
+  'agri-invest.html':
+    'داشبورد تعاملی سرمایه‌گذاری در کشاورزی: بازده، دورهٔ بازگشت و حساسیت به قیمت در ۱۹ فعالیت، با مدل وام ده‌ساله که نشان می‌دهد تورم معادلهٔ سود را چطور عوض می‌کند.',
+  'plain.html':
+    'منطق برنامه‌نویسی به زبان امروز و برای آدم معمولی: برنامه، متغیر، شرط، حلقه، تابع، فهرست و خطا — با مثال گوشی و آسانسور و سبد خرید، و یک برنامهٔ کامل خط‌به‌خط.',
+  'workshop.html':
+    'کارگاه — راهنمای کاملِ ابزارهای کاربردی، از صفر. نه معرفی و نه فهرست قابلیت‌ها: وارد که شدی، این دکمه‌ای که جلویت است برای چیست.',
+  'higgsfield.html':
+    'راهنمای کامل هیگزفیلد از صفر: نقشهٔ کاملِ رابط، هر بخش و هر دکمه، اعتبار و جایی که هدر می‌رود، تصویر و ویدئو و سینما و بازاریابی، و دستور کارِ روز اول.',
+  'math.html':
+    'مبانی ریاضی و آماری هوش مصنوعی از صفر، در نامهٔ دومی به ابوریحان بیرونی: شمردن، احتمال، قضیهٔ بیز، کمترین مربعات، سراشیبی و آنتروپی — از الکندی و خوارزمی تا پرسپترون.',
+  'services.html':
+    'هفتادوپنج سرویسی که با ابزارهای هوش مصنوعی و بدون دانش کدنویسی زیاد می‌شود ساخت و فروخت — با شش سنجه برای هر سرویس، انتخابگر پنج‌سؤالی، ماشین‌حساب درآمد و ضدفهرست ده چیزی که نباید ساخت.',
+  'library.html':
+    'کتابخانهٔ یکپارچهٔ منابع سایت: ۱۶۸ کتاب، مقاله، استاندارد و گزارش از ۱۹۱۳ تا ۲۰۲۵، قابل جست‌وجو و فیلتر بر اساس بخش و نوع — با ۱۲۵ پیوند مستقیم به متن اصلی.',
+  'chess.html':
+    'شطرنج، یادگیری ماشین و نظریهٔ بازی‌ها: از قضیهٔ زرملو (۱۹۱۳) تا ترنسفورمر بدون جست‌وجو (۲۰۲۴) — ۲۵ ایستگاه تاریخی، ۱۴ ارتباط میان شطرنج و یادگیری ماشین، و ۸ ایدهٔ تازه.',
+  'ai-literacy.html':
+    'معماری سواد هوش مصنوعی در ۱۶ ستون و ۵ لایه: همهٔ آن چیزی که باید بدانی، با ۲۲۰ مفهوم، تقدم یادگیری، خط زمان ۱۲ هفته‌ای و سه سطح عمق برای هر ستون.',
+  'security.html':
+    'نقشهٔ ۶۱ کتاب، مقاله و استاندارد که معماری امنیت شبکه و اطلاعات را ساختند، کنار ۱۹ حمله و افشاگری که باعثشان شد — از ۱۹۷۳ تا امروز روی یک خط زمان مشترک.',
+  'literacy.html':
+    'سنجش سواد هوش مصنوعی در ۳۰ سؤال و ۱۰ دقیقه: نیمرخ شش‌بعدی، کارهایی که با دانش امروزت می‌توانی بکنی، و دو قدم بعدی‌ات. بر پایهٔ چارچوب‌های یونسکو، Long و Magerko، و Ng و همکاران.',
+  'pattern.html':
+    'پروژهٔ تحقیقاتی: الگوی پیشرفت سیندره سورهوس در عدد و نمودار — ۱٬۱۰۰ بستهٔ npm، ۲ میلیارد دانلود در ماه، و شش قاعده‌ای که از داده بیرون آمد.',
   'glossary.html':
     'واژه‌نامهٔ فارسی یادگیری ماشین: ۲۸۵ اصطلاح با معادل انگلیسی، توضیح ساده، مترادف‌های رایج و هشدار اشتباه‌های پرتکرار. قابل جست‌وجو و فیلتر.',
   'learn.html':
     'مسیر یادگیری ماشین در هشت ایستگاه؛ هر ایستگاه فقط به ایستگاه قبلی تکیه می‌کند و مقالهٔ مرجع و تمرین خودش را دارد.',
-  'ai-engineer.html':
-    'مسیر مهندس هوش مصنوعی شدن در شش مرحله — از پایتون تا Agentهای آمادهٔ Production — با سی پروژهٔ کاربردی روی دیتاست‌های عمومی.',
   'ideas.html':
     'صد ایدهٔ کاربردی یادگیری ماشین در ده حوزه، و کنار هر ایده دقیقاً همان داده‌ای که لازم دارد. قابل جست‌وجو و فیلتر.',
   'game-theory.html':
@@ -224,7 +419,10 @@ for (const d of docs) {
     if (n.a && Object.values(n.a).some((v) => v && typeof v === 'object')) return true;
     return isDynamic(n.k || []);
   });
-  const interactive = Boolean(d.logic) && isDynamic(d.ast);
+  // تخته‌هایی مثل داشبورد کشاورزی حفرهٔ {{...}} ندارند و همهٔ کارشان را در
+  // componentDidMount با DOM انجام می‌دهند؛ این‌ها هم به زمان اجرا نیاز دارند.
+  const domDriven = /componentDidMount\s*\(/.test(d.logic || '');
+  const interactive = Boolean(d.logic) && (isDynamic(d.ast) || domDriven);
   const pageCss = [...(perPage.get(d.out) || []), ...d.ownCss];
   const cssFile = pageCss.length ? `assets/${d.out.replace(/\.html$/, '')}.css` : null;
   if (cssFile) fs.writeFileSync(path.join(OUT, cssFile), pageCss.join('\n') + '\n');
@@ -249,7 +447,10 @@ for (const d of docs) {
     .join('\n');
 
   const canonical = SITE ? `\n<link rel="canonical" href="${SITE}/${d.out === 'index.html' ? '' : d.out}">` : '';
-  const desc = DESCRIPTIONS[d.out] || '';
+  const desc = DESCRIPTIONS[d.out] || AUTO_DESC[d.out] || '';
+  // صفحه‌های آینه همان محتوای بخش‌های index.html را دارند؛ ایندکس‌شدنشان
+  // یعنی دو نشانی برای یک متن. پیوندهایشان دنبال می‌شود، خودشان نه.
+  const robots = d.mirror ? '\n<meta name="robots" content="noindex,follow">' : '';
 
   const html = `<!doctype html>
 <html lang="${d.lang}" dir="${d.dir}">
@@ -263,11 +464,12 @@ for (const d of docs) {
 <meta property="og:locale" content="fa_IR">
 <meta property="og:title" content="${escapeAttr(d.title)}">
 <meta property="og:description" content="${escapeAttr(desc)}">
-<link rel="icon" href="${FAVICON}">${canonical}
+<link rel="icon" href="${FAVICON}">${canonical}${robots}
 ${links}
 <link rel="stylesheet" href="assets/site.css">${cssFile ? `\n<link rel="stylesheet" href="${cssFile}">` : ''}
 </head>
 <body>
+${bodyHtml.includes('class="navbar"') ? '' : siteTabs(d.out)}
 ${interactive ? `<div id="dc-root">${bodyHtml}</div>` : bodyHtml}
 ${interactive ? `<script src="assets/dc.js" defer></script>\n<script src="${jsFile}" defer></script>` : ''}
 </body>
@@ -284,7 +486,7 @@ if (SITE) {
   fs.writeFileSync(
     path.join(OUT, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-      PAGES.map(
+      [...PAGES.filter((p) => !p.mirror), ...STANDALONE].map(
         (p) =>
           `  <url><loc>${SITE}/${p.out === 'index.html' ? '' : p.out}</loc><lastmod>${today}</lastmod></url>`
       ).join('\n') +
@@ -292,6 +494,17 @@ if (SITE) {
   );
   fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 }
+// ---------------------------------------------------------------- صفحه‌های خودبسنده
+for (const sa of STANDALONE) {
+  let raw = fs.readFileSync(path.join(SRC, 'standalone', sa.file), 'utf8');
+  // این صفحه از خط لولهٔ قالب رد نمی‌شود، پس CSS نوار را هم باید همراهش برد
+  // قاعدهٔ چسبندگیِ دسکتاپ بازنویسی می‌شود: این صفحه هدرِ چسبانِ خودش را ندارد
+  const tabCss = `<style>${TABS_CSS.filter((r) => !r.startsWith('@media (min-width')).join('')}`
+    + '@media (min-width:861px){.stabs{position:sticky;top:0;z-index:60}}</style>';
+  raw = raw.replace('</head>', `${tabCss}</head>`).replace('<body>', `<body>\n${siteTabs(sa.out)}`);
+  fs.writeFileSync(path.join(OUT, sa.out), raw);
+}
+
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 
 // ---------------------------------------------------------------- صفحهٔ ۴۰۴
@@ -316,7 +529,7 @@ fs.writeFileSync(
 <h1 style="font-size:clamp(26px,5vw,40px);font-weight:800;line-height:1.5;margin:0 0 18px">این صفحه این‌جا نیست</h1>
 <p style="font-size:16px;line-height:2;color:#4A4F58;margin:0 0 30px">شاید نشانی را اشتباه وارد کرده‌اید یا صفحه جابه‌جا شده است.</p>
 <nav style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-${PAGES.map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
+${[...PAGES.filter((p) => !p.sub), ...STANDALONE].map((p) => `<a href="${BASE}${p.out === 'index.html' ? '' : p.out}" style="font-size:14px;font-weight:600;color:#16181C;background:#FFFFFF;border:1px solid #E4E1D6;padding:11px 18px;border-radius:999px">${p.nav}</a>`).join('\n')}
 </nav>
 </main>
 </body>

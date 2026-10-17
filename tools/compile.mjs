@@ -73,7 +73,9 @@ export function compile(templateRoot, ctx) {
         ev[EVENTS[lower]] = raw.replace(HOLE, '$1').trim();
         continue;
       }
-      if (raw === null) { a[lower] = null; continue; }
+      // نام اتریبیوت با همان حروف اصلی نگه داشته می‌شود: در SVG بزرگ و کوچک فرق دارد
+      // (viewBox ≠ viewbox). در HTML نام‌ها بی‌تفاوت‌اند، پس این برای هر دو درست است.
+      if (raw === null) { a[name] = null; continue; }
 
       if (lower === 'style') {
         const { fixed, dyn } = splitStyle(raw);
@@ -88,14 +90,15 @@ export function compile(templateRoot, ctx) {
         if (dyn) a.style = attrValue(dyn);
         continue;
       }
-      a[lower] = attrValue(raw);
+      a[name] = attrValue(raw);
     }
 
     const out = { n: node.tag };
     if (cls !== null) out.s = cls;
     if (Object.keys(a).length) out.a = a;
     if (Object.keys(ev).length) out.e = ev;
-    if (!isVoid(node.tag)) {
+    if (node.self) out.sf = 1;
+    if (!isVoid(node.tag) && !node.self) {
       const k = kids(node);
       if (k.length) out.k = k;
     }
