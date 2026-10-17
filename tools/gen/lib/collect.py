@@ -5,7 +5,10 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from paths import SRC  # noqa: E402
 
-SP = '/tmp/claude-0/-home-user-reza-site/33dd78ae-a2ff-5a12-96f6-fd8a58212c20/scratchpad'
+# پوشهٔ ژنراتورها (tools/gen). پیش‌تر این‌جا مسیر پوشهٔ موقتِ یک نشست نوشته
+# شده بود؛ آن مسیر فقط روی همان ماشین وجود داشت، پس این گام روی رانر
+# گیت‌هاب شکست می‌خورد و انتشار انجام نمی‌شد.
+SP = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = SRC
 FAD = '۰۱۲۳۴۵۶۷۸۹'
 
@@ -118,9 +121,13 @@ for fname, domain in (('Learn.dc.html', 'یادگیری ماشین'), ('GameTheo
     s = io.open(os.path.join(SRC, fname), encoding='utf-8').read()
     for link, title, meta, note in CARD.findall(s):
         title, meta, note = strip_tags(title), strip_tags(meta), strip_tags(note)
-        bits = [b.strip() for b in meta.split('·')]
+        # ساختار متا: «نویسنده‌ها، سال · محلِ انتشار». پیش‌تر سال هم با «·»
+        # جدا می‌شد و این‌جا bits[2] خوانده می‌شد؛ وقتی آن جداکننده به «،»
+        # تبدیل شد، شمارهٔ بخش‌ها جابه‌جا شد و نام ژورنال از فهرست افتاد.
+        # پس به‌جای شمارهٔ ثابت، هرچه بعد از بخش اول بیاید محلِ انتشار است.
+        bits = [b.strip() for b in meta.split('·') if b.strip()]
         who = bits[0] if bits else ''
-        venue = bits[2] if len(bits) > 2 else None
+        venue = ' · '.join(bits[1:]) if len(bits) > 1 else None
         out.append(dict(year=year_of(meta, title), titleEn=title, titleFa=None,
                         who=who + (' · ' + venue if venue else ''), kind=kind_of(title + ' ' + (venue or ''), '', ''),
                         note=note, link=link, impact=None, domains=[domain], topic=None))
