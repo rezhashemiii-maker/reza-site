@@ -19,22 +19,6 @@
       "expand": "fill",
       "is_interactive": true
     },
-    "Dorrin.dc.html": {
-      "x": 1600,
-      "y": 0,
-      "w": 1000,
-      "h": 1300,
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Demo.dc.html": {
-      "x": 2760,
-      "y": 0,
-      "w": 1000,
-      "h": 1100,
-      "expand": "fill",
-      "is_interactive": true
-    },
     "Learn.dc.html": {
       "x": 3920,
       "y": 0,
@@ -78,8 +62,6 @@
   },
   "order": [
     "Main.dc.html",
-    "Dorrin.dc.html",
-    "Demo.dc.html",
     "Learn.dc.html",
     "Ideas.dc.html",
     "GameTheory.dc.html",
