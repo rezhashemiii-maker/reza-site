@@ -19,6 +19,7 @@ const PAGES = [
   { file: 'Main.dc.html', out: 'index.html', nav: 'خانه' },
   { file: 'Logic.dc.html', out: 'logic.html', nav: 'منطق برنامه‌نویسی' },
   { file: 'Foundations.dc.html', out: 'foundations.html', nav: 'مبانی ریاضی' },
+  { file: 'AgriInvest.dc.html', out: 'agri-invest.html', nav: 'سرمایه‌گذاری کشاورزی' },
   { file: 'Plain.dc.html', out: 'plain.html', nav: 'برنامه‌نویسی به زبان ساده' },
   { file: 'Watch.dc.html', out: 'watch.html', nav: 'رصدخانه' },
   { file: 'Workshop.dc.html', out: 'workshop.html', nav: 'کارگاه' },
@@ -347,6 +348,8 @@ const DESCRIPTIONS = {
     'رصدخانه — دفترِ روزانهٔ آنچه در هوش مصنوعی اتفاق می‌افتد: مدل تازه، قابلیت تازه، پرونده، عدد و حاشیه. بالای هر رصد نوشته شده از کجا آمده و چقدر می‌شود باورش کرد.',
   'foundations.html':
     'مبانی ریاضی از راهی دیگر: هر مفهوم وقتی ساخته شد که چیزی شکست. ده قاعدهٔ بی‌دلیل، فرمول‌خوانی، بی‌نهایت، احتمال، تمرین انتزاع، و ۳۱ کتاب به ترتیبِ خواندن.',
+  'agri-invest.html':
+    'داشبورد تعاملی سرمایه‌گذاری در کشاورزی: بازده، دورهٔ بازگشت و حساسیت به قیمت در ۱۹ فعالیت، با مدل وام ده‌ساله که نشان می‌دهد تورم معادلهٔ سود را چطور عوض می‌کند.',
   'plain.html':
     'منطق برنامه‌نویسی به زبان امروز و برای آدم معمولی: برنامه، متغیر، شرط، حلقه، تابع، فهرست و خطا — با مثال گوشی و آسانسور و سبد خرید، و یک برنامهٔ کامل خط‌به‌خط.',
   'workshop.html':
@@ -416,7 +419,10 @@ for (const d of docs) {
     if (n.a && Object.values(n.a).some((v) => v && typeof v === 'object')) return true;
     return isDynamic(n.k || []);
   });
-  const interactive = Boolean(d.logic) && isDynamic(d.ast);
+  // تخته‌هایی مثل داشبورد کشاورزی حفرهٔ {{...}} ندارند و همهٔ کارشان را در
+  // componentDidMount با DOM انجام می‌دهند؛ این‌ها هم به زمان اجرا نیاز دارند.
+  const domDriven = /componentDidMount\s*\(/.test(d.logic || '');
+  const interactive = Boolean(d.logic) && (isDynamic(d.ast) || domDriven);
   const pageCss = [...(perPage.get(d.out) || []), ...d.ownCss];
   const cssFile = pageCss.length ? `assets/${d.out.replace(/\.html$/, '')}.css` : null;
   if (cssFile) fs.writeFileSync(path.join(OUT, cssFile), pageCss.join('\n') + '\n');
