@@ -1,27 +1,27 @@
-.c26.c26{font-size: 12px;color: #666158;margin-top: 3px}
-.c27.c27{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
-.c28.c28{font-size: 11.5px;color: #2F5233;margin-top: 8px}
-.cgn.cgn{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
-.cgo.cgo{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
-.cgp.cgp{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
-.cgq.cgq{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
-.cgr.cgr{position: relative;height: 13px}
-.cgs.cgs{margin-bottom: 60px;scroll-margin-top: 80px}
-.cgt.cgt{display: flex;align-items: baseline;gap: 14px;flex-wrap: wrap;margin-bottom: 8px}
-.cgu.cgu{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
-.cgv.cgv{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
-.cgw.cgw{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
-.cgx.cgx{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
-.cgy.cgy{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
-.cgz.cgz{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
-.ch0.ch0{font-size: 15px;font-weight: 800;margin: 0 0 12px}
-.ch1.ch1{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
-.ch2.ch2{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
-.ch3.ch3{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
-.czw.czw{margin-bottom: 52px}
-.czx.czx{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
-.c101.c101{margin-bottom: 26px}
-.c102.c102{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
+.c20.c20{font-size: 12px;color: #666158;margin-top: 3px}
+.c21.c21{font-size: 13px;color: #45494F;line-height: 1.85;margin-top: 7px}
+.c23.c23{font-size: 11.5px;color: #2F5233;margin-top: 8px}
+.cgh.cgh{display: flex;gap: 12px;align-items: baseline;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 10px;padding: 12px 14px;text-decoration: none}
+.cgi.cgi{font-size: 12px;font-weight: 800;color: #2F5233;background: #E7ECE4;border-radius: 6px;padding: 2px 8px;flex-shrink: 0}
+.cgj.cgj{display: block;font-size: 13.8px;font-weight: 700;color: #16181C;line-height: 1.6}
+.cgk.cgk{display: block;font-size: 11.5px;color: #666158;margin-top: 2px}
+.cgl.cgl{position: relative;height: 13px}
+.cgm.cgm{margin-bottom: 60px;scroll-margin-top: 80px}
+.cgn.cgn{display: flex;align-items: baseline;gap: 14px;flex-wrap: wrap;margin-bottom: 8px}
+.cgo.cgo{font-size: 13px;font-weight: 800;color: #FFFFFF;background: #2F5233;border-radius: 8px;padding: 4px 12px}
+.cgp.cgp{font-size: clamp(21px, 2.7vw, 29px);font-weight: 800;margin: 0}
+.cgq.cgq{font-size: 14px;color: #666158;margin: 0 0 22px;max-width: 70ch}
+.cgr.cgr{background: #E7ECE4;border-radius: 12px;padding: 16px 20px;margin: 20px 0 26px;max-width: 70ch}
+.cgs.cgs{font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: #2F5233;margin-bottom: 6px}
+.cgt.cgt{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0}
+.cgu.cgu{font-size: 15px;font-weight: 800;margin: 0 0 12px}
+.cgv.cgv{display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 12px;margin-bottom: 18px}
+.cgw.cgw{border-inline-start: 3px solid #8A5410;padding: 4px 16px;max-width: 70ch}
+.cgx.cgx{font-size: 12px;font-weight: 700;color: #8A5410;margin-bottom: 4px}
+.c100.c100{margin-bottom: 52px}
+.c101.c101{font-size: 15px;line-height: 2;color: #45494F;max-width: 68ch;margin: 0 0 22px}
+.c105.c105{margin-bottom: 26px}
+.c106.c106{font-size: 14px;line-height: 1.95;color: #45494F;max-width: 70ch;margin: 0 0 14px}
 body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
