@@ -38,7 +38,8 @@ for name, scripts in STEPS:
         continue
     for s in scripts:
         print('\n── %s' % s)
-        r = subprocess.run([sys.executable, os.path.join(GEN, s)], cwd=GEN)
+        env = dict(os.environ, GEN_RUNNER='1')
+        r = subprocess.run([sys.executable, os.path.join(GEN, s)], cwd=GEN, env=env)
         if r.returncode:
             fail += 1
             print('   ✗ شکست خورد')
