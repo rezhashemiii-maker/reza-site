@@ -24,6 +24,7 @@ STEPS = [
     ('plain', ['plain/page.py']),
     ('found', ['found/logic.py', 'found/page.py']),
     ('music', ['music/page.py']),
+    ('sets', ['sets/page.py']),
     ('watch', ['watch/logic.py', 'watch/page.py']),
     ('shop',  ['workshop/hf.py', 'workshop/page.py']),
     ('wboard', ['writing_board.py']),
