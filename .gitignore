@@ -3,3 +3,4 @@ sitemap.xml
 robots.txt
 _site/
 .DS_Store
+tools/gen/artifact/out/
