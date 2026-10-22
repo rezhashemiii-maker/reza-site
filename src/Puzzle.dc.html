@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>پازلِ تازه — از ایده تا پروانهٔ انتشار</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F4F7F7;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#15616D;text-decoration:none}
+  a:hover{text-decoration:underline}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:84px}
+  b,strong{font-weight:700;color:#16181C}
+  ::selection{background:#DFEDEF;color:#15616D}
+  @media (max-width:900px){
+    nav[data-sections]{display:none !important}
+    div[data-sectionlist]{display:flex !important}
+  }
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F4F7F7; direction: rtl;">
+
+  <header style="position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #E4E1D6; background: rgba(244,247,247,0.94); backdrop-filter: blur(10px);">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <nav data-sections="1" style="display: flex; gap: 1px; margin-inline-start: auto; flex-wrap: wrap;">        <a href="#why" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">اقتصاد</a>        <a href="#skeleton" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">طراحی</a>        <a href="#ip" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">پروانهٔ انتشار</a>        <a href="#idea" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">ایدهٔ تازه</a>        <a href="#honest" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">صداقت</a>        <a href="#build" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">ساخت</a>        <a href="#sell" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">فروش</a>        <a href="#rest" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">باقی‌مانده‌ها</a>        <a href="#src" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">منابع</a>      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section style="max-width: 1000px; margin: 0 auto; padding: 56px 24px 20px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">بندِ نهم، بازشده · هشت بخش · یک پازلِ تازه</p>
+      <h1 style="font-size: clamp(30px, 4.6vw, 48px); font-weight: 800; margin: 0 0 22px; line-height: 1.34; letter-spacing: -0.015em;">پازلِ تازه،<br>از ایده تا پروانه</h1>      <p style="font-size: 18px; line-height: 2.1; color: #45494F; max-width: 62ch; margin: 0 0 17px;">در نوشتهٔ <a href="Money.dc.html">مسئله، به‌عنوان دارایی</a> دوازده پیشنهاد نوشتم و بندِ نهم این بود: «پازلِ تازه، با فکرِ پروانهٔ انتشار». همان‌جا هم اضافه کردم که ریاضیِ یک پازلِ خوب ساده است و سختی‌اش طراحی است.</p>      <p style="font-size: 18px; line-height: 2.1; color: #45494F; max-width: 62ch; margin: 0 0 17px;">ولی آن بند دو چیز را باز نگذاشت که مهم‌ترین بخشِ ماجرا هستند: اینکه یک پازل دقیقاً <b>چطور</b> به دارایی تبدیل می‌شود، و اینکه از یک پازل <b>چه چیزی می‌تواند مالِ تو باشد</b> — چون جوابِ دومی، برخلافِ تصورِ همه، «قاعده‌هایش» نیست.</p>      <p style="font-size: 18px; line-height: 2.1; color: #45494F; max-width: 62ch; margin: 0 0 17px;">این صفحه هر دو را باز می‌کند، و بعد یک پازلِ مشخص پیشنهاد می‌دهد که خودم طراحی‌اش کرده‌ام و عددهایش را با کد بررسی کرده‌ام. تهش هم صریح می‌گویم کدام تکه‌اش مالِ من نیست و کدام بخش‌ها هنوز بی‌جواب مانده‌اند.</p>      <div style="background: #DFEDEF; border-inline-start: 4px solid #15616D; border-radius: 0 13px 13px 0; padding: 17px 20px; margin: 24px 0 0; max-width: 68ch;">
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">عددهای بخشِ طراحی — شمارشِ جواب‌ها، کمترین تعدادِ سرنخ، و خودِ نمونهٔ پازل — با برنامه‌ای حساب شده‌اند که همین‌جا در متن آمده و نتیجه‌اش با فهرستِ مرجعِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">OEIS</span> هم خوانده. اگر خودت اجرا کردی و جواب دیگری گرفتی، به من بگو.</p>
+      </div>
+
+      <div data-sectionlist="1" style="display: none; gap: 6px; flex-wrap: wrap; margin-top: 24px;">        <a href="#why" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">اقتصاد</a>        <a href="#skeleton" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">طراحی</a>        <a href="#ip" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">پروانهٔ انتشار</a>        <a href="#idea" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">ایدهٔ تازه</a>        <a href="#honest" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">صداقت</a>        <a href="#build" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">ساخت</a>        <a href="#sell" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">فروش</a>        <a href="#rest" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">باقی‌مانده‌ها</a>        <a href="#src" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">منابع</a>      </div>
+    </section>
+
+    <section id="why" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">اقتصاد</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">یک پازل دقیقاً چه چیزی می‌فروشد</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">اول یک تصحیح: خریدارِ پازل، پازل نمی‌خرد. <b>عادت</b> می‌خرد.</p>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">روزنامه و اپلیکیشن دنبالِ چیزی‌اند که خواننده را هر روز، سرِ یک ساعتِ مشخص، برگرداند. پازل از این نظر محصولِ عجیبی است: هزینهٔ تولیدِ نسخهٔ بعدی‌اش تقریباً صفر است، کهنه نمی‌شود، ترجمه لازم ندارد، و در چند سانتی‌متر جا می‌شود.</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #15616D; margin-bottom: 11px;">دو مسیرِ واقعی، که هر دو مستندند</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">سودوکو — مسیرِ کند و بزرگ</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">در ۱۹۷۹ در آمریکا با نامِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">Number Place</span> چاپ شد و طراحش هم تقریباً ناشناس ماند. در ۱۹۸۴ یک ناشرِ ژاپنی برش داشت و نامِ کوتاهِ امروزی را رویش گذاشت. و تا ۲۰۰۴ هیچ اتفاقِ جهانی‌ای نیفتاد — تا یک قاضیِ بازنشسته در یک کتاب‌فروشیِ توکیو دیدش، شش سال وقت گذاشت و برنامه‌ای نوشت که پازل تولید کند <b>و سختی‌اش را درجه‌بندی کند</b>، و آن را به روزنامه‌های بریتانیا فروخت. موجِ جهانی از همان نقطه شروع شد.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">وردل — مسیرِ تند و کوچک</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک بازیِ کلمهٔ ساده، بدونِ تبلیغ و بدونِ اشتراک. از نوامبرِ ۲۰۲۱ با ۹۰ بازیکن شروع شد و تا نیمهٔ ژانویه به حدودِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">300</span> هزار نفر رسید. در ۳۱ ژانویهٔ ۲۰۲۲ روزنامهٔ نیویورک‌تایمز خریدش؛ رقم را اعلام نکرد و فقط گفت «در محدودهٔ پایینِ هفت رقم» — یعنی چند میلیون دلار.</p>
+          </div>        </div>
+      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">نکتهٔ طراحی</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">این دو مسیر یک درسِ مشترک دارند و درسش ضدِشهود است. آن قاضی سودوکو را <b>نساخت</b>؛ چیزی ساخت که سودوکو نداشت: یک «لولهٔ تولیدِ روزانه با سختیِ درجه‌بندی‌شده». و وردل به خاطرِ قاعده‌اش خریده نشد — به خاطرِ سه‌ماه رشدِ اثبات‌شده خریده شد. پس آن چیزی که فروش می‌رود نه قاعده است و نه ریاضی: <b>لولهٔ تولید، درجه‌بندیِ سختی، و شاهدِ عادت</b>.</p>
+      </div>      </div>
+    </section>
+
+    <section id="skeleton" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">طراحی</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">استخوان‌بندیِ یک پازلِ قابلِ فروش</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">از آن دو نمونه و از پازل‌های شکست‌خورده، هفت شرط بیرون می‌آید. پازلی که یکی‌شان را نداشته باشد، معمولاً در آزمایش می‌ماند.</p>      <div style="display: flex; flex-direction: column; gap: 9px; margin: 20px 0; max-width: 68ch;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۱</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>جوابِ یکتا.</b> اگر دو جواب داشته باشد، خواننده احساس می‌کند سرش کلاه رفته. این سخت‌گیرانه‌ترین شرط است و بیشترِ ایده‌ها همین‌جا می‌میرند.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۲</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>حل‌شدن با استدلال، نه با حدس.</b> باید زنجیره‌ای از نتیجه‌گیری‌های قطعی تا جواب وجود داشته باشد. پازلی که آخرش مجبورت کند شانسی پر کنی، بد است — حتی اگر جوابش یکتا باشد.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۳</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>قاعده‌ها در سه خط.</b> اگر در یک ستونِ روزنامه جا نشود، چاپ نمی‌شود.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۴</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>پیچِ سختی.</b> باید بتوانی همان پازل را آسان و متوسط و سخت تولید کنی، چون روزنامه هر روزِ هفته سختیِ متفاوت می‌خواهد.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۵</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>تولیدِ ارزان، بررسیِ فوری.</b> ساختنِ هزار نمونه باید چند دقیقه طول بکشد و درستیِ هر نمونه در یک لحظه بررسی‌شدنی باشد.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۶</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>جای چاپِ کوچک.</b> یک جدولِ نُه‌در‌نُه جا می‌خواهد. چیزی که در یک نوارِ باریک جا شود، جای خالیِ بیشتری در صفحه پیدا می‌کند — و این یک مزیتِ توزیع است، نه سلیقه.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۷</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>نامی که بشود صاحبش شد.</b> دلیلش در بخشِ بعد.</p>
+        </div>      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">و یک نکتهٔ عددی که نشان می‌دهد این کار چقدر ریاضی است</h3>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">سودوکو را از نظرِ ریاضی خوب شناخته‌اند، و دو عددش را بدان چون معیارِ خوبی برای مقایسه‌اند:</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #15616D; margin-bottom: 11px;">دو عددِ سودوکو</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">تعدادِ کلِ جدول‌های درست</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">6,670,903,752,021,072,936,960</span> — یعنی شش‌هزار‌و‌ششصد‌و‌هفتاد میلیارد میلیارد. تمام‌نشدنی بودنِ یک پازل، شرطِ بقای تجاری‌اش است.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">کمترین تعدادِ سرنخ</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">سه ریاضی‌دان در ۲۰۱۲ با جست‌وجوی کامل ثابت کردند هیچ جدولی با <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">16</span> سرنخ جوابِ یکتا ندارد، پس کمینه <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">17</span> است. این‌ها سؤال‌های واقعیِ ریاضی‌اند که از دلِ یک سرگرمی بیرون آمده‌اند.</p>
+          </div>        </div>
+      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">نکتهٔ طراحی</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">شرطِ اول و دوم را با هم بخوان، چون تفاوتشان همان جایی است که طراحِ تازه‌کار اشتباه می‌کند: یکتاییِ جواب کارِ <b>ماشین</b> است و با یک شمارشگر بررسی می‌شود؛ ولی «حل‌شدن با استدلال» کارِ <b>آدم</b> است و برای سنجشش باید یک حل‌کنندهٔ منطقی بنویسی که فقط نتیجه‌گیریِ قطعی انجام دهد. بیشترِ تولیدکننده‌های پازلِ بی‌کیفیت، دومی را ندارند.</p>
+      </div>      </div>
+    </section>
+
+    <section id="ip" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">آن چیزی که توضیح نداشت · یک</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">پروانهٔ انتشار: چه چیزی مالِ تو می‌شود</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این بخش مهم‌ترین قسمتِ این صفحه است، چون تصورِ غالب غلط است.</p>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;"><b>قاعده‌های یک پازل، مالِ هیچ‌کس نیست.</b> قانونِ کپی‌رایت در آمریکا صریحاً ایده، روش، رویه، و «سیستم» را از حمایت بیرون می‌گذارد — بندِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">102(b)</span>. و قاعدهٔ یک بازی، دقیقاً از جنسِ همین «سیستم» است: ساختاری که ورودیِ بازیکن را به خروجی تبدیل می‌کند. برای همین هر کسی می‌تواند فردا همان پازلِ تو را با نامِ دیگری چاپ کند.</p>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">پس چه چیزی می‌ماند؟ سه چیز:</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #15616D; margin-bottom: 11px;">سه داراییِ واقعی</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">نام و نشان</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">نام را می‌شود به‌عنوانِ علامتِ تجاری ثبت کرد. دقیقاً همین اتفاق در سودوکو افتاد: آن ناشرِ ژاپنی نامِ کوتاه را در ژاپن ثبت کرد، و نتیجه‌اش این شد که در بقیهٔ دنیا همان پازل را با نامِ قدیمی‌ترش هم صدا می‌زنند. نام تنها تکه‌ای از این ماجراست که حقوقاً محکم است.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">خودِ نمونه‌ها و متنِ چاپی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">هر پازلِ مشخصی که تولید می‌کنی، و متن و چیدمانِ صفحه، مصداقِ اثرِ قابلِ حمایت‌اند — نه قاعده‌اش. یعنی کسی نمی‌تواند آرشیوِ هزارتایی‌ات را کپی کند، ولی می‌تواند هزار نمونهٔ خودش را بسازد.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">لولهٔ تولید و درجه‌بندی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">و این در عمل مهم‌ترینشان است: کدی که هر روز نمونهٔ تازه با سختیِ تنظیم‌شده می‌دهد، و سابقه‌ای که نشان دهد بی‌خطا تحویل داده‌ای. این را می‌شود به‌عنوانِ راز نگه داشت و همین است که قرارداد می‌آورد.</p>
+          </div>        </div>
+      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">نکتهٔ طراحی</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">نتیجهٔ عملی‌اش این است: روی «محافظت از ایده» وقت نگذار، چون محافظتی وجود ندارد. وقتت را بگذار روی چیزی که کپی‌کردنش گران است — آرشیو، کیفیت، نام، و رابطهٔ کاری. این همان الگوی سومِ نوشتهٔ قبلی است: ارزش در توجهی است که جمع می‌کنی، نه در خودِ مسئله.</p>
+      </div>      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 20px; margin: 20px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #666158; margin-bottom: 9px;">یک احتیاطِ حقوقی</div>
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">آنچه بالا آمد بر پایهٔ قانونِ آمریکا و نمونهٔ ژاپن است، و نظرِ حقوقی نیست. برای ایران باید جداگانه بررسی شود — هم ثبتِ علامتِ تجاری، هم وضعیتِ ایران در کنوانسیون‌های کپی‌رایت که با آمریکا و اروپا فرق دارد. این یکی از همان بخش‌های باقی‌ماندهٔ آخرِ صفحه است.</p>
+      </div>      </div>
+    </section>
+
+    <section id="idea" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">ایدهٔ تازه</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">پیشنهادِ من: «فاصله‌چین»</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">پازلی می‌خواستم که هر هفت شرطِ بالا را داشته باشد و در یک <b>نوارِ باریک</b> جا شود — چون جای خالیِ یک نوار در صفحه بیشتر از جای خالیِ یک مربع است.</p>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">قاعده، در سه خط</h3>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #15616D; margin-bottom: 11px;">فاصله‌چین</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">میدانِ بازی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک نوارِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">2n</span> خانه‌ای. برای نسخهٔ روزنامه‌ای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 8</span> ، یعنی ۱۶ خانه.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">کاری که می‌کنی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">هر عدد از <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">1</span> تا <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n</span> را <b>دو بار</b> در نوار بگذار.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">تنها شرط</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">بینِ دو نسخهٔ عددِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k</span> باید دقیقاً <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k</span> خانه فاصله باشد. یعنی دو تا <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">1</span> یک خانه فاصله دارند، دو تا <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">5</span> پنج خانه.</p>
+          </div>        </div>
+      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">یک نمونهٔ واقعی</h3>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این نمونه را خودم با کد ساختم و یکتا بودنِ جوابش را بررسی کردم. چهار سرنخ دارد:</p>      <div style="margin: 18px 0; max-width: 68ch;">
+        <div style="font-size: 11.5px; font-weight: 700; color: #666158; margin-bottom: 9px;">صورتِ مسئله</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; unicode-bidi: isolate;">          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">8</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">2</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">4</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">7</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 400; border: 1px solid #DCD7CA; border-radius: 5px; background: #FAFAF7; color: #B9B3A5;">·</span>        </div>
+      </div>      <div style="margin: 18px 0; max-width: 68ch;">
+        <div style="font-size: 11.5px; font-weight: 700; color: #666158; margin-bottom: 9px;">و جوابش، که یکی بیشتر نیست</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; unicode-bidi: isolate;">          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">8</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">3</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">7</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">2</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">6</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">3</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">2</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">4</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">5</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">8</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">7</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">6</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">4</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">1</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">5</span>          <span style="width: 27px; height: 31px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; border: 1px solid #15616D; border-radius: 5px; background: #FFFFFF; color: #15616D;">1</span>        </div>
+      </div>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">نگاه کن ببین چرا قابلِ حل است: عددِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">8</span> در خانهٔ اول است، پس نسخهٔ دومش اجباراً در خانهٔ دهم می‌نشیند — هیچ انتخابی نیست. همین یک قدم، دو خانه را قطعی می‌کند و بقیه زنجیره‌وار می‌آید.</p>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">چهار دلیل که این پازل انتخابِ خوبی است</h3>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #15616D; margin-bottom: 11px;">چرا این یکی</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">یک قانونِ پنهان دارد که خودِ حل‌کننده کشفش می‌کند</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">این پازل برای هر <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n</span> جواب ندارد. فقط وقتی جواب دارد که <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n</span> بر چهار بخش‌پذیر باشد یا باقی‌ماندهٔ سه بدهد — یعنی <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">3, 4, 7, 8, 11, 12, …</span> و نه <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">5</span> و نه <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">6</span>. خواننده‌ای که چند هفته حل کند، خودش این را حس می‌کند، و این بهترین چیزی است که یک پازل می‌تواند بدهد.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">تعدادِ نمونه‌هایش کافی است، ولی بی‌نهایت نیست</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">شمارشِ کلِ چیدمان‌ها را خودم اجرا کردم و با فهرستِ مرجع هم خواند: برای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 8</span> دقیقاً <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">150</span> چیدمان (تا تقارنِ آینه‌ای)، برای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 11</span> حدودِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">17,792</span> و برای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 12</span> بیش از <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">108</span> هزار. یعنی نسخهٔ روزنامه‌ایِ کوچک محدود است و نسخهٔ بزرگ‌تر عملاً تمام‌نشدنی.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">در یک نوار جا می‌شود</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">شانزده خانه در یک خط. در حاشیهٔ صفحه، در پایینِ یک ستون، یا در یک پیامکِ تصویری هم جا می‌شود. سودوکو این را ندارد.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">هیچ حسابی لازم نیست</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">فقط شمردنِ خانه‌ها. برای بچهٔ هفت‌ساله هم قابلِ فهم است، و همین دامنهٔ مخاطبش را باز می‌کند.</p>
+          </div>        </div>
+      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">آن قانونِ پنهان، و اثباتش در چهار خط</h3>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">خانه‌ها را یکی‌درمیان فرد و زوج بنام. دو نسخهٔ عددِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k</span> به فاصلهٔ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k+1</span> از هم می‌نشینند. پس:</p>      <div style="display: flex; flex-direction: column; gap: 9px; margin: 20px 0; max-width: 68ch;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۱</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">اگر <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k</span> فرد باشد، <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k+1</span> زوج است و هر دو نسخه در خانه‌هایی <b>هم‌نوع</b> می‌نشینند — یا هر دو فرد، یا هر دو زوج.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۲</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">اگر <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k</span> زوج باشد، هر دو نسخه در خانه‌هایی <b>ناهم‌نوع</b> می‌نشینند: یکی فرد، یکی زوج.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۳</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">پس عددهای زوج از هر دسته دقیقاً یکی برمی‌دارند، و عددهای فرد از یک دسته دو تا. جمعِ خانه‌های فردِ نوار <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n</span> تاست، و از آن <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">⌊n/2⌋</span> خانه سهمِ عددهای زوج است. آنچه می‌ماند باید زوج باشد، چون عددهای فرد دوتادوتا برمی‌دارند.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۴</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یعنی <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">⌈n/2⌉</span> باید زوج باشد — و این دقیقاً همان شرطِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n ≡ 0 یا 3 (mod 4)</span> است. تا <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 400</span> با کد هم بررسی کردم: این دو شرط عیناً یکی‌اند.</p>
+        </div>      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">نکتهٔ طراحی</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">این‌جا کاری شد که در بخشِ طراحی گفتم شرطِ بقای یک پازل است: پازل یک <b>قضیه</b> در دلش دارد. حل‌کننده اول سرگرم می‌شود، بعد الگو را حس می‌کند، و بعد — اگر کنجکاو باشد — خودش ثابتش می‌کند. سودوکو چنین چیزی ندارد.</p>
+      </div>      </div>
+    </section>
+
+    <section id="honest" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">صداقت</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">چه چیزی از این ایده مالِ من نیست</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">ریاضیِ این پازل مالِ من نیست و قدیمی است. این چیدمان‌ها در ریاضیات شناخته‌شده‌اند و نامِ شناخته‌شده‌ای هم دارند: «جفت‌سازیِ لنگفورد»، به نامِ کسی که در ۱۹۵۸ مطرحش کرد. شمارشِ جواب‌هایش در فهرستِ مرجعِ دنباله‌های عددی ثبت است و مقاله‌های پژوهشی هم دربارهٔ شمارشش نوشته شده.</p>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">پس «تازه» در عنوانِ این بخش یعنی چه؟ چهار چیز:</p>      <div style="display: flex; flex-direction: column; gap: 9px; margin: 20px 0; max-width: 68ch;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۱</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>قالبِ پازلی‌اش.</b> آن چیدمان‌ها به‌عنوان یک مسئلهٔ ریاضی شناخته‌شده‌اند، نه به‌عنوان پازلی با سرنخ و جوابِ یکتا. آن تبدیل، کارِ طراحی است.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۲</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>انتخابِ اندازه.</b> اینکه <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 8</span> اندازهٔ درستِ روزنامه است و <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 3</span> و <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 4</span> بی‌فایده‌اند چون هر کدام فقط یک جواب دارند، نتیجهٔ همان شمارشی است که اجرا کردم.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۳</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>تعدادِ سرنخ.</b> اجرا کردم و دیدم برای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 7</span> و <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n = 8</span> فقط <b>دو</b> سرنخ برای یکتاییِ جواب کافی است. ولی دو سرنخ پازلِ بدی می‌سازد، چون حل‌کننده مجبور می‌شود جست‌وجو کند. پس تعدادِ سرنخ را باید از کمینه بالاتر برد — و این دقیقاً همان تفاوتِ «یکتایی» با «حل‌شدن با استدلال» است که در بخشِ طراحی گفتم.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #15616D;">۰۴</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>نام.</b> و همان‌طور که در بخشِ پروانهٔ انتشار دیدیم، نام تنها تکه‌ای است که حقوقاً می‌شود صاحبش شد.</p>
+        </div>      </div>      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 20px; margin: 20px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #666158; margin-bottom: 9px;">کاری که پیش از هر قدمِ دیگری باید کرد</div>
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">باید بگردی ببینی کسی این قالب را قبلاً چاپ کرده یا نه. سه جای جست‌وجو: فهرستِ پازل‌های ناشرانِ ژاپنی، دانشنامه‌های پازل، و خودِ فهرستِ دنباله‌های عددی که ارجاع‌های تاریخی‌اش را هم می‌آورد. اگر کسی ساخته، بد نیست — یعنی ایده کار می‌کند؛ ولی آن‌وقت دیگر نباید رویش نام بگذاری.</p>
+      </div>      </div>
+    </section>
+
+    <section id="build" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">ساخت</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">از ایده تا هزار نمونه</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این بخش آن چیزی است که در بندِ نهمِ نوشتهٔ قبلی جا مانده بود: پازل‌داشتن کافی نیست، <b>لولهٔ تولید</b> لازم است. چهار تکه دارد.</p>      <div style="display: flex; flex-direction: column; gap: 10px; margin: 22px 0; max-width: 70ch;">        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۱</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">۱ — حل‌کنندهٔ کامل، برای شمارشِ جواب</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک جست‌وجوی بازگشتیِ ساده: عددها را از بزرگ به کوچک بگذار، چون عددِ بزرگ جای کمتری دارد و شاخه‌ها زود بسته می‌شوند. به محضِ رسیدن به جوابِ دوم بایست — برای بررسیِ یکتایی لازم نیست همه را بشماری. کدش به اندازهٔ یک صفحه است و همین‌جا در متن هست.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۲</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">۲ — حل‌کنندهٔ منطقی، برای سنجشِ سختی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">این مهم‌ترین و فراموش‌شده‌ترین تکه است. برنامه‌ای که فقط <b>نتیجه‌گیریِ قطعی</b> می‌کند: «این عدد فقط یک جا می‌تواند بنشیند»، «این خانه فقط یک گزینه دارد»، و استدلالِ توازنی که بالا دیدیم. اگر این برنامه پازل را تا آخر حل کرد، پازل منصفانه است. اگر نه، سرنخ کم است. درجهٔ سختی = تعداد و نوعِ قاعده‌هایی که لازم شد.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۳</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">۳ — تولیدکننده، به روشِ معکوس</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">از جواب شروع کن نه از صورتِ مسئله: یک چیدمانِ تصادفی بساز، همهٔ خانه‌ها را سرنخ کن، و بعد یکی‌یکی سرنخ‌ها را بردار تا جایی که هم یکتا بماند و هم حل‌کنندهٔ منطقی از عهده‌اش بربیاید. این روشِ استانداردِ ساختِ پازل است و برای همین پازل‌ها همیشه جواب دارند.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۴</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">۴ — آزمایش با آدم</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">ده نفر، پنج پازل، و فقط یک سؤال: کجا گیر کردی؟ درجه‌بندیِ ماشین و حسِ آدم همیشه یکی نیست، و تنها راهِ کالیبره کردنش همین است. این همان مفهومِ «کالیبراسیون» است که در صفحهٔ <a href="Prob.dc.html">تولدِ احتمال</a> از آن حرف زدم، این بار روی سختیِ پازل.</p>
+          </div>
+        </div>      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">کدِ تکهٔ اول، که با آن همهٔ عددهای این صفحه را درآوردم</h3>      <pre style="direction: ltr; text-align: left; unicode-bidi: isolate; background: #1B1F27; color: #E8ECF2; border-radius: 13px; padding: 18px 20px; margin: 20px 0; max-width: 68ch; overflow-x: auto; font-size: 13px; line-height: 1.95;"><code>def solve(n, givens=None, limit=None):
+    """همهٔ چیدمان‌ها؛ givens: {ایندکسِ صفرمبنا: عدد}."""
+    N, givens, out = 2 * n, givens or {}, []
+    cells = [0] * N
+    for i, v in givens.items():
+        cells[i] = v
+
+    def place(k):
+        if limit and len(out) &gt;= limit:
+            return
+        if k == 0:
+            out.append(tuple(cells)); return
+        for i in range(N - k - 1):
+            j = i + k + 1
+            if cells[i] not in (0, k) or cells[j] not in (0, k):
+                continue
+            pre = [p for p, v in givens.items() if v == k]
+            if pre and not all(p in (i, j) for p in pre):
+                continue
+            a, b = cells[i], cells[j]
+            cells[i] = cells[j] = k
+            place(k - 1)
+            cells[i], cells[j] = a, b
+    place(n)
+    return out
+
+# شمارشِ کل، و بررسیِ یکتاییِ یک پازل
+print(len(solve(8)))                       # 300
+print(len(solve(8, {0: 8, 3: 2, 7: 4, 10: 7}, limit=2)))   # 1
+</code></pre>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">نکتهٔ طراحی</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">توجه کن تکهٔ دوم — حل‌کنندهٔ منطقی — را من <b>ننوشته‌ام</b>. همهٔ عددهای این صفحه با تکهٔ اول درآمده، که فقط یکتایی را بررسی می‌کند. پس آن چیزی که این ایده را به محصول تبدیل می‌کند، هنوز ساخته نشده. این بزرگ‌ترین بخشِ باقی‌ماندهٔ این کار است و کمترین هم طول نمی‌کشد — چند روز کارِ متمرکز.</p>
+      </div>      </div>
+    </section>
+
+    <section id="sell" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">فروش</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">ترتیبِ کارها، اگر جدی باشی</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">ترتیب مهم‌تر از خودِ کارهاست. اشتباهِ رایج این است که آدم با یک ایده سراغِ خریدار می‌رود؛ خریدار ایده نمی‌خرد.</p>      <div style="display: flex; flex-direction: column; gap: 10px; margin: 22px 0; max-width: 70ch;">        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۱</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">آرشیو بساز، نه نمونه</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">صد پازل با سختیِ درجه‌بندی‌شده، آماده. پیش از این سراغِ هیچ‌کس نرو. این همان چیزی است که آن قاضی شش سال رویش کار کرد.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۲</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">رایگان منتشرش کن و عادت را اندازه بگیر</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک کانال یا صفحه، هر روز یک پازل، سه ماه بی‌تعطیل. آن چیزی که بعداً نشان می‌دهی، نرخِ برگشتِ خواننده است نه خودِ پازل. وردل هم با همین خریده شد.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۳</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">اول با کوچک‌ها قرارداد ببند</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک نشریهٔ محلی یا یک اپلیکیشنِ ایرانی. قرارداد کوچک، ولی مکتوب — چون سابقهٔ تحویلِ بی‌خطا، خودش دارایی است.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۴</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">نام را ثبت کن، پیش از موجِ اول</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">چون تنها تکه‌ای است که بعداً نمی‌توانی جبرانش کنی.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #DFEDEF; color: #15616D; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۵</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">و تازه بعد، سراغِ بزرگ‌ترها</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">با آرشیو، عدد، و سابقه. نه با ایده.</p>
+          </div>
+        </div>      </div>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #15616D; margin-bottom: 11px;">سه مدلِ درآمد، از ضعیف به قوی</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">فروشِ تکی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">هر پازل مبلغی. ساده‌ترین و کم‌سودترین، چون هر ماه از صفر شروع می‌شود.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">اشتراکِ دوره‌ای</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">ماهی <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۳۰</span> پازل، مبلغِ ثابت. درآمدِ قابلِ پیش‌بینی و همان چیزی که سندیکاهای پازل می‌فروشند.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">پروانهٔ نام و نشان</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">نشریه از نامِ تو استفاده می‌کند و درصدی می‌دهد. بهترین حالت، و تنها وقتی ممکن است که نام ارزش پیدا کرده باشد — یعنی بعد از دو قدمِ اول، نه قبلش.</p>
+          </div>        </div>
+      </div>      </div>
+    </section>
+
+    <section id="rest" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">آن چیزی که توضیح نداشت · دو</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">بخش‌هایی که هنوز بی‌جواب‌اند</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">و این‌ها آن تکه‌هایی‌اند که نه در نوشتهٔ قبلی جوابشان بود و نه این‌جا. می‌نویسمشان چون پنهان کردنشان این صفحه را بی‌مصرف می‌کند.</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #15616D; margin-bottom: 11px;">شش چیزِ بی‌جواب</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۱ — حل‌کنندهٔ منطقی، ساخته نشده</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">بزرگ‌ترین شکافِ فنی. تا این نباشد، نمی‌دانیم پازل برای آدم منصفانه است یا نه. <b>راهِ بستنش:</b> چند روز کد، و بعد مقایسه با همان ده نفرِ آزمایش.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۲ — تازگی‌اش بررسی نشده</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">نگشته‌ام ببینم کسی این قالب را چاپ کرده یا نه. <b>راهِ بستنش:</b> فهرستِ ناشرانِ ژاپنی، دانشنامه‌های پازل، و ارجاع‌های تاریخیِ فهرستِ دنباله‌های عددی.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۳ — وضعیتِ حقوقی در ایران</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">آنچه در بخشِ پروانهٔ انتشار نوشتم بر پایهٔ قانونِ آمریکا است. ثبتِ علامتِ تجاری در ایران روندِ خودش را دارد و حمایتِ بین‌المللی هم به کنوانسیون‌هایی بستگی دارد که وضعِ ایران در آن‌ها متفاوت است. <b>راهِ بستنش:</b> یک ساعت مشورتِ حقوقی، نه جست‌وجوی اینترنتی.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۴ — اقتصادِ واقعیِ بازارِ ایران</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">نمی‌دانم یک نشریهٔ فارسی بابتِ پازلِ روزانه چقدر می‌دهد، و حتی نمی‌دانم می‌دهد یا نه. عددِ این بازار در هیچ منبعی نیست. <b>راهِ بستنش:</b> سه تماس. و اگر جواب «نمی‌دهیم» بود، آن‌وقت مسیر اپلیکیشن است نه نشریه.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۵ — آیا نوارِ باریک مزیت است یا ضعف</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">استدلال کردم که جای چاپِ کوچک مزیتِ توزیع است. ولی ممکن است برعکس باشد: پازلی که کوچک به نظر می‌رسد، کم‌ارزش هم به نظر برسد. <b>راهِ بستنش:</b> همان سه ماه انتشارِ رایگان جوابش را می‌دهد.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۶ — نسخهٔ حلقه‌ای، حساب نشده</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">اگر نوار را حلقه کنیم و فاصله‌ها را دوطرفه بشماریم، قانونِ وجودِ جواب عوض می‌شود و احتمالاً پازلِ سخت‌تر و پرشمارتری می‌دهد. این را هنوز اجرا نکرده‌ام. <b>راهِ بستنش:</b> بیست خط تغییر در همان کدِ بالا.</p>
+          </div>        </div>
+      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">نکتهٔ طراحی</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">یک الگو در این شش مورد هست: چهار موردشان با چند روز کار یا چند تماس بسته می‌شوند، و دو موردشان فقط با انتشارِ واقعی. یعنی هیچ‌کدام سدِ شروع نیستند. و این دقیقاً همان آزمونی است که در نوشتهٔ قبلی گذاشتم: ایده‌ای ارزشِ وقت دارد که بتوانی پیش از هر قراردادی، در چند هفته بفهمی کار می‌کند یا نه. این یکی می‌شود.</p>
+      </div>      </div>
+    </section>
+
+    <section id="src" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 38px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #15616D; margin: 0 0 12px;">روش و منابع</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">کجا باید با احتیاط خواند</h2>
+      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">تفکیکِ این صفحه: بخشِ اقتصاد و پروانهٔ انتشار سند دارد؛ بخشِ طراحی و پیشنهاد، تحلیل و پیشنهادِ من است؛ و عددهای خودِ پازل را با کدِ داخلِ متن حساب کرده‌ام و با فهرستِ مرجع هم مقایسه کرده‌ام. دو احتیاط: حرف‌های حقوقی نظرِ حقوقی نیستند و برای ایران باید جدا بررسی شوند؛ و تازگیِ قالبِ پیشنهادی را نگشته‌ام — همان‌طور که در بخشِ باقی‌مانده‌ها نوشتم.</p>
+      <div style="display: flex; flex-direction: column; gap: 9px; max-width: 72ch;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #15616D;">۰۱</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">جفت‌سازیِ لنگفورد — ریاضیِ پشتِ این پازل</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">شرطِ وجودِ جواب (<span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n ≡ 0 یا 3 mod 4</span>)، تاریخِ ۱۹۵۸، و این‌که مسئله را می‌شود به‌صورتِ «پوششِ دقیق» حل کرد.</p>          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/Langford_pairing" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #15616D; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/Langford_pairing ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #15616D;">۰۲</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">فهرستِ شمارشِ جواب‌ها — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">OEIS A014552</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">عددهایی که با کدِ خودم بررسی کردم و خواند: <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">26</span> برای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n=7</span> ، <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">150</span> برای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n=8</span> ، <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">17792</span> و <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">108144</span> برای <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n=11</span> و <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">n=12</span>.</p>          <p style="margin: 0;"><a href="https://oeis.org/A014552" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #15616D; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://oeis.org/A014552 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #15616D;">۰۳</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">اثباتِ کمینهٔ ۱۷ سرنخِ سودوکو — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">arXiv:1201.0749</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">مک‌گوایر، توگه‌مان و چیواریو، ۲۰۱۲. جست‌وجوی کامل نشان داد هیچ جدولی با ۱۶ سرنخ جوابِ یکتا ندارد.</p>          <p style="margin: 0;"><a href="https://arxiv.org/abs/1201.0749" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #15616D; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://arxiv.org/abs/1201.0749 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #15616D;">۰۴</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">گزارشِ همان اثبات و شمارشِ کلِ جدول‌های سودوکو</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">منبعِ عددِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">6,670,903,752,021,072,936,960</span> و توضیحِ اینکه چطور با تقارن، فضای جست‌وجو کوچک شد.</p>          <p style="margin: 0;"><a href="https://www.technologyreview.com/2012/01/06/188520/mathematicians-solve-minimum-sudoku-problem/" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #15616D; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://www.technologyreview.com/2012/01/06/188520/mathematicians-solve-minimum-sudoku-problem/ ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #15616D;">۰۵</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">تاریخِ سودوکو — از <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">Number Place</span> تا موجِ ۲۰۰۴</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">چاپِ اولِ ۱۹۷۹، ناشرِ ژاپنی در ۱۹۸۴، ثبتِ نام در ژاپن، و ماجرای آن قاضیِ بازنشسته و برنامه‌اش.</p>          <p style="margin: 0;"><a href="https://en.wikipedia.org/wiki/Sudoku" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #15616D; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://en.wikipedia.org/wiki/Sudoku ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #15616D;">۰۶</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">خریدِ وردل به دستِ نیویورک‌تایمز، ۳۱ ژانویهٔ ۲۰۲۲</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">رقم اعلام نشد و خودِ روزنامه گفت «در محدودهٔ پایینِ هفت رقم». رشد از ۹۰ بازیکن به حدودِ ۳۰۰ هزار نفر در دو ماه.</p>          <p style="margin: 0;"><a href="https://siliconangle.com/2022/01/31/new-york-times-buys-popular-word-game-wordle/" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #15616D; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://siliconangle.com/2022/01/31/new-york-times-buys-popular-word-game-wordle/ ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #15616D;">۰۷</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">چرا قاعده‌های بازی کپی‌رایت نمی‌گیرند — کانونِ وکلای آمریکا</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">بندِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">102(b)</span> و اینکه چرا قاعده از جنسِ «سیستم» است. برای بخشِ پروانهٔ انتشار.</p>          <p style="margin: 0;"><a href="https://www.americanbar.org/groups/intellectual_property_law/resources/landslide/archive/why-videogame-rules-are-not-expression-protected-copyright-law/" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #15616D; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://www.americanbar.org/groups/intellectual_property_law/resources/landslide/archive/why-videogame-rules-are-not-expression-protected-copyright-law/ ↗</a></p>        </div>      </div>      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px;">
+        <a href="Money.dc.html" style="font-size: 13.5px; font-weight: 700; color: #FFFFFF; background: #15616D; padding: 12px 22px; border-radius: 10px;">مسئله، به‌عنوان دارایی ←</a>
+        <a href="Aimo.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 12px 22px; border-radius: 10px;">المپیادِ ریاضیِ هوش مصنوعی ←</a>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · پازلِ تازه</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
