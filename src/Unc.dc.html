@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>از کجا می‌داند که نمی‌داند — یک مسئلهٔ هوش مصنوعی، در عمق</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F8F5F6;color:#16181C;-webkit-font-smoothing:antialiased}
+  a{color:#7A2E4A;text-decoration:none}
+  a:hover{text-decoration:underline}
+  html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:84px}
+  b,strong{font-weight:700;color:#16181C}
+  ::selection{background:#F3E4E9;color:#7A2E4A}
+  @media (max-width:900px){
+    nav[data-sections]{display:none !important}
+    div[data-sectionlist]{display:flex !important}
+  }
+</style>
+</helmet>
+
+<div style="width: 100%; min-height: 100vh; background: #F8F5F6; direction: rtl;">
+
+  <header style="position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #E4E1D6; background: rgba(248,245,246,0.94); backdrop-filter: blur(10px);">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <nav data-sections="1" style="display: flex; gap: 1px; margin-inline-start: auto; flex-wrap: wrap;">        <a href="#pick" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">انتخاب</a>        <a href="#what" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">صورتِ مسئله</a>        <a href="#why_open" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">چرا باز است</a>        <a href="#methods" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">نُه روش</a>        <a href="#metrics" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">سنجش</a>        <a href="#cost" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">هزینه</a>        <a href="#plan" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">برنامه</a>        <a href="#market" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">بازار</a>        <a href="#risks" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">ریسک</a>        <a href="#open" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">پرسش‌های باز</a>        <a href="#src" style="font-size: 11.5px; color: #45494F; padding: 5px 8px; border-radius: 999px;">منابع</a>      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section style="max-width: 1000px; margin: 0 auto; padding: 56px 24px 20px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">یک مسئله، در عمق · ده بخش · برای تصمیم‌گیری</p>
+      <h1 style="font-size: clamp(30px, 4.6vw, 48px); font-weight: 800; margin: 0 0 22px; line-height: 1.34; letter-spacing: -0.015em;">از کجا می‌داند<br>که نمی‌داند</h1>      <p style="font-size: 18px; line-height: 2.1; color: #45494F; max-width: 62ch; margin: 0 0 17px;">خواستی یکی از مسئله‌های هوش مصنوعی را انتخاب کنم و تا عمق برویم، طوری که بعداً بشود روی آن تصمیم گرفت. انتخابم این است:</p>      <p style="font-size: 18px; line-height: 2.1; color: #45494F; max-width: 62ch; margin: 0 0 17px;"><b>مدل از کجا می‌داند که نمی‌داند؟</b> و دقیق‌تر: چطور عددی بیرون بدهیم که واقعاً نشان بدهد چقدر می‌شود به این جوابِ خاص اعتماد کرد، و چطور بسنجیم که آن عدد راست می‌گوید.</p>      <p style="font-size: 18px; line-height: 2.1; color: #45494F; max-width: 62ch; margin: 0 0 17px;">این مسئله را از پنج نامزد انتخاب کردم و دلیلِ کنار گذاشتنِ چهار تای دیگر را هم نوشته‌ام. خلاصهٔ دلیلش: این تنها مسئله‌ای است در این فهرست که <b>به آموزشِ مدل نیازی ندارد</b> — با یک کارتِ گرافیکِ اجاره‌ای و چند صد نمونهٔ برچسب‌خورده می‌شود رویش کارِ جدی کرد — و در عینِ حال هنوز باز است و خریدار دارد.</p>      <div style="background: #F3E4E9; border-inline-start: 4px solid #7A2E4A; border-radius: 0 13px 13px 0; padding: 17px 20px; margin: 24px 0 0; max-width: 68ch;">
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">این صفحه طولانی است و برای یک بار خواندن نوشته نشده. بخشِ «برنامه» و «بازار» را می‌شود جدا خواند. تاریخِ بررسیِ منابع: مهرِ ۱۴۰۵.</p>
+      </div>
+
+      <div data-sectionlist="1" style="display: none; gap: 6px; flex-wrap: wrap; margin-top: 24px;">        <a href="#pick" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">انتخاب</a>        <a href="#what" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">صورتِ مسئله</a>        <a href="#why_open" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">چرا باز است</a>        <a href="#methods" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">نُه روش</a>        <a href="#metrics" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">سنجش</a>        <a href="#cost" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">هزینه</a>        <a href="#plan" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">برنامه</a>        <a href="#market" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">بازار</a>        <a href="#risks" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">ریسک</a>        <a href="#open" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">پرسش‌های باز</a>        <a href="#src" style="font-size: 12.5px; color: #45494F; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 7px 12px; border-radius: 999px;">منابع</a>      </div>
+    </section>
+
+    <section id="pick" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">انتخاب</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">چرا این یکی، و نه آن چهار تا</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">معیارِ انتخابم همان آزمونی بود که در <a href="Money.dc.html">مسئله، به‌عنوان دارایی</a> گذاشتم: مسئله‌ای که بتوانی <b>پیش از هر قراردادی</b>، روی دادهٔ واقعی، در چند هفته نشان بدهی جوابت بهتر از وضعِ فعلی است. به این چهار شرطِ عملی هم اضافه کردم: بی‌نیاز به آموزشِ مدل، قابلِ سنجش با عدد، باز بودن در مرزِ دانش، و داشتنِ خریدار.</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">پنج نامزد، و سرنوشتشان</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۱ — سنجشِ اعتماد و امتناع ← <b>انتخاب‌شده</b></div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">هیچ آموزشی لازم نیست؛ فقط استنتاج و آمار. با چند صد نمونه می‌شود شروع کرد. هم مسئلهٔ پژوهشیِ باز است و هم نیازِ عملیِ هر کسی که مدل را در تصمیمِ واقعی به کار می‌برد.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۲ — رسمی‌سازی و اثباتِ ماشینی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">کم‌رقیب‌ترین و پول‌دارترین است — در <a href="Aimo.dc.html">پروندهٔ المپیاد</a> دیدیم که بیست میلیون دلار تازه به آن تزریق شد. ولی سدِ ورودش چند ماه یادگیریِ ابزار است و بازخوردِ هفته‌ای ندارد. کنارش نگذاشتم؛ عقب‌تر گذاشتمش.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۳ — بنچمارکِ فارسی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">ارزشمند ولی تنگ: خریدارش چند نهادِ معدود است و چانه‌زنی یک‌طرفه. به‌علاوه ساختِ مسئلهٔ <b>اصیل</b> گران است. به‌عنوان محصولِ دوم خوب است، نه اول.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۴ — آموزشِ مدلِ کوچکِ تخصصی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">جذاب است و تقریباً همیشه اشتباه: به کارتِ گرافیکِ گران، دادهٔ زیاد و چند هفته آزمون‌وخطا نیاز دارد و آخرش با مدلِ عمومیِ ماهِ بعد مقایسه می‌شود. بدترین نسبتِ هزینه به بازخورد در این فهرست.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۵ — عاملِ خودکار برای یک کارِ مشخص</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">بازارش داغ است ولی ارزیابی‌اش مبهم: «خوب کار می‌کند» عددِ مشترکی ندارد. و همین نبودنِ معیار، خودش زیرمسئلهٔ موردِ یکم است. پس عملاً باید از یکم شروع کرد.</p>
+          </div>        </div>
+      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">برای تصمیم</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">یک نکتهٔ تصمیم‌گیری که از این جدول بیرون می‌آید و جای دیگری کمتر گفته می‌شود: بینِ دو مسئلهٔ هم‌ارزش، آن را بردار که <b>چرخهٔ بازخوردش کوتاه‌تر است</b>، نه آن که بازارش بزرگ‌تر است. بازارِ بزرگ با بازخوردِ شش‌ماهه، شش ماه طول می‌کشد تا بگوید اشتباه کرده‌ای.</p>
+      </div>      </div>
+    </section>
+
+    <section id="what" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">صورتِ مسئله</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">سه مسئلهٔ متفاوت که یک اسم دارند</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">اولین کارِ جدی در این حوزه این است که سه چیز را از هم جدا کنی. در گفتار روزمره هر سه را «اعتماد به مدل» می‌نامند و همین باعث می‌شود پروژه‌ها به بیراهه بروند، چون معیارشان با هدفشان نمی‌خواند.</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">سه مسئله، سه معیار</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۱ — کالیبراسیون</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">ادعا: «از هر صد باری که می‌گویم <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۹۰٪</span> مطمئنم، نود بار درست می‌گویم.» این یک شرطِ آماری روی <b>توزیع</b> است، نه روی یک جوابِ تکی. معیارش خطای کالیبراسیون و امتیازهای سنجهٔ درست است.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۲ — پیش‌بینیِ گزینشی و امتناع</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">ادعا: «اگر اجازه بدهی در <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۳۰٪</span> موارد جواب ندهم، دقتِ آن <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۷۰٪</span> باقی‌مانده از فلان درصد بالاتر می‌رود.» این‌جا هدف رتبه‌بندی است، نه عددِ درست. معیارش منحنیِ ریسک–پوشش است.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۳ — تشخیصِ توهم</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">ادعا: «این جملهٔ خاص ساختگی است.» یک مسئلهٔ دسته‌بندیِ دودویی روی هر خروجی. معیارش <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">AUROC</span> و امثالش است.</p>
+          </div>        </div>
+      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">چرا این تفکیک عملی است، نه لفظی</h3>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">یک مدل می‌تواند در رتبه‌بندی خوب باشد و در عدد بد: بفهمد کدام جواب‌ها مشکوک‌ترند، ولی عددی که می‌گوید سه برابرِ واقعیت باشد. آن‌وقت برای <b>امتناع</b> به کارت می‌آید و برای <b>گزارش به رگولاتور</b> نه. و برعکسش هم ممکن است.</p>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">پس اولین تصمیمِ هر پروژه این است: خریدارت کدام‌یک را می‌خواهد؟ اگر کسی سراغت آمد و خودش نمی‌دانست، همین تفکیک، اولین خدمتِ فروشنیِ تو است.</p>      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 20px; margin: 20px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #666158; margin-bottom: 9px;">یک تعریفِ دقیق، برای اینکه ابهام نماند</div>
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">اگر <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">q</span> عددِ اعتمادِ مدل باشد و <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">y</span> یک اگر جواب درست باشد و صفر اگر غلط، کالیبراسیون یعنی برای هر مقدارِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">q</span> داشته باشیم <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">E[y | q] = q</span>. این شرط <b>هیچ چیزی</b> دربارهٔ دقتِ مدل نمی‌گوید: مدلی که همیشه می‌گوید «<span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۳۰٪</span> مطمئنم» و واقعاً سی درصد مواقع درست است، کاملاً کالیبره است و تقریباً بی‌فایده. برای همین کالیبراسیون را هیچ‌وقت تنها گزارش نمی‌کنند.</p>
+      </div>      </div>
+    </section>
+
+    <section id="why_open" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">چرا باز است</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">مدل‌ها آموزش دیده‌اند که حدس بزنند</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این بخش مهم‌ترین چیزی است که در این موضوع یاد گرفتم، و جوابِ سؤالِ «چرا هنوز حل نشده» است. جوابش فنی نیست؛ <b>انگیزشی</b> است.</p>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">در سپتامبرِ ۲۰۲۵ گروهی از پژوهشگرانِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">OpenAI</span> مقاله‌ای نوشتند با عنوانِ «چرا مدل‌های زبانی توهم می‌زنند». استدلالِ اصلی‌شان این است: تقریباً همهٔ بنچمارک‌های رایج نمره‌دهیِ <b>صفر و یک</b> دارند. جوابِ درست یک نمره می‌گیرد، جوابِ غلط صفر، و «نمی‌دانم» هم صفر.</p>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">حالا حسابِ سرانگشتی را بکن: اگر هر باورِ ضعیفی دربارهٔ جوابِ درست داشته باشی، حدس زدن از امتناع <b>اکیداً</b> بهتر است، چون امتناع قطعاً صفر می‌دهد و حدس احتمالی مثبت. پس هر مدلی که برای بالا بردنِ نمرهٔ این بنچمارک‌ها بهینه شود، یاد می‌گیرد هیچ‌وقت نگوید نمی‌دانم.</p>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">برای تصمیم</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">این دقیقاً همان درسی است که در صفحهٔ <a href="Aimo.dc.html">المپیادِ ریاضیِ هوش مصنوعی</a> از بسته‌شدنِ آن جایزه گرفتیم، این بار در مقیاسِ کلِ صنعت: اگر معیارِ سنجشت بتواند با رفتارِ غلط هم راضی شود، سیستم همان رفتارِ غلط را یاد می‌گیرد. مسئلهٔ توهم، تا حدِ زیادی مسئلهٔ <b>طراحیِ نمره‌دهی</b> است.</p>
+      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">و عددهایی که نشان می‌دهد این حرف عملی است</h3>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">در همان گزارش، دو مدل را کنار هم گذاشتند. به تفاوتشان دقت کن:</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">نرخِ امتناع در برابرِ نرخِ خطا</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">مدلِ قدیمی‌تر</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">در <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۱٪</span> موارد امتناع می‌کرد، و <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۷۵٪</span> خطا داشت.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">مدلِ تازه‌ترِ استدلالی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">در <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۵۲٪</span> موارد امتناع می‌کند، و خطایش <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۲۶٪</span> است.</p>
+          </div>        </div>
+      </div>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">یعنی تفاوتِ این دو در «هوش» نیست، در <b>سیاستِ امتناع</b> است. و همین نشان می‌دهد چقدر از این مسئله با تنظیمِ رفتار حل می‌شود، نه با مدلِ بزرگ‌تر.</p>      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 20px; margin: 20px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #666158; margin-bottom: 9px;">یک یافتهٔ قدیمی‌تر که جا افتاده</div>
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">در گزارشِ فنیِ یکی از مدل‌های بزرگِ ۲۰۲۳ نمودارِ شناخته‌شده‌ای هست که نشان می‌دهد مدلِ <b>پیش‌آموزش‌دیده</b> کالیبراسیونِ خوبی داشت و همان مدل بعد از تنظیمِ بازخوردِ انسانی کالیبراسیونش <b>بد شد</b>. یعنی مرحله‌ای که مدل را مؤدب و مفید می‌کند، همان مرحله‌ای است که اعتمادِ بی‌جا به او یاد می‌دهد. این نکته را موقعِ طراحیِ آزمایشت یادت باشد: کالیبراسیونِ مدلِ خام و مدلِ نهایی دو چیزند.</p>
+      </div>      </div>
+    </section>
+
+    <section id="methods" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">نقشهٔ روش‌ها</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">نُه روش، از ارزان به گران</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این فهرست را به ترتیبِ هزینه چیده‌ام، نه به ترتیبِ کیفیت. هر کدام را با سه چیز نوشته‌ام: چه می‌خواهد، چقدر می‌ارزد، و کجا می‌شکند.</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">گروهِ اول — از خودِ مدل، بی‌هیچ هزینهٔ اضافه</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۱ — احتمالِ نشانه‌ها</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">میانگینِ لگاریتمِ احتمالِ نشانه‌های جواب. <b>هزینه:</b> صفر، اگر به آن دسترسی داشته باشی. <b>کجا می‌شکند:</b> با طولِ جواب به‌هم می‌ریزد و باید نرمال‌سازی شود؛ و در مدل‌های بسته اصلاً در دسترس نیست.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۲ — آنتروپیِ خروجی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">پراکندگیِ توزیعِ نشانهٔ بعدی. <b>هزینه:</b> صفر. <b>کجا می‌شکند:</b> یک معنا را می‌توان به ده شکل گفت؛ آنتروپیِ واژه‌ای بالا می‌رود بی‌آنکه ابهامِ معنایی وجود داشته باشد. این ضعف، پایهٔ روشِ ششم شد.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۳ — اعتمادِ گفتاری</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">صریح از مدل بپرس «از صد، چند درصد مطمئنی؟». <b>هزینه:</b> یک درخواستِ اضافه. <b>مزیت:</b> روی مدلِ بسته هم کار می‌کند. <b>کجا می‌شکند:</b> مدل‌ها در این عدد به‌شدت خوش‌بین‌اند و عددهای گردِ محبوب می‌دهند — هشتاد، نود، نودوپنج. ولی به‌عنوان خطِ پایه حتماً باید اندازه‌اش بگیری.</p>
+          </div>        </div>
+      </div>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">گروهِ دوم — با چند بار نمونه‌گیری</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۴ — سازگاریِ خودی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک سؤال را <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k</span> بار با دمای غیرصفر بپرس و ببین چند درصدِ جواب‌ها یکی‌اند. <b>هزینه:</b> <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k</span> برابرِ استنتاج. <b>مزیت:</b> سادگی و کارکرد روی مدلِ بسته. <b>کجا می‌شکند:</b> وقتی مدل به‌طورِ سیستماتیک اشتباه می‌کند، همهٔ نمونه‌ها هم‌صدا و هم‌غلط‌اند.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۵ — آنتروپیِ معنایی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">نسخهٔ پروردهٔ روشِ چهارم، و جدی‌ترین روشِ این فهرست: چند جواب بگیر، آن‌ها را بر اساسِ <b>هم‌معنایی</b> خوشه کن (با آزمونِ استلزامِ دوطرفه)، و آنتروپی را روی خوشه‌ها حساب کن نه روی واژه‌ها. در ۲۰۲۴ در <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">Nature</span> چاپ شد و روی سی ترکیبِ وظیفه و مدل از آنتروپیِ ساده و از روشِ «آیا درست است» بهتر کار کرد. <b>هزینه:</b> حدودِ ده برابرِ استنتاج، به‌علاوهٔ یک مدلِ استلزام. <b>کجا می‌شکند:</b> خودِ نویسندگان گفته‌اند جواب‌هایی که فقط در دقت فرق دارند — «۱۹۹۸» در برابرِ «ژوئنِ ۱۹۹۸» — بد خوشه می‌شوند.</p>
+          </div>        </div>
+      </div>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">گروهِ سوم — با برچسب و آموزشِ سبک</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۶ — کاوشگر روی حالتِ درونی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک دسته‌بندِ کوچک روی بردارهای درونیِ مدل آموزش بده که بگوید «این جواب درست درمی‌آید یا نه». ایدهٔ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">P(IK)</span> از ۲۰۲۲. <b>هزینه:</b> کم — چند هزار نمونهٔ برچسب‌خورده و چند دقیقه آموزش. <b>شرط:</b> دسترسی به وزن‌ها، پس فقط روی مدلِ وزن‌آزاد. <b>کجا می‌شکند:</b> به دامنه حساس است و با تغییرِ توزیعِ سؤال افت می‌کند.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۷ — بازبینِ جداگانه</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک مدلِ دوم که جوابِ اول را نقد می‌کند. همان ایده‌ای که در صفحهٔ المپیاد به‌عنوان «انتخابِ مولدِ جواب» دیدیم و برندهٔ دورِ دوم شد. <b>هزینه:</b> دو برابر. <b>کجا می‌شکند:</b> اگر هر دو از یک خانواده باشند، خطاهای مشترک دارند.</p>
+          </div>        </div>
+      </div>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">گروهِ چهارم — با تضمینِ ریاضی</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۸ — پیش‌بینیِ انطباقی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">این گروه از همه مهم‌تر است و کمتر شناخته شده. به‌جای یک عددِ اعتماد، تضمینی آماری می‌دهد: «با احتمالِ دست‌کم <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۹۰٪</span> ، جوابِ درست داخلِ این مجموعه است» — به شرطِ داشتنِ یک مجموعهٔ کالیبراسیونِ هم‌توزیع. در ۲۰۲۴ نسخه‌ای از آن برای درستیِ گزاره‌های یک مدلِ زبانی ساخته شد که با حذفِ گزاره‌های مشکوک، تضمینِ درستیِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۸۰</span> تا <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۹۰٪</span> می‌داد و بیشترِ متنِ اصلی را هم نگه می‌داشت. <b>مزیتِ تعیین‌کننده:</b> جعبه‌سیاه را قبول می‌کند و تضمینش اثبات‌شدنی است. <b>کجا می‌شکند:</b> تضمین فقط «به‌طورِ متوسط» است، نه برای هر پرسشِ خاص، و با تغییرِ توزیع باطل می‌شود.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۹ — به‌جای امتناع، احتیاط در زبان</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">کارِ تازه‌تری که می‌گوید جوابِ «نمی‌دانم» بیش از حد گران است؛ به‌جایش جواب را کم‌دقیق‌تر و احتیاطی‌تر بگو — «حدودِ اواخرِ دههٔ نود» به‌جای یک تاریخِ دقیق — و تضمینِ درستی را حفظ کن. <b>چرا مهم است:</b> در محصولِ واقعی، امتناعِ پنجاه‌درصدی قابلِ تحمل نیست.</p>
+          </div>        </div>
+      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">برای تصمیم</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">اگر فقط یک جمله از این بخش برداری، این باشد: روشِ اول تا چهارم را همه امتحان می‌کنند، روشِ پنجم جایی است که پژوهشِ جدی ایستاده، و روشِ هشتم و نهم جایی است که <b>فروش</b> هست — چون خریدارِ شرکتی عددِ اعتماد نمی‌خواهد، تضمین می‌خواهد. بیشترِ پروژه‌ها در گروهِ اول متوقف می‌شوند و بعد نمی‌فهمند چرا کسی پولش را نمی‌دهد.</p>
+      </div>      </div>
+    </section>
+
+    <section id="metrics" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">سنجش</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">تلهٔ معیارها، و اینکه چه چیزی را گزارش کنی</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این بخش را با جزئیات می‌نویسم چون بیشترِ کارهای بی‌کیفیتِ این حوزه از همین‌جا خراب می‌شوند — معیارِ غلط را انتخاب می‌کنند و بعد نتیجه‌ای می‌گیرند که تکرارشدنی نیست.</p>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">معیارِ محبوب، که ایرادِ شناخته‌شده دارد</h3>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">رایج‌ترین معیار «خطای کالیبراسیونِ موردِ انتظار» است: پیش‌بینی‌ها را بر اساسِ عددِ اعتماد در چند سبد دسته‌بندی می‌کنی، و در هر سبد میانگینِ اعتماد را با نرخِ درستی مقایسه می‌کنی. ساده و شهودی است، و سه ایرادِ مستند دارد:</p>      <div style="display: flex; flex-direction: column; gap: 9px; margin: 20px 0; max-width: 68ch;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۱</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>اریب است.</b> مقالهٔ ۲۰۲۰ نشان داد این معیار بسته به تعدادِ سبدها، اندازهٔ دادهٔ آزمون و نوعِ ناکالیبرگی، خطای واقعی را دست‌کم یا دست‌بالا می‌گیرد. و بدترین حالتش جایی است که از همه بیشتر به آن نیاز داری: اریبی برای مدل‌های <b>کاملاً کالیبره</b> شدیدتر است.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۲</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>به مرزِ سبدها حساس است.</b> همان مقاله روشی پیشنهاد می‌کند که تعدادِ سبد را تا جایی بزرگ کند که یکنوایی حفظ شود.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۳</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>ناپیوسته است.</b> مقالهٔ دیگری در ۲۰۲۴ نشان داد تغییرِ بی‌نهایت کوچک در پیش‌بینی‌ها می‌تواند این عدد را به‌شدت جابه‌جا کند — یعنی معیاری که می‌خواهی با آن دو روش را مقایسه کنی، خودش بی‌ثبات است.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۴</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>جایگزینش موجود است.</b> همان گروه راهی داد: اول مشاهدات را با یک هستهٔ هموارساز صاف کن و بعد خطای کالیبراسیون را حساب کن. با پهنای باندِ درست، معیارِ حاصل «سازگار» است — یعنی رفتارِ ریاضیِ درستی دارد.</p>
+        </div>      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">آن چیزی که من گزارش می‌کنم</h3>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">چهار عدد، هر کدام برای یک پرسش</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">منحنیِ ریسک–پوشش، و سطحِ زیرش</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">برای هر آستانهٔ امتناع، دو عدد: چند درصد از سؤال‌ها جواب داده شد، و در همان‌ها چقدر خطا بود. <b>چرا این اولین است:</b> تنها نموداری است که مستقیم به تصمیمِ عملیاتی وصل می‌شود، چون خریدار دقیقاً همین را می‌خواهد بداند.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">دقتِ گزینشی در پوششِ ثابت</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک عددِ قابلِ مقایسه: «در پوششِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۷۰٪</span> ، دقت چقدر است». برای مقایسهٔ روش‌ها لازم است، چون منحنی‌ها همدیگر را قطع می‌کنند.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">امتیازِ بریر یا لگاریتمی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">سنجه‌های «درست» — به این معنای فنی که بهترین نمره را فقط وقتی می‌گیری که احتمالِ واقعی را بگویی. پس قابلِ دورزدن نیستند، برخلافِ معیارِ سبدی.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">و در آخر، خطای کالیبراسیونِ هموارشده</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">برای گزارشِ رسمی و مقایسه با ادبیات لازم است — ولی نه به‌عنوان معیارِ اصلیِ تصمیم.</p>
+          </div>        </div>
+      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">برای تصمیم</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">یک قاعدهٔ تجربی که از این بخش بردار: <b>هیچ‌وقت دقت را بدونِ پوشش گزارش نکن.</b> هر سیستمی می‌تواند دقتش را به صد برساند، به شرطِ اینکه فقط به آسان‌ترین سؤال‌ها جواب بدهد. اگر جایی دیدی کسی بهبودِ دقت را اعلام کرده و نرخِ امتناعش را نگفته، عملاً هیچ نگفته.</p>
+      </div>      </div>
+    </section>
+
+    <section id="cost" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">هزینه</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">بودجهٔ واقعیِ کار</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این بخش را گذاشتم چون تصمیم‌گیری بدونِ عدد ممکن نیست. همهٔ این‌ها برای مقیاسِ «یک نفر، یک پروژهٔ سه‌ماهه» است.</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">چهار منبع، و مقدارِ لازم</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">محاسبات</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">برای گروهِ اول و سوم: هیچ آموزشی لازم نیست. برای روشِ آنتروپیِ معنایی حدودِ ده برابرِ استنتاجِ معمولی حساب کن، به‌علاوهٔ یک مدلِ استلزامِ کوچک. روی یک کارتِ اجاره‌ای، یک مجموعهٔ آزمونِ هزارتایی در چند ساعت تمام می‌شود. <b>یعنی هزینهٔ محاسباتی سدِ این کار نیست</b> — و این نکتهٔ اصلیِ انتخابِ این مسئله بود.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">دادهٔ برچسب‌خورده</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">بینِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۳۰۰</span> تا <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۱۰۰۰</span> سؤال با جوابِ درستِ قطعی، در همان دامنه‌ای که خریدارت کار می‌کند. این گران‌ترین تکهٔ کار است و با کیفیتِ آن، کلِ نتیجه عوض می‌شود. اگر خریدار دادهٔ خودش را بدهد، نیمی از کار انجام شده.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">مدلِ وزن‌آزاد</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">برای روش‌های حالتِ درونی لازم است. یک مدلِ متوسط روی یک کارت جا می‌شود. برای بقیهٔ روش‌ها حتی همین هم لازم نیست و مدلِ بسته کافی است.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">زمان</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">دوازده هفته، نیمه‌وقت، تا نتیجهٔ قابلِ ارائه. تفصیلش در بخشِ بعد.</p>
+          </div>        </div>
+      </div>      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 20px; margin: 20px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #666158; margin-bottom: 9px;">یک هزینهٔ پنهان که آدم‌ها جا می‌اندازند</div>
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">سنجشِ «درستیِ جواب» در پرسش‌های بازپاسخ، خودش یک مسئله است. برای سؤال‌هایی که جوابِ کوتاه و یکتا دارند آسان است؛ برای متنِ بلند باید یا آدم برچسب بزند یا از مدلِ داور استفاده کنی — و مدلِ داور خودش خطا و اریبی دارد. در بودجه‌ات برای این تکه جای جدا باز کن، وگرنه همهٔ عددهایت روی شن ساخته می‌شود.</p>
+      </div>      </div>
+    </section>
+
+    <section id="plan" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">برنامه</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">دوازده هفته، با چهار نقطهٔ توقف</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">هر مرحله یک معیارِ توقف دارد. اگر معیار برآورده نشد، ادامه ندادن <b>نتیجه</b> است، نه شکست — و از پیش نوشتنش جلوی دلبستگی را می‌گیرد.</p>      <div style="display: flex; flex-direction: column; gap: 10px; margin: 22px 0; max-width: 70ch;">        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #F3E4E9; color: #7A2E4A; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۱</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">هفتهٔ ۱ و ۲ — دامنه و دادهٔ آزمون</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک دامنهٔ باریک انتخاب کن که در آن جوابِ درست قطعی و بی‌بحث باشد. سه صد سؤال با جوابِ مرجع بساز یا جمع کن. <b>نقطهٔ توقف:</b> اگر نتوانستی در دو هفته سه‌صد سؤالِ با جوابِ قطعی جمع کنی، دامنه را عوض کن — نه برنامه را.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #F3E4E9; color: #7A2E4A; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۲</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">هفتهٔ ۳ و ۴ — خطوطِ پایه</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">سه خطِ پایه را اندازه بگیر: احتمالِ نشانه‌ها، اعتمادِ گفتاری، و سازگاریِ خودی با <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">k=5</span>. منحنیِ ریسک–پوشش را برای هر سه بکش. <b>نقطهٔ توقف:</b> اگر سازگاریِ خودی همین حالا منحنیِ خوبی داد و نیازِ خریدار را برآورده کرد، همین را تحویل بده و سراغِ روش‌های گران نرو. این بهترین حالتِ ممکن است و معمولاً کسی امتحانش نمی‌کند.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #F3E4E9; color: #7A2E4A; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۳</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">هفتهٔ ۵ تا ۷ — آنتروپیِ معنایی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">خوشه‌بندیِ هم‌معنایی را پیاده کن و با خطوطِ پایه مقایسه کن. <b>نقطهٔ توقف:</b> اگر بهبودش در دقتِ گزینشیِ پوششِ ثابت کمتر از چند واحد درصد بود، ده‌برابر هزینهٔ استنتاج را توجیه نمی‌کند. بنویسش و بگذارش کنار.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #F3E4E9; color: #7A2E4A; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۴</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">هفتهٔ ۸ و ۹ — تضمینِ انطباقی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">نسخهٔ انطباقی را روی همان داده پیاده کن تا بتوانی جمله‌ای از این جنس بگویی: «با احتمالِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۹۰٪</span> ، خروجیِ فیلترشده درست است». <b>نقطهٔ توقف:</b> اگر برای رسیدن به این تضمین مجبور شدی بیشترِ محتوا را حذف کنی، محصول بی‌مصرف است و باید سراغِ نسخهٔ «احتیاط در زبان» بروی.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #F3E4E9; color: #7A2E4A; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۵</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">هفتهٔ ۱۰ — آزمونِ جابه‌جایی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">همه‌چیز را روی یک دامنهٔ <b>دیگر</b> اجرا کن، بدونِ هیچ تنظیمِ تازه. <b>چرا این مهم‌ترین هفته است:</b> هر چیزی که با تغییرِ دامنه فرو بریزد، در محصولِ واقعی هم فرو می‌ریزد. و تقریباً همهٔ گزارش‌های خوش‌بینِ این حوزه این آزمون را ندارند.</p>
+          </div>
+        </div>        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: #F3E4E9; color: #7A2E4A; font-size: 12.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 4px;">۶</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.8; margin-bottom: 5px;">هفتهٔ ۱۱ و ۱۲ — نوشتن و عرضه</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">یک گزارشِ ده‌صفحه‌ای با منحنی‌ها، کدِ بازتولیدپذیر، و یک جدولِ تصمیم: «برای این سطحِ ریسک، این آستانه». همین گزارش، هم نمونهٔ کار است و هم خودش محصولِ قابلِ فروش.</p>
+          </div>
+        </div>      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">برای تصمیم</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">ترتیب را عوض نکن. وسوسهٔ طبیعی این است که از روشِ پنجم شروع کنی چون جذاب‌ترین است؛ ولی اگر خطِ پایه را اندازه نگرفته باشی، هیچ‌وقت نمی‌فهمی بهبودت واقعی است یا نویز. و آزمونِ هفتهٔ دهم را هم به آخر هل نده: اگر در آن شکست بخوری، بهتر است هفتهٔ دهم بفهمی تا بعد از قرارداد.</p>
+      </div>      </div>
+    </section>
+
+    <section id="market" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">بازار</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">چه کسی پول می‌دهد، و کِی</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">سه خریدارِ متفاوت، با سه محصولِ متفاوت. و یک تاریخ که تازه عوض شده و روی زمان‌بندی اثر می‌گذارد.</p>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">سه شکلِ محصول</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۱ — گزارشِ ارزیابی، یک‌باره</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">به یک شرکت می‌گویی سیستمِ فعلی‌اش در کدام پوشش چقدر خطا دارد و آستانهٔ درستش کجاست. <b>کوتاه‌ترین راه به اولین پول</b>، چون مشتری فقط یک گزارش می‌خرد نه یک تغییرِ زیرساخت. و دقیقاً همان چیزی است که در هفتهٔ دوازدهم تولید می‌شود.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۲ — لایهٔ امتناع، به‌عنوان سرویس</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">میان‌افزاری که جلوی خروجی می‌نشیند و موارد مشکوک را به آدم ارجاع می‌دهد. درآمدِ تکرارشونده دارد ولی فروشش سخت‌تر است، چون باید در مسیرِ تولیدِ مشتری بنشیند.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۳ — مجموعهٔ سنجش، به‌عنوان دارایی</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">همان ایدهٔ بنچمارک از نوشتهٔ قبلی، این بار روی اعتماد و امتناع. خریدارش آزمایشگاه‌ها و نهادهای ناظرند.</p>
+          </div>        </div>
+      </div>      <h3 style="font-size: 17.5px; font-weight: 800; color: #16181C; margin: 34px 0 14px;">و آن تاریخی که عوض شد</h3>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">محرکِ اصلیِ تقاضا در اروپا مقرراتِ هوش مصنوعی است و الزام‌هایی که برای سامانه‌های «پرخطر» می‌گذارد. ولی زمان‌بندی‌اش تازه عقب افتاده: با اصلاحیهٔ تابستانِ ۲۰۲۶، الزامِ سامانه‌های پرخطرِ مستقل از آگوستِ ۲۰۲۶ به <b>دسامبرِ ۲۰۲۷</b> منتقل شد، و برای هوش مصنوعیِ تعبیه‌شده در محصولاتِ مقررات‌زده — مثلِ تجهیزاتِ پزشکی — به <b>آگوستِ ۲۰۲۸</b>.</p>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">برای تصمیم</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">این یک خبرِ دوپهلو است و برای تصمیمِ تو مهم: تقاضای اجباری حدودِ شانزده ماه دیرتر می‌آید. یعنی اگر نقشه‌ات «فروش به موجِ انطباقِ مقرراتی» بود، آن موج فعلاً دور است. ولی خریدارِ امروز کسی است که <b>خودش</b> ضرر می‌کند — جایی که جوابِ غلطِ مدل مستقیم پول می‌برد یا پروندهٔ حقوقی می‌سازد. آن‌جا منتظرِ هیچ تاریخی نیست. فروش را از آن‌جا شروع کن، نه از مقررات.</p>
+      </div>      <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 20px; margin: 20px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #666158; margin-bottom: 9px;">و در بازارِ ایران</div>
+        <p style="font-size: 14.5px; line-height: 2.1; color: #45494F; margin: 0;">هیچ محرکِ مقرراتی‌ای وجود ندارد، پس تنها استدلالِ فروش «این خطا برایت چقدر آب می‌خورد» است. که بدترین استدلال نیست: جایی مثلِ تشخیصِ پزشکی، اعتبارسنجی، یا پاسخگوییِ خودکارِ پرحجم، خودش عددِ ضرر دارد. ولی باید همان عدد را از خودِ مشتری بیرون بکشی، چون در هیچ گزارشی نیست.</p>
+      </div>      </div>
+    </section>
+
+    <section id="risks" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">ریسک</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">چهار چیزی که این کار را می‌کُشد</h2>      <div style="margin: 22px 0; max-width: 70ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #7A2E4A; margin-bottom: 11px;">و نشانهٔ هر کدام</div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۱ — آزمایشگاه‌ها خودشان حلش کنند</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">جدی‌ترین ریسک. همان عددهای بخشِ سوم — رفتن از <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۱٪</span> به <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۵۲٪</span> امتناع — نشان می‌دهد که دارند رویش کار می‌کنند. <b>نشانهٔ خطر:</b> اگر مدلِ پایه خودش عددِ اعتمادِ کالیبره بدهد، لایهٔ بیرونیِ تو بی‌ارزش می‌شود. <b>پوشش:</b> روی چیزی کار کن که آزمایشگاه نمی‌تواند بداند — دامنهٔ خاصِ مشتری، و هزینهٔ نامتقارنِ خطا در آن دامنه.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۲ — نبودِ جابه‌جایی‌پذیری</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">کالیبراسیون یک خاصیتِ <b>توزیع</b> است، نه یک خاصیتِ مدل. با عوض شدنِ نوعِ سؤال، عددها باطل می‌شوند. <b>پوشش:</b> همان آزمونِ هفتهٔ دهم، و فروختنِ «بازکالیبرگیِ دوره‌ای» به‌عنوان بخشی از سرویس.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۳ — هزینهٔ برچسب</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">اگر دامنه‌ای انتخاب کنی که جوابِ درستش مبهم است، کلِ پروژه در گلِ برچسب‌زنی می‌ماند. <b>پوشش:</b> شرطِ هفتهٔ اول را جدی بگیر.</p>
+          </div>          <div style="background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 15px; padding: 16px 19px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #16181C; line-height: 1.75; margin-bottom: 7px;">۴ — معیارسازی به‌جای حل</div>
+            <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;">می‌شود عددِ کالیبراسیون را با دستکاریِ آستانه و سبدها قشنگ کرد بی‌آنکه چیزی بهتر شده باشد. <b>پوشش:</b> امتیازهای سنجهٔ درست، و گزارشِ همیشگیِ پوشش کنارِ دقت.</p>
+          </div>        </div>
+      </div>      </div>
+    </section>
+
+    <section id="open" style="background: transparent;  margin-top: 34px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">مرز</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">پنج پرسشِ باز، که می‌شود رویشان کار کرد</h2>      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">این‌ها به نظرِ من جاهای خالیِ امروزند. هر کدام اندازهٔ یک مقالهٔ کوتاه یا یک محصولِ کوچک است.</p>      <div style="display: flex; flex-direction: column; gap: 9px; margin: 20px 0; max-width: 68ch;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۱</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>اعتماد در زنجیرهٔ چندمرحله‌ای.</b> وقتی یک عامل ده قدم برمی‌دارد، اعتمادِ هر قدم چطور در اعتمادِ نتیجهٔ نهایی ضرب می‌شود؟ ضرب‌کردنِ ساده جواب نمی‌دهد چون قدم‌ها مستقل نیستند. و این دقیقاً گلوگاهِ همهٔ عامل‌های امروزی است.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۲</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>امتناعِ هزینه‌آگاه.</b> تصمیمِ «جواب بده یا ارجاع بده» یک مسئلهٔ بهینه‌سازی با هزینهٔ نامتقارن است: هزینهٔ وقتِ آدم در برابرِ هزینهٔ خطا. تقریباً همهٔ ادبیات آستانه را ثابت می‌گیرد و این حساب را نمی‌کند.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۳</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>آنتروپیِ معنایی روی زنجیرهٔ استدلال.</b> روشِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">Nature</span> روی جوابِ کوتاه کار می‌کند. روی یک استدلالِ چندصدکلمه‌ای چه؟ خوشه‌بندیِ هم‌معناییِ استدلال‌ها مسئلهٔ حل‌نشده‌ای است.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۴</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>کالیبراسیون زیرِ تغییرِ زبان.</b> عددِ اعتمادِ یک مدل روی پرسشِ فارسی و ترجمهٔ انگلیسیِ همان پرسش یکی است؟ جوابش را نمی‌دانم و جایی هم ندیده‌ام که اندازه گرفته باشند. آزمایشش ارزان است و اگر جوابش «نه» باشد، برای هر کسی که مدل را به فارسی به کار می‌برد خبرِ مهمی است.</p>
+        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 15px 18px; display: flex; gap: 12px;">
+          <span style="flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #7A2E4A;">۰۵</span>
+          <p style="font-size: 14.5px; line-height: 2.05; color: #45494F; margin: 0;"><b>طراحیِ نمره‌دهیِ ضدِحدس.</b> اگر آن استدلالِ انگیزشی درست باشد، بنچمارکی که امتناع را جریمه نکند خودش محصول است. طراحیِ یک نمره‌دهیِ منصفانه که هم حدس را بی‌صرفه کند و هم سکوتِ بی‌جا را، یک مسئلهٔ طراحیِ سازوکار است — و به بندِ «مسئله‌سازی» در <a href="Money.dc.html">نوشتهٔ قبلی</a> وصل است.</p>
+        </div>      </div>      <div style="background: #E6F0E9; border-inline-start: 4px solid #1F5B3A; border-radius: 0 14px 14px 0; padding: 18px 21px; margin: 22px 0; max-width: 68ch;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: #1F5B3A; margin-bottom: 10px;">برای تصمیم</div>
+        <p style="font-size: 15.5px; line-height: 2.1; color: #45494F; margin: 0;">از این پنج، چهارمی را اگر جای تو بودم اول برمی‌داشتم: ارزان‌ترین آزمایشِ این فهرست است — چند صد پرسشِ دوزبانه و دو بار اجرا — و اگر نتیجه‌اش منفی باشد، یک یافتهٔ تازه و قابلِ انتشار است که هیچ‌کس هم زودتر از تو سراغش نرفته. ارزانیِ آزمایش به‌علاوهٔ خالی بودنِ جا، بهترین نسبتی است که در این حوزه می‌شود پیدا کرد.</p>
+      </div>      </div>
+    </section>
+
+    <section id="src" style="background: #FFFFFF; border-top: 1px solid #E4E1D6; border-bottom: 1px solid #E4E1D6; margin-top: 38px;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 48px 24px;">
+      <p style="font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #7A2E4A; margin: 0 0 12px;">روش و منابع</p>
+      <h2 style="font-size: clamp(23px, 3.2vw, 33px); font-weight: 800; margin: 0 0 20px; line-height: 1.42; letter-spacing: -0.01em;">کجا باید با احتیاط خواند</h2>
+      <p style="font-size: 16.5px; line-height: 2.15; color: #2A2E34; max-width: 64ch; margin: 0 0 17px;">تفکیکِ این صفحه: صورتِ مسئله، فهرستِ روش‌ها و ایرادهای معیارها از مقاله‌های بالا می‌آید؛ بودجه، برنامهٔ دوازده‌هفته‌ای، شکل‌های محصول و پنج پرسشِ باز تحلیل و پیشنهادِ من است و آزموده نشده. دو احتیاط: عددهای دقیقِ کارایی روش‌ها را از خلاصه‌ها نیاورده‌ام و اگر لازمت شد باید از خودِ مقاله برداری؛ و تاریخ‌های مقرراتیِ اروپا از تحلیلِ حقوقی می‌آید نه از متنِ رسمی، پس پیش از تکیه بر آن‌ها متنِ اصلی را ببین.</p>
+      <div style="display: flex; flex-direction: column; gap: 9px; max-width: 72ch;">        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #7A2E4A;">۰۱</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">«چرا مدل‌های زبانی توهم می‌زنند» — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">arXiv:2509.04664</span>، سپتامبرِ ۲۰۲۵</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">استدلالِ انگیزشی: نمره‌دهیِ صفر و یک، حدس زدن را از امتناع بهتر می‌کند. منبعِ عددهای نرخِ امتناع و خطا.</p>          <p style="margin: 0;"><a href="https://arxiv.org/abs/2509.04664" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #7A2E4A; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://arxiv.org/abs/2509.04664 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #7A2E4A;">۰۲</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">«تشخیصِ توهم با آنتروپیِ معنایی» — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">Nature</span>، ژوئنِ ۲۰۲۴</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">فارکوهار، کوسن، کوهن و گال. خوشه‌بندیِ هم‌معنایی با استلزامِ دوطرفه، و آزمایش روی سی ترکیبِ وظیفه و مدل. ضعفش — جواب‌هایی که فقط در دقت فرق دارند — را خودشان گفته‌اند.</p>          <p style="margin: 0;"><a href="https://www.nature.com/articles/s41586-024-07421-0" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #7A2E4A; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://www.nature.com/articles/s41586-024-07421-0 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #7A2E4A;">۰۳</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">«مدل‌های زبانی با تضمینِ انطباقیِ درستی» — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">arXiv:2402.10978</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">محری و هاشیموتو، ۲۰۲۴. تضمینِ درستیِ <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۸۰</span> تا <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">۹۰٪</span> روی مدلِ جعبه‌سیاه، با حذفِ گزاره‌های مشکوک.</p>          <p style="margin: 0;"><a href="https://arxiv.org/abs/2402.10978" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #7A2E4A; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://arxiv.org/abs/2402.10978 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #7A2E4A;">۰۴</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">«کالیبراسیونِ زبانیِ انطباقی» — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">arXiv:2502.19110</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">به‌جای امتناع، احتیاط در زبان: جواب را کم‌دقیق‌تر بگو و تضمین را نگه دار. برای محصولِ واقعی مهم‌تر از امتناع است.</p>          <p style="margin: 0;"><a href="https://arxiv.org/abs/2502.19110" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #7A2E4A; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://arxiv.org/abs/2502.19110 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #7A2E4A;">۰۵</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">«کاهشِ اریبی در برآوردِ خطای کالیبراسیون» — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">arXiv:2012.08668</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">رولوفس و همکاران. نشان می‌دهد معیارِ سبدی اریب است و اریبی‌اش برای مدل‌های کالیبره بدتر است.</p>          <p style="margin: 0;"><a href="https://arxiv.org/abs/2012.08668" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #7A2E4A; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://arxiv.org/abs/2012.08668 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #7A2E4A;">۰۶</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">«خطای کالیبراسیونِ هموار» — <span style="direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums;">ICLR 2024</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">بلاشیوک و نکیران. ناپیوستگیِ معیارِ سبدی، و جایگزینِ هموارشده با هستهٔ گاوسی که «سازگار» است.</p>          <p style="margin: 0;"><a href="https://arxiv.org/abs/2309.12236" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #7A2E4A; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://arxiv.org/abs/2309.12236 ↗</a></p>        </div>        <div style="background: #FAFAF7; border: 1px solid #E4E1D6; border-radius: 14px; padding: 17px 19px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 7px;">
+            <span style="font-size: 11.5px; font-weight: 800; color: #7A2E4A;">۰۷</span>
+            <span style="font-size: 14px; font-weight: 700; color: #16181C; line-height: 1.65;">تاخیرِ الزام‌های سامانه‌های پرخطر در مقرراتِ هوش مصنوعیِ اروپا</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.95; color: #45494F; margin: 0 0 8px;">انتقالِ موعدِ سامانه‌های پرخطرِ مستقل به دسامبرِ ۲۰۲۷ و محصولاتِ مقررات‌زده به آگوستِ ۲۰۲۸. برای زمان‌بندیِ تقاضا.</p>          <p style="margin: 0;"><a href="https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes" target="_blank" rel="noopener" style="direction: ltr; unicode-bidi: isolate; font-size: 12px; font-weight: 700; color: #7A2E4A; display: inline-block; max-width: 100%; overflow-wrap: anywhere;">https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes ↗</a></p>        </div>      </div>      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px;">
+        <a href="Prob.dc.html" style="font-size: 13.5px; font-weight: 700; color: #FFFFFF; background: #7A2E4A; padding: 12px 22px; border-radius: 10px;">پنج هزار سال تاس — تولدِ احتمال ←</a>
+        <a href="Money.dc.html" style="font-size: 13.5px; font-weight: 700; color: #16181C; background: #FFFFFF; border: 1px solid #E4E1D6; padding: 12px 22px; border-radius: 10px;">مسئله، به‌عنوان دارایی ←</a>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="border-top: 1px solid #E4E1D6; background: #FFFFFF;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <a href="Main.dc.html#writing" style="font-size: 13px; font-weight: 600; color: #45494F;">← بازگشت به نوشته‌ها</a>
+      <span style="font-size: 12.5px; color: #666158;">رضا هاشمی · از کجا می‌داند که نمی‌داند</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
