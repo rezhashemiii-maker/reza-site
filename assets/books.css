@@ -1,24 +1,24 @@
-.c8o.c8o{display: flex;align-items: baseline;gap: 8px;margin-bottom: 10px;flex-wrap: wrap}
-.c8p.c8p{font-size: 14.5px;font-weight: 700;color: #16181C;margin: 0 0 7px;line-height: 1.6}
-.c8q.c8q{font-size: 11.5px;line-height: 1.6;color: #666158;margin: 0 0 10px;direction: ltr;text-align: left;unicode-bidi: isolate}
-.c8r.c8r{font-size: 12.8px;line-height: 1.85;color: #4A4F58;margin: 0 0 12px;flex: 1}
-.cjb.cjb{display: flex;gap: 13px;align-items: flex-start;flex-wrap: wrap;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 11px;padding: 13px 16px}
-.cjc.cjc{font-size: 11.5px;font-weight: 800;color: #4C3575;flex-shrink: 0;margin-top: 2px}
-.cjd.cjd{flex: 1;min-width: 190px}
-.cje.cje{font-size: 13.5px;font-weight: 700;color: #16181C;line-height: 1.6}
-.cjf.cjf{direction: ltr;text-align: left;unicode-bidi: isolate;font-size: 11.5px;color: #666158;margin-top: 4px}
-.cjg.cjg{font-size: 11px;color: #666158;flex-shrink: 0}
-.cmz.cmz{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #0D9488}
-.cn0.cn0{font-size: 11px;font-weight: 700;color: #0D9488}
-.cn1.cn1{font-size: 12.5px;font-weight: 700;color: #0D9488}
-.cxv.cxv{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #C2410C}
-.cxw.cxw{font-size: 11px;font-weight: 700;color: #C2410C}
-.cxx.cxx{font-size: 12.5px;font-weight: 700;color: #C2410C}
-.cxy.cxy{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #0E6FB4}
-.cxz.cxz{font-size: 12.5px;font-weight: 700;color: #0E6FB4}
-.cy0.cy0{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #166534}
-.cy1.cy1{font-size: 12.5px;font-weight: 700;color: #166534}
-.c152.c152{font-weight: 600}
+.c8p.c8p{display: flex;align-items: baseline;gap: 8px;margin-bottom: 10px;flex-wrap: wrap}
+.c8q.c8q{font-size: 14.5px;font-weight: 700;color: #16181C;margin: 0 0 7px;line-height: 1.6}
+.c8r.c8r{font-size: 11.5px;line-height: 1.6;color: #666158;margin: 0 0 10px;direction: ltr;text-align: left;unicode-bidi: isolate}
+.c8s.c8s{font-size: 12.8px;line-height: 1.85;color: #4A4F58;margin: 0 0 12px;flex: 1}
+.cje.cje{display: flex;gap: 13px;align-items: flex-start;flex-wrap: wrap;background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 11px;padding: 13px 16px}
+.cjf.cjf{font-size: 11.5px;font-weight: 800;color: #4C3575;flex-shrink: 0;margin-top: 2px}
+.cjg.cjg{flex: 1;min-width: 190px}
+.cjh.cjh{font-size: 13.5px;font-weight: 700;color: #16181C;line-height: 1.6}
+.cji.cji{direction: ltr;text-align: left;unicode-bidi: isolate;font-size: 11.5px;color: #666158;margin-top: 4px}
+.cjj.cjj{font-size: 11px;color: #666158;flex-shrink: 0}
+.cn2.cn2{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #0D9488}
+.cn3.cn3{font-size: 11px;font-weight: 700;color: #0D9488}
+.cn4.cn4{font-size: 12.5px;font-weight: 700;color: #0D9488}
+.cy0.cy0{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #C2410C}
+.cy1.cy1{font-size: 11px;font-weight: 700;color: #C2410C}
+.cy2.cy2{font-size: 12.5px;font-weight: 700;color: #C2410C}
+.cy3.cy3{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #0E6FB4}
+.cy4.cy4{font-size: 12.5px;font-weight: 700;color: #0E6FB4}
+.cy5.cy5{display: flex;flex-direction: column;background: #FFFFFF;border: 1px solid #D5DDD2;border-radius: 14px;padding: 20px 22px;border-top: 3px solid #166534}
+.cy6.cy6{font-size: 12.5px;font-weight: 700;color: #166534}
+.c15a.c15a{font-weight: 600}
 body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
