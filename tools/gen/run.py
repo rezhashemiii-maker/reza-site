@@ -28,6 +28,7 @@ STEPS = [
     ('prob', ['prob/page.py']),
     ('money', ['money/page.py']),
     ('aimo', ['aimo/page.py']),
+    ('puzzle', ['puzzle/page.py']),
     ('watch', ['watch/logic.py', 'watch/page.py']),
     ('shop',  ['workshop/hf.py', 'workshop/page.py']),
     ('wboard', ['writing_board.py']),

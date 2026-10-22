@@ -52,7 +52,7 @@
 <p class="eyebrow">بخش ۱</p>
 <h2 id="h-dash">مقایسهٔ ۱۹ فعالیت</h2>
 <p class="muted">با لغزنده‌ها کل بازار را جابه‌جا کنید. روی هر ردیف جدول بزنید تا فرض‌های همان فعالیت را ببینید و ویرایش کنید؛ همان فعالیت در مدل وام هم انتخاب می‌شود.</p>
-<div class="cje card">
+<div class="cjm card">
 <div class="grid g3">
 <div class="ctl"><label for="gPrice">تغییر قیمت فروش <output id="oPrice">۰٪</output></label><input id="gPrice" type="range" min="-30" max="50" step="5" value="0"></div>
 <div class="ctl"><label for="gCost">تغییر هزینهٔ جاری (خوراک، انرژی، دستمزد) <output id="oCost">۰٪</output></label><input id="gCost" type="range" min="-20" max="40" step="5" value="0"></div>
@@ -68,7 +68,7 @@
 </div>
 </div>
 </div>
-<div class="cje grid g2">
+<div class="cjm grid g2">
 <div class="card">
 <h3>بازده سالانهٔ سرمایه (ROI)</h3>
 <p class="small muted" style="margin:0 0 6px">سود خالص بعد از استهلاک، تقسیم بر سرمایهٔ ثابت به‌اضافهٔ سرمایه در گردش. ارقام به قیمت ثابت امروزند، پس تقریباً «واقعی»‌اند.</p>
@@ -80,10 +80,10 @@
 <div class="kpis" id="dKpis"></div>
 <h3 style="margin-top:16px;font-size:15px">فرض‌های این فعالیت</h3>
 <div class="grid g3" id="dInputs" style="gap:10px"></div>
-<div class="czt row"><button type="button" class="btn" id="dReset">بازگرداندن فرض‌های پیش‌فرض</button></div>
+<div class="c106 row"><button type="button" class="btn" id="dReset">بازگرداندن فرض‌های پیش‌فرض</button></div>
 </div>
 </div>
-<div class="cje tbox">
+<div class="cjm tbox">
 <table id="tbl">
 <thead><tr>
 <th scope="col"><button type="button" data-k="name">فعالیت</button></th>
@@ -105,10 +105,10 @@
 <p class="eyebrow">بخش ۲</p>
 <h2 id="h-loan">مدل وام و تورم</h2>
 <p class="muted">در اقتصاد تورمی، قسط وام ثابت می‌ماند ولی قیمت محصول بالا می‌رود. این مدل جریان نقدی ماه‌به‌ماه را برای ده سال شبیه‌سازی می‌کند و بازده سهم سرمایه‌گذار را با وام و بدون وام مقایسه می‌کند.</p>
-<div class="cje grid g2">
+<div class="cjm grid g2">
 <div class="card">
-<div class="czu grid g3">
-<div class="czv ctl"><label for="lSector">فعالیت</label><select id="lSector"></select></div>
+<div class="c107 grid g3">
+<div class="c108 ctl"><label for="lSector">فعالیت</label><select id="lSector"></select></div>
 <div class="ctl"><label for="lBudget">کل سرمایهٔ طرح (میلیارد تومان)</label><input id="lBudget" type="number" min="1" max="5000" step="1" value="50"></div>
 <div class="ctl"><label for="lShare">سهم وام <output id="oShare">۶۰٪</output></label><input id="lShare" type="range" min="0" max="80" step="5" value="60"></div>
 <div class="ctl"><label for="lRate">نرخ سود وام (سالانه) <output id="oRate">۲۳٪</output></label><input id="lRate" type="range" min="4" max="40" step="1" value="23"></div>
@@ -116,9 +116,9 @@
 <div class="ctl"><label for="lGrace">دورهٔ تنفس <output id="oGrace">۱۲ ماه</output></label><input id="lGrace" type="range" min="0" max="36" step="3" value="12"></div>
 <div class="ctl"><label for="lInf">تورم سالانهٔ مورد انتظار <output id="oInf">۴۰٪</output></label><input id="lInf" type="range" min="0" max="70" step="5" value="40"></div>
 <div class="ctl"><label for="lGap">رشد قیمت محصول نسبت به تورم <output id="oGap">۰ واحد</output></label><input id="lGap" type="range" min="-15" max="10" step="1" value="0"></div>
-<div class="czv ctl"><label><span><input id="lResid" type="checkbox" checked=""> ارزش باقی‌ماندهٔ دارایی در پایان سال دهم حساب شود</span></label></div>
+<div class="c108 ctl"><label><span><input id="lResid" type="checkbox" checked=""> ارزش باقی‌ماندهٔ دارایی در پایان سال دهم حساب شود</span></label></div>
 </div>
-<p class="czw small muted">پیش‌فرض‌ها: نرخ تسهیلات کشاورزی حدود ۱۸ تا ۲۳ درصد و تورم ۴۰ درصد، که هر دو تخمین‌اند و قابل تغییرند. در دورهٔ تنفس فقط سود پرداخت می‌شود و بعد از آن اقساط مساوی ماهانه است. «رشد قیمت نسبت به تورم» برای کالاهایی است که قیمت دستوری دارند و عقب می‌مانند (مثلاً ۵- واحد برای شیر).</p>
+<p class="c109 small muted">پیش‌فرض‌ها: نرخ تسهیلات کشاورزی حدود ۱۸ تا ۲۳ درصد و تورم ۴۰ درصد، که هر دو تخمین‌اند و قابل تغییرند. در دورهٔ تنفس فقط سود پرداخت می‌شود و بعد از آن اقساط مساوی ماهانه است. «رشد قیمت نسبت به تورم» برای کالاهایی است که قیمت دستوری دارند و عقب می‌مانند (مثلاً ۵- واحد برای شیر).</p>
 </div>
 <div class="card">
 <h3 id="lTitle">نتیجه</h3>
@@ -126,7 +126,7 @@
 <div id="lVerdict" class="verdict"></div>
 </div>
 </div>
-<div class="cje card">
+<div class="cjm card">
 <h3>جریان نقدی تجمعی سهم سرمایه‌گذار (به قیمت امروز)</h3>
 <div class="legend"><span><i style="background:var(--bar)"></i>با وام</span><span><i style="background:var(--bar2)"></i>بدون وام (همهٔ سرمایه از جیب)</span></div>
 <svg id="cfChart" class="chart" role="img" aria-label="نمودار جریان نقدی تجمعی ده‌ساله"></svg>
@@ -134,7 +134,7 @@
 </div>
 <details>
 <summary>جدول سالانهٔ جریان نقدی</summary>
-<div class="czt tbox"><table id="cfTbl" style="min-width:640px"><thead><tr><th>سال</th><th>درآمد (اسمی)</th><th>EBITDA (اسمی)</th><th>قسط و سود وام</th><th>جریان نقد سهامدار (اسمی)</th><th>همان، به قیمت امروز</th><th>DSCR</th></tr></thead><tbody></tbody></table></div>
+<div class="c106 tbox"><table id="cfTbl" style="min-width:640px"><thead><tr><th>سال</th><th>درآمد (اسمی)</th><th>EBITDA (اسمی)</th><th>قسط و سود وام</th><th>جریان نقد سهامدار (اسمی)</th><th>همان، به قیمت امروز</th><th>DSCR</th></tr></thead><tbody></tbody></table></div>
 <p class="small muted">DSCR یعنی EBITDA تقسیم بر قسط و سود سالانه. بانک‌ها معمولاً حداقل ۱٫۲ تا ۱٫۳ می‌خواهند.</p>
 </details>
 </section>
@@ -143,11 +143,11 @@
 <p class="eyebrow">بخش ۳</p>
 <h2 id="h-score">ماتریس امتیازدهی</h2>
 <p class="muted">بازده مالی همهٔ ماجرا نیست. شش معیار، هر کدام از ۱ تا ۱۰ (عدد بالاتر یعنی بهتر). وزن‌ها را مطابق اولویت خودتان تغییر دهید.</p>
-<div class="cje card">
-<div class="czu grid g3" id="wCtl"></div>
-<p class="czw small muted">جمع وزن‌ها خودکار به ۱۰۰٪ نرمال می‌شود.</p>
+<div class="cjm card">
+<div class="c107 grid g3" id="wCtl"></div>
+<p class="c109 small muted">جمع وزن‌ها خودکار به ۱۰۰٪ نرمال می‌شود.</p>
 </div>
-<div class="cje tbox"><table id="scTbl"><thead><tr><th>رتبه</th><th>فعالیت</th><th>بازگشت</th><th>حاشیهٔ سود</th><th>آب و اقلیم</th><th>ریسک زیستی</th><th>استقلال از واردات</th><th>آینده و فناوری</th><th>امتیاز</th></tr></thead><tbody></tbody></table></div>
+<div class="cjm tbox"><table id="scTbl"><thead><tr><th>رتبه</th><th>فعالیت</th><th>بازگشت</th><th>حاشیهٔ سود</th><th>آب و اقلیم</th><th>ریسک زیستی</th><th>استقلال از واردات</th><th>آینده و فناوری</th><th>امتیاز</th></tr></thead><tbody></tbody></table></div>
 </section>
 
 <section id="method" aria-labelledby="h-method">

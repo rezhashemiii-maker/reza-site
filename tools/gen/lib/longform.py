@@ -104,6 +104,24 @@ def writer(V):
         elif kind == 'code':
             w('''      <pre style="direction: ltr; text-align: left; unicode-bidi: isolate; background: %(CODE)s; color: #E8ECF2; border-radius: 13px; padding: 18px 20px; margin: 20px 0; max-width: 68ch; overflow-x: auto; font-size: 13px; line-height: 1.95;"><code>%(t)s</code></pre>''',
               t=it[1].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
+        elif kind == 'puzzle':
+            # یک نوارِ خانه‌دار: خانهٔ پر پررنگ، خانهٔ خالی کم‌رنگ
+            w('      <div style="margin: 18px 0; max-width: 68ch;">\n'
+              '        <div style="font-size: 11.5px; font-weight: 700; color: %(DIM)s; margin-bottom: 9px;">%(cap)s</div>\n'
+              '        <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; unicode-bidi: isolate;">',
+              cap=it[2])
+            for c in it[1]:
+                full = c not in ('.', '·', '')
+                w('          <span style="width: 27px; height: 31px; display: inline-flex;'
+                  ' align-items: center; justify-content: center; font-size: 14px;'
+                  ' font-weight: %(fw)s; border: 1px solid %(bd)s; border-radius: 5px;'
+                  ' background: %(bg)s; color: %(fg)s;">%(c)s</span>',
+                  c=(c if full else '·'),
+                  fw=('800' if full else '400'),
+                  bd=(V['AC'] if full else '#DCD7CA'),
+                  bg=('#FFFFFF' if full else '#FAFAF7'),
+                  fg=(V['AC'] if full else '#B9B3A5'))
+            w('        </div>\n      </div>')
         elif kind == 'list':
             w('      <div style="display: flex; flex-direction: column; gap: 9px; margin: 20px 0; max-width: 68ch;">')
             for i, t in enumerate(it[1]):
