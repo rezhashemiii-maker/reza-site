@@ -21,67 +21,67 @@
 <nav class="stabs" aria-label="منوی اصلی"><div class="stabs-in"><a class="stabs-brand" href="index.html"><span></span>رضا هاشمی</a><a class="stab" href="index.html">شروع</a><a class="stab" href="index.html#writing">نوشته‌ها</a><a class="stab" href="books.html">کتاب‌ها</a><a class="stab" href="watch.html">رصدخانه</a></div></nav>
 
 
-<div class="cj">
-<header class="c11">
-<div class="c1d">
+<div class="cl">
+<header class="c14">
+<div class="c1e">
 <a class="co" href="ai-engineer.html">← بازگشت به مسیر مهندس هوش مصنوعی</a>
 </div>
 </header>
-<main class="c1e">
-<span class="c1f">مرحلهٔ ۶ · MCP، ارزیابی و استقرار · پروژهٔ ۶.۷</span>
-<h1 class="c1g">مجموعهٔ آزمون رگرسیون برای Prompt</h1>
-<p class="c1h">هر تغییر کوچک، کیفیت پاسخ کاربران را خراب نمی‌کند.</p>
-<div class="c1i">
-<section class="c9">
+<main class="c1f">
+<span class="c1g">مرحلهٔ ۶ · MCP، ارزیابی و استقرار · پروژهٔ ۶.۷</span>
+<h1 class="c1h">مجموعهٔ آزمون رگرسیون برای Prompt</h1>
+<p class="c1i">هر تغییر کوچک، کیفیت پاسخ کاربران را خراب نمی‌کند.</p>
+<div class="c1j">
+<section class="cb">
 <h2 class="c6">این پروژه چیه؟</h2>
 <p class="cn">Evaluation Dataset، LLM-as-judge و A/B تست Prompt در CI.</p>
 </section>
-<section class="c9">
+<section class="cb">
 <h2 class="c6">دیتاست</h2>
-<a class="c1j" href="https://huggingface.co/datasets/lmsys/mt_bench_human_judgments" target="_blank" rel="noopener">MT-Bench (Hugging Face) ↗</a>
+<a class="c1k" href="https://huggingface.co/datasets/lmsys/mt_bench_human_judgments" target="_blank" rel="noopener">MT-Bench (Hugging Face) ↗</a>
 </section>
-<section class="c9">
+<section class="cb">
 <h2 class="c6">مهارت‌هایی که تمرین می‌شود</h2>
-<ul class="c1k"><li>MCP و Tool Serverها</li><li>Permission و احراز هویت</li><li>Observability و Guardrails</li><li>مدیریت خطا و Evaluation Dataset</li><li>FastAPI، Docker و CI/CD</li><li>Monitoring و بررسی تغییر عملکرد مدل</li></ul>
+<ul class="c1l"><li>MCP و Tool Serverها</li><li>Permission و احراز هویت</li><li>Observability و Guardrails</li><li>مدیریت خطا و Evaluation Dataset</li><li>FastAPI، Docker و CI/CD</li><li>Monitoring و بررسی تغییر عملکرد مدل</li></ul>
 </section>
-<section class="c1l">
+<section class="c1m">
 <h2 class="c6">راهنمای قدم‌به‌قدم</h2>
-<p class="c1m">این راهنما اسکلت کار است، نه نسخهٔ پیچیده‌شده: گام‌ها از مرحلهٔ همین پروژه و دیتاست و مهارت‌های خودش ساخته شده‌اند. تصمیم‌های ریز را خودت می‌گیری — که اصلاً نکتهٔ پروژه همین است.</p>
-<div class="c13">
-<div class="c2">
-<div class="c3">گام ۱</div>
-<div class="c4">دادهٔ «MT-Bench (Hugging Face)» را بردار و اول فقط نگاهش کن. صد ردیف اولش را باز کن و سه چیز بنویس: چه ستون‌هایی دارد، کجایش خالی یا خراب است، و یک سؤال مشخص که با همین داده جواب دارد.</div>
+<p class="c1n">این راهنما اسکلت کار است، نه نسخهٔ پیچیده‌شده: گام‌ها از مرحلهٔ همین پروژه و دیتاست و مهارت‌های خودش ساخته شده‌اند. تصمیم‌های ریز را خودت می‌گیری — که اصلاً نکتهٔ پروژه همین است.</p>
+<div class="c15">
+<div class="c3">
+<div class="c4">گام ۱</div>
+<div class="c5">دادهٔ «MT-Bench (Hugging Face)» را بردار و اول فقط نگاهش کن. صد ردیف اولش را باز کن و سه چیز بنویس: چه ستون‌هایی دارد، کجایش خالی یا خراب است، و یک سؤال مشخص که با همین داده جواب دارد.</div>
 </div>
-<div class="c2">
-<div class="c3">گام ۲</div>
-<div class="c4">قبل از استقرار، یک سنجهٔ کیفیت و یک راه بازگشت تعریف کن. بدون این دو، استقرار یعنی امیدواری.</div>
+<div class="c3">
+<div class="c4">گام ۲</div>
+<div class="c5">قبل از استقرار، یک سنجهٔ کیفیت و یک راه بازگشت تعریف کن. بدون این دو، استقرار یعنی امیدواری.</div>
 </div>
-<div class="c2">
-<div class="c3">گام ۳</div>
-<div class="c4">حالا سراغ مهارت اصلی این پروژه برو: <b>MCP و Tool Serverها، Permission و احراز هویت، Observability و Guardrails</b>. این همان چیزی است که قرار است از این پروژه یاد بگیری؛ بقیه‌اش بستربندی است.</div>
+<div class="c3">
+<div class="c4">گام ۳</div>
+<div class="c5">حالا سراغ مهارت اصلی این پروژه برو: <b>MCP و Tool Serverها، Permission و احراز هویت، Observability و Guardrails</b>. این همان چیزی است که قرار است از این پروژه یاد بگیری؛ بقیه‌اش بستربندی است.</div>
 </div>
-<div class="c2">
-<div class="c3">گام ۴</div>
-<div class="c4">سرویس را با ورودی واقعی اجرا کن و لاگ بگیر. ببین در عمل کجا کند است، کجا گران است و کجا خطا می‌دهد.</div>
+<div class="c3">
+<div class="c4">گام ۴</div>
+<div class="c5">سرویس را با ورودی واقعی اجرا کن و لاگ بگیر. ببین در عمل کجا کند است، کجا گران است و کجا خطا می‌دهد.</div>
 </div>
-<div class="c2">
-<div class="c3">گام ۵</div>
-<div class="c4">مخزن را مرتب کن و README را با همان پنج تیتر بنویس: مسئله ← داده ← روش ← نتیجه ← دمو. یک تصویر یا گیف از خروجی بگذار؛ کسی که رزومه‌ات را می‌خواند، کد را باز نمی‌کند.</div>
+<div class="c3">
+<div class="c4">گام ۵</div>
+<div class="c5">مخزن را مرتب کن و README را با همان پنج تیتر بنویس: مسئله ← داده ← روش ← نتیجه ← دمو. یک تصویر یا گیف از خروجی بگذار؛ کسی که رزومه‌ات را می‌خواند، کد را باز نمی‌کند.</div>
 </div>
 </div>
-<div class="c1n">
+<div class="c1o">
 <div>
-<div class="c1o">تمام‌شده یعنی چه</div>
+<div class="c1p">تمام‌شده یعنی چه</div>
 <p class="c1">سرویس اجرا می‌شود، لاگ و سنجه دارد، و می‌دانی اگر خراب شد چطور به نسخهٔ قبلی برمی‌گردی.</p>
 </div>
 <div>
-<div class="c1p">دام رایج این مرحله</div>
+<div class="c1q">دام رایج این مرحله</div>
 <p class="c1">بهینه‌سازی پیش از اندازه‌گیری. اول بفهم وقت و هزینه کجا می‌رود، بعد دست به کد ببر.</p>
 </div>
 </div>
 </section>
 </div>
-<nav class="c1q"><a class="cf" href="aie-606.html">→ پروژهٔ قبلی</a><span class="ck"></span><a class="cf" href="aie-608.html">پروژهٔ بعدی ←</a></nav>
+<nav class="c1r"><a class="cf" href="aie-606.html">→ پروژهٔ قبلی</a><span class="cm"></span><a class="cf" href="aie-608.html">پروژهٔ بعدی ←</a></nav>
 </main>
 </div>
 
