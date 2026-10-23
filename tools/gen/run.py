@@ -32,6 +32,7 @@ STEPS = [
     ('unc', ['unc/page.py']),
     ('plc', ['plc/page.py']),
     ('pe', ['pe/page.py']),
+    ('research', ['research/page.py']),
     ('watch', ['watch/logic.py', 'watch/page.py']),
     ('shop',  ['workshop/hf.py', 'workshop/page.py']),
     ('wboard', ['writing_board.py']),
