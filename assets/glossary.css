@@ -1,15 +1,15 @@
-.cib.cib{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
-.cic.cic{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
-.cid.cid{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
-.cie.cie{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
-.cif.cif{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
-.cig.cig{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
-.cih.cih{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
-.cii.cii{font-size: 10.5px;font-weight: 700;color: #666158}
-.cij.cij{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
-.cik.cik{font-size: 10.5px;font-weight: 700;color: #8A5410}
-.cil.cil{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
-.cim.cim{font-size: 10.5px;font-weight: 700;color: #A32222}
+.cih.cih{font-size: 12.5px;font-weight: 700;border-radius: 999px;padding: 10px 14px}
+.cii.cii{display: flex;align-items: baseline;gap: 9px;flex-wrap: wrap;margin-bottom: 6px}
+.cij.cij{font-size: 10px;font-weight: 700;color: #2F5233;background: #E7ECE4;border-radius: 999px;padding: 2px 8px}
+.cik.cik{font-size: 10.5px;border-radius: 999px;padding: 2px 9px;margin-inline-start: auto}
+.cil.cil{font-size: 12.5px;color: #666158;direction: ltr;text-align: right;margin: 0 0 12px;line-height: 1.6}
+.cim.cim{font-size: 14px;line-height: 1.95;color: #45494F;margin: 0;flex: 1}
+.cin.cin{margin-top: 12px;padding-top: 10px;border-top: 1px dashed #D9D5C9}
+.cio.cio{font-size: 10.5px;font-weight: 700;color: #666158}
+.cip.cip{background: #FAFAF7;border-radius: 9px;padding: 10px 13px;margin-top: 12px}
+.ciq.ciq{font-size: 10.5px;font-weight: 700;color: #8A5410}
+.cir.cir{background: #F5E1DF;border-radius: 9px;padding: 10px 13px;margin-top: 10px}
+.cis.cis{font-size: 10.5px;font-weight: 700;color: #A32222}
 body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:#F5F3EE;color:#16181C;-webkit-font-smoothing:antialiased}
 a{color:#2F5233;text-decoration:none}
 a:hover{color:#1F3A22}
