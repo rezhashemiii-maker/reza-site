@@ -15,10 +15,10 @@ img,svg{max-width:100%}
 .c0.c0{direction: ltr;unicode-bidi: isolate;display: inline-block;font-variant-numeric: tabular-nums}
 .c1.c1{font-size: 14.5px;line-height: 2.05;color: #45494F;margin: 0}
 .c2.c2{font-size: 13.5px;line-height: 1.95;color: #45494F;margin: 0}
-.c3.c3{display: flex;gap: 12px;align-items: stretch}
-.c4.c4{flex-shrink: 0;width: 42px;font-size: 11.5px;font-weight: 700;color: #2F5233;padding-top: 3px}
-.c5.c5{flex: 1;min-width: 0;padding-inline-start: 14px;border-inline-start: 2px solid #D5DDD2;font-size: 14px;line-height: 2.05;color: #45494F}
-.c6.c6{font-size: 14.5px;font-weight: 700;color: #16181C;line-height: 1.75;margin-bottom: 7px}
+.c3.c3{font-size: 14.5px;font-weight: 700;color: #16181C;line-height: 1.75;margin-bottom: 7px}
+.c4.c4{display: flex;gap: 12px;align-items: stretch}
+.c5.c5{flex-shrink: 0;width: 42px;font-size: 11.5px;font-weight: 700;color: #2F5233;padding-top: 3px}
+.c6.c6{flex: 1;min-width: 0;padding-inline-start: 14px;border-inline-start: 2px solid #D5DDD2;font-size: 14px;line-height: 2.05;color: #45494F}
 .c7.c7{font-size: 16.5px;line-height: 2.15;color: #2A2E34;max-width: 64ch;margin: 0 0 17px}
 .c8.c8{background: #FFFFFF;border: 1px solid #E4E1D6;border-radius: 15px;padding: 16px 19px}
 .c9.c9{font-size: 16px;font-weight: 800;margin: 0 0 8px}
@@ -110,9 +110,9 @@ img,svg{max-width:100%}
 .c34.c34{color: #666158}
 .c35.c35{background: #FFFFFF;border-top: 1px solid #E4E1D6;border-bottom: 1px solid #E4E1D6;margin-top: 34px}
 .c36.c36{font-size: 13.5px;font-weight: 700;color: #16181C;background: #FFFFFF;border: 1px solid #E4E1D6;padding: 12px 22px;border-radius: 10px}
-.c38.c38{display: flex;align-items: baseline;gap: 10px;flex-wrap: wrap;margin-bottom: 4px}
-.c3a.c3a{font-size: 12.5px;color: #45494F;background: #FAFAF7;border: 1px solid #EDEAE1;border-radius: 999px;padding: 7px 12px}
-.c3b.c3b{display: flex;align-items: baseline;gap: 10px;margin-bottom: 10px}
+.c39.c39{display: flex;align-items: baseline;gap: 10px;flex-wrap: wrap;margin-bottom: 4px}
+.c3b.c3b{font-size: 12.5px;color: #45494F;background: #FAFAF7;border: 1px solid #EDEAE1;border-radius: 999px;padding: 7px 12px}
+.c3c.c3c{display: flex;align-items: baseline;gap: 10px;margin-bottom: 10px}
 .c3j.c3j{font-size: 14px;line-height: 2;color: #45494F;margin: 0 0 14px}
 .c3k.c3k{font-size: 12px;letter-spacing: 0.12em;font-weight: 700;color: #2F5233;margin: 0 0 12px}
 .c3l.c3l{font-size: 13px;line-height: 1.9;color: #45494F;margin: 0 0 8px}
